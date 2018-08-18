@@ -2,7 +2,7 @@
 require('babel-register');
 require('dotenv').load();
 const adler32 = require('adler32');
-const { getChallenges } = require('@freecodecamp/curriculum');
+const getChallenges = require('../curriculum/getChallenges');
 const Rx = require('rxjs');
 const _ = require('lodash');
 const createDebugger = require('debug');
