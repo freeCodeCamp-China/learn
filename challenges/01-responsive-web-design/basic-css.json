@@ -1,0 +1,4658 @@
+{
+  "name": "Basic CSS",
+  "order": 1,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "bad87fee1348bd9aedf08803",
+      "title": "Change the Color of Text",
+      "description": [
+        "现在来让我们修改一下文本的颜色。",
+        "我们通过修改<code>h2</code>元素里面的 <code>style</code>。",
+        "<code>color</code>属性可以控制文本元素颜色。",
+        "以下是改变<code>h2</code>元素为蓝色的方法：",
+        "<code>&#60;h2 style=\"color: blue;\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "请注意行内<code>style</code>最好以<code>;</code>来结束。",
+        "<hr>",
+        "请把<code>h2</code>元素的文本颜色设置为红色。"
+      ],
+      "tests": [
+        {
+          "text": "你的<code>h2</code>元素应该为红色。",
+          "testString":
+            "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", '你的<code>h2</code>元素应该为红色。');"
+        },
+        {
+          "text":
+            "<code>h2</code>元素的<code>style</code> 属性的值应该以<code>;</code>结束。",
+          "testString":
+            "assert(code.match(/<h2\\s+style\\s*=\\s*(\\'|\")\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;(\\'|\")>\\s*CatPhotoApp\\s*<\\/h2>/),'<code>h2</code> 元素 <code>style</code> 属性的值应该以 <code>;</code> 结束。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  <p>Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08805",
+      "title": "Use CSS Selectors to Style Elements",
+      "description": [
+        "在CSS中，有上百种<code>属性</code>可以让你改变页面样式。",
+        "通过输入 <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code> 的<code>行内样式</code>，修改单一的<code>h2</code>元素的颜色的方式，配置 <code>层叠样式表（CSS）</code> 的方式之一。",
+        "这是改变元素样式的一个特别方法，不过存在着更好的方法来设置<code>层叠样式表（CSS</code>。",
+        "在代码的顶部，创建一个 <code>style</code> 声明区域，如下方所示：",
+        "<blockquote>&#60;style&#62;<br>&#60;/style&#62;</blockquote>",
+        "在style样式声明区域内，可以创建一个<code>CSS 选择器</code>的规则来应用于所有的<code>h2</code>元素。例如，如果你想所有<code>h2</code>元素变成红色，可以添加下方的样式规则：",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;h2 {color: red;}<br>&#60;/style&#62;</blockquote>",
+        "注意，在每个元素的样式声明区域里，左右花括号（<code>{</code> 和 <code>}</code>）一定要写全。你需要确定你定义的样式规则位于花括号之间。以及，记得在每个元素样式规则的末尾添加分号。",
+        "<hr>",
+        "删除<code>h2</code>元素的行内样式，创建<code>style</code>样式声明区域。添加CSS样式规则使<code>h2</code>元素变为蓝色。"
+      ],
+      "tests": [
+        {
+          "text": "移除<code>h2</code>元素的行内样式。",
+          "testString":
+            "assert(!$(\"h2\").attr(\"style\"), '移除<code>h2</code>元素的行内样式。');"
+        },
+        {
+          "text": "创建一个<code>style</code>样式声明区域。",
+          "testString":
+            "assert($(\"style\") && $(\"style\").length > 1, '创建一个<code>style</code>样式声明区域。');"
+        },
+        {
+          "text": "<code>h2</code>元素颜色应为蓝色。",
+          "testString":
+            "assert($(\"h2\").css(\"color\") === \"rgb(0, 0, 255)\", '<code>h2</code>元素颜色应为蓝色。');"
+        },
+        {
+          "text":
+            "确保你的样式声明里的<code>h2</code>规则需以花括号所包括，和分号结束。",
+          "testString":
+            "assert(code.match(/h2\\s*\\{\\s*color\\s*:.*;\\s*\\}/g), '确保你的样式声明里的<code>h2</code>规则需以花括号所包括，和分号结束。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2 style=\"color: red\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p>Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aecf08806",
+      "title": "Use a CSS Class to Style an Element",
+      "description": [
+        "CSS 的<code>class</code>具有可重用性，可应用于各种 HTML 元素。",
+        "一个 CSS<code>class</code>声明示例，如下所示：",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.blue-text {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
+        "可以看到，我们在<code>&#60;style&#62;</code>样式声明区域里，创建了一个名为<code>blue-text</code>的<code>class</code>选择器。",
+        "你可以将 CSS<code>class</code>选择器应用到一个HTML元素里，如下所示：",
+        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "注意你的<code>style</code>样式区域声明里，<code>class</code>需以句号开头。而在你的HTML元素里的<code>class</code>属性的类名，不需要包含句号",
+        "<hr>",
+        "在<code>style</code>样式声明里，<code>h2</code>元素选择器改为<code>.red-text</code>的 CSS <code>class</code> 择器，同时将颜色<code>blue</code>变为<code>red</code>。",
+        "在你的<code>h2</code>元素里，添加一个<code>class</code>属性，且值为<code>'red-text'</code>。"
+      ],
+      "tests": [
+        {
+          "text": "你的<code>h2</code>元素应该为红色。",
+          "testString":
+            "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", '你的<code>h2</code>元素应该为红色。');"
+        },
+        {
+          "text":
+            "你的<code>h2</code>元素应含有<code>red-text</code> class 选择器。",
+          "testString":
+            "assert($(\"h2\").hasClass(\"red-text\"), '你的<code>h2</code>元素应含有<code>red-text</code> class 选择器。');"
+        },
+        {
+          "text":
+            "你的<code>style</code>样式声明区域里应该包含一个<code>red-text</code> class 选择器，并且它的颜色应为红色。",
+          "testString":
+            "assert(code.match(/\\.red-text\\s*\\{\\s*color\\s*:\\s*red;\\s*\\}/g), '你的<code>style</code>样式声明区域里应该包含一个<code>red-text</code> class 选择器，并且它的颜色应为红色。');"
+        },
+        {
+          "text":
+            "不要在<code>h2</code>元素里使用<code>style=\"color&#58; red\"</code>的行内样式 。",
+          "testString":
+            "assert($(\"h2\").attr(\"style\") === undefined, '不要在<code>h2</code>元素里使用<code>style=\"color&#58; red\"</code>的行内样式 。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  h2 {",
+            "    color: blue;",
+            "  }",
+            "</style>",
+            "",
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  <p>Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aefe08806",
+      "title": "Style Multiple Elements with a CSS Class",
+      "description": [
+        "通过 CSS class 选择器，多个 HTML 元素可以使用相同的 CSS 样式规则。你可以将<code>red-text</code> class 选择器应用在第一个<code>p</code>元素上。"
+      ],
+      "tests": [
+        {
+          "text": "你的<code>h2</code>元素应该是红色的。",
+          "testString":
+            "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", '你的<code>h2</code>元素应该是红色的。');"
+        },
+        {
+          "text":
+            "你的<code>h2</code>元素应该含有名为<code>red-text</code> 的 class 选择器。",
+          "testString":
+            "assert($(\"h2\").hasClass(\"red-text\"), '你的<code>h2</code>元素应该含有名为<code>red-text</code> 的 class 选择器。');"
+        },
+        {
+          "text": "你的第一个<code>p</code>元素应该为红色。",
+          "testString":
+            "assert($(\"p:eq(0)\").css(\"color\") === \"rgb(255, 0, 0)\", '你的第一个<code>p</code>元素应该为红色。');"
+        },
+        {
+          "text": "你的第二和第三个<code>p</code>元素不应该为红色。",
+          "testString":
+            "assert(!($(\"p:eq(1)\").css(\"color\") === \"rgb(255, 0, 0)\") && !($(\"p:eq(2)\").css(\"color\") === \"rgb(255, 0, 0)\"), '你的第二和第三个<code>p</code>元素不应该为红色。');"
+        },
+        {
+          "text":
+            "你的第一个<code>p</code>元素应该包含名为<code>red-text</code>的 class 选择器。",
+          "testString":
+            "assert($(\"p:eq(0)\").hasClass(\"red-text\"), '你的第一个<code>p</code> 元素应该包含名为<code>red-text</code>的 class 选择器。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p>Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08806",
+      "title": "Change the Font Size of an Element",
+      "description": [
+        "字体大小由<code>font-size</code>的 CSS 属性控制，如下所示：",
+        "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
+        "<hr>",
+        "在包含<code>red-text</code> class 的<code>&#60;style&#62;</code>声明区域的里，创建一个<code>p</code>元素样式规则，并设置<code>font-size</code>为 16 像素(<code>16px</code>)。"
+      ],
+      "tests": [
+        {
+          "text":
+            "在<code>style</code>样式声明区域里，<code>p</code>元素的<code>font-size</code>的值应为<code>16px</code>，浏览器和文本缩放应设置为 100％。",
+          "testString":
+            "assert(code.match(/p\\s*{\\s*font-size\\s*:\\s*16\\s*px\\s*;\\s*}/i), '在<code>style</code>样式声明区域里，<code>p</code>元素的<code>font-size</code>的值应为<code>16px</code>，浏览器和文本缩放应设置为 100％。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aede08807",
+      "title": "Set the Font Family of an Element",
+      "description": [
+        "通过<code>font-family</code>属性，可以设置元素里面的字体样式。",
+        "例如，如果你想设置<code>h2</code>元素的字体为<code>sans-serif</code>，你可以用以下的 CSS 规则：",
+        "<blockquote>h2 {<br>&nbsp;&nbsp;font-family: sans-serif;<br>}</blockquote>",
+        "<hr>",
+        "确保你所有的<code>p</code>元素使用<code>monospace</code>字体。"
+      ],
+      "tests": [
+        {
+          "text": "你的<code>p</code>元素应该使用<code>monospace</code>字体。",
+          "testString":
+            "assert($(\"p\").not(\".red-text\").css(\"font-family\").match(/monospace/i), '你的<code>p</code>元素应该使用<code>monospace</code>字体。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08807",
+      "title": "Import a Google Font",
+      "description": [
+        "In addition to specifying common fonts that are found on most operating systems, we can also specify non-standard, custom web fonts for use on our website. There are various sources for web fonts on the internet but, for this example we will focus on the Google Fonts library.",
+        "<a href='https://fonts.google.com/' target='_blank'>Google Fonts</a> is a free library of web fonts that you can use in your CSS by referencing the font's URL.",
+        "So, let's go ahead and import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).",
+        "To import a Google Font, you can copy the font(s) URL from the Google Fonts library and then paste it in your HTML. For this challenge, we'll import the <code>Lobster</code> font. To do this, copy the following code snippet and paste it into the top of your code editor(before the opening <code>style</code> element):",
+        "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
+        "Now you can use the <code>Lobster</code> font in your CSS by using <code>Lobster</code> as the FAMILY_NAME as in the following example:<br><code>font-family: FAMILY_NAME, GENERIC_NAME;</code>.",
+        "The GENERIC_NAME is optional, and is a fallback font in case the other specified font is not available. This is covered in the next challenge.",
+        "Family names are case-sensitive and need to be wrapped in quotes if there is a space in the name. For example, you need quotes to use the <code>\"Open Sans\"</code> font, but not to use the <code>Lobster</code> font.",
+        "<hr>",
+        "Create a <code>font-family</code> CSS rule that uses the <code>Lobster</code> font, and ensure that it will be applied to your <code>h2</code> element."
+      ],
+      "tests": [
+        {
+          "text": "Import the <code>Lobster</code> font.",
+          "testString":
+            "assert(new RegExp(\"googleapis\", \"gi\").test(code), 'Import the <code>Lobster</code> font.');"
+        },
+        {
+          "text":
+            "Your <code>h2</code> element should use the font <code>Lobster</code>.",
+          "testString":
+            "assert($(\"h2\").css(\"font-family\").match(/lobster/i), 'Your <code>h2</code> element should use the font <code>Lobster</code>.');"
+        },
+        {
+          "text": "Use an <code>h2</code> CSS selector to change the font.",
+          "testString":
+            "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?\\s*;\\s*\\}/gi.test(code), 'Use an <code>h2</code> CSS selector to change the font.');"
+        },
+        {
+          "text":
+            "Your <code>p</code> element should still use the font <code>monospace</code>.",
+          "testString":
+            "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'Your <code>p</code> element should still use the font <code>monospace</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "    font-family: monospace;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08808",
+      "title": "Specify How Fonts Should Degrade",
+      "description": [
+        "There are several default fonts that are available in all browsers. These generic font families include <code>monospace</code>, <code>serif</code> and <code>sans-serif</code>",
+        "When one font isn't available, you can tell the browser to \"degrade\" to another font.",
+        "For example, if you wanted an element to use the <code>Helvetica</code> font, but degrade to the <code>sans-serif</code> font when <code>Helvetica</code> wasn't available, you will specify it as follows:",
+        "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, sans-serif;<br>}</blockquote>",
+        "Generic font family names are not case-sensitive. Also, they do not need quotes because they are CSS keywords.",
+        "<hr>",
+        "To begin with, apply the <code>monospace</code> font to the <code>h2</code> element, so that it now has two fonts - <code>Lobster</code> and <code>monospace</code>.",
+        "In the last challenge, you imported the <code>Lobster</code> font using the <code>link</code> tag. Now comment out that import of the <code>Lobster</code> font(using the HTML comments you learned before) from Google Fonts so that it isn't available anymore. Notice how your <code>h2</code> element degrades to the <code>monospace</code> font.",
+        "<strong>Note</strong><br>If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font."
+      ],
+      "tests": [
+        {
+          "text": "Your h2 element should use the font <code>Lobster</code>.",
+          "testString":
+            "assert($(\"h2\").css(\"font-family\").match(/^\"?lobster/i), 'Your h2 element should use the font <code>Lobster</code>.');"
+        },
+        {
+          "text":
+            "Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.",
+          "testString":
+            "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?,\\s*monospace\\s*;\\s*\\}/gi.test(code), 'Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.');"
+        },
+        {
+          "text":
+            "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.",
+          "testString":
+            "assert(new RegExp(\"<!--[^fc]\", \"gi\").test(code), 'Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.');"
+        },
+        {
+          "text":
+            "Be sure to close your comment by adding <code>--&#62;</code>.",
+          "testString":
+            "assert(new RegExp(\"[^fc]-->\", \"gi\").test(code), 'Be sure to close your comment by adding <code>--&#62;</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  h2 {",
+            "    font-family: Lobster;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "    font-family: monospace;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9acdf08812",
+      "title": "Size Your Images",
+      "description": [
+        "CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
+        "For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use:",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.larger-image {<br>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
+        "<hr>",
+        "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.",
+        "<strong>Note</strong><br>Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>img</code> element should have the class <code>smaller-image</code>.",
+          "testString":
+            "assert($(\"img[src='https://bit.ly/fcc-relaxing-cat']\").attr('class') === \"smaller-image\", 'Your <code>img</code> element should have the class <code>smaller-image</code>.');"
+        },
+        {
+          "text":
+            "Your image should be 100 pixels wide. Browser zoom should be at 100%.",
+          "testString":
+            "assert($(\"img\").width() === 100, 'Your image should be 100 pixels wide. Browser zoom should be at 100%.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  h2 {",
+            "    font-family: Lobster, monospace;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "    font-family: monospace;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9bedf08813",
+      "title": "Add Borders Around Your Elements",
+      "description": [
+        "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>",
+        "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
+        "<hr>",
+        "Create a class called <code>thick-green-border</code>. This class should add a 10px, solid, green border around an HTML element. Apply the class to your cat photo.",
+        "Remember that you can apply multiple classes to an element using its <code>class</code> attribute, by separating each class name with a space. For example:",
+        "<code>&lt;img class=\"class1 class2\"&gt;</code>"
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>img</code> element should have the class <code>smaller-image</code>.",
+          "testString":
+            "assert($(\"img\").hasClass(\"smaller-image\"), 'Your <code>img</code> element should have the class <code>smaller-image</code>.');"
+        },
+        {
+          "text":
+            "Your <code>img</code> element should have the class <code>thick-green-border</code>.",
+          "testString":
+            "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your <code>img</code> element should have the class <code>thick-green-border</code>.');"
+        },
+        {
+          "text": "Give your image a border width of <code>10px</code>.",
+          "testString":
+            "assert($(\"img\").hasClass(\"thick-green-border\") && parseInt($(\"img\").css(\"border-top-width\"), 10) >= 8 && parseInt($(\"img\").css(\"border-top-width\"), 10) <= 12, 'Give your image a border width of <code>10px</code>.');"
+        },
+        {
+          "text": "Give your image a border style of <code>solid</code>.",
+          "testString":
+            "assert($(\"img\").css(\"border-right-style\") === \"solid\", 'Give your image a border style of <code>solid</code>.');"
+        },
+        {
+          "text":
+            "The border around your <code>img</code> element should be green.",
+          "testString":
+            "assert($(\"img\").css(\"border-left-color\") === \"rgb(0, 128, 0)\", 'The border around your <code>img</code> element should be green.');"
+        }
+      ],
+      "challengeType": 0,
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-borders-around-your-elements",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  h2 {",
+            "    font-family: Lobster, monospace;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "    font-family: monospace;",
+            "  }",
+            "",
+            "  .smaller-image {",
+            "    width: 100px;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img class=\"smaller-image\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08814",
+      "title": "Add Rounded Corners with border-radius",
+      "description": [
+        "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
+        "<hr>",
+        "You can specify a <code>border-radius</code> with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.",
+        "Note: this challenge allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or the <code>.smaller-image</code> class."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your image element should have the class \"thick-green-border\".",
+          "testString":
+            "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your image element should have the class \"thick-green-border\".');"
+        },
+        {
+          "text": "Your image should have a border radius of <code>10px</code>",
+          "testString":
+            "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 8, 'Your image should have a border radius of <code>10px</code>');"
+        }
+      ],
+      "challengeType": 0,
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-rounded-corners-a-border-radius",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  h2 {",
+            "    font-family: Lobster, monospace;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "    font-family: monospace;",
+            "  }",
+            "",
+            "  .thick-green-border {",
+            "    border-color: green;",
+            "    border-width: 10px;",
+            "    border-style: solid;",
+            "  }",
+            "",
+            "  .smaller-image {",
+            "    width: 100px;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08815",
+      "title": "Make Circular Images with a border-radius",
+      "description": [
+        "In addition to pixels, you can also specify the <code>border-radius</code> using a percentage.",
+        "<hr>",
+        "Give your cat photo a <code>border-radius</code> of <code>50%</code>."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your image should have a border radius of <code>50%</code>, making it perfectly circular.",
+          "testString":
+            "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 48, 'Your image should have a border radius of <code>50%</code>, making it perfectly circular.');"
+        },
+        {
+          "text": "Be sure to use a percentage value of <code>50%</code>.",
+          "testString":
+            "assert(code.match(/50%/g), 'Be sure to use a percentage value of <code>50%</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  h2 {",
+            "    font-family: Lobster, monospace;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "    font-family: monospace;",
+            "  }",
+            "",
+            "  .thick-green-border {",
+            "    border-color: green;",
+            "    border-width: 10px;",
+            "    border-style: solid;",
+            "    border-radius: 10px;",
+            "  }",
+            "",
+            "  .smaller-image {",
+            "    width: 100px;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fed1348bd9aede07836",
+      "title": "Give a Background Color to a div Element",
+      "description": [
+        "You can set an element's background color with the <code>background-color</code> property.",
+        "For example, if you wanted an element's background color to be <code>green</code>, you'd put this within your <code>style</code> element:",
+        "<blockquote>.green-background {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
+        "<hr>",
+        "Create a class called <code>silver-background</code> with the <code>background-color</code> of silver. Assign this class to your <code>div</code> element."
+      ],
+      "tests": [
+        {
+          "text":
+            "Give your <code>div</code> element the class <code>silver-background</code>.",
+          "testString":
+            "assert($(\"div\").hasClass(\"silver-background\"), 'Give your <code>div</code> element the class <code>silver-background</code>.');"
+        },
+        {
+          "text":
+            "Your <code>div</code> element should have a silver background.",
+          "testString":
+            "assert($(\"div\").css(\"background-color\") === \"rgb(192, 192, 192)\", 'Your <code>div</code> element should have a silver background.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  h2 {",
+            "    font-family: Lobster, monospace;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "    font-family: monospace;",
+            "  }",
+            "",
+            "  .thick-green-border {",
+            "    border-color: green;",
+            "    border-width: 10px;",
+            "    border-style: solid;",
+            "    border-radius: 50%;",
+            "  }",
+            "",
+            "  .smaller-image {",
+            "    width: 100px;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div>",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87eee1348bd9aede07836",
+      "title": "Set the id of an Element",
+      "description": [
+        "In addition to classes, each HTML element can also have an <code>id</code> attribute.",
+        "There are several benefits to using <code>id</code> attributes: You can use an <code>id</code> to style a single element and later you'll learn that you can use them to select and modify specific elements with JavaScript.",
+        "<code>id</code> attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice. So please don't give more than one element the same <code>id</code> attribute.",
+        "Here's an example of how you give your <code>h2</code> element the id of <code>cat-photo-app</code>:",
+        "<code>&#60;h2 id=\"cat-photo-app\"></code>",
+        "<hr>",
+        "Give your <code>form</code> element the id <code>cat-photo-form</code>."
+      ],
+      "tests": [
+        {
+          "text":
+            "Give your <code>form</code> element the id of <code>cat-photo-form</code>.",
+          "testString":
+            "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  h2 {",
+            "    font-family: Lobster, monospace;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "    font-family: monospace;",
+            "  }",
+            "",
+            "  .thick-green-border {",
+            "    border-color: green;",
+            "    border-width: 10px;",
+            "    border-style: solid;",
+            "    border-radius: 50%;",
+            "  }",
+            "",
+            "  .smaller-image {",
+            "    width: 100px;",
+            "  }",
+            "",
+            "  .silver-background {",
+            "    background-color: silver;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div class=\"silver-background\">",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87dee1348bd9aede07836",
+      "title": "Use an id Attribute to Style an Element",
+      "description": [
+        "One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.",
+        "However, an <code>id</code> is not reusable and should only be applied to one element. An <code>id</code> also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the <code>id</code> will be applied.",
+        "Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element:",
+        "<blockquote>#cat-photo-element {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
+        "Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.",
+        "<hr>",
+        "Try giving your form, which now has the <code>id</code> attribute of <code>cat-photo-form</code>, a green background."
+      ],
+      "tests": [
+        {
+          "text":
+            "Give your <code>form</code> element the id of <code>cat-photo-form</code>.",
+          "testString":
+            "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');"
+        },
+        {
+          "text":
+            "Your <code>form</code> element should have the <code>background-color</code> of green.",
+          "testString":
+            "assert($(\"#cat-photo-form\").css(\"background-color\") === \"rgb(0, 128, 0)\", 'Your <code>form</code> element should have the <code>background-color</code> of green.');"
+        },
+        {
+          "text":
+            "Make sure your <code>form</code> element has an <code>id</code> attribute.",
+          "testString":
+            "assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, 'Make sure your <code>form</code> element has an <code>id</code> attribute.');"
+        },
+        {
+          "text":
+            "Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.",
+          "testString":
+            "assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), 'Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  h2 {",
+            "    font-family: Lobster, monospace;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "    font-family: monospace;",
+            "  }",
+            "",
+            "  .thick-green-border {",
+            "    border-color: green;",
+            "    border-width: 10px;",
+            "    border-style: solid;",
+            "    border-radius: 50%;",
+            "  }",
+            "",
+            "  .smaller-image {",
+            "    width: 100px;",
+            "  }",
+            "",
+            "  .silver-background {",
+            "    background-color: silver;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div class=\"silver-background\">",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\" id=\"cat-photo-form\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad88fee1348bd9aedf08825",
+      "title": "Adjust the Padding of an Element",
+      "description": [
+        "Now let's put our Cat Photo App away for a little while and learn more about styling HTML.",
+        "You may have already noticed this, but all HTML elements are essentially little rectangles.",
+        "Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>.",
+        "An element's <code>padding</code> controls the amount of space between the element's content and its <code>border</code>.",
+        "Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the blue box.",
+        "When you increase the blue box's <code>padding</code>, it will increase the distance(<code>padding</code>) between the text and the border around it.",
+        "<hr>",
+        "Change the <code>padding</code> of your blue box to match that of your red box."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-top\") === \"20px\", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/adjust-the-padding-of-an-element",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .injected-text {",
+            "    margin-bottom: -25px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .box {",
+            "    border-style: solid;",
+            "    border-color: black;",
+            "    border-width: 5px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .yellow-box {",
+            "    background-color: yellow;",
+            "    padding: 10px;",
+            "  }",
+            "  ",
+            "  .red-box {",
+            "    background-color: crimson;",
+            "    color: #fff;",
+            "    padding: 20px;",
+            "  }",
+            "",
+            "  .blue-box {",
+            "    background-color: blue;",
+            "    color: #fff;",
+            "    padding: 10px;",
+            "  }",
+            "</style>",
+            "<h5 class=\"injected-text\">margin</h5>",
+            "",
+            "<div class=\"box yellow-box\">",
+            "  <h5 class=\"box red-box\">padding</h5>",
+            "  <h5 class=\"box blue-box\">padding</h5>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08822",
+      "title": "Adjust the Margin of an Element",
+      "description": [
+        "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
+        "Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has a bigger <code>margin</code> than the blue box, making it appear smaller.",
+        "When you increase the blue box's <code>margin</code>, it will increase the distance between its border and surrounding elements.",
+        "<hr>",
+        "Change the <code>margin</code> of the blue box to match that of the red box."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-top\") === \"20px\", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/adjust-the-margin-of-an-element",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .injected-text {",
+            "    margin-bottom: -25px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .box {",
+            "    border-style: solid;",
+            "    border-color: black;",
+            "    border-width: 5px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .yellow-box {",
+            "    background-color: yellow;",
+            "    padding: 10px;",
+            "  }",
+            "  ",
+            "  .red-box {",
+            "    background-color: crimson;",
+            "    color: #fff;",
+            "    padding: 20px;",
+            "    margin: 20px;",
+            "  }",
+            "",
+            "  .blue-box {",
+            "    background-color: blue;",
+            "    color: #fff;",
+            "    padding: 20px;",
+            "    margin: 10px;",
+            "  }",
+            "</style>",
+            "<h5 class=\"injected-text\">margin</h5>",
+            "",
+            "<div class=\"box yellow-box\">",
+            "  <h5 class=\"box red-box\">padding</h5>",
+            "  <h5 class=\"box blue-box\">padding</h5>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08823",
+      "title": "Add a Negative Margin to an Element",
+      "description": [
+        "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
+        "If you set an element's <code>margin</code> to a negative value, the element will grow larger.",
+        "<hr>",
+        "Try to set the <code>margin</code> to a negative value like the one for the red box.",
+        "Change the <code>margin</code> of the blue box to <code>-15px</code>, so it fills the entire horizontal width of the yellow box around it."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-top\") === \"-15px\", 'Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-a-negative-margin-to-an-element",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .injected-text {",
+            "    margin-bottom: -25px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .box {",
+            "    border-style: solid;",
+            "    border-color: black;",
+            "    border-width: 5px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .yellow-box {",
+            "    background-color: yellow;",
+            "    padding: 10px;",
+            "  }",
+            "  ",
+            "  .red-box {",
+            "    background-color: crimson;",
+            "    color: #fff;",
+            "    padding: 20px;",
+            "    margin: -15px;",
+            "  }",
+            "",
+            "  .blue-box {",
+            "    background-color: blue;",
+            "    color: #fff;",
+            "    padding: 20px;",
+            "    margin: 20px;",
+            "  }",
+            "</style>",
+            "",
+            "<div class=\"box yellow-box\">",
+            "  <h5 class=\"box red-box\">padding</h5>",
+            "  <h5 class=\"box blue-box\">padding</h5>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08824",
+      "title": "Add Different Padding to Each Side of an Element",
+      "description": [
+        "Sometimes you will want to customize an element so that it has different amounts of <code>padding</code> on each of its sides.",
+        "CSS allows you to control the <code>padding</code> of all four individual sides of an element with the <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties.",
+        "<hr>",
+        "Give the blue box a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-different-padding-to-each-side-of-an-element",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .injected-text {",
+            "    margin-bottom: -25px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .box {",
+            "    border-style: solid;",
+            "    border-color: black;",
+            "    border-width: 5px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .yellow-box {",
+            "    background-color: yellow;",
+            "    padding: 10px;",
+            "  }",
+            "  ",
+            "  .red-box {",
+            "    background-color: crimson;",
+            "    color: #fff;",
+            "    padding-top: 40px;",
+            "    padding-right: 20px;",
+            "    padding-bottom: 20px;",
+            "    padding-left: 40px;",
+            "  }",
+            "",
+            "  .blue-box {",
+            "    background-color: blue;",
+            "    color: #fff;",
+            "  }",
+            "</style>",
+            "<h5 class=\"injected-text\">margin</h5>",
+            "",
+            "<div class=\"box yellow-box\">",
+            "  <h5 class=\"box red-box\">padding</h5>",
+            "  <h5 class=\"box blue-box\">padding</h5>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1248bd9aedf08824",
+      "title": "Add Different Margins to Each Side of an Element",
+      "description": [
+        "Sometimes you will want to customize an element so that it has a different <code>margin</code> on each of its sides.",
+        "CSS allows you to control the <code>margin</code> of all four individual sides of an element with the <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties.",
+        "<hr>",
+        "Give the blue box a <code>margin</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .injected-text {",
+            "    margin-bottom: -25px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .box {",
+            "    border-style: solid;",
+            "    border-color: black;",
+            "    border-width: 5px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .yellow-box {",
+            "    background-color: yellow;",
+            "    padding: 10px;",
+            "  }",
+            "  ",
+            "  .red-box {",
+            "    background-color: crimson;",
+            "    color: #fff;",
+            "    margin-top: 40px;",
+            "    margin-right: 20px;",
+            "    margin-bottom: 20px;",
+            "    margin-left: 40px;",
+            "  }",
+            "",
+            "  .blue-box {",
+            "    background-color: blue;",
+            "    color: #fff;",
+            "  }",
+            "</style>",
+            "<h5 class=\"injected-text\">margin</h5>",
+            "",
+            "<div class=\"box yellow-box\">",
+            "  <h5 class=\"box red-box\">padding</h5>",
+            "  <h5 class=\"box blue-box\">padding</h5>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08826",
+      "title": "Use Clockwise Notation to Specify the Padding of an Element",
+      "description": [
+        "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties individually, you can specify them all in one line, like this:",
+        "<code>padding: 10px 20px 10px 20px;</code>",
+        "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
+        "<hr>",
+        "Use Clockwise Notation to give the \".blue-box\" class a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');"
+        },
+        {
+          "text":
+            "You should use the clockwise notation to set the padding of <code>blue-box</code> class.",
+          "testString":
+            "assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), 'You should use the clockwise notation to set the padding of <code>blue-box</code> class.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .injected-text {",
+            "    margin-bottom: -25px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .box {",
+            "    border-style: solid;",
+            "    border-color: black;",
+            "    border-width: 5px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .yellow-box {",
+            "    background-color: yellow;",
+            "    padding: 20px 40px 20px 40px;",
+            "  }",
+            "  ",
+            "  .red-box {",
+            "    background-color: crimson;",
+            "    color: #fff;",
+            "    padding: 20px 40px 20px 40px;",
+            "  }",
+            "",
+            "  .blue-box {",
+            "    background-color: blue;",
+            "    color: #fff;",
+            "  }",
+            "</style>",
+            "<h5 class=\"injected-text\">margin</h5>",
+            "",
+            "<div class=\"box yellow-box\">",
+            "  <h5 class=\"box red-box\">padding</h5>",
+            "  <h5 class=\"box blue-box\">padding</h5>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9afdf08726",
+      "title": "Use Clockwise Notation to Specify the Margin of an Element",
+      "description": [
+        "Let's try this again, but with <code>margin</code> this time.",
+        "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties individually, you can specify them all in one line, like this:",
+        "<code>margin: 10px 20px 10px 20px;</code>",
+        "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions.",
+        "<hr>",
+        "Use <code>Clockwise Notation</code> to give the element with the <code>blue-box</code> class a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');"
+        },
+        {
+          "text":
+            "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .injected-text {",
+            "    margin-bottom: -25px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .box {",
+            "    border-style: solid;",
+            "    border-color: black;",
+            "    border-width: 5px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .yellow-box {",
+            "    background-color: yellow;",
+            "    padding: 20px 40px 20px 40px;",
+            "  }",
+            "  ",
+            "  .red-box {",
+            "    background-color: crimson;",
+            "    color: #fff;",
+            "    margin: 20px 40px 20px 40px;",
+            "  }",
+            "",
+            "  .blue-box {",
+            "    background-color: blue;",
+            "    color: #fff;",
+            "  }",
+            "</style>",
+            "<h5 class=\"injected-text\">margin</h5>",
+            "",
+            "<div class=\"box yellow-box\">",
+            "  <h5 class=\"box red-box\">padding</h5>",
+            "  <h5 class=\"box blue-box\">padding</h5>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "58c383d33e2e3259241f3076",
+      "title": "Use Attribute Selectors to Style Elements",
+      "description": [
+        "You have been giving <code>id</code> or <code>class</code> attributes to elements that you wish to specifically style. These are known as ID and class selectors. There are other CSS Selectors you can use to select custom groups of elements to style.",
+        "Let's bring out CatPhotoApp again to practice using CSS Selectors.",
+        "For this challenge, you will use the <code>[attr=value]</code> attribute selector to style the checkboxes in CatPhotoApp. This selector matches and styles elements with a specific attribute value. For example, the below code changes the margins of all elements with the attribute <code>type</code> and a corresponding value of <code>radio</code>:",
+        "<blockquote>[type='radio'] {<br>&nbsp;&nbsp;margin: 20px 0px 20px 0px;<br>}</blockquote>",
+        "<hr>",
+        "Using the <code>type</code> attribute selector, try to give the checkboxes in CatPhotoApp a top margin of 10px and a bottom margin of 15px."
+      ],
+      "tests": [
+        {
+          "text":
+            "The <code>type</code> attribute selector should be used to select the checkboxes.",
+          "testString":
+            "assert(code.match(/<style>[\\s\\S]*?\\[type=(\"|')checkbox\\1\\]\\s*?{[\\s\\S]*?}[\\s\\S]*?<\\/style>/gi),'The <code>type</code> attribute selector should be used to select the checkboxes.');"
+        },
+        {
+          "text": "The top margins of the checkboxes should be 10px.",
+          "testString":
+            "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()),'The top margins of the checkboxes should be 10px.');"
+        },
+        {
+          "text": "The bottom margins of the checkboxes should be 15px.",
+          "testString":
+            "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()),'The bottom margins of the checkboxes should be 15px.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+            "<style>",
+            "  .red-text {",
+            "    color: red;",
+            "  }",
+            "",
+            "  h2 {",
+            "    font-family: Lobster, monospace;",
+            "  }",
+            "",
+            "  p {",
+            "    font-size: 16px;",
+            "    font-family: monospace;",
+            "  }",
+            "",
+            "  .thick-green-border {",
+            "    border-color: green;",
+            "    border-width: 10px;",
+            "    border-style: solid;",
+            "    border-radius: 50%;",
+            "  }",
+            "",
+            "  .smaller-image {",
+            "    width: 100px;",
+            "  }",
+            "",
+            "  .silver-background {",
+            "    background-color: silver;",
+            "  }",
+            "</style>",
+            "",
+            "<h2 class=\"red-text\">CatPhotoApp</h2>",
+            "<main>",
+            "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+            "  ",
+            "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+            "  ",
+            "  <div class=\"silver-background\">",
+            "    <p>Things cats love:</p>",
+            "    <ul>",
+            "      <li>cat nip</li>",
+            "      <li>laser pointers</li>",
+            "      <li>lasagna</li>",
+            "    </ul>",
+            "    <p>Top 3 things cats hate:</p>",
+            "    <ol>",
+            "      <li>flea treatment</li>",
+            "      <li>thunder</li>",
+            "      <li>other cats</li>",
+            "    </ol>",
+            "  </div>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\" id=\"cat-photo-form\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+            "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+            "    <button type=\"submit\">Submit</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad82fee1322bd9aedf08721",
+      "title": "Understand Absolute versus Relative Units",
+      "description": [
+        "The last several challenges all set an element's margin or padding with pixels (<code>px</code>). Pixels are a type of length unit, which is what tells the browser how to size or space an item. In addition to <code>px</code>, CSS has a number of different length unit options that you can use.",
+        "The two main types of length units are absolute and relative. Absolute units tie to physical units of length. For example, <code>in</code> and <code>mm</code> refer to inches and millimeters, respectively. Absolute length units approximate the actual measurement on a screen, but there are some differences depending on a screen's resolution.",
+        "Relative units, such as <code>em</code> or <code>rem</code>, are relative to another length value. For example, <code>em</code> is based on the size of an element's font. If you use it to set the <code>font-size</code> property itself, it's relative to the parent's <code>font-size</code>.",
+        "<strong>Note</strong><br>There are several relative unit options that are tied to the size of the viewport. They are covered in the Responsive Web Design Principles section.",
+        "<hr>",
+        "Add a <code>padding</code> property to the element with class <code>red-box</code> and set it to <code>1.5em</code>."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>red-box</code> class should have a <code>padding</code> property.",
+          "testString":
+            "assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px', 'Your <code>red-box</code> class should have a <code>padding</code> property.');"
+        },
+        {
+          "text":
+            "Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.",
+          "testString":
+            "assert(code.match(/\\.red-box\\s*?{\\s*?.*?\\s*?.*?\\s*?padding:\\s*?1\\.5em/gi), 'Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .injected-text {",
+            "    margin-bottom: -25px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .box {",
+            "    border-style: solid;",
+            "    border-color: black;",
+            "    border-width: 5px;",
+            "    text-align: center;",
+            "  }",
+            "",
+            "  .yellow-box {",
+            "    background-color: yellow;",
+            "    padding: 20px 40px 20px 40px;",
+            "  }",
+            "",
+            "  .red-box {",
+            "    background-color: red;",
+            "    margin: 20px 40px 20px 40px;",
+            "    ",
+            "  }",
+            "",
+            "  .green-box {",
+            "    background-color: green;",
+            "    margin: 40px 20px 20px 40px;",
+            "  }",
+            "</style>",
+            "<h5 class=\"injected-text\">margin</h5>",
+            "",
+            "<div class=\"box yellow-box\">",
+            "  <h5 class=\"box red-box\">padding</h5>",
+            "  <h5 class=\"box green-box\">padding</h5>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08736",
+      "title": "Style the HTML Body Element",
+      "description": [
+        "Now let's start fresh and talk about CSS inheritance.",
+        "Every HTML page has a <code>body</code> element.",
+        "<hr>",
+        "We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.",
+        "We can do this by adding the following to our <code>style</code> element:",
+        "<blockquote>body {<br>&nbsp;&nbsp;background-color: black;<br>}</blockquote>"
+      ],
+      "tests": [
+        {
+          "text":
+            "Give your <code>body</code> element the <code>background-color</code> of black.",
+          "testString":
+            "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of black.');"
+        },
+        {
+          "text":
+            "Make sure your CSS rule is properly formatted with both opening and closing curly brackets.",
+          "testString":
+            "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;\\s*\\}\\s*<\\/style>/i), 'Make sure your CSS rule is properly formatted with both opening and closing curly brackets.');"
+        },
+        {
+          "text": "Make sure your CSS rule ends with a semi-colon.",
+          "testString":
+            "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;\\s*\\}\\s*<\\/style>/i), 'Make sure your CSS rule ends with a semi-colon.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": ["<style>", "", "</style>"],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08746",
+      "title": "Inherit Styles from the Body Element",
+      "description": [
+        "Now we've proven that every HTML page has a <code>body</code> element, and that its <code>body</code> element can also be styled with CSS.",
+        "Remember, you can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles.",
+        "<hr>",
+        "First, create a <code>h1</code> element with the text <code>Hello World</code>",
+        "Then, let's give all elements on your page the color of <code>green</code> by adding <code>color: green;</code> to your <code>body</code> element's style declaration.",
+        "Finally, give your <code>body</code> element the font-family of <code>monospace</code> by adding <code>font-family: monospace;</code> to your <code>body</code> element's style declaration."
+      ],
+      "tests": [
+        {
+          "text": "Create an <code>h1</code> element.",
+          "testString":
+            "assert(($(\"h1\").length > 0), 'Create an <code>h1</code> element.');"
+        },
+        {
+          "text":
+            "Your <code>h1</code> element should have the text <code>Hello World</code>.",
+          "testString":
+            "assert(($(\"h1\").length > 0 && $(\"h1\").text().match(/hello world/i)), 'Your <code>h1</code> element should have the text <code>Hello World</code>.');"
+        },
+        {
+          "text": "Make sure your <code>h1</code> element has a closing tag.",
+          "testString":
+            "assert(code.match(/<\\/h1>/g) && code.match(/<h1/g) && code.match(/<\\/h1>/g).length === code.match(/<h1/g).length, 'Make sure your <code>h1</code> element has a closing tag.');"
+        },
+        {
+          "text":
+            "Give your <code>body</code> element the <code>color</code> property of <code>green</code>.",
+          "testString":
+            "assert(($(\"body\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Give your <code>body</code> element the <code>color</code> property of <code>green</code>.');"
+        },
+        {
+          "text":
+            "Give your <code>body</code> element the <code>font-family</code> property of <code>monospace</code>.",
+          "testString":
+            "assert(($(\"body\").css(\"font-family\").match(/monospace/i)), 'Give your <code>body</code> element the <code>font-family</code> property of <code>monospace</code>.');"
+        },
+        {
+          "text":
+            "Your <code>h1</code> element should inherit the font <code>monospace</code> from your <code>body</code> element.",
+          "testString":
+            "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"font-family\").match(/monospace/i)), 'Your <code>h1</code> element should inherit the font <code>monospace</code> from your <code>body</code> element.');"
+        },
+        {
+          "text":
+            "Your <code>h1</code> element should inherit the color green from your <code>body</code> element.",
+          "testString":
+            "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Your <code>h1</code> element should inherit the color green from your <code>body</code> element.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  body {",
+            "    background-color: black;",
+            "  }",
+            "",
+            "</style>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08756",
+      "title": "Prioritize One Style Over Another",
+      "description": [
+        "Sometimes your HTML elements will receive multiple styles that conflict with one another.",
+        "For example, your <code>h1</code> element can't be both green and pink at the same time.",
+        "Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <em>override</em> the <code>body</code> element's <code>color: green;</code> CSS property?",
+        "<hr>",
+        "Create a CSS class called <code>pink-text</code> that gives an element the color pink.",
+        "Give your <code>h1</code> element the class of <code>pink-text</code>."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>h1</code> element should have the class <code>pink-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
+        },
+        {
+          "text":
+            "Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.",
+          "testString":
+            "assert(code.match(/\\.pink-text\\s*\\{\\s*color\\s*:\\s*.+\\s*;\\s*\\}/g), 'Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.');"
+        },
+        {
+          "text": "Your <code>h1</code> element should be pink.",
+          "testString":
+            "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  body {",
+            "    background-color: black;",
+            "    font-family: monospace;",
+            "    color: green;",
+            "  }",
+            "</style>",
+            "<h1>Hello World!</h1>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf04756",
+      "title": "Override Styles in Subsequent CSS",
+      "description": [
+        "Our \"pink-text\" class overrode our <code>body</code> element's CSS declaration!",
+        "We just proved that our classes will override the <code>body</code> element's CSS. So the next logical question is, what can we do to override our <code>pink-text</code> class?",
+        "<hr>",
+        "Create an additional CSS class called <code>blue-text</code> that gives an element the color blue. Make sure it's below your <code>pink-text</code> class declaration.",
+        "Apply the <code>blue-text</code> class to your <code>h1</code> element in addition to your <code>pink-text</code> class, and let's see which one wins.",
+        "Applying multiple class attributes to a HTML element is done with a space between them like this:",
+        "<code>class=\"class1 class2\"</code>",
+        "Note: It doesn't matter which order the classes are listed in the HTML element.",
+        "However, the order of the <code>class</code> declarations in the <code>&#60;style&#62;</code> section are what is important. The second declaration will always take precedence over the first. Because <code>.blue-text</code> is declared second, it overrides the attributes of <code>.pink-text</code>"
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>h1</code> element should have the class <code>pink-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
+        },
+        {
+          "text":
+            "Your <code>h1</code> element should have the class <code>blue-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
+        },
+        {
+          "text":
+            "Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.",
+          "testString":
+            "assert($(\".pink-text\").hasClass(\"blue-text\"), 'Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.');"
+        },
+        {
+          "text": "Your <code>h1</code> element should be blue.",
+          "testString":
+            "assert($(\"h1\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h1</code> element should be blue.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  body {",
+            "    background-color: black;",
+            "    font-family: monospace;",
+            "    color: green;",
+            "  }",
+            "  .pink-text {",
+            "    color: pink;",
+            "  }",
+            "</style>",
+            "<h1 class=\"pink-text\">Hello World!</h1>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd8aedf06756",
+      "title": "Override Class Declarations by Styling ID Attributes",
+      "description": [
+        "We just proved that browsers read CSS from top to bottom. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last.",
+        "But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?",
+        "Let's override your <code>pink-text</code> and <code>blue-text</code> classes, and make your <code>h1</code> element orange, by giving the <code>h1</code> element an id and then styling that id.",
+        "<hr>",
+        "Give your <code>h1</code> element the <code>id</code> attribute of <code>orange-text</code>. Remember, id styles look like this:",
+        "<code>&#60;h1 id=\"orange-text\"&#62;</code>",
+        "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.",
+        "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:",
+        "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
+        "Note: It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>h1</code> element should have the class <code>pink-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
+        },
+        {
+          "text":
+            "Your <code>h1</code> element should have the class <code>blue-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
+        },
+        {
+          "text":
+            "Give your <code>h1</code> element the id of <code>orange-text</code>.",
+          "testString":
+            "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Give your <code>h1</code> element the id of <code>orange-text</code>.');"
+        },
+        {
+          "text": "There should be only one <code>h1</code> element.",
+          "testString":
+            "assert(($(\"h1\").length === 1), 'There should be only one <code>h1</code> element.');"
+        },
+        {
+          "text":
+            "Create a CSS declaration for your <code>orange-text</code> id",
+          "testString":
+            "assert(code.match(/#orange-text\\s*{/gi), 'Create a CSS declaration for your <code>orange-text</code> id');"
+        },
+        {
+          "text":
+            "Do not give your <code>h1</code> any <code>style</code> attributes.",
+          "testString":
+            "assert(!code.match(/<h1.*style.*>/gi), 'Do not give your <code>h1</code> any <code>style</code> attributes.');"
+        },
+        {
+          "text": "Your <code>h1</code> element should be orange.",
+          "testString":
+            "assert($(\"h1\").css(\"color\") === \"rgb(255, 165, 0)\", 'Your <code>h1</code> element should be orange.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  body {",
+            "    background-color: black;",
+            "    font-family: monospace;",
+            "    color: green;",
+            "  }",
+            "  .pink-text {",
+            "    color: pink;",
+            "  }",
+            "  .blue-text {",
+            "    color: blue;",
+            "  }",
+            "</style>",
+            "<h1 class=\"pink-text blue-text\">Hello World!</h1>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf06756",
+      "title": "Override Class Declarations with Inline Styles",
+      "description": [
+        "So we've proven that id declarations override class declarations, regardless of where they are declared in your <code>style</code> element CSS.",
+        "There are other ways that you can override CSS. Do you remember inline styles?",
+        "<hr>",
+        "Use an <code>inline style</code> to try to make our <code>h1</code> element white. Remember, in line styles look like this:",
+        "<code>&#60;h1 style=\"color: green\"&#62;</code>",
+        "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element."
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>h1</code> element should have the class <code>pink-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
+        },
+        {
+          "text":
+            "Your <code>h1</code> element should have the class <code>blue-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
+        },
+        {
+          "text":
+            "Your <code>h1</code> element should have the id of <code>orange-text</code>.",
+          "testString":
+            "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.');"
+        },
+        {
+          "text": "Give your <code>h1</code> element an inline style.",
+          "testString":
+            "assert(document.querySelector('h1[style]'), 'Give your <code>h1</code> element an inline style.');"
+        },
+        {
+          "text": "Your <code>h1</code> element should be white.",
+          "testString":
+            "assert($(\"h1\").css(\"color\") === \"rgb(255, 255, 255)\", 'Your <code>h1</code> element should be white.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  body {",
+            "    background-color: black;",
+            "    font-family: monospace;",
+            "    color: green;",
+            "  }",
+            "  #orange-text {",
+            "    color: orange;",
+            "  }",
+            "  .pink-text {",
+            "    color: pink;",
+            "  }",
+            "  .blue-text {",
+            "    color: blue;",
+            "  }",
+            "</style>",
+            "<h1 id=\"orange-text\" class=\"pink-text blue-text\">Hello World!</h1>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf07756",
+      "title": "Override All Other Styles by using Important",
+      "description": [
+        "Yay! We just proved that inline styles will override all the CSS declarations in your <code>style</code> element.",
+        "But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.",
+        "In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use <code>!important</code>",
+        "Let's go all the way back to our <code>pink-text</code> class declaration. Remember that our <code>pink-text</code> class was overridden by subsequent class declarations, id declarations, and inline styles.",
+        "<hr>",
+        "Let's add the keyword <code>!important</code> to your pink-text element's color declaration to make 100% sure that your <code>h1</code> element will be pink.",
+        "An example of how to do this is:",
+        "<code>color: red !important;</code>"
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>h1</code> element should have the class <code>pink-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
+        },
+        {
+          "text":
+            "Your <code>h1</code> element should have the class <code>blue-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
+        },
+        {
+          "text":
+            "Your <code>h1</code> element should have the id of <code>orange-text</code>.",
+          "testString":
+            "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.');"
+        },
+        {
+          "text":
+            "Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.",
+          "testString":
+            "assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\\s*?:/gi), 'Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.');"
+        },
+        {
+          "text":
+            "Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.",
+          "testString":
+            "assert(code.match(/\\.pink-text\\s*?\\{[\\s\\S]*?color:.*pink.*!important\\s*;?[^\\.]*\\}/g), 'Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.');"
+        },
+        {
+          "text": "Your <code>h1</code> element should be pink.",
+          "testString":
+            "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  body {",
+            "    background-color: black;",
+            "    font-family: monospace;",
+            "    color: green;",
+            "  }",
+            "  #orange-text {",
+            "    color: orange;",
+            "  }",
+            "  .pink-text {",
+            "    color: pink;",
+            "  }",
+            "  .blue-text {",
+            "    color: blue;",
+            "  }",
+            "</style>",
+            "<h1 id=\"orange-text\" class=\"pink-text blue-text\" style=\"color: white\">Hello World!</h1>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08726",
+      "title": "Use Hex Code for Specific Colors",
+      "description": [
+        "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or <code>hex code</code> for short.",
+        "We usually use <code>decimals</code>, or base 10 numbers, which use the symbols 0 to 9 for each digit. <code>Hexadecimals</code> (or <code>hex</code>) are base 16 numbers. This means it uses sixteen distinct symbols. Like decimals, the symbols 0-9 represent the values zero to nine. Then A,B,C,D,E,F represent the values ten to fifteen. Altogether, 0 to F can represent a digit in <code>hexadecimal</code>, giving us 16 total possible values. You can find more information about <a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>hexadecimal numbers here</a>.",
+        "In CSS, we can use 6 hexadecimal digits to represent colors, two each for the red (R), green (G), and blue (B) components. For example, <code>#000000</code> is black and is also the lowest possible value. You can find more information about the <a target='_blank' href='https://en.wikipedia.org/wiki/RGB_color_model'>RGB color system here</a>.",
+        "<blockquote>body {<br>&nbsp;&nbsp;color: #000000;<br>}</blockquote>",
+        "<hr>",
+        "Replace the word <code>black</code> in our <code>body</code> element's background-color with its <code>hex code</code> representation, <code>#000000</code>."
+      ],
+      "tests": [
+        {
+          "text":
+            "Give your <code>body</code> element the background-color of black.",
+          "testString":
+            "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the background-color of black.');"
+        },
+        {
+          "text":
+            "Use the <code>hex code</code> for the color black instead of the word <code>black</code>.",
+          "testString":
+            "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#000(000)?((\\s*})|(;[\\s\\S]*?}))/gi), 'Use the <code>hex code</code> for the color black instead of the word <code>black</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  body {",
+            "    background-color: black;",
+            "  }",
+            "</style>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08721",
+      "title": "Use Hex Code to Mix Colors",
+      "description": [
+        "To review, hex codes use 6 hexadecimal digits to represent colors, two each for red (R), green (G), and blue (B) components.",
+        "From these three pure colors (red, green, and blue), we can vary the amounts of each to create over 16 million other colors!",
+        "For example, orange is pure red, mixed with some green, and no blue. In hex code, this translates to being <code>#FFA500</code>.",
+        "The digit <code>0</code> is the lowest number in hex code, and represents a complete absence of color.",
+        "The digit <code>F</code> is the highest number in hex code, and represents the maximum possible brightness.",
+        "<hr>",
+        "Replace the color words in our <code>style</code> element with their correct hex codes.",
+        "<table class='table table-striped'><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue</td><td><code>#1E90FF</code></td></tr><tr><td>Green</td><td><code>#00FF00</code></td></tr><tr><td>Orange</td><td><code>#FFA500</code></td></tr><tr><td>Red</td><td><code>#FF0000</code></td></tr></table>"
+      ],
+      "tests": [
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.",
+          "testString":
+            "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');"
+        },
+        {
+          "text":
+            "Use the <code>hex code</code> for the color red instead of the word <code>red</code>.",
+          "testString":
+            "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#FF0000\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color red instead of the word <code>red</code>.');"
+        },
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.",
+          "testString":
+            "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');"
+        },
+        {
+          "text":
+            "Use the <code>hex code</code> for the color green instead of the word <code>green</code>.",
+          "testString":
+            "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#00FF00\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color green instead of the word <code>green</code>.');"
+        },
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.",
+          "testString":
+            "assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)', 'Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');"
+        },
+        {
+          "text":
+            "Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.",
+          "testString":
+            "assert(code.match(/\\.dodger-blue-text\\s*?{\\s*?color:\\s*?#1E90FF\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.');"
+        },
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.",
+          "testString":
+            "assert($('.orange-text').css('color') === 'rgb(255, 165, 0)', 'Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.');"
+        },
+        {
+          "text":
+            "Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.",
+          "testString":
+            "assert(code.match(/\\.orange-text\\s*?{\\s*?color:\\s*?#FFA500\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .red-text {",
+            "    color: black;",
+            "  }",
+            "  .green-text {",
+            "    color: black;",
+            "  }",
+            "  .dodger-blue-text {",
+            "    color: black;",
+            "  }",
+            "  .orange-text {",
+            "    color: black;",
+            "  }",
+            "</style>",
+            "",
+            "<h1 class=\"red-text\">I am red!</h1>",
+            "",
+            "<h1 class=\"green-text\">I am green!</h1>",
+            "",
+            "<h1 class=\"dodger-blue-text\">I am dodger blue!</h1>",
+            "",
+            "<h1 class=\"orange-text\">I am orange!</h1>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08719",
+      "title": "Use Abbreviated Hex Code",
+      "description": [
+        "Many people feel overwhelmed by the possibilities of more than 16 million colors. And it's difficult to remember hex code. Fortunately, you can shorten it.",
+        "For example, red's hex code <code>#FF0000</code> can be shortened to <code>#F00</code>. This shortened form gives one digit for red, one digit for green, and one digit for blue.",
+        "This reduces the total number of possible colors to around 4,000. But browsers will interpret <code>#FF0000</code> and <code>#F00</code> as exactly the same color.",
+        "<hr>",
+        "Go ahead, try using the abbreviated hex codes to color the correct elements.",
+        "<table class='table table-striped'><tr><th>Color</th><th>Short Hex Code</th></tr><tr><td>Cyan</td><td><code>#0FF</code></td></tr><tr><td>Green</td><td><code>#0F0</code></td></tr><tr><td>Red</td><td><code>#F00</code></td></tr><tr><td>Fuchsia</td><td><code>#F0F</code></td></tr></table>"
+      ],
+      "tests": [
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.",
+          "testString":
+            "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');"
+        },
+        {
+          "text":
+            "Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.",
+          "testString":
+            "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#F00\\s*?;\\s*?}/gi), 'Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.');"
+        },
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.",
+          "testString":
+            "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');"
+        },
+        {
+          "text":
+            "Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.",
+          "testString":
+            "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#0F0\\s*?;\\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.');"
+        },
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.",
+          "testString":
+            "assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)', 'Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.');"
+        },
+        {
+          "text":
+            "Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.",
+          "testString":
+            "assert(code.match(/\\.cyan-text\\s*?{\\s*?color:\\s*?#0FF\\s*?;\\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.');"
+        },
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.",
+          "testString":
+            "assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)', 'Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.');"
+        },
+        {
+          "text":
+            "Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.",
+          "testString":
+            "assert(code.match(/\\.fuchsia-text\\s*?{\\s*?color:\\s*?#F0F\\s*?;\\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .red-text {",
+            "    color: #000000;",
+            "  }",
+            "  .fuchsia-text {",
+            "    color: #000000;",
+            "  }",
+            "  .cyan-text {",
+            "    color: #000000;",
+            "  }",
+            "  .green-text {",
+            "    color: #000000;",
+            "  }",
+            "</style>",
+            "",
+            "<h1 class=\"red-text\">I am red!</h1>",
+            "",
+            "<h1 class=\"fuchsia-text\">I am fuchsia!</h1>",
+            "",
+            "<h1 class=\"cyan-text\">I am cyan!</h1>",
+            "",
+            "<h1 class=\"green-text\">I am green!</h1>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aede08718",
+      "title": "Use RGB values to Color Elements",
+      "description": [
+        "Another way you can represent colors in CSS is by using <code>RGB</code> values.",
+        "The RGB value for black looks like this:",
+        "<code>rgb(0, 0, 0)</code>",
+        "The RGB value for white looks like this:",
+        "<code>rgb(255, 255, 255)</code>",
+        "Instead of using six hexadecimal digits like you do with hex code, with <code>RGB</code> you specify the brightness of each color with a number between 0 and 255.",
+        "If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So <code>RGB</code>, which starts counting from zero, has the exact same number of possible values as hex code.",
+        "Here's an example of how you'd change the body background to orange using its RGB code.",
+        "<blockquote>body {<br>&nbsp;&nbsp;background-color: rgb(255, 165, 0);<br>}</blockquote>",
+        "<hr>",
+        "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
+      ],
+      "tests": [
+        {
+          "text":
+            "Your <code>body</code> element should have a black background.",
+          "testString":
+            "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Your <code>body</code> element should have a black background.');"
+        },
+        {
+          "text":
+            "Use <code>rgb</code> to give your <code>body</code> element a color of black.",
+          "testString":
+            "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element a color of black.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  body {",
+            "    background-color: #F00;",
+            "  }",
+            "</style>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad82fee1348bd9aedf08721",
+      "title": "Use RGB to Mix Colors",
+      "description": [
+        "Just like with hex code, you can mix colors in RGB by using combinations of different values.",
+        "<hr>",
+        "Replace the hex codes in our <code>style</code> element with their correct RGB values.",
+        "<table class='table table-striped'><tr><th>Color</th><th>RGB</th></tr><tr><td>Blue</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna</td><td><code>rgb(160, 82, 45)</code></td></tr></table>"
+      ],
+      "tests": [
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.",
+          "testString":
+            "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');"
+        },
+        {
+          "text": "Use <code>rgb</code> for the color red.",
+          "testString":
+            "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?255\\s*?,\\s*?0\\s*?,\\s*?0\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color red.');"
+        },
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am orchid!</code> the <code>color</code> orchid.",
+          "testString":
+            "assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)', 'Give your <code>h1</code> element with the text <code>I am orchid!</code> the <code>color</code> orchid.');"
+        },
+        {
+          "text": "Use <code>rgb</code> for the color orchid.",
+          "testString":
+            "assert(code.match(/\\.orchid-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?218\\s*?,\\s*?112\\s*?,\\s*?214\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color orchid.');"
+        },
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am blue!</code> the <code>color</code> blue.",
+          "testString":
+            "assert($('.blue-text').css('color') === 'rgb(0, 0, 255)', 'Give your <code>h1</code> element with the text <code>I am blue!</code> the <code>color</code> blue.');"
+        },
+        {
+          "text": "Use <code>rgb</code> for the color blue.",
+          "testString":
+            "assert(code.match(/\\.blue-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?255\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color blue.');"
+        },
+        {
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am sienna!</code> the <code>color</code> sienna.",
+          "testString":
+            "assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)', 'Give your <code>h1</code> element with the text <code>I am sienna!</code> the <code>color</code> sienna.');"
+        },
+        {
+          "text": "Use <code>rgb</code> for the color sienna.",
+          "testString":
+            "assert(code.match(/\\.sienna-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?160\\s*?,\\s*?82\\s*?,\\s*?45\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color sienna.');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .red-text {",
+            "    color: #000000;",
+            "  }",
+            "  .orchid-text {",
+            "    color: #000000;",
+            "  }",
+            "  .sienna-text {",
+            "    color: #000000;",
+            "  }",
+            "  .blue-text {",
+            "    color: #000000;",
+            "  }",
+            "</style>",
+            "",
+            "<h1 class=\"red-text\">I am red!</h1>",
+            "",
+            "<h1 class=\"orchid-text\">I am orchid!</h1>",
+            "",
+            "<h1 class=\"sienna-text\">I am sienna!</h1>",
+            "",
+            "<h1 class=\"blue-text\">I am blue!</h1>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "5a9d725e424fe3d0e10cad10",
+      "title": "Use CSS Variables to change several elements at once",
+      "description": [
+        "<dfn>CSS Variables</dfn> are a powerful way to change many CSS style properties at once by changing only one value.",
+        "Follow the instructions below to see how changing just three values can change the styling of many elements.",
+        "<hr>",
+        "In the <code>penguin</code> class, change the <code>black</code> value to <code>gray</code>, the <code>gray</code> value to <code>white</code>, and the <code>yellow</code> value to <code>orange</code>."
+      ],
+      "tests": [
+        {
+          "text":
+            "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.",
+          "testString":
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?gray\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');"
+        },
+        {
+          "text":
+            "<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.",
+          "testString":
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?white\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.');"
+        },
+        {
+          "text":
+            "<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.",
+          "testString":
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-beak\\s*?:\\s*?orange\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Mar 15, 2018",
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .penguin {",
+            "    ",
+            "    /* change code below */",
+            "    --penguin-skin: black;",
+            "    --penguin-belly: gray;",
+            "    --penguin-beak: yellow;",
+            "    /* change code above */",
+            "    ",
+            "    position: relative;",
+            "    margin: auto;",
+            "    display: block;",
+            "    margin-top: 5%;",
+            "    width: 300px;",
+            "    height: 300px;",
+            "  }",
+            "  ",
+            "  .penguin-top {",
+            "    top: 10%;",
+            "    left: 25%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 50%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .penguin-bottom {",
+            "    top: 40%;",
+            "    left: 23.5%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 53%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-hand {",
+            "    top: 0%;",
+            "    left: -5%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 120% 30%;",
+            "    transform: rotate(45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .left-hand {",
+            "    top: 0%;",
+            "    left: 75%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 30% 120%;",
+            "    transform: rotate(-45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .right-cheek {",
+            "    top: 15%;",
+            "    left: 35%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .left-cheek {",
+            "    top: 15%;",
+            "    left: 5%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .belly {",
+            "    top: 60%;",
+            "    left: 2.5%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 95%;",
+            "    height: 100%;",
+            "    border-radius: 120% 120% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-feet {",
+            "    top: 85%;",
+            "    left: 60%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(-80deg);",
+            "    z-index: -2222;  ",
+            "  }",
+            "  ",
+            "  .left-feet {",
+            "    top: 85%;",
+            "    left: 25%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(80deg);",
+            "    z-index: -2222;  ",
+            "  }",
+            "  ",
+            "  .right-eye {",
+            "    top: 45%;",
+            "    left: 60%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%; ",
+            "  }",
+            "  ",
+            "  .left-eye {",
+            "    top: 45%;",
+            "    left: 25%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  .sparkle {",
+            "    top: 25%;",
+            "    left: 15%;",
+            "    background: white;",
+            "    width: 35%;",
+            "    height: 35%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  .blush-right {",
+            "    top: 65%;",
+            "    left: 15%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  .blush-left {",
+            "    top: 65%;",
+            "    left: 70%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  .beak-top {",
+            "    top: 60%;",
+            "    left: 40%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 20%;",
+            "    height: 10%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  .beak-bottom {",
+            "    top: 65%;",
+            "    left: 42%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 16%;",
+            "    height: 10%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  body {",
+            "    background:#c6faf1;",
+            "  }",
+            "  ",
+            "  .penguin * {",
+            "    position: absolute;",
+            "  }",
+            "</style>",
+            "<div class=\"penguin\">",
+            "  <div class=\"penguin-bottom\">",
+            "    <div class=\"right-hand\"></div>",
+            "    <div class=\"left-hand\"></div>",
+            "    <div class=\"right-feet\"></div>",
+            "    <div class=\"left-feet\"></div>",
+            "  </div>",
+            "  <div class=\"penguin-top\">",
+            "    <div class=\"right-cheek\"></div>",
+            "    <div class=\"left-cheek\"></div>",
+            "    <div class=\"belly\"></div>",
+            "    <div class=\"right-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"left-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"blush-right\"></div>",
+            "    <div class=\"blush-left\"></div>",
+            "    <div class=\"beak-top\"></div>",
+            "    <div class=\"beak-bottom\"></div>",
+            "  </div>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "5a9d726c424fe3d0e10cad11",
+      "title": "Create a custom CSS Variable",
+      "description": [
+        "To create a CSS Variable, you just need to give it a <code>name</code> with <code>two dashes</code> in front of it and assign it a <code>value</code> like this:",
+        "<blockquote>--penguin-skin: gray;</blockquote>",
+        "This will create a variable named <code>--penguin-skin</code> and assign it the value of <code>gray</code>.",
+        "Now you can use that variable elsewhere in your CSS to change the value of other elements to gray.",
+        "<hr>",
+        "In the <code>penguin</code> class, create a variable name <code>--penguin-skin</code> and give it a value of <code>gray</code>"
+      ],
+      "tests": [
+        {
+          "text":
+            "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.",
+          "testString":
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?gray\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Mar 15, 2018",
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .penguin {",
+            "    ",
+            "    /* add code below */",
+            "    ",
+            "    /* add code above */",
+            "    position: relative;",
+            "    margin: auto;",
+            "    display: block;",
+            "    margin-top: 5%;",
+            "    width: 300px;",
+            "    height: 300px;",
+            "  }",
+            "  ",
+            "  .penguin-top {",
+            "    top: 10%;",
+            "    left: 25%;",
+            "    background: black;",
+            "    width: 50%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .penguin-bottom {",
+            "    top: 40%;",
+            "    left: 23.5%;",
+            "    background: black;",
+            "    width: 53%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-hand {",
+            "    top: 0%;",
+            "    left: -5%;",
+            "    background: black;",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 120% 30%;",
+            "    transform: rotate(45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .left-hand {",
+            "    top: 0%;",
+            "    left: 75%;",
+            "    background: black;",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 30% 120%;",
+            "    transform: rotate(-45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .right-cheek {",
+            "    top: 15%;",
+            "    left: 35%;",
+            "    background: white;",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .left-cheek {",
+            "    top: 15%;",
+            "    left: 5%;",
+            "    background: white;",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .belly {",
+            "    top: 60%;",
+            "    left: 2.5%;",
+            "    background: white;",
+            "    width: 95%;",
+            "    height: 100%;",
+            "    border-radius: 120% 120% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-feet {",
+            "    top: 85%;",
+            "    left: 60%;",
+            "    background: orange;",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(-80deg);",
+            "    z-index: -2222;  ",
+            "  }",
+            "  ",
+            "  .left-feet {",
+            "    top: 85%;",
+            "    left: 25%;",
+            "    background: orange;",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(80deg);",
+            "    z-index: -2222;  ",
+            "  }",
+            "  ",
+            "  .right-eye {",
+            "    top: 45%;",
+            "    left: 60%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%; ",
+            "  }",
+            "  ",
+            "  .left-eye {",
+            "    top: 45%;",
+            "    left: 25%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  .sparkle {",
+            "    top: 25%;",
+            "    left: 15%;",
+            "    background: white;",
+            "    width: 35%;",
+            "    height: 35%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  .blush-right {",
+            "    top: 65%;",
+            "    left: 15%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  .blush-left {",
+            "    top: 65%;",
+            "    left: 70%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  .beak-top {",
+            "    top: 60%;",
+            "    left: 40%;",
+            "    background: orange;",
+            "    width: 20%;",
+            "    height: 10%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  .beak-bottom {",
+            "    top: 65%;",
+            "    left: 42%;",
+            "    background: orange;",
+            "    width: 16%;",
+            "    height: 10%;",
+            "    border-radius: 50%;  ",
+            "  }",
+            "  ",
+            "  body {",
+            "    background:#c6faf1;",
+            "  }",
+            "  ",
+            "  .penguin * {",
+            "    position: absolute;",
+            "  }",
+            "</style>",
+            "<div class=\"penguin\">",
+            "  <div class=\"penguin-bottom\">",
+            "    <div class=\"right-hand\"></div>",
+            "    <div class=\"left-hand\"></div>",
+            "    <div class=\"right-feet\"></div>",
+            "    <div class=\"left-feet\"></div>",
+            "  </div>",
+            "  <div class=\"penguin-top\">",
+            "    <div class=\"right-cheek\"></div>",
+            "    <div class=\"left-cheek\"></div>",
+            "    <div class=\"belly\"></div>",
+            "    <div class=\"right-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"left-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"blush-right\"></div>",
+            "    <div class=\"blush-left\"></div>",
+            "    <div class=\"beak-top\"></div>",
+            "    <div class=\"beak-bottom\"></div>",
+            "  </div>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "5a9d727a424fe3d0e10cad12",
+      "title": "Use a custom CSS Variable",
+      "description": [
+        "After you create your variable, you can assign its value to other CSS properties by referencing the name you gave it.",
+        "<blockquote>background: var(--penguin-skin);</blockquote>",
+        "This will change the background of whatever element you are targeting to gray because that is the value of the <code>--penguin-skin</code> variable.",
+        "Note that styles will not be applied unless the variable names are an exact match.",
+        "<hr>",
+        "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code>, <code>penguin-bottom</code>, <code>right-hand</code> and <code>left-hand</code> classes."
+      ],
+      "tests": [
+        {
+          "text":
+            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.",
+          "testString":
+            "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.');"
+        },
+        {
+          "text":
+            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.",
+          "testString":
+            "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.right-hand\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
+        },
+        {
+          "text":
+            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.",
+          "testString":
+            "assert(code.match(/.right-hand\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.left-hand\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.');"
+        },
+        {
+          "text":
+            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.",
+          "testString":
+            "assert(code.match(/.left-hand\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Mar 15, 2018",
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .penguin {",
+            "    --penguin-skin: gray;",
+            "    position: relative;",
+            "    margin: auto;",
+            "    display: block;",
+            "    margin-top: 5%;",
+            "    width: 300px;",
+            "    height: 300px;",
+            "  }",
+            "  ",
+            "  .penguin-top {",
+            "    top: 10%;",
+            "    left: 25%;",
+            "    ",
+            "    /* change code below */",
+            "    background: black;",
+            "    /* change code above */",
+            "    ",
+            "    width: 50%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .penguin-bottom {",
+            "    top: 40%;",
+            "    left: 23.5%;",
+            "    ",
+            "    /* change code below */",
+            "    background: black;",
+            "    /* change code above */",
+            "    ",
+            "    width: 53%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-hand {",
+            "    top: 0%;",
+            "    left: -5%;",
+            "    ",
+            "    /* change code below */",
+            "    background: black;",
+            "    /* change code above */",
+            "    ",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 120% 30%;",
+            "    transform: rotate(45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .left-hand {",
+            "    top: 0%;",
+            "    left: 75%;",
+            "    ",
+            "    /* change code below */",
+            "    background: black;",
+            "    /* change code above */",
+            "    ",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 30% 120%;",
+            "    transform: rotate(-45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .right-cheek {",
+            "    top: 15%;",
+            "    left: 35%;",
+            "    background: white;",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .left-cheek {",
+            "    top: 15%;",
+            "    left: 5%;",
+            "    background: white;",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .belly {",
+            "    top: 60%;",
+            "    left: 2.5%;",
+            "    background: white;",
+            "    width: 95%;",
+            "    height: 100%;",
+            "    border-radius: 120% 120% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-feet {",
+            "    top: 85%;",
+            "    left: 60%;",
+            "    background: orange;",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(-80deg);",
+            "    z-index: -2222;  ",
+            "  }",
+            "  ",
+            "  .left-feet {",
+            "    top: 85%;",
+            "    left: 25%;",
+            "    background: orange;",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(80deg);",
+            "    z-index: -2222;  ",
+            "  }",
+            "  ",
+            "  .right-eye {",
+            "    top: 45%;",
+            "    left: 60%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%; ",
+            "  }",
+            "  ",
+            "  .left-eye {",
+            "    top: 45%;",
+            "    left: 25%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .sparkle {",
+            "    top: 25%;",
+            "    left: 15%;",
+            "    background: white;",
+            "    width: 35%;",
+            "    height: 35%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .blush-right {",
+            "    top: 65%;",
+            "    left: 15%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .blush-left {",
+            "    top: 65%;",
+            "    left: 70%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .beak-top {",
+            "    top: 60%;",
+            "    left: 40%;",
+            "    background: orange;",
+            "    width: 20%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .beak-bottom {",
+            "    top: 65%;",
+            "    left: 42%;",
+            "    background: orange;",
+            "    width: 16%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  body {",
+            "    background:#c6faf1;",
+            "  }",
+            "  ",
+            "  .penguin * {",
+            "    position: absolute;",
+            "  }",
+            "</style>",
+            "<div class=\"penguin\">",
+            "  <div class=\"penguin-bottom\">",
+            "    <div class=\"right-hand\"></div>",
+            "    <div class=\"left-hand\"></div>",
+            "    <div class=\"right-feet\"></div>",
+            "    <div class=\"left-feet\"></div>",
+            "  </div>",
+            "  <div class=\"penguin-top\">",
+            "    <div class=\"right-cheek\"></div>",
+            "    <div class=\"left-cheek\"></div>",
+            "    <div class=\"belly\"></div>",
+            "    <div class=\"right-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"left-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"blush-right\"></div>",
+            "    <div class=\"blush-left\"></div>",
+            "    <div class=\"beak-top\"></div>",
+            "    <div class=\"beak-bottom\"></div>",
+            "  </div>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "5a9d7286424fe3d0e10cad13",
+      "title": "Attach a Fallback value to a CSS Variable",
+      "description": [
+        "When using your variable as a CSS property value, you can attach a fallback value that your page will revert to if for some reason it can't get your variable to work.",
+        "It could be that someone is using an older browser that hasn't yet adopted CSS Variables, or perhaps their device doesn't support the value you gave the variable. Here's how you do it:",
+        "<blockquote>background: var(--penguin-skin, black);</blockquote>",
+        "This will set background to black if there is a problem with your variable.",
+        "Note that this can be useful for debugging.",
+        "<hr>",
+        "Add a fallback value of <code>black</code> to the <code>background</code> property of <code>penguin-top</code> and <code>penguin-bottom</code> classes.",
+        "<strong>Note</strong>: The above style will be applied because of a typo in the CSS variable name."
+      ],
+      "tests": [
+        {
+          "text":
+            "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.",
+          "testString":
+            "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');"
+        },
+        {
+          "text":
+            "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.",
+          "testString":
+            "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Mar 15, 2018",
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .penguin {",
+            "    --penguin-skin: black;",
+            "    --penguin-belly: gray;",
+            "    --penguin-beak: yellow;",
+            "    position: relative;",
+            "    margin: auto;",
+            "    display: block;",
+            "    margin-top: 5%;",
+            "    width: 300px;",
+            "    height: 300px;",
+            "  }",
+            "  ",
+            "  .penguin-top {",
+            "    top: 10%;",
+            "    left: 25%;",
+            "  ",
+            "    /* change code below */",
+            "    background: var(--pengiun-skin);",
+            "    /* change code above */",
+            "  ",
+            "    width: 50%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .penguin-bottom {",
+            "    top: 40%;",
+            "    left: 23.5%;",
+            "  ",
+            "    /* change code below */",
+            "    background: var(--pengiun-skin);",
+            "    /* change code above */",
+            "  ",
+            "    width: 53%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-hand {",
+            "    top: 0%;",
+            "    left: -5%;",
+            "    background: var(--penguin-skin, black);",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 120% 30%;",
+            "    transform: rotate(45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .left-hand {",
+            "    top: 0%;",
+            "    left: 75%;",
+            "    background: var(--penguin-skin, black);",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 30% 120%;",
+            "    transform: rotate(-45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .right-cheek {",
+            "    top: 15%;",
+            "    left: 35%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .left-cheek {",
+            "    top: 15%;",
+            "    left: 5%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .belly {",
+            "    top: 60%;",
+            "    left: 2.5%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 95%;",
+            "    height: 100%;",
+            "    border-radius: 120% 120% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-feet {",
+            "    top: 85%;",
+            "    left: 60%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(-80deg);",
+            "    z-index: -2222;",
+            "  }",
+            "  ",
+            "  .left-feet {",
+            "    top: 85%;",
+            "    left: 25%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(80deg);",
+            "    z-index: -2222;",
+            "  }",
+            "  ",
+            "  .right-eye {",
+            "    top: 45%;",
+            "    left: 60%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .left-eye {",
+            "    top: 45%;",
+            "    left: 25%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .sparkle {",
+            "    top: 25%;",
+            "    left: 15%;",
+            "    background: white;",
+            "    width: 35%;",
+            "    height: 35%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .blush-right {",
+            "    top: 65%;",
+            "    left: 15%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .blush-left {",
+            "    top: 65%;",
+            "    left: 70%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .beak-top {",
+            "    top: 60%;",
+            "    left: 40%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 20%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .beak-bottom {",
+            "    top: 65%;",
+            "    left: 42%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 16%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  body {",
+            "    background:#c6faf1;",
+            "  }",
+            "  ",
+            "  .penguin * {",
+            "    position: absolute;",
+            "  }",
+            "</style>",
+            "<div class=\"penguin\">",
+            "  <div class=\"penguin-bottom\">",
+            "    <div class=\"right-hand\"></div>",
+            "    <div class=\"left-hand\"></div>",
+            "    <div class=\"right-feet\"></div>",
+            "    <div class=\"left-feet\"></div>",
+            "  </div>",
+            "  <div class=\"penguin-top\">",
+            "    <div class=\"right-cheek\"></div>",
+            "    <div class=\"left-cheek\"></div>",
+            "    <div class=\"belly\"></div>",
+            "    <div class=\"right-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"left-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"blush-right\"></div>",
+            "    <div class=\"blush-left\"></div>",
+            "    <div class=\"beak-top\"></div>",
+            "    <div class=\"beak-bottom\"></div>",
+            "  </div>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "5a9d7295424fe3d0e10cad14",
+      "title": "Cascading CSS variables",
+      "description": [
+        "When you create a variable, it becomes available for you to use inside the element in which you create it. It also becomes available within any elements nested within it. This effect is known as <dfn>cascading</dfn>.",
+        "Because of cascading, CSS variables are often defined in the <dfn>:root</dfn> element.",
+        "You can think of the <code>:root</code> element as a container for your entire HTML document, in the same way that an <code>html</code> element is a container for the <code>body</code> element.",
+        "By creating your variables in <code>:root</code>, they will be available throughout the whole web page.",
+        "<hr>",
+        "Define a variable named <code>--penguin-belly</code> in the <code>:root</code> selector and give it the value of <code>pink</code>. You can then see how the value will cascade down to change the value to pink, anywhere that variable is used."
+      ],
+      "tests": [
+        {
+          "text":
+            "declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.",
+          "testString":
+            "assert(code.match(/:root\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?pink\\s*?;[\\s\\S]*}/gi), 'declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Mar 15, 2018",
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  :root {",
+            "    ",
+            "    /* add code below */",
+            "    ",
+            "    /* add code above */",
+            "  }",
+            "  ",
+            "  body {",
+            "    background: var(--penguin-belly, #c6faf1);",
+            "  }",
+            "  ",
+            "  .penguin {",
+            "    --penguin-skin: gray;",
+            "    --penguin-beak: orange;",
+            "    position: relative;",
+            "    margin: auto;",
+            "    display: block;",
+            "    margin-top: 5%;",
+            "    width: 300px;",
+            "    height: 300px;",
+            "  }",
+            "  ",
+            "  .right-cheek {",
+            "    top: 15%;",
+            "    left: 35%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .left-cheek {",
+            "    top: 15%;",
+            "    left: 5%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .belly {",
+            "    top: 60%;",
+            "    left: 2.5%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 95%;",
+            "    height: 100%;",
+            "    border-radius: 120% 120% 100% 100%;",
+            "  }",
+            "  ",
+            "  .penguin-top {",
+            "    top: 10%;",
+            "    left: 25%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 50%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .penguin-bottom {",
+            "    top: 40%;",
+            "    left: 23.5%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 53%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-hand {",
+            "    top: 0%;",
+            "    left: -5%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 120% 30%;",
+            "    transform: rotate(45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .left-hand {",
+            "    top: 0%;",
+            "    left: 75%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 30% 120%;",
+            "    transform: rotate(-45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .right-feet {",
+            "    top: 85%;",
+            "    left: 60%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(-80deg);",
+            "    z-index: -2222;",
+            "  }",
+            "  ",
+            "  .left-feet {",
+            "    top: 85%;",
+            "    left: 25%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(80deg);",
+            "    z-index: -2222;",
+            "  }",
+            "  ",
+            "  .right-eye {",
+            "    top: 45%;",
+            "    left: 60%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .left-eye {",
+            "    top: 45%;",
+            "    left: 25%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .sparkle {",
+            "    top: 25%;",
+            "    left: 15%;",
+            "    background: white;",
+            "    width: 35%;",
+            "    height: 35%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .blush-right {",
+            "    top: 65%;",
+            "    left: 15%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .blush-left {",
+            "    top: 65%;",
+            "    left: 70%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .beak-top {",
+            "    top: 60%;",
+            "    left: 40%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 20%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .beak-bottom {",
+            "    top: 65%;",
+            "    left: 42%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 16%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .penguin * {",
+            "    position: absolute;",
+            "  }",
+            "</style>",
+            "<div class=\"penguin\">",
+            "  <div class=\"penguin-bottom\">",
+            "    <div class=\"right-hand\"></div>",
+            "    <div class=\"left-hand\"></div>",
+            "    <div class=\"right-feet\"></div>",
+            "    <div class=\"left-feet\"></div>",
+            "  </div>",
+            "  <div class=\"penguin-top\">",
+            "    <div class=\"right-cheek\"></div>",
+            "    <div class=\"left-cheek\"></div>",
+            "    <div class=\"belly\"></div>",
+            "    <div class=\"right-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"left-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"blush-right\"></div>",
+            "    <div class=\"blush-left\"></div>",
+            "    <div class=\"beak-top\"></div>",
+            "    <div class=\"beak-bottom\"></div>",
+            "  </div>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "5a9d72a1424fe3d0e10cad15",
+      "title": "Change a variable for a specific area",
+      "description": [
+        "When you create your variables in <code>:root</code> they will set the value of that variable for the whole page.",
+        "You can then over-write these variables by setting them again within a specific element.",
+        "<hr>",
+        "Change the value of <code>--penguin-belly</code> to <code>white</code> in the <code>penguin</code> class."
+      ],
+      "tests": [
+        {
+          "text":
+            "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.",
+          "testString":
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?white\\s*?;[\\s\\S]*}/gi), 'The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Mar 15, 2018",
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  :root {",
+            "    --penguin-skin: gray;",
+            "    --penguin-belly: pink;",
+            "    --penguin-beak: orange;",
+            "  }",
+            "  ",
+            "  body {",
+            "    background: var(--penguin-belly, #c6faf1);",
+            "  }",
+            "  ",
+            "  .penguin {",
+            "    ",
+            "    /* add code below */",
+            "    ",
+            "    /* add code above */",
+            "    ",
+            "    position: relative;",
+            "    margin: auto;",
+            "    display: block;",
+            "    margin-top: 5%;",
+            "    width: 300px;",
+            "    height: 300px;",
+            "  }",
+            "  ",
+            "  .right-cheek {",
+            "    top: 15%;",
+            "    left: 35%;",
+            "    background: var(--penguin-belly, pink);",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .left-cheek {",
+            "    top: 15%;",
+            "    left: 5%;",
+            "    background: var(--penguin-belly, pink);",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .belly {",
+            "    top: 60%;",
+            "    left: 2.5%;",
+            "    background: var(--penguin-belly, pink);",
+            "    width: 95%;",
+            "    height: 100%;",
+            "    border-radius: 120% 120% 100% 100%;",
+            "  }",
+            "  ",
+            "  .penguin-top {",
+            "    top: 10%;",
+            "    left: 25%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 50%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .penguin-bottom {",
+            "    top: 40%;",
+            "    left: 23.5%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 53%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-hand {",
+            "    top: 0%;",
+            "    left: -5%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 120% 30%;",
+            "    transform: rotate(45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .left-hand {",
+            "    top: 0%;",
+            "    left: 75%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 30% 120%;",
+            "    transform: rotate(-45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .right-feet {",
+            "    top: 85%;",
+            "    left: 60%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(-80deg);",
+            "    z-index: -2222;",
+            "  }",
+            "  ",
+            "  .left-feet {",
+            "    top: 85%;",
+            "    left: 25%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(80deg);",
+            "    z-index: -2222;",
+            "  }",
+            "  ",
+            "  .right-eye {",
+            "    top: 45%;",
+            "    left: 60%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .left-eye {",
+            "    top: 45%;",
+            "    left: 25%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .sparkle {",
+            "    top: 25%;",
+            "    left: 15%;",
+            "    background: white;",
+            "    width: 35%;",
+            "    height: 35%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .blush-right {",
+            "    top: 65%;",
+            "    left: 15%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .blush-left {",
+            "    top: 65%;",
+            "    left: 70%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .beak-top {",
+            "    top: 60%;",
+            "    left: 40%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 20%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .beak-bottom {",
+            "    top: 65%;",
+            "    left: 42%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 16%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .penguin * {",
+            "    position: absolute;",
+            "  }",
+            "</style>",
+            "<div class=\"penguin\">",
+            "  <div class=\"penguin-bottom\">",
+            "    <div class=\"right-hand\"></div>",
+            "    <div class=\"left-hand\"></div>",
+            "    <div class=\"right-feet\"></div>",
+            "    <div class=\"left-feet\"></div>",
+            "  </div>",
+            "  <div class=\"penguin-top\">",
+            "    <div class=\"right-cheek\"></div>",
+            "    <div class=\"left-cheek\"></div>",
+            "    <div class=\"belly\"></div>",
+            "    <div class=\"right-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"left-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"blush-right\"></div>",
+            "    <div class=\"blush-left\"></div>",
+            "    <div class=\"beak-top\"></div>",
+            "    <div class=\"beak-bottom\"></div>",
+            "  </div>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "5a9d72ad424fe3d0e10cad16",
+      "title": "Use a media query to change a variable",
+      "description": [
+        "CSS Variables can simplify the way you use media queries.",
+        "For instance, when your screen is smaller or larger than your media query break point, you can change the value of a variable, and it will apply its style wherever it is used.",
+        "<hr>",
+        "In the <code>:root</code> selector of the <code>media query</code>, change it so <code>--penguin-size</code> is redefined and given a value of <code>200px</code>. Also, redefine <code>--penguin-skin</code> and give it a value of <code>black</code>. Then resize the preview to see this change in action."
+      ],
+      "tests": [
+        {
+          "text":
+            "<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.",
+          "testString":
+            "assert(code.match(/media\\s*?\\(\\s*?max-width\\s*?:\\s*?350px\\s*?\\)\\s*?{[\\s\\S]*:root\\s*?{[\\s\\S]*--penguin-size\\s*?:\\s*?200px\\s*?;[\\s\\S]*}[\\s\\S]*}/gi), '<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.');"
+        },
+        {
+          "text":
+            "<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.",
+          "testString":
+            "assert(code.match(/media\\s*?\\(\\s*?max-width\\s*?:\\s*?350px\\s*?\\)\\s*?{[\\s\\S]*:root\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?black\\s*?;[\\s\\S]*}[\\s\\S]*}/gi), '<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Mar 15, 2018",
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  :root {",
+            "    --penguin-size: 300px;",
+            "    --penguin-skin: gray;",
+            "    --penguin-belly: white;",
+            "    --penguin-beak: orange;",
+            "  }",
+            "  ",
+            "  @media (max-width: 350px) {",
+            "    :root {",
+            "      ",
+            "      /* add code below */",
+            "      ",
+            "      /* add code above */",
+            "      ",
+            "    }",
+            "  }",
+            "  ",
+            "  .penguin {",
+            "    position: relative;",
+            "    margin: auto;",
+            "    display: block;",
+            "    margin-top: 5%;",
+            "    width: var(--penguin-size, 300px);",
+            "    height: var(--penguin-size, 300px);",
+            "  }",
+            "  ",
+            "  .right-cheek {",
+            "    top: 15%;",
+            "    left: 35%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .left-cheek {",
+            "    top: 15%;",
+            "    left: 5%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 60%;",
+            "    height: 70%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .belly {",
+            "    top: 60%;",
+            "    left: 2.5%;",
+            "    background: var(--penguin-belly, white);",
+            "    width: 95%;",
+            "    height: 100%;",
+            "    border-radius: 120% 120% 100% 100%;",
+            "  }",
+            "  ",
+            "  .penguin-top {",
+            "    top: 10%;",
+            "    left: 25%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 50%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 60% 60%;",
+            "  }",
+            "  ",
+            "  .penguin-bottom {",
+            "    top: 40%;",
+            "    left: 23.5%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 53%;",
+            "    height: 45%;",
+            "    border-radius: 70% 70% 100% 100%;",
+            "  }",
+            "  ",
+            "  .right-hand {",
+            "    top: 5%;",
+            "    left: 25%;",
+            "    background: var(--penguin-skin, black);",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 120% 30%;",
+            "    transform: rotate(130deg);",
+            "    z-index: -1;",
+            "    animation-duration: 3s;",
+            "    animation-name: wave;",
+            "    animation-iteration-count: infinite;",
+            "    transform-origin:0% 0%;",
+            "    animation-timing-function: linear;",
+            "  }",
+            "  ",
+            "  @keyframes wave {",
+            "      10% {",
+            "        transform: rotate(110deg);",
+            "      }",
+            "      20% {",
+            "        transform: rotate(130deg);",
+            "      }",
+            "      30% {",
+            "        transform: rotate(110deg);",
+            "      } ",
+            "      40% {",
+            "        transform: rotate(130deg);",
+            "      }  ",
+            "    }",
+            "  ",
+            "  .left-hand {",
+            "    top: 0%;",
+            "    left: 75%;",
+            "    background: var(--penguin-skin, gray);",
+            "    width: 30%;",
+            "    height: 60%;",
+            "    border-radius: 30% 30% 30% 120%;",
+            "    transform: rotate(-45deg);",
+            "    z-index: -1;",
+            "  }",
+            "  ",
+            "  .right-feet {",
+            "    top: 85%;",
+            "    left: 60%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(-80deg);",
+            "    z-index: -2222;",
+            "  }",
+            "  ",
+            "  .left-feet {",
+            "    top: 85%;",
+            "    left: 25%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 15%;",
+            "    height: 30%;",
+            "    border-radius: 50% 50% 50% 50%;",
+            "    transform: rotate(80deg);",
+            "    z-index: -2222;",
+            "  }",
+            "  ",
+            "  .right-eye {",
+            "    top: 45%;",
+            "    left: 60%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .left-eye {",
+            "    top: 45%;",
+            "    left: 25%;",
+            "    background: black;",
+            "    width: 15%;",
+            "    height: 17%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .sparkle {",
+            "    top: 25%;",
+            "    left:-23%;",
+            "    background: white;",
+            "    width: 150%;",
+            "    height: 100%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .blush-right {",
+            "    top: 65%;",
+            "    left: 15%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .blush-left {",
+            "    top: 65%;",
+            "    left: 70%;",
+            "    background: pink;",
+            "    width: 15%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .beak-top {",
+            "    top: 60%;",
+            "    left: 40%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 20%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  .beak-bottom {",
+            "    top: 65%;",
+            "    left: 42%;",
+            "    background: var(--penguin-beak, orange);",
+            "    width: 16%;",
+            "    height: 10%;",
+            "    border-radius: 50%;",
+            "  }",
+            "  ",
+            "  body {",
+            "    background:#c6faf1;",
+            "  }",
+            "  ",
+            "  .penguin * {",
+            "    position: absolute;",
+            "  }",
+            "</style>",
+            "<div class=\"penguin\">",
+            "  <div class=\"penguin-bottom\">",
+            "    <div class=\"right-hand\"></div>",
+            "    <div class=\"left-hand\"></div>",
+            "    <div class=\"right-feet\"></div>",
+            "    <div class=\"left-feet\"></div>",
+            "  </div>",
+            "  <div class=\"penguin-top\">",
+            "    <div class=\"right-cheek\"></div>",
+            "    <div class=\"left-cheek\"></div>",
+            "    <div class=\"belly\"></div>",
+            "    <div class=\"right-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"left-eye\">",
+            "      <div class=\"sparkle\"></div>",
+            "    </div>",
+            "    <div class=\"blush-right\"></div>",
+            "    <div class=\"blush-left\"></div>",
+            "    <div class=\"beak-top\"></div>",
+            "    <div class=\"beak-bottom\"></div>",
+            "  </div>",
+            "</div>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    }
+  ]
+}
