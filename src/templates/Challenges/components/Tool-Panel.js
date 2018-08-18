@@ -36,7 +36,7 @@ function ToolPanel({
     <Fragment>
       <div className='tool-panel-group'>
         <Button block={true} bsStyle='primary' onClick={executeChallenge}>
-          Run the Tests
+          运行测试
         </Button>
         <Button
           block={true}
@@ -44,7 +44,7 @@ function ToolPanel({
           className='btn-primary-invert'
           onClick={openResetModal}
           >
-          Reset All Code
+          重置代码
         </Button>
         {guideUrl ? (
           <Button
@@ -54,7 +54,7 @@ function ToolPanel({
             href={guideUrl}
             target='_blank'
             >
-            Get a hint
+            获取提示
           </Button>
         ) : null}
         <Button
@@ -63,7 +63,7 @@ function ToolPanel({
           className='btn-primary-invert'
           onClick={openHelpModal}
           >
-          Ask for help
+          请求帮助
         </Button>
       </div>
     </Fragment>
