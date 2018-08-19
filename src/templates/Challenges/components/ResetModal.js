@@ -43,16 +43,15 @@ function ResetModal({ reset, close, isOpen }) {
       show={isOpen}
       >
       <Modal.Header className='reset-modal-header' closeButton={true}>
-        <Modal.Title className='text-center'>Reset this lesson?</Modal.Title>
+        <Modal.Title className='text-center'>时光穿梭机</Modal.Title>
       </Modal.Header>
       <Modal.Body className='reset-modal-body'>
         <div className='text-center'>
           <p>
-            Are you sure you wish to reset this lesson? The editors and tests
-            will be reset.
+            重置代码后，编辑器会穿越到过去，回到初始状态。
           </p>
           <p>
-            <em>This cannot be undone</em>.
+            <em>但穿越到过去后，就不能再穿越到现在了哦。</em>
           </p>
         </div>
       </Modal.Body>
@@ -63,7 +62,7 @@ function ResetModal({ reset, close, isOpen }) {
           bsStyle='danger'
           onClick={withActions(reset, close)}
           >
-          Reset this Lesson
+          确认重置
         </Button>
       </Modal.Footer>
     </Modal>

@@ -109,7 +109,7 @@ export class CompletionModal extends PureComponent {
             bsStyle='primary'
             onClick={submitChallenge}
             >
-            Submit and go to next challenge (Ctrl + Enter)
+            提交代码并去往下一个关卡。(Ctrl + Enter)
           </Button>
           {showDownloadButton
             ? <Button
@@ -122,7 +122,7 @@ export class CompletionModal extends PureComponent {
                   JSON.stringify(filesForDownload)
                 )}`}
                 >
-                Download my solution
+                下载代码
               </Button>
             : null
           }

@@ -36,15 +36,14 @@ export class HelpModal extends PureComponent {
           className='help-modal-header fcc-modal'
           closeButton={true}
           >
-          <Modal.Title className='text-center'>Ask for help?</Modal.Title>
+          <Modal.Title className='text-center'>每只老鸟都是从菜鸟阶段走过来的</Modal.Title>
         </Modal.Header>
         <Modal.Body className='text-center'>
           <h3>
-            If you've already tried the&nbsp;
+            如果你通过 &nbsp;
             <a href={RSA} target='_blank' title='Read, search, ask'>
               Read-Search-Ask
-            </a>&nbsp; method, then you can ask for help on the freeCodeCamp
-            forum.
+            </a>&nbsp; 方法依然不能解决问题，你最后还可以在社区论坛上求助。
           </h3>
           <Button
             block={true}
@@ -52,7 +51,7 @@ export class HelpModal extends PureComponent {
             bsStyle='primary'
             onClick={createQuestion}
             >
-            Create a help post on the forum
+            在社区论坛发布一个求助帖子。
           </Button>
           <Button
             block={true}
@@ -60,7 +59,7 @@ export class HelpModal extends PureComponent {
             bsStyle='primary'
             onClick={closeHelpModal}
             >
-            Cancel
+            我突然找到了解决办法，不用求助了。
           </Button>
         </Modal.Body>
       </Modal>
