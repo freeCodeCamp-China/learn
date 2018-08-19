@@ -1,8 +1,8 @@
 import React from 'react';
 import Media from 'react-media';
 
-const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
-const fCCglyph = 'https://s3.amazonaws.com/freecodecamp/FFCFire.png';
+const fCClogo = '/img/freeCodeCamp-logo.svg';
+const fCCglyph = '/img/FFCFire.png';
 
 function NavLogo() {
   return (

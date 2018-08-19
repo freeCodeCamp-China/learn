@@ -11,7 +11,7 @@ function Header() {
   return (
     <header>
       <nav id='top-nav'>
-        <a className='home-link' href='https://freecodecamp.org'>
+        <a className='home-link' href='https://learn.freecodecamp.one'>
           <NavLogo />
         </a>
         <FCCSearch />
