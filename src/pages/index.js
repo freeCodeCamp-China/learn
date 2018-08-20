@@ -34,22 +34,22 @@ const IndexPage = ({
   }
 }) => (
   <div className='index-page-wrapper'>
-    <Helmet title='Welcome to learn.freeCodeCamp!' />
+    <Helmet title='欢迎参加 freeCodeCamp 编程挑战' />
     <Spacer />
     <Spacer />
-    <h2>Welcome to the freeCodeCamp curriculum</h2>
-    <p>We have thousands of coding lessons to help you improve your skills.</p>
-    <p>You can earn each certification by completing its 5 final projects.</p>
-    <p>
-      And yes - all of this is 100% free, thanks to the thousands of campers who{' '}
+    <h2>欢迎来到 freeCodeCamp 2018年新版课程</h2>
+    <p>我们拥有成千上万的编程挑战来帮助你提升你的编程技能。</p>
+    <p>每当独立完成5个终极项目，你就可以获得一个免费证书。</p>
+    <p>是的，你没看错，所有的课程都是免费的。</p>
+    <p>这一切要感谢成千上万的学员{' '}
       <a href='https://donate.freecodecamp.org' target='_blank'>
-        donate
+        捐款
       </a>{' '}
-      to our nonprofit.
+      给我们。
     </p>
     <p>
-      If you are new to coding, we recommend you{' '}
-      <Link to={slug}>start at the beginning</Link>.
+      如果你是编程新手，我们推荐你{' '}
+      <Link to={slug}>从头开始</Link>。
     </p>
     <Spacer />
     <Map
