@@ -1,0 +1,1024 @@
+{
+  "name": "Basic Algorithm Scripting",
+  "order": 6,
+  "time": "50 hours",
+  "helpRoom": "HelpJavaScript",
+  "challenges": [
+    {
+      "id": "56533eb9ac21ba0edf2244b3",
+      "title": "Convert Celsius to Fahrenheit",
+      "description": [
+        "将摄氏度转换为华氏度的算法为：摄氏度 × <code>9/5 + 32</code>",
+        "输入参数 <code>celsius</code> 代表一个摄氏温度值。请你根据上述转换公式，将已定义好的 <code>fahrenheit</code> 变量赋值为对应的华氏温度的值。",
+        "你不需要顾虑 function 和 return 语句，它们会在之后的挑战中予以介绍。现在，你只需要使用你已学过的运算符。"
+      ],
+      "releasedOn": "January 1, 2016",
+      "solutions": [
+        "function convertToF(celsius) {\n  let fahrenheit = celsius * 9/5 + 32;\n\n  return fahrenheit;\n}\n\nconvertToF(30);\n"
+      ],
+      "tests": [
+        {
+          "text": "<code>convertToF(0)</code> 应该返回一个数字。",
+          "testString": "assert(typeof convertToF(0) === 'number', '<code>convertToF(0)</code> 应该返回一个数字。');"
+        },
+        {
+          "text": "<code>convertToF(-30)</code> 应该返回 <code>-22</code>。",
+          "testString": "assert(convertToF(-30) === -22, '<code>convertToF(-30)</code> 应该返回 <code>-22</code>。');"
+        },
+        {
+          "text": "<code>convertToF(-10)</code> 应该返回 <code>14</code>。",
+          "testString": "assert(convertToF(-10) === 14, '<code>convertToF(-10)</code> 应该返回 <code>14</code>。');"
+        },
+        {
+          "text": "<code>convertToF(0)</code> 应该返回 <code>32</code>。",
+          "testString": "assert(convertToF(0) === 32, '<code>convertToF(0)</code> 应该返回 <code>32</code>。');"
+        },
+        {
+          "text": "<code>convertToF(20)</code> 应该返回 <code>68</code>。",
+          "testString": "assert(convertToF(20) === 68, '<code>convertToF(20)</code> 应该返回 <code>68</code>。');"
+        },
+        {
+          "text": "<code>convertToF(30)</code> 应该返回 <code>86</code>。",
+          "testString": "assert(convertToF(30) === 86, '<code>convertToF(30)</code> 应该返回 <code>86</code>。');"
+        }
+      ],
+      "challengeType": 1,
+      "isRequired": true,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function convertToF(celsius) {",
+            "  let fahrenheit;",
+            "  return fahrenheit;",
+            "}",
+            "",
+            "convertToF(30);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "a202eed8fc186c8434cb6d61",
+      "title": "Reverse a String",
+      "description": [
+        "反转给出的字符串。",
+        "你在反转字符串前可能需要将其切分成字符的数组。",
+        "你的结果必须是一个字符串。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>reverseString(\"hello\")</code> 应该返回一个字符串。",
+          "testString": "assert(typeof reverseString(\"hello\") === \"string\", '<code>reverseString(\"hello\")</code> 应该返回一个字符串。');"
+        },
+        {
+          "text": "<code>reverseString(\"hello\")</code> 应该返回 <code>\"olleh\"</code>",
+          "testString": "assert(reverseString(\"hello\") === \"olleh\", '<code>reverseString(\"hello\")</code> 应该返回 <code>\"olleh\"</code>。');"
+        },
+        {
+          "text": "<code>reverseString(\"Howdy\")</code> 应该返回 <code>\"ydwoH\"</code>",
+          "testString": "assert(reverseString(\"Howdy\") === \"ydwoH\", '<code>reverseString(\"Howdy\")</code> 应该返回 <code>\"ydwoH\"</code>。');"
+        },
+        {
+          "text": "<code>reverseString(\"Greetings from Earth\")</code> 应该返回 <code>\"htraE morf sgniteerG\"</code>。",
+          "testString": "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", '<code>reverseString(\"Greetings from Earth\")</code> 应该返回 <code>\"htraE morf sgniteerG\"</code>。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function reverseString(str) {\n  return str.split('').reverse().join('');\n}\n\nreverseString(\"hello\");\n"
+      ],
+      "MDNlinks": [
+        "Global String Object",
+        "String.prototype.split()",
+        "Array.prototype.reverse()",
+        "Array.prototype.join()"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function reverseString(str) {",
+            "  return str;",
+            "}",
+            "",
+            "reverseString(\"hello\");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "a302f7aae1aa3152a5b413bc",
+      "title": "Factorialize a Number",
+      "description": [
+        "返回一个给定整数的阶乘。",
+        "若 n 是一个整数，n 的阶乘就是所有小于等于 n 的正整数的乘积。",
+        "n 的阶乘通常用符号 <code>n!</code> 来表示。",
+        "例如： <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
+        "只有非负整数会被作为函数的输入参数。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>factorialize(5)</code> 应该返回一个数字。",
+          "testString": "assert(typeof factorialize(5) === 'number', '<code>factorialize(5)</code> 应该返回一个数字。');"
+        },
+        {
+          "text": "<code>factorialize(5)</code> 应该返回 120。",
+          "testString": "assert(factorialize(5) === 120, '<code>factorialize(5)</code> 应该返回 120。');"
+        },
+        {
+          "text": "<code>factorialize(10)</code> 应该返回 3628800。",
+          "testString": "assert(factorialize(10) === 3628800, '<code>factorialize(10)</code> 应该返回 3628800。');"
+        },
+        {
+          "text": "<code>factorialize(20)</code> 应该返回 2432902008176640000。",
+          "testString": "assert(factorialize(20) === 2432902008176640000, '<code>factorialize(20)</code> 应该返回 2432902008176640000。');"
+        },
+        {
+          "text": "<code>factorialize(0)</code> 应该返回 1。",
+          "testString": "assert(factorialize(0) === 1, '<code>factorialize(0)</code> 应该返回 1。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function factorialize(num) {\n  return num < 1 ? 1 : num * factorialize(num - 1);\n}\n\nfactorialize(5);\n"
+      ],
+      "MDNlinks": [
+        "Arithmetic Operators"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function factorialize(num) {",
+            "  return num;",
+            "}",
+            "",
+            "factorialize(5);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "a26cbbe9ad8655a977e1ceb5",
+      "title": "Find the Longest Word in a String",
+      "description": [
+        "返回给出的句子中最长的单词的长度。",
+        "你的返回应该是一个数字。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> 应该返回一个数字。",
+          "testString": "assert(typeof findLongestWordLength(\"The quick brown fox jumped over the lazy dog\") === \"number\", '<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> 应该返回一个数字。');"
+        },
+        {
+          "text": "<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> 应该返回 6。",
+          "testString": "assert(findLongestWordLength(\"The quick brown fox jumped over the lazy dog\") === 6, '<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> 应该返回 6。');"
+        },
+        {
+          "text": "<code>findLongestWordLength(\"May the force be with you\")</code> 应该返回 5。",
+          "testString": "assert(findLongestWordLength(\"May the force be with you\") === 5, '<code>findLongestWordLength(\"May the force be with you\")</code> 应该返回 5。');"
+        },
+        {
+          "text": "<code>findLongestWordLength(\"Google do a barrel roll\")</code> 应该返回 6。",
+          "testString": "assert(findLongestWordLength(\"Google do a barrel roll\") === 6, '<code>findLongestWordLength(\"Google do a barrel roll\")</code> 应该返回 6。');"
+        },
+        {
+          "text": "<code>findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\")</code> 应该返回 8。",
+          "testString": "assert(findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\") === 8, '<code>findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\")</code> 应该返回 8。');"
+        },
+        {
+          "text": "<code>findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\")</code> 应该返回 19。",
+          "testString": "assert(findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\") === 19, '<code>findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\")</code> 应该返回 19。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function findLongestWordLength(str) {\n  return str.split(' ').sort((a, b) => b.length - a.length)[0].length;\n}\n\nfindLongestWordLength(\"The quick brown fox jumped over the lazy dog\");\n"
+      ],
+      "MDNlinks": [
+        "String.prototype.split()",
+        "String.length"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function findLongestWordLength(str) {",
+            "  return str.length;",
+            "}",
+            "",
+            "findLongestWordLength(\"The quick brown fox jumped over the lazy dog\");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "a789b3483989747d63b0e427",
+      "title": "Return Largest Numbers in Arrays",
+      "description": [
+        "返回一个数组，它要由给出的所有子数组中的最大值组成。简单起见，给出的数组总会包含4个子数组。",
+        "记得你可以在一个简单的 for 循环中遍历一个数组，并用 <code>arr[i]</code> 这样的语法来访问数组中的元素。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> 应该返回一个数组。",
+          "testString": "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, '<code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> 应该返回一个数组。');"
+        },
+        {
+          "text": "<code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> 应该返回 <code>[27, 5, 39, 1001]</code>。",
+          "testString": "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27, 5, 39, 1001], '<code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> 应该返回 <code>[27, 5, 39, 1001]</code>。');"
+        },
+        {
+          "text": "<code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> 应该返回 <code>[9, 35, 97, 1000000]</code>。",
+          "testString": "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9, 35, 97, 1000000], '<code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> 应该返回 <code>[9, 35, 97, 1000000]</code>。');"
+        },
+        {
+          "text": "<code>largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])</code> 应该返回 <code>[25, 48, 21, -3]</code>。",
+          "testString": "assert.deepEqual(largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]), [25, 48, 21, -3], '<code>largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])</code> 应该返回 <code>[25, 48, 21, -3]</code>。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function largestOfFour(arr) {\n  return arr.map(subArr => Math.max.apply(null, subArr));\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);\n"
+      ],
+      "MDNlinks": [
+        "Comparison Operators"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function largestOfFour(arr) {",
+            "  // You can do this!",
+            "  return arr;",
+            "}",
+            "",
+            "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "acda2fb1324d9b0fa741e6b5",
+      "title": "Confirm the Ending",
+      "description": [
+        "检查一个字符串（第一个参数， <code>str</code> ）是否以给定的字符串（第二个参数 <code>target</code> ）结束。",
+        "本题目<em>可以</em>用 ES2015 引入的 <code>.endsWith()</code> 方法来解决。但本挑战的目的是让你使用 JavaScript 的一个 substring 方法。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>confirmEnding(\"Bastian\", \"n\")</code> 应该返回 true。",
+          "testString": "assert(confirmEnding(\"Bastian\", \"n\") === true, '<code>confirmEnding(\"Bastian\", \"n\")</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Congratulation\", \"on\")</code> 应该返回 true。",
+          "testString": "assert(confirmEnding(\"Congratulation\", \"on\") === true, '<code>confirmEnding(\"Congratulation\", \"on\")</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Connor\", \"n\")</code> 应该返回 false。",
+          "testString": "assert(confirmEnding(\"Connor\", \"n\") === false, '<code>confirmEnding(\"Connor\", \"n\")</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> 应该返回 false。",
+          "testString": "assert(confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\", \"specification\") === false, '<code>confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>confirmEnding(\"He has to give me a new name\", \"name\")</code> 应该返回 true。",
+          "testString": "assert(confirmEnding(\"He has to give me a new name\", \"name\") === true, '<code>confirmEnding(\"He has to give me a new name\", \"name\")</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Open sesame\", \"same\")</code> 应该返回 true。",
+          "testString": "assert(confirmEnding(\"Open sesame\", \"same\") === true, '<code>confirmEnding(\"Open sesame\", \"same\")</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Open sesame\", \"pen\")</code> 应该返回 false。",
+          "testString": "assert(confirmEnding(\"Open sesame\", \"pen\") === false, '<code>confirmEnding(\"Open sesame\", \"pen\")</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Open sesame\", \"game\")</code> 应该返回 false。",
+          "testString": "assert(confirmEnding(\"Open sesame\", \"game\") === false, '<code>confirmEnding(\"Open sesame\", \"game\")</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> 应该返回 false。",
+          "testString": "assert(confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, '<code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Abstraction\", \"action\")</code> 应该返回 true。",
+          "testString": "assert(confirmEnding(\"Abstraction\", \"action\") === true, '<code>confirmEnding(\"Abstraction\", \"action\")</code> 应该返回 true。');"
+        },
+        {
+          "text": "请不要用内置的 <code>.endsWith()</code> 方法来解决本挑战。",
+          "testString": "assert(!(/\\.endsWith\\(.*?\\)\\s*?;?/.test(code)) && !(/\\['endsWith'\\]/.test(code)), '请不要用内置的 <code>.endsWith()</code> 方法来解决本挑战。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function confirmEnding(str, target) {\n  return str.substring(str.length - target.length) === target;\n}\n\nconfirmEnding(\"Bastian\", \"n\");\n"
+      ],
+      "MDNlinks": [
+        "String.prototype.substr()",
+        "String.prototype.substring()"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function confirmEnding(str, target) {",
+            "  // \"Never give up and good luck will find you.\"",
+            "  // -- Falcor",
+            "  return str;",
+            "}",
+            "",
+            "confirmEnding(\"Bastian\", \"n\");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "afcc8d540bea9ea2669306b6",
+      "title": "Repeat a String Repeat a String",
+      "description": [
+        "将一个给定的字符串（第一个参数， <code>str</code> )重复 <code>num</code> （第二个参数）次。如果 <code>num</code> 不是一个正数，返回一个空字符串。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>repeatStringNumTimes(\"*\", 3)</code> 应该返回 <code>\"***\"</code>。",
+          "testString": "assert(repeatStringNumTimes(\"*\", 3) === \"***\", '<code>repeatStringNumTimes(\"*\", 3)</code> 应该返回 <code>\"***\"</code>。');"
+        },
+        {
+          "text": "<code>repeatStringNumTimes(\"abc\", 3)</code> 应该返回 <code>\"abcabcabc\"</code>。",
+          "testString": "assert(repeatStringNumTimes(\"abc\", 3) === \"abcabcabc\", '<code>repeatStringNumTimes(\"abc\", 3)</code> 应该返回 <code>\"abcabcabc\"</code>。');"
+        },
+        {
+          "text": "<code>repeatStringNumTimes(\"abc\", 4)</code> 应该返回 <code>\"abcabcabcabc\"</code>。",
+          "testString": "assert(repeatStringNumTimes(\"abc\", 4) === \"abcabcabcabc\", '<code>repeatStringNumTimes(\"abc\", 4)</code> 应该返回 <code>\"abcabcabcabc\"</code>。');"
+        },
+        {
+          "text": "<code>repeatStringNumTimes(\"abc\", 1)</code> 应该返回 <code>\"abc\"</code>。",
+          "testString": "assert(repeatStringNumTimes(\"abc\", 1) === \"abc\", '<code>repeatStringNumTimes(\"abc\", 1)</code> 应该返回 <code>\"abc\"</code>。');"
+        },
+        {
+          "text": "<code>repeatStringNumTimes(\"*\", 8)</code> 应该返回 <code>\"********\"</code>。",
+          "testString": "assert(repeatStringNumTimes(\"*\", 8) === \"********\", '<code>repeatStringNumTimes(\"*\", 8)</code> 应该返回 <code>\"********\"</code>。');"
+        },
+        {
+          "text": "<code>repeatStringNumTimes(\"abc\", -2)</code> 应该返回 <code>\"\"</code>。",
+          "testString": "assert(repeatStringNumTimes(\"abc\", -2) === \"\", '<code>repeatStringNumTimes(\"abc\", -2)</code> 应该返回 <code>\"\"</code>。');"
+        },
+        {
+          "text": "请不要使用内置的 <code>repeat()</code> 方法。",
+          "testString": "assert(!/\\.repeat/g.test(code), '请不要使用内置的 <code>repeat()</code> 方法。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function repeatStringNumTimes(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeatStringNumTimes(str, num-1);\n}\n\nrepeatStringNumTimes(\"abc\", 3);\n"
+      ],
+      "MDNlinks": [
+        "Global String Object"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function repeatStringNumTimes(str, num) {",
+            "  // repeat after me",
+            "  return str;",
+            "}",
+            "",
+            "repeatStringNumTimes(\"abc\", 3);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "ac6993d51946422351508a41",
+      "title": "Truncate a String",
+      "description": [
+        "如果一个字符串（第一个参数）的长度大于给出的值（第二个参数），则截断它并在其后加上 <code>...</code> 。返回被截断的字符串。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 8)</code> 应该返回 \"A-tisket...\"。",
+          "testString": "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", 8) === \"A-tisket...\", '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 8)</code> 应该返回 \"A-tisket...\"。');"
+        },
+        {
+          "text": "<code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 11)</code> 应该返回 \"Peter Piper...\"。",
+          "testString": "assert(truncateString(\"Peter Piper picked a peck of pickled peppers\", 11) === \"Peter Piper...\", '<code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 11)</code> 应该返回 \"Peter Piper...\"。');"
+        },
+        {
+          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> 应该返回 \"A-tisket a-tasket A green and yellow basket\"。",
+          "testString": "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> 应该返回 \"A-tisket a-tasket A green and yellow basket\"。');"
+        },
+        {
+          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> 应该返回 \"A-tisket a-tasket A green and yellow basket\"。",
+          "testString": "assert(truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> 应该返回 \"A-tisket a-tasket A green and yellow basket\"。');"
+        },
+        {
+          "text": "<code>truncateString(\"A-\", 1)</code> 应该返回 \"A...\"。",
+          "testString": "assert(truncateString(\"A-\", 1) === \"A...\", '<code>truncateString(\"A-\", 1)</code> 应该返回 \"A...\"。');"
+        },
+        {
+          "text": "<code>truncateString(\"Absolutely Longer\", 2)</code> 应该返回 \"Ab...\"。",
+          "testString": "assert(truncateString(\"Absolutely Longer\", 2) === \"Ab...\", '<code>truncateString(\"Absolutely Longer\", 2)</code> 应该返回 \"Ab...\"。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function truncateString(str, num) {\n  if (num >= str.length) {\n    return str;\n  }\n\n  return str.slice(0, num) + '...';\n}\n\ntruncateString(\"A-tisket a-tasket A green and yellow basket\", 8);\n"
+      ],
+      "MDNlinks": [
+        "String.prototype.slice()"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function truncateString(str, num) {",
+            "  // Clear out that junk in your trunk",
+            "  return str;",
+            "}",
+            "",
+            "truncateString(\"A-tisket a-tasket A green and yellow basket\", 8);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "a6e40f1041b06c996f7b2406",
+      "title": "Finders Keepers",
+      "description": [
+        "请写一个函数来检查一个数组（第一个参数）中的元素，并返回数组中第一个通过校验测试（第二个参数，一个接受一个参数并返回一个布尔值的函数）的元素。如果没有元素通过测试，则返回 undefined。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。你可以与他人结对编程。请你独立解决挑战中的问题。"
+      ],
+      "solutions": [
+        "function findElement(arr, func) {\n  let num;\n\n  arr.some(e => {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n\n  return num;\n}\n\nfindElement([1, 2, 3, 4], num => num % 2 === 0);\n"
+      ],
+      "tests": [
+        {
+          "text": "<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> 应该返回 8。",
+          "testString": "assert.strictEqual(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, '<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> 应该返回 8。');"
+        },
+        {
+          "text": "<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> 应该返回 undefined。",
+          "testString": "assert.strictEqual(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, '<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> 应该返回 undefined。');"
+        }
+      ],
+      "MDNlinks": [
+        "Array.prototype.filter()"
+      ],
+      "isRequired": true,
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function findElement(arr, func) {",
+            "  let num = 0;",
+            "  return num;",
+            "}",
+            "",
+            "findElement([1, 2, 3, 4], num => num % 2 === 0);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "a77dbc43c33f39daa4429b4f",
+      "title": "Boo who",
+      "description": [
+        "检查一个值是否是原始的布尔值（boolean）类型。返回 true 或者 false。",
+        "布尔值原始类型为 true 或者 false。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。你可以与他人结对编程。请你独立解决挑战中的问题。"
+      ],
+      "solutions": [
+        "function booWho(bool) {\n  return typeof bool === \"boolean\";\n}\n\nbooWho(null);"
+      ],
+      "tests": [
+        {
+          "text": "<code>booWho(true)</code> 应该返回 true。",
+          "testString": "assert.strictEqual(booWho(true), true, '<code>booWho(true)</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>booWho(false)</code> 应该返回 true。",
+          "testString": "assert.strictEqual(booWho(false), true, '<code>booWho(false)</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>booWho([1, 2, 3])</code> 应该返回 false。",
+          "testString": "assert.strictEqual(booWho([1, 2, 3]), false, '<code>booWho([1, 2, 3])</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>booWho([].slice)</code> 应该返回 false。",
+          "testString": "assert.strictEqual(booWho([].slice), false, '<code>booWho([].slice)</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>booWho({ \"a\": 1 })</code> 应该返回 false。",
+          "testString": "assert.strictEqual(booWho({ \"a\": 1 }), false, '<code>booWho({ \"a\": 1 })</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>booWho(1)</code> 应该返回 false。",
+          "testString": "assert.strictEqual(booWho(1), false, '<code>booWho(1)</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>booWho(NaN)</code> 应该返回 false。",
+          "testString": "assert.strictEqual(booWho(NaN), false, '<code>booWho(NaN)</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>booWho(\"a\")</code> 应该返回 false。",
+          "testString": "assert.strictEqual(booWho(\"a\"), false, '<code>booWho(\"a\")</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>booWho(\"true\")</code> 应该返回 false。",
+          "testString": "assert.strictEqual(booWho(\"true\"), false, '<code>booWho(\"true\")</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>booWho(\"false\")</code> 应该返回 false。",
+          "testString": "assert.strictEqual(booWho(\"false\"), false, '<code>booWho(\"false\")</code> 应该返回 false。');"
+        }
+      ],
+      "MDNlinks": [
+        "Boolean Objects"
+      ],
+      "isRequired": true,
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function booWho(bool) {",
+            "  // What is the new fad diet for ghost developers? The Boolean.",
+            "  return bool;",
+            "}",
+            "",
+            "booWho(null);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "ab6137d4e35944e21037b769",
+      "title": "Title Case a Sentence",
+      "description": [
+        "将给出的字符串中所有单词的第一个字母变成大写，并返回得到的字符串。请确保其余的字母是小写的。",
+        "出于练习的目的，“ the ”“ of ”等虚词的首字母也要大写。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>titleCase(\"I&#39;m a little tea pot\")</code> 应该返回一个字符串。",
+          "testString": "assert(typeof titleCase(\"I'm a little tea pot\") === \"string\", '<code>titleCase(\"I&#39;m a little tea pot\")</code> 应该返回一个字符串。');"
+        },
+        {
+          "text": "<code>titleCase(\"I&#39;m a little tea pot\")</code> 应该返回 <code>I&#39;m A Little Tea Pot</code>。",
+          "testString": "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", '<code>titleCase(\"I&#39;m a little tea pot\")</code> 应该返回 <code>I&#39;m A Little Tea Pot</code>。');"
+        },
+        {
+          "text": "<code>titleCase(\"sHoRt AnD sToUt\")</code> 应该返回 <code>Short And Stout</code>。",
+          "testString": "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", '<code>titleCase(\"sHoRt AnD sToUt\")</code> 应该返回 <code>Short And Stout</code>。');"
+        },
+        {
+          "text": "<code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> 应该返回 <code>Here Is My Handle Here Is My Spout</code>。",
+          "testString": "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", '<code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> 应该返回 <code>Here Is My Handle Here Is My Spout</code>。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function titleCase(str) {\n  return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase()).join(' ');\n}\n\ntitleCase(\"I'm a little tea pot\");\n"
+      ],
+      "MDNlinks": [
+        "String.prototype.split()"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function titleCase(str) {",
+            "  return str;",
+            "}",
+            "",
+            "titleCase(\"I'm a little tea pot\");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "579e2a2c335b9d72dd32e05c",
+      "title": "Slice and Splice",
+      "description": [
+        "本挑战的输入参数为：两个数组和一个索引值。",
+        "请利用数组的 <code>slice</code> 和 <code>splice</code> 方法，将第一个数组中的所有元素依次复制到第二个数组中。",
+        "请从第二个数组中索引值为 <code>n</code> 的地方开始插入。",
+        "返回插入元素后的数组。输入的两个数组在函数执行前后要保持不变。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>frankenSplice([1, 2, 3], [4, 5], 1)</code> 应该返回 <code>[4, 1, 2, 3, 5]</code>。",
+          "testString": "assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5], '<code>frankenSplice([1, 2, 3], [4, 5], 1)</code> 应该返回 <code>[4, 1, 2, 3, 5]</code>。');"
+        },
+        {
+          "text": "<code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> 应该返回 <code>[\"a\", 1, 2, \"b\"]</code>。",
+          "testString": "assert.deepEqual(frankenSplice(testArr1, testArr2, 1), [\"a\", 1, 2, \"b\"], '<code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> 应该返回 <code>[\"a\", 1, 2, \"b\"]</code>。');"
+        },
+        {
+          "text": "<code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> 应该返回 <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>。",
+          "testString": "assert.deepEqual(frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2), [\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"], '<code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> 应该返回 <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>。');"
+        },
+        {
+          "text": "来自第一个数组的所有元素应该按原来的顺序被插入到第二个数组中。",
+          "testString": "assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4], '来自第一个数组的所有元素应该按原来的顺序被插入到第二个数组中。');"
+        },
+        {
+          "text": "第一个数组在函数执行前后应该保持一样。",
+          "testString": "assert(testArr1[0] === 1 && testArr1[1] === 2, '第一个数组在函数执行前后应该保持一样。');"
+        },
+        {
+          "text": "第二个数组在函数执行前后应该保持一样。",
+          "testString": "assert(testArr2[0] === \"a\" && testArr2[1] === \"b\", '第二个数组在函数执行前后应该保持一样。');"
+        }
+      ],
+      "isRequired": true,
+      "isBeta": true,
+      "solutions": [
+        "function frankenSplice(arr1, arr2, n) {\n  // It's alive. It's alive!\n  let result = arr2.slice();\n  for (let i = 0; i < arr1.length; i++) {\n    result.splice(n+i, 0, arr1[i]);\n  }\n  return result;\n}\n\nfrankenSplice([1, 2, 3], [4, 5], 1);\n"
+      ],
+      "MDNlinks": [
+        "Array.prototype.slice()",
+        "Array.prototype.splice()"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function frankenSplice(arr1, arr2, n) {",
+            "  // It's alive. It's alive!",
+            "  return arr2;",
+            "}",
+            "",
+            "frankenSplice([1, 2, 3], [4, 5, 6], 1);"
+          ],
+          "head": [],
+          "tail": [
+            "let testArr1 = [1, 2];",
+            "let testArr2 = [\"a\", \"b\"];"
+          ]
+        }
+      }
+    },
+    {
+      "id": "adf08ec01beb4f99fc7a68f2",
+      "title": "Falsy Bouncer",
+      "description": [
+        "从一个数组中移除所有假值（falsy values）。",
+        "JavaScript 中的假值有 <code>false</code>、<code>null</code>、<code>0</code>、<code>\"\"</code>、<code>undefined</code> 和 <code>NaN</code>。",
+        "提示：请尝试将每一个值转换为一个布尔值（boolean）。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>bouncer([7, \"ate\", \"\", false, 9])</code> 应该返回 <code>[7, \"ate\", 9]</code>。",
+          "testString": "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], '<code>bouncer([7, \"ate\", \"\", false, 9])</code> 应该返回 <code>[7, \"ate\", 9]</code>。');"
+        },
+        {
+          "text": "<code>bouncer([\"a\", \"b\", \"c\"])</code> 应该返回 <code>[\"a\", \"b\", \"c\"]</code>。",
+          "testString": "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], '<code>bouncer([\"a\", \"b\", \"c\"])</code> 应该返回 <code>[\"a\", \"b\", \"c\"]</code>。');"
+        },
+        {
+          "text": "<code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> 应该返回 <code>[]</code>。",
+          "testString": "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, \"\"]), [], '<code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> 应该返回 <code>[]</code>。');"
+        },
+        {
+          "text": "<code>bouncer([1, null, NaN, 2, undefined])</code> 应该返回 <code>[1, 2]</code>。",
+          "testString": "assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], '<code>bouncer([1, null, NaN, 2, undefined])</code> 应该返回 <code>[1, 2]</code>。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function bouncer(arr) {\n  return arr.filter(e => e);\n}\n\nbouncer([7, \"ate\", \"\", false, 9]);\n"
+      ],
+      "MDNlinks": [
+        "Boolean Objects",
+        "Array.prototype.filter()"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function bouncer(arr) {",
+            "  // Don't show a false ID to this bouncer.",
+            "  return arr;",
+            "}",
+            "",
+            "bouncer([7, \"ate\", \"\", false, 9]);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "a24c1a4622e3c05097f71d67",
+      "title": "Where do I Belong",
+      "description": [
+        "返回数组（第一个参数）被排序后，将一个值（第二个参数）插入到该数组中而使数组保持有序的最小的索引。返回的值应该是一个数字。",
+        "例如，<code>getIndexToIns([1,2,3,4], 1.5)</code> 应该返回 <code>1</code> 因为 1.5 大于 <code>1</code> （索引为 0），但小于 <code>2</code>（索引为 1）。",
+        "同样地，<code>getIndexToIns([20,3,5], 19)</code> 应该返回 <code>2</code> 因为数组被排序后会变成 <code>[3,5,20]</code>，而 <code>19</code> 小于 <code>20</code>（索引为 2）且大于 <code>5</code>（索引为 1）。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> 应该返回 <code>3</code>。",
+          "testString": "assert(getIndexToIns([10, 20, 30, 40, 50], 35) === 3, '<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> 应该返回 <code>3</code>。');"
+        },
+        {
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> 应该返回一个数字。",
+          "testString": "assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 35)) === \"number\", '<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> 应该返回一个数字。');"
+        },
+        {
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> 应该返回 <code>2</code>。",
+          "testString": "assert(getIndexToIns([10, 20, 30, 40, 50], 30) === 2, '<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> 应该返回 <code>2</code>。');"
+        },
+        {
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> 应该返回一个数字。",
+          "testString": "assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 30)) === \"number\", '<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> 应该返回一个数字。');"
+        },
+        {
+          "text": "<code>getIndexToIns([40, 60], 50)</code> 应该返回 <code>1</code>。",
+          "testString": "assert(getIndexToIns([40, 60], 50) === 1, '<code>getIndexToIns([40, 60], 50)</code> 应该返回 <code>1</code>。');"
+        },
+        {
+          "text": "<code>getIndexToIns([40, 60], 50)</code> 应该返回一个数字。",
+          "testString": "assert(typeof(getIndexToIns([40, 60], 50)) === \"number\", '<code>getIndexToIns([40, 60], 50)</code> 应该返回一个数字。');"
+        },
+        {
+          "text": "<code>getIndexToIns([3, 10, 5], 3)</code> 应该返回 <code>0</code>。",
+          "testString": "assert(getIndexToIns([3, 10, 5], 3) === 0, '<code>getIndexToIns([3, 10, 5], 3)</code> 应该返回 <code>0</code>。');"
+        },
+        {
+          "text": "<code>getIndexToIns([3, 10, 5], 3)</code> 应该返回一个数字。",
+          "testString": "assert(typeof(getIndexToIns([3, 10, 5], 3)) === \"number\", '<code>getIndexToIns([3, 10, 5], 3)</code> 应该返回一个数字。');"
+        },
+        {
+          "text": "<code>getIndexToIns([5, 3, 20, 3], 5)</code> 应该返回 <code>2</code>。",
+          "testString": "assert(getIndexToIns([5, 3, 20, 3], 5) === 2, '<code>getIndexToIns([5, 3, 20, 3], 5)</code> 应该返回 <code>2</code>。');"
+        },
+        {
+          "text": "<code>getIndexToIns([5, 3, 20, 3], 5)</code> 应该返回一个数字。",
+          "testString": "assert(typeof(getIndexToIns([5, 3, 20, 3], 5)) === \"number\", '<code>getIndexToIns([5, 3, 20, 3], 5)</code> 应该返回一个数字。');"
+        },
+        {
+          "text": "<code>getIndexToIns([2, 20, 10], 19)</code> 应该返回 <code>2</code>。",
+          "testString": "assert(getIndexToIns([2, 20, 10], 19) === 2, '<code>getIndexToIns([2, 20, 10], 19)</code> 应该返回 <code>2</code>。');"
+        },
+        {
+          "text": "<code>getIndexToIns([2, 20, 10], 19)</code> 应该返回一个数字。",
+          "testString": "assert(typeof(getIndexToIns([2, 20, 10], 19)) === \"number\", '<code>getIndexToIns([2, 20, 10], 19)</code> 应该返回一个数字。');"
+        },
+        {
+          "text": "<code>getIndexToIns([2, 5, 10], 15)</code> 应该返回 <code>3</code>。",
+          "testString": "assert(getIndexToIns([2, 5, 10], 15) === 3, '<code>getIndexToIns([2, 5, 10], 15)</code> 应该返回 <code>3</code>。');"
+        },
+        {
+          "text": "<code>getIndexToIns([2, 5, 10], 15)</code> 应该返回一个数字。",
+          "testString": "assert(typeof(getIndexToIns([2, 5, 10], 15)) === \"number\", '<code>getIndexToIns([2, 5, 10], 15)</code> 应该返回一个数字。');"
+        },
+        {
+          "text": "<code>getIndexToIns([], 1)</code> 应该返回 <code>0</code>。",
+          "testString": "assert(getIndexToIns([], 1) === 0, '<code>getIndexToIns([], 1)</code> 应该返回 <code>0</code>。');"
+        },
+        {
+          "text": "<code>getIndexToIns([], 1)</code> 应该返回一个数字。",
+          "testString": "assert(typeof(getIndexToIns([], 1)) === \"number\", '<code>getIndexToIns([], 1)</code> 应该返回一个数字。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function getIndexToIns(arr, num) {\n  arr = arr.sort((a, b) => a - b);\n\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] >= num) {\n      return i;\n    }\n  }\n\n  return arr.length;\n}\n\ngetIndexToIns([40, 60], 50);\n"
+      ],
+      "MDNlinks": [
+        "Array.prototype.sort()"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function getIndexToIns(arr, num) {",
+            "  // Find my place in this sorted array.",
+            "  return num;",
+            "}",
+            "",
+            "getIndexToIns([40, 60], 50);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "af2170cad53daa0770fabdea",
+      "title": "Mutations",
+      "description": [
+        "输入参数是一个有两个字符串元素的数组。如果第一个字符串中包含了第二个字符串中的所有字母，则返回 true。",
+        "例如，<code>[\"hello\", \"Hello\"]</code> 应该返回 true 因为第一个字符串中包含了第二个字符串中出现的所有字母（忽略大小写）。",
+        "而 <code>[\"hello\", \"hey\"]</code> 应该返回 false 因为第一个字符串 \"hello\" 没有包含字母 \"y\"。",
+        "最后，<code>[\"Alien\", \"line\"]</code>, 应该返回 true，因为 \"line\" 中的所有字母都被包含在 \"Alien\" 中。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>mutation([\"hello\", \"hey\"])</code> 应该返回 false。",
+          "testString": "assert(mutation([\"hello\", \"hey\"]) === false, '<code>mutation([\"hello\", \"hey\"])</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>mutation([\"hello\", \"Hello\"])</code> 应该返回 true。",
+          "testString": "assert(mutation([\"hello\", \"Hello\"]) === true, '<code>mutation([\"hello\", \"Hello\"])</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> 应该返回 true。",
+          "testString": "assert(mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]) === true, '<code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>mutation([\"Mary\", \"Army\"])</code> 应该返回 true。",
+          "testString": "assert(mutation([\"Mary\", \"Army\"]) === true, '<code>mutation([\"Mary\", \"Army\"])</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>mutation([\"Mary\", \"Aarmy\"])</code> 应该返回 true。",
+          "testString": "assert(mutation([\"Mary\", \"Aarmy\"]) === true, '<code>mutation([\"Mary\", \"Aarmy\"])</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>mutation([\"Alien\", \"line\"])</code> 应该返回 true。",
+          "testString": "assert(mutation([\"Alien\", \"line\"]) === true, '<code>mutation([\"Alien\", \"line\"])</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>mutation([\"floor\", \"for\"])</code> 应该返回 true。",
+          "testString": "assert(mutation([\"floor\", \"for\"]) === true, '<code>mutation([\"floor\", \"for\"])</code> 应该返回 true。');"
+        },
+        {
+          "text": "<code>mutation([\"hello\", \"neo\"])</code> 应该返回 false。",
+          "testString": "assert(mutation([\"hello\", \"neo\"]) === false, '<code>mutation([\"hello\", \"neo\"])</code> 应该返回 false。');"
+        },
+        {
+          "text": "<code>mutation([\"voodoo\", \"no\"])</code> 应该返回 false。",
+          "testString": "assert(mutation([\"voodoo\", \"no\"]) === false, '<code>mutation([\"voodoo\", \"no\"])</code> 应该返回 false。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function mutation(arr) {\n  let hash = Object.create(null);\n\n  arr[0].toLowerCase().split('').forEach(c => hash[c] = true);\n\n  return !arr[1].toLowerCase().split('').filter(c => !hash[c]).length;\n}\n\nmutation([\"hello\", \"hey\"]);\n"
+      ],
+      "MDNlinks": [
+        "String.prototype.indexOf()"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function mutation(arr) {",
+            "  return arr;",
+            "}",
+            "",
+            "mutation([\"hello\", \"hey\"]);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "a9bd25c716030ec90084d8a1",
+      "title": "Chunky Monkey",
+      "description": [
+        "请写一个函数，将一个数组（第一个参数）分割成一组长度为 <code>size</code>（第二个参数）的数组，然后在一个二维数组中返回这些结果。",
+        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+      ],
+      "tests": [
+        {
+          "text": "<code>chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2)</code> 应该返回 <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>。",
+          "testString": "assert.deepEqual(chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], '<code>chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2)</code> 应该返回 <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>。');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> 应该返回 <code>[[0, 1, 2], [3, 4, 5]]</code>。",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> 应该返回 <code>[[0, 1, 2], [3, 4, 5]]</code>。');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> 应该返回 <code>[[0, 1], [2, 3], [4, 5]]</code>。",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> 应该返回 <code>[[0, 1], [2, 3], [4, 5]]</code>。');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> 应该返回 <code>[[0, 1, 2, 3], [4, 5]]</code>。",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> 应该返回 <code>[[0, 1, 2, 3], [4, 5]]</code>。');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> 应该返回 <code>[[0, 1, 2], [3, 4, 5], [6]]</code>。",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [[0, 1, 2], [3, 4, 5], [6]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> 应该返回 <code>[[0, 1, 2], [3, 4, 5], [6]]</code>。');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> 应该返回 <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>。",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [[0, 1, 2, 3], [4, 5, 6, 7], [8]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> 应该返回 <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>。');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> 应该返回 <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>。",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2), [[0, 1], [2, 3], [4, 5], [6, 7], [8]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> 应该返回 <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>。');"
+        }
+      ],
+      "isRequired": true,
+      "solutions": [
+        "function chunkArrayInGroups(arr, size) {\n  let out = [];\n\n  for (let i = 0; i < arr.length; i += size) {\n    out.push(arr.slice(i, i + size));\n  }\n\n  return out;\n}\n\nchunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2);\n"
+      ],
+      "MDNlinks": [
+        "Array.prototype.push()",
+        "Array.prototype.slice()"
+      ],
+      "challengeType": 5,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function chunkArrayInGroups(arr, size) {",
+            "  // Break it up.",
+            "  return arr;",
+            "}",
+            "",
+            "chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    }
+  ]
+}

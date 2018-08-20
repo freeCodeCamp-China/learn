@@ -1,0 +1,1679 @@
+{
+  "name": "Functional Programming",
+  "order": 8,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d7b8d367417b2b2512b5b",
+      "title": "Learn About Functional Programming",
+      "description": [
+        "函数式编程是一种解决方案简单，功能独立，对作用域外没有任何副作用的编程范式。",
+        "<code>INPUT -> PROCESS -> OUTPUT</code>",
+        "函数式编程：",
+        "1）功能独立——不依赖于程序的状态（比如可能发生变化的全局变量）；",
+        "2）纯函数——同一个输入永远能得到同一个输出；",
+        "3）有限的副作用——可以严格地限制函数外部对状态的更改导致的状态变化。",
+        "<hr>",
+        "freeCodeCamp 成员在 love tea 的故事。",
+        "在代码编辑器中，已经为你定义好了<code>prepareTea</code>和<code>getTea</code>函数。调用<code>getTea</code>函数为团队准备 40 杯茶，并将它们存储在<code>tea4TeamFCC</code>变量里。"
+      ],
+      "tests": [
+        {
+          "text": "<code>tea4TeamFCC</code>变量里应有 40 杯为团队准备的茶。",
+          "testString": "assert(tea4TeamFCC.length === 40, '<code>tea4TeamFCC</code>变量里应有 40 杯为团队准备的茶。');"
+        },
+        {
+          "text": "<code>tea4TeamFCC</code>变量里应有 greenTea。",
+          "testString": "assert(tea4TeamFCC[0] === 'greenTea', '<code>tea4TeamFCC</code>变量里应有 greenTea。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "/**",
+            " * 备茶过程",
+            " * @return {string} 一杯茶",
+            " **/",
+            "const prepareTea = () => 'greenTea';",
+            "",
+            "/**",
+            " * 获得一定数量的茶",
+            " * @param {number} numOfCups 所需茶的数量",
+            " * @return {Array<string>} 返回给定量的茶",
+            " **/",
+            "const getTea = (numOfCups) => {",
+            "  const teaCups = [];",
+            "  ",
+            "  for(let cups = 1; cups <= numOfCups; cups += 1) {",
+            "    const teaCup = prepareTea();",
+            "    teaCups.push(teaCup);",
+            "  }",
+            "",
+            "  return teaCups;",
+            "};",
+            "",
+            "// 请在本行以下添加你的代码",
+            "",
+            "const tea4TeamFCC = null; // :(",
+            "",
+            "// 请在本行以上添加你的代码",
+            "",
+            "console.log(tea4TeamFCC);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b8e367417b2b2512b5c",
+      "title": "Understand Functional Programming Terminology",
+      "description": [
+        "FCC 团队需求有变更，现在想要两种茶：绿茶（green tea）和红茶（black tea）。事实证明，用户需求变更是很常见的。",
+        "基于以上信息，我们需要重构上一节挑战中的<code>getTea</code>函数来处理多种茶的请求。我们可以修改<code>getTea</code>接受一个函数作为参数，使它能够修改茶的类型。这让<code>getTea</code>更灵活，也使需求变更时为程序员提供更多控制权。",
+        "首先，我们将介绍一些术语：",
+        "<code>Callbacks</code>是被传递到另一个函数中调用的函数。你应该已经在其他函数中看过这个写法，例如在<code>filter</code>中，回调函数告诉 JavaScript 以什么规则过滤数组。",
+        "函数就像其他正常值一样，可以赋值给变量、传递给另一个函数，或从其它函数返回，这种函数叫做<code>first class</code>函数。在 JavaScript 中，所有函数都是<code>first class</code>函数。",
+        "将函数为参数或返回值的函数叫做<code>higher order</code>函数。",
+        "当函数传递给另一个函数或从另一个函数返回时，那些传入或返回的函数可以叫做<code>lambda</code>。",
+        "<hr>",
+        "准备 27 杯绿茶和 13 杯红茶，分别存入<code>tea4GreenTeamFCC</code>和<code>tea4BlackTeamFCC</code>变量。请注意，<code>getTea</code>函数已经变了，现在它接收一个函数作为第一个参数。",
+        "注意：数据（茶的数量）作为最后一个参数。我们将在后面的课程中对此进行更多讨论。"
+      ],
+      "tests": [
+        {
+          "text": "<code>tea4GreenTeamFCC</code>变量应存有为团队准备的 27 杯茶。",
+          "testString": "assert(tea4GreenTeamFCC.length === 27, '<code>tea4GreenTeamFCC</code>变量应存有为团队准备的 27 杯茶。');"
+        },
+        {
+          "text": "<code>tea4GreenTeamFCC</code>变量应存有绿茶。",
+          "testString": "assert(tea4GreenTeamFCC[0] === 'greenTea', '<code>tea4GreenTeamFCC</code>变量应存有绿茶。');"
+        },
+        {
+          "text": "<code>tea4BlackTeamFCC</code>变量应存有 13 杯红茶。",
+          "testString": "assert(tea4BlackTeamFCC.length === 13, '<code>tea4BlackTeamFCC</code>变量应存有 13 杯红茶。');"
+        },
+        {
+          "text": "<code>tea4BlackTeamFCC</code>变量应存有红茶。",
+          "testString": "assert(tea4BlackTeamFCC[0] === 'blackTea', '<code>tea4BlackTeamFCC</code>变量应存有红茶。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "/**",
+            " * 绿茶准备过程",
+            " * @return {string} 一杯绿茶",
+            " **/",
+            "const prepareGreenTea = () => 'greenTea';",
+            "",
+            "/**",
+            " * 备红茶准备过程",
+            " * @return {string} 一杯红茶",
+            " **/",
+            "const prepareBlackTea = () => 'blackTea';",
+            "",
+            "/**",
+            " * 获得一定数量的茶",
+            " * @param {function():string} prepareTea 茶的类型",
+            " * @param {number} numOfCups 需要茶的数量",
+            " * @return {Array<string>} 给定的茶",
+            " **/",
+            "const getTea = (prepareTea, numOfCups) => {",
+            "  const teaCups = [];",
+            "",
+            "  for(let cups = 1; cups <= numOfCups; cups += 1) {",
+            "    const teaCup = prepareTea();",
+            "    teaCups.push(teaCup);",
+            "  }",
+            "",
+            "  return teaCups;",
+            "};",
+            "",
+            "// 请在本行以下添加你的代码",
+            "",
+            "const tea4GreenTeamFCC = null; // :(",
+            "const tea4BlackTeamFCC = null; // :(",
+            "",
+            "// 请在本行以上添加你的代码",
+            "",
+            "console.log(",
+            "  tea4GreenTeamFCC,",
+            "  tea4BlackTeamFCC",
+            ");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b8e367417b2b2512b5d",
+      "title": "Understand the Hazards of Using Imperative Code",
+      "description": [
+        "函数式编程是一种好习惯，它能让代码管理更简单，不受隐藏 bug 影响。在我们开始函数式编程之前，为了更好的突显可能遇到的问题，我们先看看命令式编程。",
+        "类似在英语（和许多其他语言）中，命令式时态用于给出命令，编程中的命令式是给计算机一组语句来执行任务。",
+        "这些语句通常会改变程序的状态，例如更新全局变量，典型的例子就是写一个<code>for</code>循环，它给出了迭代数组索引的精确方向。",
+        "相反，函数式编程是声明式编程的一种形式，通过调用方法或函数来告诉计算机要做什么。",
+        "JavaScript 提供了许多处理常见任务的方法，所以你无需写出计算机应如何执行它们。例如，你可以用<code>map</code>函数替代上面提到的<code>for</code>循环来处理数组迭代。这有助于避免语义错误，如调试章节介绍的\"Off By One Errors\"。",
+        "考虑这样的场景：你正在浏览器中浏览网页，并想操作你打开的标签。下面我们来试试用面向对象的思路来描述这种情景。",
+        "窗口对象由选项卡组成，通常会打开多个窗口。窗口对象中每个打开网站的标题都保存在一个数组中。在对浏览器进行了如打开新标签、合并窗口、关闭标签之类的操作后，你需要输出所有打开的标签。关掉的标签将从数组中删除，新打开的标签（为简单起见）则添加到数组的末尾。",
+        "代码编辑器中显示了此功能的实现，其中包含<code>tabOpen()</code>，<code>tabClose()</code>，和 <code>join()</code>函数。<code>tabs</code>数组是窗口对象的一部分用于储存打开页面的名称。",
+        "<h4>说明<h4>",
+        "在编辑器中运行代码。它使用了有副作用的方法，导致输出错误。打开标签的最终列表应该是<code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']</code>但输出会略有不同。",
+        "仔细阅读代码，看看你是否能找出问题所在，然后进入下一个挑战，了解更多信息。"
+      ],
+      "tests": [
+        {
+          "text": "Move ahead to understand the error.",
+          "testString": "assert(true, 'Move ahead to understand the error.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// tabs 是窗口中打开网站的标题数组",
+            "var Window = function(tabs) {",
+            "  this.tabs = tabs; // 我们将数组记录在对象内部",
+            "};",
+            "",
+            "// 当两个窗口合并成一个窗口时",
+            "Window.prototype.join = function (otherWindow) {",
+            "  this.tabs = this.tabs.concat(otherWindow.tabs);",
+            "  return this;",
+            "};",
+            "",
+            "// 在末尾打开一个新标签",
+            "Window.prototype.tabOpen = function (tab) {",
+            "  this.tabs.push('new tab'); // 打开一个新的标签",
+            "  return this;",
+            "};",
+            "",
+            "// 关闭一个标签",
+            "Window.prototype.tabClose = function (index) {",
+            "  var tabsBeforeIndex = this.tabs.splice(0, index); // 获取前面的标签",
+            "  var tabsAfterIndex = this.tabs.splice(index); // 获取后面的标签",
+            "",
+            "  this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // 拼接到一起",
+            "  return this;",
+            " };",
+            "",
+            "// 创建三个浏览器窗口",
+            "var workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']); // 邮箱、文档及其他与工作相关的网站",
+            "var socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']); // 社交网站",
+            "var videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']); // 娱乐网站",
+            "",
+            "// 执行标签打开，关闭和其他操作",
+            "var finalTabs = socialWindow",
+            "                    .tabOpen() // 新开一个 cat memes 的标签",
+            "                    .join(videoWindow.tabClose(2)) // 在娱乐网站关闭第三个标签，加入数组",
+            "                    .join(workWindow.tabClose(1).tabOpen());",
+            "",
+            "alert(finalTabs.tabs);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b8e367417b2b2512b5e",
+      "title": "Avoid Mutations and Side Effects Using Functional Programming",
+      "description": [
+        "如果你还没想通，上一个挑战的问题出在<code>tabClose()</code>函数里的<code>splice</code>。不幸的是，<code>splice</code>修改了调用它的原始数组，所以第二次调用它时是基于修改后的数组，才给出了意料之外的结果。",
+        "这是一个小例子，还有更广义的定义——你在变量，数组或对象上调用一个函数，这个会函数改变对象中的变量或其他东西。",
+        "函数式编程的核心原则之一是不改变任何东西。变化会导致错误。如果一个函数不改变传入的参数、全局变量等数据，那么它造成问题的可能性就会小很多。",
+        "前面的例子没有任何复杂的操作，但是<code>splice</code>方法改变了原始数组，导致 bug 产生。",
+        "回想一下，在函数式编程中，改变或变更叫做<code>mutation</code>，这种改变的结果叫做“副作用”（<code>side effect</code>）。理想情况下，函数应该是不会产生任何副作用的<code>pure function</code>。",
+        "让我们尝试掌握这个原则：不要改变代码中的任何变量或对象。",
+        "<hr>",
+        "填写<code>incrementer</code>函数的代码，使其返回全局变量<code>fixedValue</code>的值增加 1。"
+      ],
+      "tests": [
+        {
+          "text": "<code>incrementer</code>函数不能改变<code>fixedValue</code>的值。",
+          "testString": "assert(fixedValue === 4, '你的<code>incrementer</code>函数不能改变<code>fixedValue</code>的值。');"
+        },
+        {
+          "text": "<code>incrementer</code>函数应返回比<code>fixedValue</code>变量更大的值。",
+          "testString": "assert(newValue === 5, '<code>incrementer</code>函数应返回比<code>fixedValue</code>变量更大的值。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// 全局变量",
+            "var fixedValue = 4;",
+            "",
+            "function incrementer () {",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "",
+            "var newValue = incrementer(); // 应等于 5",
+            "console.log(fixedValue); // 应打印 4"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b8e367417b2b2512b5f",
+      "title": "Pass Arguments to Avoid External Dependence in a Function",
+      "description": [
+        "最后一个挑战是更接近函数式编程原则的挑战，但是仍然缺少一些东西。",
+        "虽然我们没有改变全局变量值，但在没有全局变量<code>fixedValue</code>情况下，<code>incrementer</code>函数将不起作用。",
+        "函数式编程的另一个原则是：总是显式声明依赖关系。如果函数依赖于一个变量或对象，那么将该变量或对象作为参数直接传递到函数中。",
+        "这样做会有很多好处，其中一点是让函数更容易测试，因为你确切地知道参数是什么，并且这个参数也不依赖于程序中的任何其他内容。",
+        "其次，这样做可以让你更加自信地更改，删除或添加新代码。因为你很清楚哪些是可以改的，哪些是不可以改的，这样你就知道哪里可能会有潜在的陷阱。",
+        "最后，无论代码的哪一部分执行它，函数总是会为同一组输入生成相同的输出。",
+        "<hr>",
+        "更新<code>incrementer</code>函数，明确声明其依赖项。",
+        "编写<code>incrementer</code>函数，获取它的参数，然后将值增加 1。"
+      ],
+      "tests": [
+        {
+          "text": "<code>incrementer</code>函数不能修改<code>fixedValue</code>的值。",
+          "testString": "assert(fixedValue === 4, '<code>incrementer</code>函数不能修改<code>fixedValue</code>的值。');"
+        },
+        {
+          "text": "<code>incrementer</code>函数应该接收一个参数。",
+          "testString": "assert(code.match(/function\\s+?incrementer\\s*?\\(.+?\\)/g), '<code>incrementer</code>函数应该接收一个参数。');"
+        },
+        {
+          "text": "<code>incrementer</code>函数应返回比<code>fixedValue</code>更大的值。",
+          "testString": "assert(newValue === 5, '<code>incrementer</code>函数应返回比<code>fixedValue</code>更大的值。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// 全局变量",
+            "var fixedValue = 4;",
+            "",
+            "// 请在本行以下添加你的代码",
+            "function incrementer () {",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "",
+            "var newValue = incrementer(fixedValue); // 应等于 5",
+            "console.log(fixedValue); // 应打印 4"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b8f367417b2b2512b60",
+      "title": "Refactor Global Variables Out of Functions",
+      "description": [
+        "目前为止，我们已经看到了函数式编程的两个原则：",
+        "1) 不要更改变量或对象——创建新变量和对象，并在需要时从函数返回它们。",
+        "2) 声明函数参数——函数内的任何计算仅取决于参数，而不取决于任何全局对象或变量。",
+        "给数字增加 1 不够刺激，我们可以在处理数组或更复杂的对象时应用这些原则。",
+        "<hr>",
+        "重构代码，使全局数组<code>bookList</code>在函数内部不会被改变。<code>add</code>函数可以将指定的<code>bookName</code>增加到数组末尾。<code>remove</code>函数可以从数组中移除指定<code>bookName</code>。两个函数都返回数组，并且任何参数都应该添加到<code>bookName</code>前面。"
+      ],
+      "tests": [
+        {
+          "text": "<code>bookList</code>不应该改变，应等于<code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.",
+          "testString": "assert(JSON.stringify(bookList) === JSON.stringify([\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]), '<code>bookList</code>不应该改变，应等于<code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.');"
+        },
+        {
+          "text": "<code>newBookList</code>应等于<code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.",
+          "testString": "assert(JSON.stringify(newBookList) === JSON.stringify(['The Hound of the Baskervilles', 'On The Electrodynamics of Moving Bodies', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), '<code>newBookList</code>应等于<code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.');"
+        },
+        {
+          "text": "<code>newerBookList</code>应等于<code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.",
+          "testString": "assert(JSON.stringify(newerBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae']), '<code>newerBookList</code>应等于<code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.');"
+        },
+        {
+          "text": "<code>newestBookList</code>应等于<code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.",
+          "testString": "assert(JSON.stringify(newestBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), '<code>newestBookList</code>应等于<code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "Look at how the functions are called to see the correct order of the parameters.",
+        "Consider using the concat method instead of push.",
+        "The slice method returns a new array without modifying the original."
+      ],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// 全局变量",
+            "var bookList = [\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"];",
+            "",
+            "/* 这个函数应该增加一本书到列表中，并返回这个列表 */",
+            "// 新参数应在 bookName 之前",
+            "",
+            "// 请在本行以下添加你的代码",
+            "function add (bookName) {",
+            "  ",
+            "  return bookList.push(bookName);",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "",
+            "/* 这个函数应该移除一本书到列表中，并返回这个列表 */",
+            "// 新参数应在 bookName 之前",
+            "",
+            "// 请在本行以下添加你的代码",
+            "function remove (bookName) {",
+            "  if (bookList.indexOf(bookName) >= 0) {",
+            "    ",
+            "    return bookList.splice(0, 1, bookName);",
+            "    ",
+            "    // 请在本行以上添加你的代码",
+            "    }",
+            "}",
+            "",
+            "var newBookList = add(bookList, 'A Brief History of Time');",
+            "var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');",
+            "var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');",
+            "",
+            "console.log(bookList);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b8f367417b2b2512b61",
+      "title": "Use the map Method to Extract Data from an Array",
+      "description": [
+        "目前为止，我们已经学会了使用纯函数来避免程序中的副作用。此外，我们已经看到函数的值仅取决于其输入参数。",
+        "这仅仅是个开始。顾名思义，函数式编程以函数理论为中心。",
+        "能够将它们作为参数传递给其他函数，和从另一个函数返回一个函数是有意义的。函数在 JavaScript 中被视为<code>First Class Objects</code>，它们可以像任何其他对象一样使用。它们可以保存在变量中，存储在对象中，也可以作为函数参数传递。",
+        "让我们从一些简单的数组函数开始，这些函数是数组对象原型上的方法。在本练习中，我们来了解下数组的<code>map</code>方法（即<code>Array.prototype.map()</code>）。",
+        "请记住，<code>map</code>方法是迭代数组中每一项的方式之一。在对每个元素应用回调函数后，它会创建一个新数组(不改变原来的数组)。",
+        "<hr>",
+        "<code>watchList</code>数组保存了包含一些电影信息的对象。使用<code>map</code>从<code>watchList</code>中提取标题（<code>title</code>）和评分（<code>rating</code>），并将新数组保存在<code>rating</code>变量里。目前编辑器中的代码是使用<code>for</code>循环实现，使用<code>map</code>表达式替换循环功能。"
+      ],
+      "tests": [
+        {
+          "text": "<code>watchList</code>不能被改变",
+          "testString": "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", '<code>watchList</code>不能被改变');"
+        },
+        {
+          "text": "你的代码不能使用<code>for</code>循环。",
+          "testString": "assert(!code.match(/for\\s*?\\(.+?\\)/g), '你的代码不能使用<code>for</code>循环。');"
+        },
+        {
+          "text": "你的代码应使用<code>map</code>方法。",
+          "testString": "assert(code.match(/\\.map/g), '你的代码应使用<code>map</code>方法。');"
+        },
+        {
+          "text": "<code>rating</code>应等于<code>[{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]</code>.",
+          "testString": "assert(JSON.stringify(rating) === JSON.stringify([{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]), '<code>rating</code>应等于<code>[{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]</code>.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// 全局变量",
+            "var watchList = [",
+            "                 {  ",
+            "                   \"Title\": \"Inception\",",
+            "                   \"Year\": \"2010\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"16 Jul 2010\",",
+            "                   \"Runtime\": \"148 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Christopher Nolan\",",
+            "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
+            "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
+            "                   \"Language\": \"English, Japanese, French\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.8\",",
+            "                   \"imdbVotes\": \"1,446,708\",",
+            "                   \"imdbID\": \"tt1375666\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Interstellar\",",
+            "                   \"Year\": \"2014\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"07 Nov 2014\",",
+            "                   \"Runtime\": \"169 min\",",
+            "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
+            "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
+            "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
+            "                   \"Language\": \"English\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.6\",",
+            "                   \"imdbVotes\": \"910,366\",",
+            "                   \"imdbID\": \"tt0816692\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"The Dark Knight\",",
+            "                   \"Year\": \"2008\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Jul 2008\",",
+            "                   \"Runtime\": \"152 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
+            "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
+            "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
+            "                   \"Language\": \"English, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"82\",",
+            "                   \"imdbRating\": \"9.0\",",
+            "                   \"imdbVotes\": \"1,652,832\",",
+            "                   \"imdbID\": \"tt0468569\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Batman Begins\",",
+            "                   \"Year\": \"2005\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"15 Jun 2005\",",
+            "                   \"Runtime\": \"140 min\",",
+            "                   \"Genre\": \"Action, Adventure\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
+            "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
+            "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
+            "                   \"Language\": \"English, Urdu, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"70\",",
+            "                   \"imdbRating\": \"8.3\",",
+            "                   \"imdbVotes\": \"972,584\",",
+            "                   \"imdbID\": \"tt0372784\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"Avatar\",",
+            "                   \"Year\": \"2009\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Dec 2009\",",
+            "                   \"Runtime\": \"162 min\",",
+            "                   \"Genre\": \"Action, Adventure, Fantasy\",",
+            "                   \"Director\": \"James Cameron\",",
+            "                   \"Writer\": \"James Cameron\",",
+            "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
+            "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
+            "                   \"Language\": \"English, Spanish\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"83\",",
+            "                   \"imdbRating\": \"7.9\",",
+            "                   \"imdbVotes\": \"876,575\",",
+            "                   \"imdbID\": \"tt0499549\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                }",
+            "];",
+            "",
+            "// 请在本行以下添加你的代码",
+            "",
+            "var rating = [];",
+            "for(var i=0; i < watchList.length; i++){",
+            "  rating.push({title: watchList[i][\"Title\"],  rating: watchList[i][\"imdbRating\"]});",
+            "}",
+            "",
+            "// 请在本行以上添加你的代码",
+            "",
+            "console.log(rating); "
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b8f367417b2b2512b62",
+      "title": "Implement map on a Prototype",
+      "description": [
+        "我们之前用<code>map</code>方法（即<code>Array.prototype.map()</code>）返回一个与调用它的数组长度相同的数组。只要它的回调函数不改变原始数组，它就不会改变原始数组。",
+        "换句话说，<code>map</code>是一个纯函数，它的输出仅取决于输入的数组和作为参数传入的回调函数。",
+        "为了加深对<code>map</code>方法的理解，现在我们来用<code>for</code>或<code>Array.prototype.forEach()</code>自己实现一下这个方法。",
+        "注意：纯函数可以改变其作用域内定义的局部变量，但我们最好不要这样做。",
+        "<hr>",
+        "写一个和<code>Array.prototype.map()</code>一样的<code>Array.prototype.myMap()</code>。你可以用<code>for</code>循环或者<code>forEach</code>方法。"
+      ],
+      "tests": [
+        {
+          "text": "<code>new_s</code>应等于<code>[46, 130, 196, 10]</code>。",
+          "testString": "assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]), '<code>new_s</code>应等于<code>[46, 130, 196, 10]</code>。');"
+        },
+        {
+          "text": "不能使用<code>map</code>方法。",
+          "testString": "assert(!code.match(/\\.map/g), '不能使用<code>map</code>方法。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// 全局变量",
+            "var s = [23, 65, 98, 5];",
+            "",
+            "Array.prototype.myMap = function(callback){",
+            "  var newArray = [];",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "  return newArray;",
+            "",
+            "};",
+            "",
+            "var new_s = s.myMap(function(item){",
+            "  return item * 2;",
+            "});"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b8f367417b2b2512b63",
+      "title": "Use the filter Method to Extract Data from an Array",
+      "description": [
+        "另一个有用的数组方法是<code>filter()</code>（即<code>Array.prototype.filter()</code>）。<code>filter</code>方法会返回一个长度不大于原始数组的新数组。",
+        "和<code>map</code>一样，<code>Filter</code>不会改变原始数组，它接收一个回调函数，将回调内的逻辑应用于数组的每个元素。新数组包含根据回调函数内条件返回 true 的元素。",
+        "<hr>",
+        "<code>watchList</code>是包含一些电影信息的对象。结合<code>filter</code>和<code>map</code>返回一个只包含<code>title</code>和<code>rating</code>属性的新数组，并且<code>imdbRating</code>值大于或等于 8.0。请注意，评级值在对象中保存为字符串，你可能需要将它转换成数字来执行运算。"
+      ],
+      "tests": [
+        {
+          "text": "<code>watchList</code>应保持不变。",
+          "testString": "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", '<code>watchList</code>应保持不变。');"
+        },
+        {
+          "text": "应使用<code>filter</code>方法。",
+          "testString": "assert(code.match(/\\.filter/g), '应使用<code>filter</code>方法。');"
+        },
+        {
+          "text": "不能使用<code>for</code>循环。",
+          "testString": "assert(!code.match(/for\\s*?\\(.+?\\)/g), '不能使用<code>for</code>循环。');"
+        },
+        {
+          "text": "<code>filteredList</code>应等于<code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>。",
+          "testString": "assert.deepEqual(filteredList, [{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}], '<code>filteredList</code>应等于<code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// 全局变量",
+            "var watchList = [",
+            "                 {  ",
+            "                   \"Title\": \"Inception\",",
+            "                   \"Year\": \"2010\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"16 Jul 2010\",",
+            "                   \"Runtime\": \"148 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Christopher Nolan\",",
+            "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
+            "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
+            "                   \"Language\": \"English, Japanese, French\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.8\",",
+            "                   \"imdbVotes\": \"1,446,708\",",
+            "                   \"imdbID\": \"tt1375666\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Interstellar\",",
+            "                   \"Year\": \"2014\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"07 Nov 2014\",",
+            "                   \"Runtime\": \"169 min\",",
+            "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
+            "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
+            "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
+            "                   \"Language\": \"English\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.6\",",
+            "                   \"imdbVotes\": \"910,366\",",
+            "                   \"imdbID\": \"tt0816692\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"The Dark Knight\",",
+            "                   \"Year\": \"2008\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Jul 2008\",",
+            "                   \"Runtime\": \"152 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
+            "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
+            "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
+            "                   \"Language\": \"English, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"82\",",
+            "                   \"imdbRating\": \"9.0\",",
+            "                   \"imdbVotes\": \"1,652,832\",",
+            "                   \"imdbID\": \"tt0468569\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Batman Begins\",",
+            "                   \"Year\": \"2005\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"15 Jun 2005\",",
+            "                   \"Runtime\": \"140 min\",",
+            "                   \"Genre\": \"Action, Adventure\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
+            "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
+            "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
+            "                   \"Language\": \"English, Urdu, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"70\",",
+            "                   \"imdbRating\": \"8.3\",",
+            "                   \"imdbVotes\": \"972,584\",",
+            "                   \"imdbID\": \"tt0372784\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"Avatar\",",
+            "                   \"Year\": \"2009\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Dec 2009\",",
+            "                   \"Runtime\": \"162 min\",",
+            "                   \"Genre\": \"Action, Adventure, Fantasy\",",
+            "                   \"Director\": \"James Cameron\",",
+            "                   \"Writer\": \"James Cameron\",",
+            "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
+            "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
+            "                   \"Language\": \"English, Spanish\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"83\",",
+            "                   \"imdbRating\": \"7.9\",",
+            "                   \"imdbVotes\": \"876,575\",",
+            "                   \"imdbID\": \"tt0499549\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                }",
+            "];",
+            "",
+            "// 请在本行以下添加你的代码",
+            "",
+            "var filteredList;",
+            "",
+            "// 请在本行以上添加你的代码",
+            "",
+            "console.log(filteredList); "
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b8f367417b2b2512b64",
+      "title": "Implement the filter Method on a Prototype",
+      "description": [
+        "为了加深对<code>filter</code>的理解，现在我们来自己实现一下<code>Array.prototype.filter()</code>方法。",
+        "可以用<code>for</code>循环或<code>Array.prototype.forEach()</code>。",
+        "请注意：纯函数可以改变其作用域内定义的局部变量，但我们最好不要这样做。",
+        "<hr>",
+        "编写一个和<code>Array.prototype.filter()</code>功能一样的<code>Array.prototype.myFilter()</code>方法。你可以用<code>for</code>循环或<code>Array.prototype.forEach()</code>方法。"
+      ],
+      "tests": [
+        {
+          "text": "<code>new_s</code>应等于<code>[23, 65, 5]</code>。",
+          "testString": "assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]), '<code>new_s</code>应等于<code>[23, 65, 5]</code>。');"
+        },
+        {
+          "text": "不能使用<code>filter</code>方法。",
+          "testString": "assert(!code.match(/\\.filter/g), '不能使用<code>filter</code>方法。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// 全局变量",
+            "var s = [23, 65, 98, 5];",
+            "",
+            "Array.prototype.myFilter = function(callback){",
+            "  var newArray = [];",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "  return newArray;",
+            "",
+            "};",
+            "",
+            "var new_s = s.myFilter(function(item){",
+            "  return item % 2 === 1;",
+            "});"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b90367417b2b2512b65",
+      "title": "Return Part of an Array Using the slice Method",
+      "description": [
+        "<code>slice</code>方法可以从已有数组中返回指定元素。它接受两个参数，第一个规定从何处开始选取，第二个规定从何处结束选取（不包括该元素）。如果没有传参，则默认为从数组的开头开始到结尾结束，这是复制整个数组的简单方式。<code>slice</code>返回一个新数组，不会修改原始数组。",
+        "举个例子：",
+        "<blockquote>var arr = [\"Cat\", \"Dog\", \"Tiger\", \"Zebra\"];<br>var newArray = arr.slice(1, 3);<br>// 将新数组设置为 [\"Dog\", \"Tiger\"]</blockquote>",
+        "<hr>",
+        "在<code>sliceArray</code>函数中使用<code>slice</code>方法，给出<code>beginSlice</code>和<code>endSlice</code>索引，返回<code>anim</code>数组的一部分，这个函数应返回一个数组。"
+      ],
+      "tests": [
+        {
+          "text": "你的代码中应使用<code>slice</code>方法。",
+          "testString": "assert(code.match(/\\.slice/g), '你的代码中应使用<code>slice</code>方法。');"
+        },
+        {
+          "text": "不能改变<code>inputAnim</code>变量。",
+          "testString": "assert(JSON.stringify(inputAnim) === JSON.stringify([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"]), '不能改变<code>inputAnim</code>变量。');"
+        },
+        {
+          "text": "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)</code>应返回<code>[\"Dog\", \"Tiger\"]</code>。",
+          "testString": "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)) === JSON.stringify([\"Dog\", \"Tiger\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)</code>应返回<code>[\"Dog\", \"Tiger\"]</code>。');"
+        },
+        {
+          "text": "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)</code>应返回<code>[\"Cat\"]</code>。",
+          "testString": "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)) === JSON.stringify([\"Cat\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)</code>应返回<code>[\"Cat\"]</code>。');"
+        },
+        {
+          "text": "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)</code>应返回<code>[\"Dog\", \"Tiger\", \"Zebra\"]</code>。",
+          "testString": "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)) === JSON.stringify([\"Dog\", \"Tiger\", \"Zebra\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)</code>应返回<code>[\"Dog\", \"Tiger\", \"Zebra\"]</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function sliceArray(anim, beginSlice, endSlice) {",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "var inputAnim = [\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"];",
+            "sliceArray(inputAnim, 1, 3);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eeafaeb5bdef",
+      "title": "Remove Elements from an Array Using slice Instead of splice",
+      "description": [
+        "使用数组时经常遇到要删除一些元素并保留数组剩余部分的情况。为此，JavaScript 提供了<code>splice</code>方法，它接收两个参数：从哪里开始删除项目的索引，和要删除的项目数。如果没有提供第二个参数，默认情况下是移除到结尾的元素。但<code>splice</code>方法会改变调用它的原始数组。举个例子：",
+        "<blockquote>var cities = [\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"];<br>cities.splice(3, 1); // 返回 \"London\" 并将它从 cities 数组删除<br>// cities 现在是 [\"Chicago\", \"Delhi\", \"Islamabad\", \"Berlin\"]</blockquote>",
+        "正如我们在上一次挑战中看到的那样，<code>slice</code>方法不会改变原始数组，而是返回一个可以保存到变量中的新数组。回想一下，<code>slice</code>方法接收两个参数，从开始索引开始选取到结束（不包括该元素），并在新数组中返回这些元素。使用<code>slice</code>方法替代<code>splice</code>有助于避免数组变化产生的副作用。",
+        "<hr>",
+        "用<code>slice</code>代替<code>splice</code>重写<code>nonMutatingSplice</code>函数。将<code>cities</code>数组长度限制为3，并返回一个仅包含前 3 项的新数组。",
+        "不要改变提供给函数的原始数组。"
+      ],
+      "tests": [
+        {
+          "text": "应该使用<code>slice</code>方法。",
+          "testString": "assert(code.match(/\\.slice/g), '应该使用<code>slice</code>方法。');"
+        },
+        {
+          "text": "不能使用<code>splice</code>方法。",
+          "testString": "assert(!code.match(/\\.splice/g), '不能使用<code>splice</code>方法。;"
+        },
+        {
+          "text": "不能改变<code>inputCities</code>数组。",
+          "testString": "assert(JSON.stringify(inputCities) === JSON.stringify([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"]), '不能改变<code>inputCities</code>数组。');"
+        },
+        {
+          "text": "<code>nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])</code>应返回<code>[\"Chicago\", \"Delhi\", \"Islamabad\"]</code>。",
+          "testString": "assert(JSON.stringify(nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])) === JSON.stringify([\"Chicago\", \"Delhi\", \"Islamabad\"]), '<code>nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])</code>应返回<code>[\"Chicago\", \"Delhi\", \"Islamabad\"]</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function nonMutatingSplice(cities) {",
+            "  // 请在本行以下添加你的代码",
+            "  return cities.splice(3);",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "var inputCities = [\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"];",
+            "nonMutatingSplice(inputCities);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7da9367417b2b2512b66",
+      "title": "Combine Two Arrays Using the concat Method",
+      "description": [
+        "<code>Concatenation</code>意思是将元素连接到尾部。同理，JavaScript 为字符串和数组提供了<code>concat</code>方法。对数组来说，在一个数组上调用<code>concat</code>方法，然后提供另一个数组作为参数添加到第一个数组末尾，返回一个新数组，不会改变任何一个原始数组。举个例子：",
+        "<blockquote>[1, 2, 3].concat([4, 5, 6]);<br>// 返回新数组 [1, 2, 3, 4, 5, 6]</blockquote>",
+        "<hr>",
+        "在<code>nonMutatingConcat</code>函数里使用<code>concat</code>，将<code>attach</code>拼接到<code>original</code>尾部，返回拼接后的数组。"
+      ],
+      "tests": [
+        {
+          "text": "应该使用<code>concat</code>方法。",
+          "testString": "assert(code.match(/\\.concat/g), '应该使用<code>concat</code>方法。');"
+        },
+        {
+          "text": "不能改变<code>first</code>数组。",
+          "testString": "assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), '不能改变<code>first</code>数组。');"
+        },
+        {
+          "text": "不能改变<code>second</code>数组。",
+          "testString": "assert(JSON.stringify(second) === JSON.stringify([4, 5]), '不能改变<code>second</code>数组。');"
+        },
+        {
+          "text": "<code>nonMutatingConcat([1, 2, 3], [4, 5])</code>应返回<code>[1, 2, 3, 4, 5]</code>。",
+          "testString": "assert(JSON.stringify(nonMutatingConcat([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), '<code>nonMutatingConcat([1, 2, 3], [4, 5])</code>应返回<code>[1, 2, 3, 4, 5]</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function nonMutatingConcat(original, attach) {",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "var first = [1, 2, 3];",
+            "var second = [4, 5];",
+            "nonMutatingConcat(first, second);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7da9367417b2b2512b67",
+      "title": "Add Elements to the End of an Array Using concat Instead of push",
+      "description": [
+        "函数式编程就是创建和使用 non-mutating 函数。",
+        "最后一个挑战介绍了<code>concat</code>方法，这是一种在不改变原始数组的前提下，将数组组合成新数组的方法。将<code>concat</code>方法与<code>push</code>方法做比较，<code>Push</code>将元素添加到调用它的数组的末尾，这样会改变该数组。举个例子：",
+        "<blockquote>var arr = [1, 2, 3];<br>arr.push([4, 5, 6]);<br>// arr 变成了 [1, 2, 3, [4, 5, 6]]<br>// 不是函数式编程</blockquote>",
+        "<code>Concat</code>方法可以将新项目添加到数组末尾，而不产生任何变更副作用。",
+        "<hr>",
+        "修改<code>nonMutatingPush</code>函数，用<code>concat</code>替代<code>push</code>将<code>newItem</code>添加到<code>original</code>末尾，该函数应返回一个数组。"
+      ],
+      "tests": [
+        {
+          "text": "应该使用<code>concat</code>方法。",
+          "testString": "assert(code.match(/\\.concat/g), '应该使用<code>concat</code>方法。');"
+        },
+        {
+          "text": "不能使用<code>push</code>方法。",
+          "testString": "assert(!code.match(/\\.push/g), '不能使用<code>push</code>方法。');"
+        },
+        {
+          "text": "不能改变<code>first</code>数组。",
+          "testString": "assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), '不能改变<code>first</code>数组。');"
+        },
+        {
+          "text": "不能改变<code>second</code>数组。",
+          "testString": "assert(JSON.stringify(second) === JSON.stringify([4, 5]), '不能改变<code>second</code>数组。');"
+        },
+        {
+          "text": "<code>nonMutatingPush([1, 2, 3], [4, 5])</code>应返回<code>[1, 2, 3, 4, 5]</code>。",
+          "testString": "assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), '<code>nonMutatingPush([1, 2, 3], [4, 5])</code>应返回<code>[1, 2, 3, 4, 5]</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function nonMutatingPush(original, newItem) {",
+            "  // 请在本行以下添加你的代码",
+            "  return original.push(newItem);",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "var first = [1, 2, 3];",
+            "var second = [4, 5];",
+            "nonMutatingPush(first, second);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7da9367417b2b2512b68",
+      "title": "Use the reduce Method to Analyze Data",
+      "description": [
+        "<code>reduce()</code>（即<code>Array.prototype.reduce()</code>），是 JavaScript 所有数组操作中最通用的方法。几乎可以用<code>reduce</code>方法解决所有数组处理问题。",
+        "<code>filter</code>和<code>map</code>方法不支持对数组中两个不同元素的交互。举个例子，如果你想把数组中的元素拿来比较或者相加，用<code>filter</code>和<code>map</code>是做不到的。",
+        "<code>reduce</code>方法允许更通用的数组处理方式，而且<code>filter</code>和<code>map</code>方法都可以当作是<code>reduce</code>的特殊实现。",
+        "然而，在我们介绍它们的特殊实现之前，我们先来练习使用<code>reduce</code>。",
+        "<hr>",
+        "<code>watchList</code>变量中包含一组存有多部电影信息对象。使用<code>reduce</code>查找由 Christopher Nolan 导演的电影<strong>directed by Christopher Nolan</strong>的 IMDB 评级。回想一下之前的挑战，如何<code>filter</code>数据，以及使用<code>map</code>来获取你想要的数据。你可能需要创建一些变量，但是请将最后的平均值保存到<code>averageRating</code>变量中。请注意，评级在对象中是字符串，需要将其转换为数字再用于数学运算。"
+      ],
+      "tests": [
+        {
+          "text": "<code>watchList</code>应保持不变。",
+          "testString": "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", '<code>watchList</code>应保持不变。');"
+        },
+        {
+          "text": "应该使用<code>reduce</code>方法。",
+          "testString": "assert(code.match(/\\.reduce/g), '应该使用<code>reduce</code>方法。');"
+        },
+        {
+          "text": "The <code>averageRating</code>应等于 8.675。",
+          "testString": "assert(averageRating == 8.675, 'The <code>averageRating</code>应等于 8.675。');"
+        },
+        {
+          "text": "不能使用<code>for</code>循环。",
+          "testString": "assert(!code.match(/for\\s*?\\(.*\\)/g), '不能使用<code>for</code>循环。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "Try using .filter() to filter the watchList by Director.",
+        "Try using .map() to return an array of ratings.",
+        "You can use Number() to convert a string into a number."
+      ],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// 全局变量",
+            "var watchList = [",
+            "                 {  ",
+            "                   \"Title\": \"Inception\",",
+            "                   \"Year\": \"2010\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"16 Jul 2010\",",
+            "                   \"Runtime\": \"148 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Christopher Nolan\",",
+            "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
+            "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
+            "                   \"Language\": \"English, Japanese, French\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.8\",",
+            "                   \"imdbVotes\": \"1,446,708\",",
+            "                   \"imdbID\": \"tt1375666\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Interstellar\",",
+            "                   \"Year\": \"2014\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"07 Nov 2014\",",
+            "                   \"Runtime\": \"169 min\",",
+            "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
+            "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
+            "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
+            "                   \"Language\": \"English\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.6\",",
+            "                   \"imdbVotes\": \"910,366\",",
+            "                   \"imdbID\": \"tt0816692\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"The Dark Knight\",",
+            "                   \"Year\": \"2008\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Jul 2008\",",
+            "                   \"Runtime\": \"152 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
+            "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
+            "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
+            "                   \"Language\": \"English, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"82\",",
+            "                   \"imdbRating\": \"9.0\",",
+            "                   \"imdbVotes\": \"1,652,832\",",
+            "                   \"imdbID\": \"tt0468569\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Batman Begins\",",
+            "                   \"Year\": \"2005\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"15 Jun 2005\",",
+            "                   \"Runtime\": \"140 min\",",
+            "                   \"Genre\": \"Action, Adventure\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
+            "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
+            "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
+            "                   \"Language\": \"English, Urdu, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"70\",",
+            "                   \"imdbRating\": \"8.3\",",
+            "                   \"imdbVotes\": \"972,584\",",
+            "                   \"imdbID\": \"tt0372784\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"Avatar\",",
+            "                   \"Year\": \"2009\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Dec 2009\",",
+            "                   \"Runtime\": \"162 min\",",
+            "                   \"Genre\": \"Action, Adventure, Fantasy\",",
+            "                   \"Director\": \"James Cameron\",",
+            "                   \"Writer\": \"James Cameron\",",
+            "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
+            "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
+            "                   \"Language\": \"English, Spanish\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"83\",",
+            "                   \"imdbRating\": \"7.9\",",
+            "                   \"imdbVotes\": \"876,575\",",
+            "                   \"imdbID\": \"tt0499549\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                }",
+            "];",
+            "",
+            "// 请在本行以下添加你的代码",
+            "",
+            "var averageRating;",
+            "",
+            "// 请在本行以上添加你的代码",
+            "",
+            "console.log(averageRating); "
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7da9367417b2b2512b69",
+      "title": "Sort an Array Alphabetically using the sort Method",
+      "description": [
+        "<code>sort</code>方法可以根据回调函数对数组元素进行排序。",
+        "举个例子：",
+        "<blockquote>function ascendingOrder(arr) {<br>&nbsp;&nbsp;return arr.sort(function(a, b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return a - b;<br>&nbsp;&nbsp;});<br>}<br>ascendingOrder([1, 5, 2, 3, 4]);<br>// Returns [1, 2, 3, 4, 5]<br><br>function reverseAlpha(arr) {<br>&nbsp;&nbsp;return arr.sort(function(a, b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return a < b;<br>&nbsp;&nbsp;});<br>}<br>reverseAlpha(['l', 'h', 'z', 'b', 's']);<br>// 返回 ['z', 's', 'l', 'h', 'b']</blockquote>",
+        "注意：提倡使用回调函数来指定如何对数组项进行排序。JavaScript 的默认排序算法是按照 Unicode 字符编码排序的，所以可能会返回意料之外的结果。",
+        "<hr>",
+        "在<code>alphabeticalOrder</code>函数中使用<code>sort</code>方法对<code>arr</code>中的元素按照字母顺序排列。"
+      ],
+      "tests": [
+        {
+          "text": "应该使用<code>sort</code>方法。",
+          "testString": "assert(code.match(/\\.sort/g), '应该使用<code>sort</code>方法。');"
+        },
+        {
+          "text": "<code>alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])</code>应返回<code>[\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]</code>。",
+          "testString": "assert(JSON.stringify(alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])) === JSON.stringify([\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]), '<code>alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])</code>应返回<code>[\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]</code>。');"
+        },
+        {
+          "text": "<code>alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])</code>应返回<code>[\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]</code>。",
+          "testString": "assert(JSON.stringify(alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])) === JSON.stringify([\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]), '<code>alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])</code>应返回<code>[\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]</code>。');"
+        },
+        {
+          "text": "<code>alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])</code>应返回<code>[\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]</code>。",
+          "testString": "assert(JSON.stringify(alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])) === JSON.stringify([\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]), '<code>alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])</code>应返回<code>[\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function alphabeticalOrder(arr) {",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"]);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7da9367417b2b2512b6a",
+      "title": "Return a Sorted Array Without Changing the Original Array",
+      "description": [
+        "<code>sort</code>方法会产生改变原始数组中元素顺序的副作用。换句话说，它会改变数组的位置。避免这种情况的一种方法是先将空数组连接到正在排序的数组上（记住<code>concat</code>返回一个新数组），再用<code>sort</code>方法。",
+        "<hr>",
+        "在<code>nonMutatingSort</code>函数中使用<code>sort</code>方法对数组中的元素按升序进行排列。函数不能改变<code>globalArray</code>变量，应返回一个新数组。"
+      ],
+      "tests": [
+        {
+          "text": "应该使用<code>sort</code>方法。",
+          "testString": "assert(code.match(/\\.sort/g), '应该使用<code>sort</code>方法。');"
+        },
+        {
+          "text": "应该使用<code>concat</code>方法。",
+          "testString": "assert(code.match(/\\.concat/g), '应该使用<code>concat</code>方法。');"
+        },
+        {
+          "text": "<code>globalArray</code> variable 应保持不变。",
+          "testString": "assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]), '<code>globalArray</code> variable 应保持不变。');"
+        },
+        {
+          "text": "<code>nonMutatingSort(globalArray)</code>应返回<code>[2, 3, 5, 6, 9]</code>。",
+          "testString": "assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]), '<code>nonMutatingSort(globalArray)</code>应返回<code>[2, 3, 5, 6, 9]</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "var globalArray = [5, 6, 3, 2, 9];",
+            "function nonMutatingSort(arr) {",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "nonMutatingSort(globalArray);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7daa367417b2b2512b6b",
+      "title": "Split a String into an Array Using the split Method",
+      "description": [
+        "<code>split</code>方法用于把字符串分割成字符串数组，接收一个分隔符参数，分隔符可以是用于分解字符串或正则表达式的字符。举个例子，如果分隔符是空格，你会得到一个单词数组；如果分隔符是空字符串，你会得到一个由字符串中每个字符组成的数组。",
+        "下面是两个用空格分隔一个字符串的例子，另一个是用数字的正则表达式分隔：",
+        "<blockquote>var str = \"Hello World\";<br>var bySpace = str.split(\" \");<br>// Sets bySpace to [\"Hello\", \"World\"]<br><br>var otherString = \"How9are7you2today\";<br>var byDigits = str.split(/\\d/);<br>// Sets byDigits to [\"How\", \"are\", \"you\", \"today\"]</blockquote>",
+        "因为字符串是固定的，<code>split</code>方法可以更简单的操作它们。",
+        "<hr>",
+        "在<code>splitify</code>函数中用<code>split</code>方法将<code>str</code>分割成单词数组，这个方法应该返回一个数组。单词不一定都是用空格分隔，所以数组中不应包含标点符号。"
+      ],
+      "tests": [
+        {
+          "text": "应该使用<code>split</code>方法。",
+          "testString": "assert(code.match(/\\.split/g), '应该使用<code>split</code>方法。');"
+        },
+        {
+          "text": "<code>splitify(\"Hello World,I-am code\")</code>应返回<code>[\"Hello\", \"World\", \"I\", \"am\", \"code\"]</code>。",
+          "testString": "assert(JSON.stringify(splitify(\"Hello World,I-am code\")) === JSON.stringify([\"Hello\", \"World\", \"I\", \"am\", \"code\"]), '<code>splitify(\"Hello World,I-am code\")</code>应返回<code>[\"Hello\", \"World\", \"I\", \"am\", \"code\"]</code>。');"
+        },
+        {
+          "text": "<code>splitify(\"Earth-is-our home\")</code>应返回<code>[\"Earth\", \"is\", \"our\", \"home\"]</code>。",
+          "testString": "assert(JSON.stringify(splitify(\"Earth-is-our home\")) === JSON.stringify([\"Earth\", \"is\", \"our\", \"home\"]), '<code>splitify(\"Earth-is-our home\")</code>应返回<code>[\"Earth\", \"is\", \"our\", \"home\"]</code>。');"
+        },
+        {
+          "text": "<code>splitify(\"This.is.a-sentence\")</code>应返回<code>[\"This\", \"is\", \"a\", \"sentence\"]</code>。",
+          "testString": "assert(JSON.stringify(splitify(\"This.is.a-sentence\")) === JSON.stringify([\"This\", \"is\", \"a\", \"sentence\"]), '<code>splitify(\"This.is.a-sentence\")</code>应返回<code>[\"This\", \"is\", \"a\", \"sentence\"]</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "The regex pre-defined character class for non-alphanumerics is \\W."
+      ],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function splitify(str) {",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "splitify(\"Hello World,I-am code\");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7daa367417b2b2512b6c",
+      "title": "Combine an Array into a String Using the join Method",
+      "description": [
+        "<code>join</code>方法用来把数组中的所有元素放入一个字符串，并通过指定的分隔符参数进行分隔。",
+        "举个例子：",
+        "<blockquote>var arr = [\"Hello\", \"World\"];<br>var str = arr.join(\" \");<br>// Sets str to \"Hello World\"</blockquote>",
+        "<hr>",
+        "在函数<code>sentensify</code>内用<code>join</code>方法（及其他方法）用字符串<code>str</code>中的单词造句，这个函数应返回一个字符串。举个例子，\"I-like-Star-Wars\" 会被转换成 \"I like Star Wars\"。在此挑战中请勿使用<code>replace</code>方法。"
+      ],
+      "tests": [
+        {
+          "text": "应使用<code>join</code>方法。",
+          "testString": "assert(code.match(/\\.join/g), '应使用<code>join</code>方法。');"
+        },
+        {
+          "text": "不能使用<code>replace</code>方法。",
+          "testString": "assert(!code.match(/\\.replace/g), '不能使用<code>replace</code>方法。');"
+        },
+        {
+          "text": "<code>sentensify(\"May-the-force-be-with-you\")</code>应返回一个字符串",
+          "testString": "assert(typeof sentensify(\"May-the-force-be-with-you\") === \"string\", '<code>sentensify(\"May-the-force-be-with-you\")</code>应返回一个字符串');"
+        },
+        {
+          "text": "<code>sentensify(\"May-the-force-be-with-you\")</code>应返回<code>\"May the force be with you\"</code>。",
+          "testString": "assert(sentensify(\"May-the-force-be-with-you\") === \"May the force be with you\", '<code>sentensify(\"May-the-force-be-with-you\")</code>应返回<code>\"May the force be with you\"</code>。');"
+        },
+        {
+          "text": "<code>sentensify(\"The.force.is.strong.with.this.one\")</code>应返回<code>\"The force is strong with this one\"</code>。",
+          "testString": "assert(sentensify(\"The.force.is.strong.with.this.one\") === \"The force is strong with this one\", '<code>sentensify(\"The.force.is.strong.with.this.one\")</code>应返回<code>\"The force is strong with this one\"</code>。');"
+        },
+        {
+          "text": "<code>sentensify(\"There,has,been,an,awakening\")</code>应返回<code>\"There has been an awakening\"</code>。",
+          "testString": "assert(sentensify(\"There,has,been,an,awakening\") === \"There has been an awakening\", '<code>sentensify(\"There,has,been,an,awakening\")</code>应返回<code>\"There has been an awakening\"</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "First try to split the given string before applying the join method."
+      ],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function sentensify(str) {",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "sentensify(\"May-the-force-be-with-you\");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7dab367417b2b2512b6d",
+      "title": "Apply Functional Programming to Convert Strings to URL Slugs",
+      "description": [
+        "最后几个挑战中涵盖了许多符合函数式编程原则并在处理数组和字符串中非常有用的方法。我们还学习了强大的、可以将问题简化为更简单形式的<code>reduce</code>方法，从计算平均值到排序，任何数组操作都可以用它来实现。回想一下，<code>map</code>和<code>filter</code>方法都是<code>reduce</code>的特殊实现。",
+        "让我们把学到的知识结合起来解决一个实际问题。",
+        "许多内容管理站点（CMS）为了让添加书签更简单，会将帖子的标题添加到 URL 上。举个例子，如果你写了一篇标题为 \"Stop Using Reduce\" 的帖子，URL很可能会包含标题字符串的某种形式 (如：\".../stop-using-reduce\")，你可能已经在 freeCodeCamp 网站上注意到了这一点。",
+        "<hr>",
+        "填写<code>urlSlug</code>函数，使其转换字符串<code>title</code>带有连字符号的 URL 版本。您可以使用本节中介绍的任何方法，但不要用<code>replace</code>方法。以下是本次挑战的要求：",
+        "输入包含空格和标题大小写单词的字符串",
+        "输出字符串，单词之间的空格用连字符(<code>-</code>)替换",
+        "输出应该是小写字母",
+        "输出不应有任何空格"
+      ],
+      "tests": [
+        {
+          "text": "<code>globalTitle</code>变量应保持不变。",
+          "testString": "assert(globalTitle === \"Winter Is Coming\", '<code>globalTitle</code>变量应保持不变。');"
+        },
+        {
+          "text": "在此挑战中不能使用<code>replace</code>方法。",
+          "testString": "assert(!code.match(/\\.replace/g), '在此挑战中不能使用<code>replace</code>方法。');"
+        },
+        {
+          "text": "<code>urlSlug(\"Winter Is Coming\")</code>应返回<code>\"winter-is-coming\"</code>。",
+          "testString": "assert(urlSlug(\"Winter Is Coming\") === \"winter-is-coming\", '<code>urlSlug(\"Winter Is Coming\")</code>应返回<code>\"winter-is-coming\"</code>。');"
+        },
+        {
+          "text": "<code>urlSlug(\" Winter Is  &nbsp;Coming\")</code>应返回<code>\"winter-is-coming\"</code>。",
+          "testString": "assert(urlSlug(\" Winter Is  Coming\") === \"winter-is-coming\", '<code>urlSlug(\" Winter Is  &nbsp;Coming\")</code>应返回<code>\"winter-is-coming\"</code>。');"
+        },
+        {
+          "text": "<code>urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\")</code>应返回<code>\"a-mind-needs-books-like-a-sword-needs-a-whetstone\"</code>。",
+          "testString": "assert(urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\") === \"a-mind-needs-books-like-a-sword-needs-a-whetstone\", '<code>urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\")</code>应返回<code>\"a-mind-needs-books-like-a-sword-needs-a-whetstone\"</code>。');"
+        },
+        {
+          "text": "<code>urlSlug(\"Hold The Door\")</code>应返回<code>\"hold-the-door\"</code>。",
+          "testString": "assert(urlSlug(\"Hold The Door\") === \"hold-the-door\", '<code>urlSlug(\"Hold The Door\")</code>应返回<code>\"hold-the-door\"</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "When several spaces in a row are split by space, it puts an empty string in the array.",
+        "You can use the .toLowerCase() method to make the title all lower case."
+      ],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// 全局变量",
+            "var globalTitle = \"Winter Is Coming\";",
+            "",
+            "// 请在本行以下添加你的代码",
+            "function urlSlug(title) {",
+            "  ",
+            "  ",
+            "}",
+            "// 请在本行以上添加你的代码",
+            "",
+            "var winterComing = urlSlug(globalTitle); // 应为 \"winter-is-coming\""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7dab367417b2b2512b6e",
+      "title": "Use the every Method to Check that Every Element in an Array Meets a Criteria",
+      "description": [
+        "<code>every</code>方法用于检测数组中<em>所有</em>元素是否都符合指定条件。如果所有元素满足条件，返回布尔值<code>true</code>，反之返回<code>false</code>。",
+        "举个例子，下面的代码检测数组<code>numbers</code>的所有元素是否都小于 10：",
+        "<blockquote>var numbers = [1, 5, 8, 0, 10, 11];<br>numbers.every(function(currentValue) {<br>&nbsp;&nbsp;return currentValue < 10;<br>});<br>// 返回 false</blockquote>",
+        "<hr>",
+        "在<code>checkPositive</code>函数中使用<code>every</code>方法检查<code>arr</code>中是否所有元素都是正数，函数应返回一个布尔值。"
+      ],
+      "tests": [
+        {
+          "text": "应使用<code>every</code>方法。",
+          "testString": "assert(code.match(/\\.every/g), '应使用<code>every</code>方法。');"
+        },
+        {
+          "text": "<code>checkPositive([1, 2, 3, -4, 5])</code>应返回<code>false</code>。",
+          "testString": "assert(!checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code>应返回<code>false</code>。');"
+        },
+        {
+          "text": "<code>checkPositive([1, 2, 3, 4, 5])</code>应返回<code>true</code>。",
+          "testString": "assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code>应返回<code>true</code>。');"
+        },
+        {
+          "text": "<code>checkPositive([1, -2, 3, -4, 5])</code>应返回<code>false</code>。",
+          "testString": "assert(!checkPositive([1, -2, 3, -4, 5]), '<code>checkPositive([1, -2, 3, -4, 5])</code>应返回<code>false</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function checkPositive(arr) {",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "checkPositive([1, 2, 3, -4, 5]);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7dab367417b2b2512b6f",
+      "title": "Use the some Method to Check that Any Elements in an Array Meet a Criteria",
+      "description": [
+        "<code>some</code>方法用于检测数组中<em>任何</em>元素是否满足指定条件。如果有一个元素满足条件，返回布尔值<code>true</code>，反之返回<code>false</code>。",
+        "举个例子，下面的代码检测数组<code>numbers</code>中是否有元素小于10：",
+        "<blockquote>var numbers = [10, 50, 8, 220, 110, 11];<br>numbers.some(function(currentValue) {<br>&nbsp;&nbsp;return currentValue < 10;<br>});<br>// 返回 true</blockquote>",
+        "<hr>",
+        "在<code>checkPositive</code>函数值中使用<code>some</code>检查<code>arr</code>中是否有元素为正数，函数应返回一个布尔值。"
+      ],
+      "tests": [
+        {
+          "text": "应该使用<code>some</code> method.",
+          "testString": "assert(code.match(/\\.some/g), '应该使用<code>some</code> method.');"
+        },
+        {
+          "text": "<code>checkPositive([1, 2, 3, -4, 5])</code>应返回<code>true</code>。",
+          "testString": "assert(checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code>应返回<code>true</code>。');"
+        },
+        {
+          "text": "<code>checkPositive([1, 2, 3, 4, 5])</code>应返回<code>true</code>。",
+          "testString": "assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code>应返回<code>true</code>。');"
+        },
+        {
+          "text": "<code>checkPositive([-1, -2, -3, -4, -5])</code>应返回<code>false</code>。",
+          "testString": "assert(!checkPositive([-1, -2, -3, -4, -5]), '<code>checkPositive([-1, -2, -3, -4, -5])</code>应返回<code>false</code>。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function checkPositive(arr) {",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "checkPositive([1, 2, 3, -4, 5]);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7dab367417b2b2512b70",
+      "title": "Introduction to Currying and Partial Application",
+      "description": [
+        "<code>arity</code>是函数所需的形参的数量。函数<code>Currying</code>意思是把接受多个<code>arity</code>的函数变换成接受单一<code>arity</code>的函数。",
+        "换句话说，就是重构函数让它接收一个参数，然后返回接收下一个参数的函数，依此类推。",
+        "举个例子：",
+        "<blockquote>//Un-curried function<br>function unCurried(x, y) {<br>&nbsp;&nbsp;return x + y;<br>}<br><br>// 柯里化函数<br>function curried(x) {<br>&nbsp;&nbsp;return function(y) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return x + y;<br>&nbsp;&nbsp;}<br>}<br>curried(1)(2) // 返回 3</blockquote>",
+        "柯里化在不能一次为函数提供所有参数情况下很有用。因为它可以将每个函数的调用保存到一个变量中，该变量将保存返回的函数引用，该引用在下一个参数可用时接受该参数。下面是使用<code>curried</code>函数的例子：",
+        "<blockquote>// Call a curried function in parts:<br>var funcForY = curried(1);<br>console.log(funcForY(2)); // 打印 3</blockquote>",
+        "类似地，<code>partial application</code>的意思是一次对一个函数应用几个参数，然后返回另一个应用更多参数的函数。",
+        "举个例子：",
+        "<blockquote>//Impartial function<br>function impartial(x, y, z) {<br>&nbsp;&nbsp;return x + y + z;<br>}<br>var partialFn = impartial.bind(this, 1, 2);<br>partialFn(10); // 返回 13</blockquote>",
+        "<hr>",
+        "填写<code>add</code>函数主体部分，用柯里化添加参数<code>x</code>，<code>y</code>和<code>z</code>."
+      ],
+      "tests": [
+        {
+          "text": "<code>add(10)(20)(30)</code>应返回<code>60</code>。",
+          "testString": "assert(add(10)(20)(30) === 60, '<code>add(10)(20)(30)</code>应返回<code>60</code>。');"
+        },
+        {
+          "text": "<code>add(1)(2)(3)</code>应返回<code>6</code>。",
+          "testString": "assert(add(1)(2)(3) === 6, '<code>add(1)(2)(3)</code>应返回<code>6</code>。');"
+        },
+        {
+          "text": "<code>add(11)(22)(33)</code>应返回<code>66</code>。",
+          "testString": "assert(add(11)(22)(33) === 66, '<code>add(11)(22)(33)</code>应返回<code>66</code>。');"
+        },
+        {
+          "text": "应返回<code>x + y + z</code>的最终结果。",
+          "testString": "assert(code.match(/[xyz]\\s*?\\+\\s*?[xyz]\\s*?\\+\\s*?[xyz]/g), '应返回<code>x + y + z</code>的最终结果。');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 1,
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function add(x) {",
+            "  // 请在本行以下添加你的代码",
+            "  ",
+            "  ",
+            "  // 请在本行以上添加你的代码",
+            "}",
+            "add(10)(20)(30);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    }
+  ]
+}

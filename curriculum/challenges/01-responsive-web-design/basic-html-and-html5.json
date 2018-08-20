@@ -1,0 +1,1578 @@
+{
+  "name": "Basic HTML and HTML5",
+  "order": 0,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "bd7123c8c441eddfaeb5bdef",
+      "title": "Say Hello to HTML Elements",
+      "description": [
+        "欢迎参加 freeCodeCamp 的编程挑战赛，这些挑战将会帮助你逐步掌握 Web 开发。",
+        "HTML 是英文 Hyper Text Markup Language（超文本标记语言）的缩写。首先，使用 HTML 来制作一个简单的网页，你可以直接在网页内置的代码编辑器中编辑代码。",
+        "你看到代码编辑器中的<code>&#60;h1&#62;Hello&#60;/h1&#62;</code>了吗? 那就是一个 HTML 元素。",
+        "大部分 HTML 元素都有一个<code>开始标记</code>和一个<code>结束标记</code>。",
+        "开始标记像这样：<code>&#60;h1&#62;</code>",
+        "结束标记像这样：<code>&#60;/h1&#62;</code>",
+        "开始标记和结束标记的唯一区别就是结束标记多了一个<code>/</code>。",
+        "每个挑战都有测试，任何时候点击<strong>运行测试</strong>按钮就可以运行测试。如果代码通过测试，将会弹出一个窗口，你就可以提交你的代码并顺利进入下一个挑战。",
+        "<hr>",
+        "请把<code>h1</code>元素的内容改为：<code>Hello World</code>。"
+      ],
+      "tests": [
+        {
+          "text": "<code>h1</code>元素的内容应该为：<code>Hello World</code>。",
+          "testString":
+            "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), '<code>h1</code>元素的内容应该为：<code>Hello World</code>。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": ["<h1>Hello</h1>"],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf0887a",
+      "title": "Headline with the h2 Element",
+      "description": [
+        "在接下来的几节课里，我们将会由浅入深地制作一个关于猫咪的相册。",
+        "这节课将会引入<code>h2</code>元素。",
+        "这些元素用来告诉浏览器，网站的结构长什么样子。<code>h1</code>元素通常被用作主标题，<code>h2</code>元素通常被用作副标题，还有<code>h3</code>、<code>h4</code>、<code>h5</code>、<code>h6</code>元素，它们分别用作不同级别的标题。",
+        "<hr>",
+        "在<code>h1</code>元素下面创建一个<code>h2</code>元素，元素内容为：<code>CatPhotoApp</code>。"
+      ],
+      "tests": [
+        {
+          "text": "创建一个<code>h2</code>元素。",
+          "testString":
+            "assert(($(\"h2\").length > 0), '创建一个<code>h2</code>元素。');"
+        },
+        {
+          "text": "<code>h2</code>元素应该有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/h2>/g) && code.match(/<\\/h2>/g).length === code.match(/<h2>/g).length, '<code>h2</code>元素应该有结束标记。');"
+        },
+        {
+          "text": "<code>h2</code>元素的内容应该为：<code>CatPhotoApp</code>。",
+          "testString":
+            "assert.isTrue((/CatPhotoApp/gi).test($(\"h2\").text()), '<code>h2</code>元素的内容应该为：<code>CatPhotoApp</code>。');"
+        },
+        {
+          "text": "<code>h1</code>元素的内容应该为：<code>Hello World</code>。",
+          "testString":
+            "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), '<code>h1</code>元素的内容应该为：<code>Hello World</code>。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": ["<h1>Hello World</h1>"],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08801",
+      "title": "Inform with the Paragraph Element",
+      "description": [
+        "<code>p</code>是<code>paragraph</code>的缩写，通常被用来创建一个段落，就和你写作文一样。",
+        "你可以像这样创建一个段落：",
+        "<code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>",
+        "<hr>",
+        "在<code>h2</code>元素下面新增一个<code>p</code>元素，元素内容是：<code>Hello Paragraph</code>。"
+      ],
+      "tests": [
+        {
+          "text": "创建一个<code>p</code>元素。",
+          "testString":
+            "assert(($(\"p\").length > 0), '创建一个<code>p</code>元素。');"
+        },
+        {
+          "text":
+            "<code>p</code>元素的内容应该为：<code>Hello Paragraph</code>。",
+          "testString":
+            "assert.isTrue((/hello(\\s)+paragraph/gi).test($(\"p\").text()), '<code>p</code>元素的内容应该为：<code>Hello Paragraph</code>。');"
+        },
+        {
+          "text": "<code>p</code>元素应该有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, '<code>p</code>元素应该有结束标记。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": ["<h1>Hello World</h1>", "<h2>CatPhotoApp</h2>"],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08833",
+      "title": "Fill in the Blank with Placeholder Text",
+      "description": [
+        "Web 开发者通常用<a href='http://www.ruanyifeng.com/blog/2009/04/lorem_ipsum.html'>lorem ipsum text</a>来做占位符，占位符就是占着位置的一些文字，没有实际意义。",
+        "为什么叫<code>lorem ipsum text</code>呢?是因为<code>lorem ipsum</code>是古罗马西塞罗谚语的前两个单词。",
+        "从公元16世纪开始<code>lorem ipsum text</code>就被当做占位符了，这种传统延续到了互联网时代。于此同时，孙悟空也在五指山下被压了500年，然后就进化成程序猿了，是不是很巧合。^_^",
+        "<hr>",
+        "把<code>p</code>元素的内容更换为：<code>Monkey code 猴哥猴哥，你真了不得，金箍棒在手，问世间谁是英雄。</code>"
+      ],
+      "tests": [
+        {
+          "text": "<code>p</code>元素的内容必须包含<code>Monkey code</code>。",
+          "testString":
+            "assert.isTrue((/Monkey(\\s)+code/gi).test($(\"p\").text()), '<code>p</code>元素的内容必须包含<code>Monkey code</code>。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h1>Hello World</h1>",
+            "",
+            "<h2>CatPhotoApp</h2>",
+            "",
+            "<p>Hello Paragraph</p>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08802",
+      "title": "Uncomment HTML",
+      "description": [
+        "注释的作用是给代码添加一些说明，方便团队合作或日后自己查看，但又不影响代码本身。",
+        "注释也可以用来在不删除代码的前提下，让代码不起作用。",
+        "在 HTML 中，注释的开始标记是<code>&#60;!--</code>，结束标记是<code>--&#62;</code>。",
+        "<hr>",
+        "现在我们反其道而行之，干掉<code>h1</code>元素、<code>h2</code>元素、<code>p</code>元素的注释。"
+      ],
+      "tests": [
+        {
+          "text": "确保网页中能看到<code>h1</code>元素。",
+          "testString":
+            "assert($(\"h1\").length > 0, '确保网页中能看到<code>h1</code>元素。');"
+        },
+        {
+          "text": "确保网页中能看到<code>h2</code>元素。",
+          "testString":
+            "assert($(\"h2\").length > 0, '确保网页中能看到<code>h2</code>元素。');"
+        },
+        {
+          "text": "确保网页中能看到<code>p</code>元素。",
+          "testString":
+            "assert($(\"p\").length > 0, '确保网页中能看到<code>p</code>元素。');"
+        },
+        {
+          "text": "确保删除了注释的结束标记<code>--&#62;</code>。",
+          "testString":
+            "assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\\n/g,'')), '确保删除了注释的结束标记<code>--&#62;</code>。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<!--",
+            "<h1>Hello World</h1>",
+            "",
+            "<h2>CatPhotoApp</h2>",
+            "",
+            "<p>Monkey code 猴哥猴哥，你真了不得，金箍棒在手，问世间谁是英雄。</p>",
+            "-->"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08804",
+      "title": "Comment out HTML",
+      "description": [
+        "记住：注释的开始标记是<code>&#60;!--</code>，结束标记是<code>--&#62;</code>。",
+        "现在你需要在<code>h2</code>元素前终止注释。",
+        "<hr>",
+        "任务：<code>h1</code>元素和<code>p</code>元素都注释掉，<code>h2</code>元素保留。"
+      ],
+      "tests": [
+        {
+          "text": "注释掉<code>h1</code>元素，这样它就从网页上消失了。",
+          "testString":
+            "assert(($(\"h1\").length === 0), '注释掉<code>h1</code>元素，这样它就从网页上消失了。');"
+        },
+        {
+          "text": "<code>h2</code>元素保持原样，这样网页上还能看到它。",
+          "testString":
+            "assert(($(\"h2\").length > 0), '<code>h2</code>元素保持原样，这样网页上还能看到它。');"
+        },
+        {
+          "text": "注释掉<code>p</code>元素，这样它就从网页上消失了。",
+          "testString":
+            "assert(($(\"p\").length === 0), '注释<code>p</code>元素，这样它就从网页上消失了。);"
+        },
+        {
+          "text": "确保每一个注释都以<code>--&#62;</code>结尾。",
+          "testString":
+            "assert(code.match(/[^fc]-->/g).length > 1, '确保每一个注释都以<code>--&#62;</code>结尾。');"
+        },
+        {
+          "text":
+            "不要更改<code>h1</code>元素、<code>h2</code> 元素、<code>p</code>元素的顺序。",
+          "testString":
+            "assert((code.match(/<([a-z0-9]){1,2}>/g)[0]===\"<h1>\" && code.match(/<([a-z0-9]){1,2}>/g)[1]===\"<h2>\" && code.match(/<([a-z0-9]){1,2}>/g)[2]===\"<p>\") , '不要更改<code>h1</code>元素、<code>h2</code>元素、<code>p</code>元素的顺序。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<!--",
+            "<h1>Hello World</h1>",
+            "",
+            "<h2>CatPhotoApp</h2>",
+            "",
+            "<p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>",
+            "-->"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fed1348bd9aedf08833",
+      "title": "Delete HTML Elements",
+      "description": [
+        "手机的屏幕空间是有限的。",
+        "让我们删除不必要的元素，开始设计我们的CatPhotoApp。",
+        "<hr>",
+        "任务：删除<code>h1</code>元素以简化视图。"
+      ],
+      "tests": [
+        {
+          "text": "删除<code>h1</code>元素。",
+          "testString":
+            "assert(($(\"h1\").length == 0), '删除<code>h1</code>元素。');"
+        },
+        {
+          "text": "保留<code>h2</code>元素。",
+          "testString":
+            "assert(($(\"h2\").length > 0), '保留<code>h2</code>元素。');"
+        },
+        {
+          "text": "保留<code>p</code>元素。",
+          "testString":
+            "assert(($(\"p\").length > 0), '保留<code>p</code>元素。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h1>Hello World</h1>",
+            "",
+            "<h2>CatPhotoApp</h2>",
+            "",
+            "<p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aecf08801",
+      "title": "Introduction to HTML5 Elements",
+      "description": [
+        "HTML5 引入了很多更具描述性的 HTML 元素，例如：<code>header</code>、<code>footer</code>、<code>nav</code>、<code>video</code>、<code>article</code>、<code>section</code>等等。",
+        "这些元素让 HTML 更易读，同时有助于搜索引擎优化和无障碍访问。",
+        "<code>main</code>元素让搜索引擎和开发者瞬间就能找到网页的主要内容。",
+        "<strong>注意</strong><br>在后面的应用无障碍课程中我们会接触到更多新的 HTML5 元素，以及明白它们的用处。",
+        "<hr>",
+        "在现有的段落下创建一个新的段落，段落内容为：养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。",
+        "在第一个段落前添加<code><main></code>，在第二个段落后添加<code></main></code>。"
+      ],
+      "tests": [
+        {
+          "text": "页面中应该有两个段落。",
+          "testString": "assert($(\"p\").length > 1, '页面中应该有两个段落。');"
+        },
+        {
+          "text": "确保每个段落都有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, '确保每个段落都有结束标记。');"
+        },
+        {
+          "text": "新建的段落应该包含关键词：猫咪。",
+          "testString":
+            "assert.isTrue((/养猫/).test($(\"p\").text()), '新建的段落应该包含关键词：猫咪。');"
+        },
+        {
+          "text": "代码中应该包含<code>main</code>元素。",
+          "testString":
+            "assert($('main').length === 1, '代码中应该包含<code>main</code>元素。');"
+        },
+        {
+          "text":
+            "<code>main</code>元素应有两个 <code>p</code>元素作为它的子元素。",
+          "testString":
+            "assert($(\"main\").children(\"p\").length === 2, '<code>main</code>元素应有两个 <code>p</code>元素作为它的子元素。');"
+        },
+        {
+          "text": "开始标记<code><main></code>应位于第一个段落之前。",
+          "testString":
+            "assert(code.match(/<main>\\s*?<p>/g), '开始标记<code><main></code>应位于第一个段落之前。');"
+        },
+        {
+          "text": "结束标记<code></main></code>应位于第二段落之后。",
+          "testString":
+            "assert(code.match(/<\\/p>\\s*?<\\/main>/g), '结束标记<code></main></code>应位于第二个段落之后。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>猫咪</h2>",
+            "",
+            "<p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08812",
+      "title": "Add Images to Your Website",
+      "description": [
+        "用<code>img</code>元素来为你的网站添加图片，其中<code>src</code>属性指向一个图片的地址。",
+        "例如：",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
+        "注意：<code>img</code>元素是没有结束标记的。",
+        "所有的<code>img</code>元素必须有<code>alt</code>属性，<code>alt</code>属性的文本是当图片无法加载时显示的替代文本，这对于通过屏幕阅读器来浏览网页的用户非常重要。",
+        "注意：如果图片是纯装饰性的，用一个空的<code>alt</code>是最佳实践。",
+        "理想情况下，<code>alt</code>属性不应该包含特殊字符，除非需要。",
+        "让我们给上面例子的<code>img</code>添加<code>alt</code>属性。",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"作者站在沙滩上竖起两个大拇指\"&#62</code>",
+        "<hr>",
+        "让我们给网站添加图片：",
+        "在<code>h2</code>元素前，插入一个<code>img</code>元素",
+        "现在设置<code>src</code>属性指向这个地址：",
+        "<code>https://ofa83l6ao.qnssl.com/relaxing-cat.jpg</code>",
+        "最后不要忘记给图片添加一个<code>alt</code>文本。"
+      ],
+      "tests": [
+        {
+          "text": "网页应该有一张图片。",
+          "testString": "assert($(\"img\").length > 0, '网页应该有一张图片。');"
+        },
+        {
+          "text": "这张图片应该是一只小猫。",
+          "testString":
+            "assert(new RegExp(\"\\/\\/ofa83l6ao.qnssl.com\\/relaxing-cat.jpg|\\/\\/s3.amazonaws.com\\/freecodecamp\\/relaxing-cat.jpg\", \"gi\").test($(\"img\").attr(\"src\")), '这张图片应该是一只小猫。');"
+        },
+        {
+          "text": "图片必须有<code>alt</code>属性。",
+          "testString":
+            "assert(code.match(/alt\\s*?=\\s*?(\\\"|\\').*(\\\"|\\')/), '图片必须有<code>alt</code>属性。');"
+        }
+      ],
+      "challengeType": 0,
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-images-to-your-website",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  ",
+            "  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>",
+            "  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08816",
+      "title": "Link to External Pages with Anchor Elements",
+      "description": [
+        "你可以用<code>a</code>锚点（Anchor，简写 a）来实现网页间的跳转。",
+        "锚点需要一个<code>href</code>属性指向目的地，它还需要有锚点文本，例如：",
+        "<code>&#60;a href=\"https://freecodecamp.one\">传送至 freecodecamp.one&#60;/a&#62;</code>",
+        "然后你的浏览器会显示一个可以点击的文本，点击该文本就会跳转到<code>https://freecodecamp.one</code>。",
+        "<hr>",
+        "创建一个锚点，它的<code>href</code>属性为<code>http://freecatphotoapp.com</code> ，它的文本为<code>cat photos</code>。"
+      ],
+      "tests": [
+        {
+          "text": "<code>a</code>元素的锚点文本应为：<code>cat photos</code>。",
+          "testString":
+            "assert((/cat photos/gi).test($(\"a\").text()), '<code>a</code>元素的锚点文本应为：<code>cat photos</code>。');"
+        },
+        {
+          "text":
+            "<code>a</code>元素的<code>href</code>属性应为：\"<code>http&#58;//freecatphotoapp<wbr>.com</code>\"。",
+          "testString":
+            "assert(/http:\\/\\/(www\\.)?freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), '<code>a</code>元素的<code>href</code>属性应为：\"<code>http&#58;//freecatphotoapp<wbr>.com</code>\"。');"
+        },
+        {
+          "text": "确保<code>a</code>元素有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, '确保<code>a</code>元素有结束标记。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  ",
+            "  ",
+            "  <img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\">",
+            "  ",
+            "  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>",
+            "  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad88fee1348bd9aedf08816",
+      "title": "Link to Internal Sections of a Page with Anchor Elements",
+      "description": [
+        "锚点同样也可以用来在网页内不同区域的跳转。",
+        "用一个井号<code>#</code>加上你想跳转区域对应的<code>id</code>属性值，然后设置锚点的<code>href</code>属性为这两者的和，这样就可以创建一个内部链接。<code>id</code>是用来描述网页元素的一个属性，它的值在整个页面中唯一。",
+        "下面是用来创建内部锚点的例子：",
+        "<blockquote>&lt;a href=\"#contacts-header\"&gt;Contacts&lt;/a&gt;<br>...<br>&lt;h2 id=\"contacts-header\"&gt;Contacts&lt;/h2&gt;</blockquote>",
+        "当用户点击了<code>Contacts</code>链接，页面就会跳转到网页的<b>Contacts</b>区域。",
+        "<hr>",
+        "通过修改<code>href</code>属性为<code>#footer</code>来更改外部链接为内部链接，同时修改文本<code>cat photos</code>为<code>Jump to Bottom</code>。",
+        "移除 <code>target=\"_blank\"</code> 属性避免点击链接会打开新的元素页。",
+        "然后添加一个<code>&lt;footer&gt;</code>元素，它的<code>id</code>值为<code>footer</code>。"
+      ],
+      "tests": [
+        {
+          "text": "页面中应该只有一个锚点。",
+          "testString":
+            "assert($('a').length == 1, '页面中应该只有一个锚点。');"
+        },
+        {
+          "text": "页面中应该只有一个<code>footer</code>元素。",
+          "testString":
+            "assert($('footer').length == 1, '页面中应该只有一个<code>footer</code>元素。');"
+        },
+        {
+          "text": "锚点的<code>href</code>属性应为：\"#footer\"。",
+          "testString":
+            "assert($('a').eq(0).attr('href') == \"#footer\", 锚点的<code>href</code>属性应为：\"#footer\"。');"
+        },
+        {
+          "text": "锚点不应该有<code>target</code>属性。",
+          "testString":
+            "assert(typeof $('a').eq(0).attr('target') == typeof undefined || $('a').eq(0).attr('target') == true, 锚点不应该有<code>target</code>属性。');"
+        },
+        {
+          "text": "锚点的文本应为<code>Jump to Bottom</code>。",
+          "testString":
+            "assert($('a').eq(0).text().match(/Jump to Bottom/gi), '锚点的文本应为<code>Jump to Bottom</code>。');"
+        },
+        {
+          "text":
+            "<code>footer</code>元素的<code>id</code>属性应为 \"footer\"。",
+          "testString":
+            "assert($('footer').eq(0).attr('id') == \"footer\", '<code>footer</code>元素的<code>id</code>属性应为 \"footer\"。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"http://freecatphotoapp.com\" target=\"_blank\">猫图</a>",
+            "  ",
+            "  <img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\">",
+            "  ",
+            "  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。 养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。 在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>",
+            "  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。 在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。 养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>",
+            "  ",
+            "</main>",
+            "  ",
+            "<footer>Copyright Cat Photo App</footer>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aede08817",
+      "title": "Nest an Anchor Element within a Paragraph",
+      "description": [
+        "你可以在其他文本元素内嵌套链接。",
+        "<blockquote>&#60;p&#62;<br> Here's a &#60;a target=\"_blank\" href=\"http://freecodecamp.one\"&#62; link to freecodecamp.one&#60;/a&#62; for you to follow.<br>&#60;/p&#62;</blockquote>",
+        "让我们来分解这个例子：",
+        "通常，文本是被包裹在<code>p</code>段落内：<br><code>&#60;p&#62; Here's a ... for you to follow. &#60;/p&#62;</code>",
+        "接下来是<code>anchor</code>锚点<code>&#60;a&#62;</code>（需要结束标记 <code>&#60;/a&#62;</code>）:<br> <code>&#60;a&#62; ... &#60;/a&#62;</code>",
+        "<code>target</code>是锚点的一个属性，它指定了会以什么方式来打开链接，属性值 <code>\"_blank\"</code> 的意思是链接会在新元素页打开。",
+        "<code>href</code>是锚点的另一个属性：它指定了链接的 URL 地址：<br><code>&#60;a href=\"http://freecodecamp.one\"> ... &#60;/a&#62;</code>",
+        "锚点元素内的文本：<strong>\"link to freecodecamp.one\"</strong>，会显示为一个可以点击的链接：<br>  <code>&#60;a href=\" ... \"&#62;link to freecodecamp.one&#60;/a&#62;</code>",
+        "例子的最后输出将会是这样：<br><p>Here's a <a target=\"_blank\" href=\"http://freecodecamp.one\"> link to freecodecamp.one</a> for you to follow.</p>",
+        "<hr>",
+        "现在用一个新的段落来包裹现存的锚点（必须放在<code>main</code>元素之后才行)。新段落的文本为：View more cat photos，其中 \"cat photos\" 是一个链接，其他是纯文本。"
+      ],
+      "tests": [
+        {
+          "text": "你需要一个指向 \"http://freecatphotoapp.com\" 的锚点。",
+          "testString":
+            "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").length > 0 || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").length > 0), '你需要一个指向 \"http://freecatphotoapp.com\" 的锚点。');"
+        },
+        {
+          "text": "锚点的文本应为：cat photos。",
+          "testString":
+            "assert($(\"a\").text().match(/cat\\sphotos/gi), '锚点的文本应为：cat photos。');"
+        },
+        {
+          "text": "在锚点的外部创建一个新段落，这样页面就有3个段落了。",
+          "testString":
+            "assert($(\"p\") && $(\"p\").length > 2, '在锚点的外部创建一个段落，这样页面就有3个段落了。');"
+        },
+        {
+          "text": "锚点应嵌套在新段落内。",
+          "testString":
+            "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().is(\"p\") || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\")), '锚点应嵌套在新段落内。');"
+        },
+        {
+          "text": "段落的文本应为：View more （记得 more 后面有一个空格）。",
+          "testString":
+            "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi) || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi)), '段落的文本应为：View more （记得 more 后面有一个空格）。');"
+        },
+        {
+          "text": "段落的文本不应该为：View more。",
+          "testString":
+            "assert(!$(\"a\").text().match(/View\\smore/gi), '段落的文本不应该为：View more。');"
+        },
+        {
+          "text": "确保每个段落有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/p>/g) && code.match(/<p/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, '确保每个段落有结束标记。');"
+        },
+        {
+          "text": "确保每个段落有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, '确保每个段落有结束标记。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"http://freecatphotoapp.com\" target=\"_blank\">猫图</a>",
+            "  ",
+            "  <img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\">",
+            "  ",
+            "  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>",
+            "  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08817",
+      "title": "Make Dead Links Using the Hash Symbol",
+      "description": [
+        "有时你想为网站添加一个锚点，但如果你还不确定要将它链接到哪儿，这时可以使用固定链接。",
+        "在后面的课程中我们会学到：如何轻松通过<code>JavaScript</code>更改链接指向的地址。",
+        "<hr>",
+        "<code>href</code>属性的当前值是指向 \"http://freecatphotoapp.com\"，将<code>href</code>属性的值替换为<code>#</code>，也称为井号，就可以创建固定链接。",
+        "例如: <code>href=\"#\"</code>"
+      ],
+      "tests": [
+        {
+          "text": "锚点的<code>href</code>属性应为 \"#\"。",
+          "testString":
+            "assert($(\"a\").attr(\"href\") === \"#\", '锚点的<code>href</code>属性应为 \"#\"。);"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  <p>点击这里可以获取更多<a href=\"http://freecatphotoapp.com\" target=\"_blank\">猫图</a>。</p>",
+            "  ",
+            "  <img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\">",
+            "  ",
+            "  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>",
+            "  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08820",
+      "title": "Turn an Image into a Link",
+      "description": [
+        "你可以通过把元素嵌套进锚点里使其变成一个链接。",
+        "把你的图片嵌套进锚点。举例如下：",
+        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://ofa83l6ao.qnssl.com/running-cats.jpg\" alt=\"三只萌萌的小猫\"&#62;&#60;/a&#62;</code>",
+        "把锚点的<code>href</code>属性设置为<code>#</code>，就可以创建固定链接。",
+        "<hr>",
+        "把现存的图片嵌套进锚点中。",
+        "当鼠标悬停在图片上时，鼠标的光标如果从箭头指针变成手形指针，那么此时图片就是一个链接了。"
+      ],
+      "tests": [
+        {
+          "text": "把现存的图片嵌套进锚点中。",
+          "testString":
+            "assert($(\"a\").children(\"img\").length > 0, '把现存的图片嵌套进锚点中。');"
+        },
+        {
+          "text": "锚点的<code>href</code>属性应为<code>#</code>。",
+          "testString":
+            "assert(new RegExp(\"#\").test($(\"a\").children(\"img\").parent().attr(\"href\")), '锚点的<code>href</code>属性应为<code>#</code>。');"
+        },
+        {
+          "text": "确保所有的锚点都有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, '确保所有的锚点都有结束标记。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\">",
+            "  ",
+            "  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>",
+            "  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08827",
+      "title": "Create a Bulleted Unordered List",
+      "description": [
+        "HTML 有一个特定的元素用于创建<code>unordered lists（无序列表</code>, 也叫项目列表。",
+        "无序列表以<code>&#60;ul&#62;</code>元素开始，并包含一个或多个<code>&#60;li&#62;</code>元素，最后以<code>&#60;/ul&#62;</code>结尾。",
+        "例如: ",
+        "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;milk&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;cheese&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
+        "将会创建一个包含 \"milk\" 和 \"cheese\" 的项目列表。",
+        "<hr>",
+        "删除页面底部的两个<code>p</code>元素，然后在底部创建一个无序列表，其中包含猫咪最喜欢的三件事情。"
+      ],
+      "tests": [
+        {
+          "text": "创建一个<code>ul</code>无序列表。",
+          "testString":
+            "assert($(\"ul\").length > 0, '创建一个<code>ul</code>无序列表。');"
+        },
+        {
+          "text":
+            "你应该在<code>ul</code>无序列表中添加三个<code>li</code>条目。",
+          "testString":
+            "assert($(\"ul li\").length > 2, '你应该在<code>ul</code>无序列表中添加三个<code>li</code>条目。');"
+        },
+        {
+          "text": "确保<code>ul</code>无序列表有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\\/ul>/gi).length === code.match(/<ul/gi).length, '确保<code>ul</code>无序列表有结束标记。');"
+        },
+        {
+          "text": "确保<code>li</code>条目都有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/li>/gi) && code.match(/<li[\\s>]/gi) && code.match(/<\\/li>/gi).length === code.match(/<li[\\s>]/gi).length, '确保<code>li</code>条目都有结束标记。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>",
+            "  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08828",
+      "title": "Create an Ordered List",
+      "description": [
+        "HTML 有一个特定的元素用于创建<code>ordered lists（有序列表）</code>，也叫数字列表。",
+        "有序列表以<code>&#60;ol&#62;</code> 元素开始，并包含一个或多个<code>&#60;li&#62;</code>元素，最后以<code>&#60;/ol&#62;</code>结尾。",
+        "例如:",
+        "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
+        "将会创建一个包含 \"Garfield\" 和 \"Sylvester\" 的数字列表。",
+        "<hr>",
+        "创建一个有序列表，内容是猫咪最讨厌的三件东西。"
+      ],
+      "tests": [
+        {
+          "text": "页面应该有一个有序列表，内容是猫咪最喜欢的三件东西。",
+          "testString":
+            "assert((/猫咪最喜欢的三件东西：/i).test($(\"ol\").prev().text()), '页面应该有一个有序列表，内容是猫咪最喜欢的三件东西。');"
+        },
+        {
+          "text": "页面应该有一个无序列表，内容是猫咪最讨厌的三件东西。",
+          "testString":
+            "assert((/猫咪最讨厌的三件东西：/i).test($(\"ul\").prev().text()), '页面应该有一个无序列表，内容是猫咪最讨厌的三件东西。');"
+        },
+        {
+          "text": "页面应该只有一个<code>ul</code>元素。",
+          "testString":
+            "assert.equal($(\"ul\").length, 1, '页面应该只有一个<code>ul</code>元素。');"
+        },
+        {
+          "text": "页面应该只有一个<code>ol</code>元素。",
+          "testString":
+            "assert.equal($(\"ol\").length, 1, '页面应该只有一个<code>ol</code>元素。');"
+        },
+        {
+          "text": "<code>ul</code>无序列表应该包含3个<code>li</code>条目。",
+          "testString":
+            "assert.equal($(\"ul li\").length, 3, '<code>ul</code>无序列表应该包含3个<code>li</code>条目。');"
+        },
+        {
+          "text": "<code>ol</code>有序列表应该包含3个<code>li</code>元素。",
+          "testString":
+            "assert.equal($(\"ol li\").length, 3, '<code>ol</code>有序列表应该包含3个<code>li</code>条目。');"
+        },
+        {
+          "text": "确保<code>ul</code>无序列表有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/ul>/g) && code.match(/<\\/ul>/g).length === code.match(/<ul>/g).length, '确保<code>ul</code>无序列表有结束标记。');"
+        },
+        {
+          "text": "确保<code>ol</code>有序列表有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/ol>/g) && code.match(/<\\/ol>/g).length === code.match(/<ol>/g).length, '确保<code>ol</code>有序列表有结束标记。');"
+        },
+        {
+          "text": "确保<code>li</code>条目有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/li>/g) && code.match(/<li>/g) && code.match(/<\\/li>/g).length === code.match(/<li>/g).length, '确保<code>li</code>条目有结束标记。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>猫咪最喜欢的三件东西：</p>",
+            "  <ul>",
+            "    <li>猫薄荷</li>",
+            "    <li>激光笔</li>",
+            "    <li>千层饼</li>",
+            "  </ul>",
+            "  <p>猫咪最讨厌的三件东西：</p>",
+            "  ",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08829",
+      "title": "Create a Text Field",
+      "description": [
+        "现在让我们来创建一个<code>form</code>表单。",
+        "<code>input</code>输入框可以让你轻松获得用户的输入。",
+        "你可以像这样创建一个文本输入框：",
+        "<code>&#60;input type=\"text\"&#62;</code>",
+        "注意：<code>input</code>输入框是没有结束标记的。",
+        "<hr>",
+        "在列表下面创建一个<code>type</code>属性为<code>text</code>的<code>input</code>输入框。"
+      ],
+      "tests": [
+        {
+          "text":
+            "网页中有一个<code>type</code>属性为<code>text</code>的<code>input</code>输入框。",
+          "testString":
+            "assert($(\"input[type=text]\").length > 0, '网页中有一个<code>type</code>属性为<code>text</code>的<code>input</code>输入框。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>猫咪最喜欢的三件东西：</p>",
+            "  <ul>",
+            "    <li>猫薄荷</li>",
+            "    <li>激光笔</li>",
+            "    <li>千层饼</li>",
+            "  </ul>",
+            "  <p>猫咪最讨厌的三件东西：</p>",
+            "  <ol>",
+            "    <li>跳蚤</li>",
+            "    <li>打雷</li>",
+            "    <li>同类</li>",
+            "  </ol>",
+            "  ",
+            "  ",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08830",
+      "title": "Add Placeholder Text to a Text Field",
+      "description": [
+        "<code>Placeholder</code>占位符是用户在<code>input</code>输入框中输入任何东西前的预定义文本。",
+        "你可以像这样创建一个占位符：",
+        "<code>&#60;input type=\"text\" placeholder=\"this is placeholder text\"&#62;</code>",
+        "<hr>",
+        "把<code>input</code>输入框的<code>placeholder</code>占位符文本设置为 \"猫咪图片地址\"。"
+      ],
+      "tests": [
+        {
+          "text":
+            "给现有的<code>input</code>输入框添加一个<code>placeholder</code>属性。",
+          "testString":
+            "assert($(\"input[placeholder]\").length > 0, '给现有的<code>input</code>输入框添加一个<code>placeholder</code>属性。');"
+        },
+        {
+          "text": "设置<code>placeholder</code>属性的值为 \"猫咪图片地址\"。",
+          "testString":
+            "assert($(\"input\") && $(\"input\").attr(\"placeholder\") && $(\"input\").attr(\"placeholder\").match(/猫咪图片地址/gi), '设置<code>placeholder</code>属性的值为 \"猫咪图片地址\"。');"
+        },
+        {
+          "text": "<code>input</code>输入框的语法必须正确。",
+          "testString":
+            "assert($(\"input[type=text]\").length > 0 && code.match(/<input((\\s+\\w+(\\s*=\\s*(?:\".*?\"|'.*?'|[\\^'\">\\s]+))?)+\\s*|\\s*)\\/?>/gi), '<code>input</code>输入框的语法必须正确。');"
+        }
+      ],
+      "challengeType": 0,
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-placeholder-text-to-a-text-field",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>猫咪最喜欢的三件东西：</p>",
+            "  <ul>",
+            "    <li>猫薄荷</li>",
+            "    <li>激光笔</li>",
+            "    <li>千层饼</li>",
+            "  </ul>",
+            "  <p>猫咪最讨厌的三件东西：</p>",
+            "  <ol>",
+            "    <li>跳蚤</li>",
+            "    <li>打雷</li>",
+            "    <li>同类</li>",
+            "  </ol>",
+            "  <input type=\"text\">",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aede08830",
+      "title": "Create a Form Element",
+      "description": [
+        "通过给<code>form</code>表单添加一个<code>action</code>属性，你可以使用纯 HTML 来构建向服务器提交数据的 Web 表单。",
+        "例如:",
+        "<code>&#60;form action=\"/url-where-you-want-to-submit-form-data\"&#62;&#60;/form&#62;</code>",
+        "<hr>",
+        "在<code>input</code>输入框外层创建一个<code>form</code>表单，然后设置表单的<code>action</code>属性为<code>\"/submit-cat-photo\"</code>。"
+      ],
+      "tests": [
+        {
+          "text":
+            "在<code>input</code>输入框外层创建一个<code>form</code>表单。",
+          "testString":
+            "assert($(\"form\") && $(\"form\").children(\"input\") && $(\"form\").children(\"input\").length > 0, '在<code>input</code>输入框外层创建一个<code>form</code>表单。');"
+        },
+        {
+          "text":
+            "确保表单的<code>action</code>属性为<code>\"/submit-cat-photo\"</code>。",
+          "testString":
+            "assert($(\"form\").attr(\"action\") === \"/submit-cat-photo\", '确保表单的<code>action</code>属性为<code>\"/submit-cat-photo\"</code>。');"
+        },
+        {
+          "text": "确保表单有开始标记和结束标记。",
+          "testString":
+            "assert(code.match(/<\\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\\/form>/g).length === code.match(/<form [^<]*>/g).length, '确保表单有开始标记和结束标记。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>猫咪最喜欢的三件东西：</p>",
+            "  <ul>",
+            "    <li>猫薄荷</li>",
+            "    <li>激光笔</li>",
+            "    <li>千层饼</li>",
+            "  </ul>",
+            "  <p>猫咪最讨厌的三件东西：</p>",
+            "  <ol>",
+            "    <li>跳蚤</li>",
+            "    <li>打雷</li>",
+            "    <li>同类</li>",
+            "  </ol>",
+            "  <input type=\"text\" placeholder=\"猫咪图片地址\">",
+            "<main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedd08830",
+      "title": "Add a Submit Button to a Form",
+      "description": [
+        "让我们来给表单添加一个<code>submit</code>提交按钮，当点击提交按钮时，表单中的数据将会被发送到<code>action</code>属性指定的地址上。",
+        "例如：",
+        "<code>&#60;button type=\"submit\"&#62;this button submits the form&#60;/button&#62;</code>",
+        "<hr>",
+        "在表单的底部创建一个<code>button</code>按钮，按钮的<code>type</code>属性值为<code>submit</code>，文本为<code>提交</code>。"
+      ],
+      "tests": [
+        {
+          "text": "表单内部应该有一个按钮。",
+          "testString":
+            "assert($(\"form\").children(\"button\").length > 0, '表单内部应该有一个按钮。');"
+        },
+        {
+          "text": "按钮的<code>type</code>属性值应该为<code>submit</code>。",
+          "testString":
+            "assert($(\"button\").attr(\"type\") === \"submit\", '按钮的<code>type</code>属性值应该为<code>submit</code>。');"
+        },
+        {
+          "text": "提交按钮的文本应该为<code>提交</code>。",
+          "testString":
+            "assert($(\"button\").text().match(/^\\s*提交\\s*$/gi), '提交按钮的文本应该为<code>提交</code>。');"
+        },
+        {
+          "text": "确保按钮有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, '确保按钮有结束标记。');"
+        }
+      ],
+      "challengeType": 0,
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-a-submit-button-to-a-form",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>猫咪最喜欢的三件东西：</p>",
+            "  <ul>",
+            "    <li>猫薄荷</li>",
+            "    <li>激光笔</li>",
+            "    <li>千层饼</li>",
+            "  </ul>",
+            "  <p>猫咪最讨厌的三件东西：</p>",
+            "  <ol>",
+            "    <li>跳蚤</li>",
+            "    <li>打雷</li>",
+            "    <li>同类</li>",
+            "  </ol>",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <input type=\"text\" placeholder=\"猫咪图片地址\">",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedc08830",
+      "title": "Use HTML5 to Require a Field",
+      "description": [
+        "当你设计表单时，你可以指定某些字段为必填项(required)，只有当用户填写了该字段后，才可以提交表单。",
+        "如果你想把文本输入框设置为必填项，在<code>input</code>元素中加上required属性就可以了，例如：<input type=\"text\" required>",
+        "<hr>",
+        "确保<code>input</code>元素中有<code>required</code>属性，否则无法提交表单。",
+        "试试输入框不填写任何文本，直接点击<code>Submit</code>按钮提交表单，看看浏览器是如何提示的。"
+      ],
+      "tests": [
+        {
+          "text": "<code>input</code>元素必须有<code>required</code>属性。",
+          "testString":
+            "assert($(\"input\").prop(\"required\"), '<code>input</code>元素必须有<code>required</code>属性。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>猫咪最喜欢的三件东西：</p>",
+            "  <ul>",
+            "    <li>猫薄荷</li>",
+            "    <li>激光笔</li>",
+            "    <li>千层饼</li>",
+            "  </ul>",
+            "  <p>猫咪最讨厌的三件东西：</p>",
+            "  <ol>",
+            "    <li>跳蚤</li>",
+            "    <li>打雷</li>",
+            "    <li>同类</li>",
+            "  </ol>",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <input type=\"text\" placeholder=\"猫咪图片地址\">",
+            "    <button type=\"submit\">提交</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08834",
+      "title": "Create a Set of Radio Buttons",
+      "description": [
+        "<code>radio buttons</code>（单选按钮）就好比单项选择题，正确答案只有一个。",
+        "单选按钮只是<code>input</code>输入框的一种类型。",
+        "每一个单选按钮都应该嵌套在它自己的<code>label</code>（标签）元素中。",
+        "所有关联的单选按钮应该拥有相同的<code>name</code>属性。",
+        "下面是一个单选按钮的例子：",
+        "<blockquote>&#60;label&#62; <br>&nbsp;&nbsp;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
+        "最佳实践是在<code>label</code>元素上设置for属性，让其值与单选按钮的<code>id</code>属性值相等，这样就在<code>label</code>元素和它的子元素单选按钮之间创建了一种链接关系。例如：",
+        "<blockquote>&#60;label for=\"indoor\"&#62; <br>&nbsp;&nbsp;&#60;input id=\"indoor\" type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
+        "<hr>",
+        "给表单添加两个单选按钮，一个叫<code>indoor</code>，另一个叫<code>outdoor</code>。"
+      ],
+      "tests": [
+        {
+          "text": "页面上应该有两个单选按钮元素。",
+          "testString":
+            "assert($('input[type=\"radio\"]').length > 1, '页面上应该有两个单选按钮元素。');"
+        },
+        {
+          "text":
+            "设置单选按钮的<code>name</code>属性为<code>indoor-outdoor</code>。",
+          "testString":
+            "assert($('label > input[type=\"radio\"]').filter(\"[name='indoor-outdoor']\").length > 1, '设置单选按钮的<code>name</code>属性为<code>indoor-outdoor</code>。');"
+        },
+        {
+          "text":
+            "每一个单选按钮都应该嵌套进它自己的<code>label</code>元素中。",
+          "testString":
+            "assert($('label > input[type=\"radio\"]:only-child').length > 1, '每一个单选按钮都应该嵌套进它自己的<code>label</code>元素中。');"
+        },
+        {
+          "text": "每一个<code>label</code>元素都有结束标记。",
+          "testString":
+            "assert((code.match(/<\\/label>/g) && code.match(/<label/g) && code.match(/<\\/label>/g).length === code.match(/<label/g).length), '每一个<code>label</code>元素都有结束标记。');"
+        },
+        {
+          "text": "其中一个<code>label</code>元素的文本为<code>indoor</code>。",
+          "testString":
+            "assert($(\"label\").text().match(/indoor/gi), '其中一个<code>label</code>元素的文本为<code>indoor</code>。');"
+        },
+        {
+          "text":
+            "其中一个<code>label</code>元素的文本为<code>outdoor</code>。",
+          "testString":
+            "assert($(\"label\").text().match(/outdoor/gi), '其中一个<code>label</code>元素的文本为<code>outdoor</code>。');"
+        },
+        {
+          "text": "所有的单选按钮都应该包含在<code>form</code>表单中。",
+          "testString":
+            "assert($(\"label\").parent().get(0).tagName.match('FORM'), '所有的单选按钮都应该包含在<code>form</code>表单中。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>猫咪最喜欢的三件东西：</p>",
+            "  <ul>",
+            "    <li>猫薄荷</li>",
+            "    <li>激光笔</li>",
+            "    <li>千层饼</li>",
+            "  </ul>",
+            "  <p>猫咪最讨厌的三件东西：</p>",
+            "  <ol>",
+            "    <li>跳蚤</li>",
+            "    <li>打雷</li>",
+            "    <li>同类</li>",
+            "  </ol>",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <input type=\"text\" placeholder=\"猫咪图片地址\" required>",
+            "    <button type=\"submit\">提交</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08835",
+      "title": "Create a Set of Checkboxes",
+      "description": [
+        "<code>checkboxes</code>（多选按钮）就好比多项选择题，正确答案有多个。",
+        "多选按钮是<code>input</code>输入框的另一种类型。",
+        "每一个多选按钮都应该嵌套在它自己的<code>label</code>（标签）元素中。",
+        "所有关联的多选按钮应该拥有相同的<code>name</code>属性。",
+        "最佳实践是在<code>label</code>元素上设置for属性，让其值与多选按钮的<code>id</code>属性值相等，这样就在<code>label</code>元素和它的子元素多选按钮之间创建了一种链接关系。例如：",
+        "下面是一个多选按钮的例子：",
+        "<code>&#60;label for=\"loving\"&#62;&#60;input id=\"loving\" type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
+        "<hr>",
+        "给表单添加三个多选按钮，每个多选按钮都被嵌套进<code>label</code>元素中，并且它的<code>name</code>属性均为<code>personality</code>。"
+      ],
+      "tests": [
+        {
+          "text": "表单应该有三个多选按钮。",
+          "testString":
+            "assert($('input[type=\"checkbox\"]').length > 2, '表单应该有三个多选按钮。');"
+        },
+        {
+          "text": "每个多选按钮都应该被嵌套进<code>label</code>元素中。",
+          "testString":
+            "assert($('label > input[type=\"checkbox\"]:only-child').length > 2, '每个多选按钮都应该被嵌套进<code>label</code>元素中。');"
+        },
+        {
+          "text": "确保<code>label</code>元素有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/label>/g) && code.match(/<label/g) && code.match(/<\\/label>/g).length === code.match(/<label/g).length, '确保<code>label</code>元素有结束标记。');"
+        },
+        {
+          "text":
+            "设置多选按钮的<code>name</code>属性均为<code>personality</code>。",
+          "testString":
+            "assert($('label > input[type=\"checkbox\"]').filter(\"[name='personality']\").length > 2, '设置多选按钮的<code>name</code>属性均为<code>personality</code>。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>猫咪最喜欢的三件东西：</p>",
+            "  <ul>",
+            "    <li>猫薄荷</li>",
+            "    <li>激光笔</li>",
+            "    <li>千层饼</li>",
+            "  </ul>",
+            "  <p>猫咪最讨厌的三件东西：</p>",
+            "  <ol>",
+            "    <li>跳蚤</li>",
+            "    <li>打雷</li>",
+            "    <li>同类</li>",
+            "  </ol>",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label for=\"indoor\"><input id=\"indoor\" type=\"radio\" name=\"indoor-outdoor\">室内</label>",
+            "    <label for=\"outdoor\"><input id=\"outdoor\" type=\"radio\" name=\"indoor-outdoor\">室外</label><br>",
+            "    <input type=\"text\" placeholder=\"猫咪图片地址\" required>",
+            "    <button type=\"submit\">提交</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedd08835",
+      "title": "Check Radio Buttons and Checkboxes by Default",
+      "description": [
+        "通过添加<code>checked</code>属性，你可以设置某个单选按钮或多选按钮被默认选中。",
+        "为此，只需给<code>input</code>元素添加 \"checked\" 属性。 例如:",
+        "<code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>",
+        "<hr>",
+        "把第一个<code>radio button</code>和第一个<code>checkbox</code>都设置为默认选中。"
+      ],
+      "tests": [
+        {
+          "text": "表单的第一个单选按钮应该被默认选中。",
+          "testString":
+            "assert($('input[type=\"radio\"]').prop(\"checked\"), '表单的第一个单选按钮应该被默认选中。');"
+        },
+        {
+          "text": "表单的第一个多选按钮应该被默认选中。",
+          "testString":
+            "assert($('input[type=\"checkbox\"]').prop(\"checked\"), '表单的第一个多选按钮应该被默认选中。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>猫咪最喜欢的三件东西：</p>",
+            "  <ul>",
+            "    <li>猫薄荷</li>",
+            "    <li>激光笔</li>",
+            "    <li>千层饼</li>",
+            "  </ul>",
+            "  <p>猫咪最讨厌的三件东西：</p>",
+            "  <ol>",
+            "    <li>跳蚤</li>",
+            "    <li>打雷</li>",
+            "    <li>同类</li>",
+            "  </ol>",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\">室内</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\">室外</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\">忠诚</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\">懒惰</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\">积极</label><br>",
+            "    <input type=\"text\" placeholder=\"猫咪图片地址\" required>",
+            "    <button type=\"submit\">提交</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aede08835",
+      "title": "Nest Many Elements within a Single div Element",
+      "description": [
+        "<code>div</code>元素，也叫division（层）元素，是一个盛装其他元素的通用容器。",
+        "它也是 HTML 中出现频率最高的元素。",
+        "和其他普通元素一样，你可以用<code>&#60;div&#62;</code>来标记一个<code>div</code>元素的开始，用<code>&#60;/div&#62;</code>来标记一个<code>div</code>元素的结束。",
+        "<hr>",
+        "把无序列表、有序列表和段落都嵌套进同一个<code>div</code>元素。",
+        "提示：试着在第一个<code><p></code>之前插入<code>div</code>开始标记，在<code></ol></code>之后插入<code>div</code>结束标记，这样，所有的列表都位于<code>div</code>之内。"
+      ],
+      "tests": [
+        {
+          "text": "把所有的<code>p</code>元素嵌入<code>div</code>元素中。",
+          "testString":
+            "assert($(\"div\").children(\"p\").length > 1, '把所有的<code>p</code>元素嵌入<code>div</code>元素中。');"
+        },
+        {
+          "text": "把<code>ul</code>元素嵌入<code>div</code>元素中。",
+          "testString":
+            "assert($(\"div\").children(\"ul\").length > 0, '把<code>ul</code>元素嵌入<code>div</code>元素中。');"
+        },
+        {
+          "text": "把<code>ol</code>元素嵌入<code>div</code>元素中。",
+          "testString":
+            "assert($(\"div\").children(\"ol\").length > 0, '把<code>ol</code>元素嵌入<code>div</code>元素中。');"
+        },
+        {
+          "text": "确保<code>div</code>元素有结束标记。",
+          "testString":
+            "assert(code.match(/<\\/div>/g) && code.match(/<\\/div>/g).length === code.match(/<div>/g).length, '确保<code>div</code>元素有结束标记。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<h2>CatPhotoApp</h2>",
+            "<main>",
+            "  ",
+            "  <a href=\"#\"><img src=\"https://ofa83l6ao.qnssl.com/relaxing-cat.jpg\" alt=\"一只仰卧着的萌猫\"></a>",
+            "  ",
+            "  <p>猫咪最喜欢的三件东西：</p>",
+            "  <ul>",
+            "    <li>猫薄荷</li>",
+            "    <li>激光笔</li>",
+            "    <li>千层饼</li>",
+            "  </ul>",
+            "  <p>猫咪最讨厌的三件东西：</p>",
+            "  <ol>",
+            "    <li>跳蚤</li>",
+            "    <li>打雷</li>",
+            "    <li>同类</li>",
+            "  </ol>",
+            "  ",
+            "  <form action=\"/submit-cat-photo\">",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\">室内</label>",
+            "    <label><input type=\"radio\" name=\"indoor-outdoor\">室外</label><br>",
+            "    <label><input type=\"checkbox\" name=\"personality\">忠诚</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\">懒惰</label>",
+            "    <label><input type=\"checkbox\" name=\"personality\">积极</label><br>",
+            "    <input type=\"text\" placeholder=\"猫咪图片地址\" required>",
+            "    <button type=\"submit\">提交</button>",
+            "  </form>",
+            "</main>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d78aa367417b2b2512aed",
+      "title": "Declare the Doctype of an HTML Document",
+      "description": [
+        "到目前为止，我们学习了一些特定的 HTML 标签，还有一些标签是用来组成网页的总体结构，并且它们在每个 HTML 文档中都能看到。",
+        "在文档的顶部，你需要告诉浏览器你的网页用的 HTML 哪个版本。 HTML 是一个不停进化的语言，大部分浏览器都支持 HTML 的最新标准，也就是 HTML5。但是一些陈旧的网页可能使用的是 HTML 的旧版本。",
+        "你可以通过<code>&lt;!DOCTYPE ...&gt;</code>来告诉浏览器你使用的是 HTML 的哪个版本，\"<code>...</code>\" 部分就是版本的数字信息。<code>&lt;!DOCTYPE html&gt;</code>对应的就是 HTML5。",
+        "<code>!</code>和大写的<code>DOCTYPE</code>是很重要的，特别是对于老的浏览器。但<code>html</code>大写小写都可以。",
+        "接下来，所有的 HTML 代码都必须位于<code>html</code>标签中。其中<code>&lt;html&gt;</code>位于<code>&lt;!DOCTYPE html&gt;</code>的后面，<code>&lt;/html&gt;</code>位于网页的结尾。",
+        "这是网页结构一个例子：",
+        "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;!-- Your HTML code goes here --&gt;<br>&lt;/html&gt;</blockquote>",
+        "<hr>",
+        "在代码编辑器的顶部添加一个<code>DOCTYPE（文档类型）</code>为 HTML5的声明，然后添加一个<code>html</code>元素，再添加一个<code>h1</code>元素，标题的文本可以随意填。"
+      ],
+      "tests": [
+        {
+          "text": "网页中应该包含<code>&lt;!DOCTYPE html&gt;</code>标签。",
+          "testString":
+            "assert(code.match(/<!DOCTYPE\\s+?html\\s*?>/gi), '网页中应该包含<code>&lt;!DOCTYPE html&gt;</code>标签。');"
+        },
+        {
+          "text": "网页中只有一个<code>html</code>元素。",
+          "testString":
+            "assert($('html').length == 1, '网页中只有一个<code>html</code>元素');"
+        },
+        {
+          "text": "<code>h1</code>元素应该位于<code>html</code>元素内部。",
+          "testString":
+            "assert(code.match(/<html>\\s*?<h1>\\s*?.*?\\s*?<\\/h1>\\s*?<\\/html>/gi), '<code>h1</code>元素应该位于<code>html</code>元素内部。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d78aa367417b2b2512aec",
+      "title": "Define the Head and Body of an HTML Document",
+      "description": [
+        "<code>html</code>的结构主要分为两大部分：<code>head</code>、<code>body</code>。关于网页的描述都应该放入<code>head</code>标签，网页的内容都应该放入<code>body</code>标签。",
+        "比如<code>link</code>、code>meta</code>、<code>title</code>和<code>style</code>都应该放入<code>head</code>标签。",
+        "这是网页布局的一个例子：",
+        "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;head&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- metadata elements --&gt;<br>&nbsp;&nbsp;&lt;/head&gt;<br>&nbsp;&nbsp;&lt;body&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- page contents --&gt;<br>&nbsp;&nbsp;&lt;/body&gt;<br>&lt;/html&gt;</blockquote>",
+        "<hr>",
+        "给网页添加<code>head</code>和<code>body</code>，<code>head</code>元素应该包含<code>title</code>，<code>body</code>元素应该包含<code>h1</code>和<code>p</code>。"
+      ],
+      "tests": [
+        {
+          "text": "网页应该只有一个<code>head</code>元素。",
+          "testString":
+            "assert($('head').length == 1, '网页应该只有一个<code>head</code>元素。');"
+        },
+        {
+          "text": "网页应该只有一个<code>body</code>元素。",
+          "testString":
+            "assert($('body').length == 1, '网页应该只有一个<code>body</code>元素。');"
+        },
+        {
+          "text": "<code>head</code>应该是<code>html</code>的子元素。",
+          "testString":
+            "assert($('html').children('head').length == 1, '<code>head</code>应该是<code>html</code>的子元素。');"
+        },
+        {
+          "text": "<code>body</code>应该是<code>html</code>的子元素。",
+          "testString":
+            "assert($('html').children('body').length == 1, '<code>body</code>应该是<code>html</code>的子元素。');"
+        },
+        {
+          "text": "<code>title</code>应该是<code>head</code>的子元素。",
+          "testString":
+            "assert(code.match(/<head>\\s*?<title>\\s*?.*?\\s*?<\\/title>\\s*?<\\/head>/gi), '<code>title</code>应该是<code>head</code>的子元素。');"
+        },
+        {
+          "text":
+            "<code>h1</code>和<code>p</code>都应该是<code>body</code>的子元素。",
+          "testString":
+            "assert($('body').children('h1').length == 1 && $('body').children('p').length == 1, '<code>h1</code>和<code>p</code>都应该是<code>body</code>的子元素。');"
+        }
+      ],
+      "challengeType": 0,
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<!DOCTYPE html>",
+            "<html>",
+            "  <title>世上最萌的猫咪</title>",
+            "  ",
+            "  <h1>世上最萌的猫咪</h1>",
+            "  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。 在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>",
+            "  ",
+            "</html>  "
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    }
+  ]
+}
