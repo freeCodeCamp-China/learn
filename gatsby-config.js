@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const path = require('path');
 const { buildChallenges$ } = require('./seed/buildChallenges');
+console.log(buildChallenges$)
 
 module.exports = {
   siteMetadata: {

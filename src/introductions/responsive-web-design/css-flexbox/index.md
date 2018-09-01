@@ -5,5 +5,7 @@ superBlock: Responsive Web Design
 ---
 ## Introduction to the CSS Flexbox Challenges
 
-A website's User Interface ("UI") has two components. First, there are the visual elements, such as colors, fonts, and images. Second, there is the placement or positioning of those elements. In Responsive Web Design, a UI layout must accommodate many different browsers and devices accessing the content.<br><br>CSS3 introduced Flexible Boxes, or flexbox, to create page layouts for a dynamic UI. It is a layout mode that arranges elements in a predictable way for different screen sizes and browsers. While somewhat new, all popular modern browsers support flexbox. This section covers how to use flexbox and the different layout options it offers.
+网页的用户界面（User Interface 缩写 UI）包括两个部分。第一部分是视觉要素，如色彩、字体和图片等。第二部分是这些元素的排列和定位。在响应式网页设计中，UI 布局必须适配不同浏览器和设备。
+
+CSS3 引入了 Flexible Box，或者叫 flexbox，它可以为动态 UI 创建页面布局。这种布局可以以一种可预见的方式排列元素，使其适用于不同的屏幕大小和浏览器。虽然这是个新东西，但所有现代浏览器都已经支持 flexbox。这一节将要介绍如何使用 flexbox 及其提供的布局选项。
 

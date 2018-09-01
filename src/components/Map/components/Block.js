@@ -12,6 +12,7 @@ import Caret from '../../icons/Caret';
 /* eslint-disable max-len */
 import GreenPass from '../../../templates/Challenges/components/icons/GreenPass';
 import GreenNotCompleted from '../../../templates/Challenges/components/icons/GreenNotCompleted';
+const dict = require('./dict.json')
 /* eslint-enable max-len */
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
@@ -85,6 +86,16 @@ export class Block extends PureComponent {
     // TODO: Split this into a Challenge Component and add tests
     // TODO: The styles badge and map-badge on the completion span do not exist
     return [intro].concat(challenges).map((challenge, i) => {
+      console.log('before:'+ JSON.stringify(challenge,null,2))
+      dict.forEach(function(item){
+        if(challenge.title && item.chinese && challenge.title == item.english){
+          challenge.title = item.chinese
+        }
+        if(challenge.frontmatter && item.chinese && challenge.frontmatter.title == item.english){
+          challenge.frontmatter.title = item.chinese
+        }
+      })
+      console.log('after:'+ JSON.stringify(challenge,null,2))
       const completedClass = challenge.isCompleted
         ? ' map-challenge-title-completed'
         : '';
@@ -110,6 +121,12 @@ export class Block extends PureComponent {
   render() {
     const { completedChallenges, challenges, isExpanded, intro } = this.props;
     const { blockName } = challenges[0].fields;
+    var chinese
+    dict.forEach(function(item){
+      if(item.english == blockName){
+        chinese = item.chinese     
+      }
+    })
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
       const isCompleted = completedChallenges.some(
@@ -121,7 +138,7 @@ export class Block extends PureComponent {
       <li className={`block ${isExpanded ? 'open' : ''}`}>
         <div className='map-title' onClick={this.handleBlockClick}>
           <Caret />
-          <h5>{blockName}</h5>
+          <h5>{chinese}</h5>
         </div>
         <ul>
           {isExpanded

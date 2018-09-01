@@ -48,9 +48,17 @@ const propTypes = {
 const codingPrepRE = new RegExp('Interview Prep');
 
 function createSuperBlockTitle(str) {
+  let courseName
+  const dict = require('./dict.json')
+  dict.forEach(function(item){
+    if(item.english == str){
+      courseName = item.chinese
+      console.log(courseName)
+    }
+  })
   return codingPrepRE.test(str)
-    ? `${str} (Thousands of hours of challenges)`
-    : `${str} Certification (300 hours)`;
+        ? `${courseName} (数千个小时)`
+        : `${courseName} (300个小时)`;
 }
 
 export class SuperBlock extends PureComponent {

@@ -5,8 +5,19 @@ superBlock: Responsive Web Design
 ---
 ## Introduction to Basic CSS
 
-Cascading Style Sheets (CSS) tell the browser how to display the text and other content that you write in HTML.<br><br>Note that CSS is case-sensitive so be careful with your capitalization.
-CSS has been adopted by all major browsers and allows you to control:<br><ul><li>color</li><li>fonts</li><li>positioning</li><li>spacing</li><li>sizing</li><li>decorations</li><li>transitions</li></ul>
-There are three main ways to apply CSS styling. You can apply inline styles directly to HTML elements with the <code>style</code> attribute. Alternatively, you can place CSS rules within <code>style</code> tags in an HTML document. Finally, you can write CSS rules in an external style sheet, then reference that file in the HTML document. Even though the first two options have their use cases, most developers prefer external style sheets because they keep the styles separate from the HTML elements. This improves the readability and reusability of your code.
-The idea behind CSS is that you can use a selector to target an HTML element in the DOM (Document Object Model) and then apply a variety of attributes to that element to change the way it is displayed on the page.<br><br>In this section, you'll see how adding CSS styles to the elements of your CatPhotoApp can change it from simple text to something more.
+层叠样式表（CSS）告诉浏览器要如何显示你用HTML编写的文本和其他内容。
+
+注意，CSS 区分大小写，因此要谨慎使用大写。CSS已被所有主流浏览器采用，允许你控制以下样式：
+
+* 颜色
+* 字体样式
+* 定位
+* 间距大小
+* 元素大小
+* 装饰效果
+* 过渡效果
+
+使用 CSS 样式主要有三种方式。你可以通过`style`属性，直接在 HTML 元素里使用行内样式声明。或者，你可以在 HTML 的`style`标签里面声明 CSS 样式规则。最后，你可以在外部样式表中编写 CSS 规则，然后在 HTML 文档中引用该文件。尽管前两个方式也有人使用，但大多数开发人员更喜欢外部样式表，因为它可以将样式与 HTML 元素分开，这提高了代码的可读性和可重用性。CSS 背后的思想是，通过选择器来定位 DOM（文档对象模型）的 HTML 元素，然后将各种样式规则应用在元素上，从而改变元素在页面上的显示方式。
+
+在本节中，你会看到我们是如何将 CSS 样式应用到猫咪图片工程的页面元素中，让它从简单的文本内容，变成更加有趣的内容。
 

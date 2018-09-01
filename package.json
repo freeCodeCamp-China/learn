@@ -33,7 +33,6 @@
     "gatsby-transformer-json": "^1.0.16",
     "gatsby-transformer-remark": "^1.7.39",
     "jest": "^22.4.3",
-    "lodash": "^4.17.5",
     "loop-protect": "^2.1.6",
     "mongodb": "^3.0.5",
     "prismjs": "^1.14.0",
@@ -103,6 +102,8 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-react": "^7.7.0",
+    "install": "^0.12.1",
+    "lodash": "^4.17.10",
     "prettier": "^1.11.1",
     "sinon": "^4.5.0"
   }
