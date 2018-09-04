@@ -8,33 +8,33 @@
       "id": "587d7b87367417b2b2512b3f",
       "title": "Explore Differences Between the var and let Keywords",
       "description": [
-        "One of the biggest problems with declaring variables with the <code>var</code> keyword is that you can overwrite variable declarations without an error.",
-        "<blockquote>var camper = 'James';<br>var camper = 'David';<br>console.log(camper);<br>// logs 'David'</blockquote>",
-        "As you can see in the code above, the <code>camper</code> variable is originally declared as <code>James</code> and then overridden to be <code>David</code>.",
-        "In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidentally overwrite a variable that you did not intend to overwrite.",
-        "Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.<br>",
-        "A new keyword called <code>let</code> was introduced in ES6 to solve this potential issue with the <code>var</code> keyword.",
-        "If you were to replace <code>var</code> with <code>let</code> in the variable declarations of the code above, the result would be an error.",
-        "<blockquote>let camper = 'James';<br>let camper = 'David'; // throws an error</blockquote>",
-        "This error can be seen in the console of your browser.",
-        "So unlike <code>var</code>, when using <code>let</code>, a variable with the same name can only be declared once.",
-        "Note the <code>\"use strict\"</code>. This enables Strict Mode, which catches common coding mistakes and \"unsafe\" actions. For instance:",
-        "<blockquote>\"use strict\";<br>x = 3.14; // throws an error because x is not declared</blockquote>",
+        "使用<code>var</code>关键字来声明变量，会出现重复声明导致变量被覆盖却不会报错的问题：",
+        "<blockquote>var camper = 'James';<br>var camper = 'David';<br>console.log(camper);<br>// 打印出 'David'</blockquote>",
+        "在上面的代码中，<code>camper</code>的初始值为<code>'James'</code>，然后又被覆盖成了<code>'David'</code>。",
+        "在小型的应用中，你可能不会遇到这样的问题，但是当你的代码规模变得更加庞大的时候，就可能会在不经意间覆盖了之前定义的变量。",
+        "这样的行为不会报错导致了 debug 非常困难。<br>",
+        "在 ES6 中引入了新的关键字<code>let</code>来解决<code>var</code>关键字带来的潜在问题。",
+        "如果你在上面的代码中，使用了<code>let</code>关键字来代替<code>var</code>关键字，结果会是一个报错。",
+        "<blockquote>let camper = 'James';<br>let camper = 'David'; // 报错</blockquote>",
+        "你可以在浏览器的控制台里看见这个错误。",
+        "与<code>var</code>不同的是，当使用<code>let</code>的时候，同一名字的变量只能被声明一次。",
+        "请注意<code>\"use strict\"</code>。这代表着开启了严格模式，用于检测常见的代码错误以及\"不安全\"的行为，例如：",
+        "<blockquote>\"use strict\";<br>x = 3.14; // x 没有声明导致了报错</blockquote>",
         "<hr>",
-        "Update the code so it only uses the <code>let</code> keyword."
+        "请更新这段代码，并且在其中只使用<code>let</code>关键字"
       ],
       "tests": [
         {
-          "text": "<code>var</code> does not exist in code.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> does not exist in code.');"
+          "text": "在代码中不应存在<code>var</code>。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g),'在代码中不应存在<code>var</code>。');"
         },
         {
-          "text": "<code>catName</code> should be <code>Oliver</code>.",
-          "testString": "assert(catName === \"Oliver\", '<code>catName</code> should be <code>Oliver</code>.');"
+          "text": "<code>catName</code>变量的值应该为<code>\"Oliver\"</code>。",
+          "testString": "assert(catName === \"Oliver\", '<code><code>catName</code>变量的值应该为<code>\"Oliver\"</code>。');"
         },
         {
-          "text": "<code>quote</code> should be <code>\"Oliver says Meow!\"</code>",
-          "testString": "assert(quote === \"Oliver says Meow!\", '<code>quote</code> should be <code>\"Oliver says Meow!\"</code>');"
+          "text": "<code>quote</code>变量的值应该为<code>\"Oliver says Meow!\"</code>",
+          "testString": "assert(quote === \"Oliver says Meow!\", '<code>quote</code>变量的值应该为<code>\"Oliver says Meow!\"</code>');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -65,33 +65,33 @@
       "id": "587d7b87367417b2b2512b40",
       "title": "Compare Scopes of the var and let Keywords",
       "description": [
-        "When you declare a variable with the <code>var</code> keyword, it is declared globally, or locally if declared inside a function.",
-        "The <code>let</code> keyword behaves similarly, but with some extra features. When you declare a variable with the <code>let</code> keyword inside a block, statement, or expression, its scope is limited to that block, statement, or expression.",
-        "For example:",
-        "<blockquote>var numArray = [];<br>for (var i = 0; i < 3; i++) {<br>&nbsp;&nbsp;numArray.push(i);<br>}<br>console.log(numArray);<br>// returns [0, 1, 2]<br>console.log(i);<br>// returns 3</blockquote>",
-        "With the <code>var</code> keyword, <code>i</code> is declared globally. So when <code>i++</code> is executed, it updates the global variable. This code is similar to the following:",
+        "当你使用<code>var</code>关键字来声明一个变量的时候，这个变量会被声明成全局变量，或是函数内的局部变量。",
+        "<code>let</code>关键字的作用类似，但会有一些额外的特性。如果你在代码块、语句或表达式中使用关键字<code>let</code>声明变量，这个变量的作用域就被限制在当前的代码块，语句或表达式之中。",
+        "举个例子：",
+        "<blockquote>var numArray = [];<br>for (var i = 0; i < 3; i++) {<br>&nbsp;&nbsp;numArray.push(i);<br>}<br>console.log(numArray);<br>// 返回 [0, 1, 2]<br>console.log(i);<br>// 返回 3</blockquote>",
+        "当使用<code>var</code>关键字的时候，<code>i</code>会被声明成全局变量。当<code>i++</code>执行的时候，它会改变全局变量的值。这段代码可以看做下面这样:",
         "<blockquote>var numArray = [];<br>var i;<br>for (i = 0; i < 3; i++) {<br>&nbsp;&nbsp;numArray.push(i);<br>}<br>console.log(numArray);<br>// returns [0, 1, 2]<br>console.log(i);<br>// returns 3</blockquote>",
-        "This behavior will cause problems if you were to create a function and store it for later use inside a for loop that uses the <code>i</code> variable. This is because the stored function will always refer to the value of the updated global <code>i</code> variable.",
-        "<blockquote>var printNumTwo;<br>for (var i = 0; i < 3; i++) {<br>&nbsp;&nbsp;if(i === 2){<br>&nbsp;&nbsp;&nbsp;&nbsp;printNumTwo = function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return i;<br>&nbsp;&nbsp;&nbsp;&nbsp;};<br>&nbsp;&nbsp;}<br>}<br>console.log(printNumTwo());<br>// returns 3</blockquote>",
-        "As you can see, <code>printNumTwo()</code> prints 3 and not 2. This is because the value assigned to <code>i</code> was updated and the <code>printNumTwo()</code> returns the global <code>i</code> and not the value <code>i</code> had when the function was created in the for loop. The <code>let</code> keyword does not follow this behavior:",
-        "<blockquote>'use strict';<br>let printNumTwo;<br>for (let i = 0; i < 3; i++) {<br>&nbsp;&nbsp;if (i === 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;printNumTwo = function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return i;<br>&nbsp;&nbsp;&nbsp;&nbsp;};<br>&nbsp;&nbsp;}<br>}<br>console.log(printNumTwo());<br>// returns 2<br>console.log(i);<br>// returns \"i is not defined\"</blockquote>",
-        "<code>i</code> is not defined because it was not declared in the global scope. It is only declared within the for loop statement. <code>printNumTwo()</code> returned the correct value because three different <code>i</code> variables with unique values (0, 1, and 2) were created by the <code>let</code> keyword within the loop statement.",
+        "如果你在<code>for</code>循环中创建了使用<code>i</code>变量的函数，那么在后续调用函数的时候，上面提到的这种行为就会导致问题。这是因为函数存储的值会因为全局变量<code>i</code>的变化而不断的改变。",
+        "<blockquote>var printNumTwo;<br>for (var i = 0; i < 3; i++) {<br>&nbsp;&nbsp;if(i === 2){<br>&nbsp;&nbsp;&nbsp;&nbsp;printNumTwo = function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return i;<br>&nbsp;&nbsp;&nbsp;&nbsp;};<br>&nbsp;&nbsp;}<br>}<br>console.log(printNumTwo());<br>// 返回 3</blockquote>",
+        "可以看到，<code>printNumTwo()</code>打印了 3 而不是 2。这是因为<code>i</code>发生了改变，并且函数<code>printNumTwo()</code>返回的是全局变量<code>i</code>的值，而不是<code>for</code>循环中创建函数时<code>i</code>的值。<code>let</code>关键字就不会有这种现象：",
+        "<blockquote>'use strict';<br>let printNumTwo;<br>for (let i = 0; i < 3; i++) {<br>&nbsp;&nbsp;if (i === 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;printNumTwo = function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return i;<br>&nbsp;&nbsp;&nbsp;&nbsp;};<br>&nbsp;&nbsp;}<br>}<br>console.log(printNumTwo());<br>// 返回 2<br>console.log(i);<br>// 返回 \"没有定义 i 变量\"</blockquote>",
+        "<code>i</code>在全局作用域中没有声明，所以它没有被定义，它的声明只会发生在<code>for</code>循环内。在循环执行的时候，<code>let</code>关键字创建了三个不同的<code>i</code>变量，他们的值分别为 0、1 和 2，所以<code>printNumTwo()</code>返回了正确的值。",
         "<hr>",
-        "Fix the code so that <code>i</code> declared in the if statement is a separate variable than <code>i</code> declared in the first line of the function. Be certain not to use the <code>var</code> keyword anywhere in your code.",
-        "This exercise is designed to illustrate the difference between how <code>var</code> and <code>let</code> keywords assign scope to the declared variable. When programming a function similar to the one used in this exercise, it is often better to use different variable names to avoid confusion."
+        "修改这段代码，使得在<code>if</code>语句中声明的<code>i</code>变量与在函数的第一行声明的<code>i</code>变量是彼此独立的。请注意不要在你的代码的任何地方使用<code>var</code>关键字。",
+        "这个练习说明了使用<code>var</code>与<code>let</code>关键字声明变量时，作用域之间的不同。当编写类似这个练习中的函数的时候，通常来说最好还是使用不同的变量名来避免误会。"
       ],
       "tests": [
         {
-          "text": "<code>var</code> does not exist in code.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> does not exist in code.');"
+          "text": "<code>var</code>不应该在代码中存在。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code>不应该在代码中存在。');"
         },
         {
-          "text": "The variable <code>i</code> declared in the if statement should equal \"block scope\".",
-          "testString": "getUserInput => assert(getUserInput('index').match(/(i\\s*=\\s*).*\\s*.*\\s*.*\\1('|\")block\\s*scope\\2/g), 'The variable <code>i</code> declared in the if statement should equal \"block scope\".');"
+          "text": "在<code>if</code>语句中声明的<code>i</code>变量的值是 \"block scope\"。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/(i\\s*=\\s*).*\\s*.*\\s*.*\\1('|\")block\\s*scope\\2/g), '在<code>if</code>语句中声明的<code>i</code>变量应该是 \"block scope\"。');"
         },
         {
-          "text": "<code>checkScope()</code> should return \"function scope\"",
-          "testString": "assert(checkScope() === \"function scope\", '<code>checkScope()</code> should return \"function scope\"');"
+          "text": "<code>checkScope()</code>应当返回 \"function scope\"",
+          "testString": "assert(checkScope() === \"function scope\", '<code>checkScope()</code>应该返回 \"function scope\"');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -122,29 +122,29 @@
       "id": "587d7b87367417b2b2512b41",
       "title": "Declare a Read-Only Variable with the const Keyword",
       "description": [
-        "<code>let</code> is not the only new way to declare variables. In ES6, you can also declare variables using the <code>const</code> keyword.",
-        "<code>const</code> has all the awesome features that <code>let</code> has, with the added bonus that variables declared using <code>const</code> are read-only. They are a constant value, which means that once a variable is assigned with <code>const</code>, it cannot be reassigned.",
-        "<blockquote>\"use strict\"<br>const FAV_PET = \"Cats\";<br>FAV_PET = \"Dogs\"; // returns error</blockquote>",
-        "As you can see, trying to reassign a variable declared with <code>const</code> will throw an error. You should always name variables you don't want to reassign using the <code>const</code> keyword. This helps when you accidentally attempt to reassign a variable that is meant to stay constant. A common practice when naming constants is to use all uppercase letters, with words separated by an underscore.",
+        "<code>let</code>并不是唯一的新的声明变量的方式。在 ES6里面，你还可以使用<code>const</code>关键字来声明变量。",
+        "<code>const</code>拥有<code>let</code>的所有优点，所不同的是，通过<code>code</code>声明的变量是只读的。这意味着通过<code>const</code>声明的变量只能被赋值一次，而不能被再次赋值。",
+        "<blockquote>\"use strict\"<br>const FAV_PET = \"Cats\";<br>FAV_PET = \"Dogs\"; // 报错 </blockquote>",
+        "可以看见，尝试给通过<code>const</code>声明的变量再次赋值会报错。你应该使用<code>const</code>关键字来对所有不打算再次赋值的变量进行声明。这有助于你避免给一个常量进行额外的再次赋值。一个最佳实践是对所有常量的命名采用全大写字母，并在单词之间使用下划线进行分隔。",
         "<hr>",
-        "Change the code so that all variables are declared using <code>let</code> or <code>const</code>. Use <code>let</code> when you want the variable to change, and <code>const</code> when you want the variable to remain constant. Also, rename variables declared with <code>const</code> to conform to common practices, meaning constants should be in all caps."
+        "改变以下代码，使得所有的变量都使用<code>let</code>或<code>const</code>关键词来声明。当变量将会改变的时候使用<code>let</code>关键字，当变量要保持常量的时候使用<code>const</code>关键字。同时，对使用<code>const</code>声明的变量进行最佳实践的重命名，变量名中的字母应该都是大写的。"
       ],
       "tests": [
         {
-          "text": "<code>var</code> does not exist in your code.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> does not exist in your code.');"
+          "text": "<code>var</code>在代码中不存在。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code>在代码中不存在。');"
         },
         {
-          "text": "<code>SENTENCE</code> should be a constant variable declared with <code>const</code>.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g), '<code>SENTENCE</code> should be a constant variable declared with <code>const</code>.');"
+          "text": "<code>SENTENCE</code>应该是使用<code>const</code>声明的常量。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g), '<code>SENTENCE</code>应该是使用<code>const</code>声明的常量。');"
         },
         {
-          "text": "<code>i</code> should be declared with <code>let</code>.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/(let i)/g), '<code>i</code> should be declared with <code>let</code>.');"
+          "text": "<code>i</code>应该是使用<code>let</code>声明的变量。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/(let i)/g), '<code>i</code>应该是使用<code>let</code>声明的变量。');"
         },
         {
-          "text": "<code>console.log</code> should be changed to print the <code>SENTENCE</code> variable.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/console\\.log\\(\\s*SENTENCE\\s*\\)\\s*;?/g), '<code>console.log</code> should be adjusted to print the variable <code>SENTENCE</code>.');"
+          "text": "<code>console.log</code>应该修改为用于打印<code>SENTENCE</code>变量。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/console\\.log\\(\\s*SENTENCE\\s*\\)\\s*;?/g), '<code>console.log</code>应该修改为用于打印<code>SENTENCE</code>变量。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -158,14 +158,14 @@
             "function printManyTimes(str) {",
             "  \"use strict\";",
             "",
-            "  // change code below this line",
+            "  // 在这行以下修改代码",
             "",
             "  var sentence = str + \" is cool!\";",
             "  for(var i = 0; i < str.length; i+=2) {",
             "    console.log(sentence);",
             "  }",
             "",
-            "  // change code above this line",
+            "  // 在这行以上修改代码",
             "",
             "}",
             "printManyTimes(\"freeCodeCamp\");"
@@ -179,30 +179,30 @@
       "id": "587d7b87367417b2b2512b42",
       "title": "Mutate an Array Declared with const",
       "description": [
-        "The <code>const</code> declaration has many use cases in modern JavaScript.",
-        "Some developers prefer to assign all their variables using <code>const</code> by default, unless they know they will need to reassign the value. Only in that case, they use <code>let</code>.",
-        "However, it is important to understand that objects (including arrays and functions) assigned to a variable using <code>const</code> are still mutable. Using the <code>const</code> declaration only prevents reassignment of the variable identifier.",
-        "<blockquote>\"use strict\";<br>const s = [5, 6, 7];<br>s = [1, 2, 3]; // throws error, trying to assign a const<br>s[2] = 45; // works just as it would with an array declared with var or let<br>console.log(s); // returns [5, 6, 45]</blockquote>",
-        "As you can see, you can mutate the object <code>[5, 6, 7]</code> itself and the variable <code>s</code> will still point to the altered array <code>[5, 6, 45]</code>. Like all arrays, the array elements in <code>s</code> are mutable, but because <code>const</code> was used, you cannot use the variable identifier <code>s</code> to point to a different array using the assignment operator.",
+        "在现代的 JavaScript 里，<code>const</code>声明有很多用法。",
+        "一些开发者倾向默认使用<code>const</code>来声明所有变量，但如果它们打算在后续的代码中修改某个值，那在声明的时候就会用<code>let</code>。",
+        "然而，你要注意，对象（包括数组和函数）在使用<code>const</code>声明的时候依然是可变的。使用<code>const</code>来声明只会保证它的标识不会被重新赋值。",
+        "<blockquote>\"use strict\";<br>const s = [5, 6, 7];<br>s = [1, 2, 3]; // 试图给 const 变量赋值，报错<br>s[2] = 45; // 与用 var 或 let 声明的数组一样，这个操作也会成功<br>console.log(s); // 返回 [5, 6, 45]</blockquote>",
+        "从以上代码看出，你可以改变<code>[5, 6, 7]</code>自身，所以<code>s</code>变量指向了改变后的数组<code>[5, 6, 45]</code>。和所有数组一样，数组<code>s</code>中的数组元素是可以被改变的，但是因为使用了<code>const</code>关键字，你不能使用赋值操作符将变量标识<code>s</code>指向另外一个数组。",
         "<hr>",
-        "An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignment."
+        "这里有一个使用<code>const s = [5, 7, 2]</code>声明的数组。使用对各元素赋值的方法将数组改成<code>[2, 5, 7]</code>。"
       ],
       "tests": [
         {
-          "text": "Do not replace <code>const</code> keyword.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const/g), 'Do not replace <code>const</code> keyword.');"
+          "text": "不要替换<code>const</code>关键字。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const/g), '不要替换<code>const</code>关键字。');"
         },
         {
-          "text": "<code>s</code> should be a constant variable (by using <code>const</code>).",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+s/g), '<code>s</code> should be a constant variable (by using <code>const</code>).');"
+          "text": "<code>s</code>应该为常量 (通过使用<code>const</code>)。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+s/g), '<code>s</code>应该为常量 (通过使用<code>const</code>)。');"
         },
         {
-          "text": "Do not change the original array declaration.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+s\\s*=\\s*\\[\\s*5\\s*,\\s*7\\s*,\\s*2\\s*\\]\\s*;?/g), 'Do not change the original array declaration.');"
+          "text": "不要改变原数组的声明。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+s\\s*=\\s*\\[\\s*5\\s*,\\s*7\\s*,\\s*2\\s*\\]\\s*;?/g), '不要改变原数组的声明。');"
         },
         {
-          "text": "<code>s</code> should be equal to <code>[2, 5, 7]</code>.",
-          "testString": "assert.deepEqual(s, [2, 5, 7], '<code>s</code> should be equal to <code>[2, 5, 7]</code>.');"
+          "text": "<code>s</code>应该等于<code>[2, 5, 7]</code>。",
+          "testString": "assert.deepEqual(s, [2, 5, 7], '<code>s</code>应该等于<code>[2, 5, 7]</code>。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -216,11 +216,11 @@
             "const s = [5, 7, 2];",
             "function editInPlace() {",
             "  \"use strict\";",
-            "  // change code below this line",
+            "  // 在这行以下修改代码",
             "",
             "  // s = [2, 5, 7]; <- this is invalid",
             "",
-            "  // change code above this line",
+            "  // 在这行以上修改代码",
             "}",
             "editInPlace();"
           ],
@@ -233,28 +233,28 @@
       "id": "598f48a36c8c40764b4e52b3",
       "title": "Prevent Object Mutation",
       "description": [
-        "As seen in the previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.",
-        "Once the object is frozen, you can no longer add, update, or delete properties from it. Any attempt at changing the object will be rejected without an error.",
-        "<blockquote>let obj = {<br>&nbsp;&nbsp;name:\"FreeCodeCamp\",<br>&nbsp;&nbsp;review:\"Awesome\"<br>};<br>Object.freeze(obj);<br>obj.review = \"bad\"; //will be ignored. Mutation not allowed<br>obj.newProp = \"Test\"; // will be ignored. Mutation not allowed<br>console.log(obj); <br>// { name: \"FreeCodeCamp\", review:\"Awesome\"}</blockquote>",
+        "通过之前的挑战可以看出,<code>const</code>声明并不会真的保护你的数据不被改变。为了确保数据不被改变，JavaScript 提供了一个函数<code>Object.freeze</code>来防止数据改变。",
+        "当一个对象被冻结的时候，你不能再对它的属性再进行增、删、改的操作。任何试图改变对象的操作都会被阻止，却不会报错。",
+        "<blockquote>let obj = {<br>&nbsp;&nbsp;name:\"FreeCodeCamp\",<br>&nbsp;&nbsp;review:\"Awesome\"<br>};<br>Object.freeze(obj);<br>obj.review = \"bad\"; //obj 对象被冻结了，这个操作会被忽略<br>obj.newProp = \"Test\"; // will be ignored. Mutation not allowed<br>console.log(obj); <br>// { name: \"FreeCodeCamp\", review:\"Awesome\"}</blockquote>",
         "<hr>",
-        "In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze the <code>MATH_CONSTANTS</code> object so that no one is able alter the value of <code>PI</code>, add, or delete properties ."
+        "在这个挑战中，你将使用<code>Object.freeze</code>来防止数学常量被改变。你需要冻结<code>MATH_CONSTANTS</code>对象，使得没有人可以改变<code>PI</code>的值，抑或增加或删除属性。"
       ],
       "tests": [
         {
-          "text": "Do not replace <code>const</code> keyword.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const/g), 'Do not replace <code>const</code> keyword.');"
+          "text": "不要替换<code>const</code>关键字。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const/g), '不要替换<code>const</code>关键字。');"
         },
         {
-          "text": "<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS/g), '<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).');"
+          "text": "<code>MATH_CONSTANTS</code>应该为一个常量 (使用<code>const</code>)。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS/g), '<code>MATH_CONSTANTS</code>应该为一个常量 (使用<code>const</code>)。');"
         },
         {
-          "text": "Do not change original <code>MATH_CONSTANTS</code>.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS\\s+=\\s+{\\s+PI:\\s+3.14\\s+};/g), 'Do not change original <code>MATH_CONSTANTS</code>.');"
+          "text": "不要改变原始的<code>MATH_CONSTANTS</code>。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS\\s+=\\s+{\\s+PI:\\s+3.14\\s+};/g), '不要改变原始的<code>MATH_CONSTANTS</code>。');"
         },
         {
-          "text": "<code>PI</code> equals <code>3.14</code>.",
-          "testString": "assert(PI === 3.14, '<code>PI</code> equals <code>3.14</code>.');"
+          "text": "<code>PI</code>等于<code>3.14</code>。",
+          "testString": "assert(PI === 3.14, '<code>PI</code>等于<code>3.14</code>。');"
         }
       ],
       "releasedOn": "Aug 12, 2017",
@@ -270,10 +270,10 @@
             "  const MATH_CONSTANTS = {",
             "    PI: 3.14",
             "  };",
-            "  // change code below this line",
+            "  // 在这行以下修改代码",
             "",
             "",
-            "  // change code above this line",
+            "  // 在这行以上修改代码",
             "  try {",
             "    MATH_CONSTANTS.PI = 99;",
             "  } catch( ex ) {",
@@ -292,37 +292,37 @@
       "id": "587d7b87367417b2b2512b43",
       "title": "Use Arrow Functions to Write Concise Anonymous Functions",
       "description": [
-        "In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.",
-        "To achieve this, we often use the following syntax:",
+        "在 JavaScript 里，我们会经常遇到不需要给函数命名的情况，尤其是在需要将以个函数作为参数传给另外一个函数的时候，在这些时候，我们会创建行内函数。因为这些函数不会再其他地方复用，所以我们不要给它们命名。",
+        "这种情况下，我们通常会使用以下语法：",
         "<blockquote>const myFunc = function() {<br>&nbsp;&nbsp;const myVar = \"value\";<br>&nbsp;&nbsp;return myVar;<br>}</blockquote>",
-        "ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use <strong>arrow function syntax</strong>:",
+        "ES6 提供了其他写匿名函数的方式的语法糖。你可以使用箭头函数：",
         "<blockquote>const myFunc = () => {<br>&nbsp;&nbsp;const myVar = \"value\";<br>&nbsp;&nbsp;return myVar;<br>}</blockquote>",
-        "When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword <code>return</code> as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:",
+        "当不需要函数体，只返回一个值的时候，箭头函数允许你省略<code>return</code>关键字和外面的大括号。这样就可以将一个简单的函数简化成一个单行语句。",
         "<blockquote>const myFunc= () => \"value\"</blockquote>",
-        "This code will still return <code>value</code> by default.",
+        "这段代码仍然会返回<code>value</code>。",
         "<hr>",
-        "Rewrite the function assigned to the variable <code>magic</code> which returns a new <code>Date()</code> to use arrow function syntax. Also make sure nothing is defined using the keyword <code>var</code>."
+        "使用箭头函数的语法重写<code>magic</code>函数，使其返回一个新的<code>Date()</code>。同时不要用<code>var</code>关键字来定义任何变量。"
       ],
       "tests": [
         {
-          "text": "User did replace <code>var</code> keyword.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.');"
+          "text": "替换掉<code>var</code>关键字。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '替换掉<code>var</code>关键字。');"
         },
         {
-          "text": "<code>magic</code> should be a constant variable (by using <code>const</code>).",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+magic/g), '<code>magic</code> should be a constant variable (by using <code>const</code>).');"
+          "text": "<code>magic</code>应该为一个常量 (使用<code>const</code>)。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+magic/g), '<code>magic</code>应该为一个常量 (使用<code>const</code>)。');"
         },
         {
-          "text": "<code>magic</code> is a <code>function</code>.",
-          "testString": "assert(typeof magic === 'function', '<code>magic</code> is a <code>function</code>.');"
+          "text": "<code>magic</code>是一个<code>function</code>。",
+          "testString": "assert(typeof magic === 'function', '<code>magic</code>是一个<code>function</code>。');"
         },
         {
-          "text": "<code>magic()</code> returns correct date.",
-          "testString": "assert(magic().getDate() == new Date().getDate(), '<code>magic()</code> returns correct date.');"
+          "text": "<code>magic()</code>返回正确的日期。",
+          "testString": "assert(magic().getDate() == new Date().getDate(), '<code>magic()</code>返回正确的日期。');"
         },
         {
-          "text": "<code>function</code> keyword was not used.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');"
+          "text": "不要使用<code>function</code>关键字。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '不要使用<code>function</code>关键字。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -347,32 +347,32 @@
       "id": "587d7b88367417b2b2512b44",
       "title": "Write Arrow Functions with Parameters",
       "description": [
-        "Just like a normal function, you can pass arguments into arrow functions.",
+        "和一般的函数一样，你也可以给箭头函数传递参数。",
         "<blockquote>// doubles input value and returns it<br>const doubler = (item) => item * 2;</blockquote>",
-        "You can pass more than one argument into arrow functions as well.",
+        "你同样可以给箭头函数传递多个参数。",
         "<hr>",
-        "Rewrite the <code>myConcat</code> function which appends contents of <code>arr2</code> to <code>arr1</code> so that the function uses arrow function syntax."
+        "使用箭头函数的语法重写<code>myConcat</code>函数，使其可以将<code>arr2</code>的内容填充在<code>arr1</code>里。"
       ],
       "tests": [
         {
-          "text": "User did replace <code>var</code> keyword.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.');"
+          "text": "替换掉所有的<code>var</code>关键字。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '替换掉所有的<code>var</code>关键字。');"
         },
         {
-          "text": "<code>myConcat</code> should be a constant variable (by using <code>const</code>).",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+myConcat/g), '<code>myConcat</code> should be a constant variable (by using <code>const</code>).');"
+          "text": "<code>myConcat</code>应该是一个常量 (使用<code>const</code>)。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+myConcat/g), '<code>myConcat</code>应该是一个常量 (使用<code>const</code>)。');"
         },
         {
-          "text": "<code>myConcat</code> should be a function",
-          "testString": "assert(typeof myConcat === 'function', '<code>myConcat</code> should be a function');"
+          "text": "<code>myConcat</code>应该是一个函数。",
+          "testString": "assert(typeof myConcat === 'function', '<code>myConcat</code>应该是一个函数。');"
         },
         {
-          "text": "<code>myConcat()</code> returns the correct <code>array</code>",
-          "testString": "assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, '<code>myConcat()</code> returns the correct <code>array</code>');"
+          "text": "<code>myConcat()</code>返回正确的<code>array</code>。",
+          "testString": "assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, '<code>myConcat()</code>返回正确的<code>array</code>。');"
         },
         {
-          "text": "<code>function</code> keyword was not used.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');"
+          "text": "不要使用<code>function</code>关键字。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '不要使用<code>function</code>关键字。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -387,7 +387,7 @@
             "  \"use strict\";",
             "  return arr1.concat(arr2);",
             "};",
-            "// test your code",
+            "// 测试你的代码",
             "console.log(myConcat([1, 2], [3, 4, 5]));"
           ],
           "head": [],
@@ -399,44 +399,44 @@
       "id": "587d7b88367417b2b2512b45",
       "title": "Write Higher Order Arrow Functions",
       "description": [
-        "It's time we see how powerful arrow functions are when processing data.",
-        "Arrow functions work really well with higher order functions, such as <code>map()</code>, <code>filter()</code>, and <code>reduce()</code>, that take other functions as arguments for processing collections of data.",
-        "Read the following code:",
+        "我们已经见识到了箭头函数在处理数据时候的强大之处。",
+        "箭头函数在类似<code>map</code>，<code>filter</code>，<code>reduce</code>等需要其他函数作为参数来处理数据的高阶函数里会很好用。" ,
+        "阅读以下代码：",
         "<blockquote>FBPosts.filter(function(post) {<br>&nbsp;&nbsp;return post.thumbnail !== null && post.shares > 100 && post.likes > 500;<br>})</blockquote>",
-        "We have written this with <code>filter()</code> to at least make it somewhat readable. Now compare it to the following code which uses arrow function syntax instead:",
+        "我们写下了<code>filter</code>函数，并尽量保证可读性。现在让我们用箭头函数来写同样的代码看看：",
         "<blockquote>FBPosts.filter((post) => post.thumbnail !== null && post.shares > 100 && post.likes > 500)</blockquote>",
-        "This code is more succinct and accomplishes the same task with fewer lines of code.",
+        "这段代码完成了同样的任务，却变得更加简短易懂了。",
         "<hr>",
-        "Use arrow function syntax to compute the square of only the positive integers (fractions are not integers) in the array <code>realNumberArray</code> and store the new array in the variable <code>squaredIntegers</code>."
+        "使用箭头函数的语法来计算<code>squaredIntegers</code>数组里正整数的平方（分数不是整数）。"
       ],
       "tests": [
         {
-          "text": "User did replace <code>var</code> keyword.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.');"
+          "text": "替换掉所有的<code>var</code>关键字。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '替换掉所有的<code>var</code>关键字。');"
         },
         {
-          "text": "<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), '<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).');"
+          "text": "<code>squaredIntegers</code>应该是一个常量 (使用<code>const</code>)。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), '<code>squaredIntegers</code>应该是一个常量 (使用<code>const</code>)。');"
         },
         {
-          "text": "<code>squaredIntegers</code> should be an <code>array</code>",
-          "testString": "assert(Array.isArray(squaredIntegers), '<code>squaredIntegers</code> should be an <code>array</code>');"
+          "text": "<code>squaredIntegers</code>应该是一个<code>array</code>。",
+          "testString": "assert(Array.isArray(squaredIntegers), '<code>squaredIntegers</code>应该是一个<code>array</code>');"
         },
         {
-          "text": "<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>",
-          "testString": "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, '<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');"
+          "text": "<code>squaredIntegers</code> 应该是<code>[16, 1764, 36]</code>",
+          "testString": "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, '<code>squaredIntegers</code> 应该是<code>[16, 1764, 36]</code>');"
         },
         {
-          "text": "<code>function</code> keyword was not used.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');"
+          "text": "不要使用<code>function</code>关键字。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '不要使用<code>function</code>关键字。');"
         },
         {
-          "text": "loop should not be used",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), 'loop should not be used');"
+          "text": "不要使用循环",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), '不要使用循环');"
         },
         {
-          "text": "<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used",
-          "testString": "getUserInput => assert(getUserInput('index').match(/map|filter|reduce/g), '<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used');"
+          "text": "请使用<code>map</code>,<code>filter</code>, 或者<code>reduce</code>。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/map|filter|reduce/g), '请使用<code>map</code>,<code>filter</code>, 或者<code>reduce</code>。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -450,12 +450,12 @@
             "const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34];",
             "const squareList = (arr) => {",
             "  \"use strict\";",
-            "  // change code below this line",
+            "  // 在这行以下修改代码",
             "  const squaredIntegers = arr;",
-            "  // change code above this line",
+            "  // 在这行以上修改代码",
             "  return squaredIntegers;",
             "};",
-            "// test your code",
+            "// 测试你的代码",
             "const squaredIntegers = squareList(realNumberArray);",
             "console.log(squaredIntegers);"
           ],
@@ -468,25 +468,25 @@
       "id": "587d7b88367417b2b2512b46",
       "title": "Set Default Parameters for Your Functions",
       "description": [
-        "In order to help us create more flexible functions, ES6 introduces <dfn>default parameters</dfn> for functions.",
-        "Check out this code:",
+        "ES6 里允许给函数传入<dfn>默认参数</dfn>，来构建更加灵活的函数。",
+        "请看以下代码：",
         "<blockquote>function greeting(name = \"Anonymous\") {<br>&nbsp;&nbsp;return \"Hello \" + name;<br>}<br>console.log(greeting(\"John\")); // Hello John<br>console.log(greeting()); // Hello Anonymous</blockquote>",
-        "The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter <code>name</code> will receive its default value <code>\"Anonymous\"</code> when you do not provide a value for the parameter. You can add default values for as many parameters as you want.",
+        "默认参数会在参数没有被指定（值为 undefined ）的时候起作用。在上面的例子中，参数<code>name</code>会在没有得到新的值的时候，默认使用值 \"Anonymous\"。你还可以给多个参数赋予默认值。",
         "<hr>",
-        "Modify the function <code>increment</code> by adding default parameters so that it will add 1 to <code>number</code> if <code>value</code> is not specified."
+        "给函数<code>increment</code>加上默认参数，使得在<code>value</code>没有被赋值的时候，默认给<code>number</code>加1。"
       ],
       "tests": [
         {
-          "text": "The result of <code>increment(5, 2)</code> should be <code>7</code>.",
-          "testString": "assert(increment(5, 2) === 7, 'The result of <code>increment(5, 2)</code> should be <code>7</code>.');"
+          "text": "<code>increment(5, 2)</code>的结果应该为<code>7</code>。",
+          "testString": "assert(increment(5, 2) === 7, '<code>increment(5, 2)</code>的结果应该为<code>7</code>。');"
         },
         {
-          "text": "The result of <code>increment(5)</code> should be <code>6</code>.",
-          "testString": "assert(increment(5) === 6, 'The result of <code>increment(5)</code> should be <code>6</code>.');"
+          "text": "<code>increment(5)</code>的结果应该为<code>6</code>。",
+          "testString": "assert(increment(5) === 6, '<code>increment(5)</code>的结果应该为<code>6</code>。');"
         },
         {
-          "text": "default parameter <code>1</code> was used for <code>value</code>.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/value\\s*=\\s*1/g), 'default parameter <code>1</code> was used for <code>value</code>.');"
+          "text": "参数<code>value</code>的默认值应该为<code>1</code>。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/value\\s*=\\s*1/g), 'default parameter<code>1</code>was used for<code>value</code>.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -503,8 +503,8 @@
             "    return number + value;",
             "  };",
             "})();",
-            "console.log(increment(5, 2)); // returns 7",
-            "console.log(increment(5)); // returns NaN"
+            "console.log(increment(5, 2)); // 返回 7",
+            "console.log(increment(5)); // 返回 NaN"
           ],
           "head": [],
           "tail": []
@@ -515,33 +515,33 @@
       "id": "587d7b88367417b2b2512b47",
       "title": "Use the Rest Operator with Function Parameters",
       "description": [
-        "In order to help us create more flexible functions, ES6 introduces the <dfn>rest operator</dfn> for function parameters. With the rest operator, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.",
-        "Check out this code:",
-        "<blockquote>function howMany(...args) {<br>&nbsp;&nbsp;return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>",
-        "The rest operator eliminates the need to check the <code>args</code> array and allows us to apply <code>map()</code>, <code>filter()</code> and <code>reduce()</code> on the parameters array.",
+        "ES6 推出了用于函数参数的<dfn> rest 操作符</dfn>帮助我们创建更加灵活的函数。在<code>rest</code>操作符的帮助下，你可以创建有一个变量来接受多个参数的函数。这些参数被储存在一个可以在函数内部读取的数组中。",
+        "请看以下代码：",
+        "<blockquote>function howMany(...args) {<br>&nbsp;&nbsp;return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // 你需要输入3个参数。<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); //你需要输入4个参数。</blockquote>",
+        "<code>rest</code>操作符可以避免查看<code>args</code>数组的需求，并且允许我们在参数数组上使用<code>map()</code>,<code>fiter()</code>，和<code>reduce()</code>。",
         "<hr>",
-        "Modify the function <code>sum</code> so that it uses the rest operator and it works in the same way with any number of parameters."
+        "修改<code>sum</code>函数，来让它使用<code>rest</code>操作符，并且它可以在有任何数量的参数时以相同的形式工作。"
       ],
       "tests": [
         {
-          "text": "The result of <code>sum(0,1,2)</code> should be 3",
-          "testString": "assert(sum(0,1,2) === 3, 'The result of <code>sum(0,1,2)</code> should be 3');"
+          "text": "<code>sum(0,1,2)</code>的返回结果应该为3。",
+          "testString": "assert(sum(0,1,2) === 3, '<code>sum(0,1,2)</code>的返回结果应该为3。');"
         },
         {
-          "text": "The result of <code>sum(1,2,3,4)</code> should be 10",
-          "testString": "assert(sum(1,2,3,4) === 10, 'The result of <code>sum(1,2,3,4)</code> should be 10');"
+          "text": "<code>sum(1,2,3,4)</code>的返回结果应该为10。",
+          "testString": "assert(sum(1,2,3,4) === 10, '<code>sum(1,2,3,4)</code>的返回结果应该为10。');"
         },
         {
-          "text": "The result of <code>sum(5)</code> should be 5",
-          "testString": "assert(sum(5) === 5, 'The result of <code>sum(5)</code> should be 5');"
+          "text": "<code>sum(5)</code>的返回结果应该为5。",
+          "testString": "assert(sum(5) === 5, '<code>sum(5)</code>的返回结果应该为5。');"
         },
         {
-          "text": "The result of <code>sum()</code> should be 0",
-          "testString": "assert(sum() === 0, 'The result of <code>sum()</code> should be 0');"
+          "text": "<code>sum()</code>的返回结果应该为 0。",
+          "testString": "assert(sum() === 0, '<code>sum()</code>的返回结果应该为 0。');"
         },
         {
-          "text": "The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/function\\s+sum\\s*\\(\\s*...args\\s*\\)\\s*{/g), 'The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.');"
+          "text": "对<code>sum</code>函数的<code>args</code>参数使用了<code>...</code>展开操作符。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/function\\s+sum\\s*\\(\\s*...args\\s*\\)\\s*{/g), '对<code>sum</code>函数的<code>args</code>参数使用了<code>...</code>展开操作符。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -570,30 +570,30 @@
       "id": "587d7b89367417b2b2512b48",
       "title": "Use the Spread Operator to Evaluate Arrays In-Place",
       "description": [
-        "ES6 introduces the <dfn>spread operator</dfn>, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.",
-        "The ES5 code below uses <code>apply()</code> to compute the maximum value in an array:",
-        "<blockquote>var arr = [6, 89, 3, 45];<br>var maximus = Math.max.apply(null, arr); // returns 89</blockquote>",
-        "We had to use <code>Math.max.apply(null, arr)</code> because <code>Math.max(arr)</code> returns <code>NaN</code>. <code>Math.max()</code> expects comma-separated arguments, but not an array.",
+        "ES6 允许我们使用 <dfn>展开操作符</dfn> 来展开数组，以及需要多个参数或元素的表达式。",
+        "下面的 ES5 代码使用了<code>apply()</code>来计算数组的最大值：",
+        "<blockquote>var arr = [6, 89, 3, 45];<br>var maximus = Math.max.apply(null, arr); // 返回 89</blockquote>",
+        "我们必须使用<code>Math.max.apply(null,arr)</code>，是因为直接调用<code>Math.max(arr)</code>会返回<code>NaN</code>。<code>Math.max()</code>函数需要传入的是一系列由逗号分隔的参数，而不是一个数组。",
         "The spread operator makes this syntax much better to read and maintain.",
-        "<blockquote>const arr = [6, 89, 3, 45];<br>const maximus = Math.max(...arr); // returns 89</blockquote>",
-        "<code>...arr</code> returns an unpacked array. In other words, it <em>spreads</em> the array.",
-        "However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:",
-        "<blockquote>const spreaded = ...arr; // will throw a syntax error</blockquote>",
+        "<blockquote>const arr = [6, 89, 3, 45];<br>const maximus = Math.max(...arr); // 返回 89</blockquote>",
+        "<code>...arr</code>返回了一个“打开”的数组。或者说它 <em>展开</em> 了数组。",
+        "然而，展开操作符只能够在函数的参数中，或者数组之中使用。下面的代码将会报错：",
+        "<blockquote>const spreaded = ...arr; // 将会发生语法错误</blockquote>",
         "<hr>",
-        "Copy all contents of <code>arr1</code> into another array <code>arr2</code> using the spread operator."
+        "使用展开操作符将<code>arr1</code>中的内容都赋值到<code>arr2</code>中去。"
       ],
       "tests": [
         {
-          "text": "<code>arr2</code> is correct copy of <code>arr1</code>.",
-          "testString": "assert(arr2.every((v, i) => v === arr1[i]), '<code>arr2</code> is correct copy of <code>arr1</code>.');"
+          "text": "<code>arr2</code>的值是由<code>arr1</code>拷贝而来的。",
+          "testString": "assert(arr2.every((v, i) => v === arr1[i]), '<code>arr2</code>的值是由<code>arr1</code>拷贝而来的。');"
         },
         {
-          "text": "<code>...</code> spread operator was used to duplicate <code>arr1</code>.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*...arr1\\s*\\]/g),'<code>...</code> spread operator was used to duplicate <code>arr1</code>.');"
+          "text": "用<code>...</code>展开操作符来赋值<code>arr1</code>。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*...arr1\\s*\\]/g),'用<code>...</code>展开操作符来赋值<code>arr1</code>。');"
         },
         {
-          "text": "<code>arr2</code> remains unchanged when <code>arr1</code> is changed.",
-          "testString": "assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length},'<code>arr2</code> remains unchanged when <code>arr1</code> is changed.');"
+          "text": "当<code>arr1</code>改变的时候，<code>arr2</code>不会改变。",
+          "testString": "assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length},'当<code>arr1</code>改变的时候，<code>arr2</code>不会改变。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -608,7 +608,7 @@
             "let arr2;",
             "(function() {",
             "  \"use strict\";",
-            "  arr2 = []; // change this line",
+            "  arr2 = []; // 改变这一行",
             "})();",
             "console.log(arr2);"
           ],
@@ -621,30 +621,30 @@
       "id": "587d7b89367417b2b2512b49",
       "title": "Use Destructuring Assignment to Assign Variables from Objects",
       "description": [
-        "We saw earlier how spread operator can effectively spread, or unpack, the contents of the array.",
-        "We can do something similar with objects as well. <dfn>Destructuring assignment</dfn> is special syntax for neatly assigning values taken directly from an object to variables.",
-        "Consider the following ES5 code:",
+        "我们之前看到了展开操作符是如何展开数组的内容的。",
+        "我们队对象也可以做同样的操作。<dfn>解构赋值</dfn> 就是可以从对象中直接获取对应值的语法。",
+        "看看以下 ES5 的代码：",
         "<blockquote>var voxel = {x: 3.6, y: 7.4, z: 6.54 };<br>var x = voxel.x; // x = 3.6<br>var y = voxel.y; // y = 7.4<br>var z = voxel.z; // z = 6.54</blockquote>",
-        "Here's the same assignment statement with ES6 destructuring syntax:",
+        "使用 ES6 的解构语法可以完成同样的赋值语句：",
         "<blockquote>const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54</blockquote>",
-        "If instead you want to store the values of <code>voxel.x</code> into <code>a</code>, <code>voxel.y</code> into <code>b</code>, and <code>voxel.z</code> into <code>c</code>, you have that freedom as well.",
+        "如果你想将<code>voxel.x</code>,<code>voxel.y</code>,<code>voxel.z</code>的值分别赋给<code>a</code>,<code>b</code>,<code>c</code>，可以用以下这种很棒的方式：",
         "<blockquote>const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54</blockquote>",
-        "You may read it as \"get the field <code>x</code> and copy the value into <code>a</code>,\" and so on.",
+        "你可以这样理解：“将<code>x</code>地址中的值拷贝到<code>a</code>当中去。”，等等。",
         "<hr>",
-        "Use destructuring to obtain the length of the input string <code>str</code>, and assign the length to <code>len</code> in line."
+        "使用解构语法去得到输入的<code>str</code>字符串的长度，并将长度赋值给<code>len</code>。"
       ],
       "tests": [
         {
-          "text": "the function <code>getLength()</code> returns a number.",
-          "testString": "assert(typeof getLength('') === 'number', 'the function <code>getLength()</code> returns a number.');"
+          "text": "函数<code>getLength()</code>返回一个数字。",
+          "testString": "assert(typeof getLength('') === 'number', '函数<code>getLength()</code>返回一个数字。');"
         },
         {
-          "text": "<code>getLength(\"FreeCodeCamp\")</code> should be <code>12</code>",
-          "testString": "assert(getLength(\"FreeCodeCamp\") === 12, '<code>getLength(\"FreeCodeCamp\")</code> should be <code>12</code>');"
+          "text": "<code>getLength(\"FreeCodeCamp\")</code>应该返回<code>12</code>。",
+          "testString": "assert(getLength(\"FreeCodeCamp\") === 12, '<code>getLength(\"FreeCodeCamp\")</code>应该返回<code>12</code>。');"
         },
         {
-          "text": "destructuring with reassignment was used",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*length\\s*:\\s*len\\s*}\\s*=\\s*str/g),'destructuring with reassignment was used');"
+          "text": "使用解构语法来重新赋值。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*length\\s*:\\s*len\\s*}\\s*=\\s*str/g),'使用解构语法来重新赋值。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -658,11 +658,11 @@
             "function getLength(str) {",
             "  \"use strict\";",
             "",
-            "  // change code below this line",
+            "  // 在这行以下修改代码",
             "  const length = 0; // change this",
-            "  // change code above this line",
+            "  // 在这行以上修改代码",
             "",
-            "  return len; // you must assign length to len in line",
+            "  return len; // 你必须在这行将<code>length</code>赋值给<code>len</code>",
             "",
             "}",
             "",
@@ -677,21 +677,21 @@
       "id": "587d7b89367417b2b2512b4a",
       "title": "Use Destructuring Assignment to Assign Variables from Nested Objects",
       "description": [
-        "We can similarly destructure <em>nested</em> objects into variables.",
-        "Consider the following code:",
+        "同样，我们可以将 <em>嵌套的对象</em>解构到变量中。",
+        "请看以下代码：",
         "<blockquote>const a = {<br>&nbsp;&nbsp;start: { x: 5, y: 6},<br>&nbsp;&nbsp;end: { x: 6, y: -9 }<br>};<br>const { start : { x: startX, y: startY }} = a;<br>console.log(startX, startY); // 5, 6</blockquote>",
-        "In the example above, the variable <code>start</code> is assigned the value of <code>a.start</code>, which is also an object.",
+        "在上面的例子里，<code>a.start</code>将值赋给了变量<code>start</code>，<code>start</code>同样也是个对象。",
         "<hr>",
-        "Use destructuring assignment to obtain <code>max</code> of <code>forecast.tomorrow</code> and assign it to <code>maxOfTomorrow</code>."
+        "使用解构赋值来得到<code>forecast.tomorrow</code>的<code>max</code>，并将其赋值给<code>maxOfTomorrow</code>。"
       ],
       "tests": [
         {
-          "text": "<code>maxOfTomorrow</code> equals <code>84.6</code>",
-          "testString": "assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, '<code>maxOfTomorrow</code> equals <code>84.6</code>');"
+          "text": "<code>maxOfTomorrow</code>等于<code>84.6</code>",
+          "testString": "assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, '<code>maxOfTomorrow</code>等于<code>84.6</code>');"
         },
         {
-          "text": "nested destructuring was used",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*tomorrow\\s*:\\s*\\{\\s*max\\s*:\\s*maxOfTomorrow\\s*\\}\\s*\\}\\s*=\\s*forecast/g),'nested destructuring was used');"
+          "text": "使用嵌套解构",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*tomorrow\\s*:\\s*\\{\\s*max\\s*:\\s*maxOfTomorrow\\s*\\}\\s*\\}\\s*=\\s*forecast/g),'使用嵌套解构');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -709,13 +709,13 @@
             "",
             "function getMaxOfTmrw(forecast) {",
             "  \"use strict\";",
-            "  // change code below this line",
-            "  const maxOfTomorrow = undefined; // change this line",
-            "  // change code above this line",
+            "  // 在这行以下修改代码",
+            "  const maxOfTomorrow = undefined; // 改变这一行",
+            "  // 在这行以上修改代码",
             "  return maxOfTomorrow;",
             "}",
             "",
-            "console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6"
+            "console.log(getMaxOfTmrw(LOCAL_FORECAST)); // 应该为 84.6"
           ],
           "head": [],
           "tail": []
@@ -726,28 +726,28 @@
       "id": "587d7b89367417b2b2512b4b",
       "title": "Use Destructuring Assignment to Assign Variables from Arrays",
       "description": [
-        "ES6 makes destructuring arrays as easy as destructuring objects.",
-        "One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick or choose which elements you want to assign to variables.",
-        "Destructuring an array lets us do exactly that:",
+        "在 ES6 里面，解构数组可以如同解构对象一样简单。",
+        "与数组解构不同，数组的扩展运算会将数组里的所有内容分解成一个由逗号分隔的列表。所以，你不能选择哪个元素来给变量赋值。",
+        "而对数组进行解构却可以让我们做到这一点：",
         "<blockquote>const [a, b] = [1, 2, 3, 4, 5, 6];<br>console.log(a, b); // 1, 2</blockquote>",
-        "The variable <code>a</code> is assigned the first value of the array, and <code>b</code> is assigned the second value of the array.",
-        "We can also access the value at any index in an array with destructuring by using commas to reach the desired index:",
+        "变量<code>a</code>以及<code>b</code>分别被数组的第一、第二个元素赋值。",
+        "我们甚至能在数组解构中使用逗号分隔符，来获取任意一个想要的值：",
         "<blockquote>const [a, b,,, c] = [1, 2, 3, 4, 5, 6];<br>console.log(a, b, c); // 1, 2, 5 </blockquote>",
         "<hr>",
-        "Use destructuring assignment to swap the values of <code>a</code> and <code>b</code> so that <code>a</code> receives the value stored in <code>b</code>, and <code>b</code> receives the value stored in <code>a</code>."
+        "使用数组解构来交换变量<code>a</code>与<code>b</code>的值。使<code>a</code>、<code>b</code>能分别获得对方的值。"
       ],
       "tests": [
         {
-          "text": "Value of <code>a</code> should be 6, after swapping.",
-          "testString": "assert(a === 6, 'Value of <code>a</code> should be 6, after swapping.');"
+          "text": "在交换后，<code>a</code>的值应该为6。",
+          "testString": "assert(a === 6, '在交换后，<code>a</code>的值应该为6。');"
         },
         {
-          "text": "Value of <code>b</code> should be 8, after swapping.",
-          "testString": "assert(b === 8, 'Value of <code>b</code> should be 8, after swapping.');"
+          "text": "在交换后，<code>b</code>的值应该为8。",
+          "testString": "assert(b === 8, '在交换后，<code>b</code>的值应该为8。');"
         },
         {
-          "text": "Use array destructuring to swap a and b.",
-          "testString": "// assert(/\\[\\s*(\\w)\\s*,\\s*(\\w)\\s*\\]\\s*=\\s*\\[\\s*\\2\\s*,\\s*\\1\\s*\\]/g.test(code), 'Use array destructuring to swap a and b.');"
+          "text": "使用数组解构来交换<code>a</code>和<code>b</code>。",
+          "testString": "// assert(/\\[\\s*(\\w)\\s*,\\s*(\\w)\\s*\\]\\s*=\\s*\\[\\s*\\2\\s*,\\s*\\1\\s*\\]/g.test(code), '使用数组解构来交换<code>a</code>和<code>b</code>。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -761,12 +761,12 @@
             "let a = 8, b = 6;",
             "(() => {",
             "  \"use strict\";",
-            "  // change code below this line",
+            "  // 在这行以下修改代码",
             "  ",
-            "  // change code above this line",
+            "  // 在这行以上修改代码",
             "})();",
-            "console.log(a); // should be 6",
-            "console.log(b); // should be 8"
+            "console.log(a); // 应该等于 6",
+            "console.log(b); // 应该等于 8"
           ],
           "head": [],
           "tail": []
@@ -777,26 +777,26 @@
       "id": "587d7b8a367417b2b2512b4c",
       "title": "Use Destructuring Assignment with the Rest Operator to Reassign Array Elements",
       "description": [
-        "In some situations involving array destructuring, we might want to collect the rest of the elements into a separate array.",
-        "The result is similar to <code>Array.prototype.slice()</code>, as shown below:",
+        "在解构数组的某些情况下，我们可能希望将剩下的元素放进另一个数组里面。",
+        "以下代码的结果与使用<code>Array.prototype.slice()</code>相同：",
         "<blockquote>const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];<br>console.log(a, b); // 1, 2<br>console.log(arr); // [3, 4, 5, 7]</blockquote>",
-        "Variables <code>a</code> and <code>b</code> take the first and second values from the array. After that, because of rest operator's presence, <code>arr</code> gets rest of the values in the form of an array.",
-        "The rest element only works correctly as the last variable in the list. As in, you cannot use the rest operator to catch a subarray that leaves out last element of the original array.",
+        "变量<code>a</code>与<code>b</code>分别获取了数组的前两个元素的值。之后，因为<code>rest</code>操作符的存在，<code>arr</code>获取了原数组剩余的元素的值，并构成了一个新的数组。",
+        "<code>rest</code>操作只能对数组列表最后的元素起作用。这意味着你不能使用<code>rest</code>操作符来截取原数组中间元素的子数组。",
         "<hr>",
-        "Use destructuring assignment with the rest operator to perform an effective <code>Array.prototype.slice()</code> so that <code>arr</code> is a sub-array of the original array <code>source</code> with the first two elements omitted."
+        "使用解构赋值以及<code>rest</code>操作符来进行一个<code>Array.prototype.slice</code>相同的操作。使得<code>arr</code>是原数组<code>source</code>除开前两个元素的子数组。"
       ],
       "tests": [
         {
-          "text": "<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>",
-          "testString": "assert(arr.every((v, i) => v === i + 3),'<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>');"
+          "text": "<code>arr</code>应该为<code>[3,4,5,6,7,8,9,10]</code>",
+          "testString": "assert(arr.every((v, i) => v === i + 3),'<code>arr</code>应该为<code>[3,4,5,6,7,8,9,10]</code>');"
         },
         {
-          "text": "destructuring was used.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w*\\s*,\\s*\\w*\\s*,\\s*...arr\\s*\\]/g),'destructuring was used.');"
+          "text": "使用了解构赋值。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w*\\s*,\\s*\\w*\\s*,\\s*...arr\\s*\\]/g),'使用了解构赋值。');"
         },
         {
-          "text": "<code>Array.slice()</code> was not used.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/Array.slice/g), '<code>Array.slice()</code> was not used.');"
+          "text": "没有使用<code>Array.slice()</code>。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/Array.slice/g), '没有使用<code>Array.slice()</code>。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -810,14 +810,14 @@
             "const source = [1,2,3,4,5,6,7,8,9,10];",
             "function removeFirstTwo(list) {",
             "  \"use strict\";",
-            "  // change code below this line",
+            "  // 在这行以下修改代码",
             "  arr = list; // change this",
-            "  // change code above this line",
+            "  // 在这行以上修改代码",
             "  return arr;",
             "}",
             "const arr = removeFirstTwo(source);",
-            "console.log(arr); // should be [3,4,5,6,7,8,9,10]",
-            "console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];"
+            "console.log(arr); // 应该为 [3,4,5,6,7,8,9,10]",
+            "console.log(source); // 应该为 [1,2,3,4,5,6,7,8,9,10];"
           ],
           "head": [],
           "tail": []
@@ -828,28 +828,28 @@
       "id": "587d7b8a367417b2b2512b4d",
       "title": "Use Destructuring Assignment to Pass an Object as a Function's Parameters",
       "description": [
-        "In some cases, you can destructure the object in a function argument itself.",
-        "Consider the code below:",
-        "<blockquote>const profileUpdate = (profileData) => {<br>&nbsp;&nbsp;const { name, age, nationality, location } = profileData;<br>&nbsp;&nbsp;// do something with these variables<br>}</blockquote>",
-        "This effectively destructures the object sent into the function. This can also be done in-place:",
-        "<blockquote>const profileUpdate = ({ name, age, nationality, location }) => {<br>&nbsp;&nbsp;/* do something with these fields */<br>}</blockquote>",
-        "This removes some extra lines and makes our code look neat.",
-        "This has the added benefit of not having to manipulate an entire object in a function; only the fields that are needed are copied inside the function.",
+        "在某些情况下，你可以在函数的参数里直接解构对象。",
+        "请看以下代码：",
+        "<blockquote>const profileUpdate = (profileData) => {<br>&nbsp;&nbsp;const { name, age, nationality, location } = profileData;<br>&nbsp;&nbsp;// 对这些变量执行某些操作<br>}</blockquote>",
+        "上面的操作解构了传给函数的对象。这样的操作也可以直接在参数里完成：",
+        "<blockquote>const profileUpdate = ({ name, age, nationality, location }) => {<br>&nbsp;&nbsp;/* 对这些参数执行某些操作 */<br>}</blockquote>",
+        "这样的操作去除了多余的代码，使代码更加整洁。",
+        "这样做还有个额外的好处：函数不需要再去操作整个对象，而仅仅是操作复制到函数作用域内部的参数。",
         "<hr>",
-        "Use destructuring assignment within the argument to the function <code>half</code> to send only <code>max</code> and <code>min</code> inside the function."
+        "对<code>half</code>的参数进行解构赋值，使得仅仅将<code>max</code>与<code>min</code>的值传进函数。"
       ],
       "tests": [
         {
-          "text": "<code>stats</code> should be an <code>object</code>.",
-          "testString": "assert(typeof stats === 'object', '<code>stats</code> should be an <code>object</code>.');"
+          "text": "<code>stats</code>的类型应该是一个<code>object</code>。",
+          "testString": "assert(typeof stats === 'object', '<code>stats</code>的类型应该是一个<code>object</code>。');"
         },
         {
-          "text": "<code>half(stats)</code> should be <code>28.015</code>",
-          "testString": "assert(half(stats) === 28.015, '<code>half(stats)</code> should be <code>28.015</code>');"
+          "text": "<code>half(stats)</code>应该等于<code>28.015</code>",
+          "testString": "assert(half(stats) === 28.015, '<code>half(stats)</code>应该等于<code>28.015</code>');"
         },
         {
-          "text": "Destructuring was used.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\(\\s*\\{\\s*\\w+\\s*,\\s*\\w+\\s*\\}\\s*\\)/g), 'Destructuring was used.');"
+          "text": "使用了解构赋值。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\(\\s*\\{\\s*\\w+\\s*,\\s*\\w+\\s*\\}\\s*\\)/g), '使用了解构赋值。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -869,18 +869,18 @@
             "  average: 35.85",
             "};",
             "const half = (function() {",
-            "  \"use strict\"; // do not change this line",
+            "  \"use strict\"; // 不要改变这行",
             "",
-            "  // change code below this line",
+            "  // 在这行以下修改代码",
             "  return function half(stats) {",
             "    // use function argument destructuring",
             "    return (stats.max + stats.min) / 2.0;",
             "  };",
-            "  // change code above this line",
+            "  // 在这行以上修改代码",
             "",
             "})();",
-            "console.log(stats); // should be object",
-            "console.log(half(stats)); // should be 28.015"
+            "console.log(stats); // 应该为 object",
+            "console.log(half(stats)); // 应该为 28.015"
           ],
           "head": [],
           "tail": []
@@ -891,28 +891,28 @@
       "id": "587d7b8a367417b2b2512b4e",
       "title": "Create Strings using Template Literals",
       "description": [
-        "A new feature of ES6 is the <dfn>template literal</dfn>. This is a special type of string that allows you to use string interpolation features to create strings.",
-        "Consider the code below:",
-        "<blockquote>const person = {<br>&nbsp;&nbsp;name: \"Zodiac Hasbro\",<br>&nbsp;&nbsp;age: 56<br>};<br><br>// string interpolation<br>const greeting = `Hello, my name is ${person.name}!<br>I am ${person.age} years old.`;<br><br>console.log(greeting); // prints<br>// Hello, my name is Zodiac Hasbro!<br>// I am 56 years old.<br></blockquote>",
-        "A lot of things happened there.",
-        "Firstly, the <code>${variable}</code> syntax used above is a place holder. Basically, you won't have to use concatenation with the <code>+</code> operator anymore. To add variables to strings, you just drop the variable in a template string and wrap it with <code>${</code> and <code>}</code>.",
-        "Secondly, the example uses backticks (<code>`</code>), not quotes (<code>'</code> or <code>\"</code>), to wrap the string. Notice that the string is multi-line.",
-        "This new way of creating strings gives you more flexibility to create robust strings.",
+        "模板字符串是 ES6 的另外一项新的功能。这是一种可以轻松构建复杂字符串的方法。",
+        "请看以下代码：",
+        "<blockquote>const person = {<br>&nbsp;&nbsp;name: \"Zodiac Hasbro\",<br>&nbsp;&nbsp;age: 56<br>};<br><br>// string interpolation<br>const greeting = `Hello, my name is ${person.name}!<br>I am ${person.age} years old.`;<br><br>console.log(greeting); // 打印出<br>// Hello, my name is Zodiac Hasbro!<br>// I am 56 years old.<br></blockquote>",
+        "这段代码有许多的不同：",
+        "首先，上面使用的 <code>${variable}</cpode> 语法是一个占位符。这样一来，你将不再需要使用<code>+</code>运算符来连接字符串。当需要在字符串里增加变量的时候，你只需要在变量的外面括上<code>${</code>和<code>}</code>，并将其放在字符串里就可以了。",
+        "其次，在例子使用了反引号（<code>`</code），而不是引号（<code>`</code>或者<code>\"</code>）将字符串括了起来，并且这个字符串可以换行。",
+        "这个新的方式使你可以更灵活的创建复杂的字符串。",
         "<hr>",
-        "Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>, and listed within the <code>resultDisplayArray</code>."
+        "使用模板字符串的反引号的语法来展示<code>result</code>对象的<code>failure</code>数组内的每个条目。每个条目应该括在带有<code>text-warning</code>类属性的<code>li</code>标签中，并赋值给<code>resultDisplayArray</code>。"
       ],
       "tests": [
         {
-          "text": "<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.",
-          "testString": "assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3, '<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.');"
+          "text": "<code>resultDisplayArray</code> 是一个包含了 <code>result failure</code> 内的消息的数组。",
+          "testString": "assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3, '<code>resultDisplayArray</code> 是一个包含了 <code>result failure</code> 内的消息的数组。');"
         },
         {
-          "text": "<code>resultDisplayArray</code> is the desired output.",
-          "testString": "assert(makeList(result.failure).every((v, i) => v === `<li class=\"text-warning\">${result.failure[i]}</li>`), '<code>resultDisplayArray</code> is the desired output.');"
+          "text": "<code>resultDisplayArray</code> 要有正确的输出。",
+          "testString": "assert(makeList(result.failure).every((v, i) => v === `<li class=\"text-warning\">${result.failure[i]}</li>`), '<code>resultDisplayArray</code> 要有正确的输出。');"
         },
         {
-          "text": "Template strings were used",
-          "testString": "getUserInput => assert(getUserInput('index').match(/`<li \\s*class\\s*=\\s*(\"\\s*text-warning\\s*\"|'\\s*text-warning\\s*')\\s*>\\s*\\$\\s*\\{(\\s*\\w+\\s*|\\s*\\w+\\s*\\[\\s*[\\w]+\\s*\\]\\s*)\\}\\s*<\\s*\\/li\\s*>`/g), 'Template strings were used');"
+          "text": "使用了模板字符串。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/`<li \\s*class\\s*=\\s*(\"\\s*text-warning\\s*\"|'\\s*text-warning\\s*')\\s*>\\s*\\$\\s*\\{(\\s*\\w+\\s*|\\s*\\w+\\s*\\[\\s*[\\w]+\\s*\\]\\s*)\\}\\s*<\\s*\\/li\\s*>`/g), '使用了模板字符串。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -931,14 +931,14 @@
             "function makeList(arr) {",
             "  \"use strict\";",
             "",
-            "  // change code below this line",
+            "  // 在这行以下修改代码",
             "  const resultDisplayArray = null;",
-            "  // change code above this line",
+            "  // 在这行以上修改代码",
             "",
             "  return resultDisplayArray;",
             "}",
             "/**",
-            " * makeList(result.failure) should return:",
+            " * makeList(result.failure) 应该返回：",
             " * [ <li class=\"text-warning\">no-var</li>,",
             " *   <li class=\"text-warning\">var-on-top</li>, ",
             " *   <li class=\"text-warning\">linebreak</li> ]",
@@ -954,24 +954,24 @@
       "id": "587d7b8a367417b2b2512b4f",
       "title": "Write Concise Object Literal Declarations Using Simple Fields",
       "description": [
-        "ES6 adds some nice support for easily defining object literals.",
-        "Consider the following code:",
+        "ES6 添加了一些很棒的功能，以便于更方便地定义对象。",
+        "请看以下代码：",
         "<blockquote>const getMousePosition = (x, y) => ({<br>&nbsp;&nbsp;x: x,<br>&nbsp;&nbsp;y: y<br>});</blockquote>",
-        "<code>getMousePosition</code> is a simple function that returns an object containing two fields.",
-        "ES6 provides the syntactic sugar to eliminate the redundancy of having to write <code>x: x</code>. You can simply write <code>x</code> once, and it will be converted to<code>x: x</code> (or something equivalent) under the hood.",
-        "Here is the same function from above rewritten to use this new syntax:",
+        "<code>getMousePosition</code>是一个返回了拥有2个属性的对象的简单函数。",
+        "ES6 提供了一个语法糖，消除了类似<code>x: x</code>这种冗余的写法.你可以仅仅只写一次<code>x<code>，解释器会自动将其转换成<code>x: x</code>。",
+        "下面是使用这种语法重写的同样的函数：",
         "<blockquote>const getMousePosition = (x, y) => ({ x, y });</blockquote>",
         "<hr>",
-        "Use simple fields with object literals to create and return a <code>Person</code> object."
+        "请使用简单属性对象的语法来创建并返回一个<code>Person</code>对象。"
       ],
       "tests": [
         {
-          "text": "the output is <code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>.",
-          "testString": "assert(() => {const res={name:\"Zodiac Hasbro\",age:56,gender:\"male\"}; const person=createPerson(\"Zodiac Hasbro\", 56, \"male\"); return Object.keys(person).every(k => person[k] === res[k]);}, 'the output is <code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>.');"
+          "text": "输出是<code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>。",
+          "testString": "assert(() => {const res={name:\"Zodiac Hasbro\",age:56,gender:\"male\"}; const person=createPerson(\"Zodiac Hasbro\", 56, \"male\"); return Object.keys(person).every(k => person[k] === res[k]);}, '输出是<code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>。');"
         },
         {
-          "text": "No <code>:</code> were used.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/:/g), 'No <code>:</code> were used.');"
+          "text": "不要使用<code>:</code>。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/:/g), '不要使用<code>:</code>。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -984,15 +984,15 @@
           "contents": [
             "const createPerson = (name, age, gender) => {",
             "  \"use strict\";",
-            "  // change code below this line",
+            "  // 在这行以下修改代码",
             "  return {",
             "    name: name,",
             "    age: age,",
             "    gender: gender",
             "  };",
-            "  // change code above this line",
+            "  // 在这行以上修改代码",
             "};",
-            "console.log(createPerson(\"Zodiac Hasbro\", 56, \"male\")); // returns a proper object"
+            "console.log(createPerson(\"Zodiac Hasbro\", 56, \"male\")); // 返回正确的对象"
           ],
           "head": [],
           "tail": []
@@ -1003,21 +1003,21 @@
       "id": "587d7b8b367417b2b2512b50",
       "title": "Write Concise Declarative Functions with ES6",
       "description": [
-        "When defining functions within objects in ES5, we have to use the keyword <code>function</code> as follows:",
+        "在 ES5 中，当我们需要在对象中定义一个函数的时候，我们必须如下面这般使用<code>function</code>关键字：",
         "<blockquote>const person = {<br>&nbsp;&nbsp;name: \"Taylor\",<br>&nbsp;&nbsp;sayHello: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return `Hello! My name is ${this.name}.`;<br>&nbsp;&nbsp;}<br>};</blockquote>",
-        "With ES6, You can remove the <code>function</code> keyword and colon altogether when defining functions in objects. Here's an example of this syntax:",
+        "在 ES6 语法的对象中定义函数的时候，你可以完全删除<code>function</code>关键字和冒号。请看以下例子：",
         "<blockquote>const person = {<br>&nbsp;&nbsp;name: \"Taylor\",<br>&nbsp;&nbsp;sayHello() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return `Hello! My name is ${this.name}.`;<br>&nbsp;&nbsp;}<br>};</blockquote>",
         "<hr>",
-        "Refactor the function <code>setGear</code> inside the object <code>bicycle</code> to use the shorthand syntax described above."
+        "使用以上这种简短的语法，重构在<code>bicycle</code>对象中的<code>setGear</code>函数。"
       ],
       "tests": [
         {
-          "text": "<code>setGear</code> is a function and changes the <code>gear</code> variable.",
-          "testString": "assert(() => { bicycle.setGear(48); return bicycle.gear === 48 }, '<code>setGear</code> is a function and changes the <code>gear</code> variable.');"
+          "text": "<code>setGear</code>是一个函数，它改变了变量<code>gear</code>的值。",
+          "testString": "assert(() => { bicycle.setGear(48); return bicycle.gear === 48 }, '<code>setGear</code>是一个函数，它改变了变量<code>gear</code>的值。');"
         },
         {
-          "text": "Declarative function was used.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/:\\s*function\\s*\\(\\)/g), 'Declarative function was used.');"
+          "text": "使用了函数声明。",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/:\\s*function\\s*\\(\\)/g), '使用了函数声明。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1028,7 +1028,7 @@
           "ext": "js",
           "name": "index",
           "contents": [
-            "// change code below this line",
+            "// 在这行以下修改代码",
             "const bicycle = {",
             "  gear: 2,",
             "  setGear: function(newGear) {",
@@ -1036,7 +1036,7 @@
             "    this.gear = newGear;",
             "  }",
             "};",
-            "// change code above this line",
+            "// 在这行以上修改代码",
             "bicycle.setGear(3);",
             "console.log(bicycle.gear);"
           ],
@@ -1049,29 +1049,29 @@
       "id": "587d7b8b367417b2b2512b53",
       "title": "Use class Syntax to Define a Constructor Function",
       "description": [
-        "ES6 provides a new syntax to help create objects, using the keyword <dfn>class</dfn>.",
-        "This is to be noted, that the <code>class</code> syntax is just a syntax, and not a full-fledged class based implementation of object oriented paradigm, unlike in languages like Java, or Python, or Ruby etc.",
-        "In ES5, we usually define a constructor function, and use the <code>new</code> keyword to instantiate an object.",
+        "ES6 提供了一个新的创建对象的语法，使用关键字<code>class</code>。",
+        "值得注意的是，<code>class</code>只是一个语法糖，它并不像 Java、Python 或者 Ruby 这一类的语言一样，严格履行了面向对象的开发规范。",
+        "在 ES5 里面，我们通常会定义一个构造函数，然后使用 <code>new</code> 关键字来实例化一个对象：",
         "<blockquote>var SpaceShuttle = function(targetPlanet){<br>&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>}<br>var zeus = new SpaceShuttle('Jupiter');</blockquote>",
-        "The class syntax simply replaces the constructor function creation:",
+        "<code>class</code>的语法只是简单地替换了构造函数的写法：",
         "<blockquote>class SpaceShuttle {<br>&nbsp;&nbsp;constructor(targetPlanet){<br>&nbsp;&nbsp;&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>&nbsp;&nbsp;}<br>}<br>const zeus = new SpaceShuttle('Jupiter');</blockquote>",
-        "Notice that the <code>class</code> keyword declares a new function, and a constructor was added, which would be invoked when <code>new</code> is called - to create a new object.",
+        "注意<code>class</code>关键字声明了一个新的函数，并在其中添加了一个会在使用<code>new</code>关键字创建新对象时调用的构造函数。",
         "<hr>",
-        "Use <code>class</code> keyword and write a proper constructor to create the <code>Vegetable</code> class.",
-        "The <code>Vegetable</code> lets you create a vegetable object, with a property <code>name</code>, to be passed to constructor."
+        "使用<code>class</code>关键字，并写出正确的构造函数，来创建<code>Vegetable</code>这个类：",
+        "<code>Vegetable</code>这个类可以创建 vegetable 对象，这个对象拥有一个在构造函数中赋值的<code>name</code>属性。"
       ],
       "tests": [
         {
-          "text": "<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.",
-          "testString": "assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function', '<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.');"
+          "text": "<code>Vegetable</code> 应该是一个 <code>class</code>，并在其中定义了<code>constructor</code>方法。",
+          "testString": "assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function', '<code>Vegetable</code> 应该是一个 <code>class</code>，并在其中定义了<code>constructor</code>方法。');"
         },
         {
-          "text": "<code>class</code> keyword was used.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');"
+          "text": "使用了<code>class</code>关键字。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/class/g),'使用了<code>class</code>关键字。');"
         },
         {
-          "text": "<code>Vegetable</code> can be instantiated.",
-          "testString": "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';},'<code>Vegetable</code> can be instantiated.');"
+          "text": "<code>Vegetable</code>可以被实例化。",
+          "testString": "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';},'<code>Vegetable</code>可以被实例化。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1084,14 +1084,14 @@
           "contents": [
             "function makeClass() {",
             "  \"use strict\";",
-            "  /* Alter code below this line */",
+            "  /* 在这行下面改写代码 */",
             "",
-            "  /* Alter code above this line */",
+            "  /* 在这行上面改写代码 */",
             "  return Vegetable;",
             "}",
             "const Vegetable = makeClass();",
             "const carrot = new Vegetable('carrot');",
-            "console.log(carrot.name); // => should be 'carrot'"
+            "console.log(carrot.name); // => 应该显示 'carrot'"
           ],
           "head": [],
           "tail": []
@@ -1102,34 +1102,34 @@
       "id": "587d7b8c367417b2b2512b54",
       "title": "Use getters and setters to Control Access to an Object",
       "description": [
-        "You can obtain values from an object, and set a value of a property within an object.",
-        "These are classically called <dfn>getters</dfn> and <dfn>setters</dfn>.",
-        "Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.",
-        "Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.",
+        "你可以从对象中获得一个值，也可以给对象的属性赋值。",
+        "这些通常行为被称为 <dfn>getters</dfn> 以及 <dfn>setters</dfn>。",
+        "Getter 函数的作用是可以让返回一个对象私有变量的值给用户，而不需要直接去访问私有变量。",
+        "Setter 函数的作用是可以基于传进的参数来修改对象中私有变量的值。这些修改可以是计算，或者是直接替换之前的值。",
         "<blockquote>class Book {<br>&nbsp;&nbsp;constructor(author) {<br>&nbsp;&nbsp;&nbsp;&nbsp;this._author = author;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;// getter<br>&nbsp;&nbsp;get writer(){<br>&nbsp;&nbsp;&nbsp;&nbsp;return this._author;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;// setter<br>&nbsp;&nbsp;set writer(updatedAuthor){<br>&nbsp;&nbsp;&nbsp;&nbsp;this._author = updatedAuthor;<br>&nbsp;&nbsp;}<br>}<br>const lol = new Book('anonymous');<br>console.log(lol.writer);&nbsp;&nbsp;// anonymous<br>lol.writer = 'wut';<br>console.log(lol.writer);&nbsp;&nbsp;// wut</blockquote>",
-        "Notice the syntax we are using to invoke the getter and setter - as if they are not even functions.",
-        "Getters and setters are important, because they hide internal implementation details.",
+        "注意我们调用 getter 和 setter 的语法，它们看起来并不像一个函数调用。",
+        "Getter 和 Setter 非常重要，因为它们隐藏了内部的实现细节。",
         "<hr>",
-        "Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Fahrenheit temperature.",
-        "Now create <code>getter</code> and <code>setter</code> in the class, to obtain the temperature in Celsius scale.",
-        "Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale",
-        "Note",
-        "When you implement this, you would be tracking the temperature inside the class in one scale - either Fahrenheit or Celsius.",
-        "This is the power of getter or setter - you are creating an API for another user, who would get the correct result, no matter which one you track.",
-        "In other words, you are abstracting implementation details from the consumer."
+        "使用<code>class</code>关键字来创建<code>Thermostat</code>类，它的构造函数应该可以接收华氏温度作为参数。",
+        "在类中创建 <code>getter</code>和<code>setter</code>，将温度转换成摄氏温度。",
+        "温度转换的公式是<code>C = 5/9 * (F - 32)</code>以及<code>F = C * 9.0 / 5 + 32</code>，F 代表华氏温度，C 代表摄氏温度。",
+        "请注意",
+        "当你实现这个作业的时候，你应当在类中使用一个温度标准，无论是华氏温度还是摄氏温度。",
+        "是时候展现 getter 和 setter 的威力了——无论你的 API 内部使用的是哪种温度标准，用户都能得到正确的结果。",
+        "或者说，你从用户需求中抽象出了实现细节。"
       ],
       "tests": [
         {
-          "text": "<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.",
-          "testString": "assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function','<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.');"
+          "text": "<code>Thermostat</code>应该是一个<code>class</code>，并且在其中定义了<code>constructor</code>方法。",
+          "testString": "assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function','<code>Thermostat</code>应该是一个<code>class</code>，并且在其中定义了<code>constructor</code>方法。');"
         },
         {
-          "text": "<code>class</code> keyword was used.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');"
+          "text": "使用了<code>class</code>关键字。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/class/g),'使用了<code>class</code>关键字。');"
         },
         {
-          "text": "<code>Thermostat</code> can be instantiated.",
-          "testString": "assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, '<code>Thermostat</code> can be instantiated.');"
+          "text": "<code>Thermostat</code>可以被实例化。",
+          "testString": "assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, '<code>Thermostat</code>可以被实例化。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1148,10 +1148,10 @@
             "  return Thermostat;",
             "}",
             "const Thermostat = makeClass();",
-            "const thermos = new Thermostat(76); // setting in Fahrenheit scale",
-            "let temp = thermos.temperature; // 24.44 in C",
+            "const thermos = new Thermostat(76); // 使用华氏温度来初始化",
+            "let temp = thermos.temperature; // 摄氏温度24.44度",
             "thermos.temperature = 26;",
-            "temp = thermos.temperature; // 26 in C"
+            "temp = thermos.temperature; // 摄氏温度26度"
           ],
           "head": [],
           "tail": []
@@ -1162,23 +1162,23 @@
       "id": "587d7b8c367417b2b2512b55",
       "title": "Understand the Differences Between import and require",
       "description": [
-        "In the past, the function <code>require()</code> would be used to import the functions and code in external files and modules. While handy, this presents a problem: some files and modules are rather large, and you may only need certain code from those external resources.",
-        "ES6 gives us a very handy tool known as <dfn>import</dfn>. With it, we can choose which parts of a module or file to load into a given file, saving time and memory.",
-        "Consider the following example. Imagine that <code>math_array_functions</code> has about 20 functions, but I only need one, <code>countItems</code>, in my current file. The old <code>require()</code> approach would force me to bring in all 20 functions. With this new <code>import</code> syntax, I can bring in just the desired function, like so:",
+        "在过去，我们会使用<code>require()</code>函数来从外部文件或模块中引入函数或者代码。这时候会遇到一个问题：有些文件或者模块会特别大，但你却往往只需要引入其中的一些核心代码。",
+        "ES6 给我们提供了<code>import</code>这个便利的工具。通过它，我们能够从外部的文件或者模块中选择我们需要的部分进行引入，从而节约载入的时间和内存空间。",
+        "请看下面的例子：想象<code>math_array_functions</code>拥有大概20个函数，但是我只需要<code>countItems</code>这一个函数在我当前的文件里。使用老的<code>require()</code>方式会强制我引入所有20个函数。而使用新的<code>import</code>语法，我可以只引入需要的那个函数：",
         "<blockquote>import { countItems } from \"math_array_functions\"</blockquote>",
-        "A description of the above code:",
-        "<blockquote>import { function } from \"file_path_goes_here\"<br>// We can also import variables the same way!</blockquote>",
-        "There are a few ways to write an <code>import</code> statement, but the above is a very common use-case.",
-        "<strong>Note</strong><br>The whitespace surrounding the function inside the curly braces is a best practice - it makes it easier to read the <code>import</code> statement.",
-        "<strong>Note</strong><br>The lessons in this section handle non-browser features. <code>import</code>, and the statements we introduce in the rest of these lessons, won't work on a browser directly. However, we can use various tools to create code out of this to make it work in browser.",
-        "<strong>Note</strong><br>In most cases, the file path requires a <code>./</code> before it; otherwise, node will look in the <code>node_modules</code> directory first trying to load it as a dependency.",
+        "下面是对于上面代码的语义描述：",
+        "<blockquote>import { function } from \"file_path_goes_here\"<br>// 我们还可以用同样的方式来引入变量！</blockquote>",
+        "对<code>import</code>的使用，有许多的写法，但是上面的例子是最常用的写法。",
+        "<strong>注意</strong><br>在大括号里的函数名的两侧加上空格是一个最佳实践——这可以帮助我们轻松的阅读<code>import</code>语句。",
+        "<strong>注意</strong><br>本节课中进行的是一个非浏览器操作。<code>import</code>以及与其相关的在后面课程中的语句，是无法直接在浏览器上运行的。但是，我们可以通过一些工具来使它可以在浏览器中运行。",
+        "<strong>注意</strong><br>在许多的例子中，在文件的路径前会加上<code>./</code>；否则， node.js 会先尝试去<code>node_modules</code>目录中寻找依赖项。",
         "<hr>",
-        "Add the appropriate <code>import</code> statement that will allow the current file to use the <code>capitalizeString</code> function. The file where this function lives is called <code>\"string_functions\"</code>, and it is in the same directory as the current file."
+        "添加正确的<code>import</code>语句，语序当前的文件使用<code>capitalizeString</code>函数。这个函数是在与当前文件同一目录下的<code>\"string_functions\"</code>文件中声明的。"
       ],
       "tests": [
         {
-          "text": "valid <code>import</code> statement",
-          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+\\{\\s*capitalizeString\\s*\\}\\s+from\\s+(\"|')string_functions\\1/g), 'valid <code>import</code> statement');"
+          "text": "有效的<code>import</code>语句。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+\\{\\s*capitalizeString\\s*\\}\\s+from\\s+(\"|')string_functions\\1/g), '有效的<code>import</code>语句。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1207,23 +1207,23 @@
       "id": "587d7b8c367417b2b2512b56",
       "title": "Use export to Reuse a Code Block",
       "description": [
-        "In the previous challenge, you learned about <code>import</code> and how it can be leveraged to import small amounts of code from large files. In order for this to work, though, we must utilize one of the statements that goes with <code>import</code>, known as <dfn>export</dfn>. When we want some code - a function, or a variable - to be usable in another file, we must export it in order to import it into another file. Like <code>import</code>, <code>export</code> is a non-browser feature.",
-        "The following is what we refer to as a <dfn>named export</dfn>. With this, we can import any code we export into another file with the <code>import</code> syntax you learned in the last lesson. Here's an example:",
-        "<blockquote>const capitalizeString = (string) => {<br>&nbsp;&nbsp;return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>export { capitalizeString } //How to export functions.<br>export const foo = \"bar\"; //How to export variables.</blockquote>",
-        "Alternatively, if you would like to compact all your <code>export</code> statements into one line, you can take this approach:",
+        "在上一个挑战中，你学习了关于<code>import</code>语句是如何从大文件中引入其中的部分代码的。但是，为了让其正常的工作，我们还必须了解一个与之相关的语句，叫做<code>export</code>。当我们想要一些代码——函数或者变量——在其他文件中使用，我们必须将它们导出来供其他文件导入。和<code>import</code>一样，<code>export</code>也是一个非浏览器的功能。",
+        "下面的例子阐述了如何进行一个命名导出。通过这样，我们可以使用上节课学习的<code>import</code>语法，将导出的代码导入到其他的文件中去。请看下面的例子：",
+        "<blockquote>const capitalizeString = (string) => {<br>&nbsp;&nbsp;return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>export { capitalizeString } //如何导出函数。<br>export const foo = \"bar\"; //如何导出变量。</blockquote>",
+        "另外，如果你想要将你所有的<code>export</code>语句打包成一行，你可以像下面这个例子一样实现：",
         "<blockquote>const capitalizeString = (string) => {<br>&nbsp;&nbsp;return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>const foo = \"bar\";<br>export { capitalizeString, foo }</blockquote>",
-        "Either approach is perfectly acceptable.",
+        "两种方式都是非常棒的实践。",
         "<hr>",
-        "Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated <code>export</code>, export the two variables."
+        "下面有两个变量需要在别的文件中可以使用。利用刚才展示的第一种方式，导出两个变量。"
       ],
       "tests": [
         {
-          "text": "<code>foo</code> is exported.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+foo\\s*=\\s*\"bar\"/g), '<code>foo</code> is exported.');"
+          "text": "导出了<code>foo</code>变量。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+foo\\s*=\\s*\"bar\"/g), '导出了<code>foo</code>变量。');"
         },
         {
-          "text": "<code>bar</code> is exported.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+bar\\s*=\\s*\"foo\"/g), '<code>bar</code> is exported.');"
+          "text": "导出了<code>bar</code>变量。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+bar\\s*=\\s*\"foo\"/g), '导出了<code>bar</code>变量。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1249,19 +1249,19 @@
       "id": "587d7b8c367417b2b2512b57",
       "title": "Use * to Import Everything from a File",
       "description": [
-        "Suppose you have a file that you wish to import all of its contents into the current file. This can be done with the <dfn>import *</dfn> syntax.",
-        "Here's an example where the contents of a file named <code>\"math_functions\"</code> are imported into a file in the same directory:",
+        "我们还可以用<code>import</code>语法从文件中导入所有的内容。",
+        "下面是一个从同目录下的<code>\"math_functions\"</code>文件中导入所有内容的例子：",
         "<blockquote>import * as myMathModule from \"math_functions\";<br>myMathModule.add(2,3);<br>myMathModule.subtract(5,3);</blockquote>",
-        "And breaking down that code:",
+        "让我们来分析一下这段代码：",
         "<blockquote>import * as object_with_name_of_your_choice from \"file_path_goes_here\"<br>object_with_name_of_your_choice.imported_function</blockquote>",
-        "You may use any name following the <code>import * as </code>portion of the statement. In order to utilize this method, it requires an object that receives the imported values. From here, you will use the dot notation to call your imported values.",
+        "你可以在<code>import * as</code>之后添加任意的名称。这个方法接收到的值是一个对象，你可以使用点表示法来获取对象里具体的值。",
         "<hr>",
-        "The code below requires the contents of a file, <code>\"capitalize_strings\"</code>, found in the same directory as it, imported. Add the appropriate <code>import *</code> statement to the top of the file, using the object provided."
+        "下面的代码需要从同目录下的<code>\"capitalize_strings\"</code>文件中导入所有内容。使用提供的对象，在当前文件的顶部添加正确的<code>import *</code>语句"
       ],
       "tests": [
         {
-          "text": "Properly uses <code>import * as</code> syntax.",
-          "testString": "assert(code.match(/import\\s+\\*\\s+as\\s+[a-zA-Z0-9_$]+\\s+from\\s*\"\\s*capitalize_strings\\s*\"\\s*;/gi), 'Properly uses <code>import * as</code> syntax.');"
+          "text": "正确使用<code>import * as</code>语法。",
+          "testString": "assert(code.match(/import\\s+\\*\\s+as\\s+[a-zA-Z0-9_$]+\\s+from\\s*\"\\s*capitalize_strings\\s*\"\\s*;/gi), '正确使用<code>import * as</code>语法。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1290,18 +1290,18 @@
       "id": "587d7b8c367417b2b2512b58",
       "title": "Create an Export Fallback with export default",
       "description": [
-        "In the <code>export</code> lesson, you learned about the syntax referred to as a <dfn>named export</dfn>. This allowed you to make multiple functions and variables available for use in other files.",
-        "There is another <code>export</code> syntax you need to know, known as <dfn>export default</dfn>. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.",
-        "Here is a quick example of <code>export default</code>:",
+        "在<code>export</code>的课程中，你学习了<dfn>命名导出</dfn>的语法。这让你可以在其他文件中引用一些函数或者变量。",
+        "你还需要知道另外一种被称为<dfn>默认导出</dfn>的<code>export</code>的语法。在文件中只有一个值需要导出的时候，你通常会使用这种语法。它也常常用于给文件或者模块创建返回值。",
+        "下面是一个简单的<code>export default</code>例子：",
         "<blockquote>export default function add(x,y) {<br>&nbsp;&nbsp;return x + y;<br>}</blockquote>",
-        "Note: Since <code>export default</code> is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file. Additionally, you cannot use <code>export default</code> with <code>var</code>, <code>let</code>, or <code>const</code>",
+        "注意：当使用<code>export default</code>去声明一个文件或者模块的返回值，你在每个文件或者模块中应当只默认导出一个值。特别地，你能将<code>export deafult</code>与<code>var</code>，<code>let</code>与<code>const</code>一起使用。",
         "<hr>",
-        "The following function should be the fallback value for the module. Please add the necessary code to do so."
+        "下面的函数应该在这个模块中返回一个值。请添加需要的代码："
       ],
       "tests": [
         {
-          "text": "Proper used of <code>export</code> fallback.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+default\\s+function\\s+subtract\\(x,y\\)\\s+{return\\s+x\\s-\\s+y;}/g), 'Proper used of <code>export</code> fallback.');"
+          "text": "正确的使用<code>export</code>进行返回。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+default\\s+function\\s+subtract\\(x,y\\)\\s+{return\\s+x\\s-\\s+y;}/g), '正确的使用<code>export</code>进行返回。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1326,17 +1326,17 @@
       "id": "587d7b8d367417b2b2512b59",
       "title": "Import a Default Export",
       "description": [
-        "In the last challenge, you learned about <code>export default</code> and its uses. It is important to note that, to import a default export, you need to use a different <code>import</code> syntax.",
-        "In the following example, we have a function, <code>add</code>, that is the default export of a file, <code>\"math_functions\"</code>. Here is how to import it:",
-        "<blockquote>import add from \"math_functions\";<br>add(5,4); //Will return 9</blockquote>",
-        "The syntax differs in one key place - the imported value, <code>add</code>, is not surrounded by curly braces, <code>{}</code>. Unlike exported values, the primary method of importing a default export is to simply write the value's name after <code>import</code>.",
+        "在上一个挑战里，你学会了<code>export default</code>的用法。还有一个重要的点，你可能需要另外一种<code>import</code>的语法来导入默认导出。",
+        "在下面的例子里有一个<code>add</code>函数, 它在<code>\"math_functions\"</code>文件里默认被导出。让我们看看来如何导入它：",
+        "<blockquote>import add from \"math_functions\";<br>add(5,4); //将会返回 9</blockquote>",
+        "这个语法只有一处不同的地方 —— 被导入的<code>add</code>值，并没有被花括号<code>{}</code>所包围。与导出值的方法不同，导入默认导出的写法仅仅只是简单的讲变量名写在<code>import</code>之后。",
         "<hr>",
-        "In the following code, please import the default export, <code>subtract</code>, from the file <code>\"math_functions\"</code>, found in the same directory as this file."
+        "在下面的代码中，请导入在同目录下的<code>\"math_functions\"文件中</code>默认导出的<code>subtract</code>值。"
       ],
       "tests": [
         {
-          "text": "Properly imports <code>export default</code> method.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+subtract\\s+from\\s+\"math_functions\"/g), 'Properly imports <code>export default</code> method.');"
+          "text": "正确导入<code>export default</code>方法导出的值。",
+          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+subtract\\s+from\\s+\"math_functions\"/g), '正确导入<code>export default</code>方法导出的值。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",

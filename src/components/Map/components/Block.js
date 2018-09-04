@@ -86,7 +86,6 @@ export class Block extends PureComponent {
     // TODO: Split this into a Challenge Component and add tests
     // TODO: The styles badge and map-badge on the completion span do not exist
     return [intro].concat(challenges).map((challenge, i) => {
-      console.log('before:'+ JSON.stringify(challenge,null,2))
       dict.forEach(function(item){
         if(challenge.title && item.chinese && challenge.title == item.english){
           challenge.title = item.chinese
@@ -95,7 +94,6 @@ export class Block extends PureComponent {
           challenge.frontmatter.title = item.chinese
         }
       })
-      console.log('after:'+ JSON.stringify(challenge,null,2))
       const completedClass = challenge.isCompleted
         ? ' map-challenge-title-completed'
         : '';

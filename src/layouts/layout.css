@@ -22,9 +22,9 @@ main {
 }
 
 .reflex-layout.vertical .reflex-splitter:hover {
-  border-left: 2px solid #006400 !important;
-  border-right: 2px solid #006400 !important;
-  background-color: #006400;
+  border-left: 2px solid #029950 !important;
+  border-right: 2px solid #029950 !important;
+  background-color: #029950;
 }
 
 .reflex-layout.vertical > .reflex-splitter {

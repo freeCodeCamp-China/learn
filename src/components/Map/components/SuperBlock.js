@@ -12,6 +12,8 @@ import { makeExpandedSuperBlockSelector, toggleSuperBlock } from '../redux';
 import Caret from '../../icons/Caret';
 import { ChallengeNode } from '../../../redux/propTypes';
 
+const dict = require('./dict.json')
+
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedSuperBlockSelector(ownProps.superBlock);
 
@@ -49,11 +51,9 @@ const codingPrepRE = new RegExp('Interview Prep');
 
 function createSuperBlockTitle(str) {
   let courseName
-  const dict = require('./dict.json')
   dict.forEach(function(item){
     if(item.english == str){
       courseName = item.chinese
-      console.log(courseName)
     }
   })
   return codingPrepRE.test(str)

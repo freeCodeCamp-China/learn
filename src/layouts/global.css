@@ -632,7 +632,7 @@ code[class*="language-"],pre[class*="language-"] {
 }
 
 .fcc-modal {
-  background-color: #006400;
+  background-color: #029950;
   color: #fff;
 }
 
@@ -643,14 +643,14 @@ code[class*="language-"],pre[class*="language-"] {
 }
 
 .btn-primary-invert {
-  color: #006400;
+  color: #029950;
   background-color: #fff;
-  border-color: #006400;
+  border-color: #029950;
 }
 
 .btn-primary-invert:hover, .btn-primary-invert:focus, .btn-primary-invert:active {
-  color: #006400;
-  border-color: #006400;
+  color: #029950;
+  border-color: #029950;
 }
 
 .btn-primary-invert.btn-primary:hover {

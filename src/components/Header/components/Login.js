@@ -10,7 +10,7 @@ function Login() {
       href={HOME_PATH + '/signin'}
       target='_blank'
       >
-      Sign In
+      登录
     </Button>
   );
 }

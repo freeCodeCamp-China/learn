@@ -14,6 +14,8 @@ import { initConsole, challengeTestsSelector } from '../redux';
 import { createSelector } from 'reselect';
 import './side-panel.css';
 
+const dict = require('../../../components/Map/components/dict.json')
+
 const mapStateToProps = createSelector(challengeTestsSelector, tests => ({
   tests
 }));
@@ -55,6 +57,7 @@ export class SidePanel extends PureComponent {
     // MathJax.Hub.Queue(['Typeset', MathJax.Hub,
     // document.querySelector('.challenge-instructions')]);
     const { title, initConsole } = this.props;
+    // console.log('update: '+ title)
     if (title !== prevProps.title) {
       initConsole('');
       const node = ReactDom.findDOMNode(this.descriptionTop);
@@ -70,12 +73,26 @@ export class SidePanel extends PureComponent {
 
   render() {
     const { title, description, guideUrl, tests } = this.props;
+    console.log('render: '+ title)
+    const arr = title.replace(': ','|').split('|')
+
+    dict.forEach(function(item){
+      if(item.english == arr[0]){
+        arr[0] = item.chinese     
+      }
+      if(item.english == arr[1]){
+        arr[1] = item.chinese     
+      }
+    })
+    console.log(arr)
+    const changedTitle = arr.join('：')
+    console.log(changedTitle)
     return (
       <div className='instructions-panel' role='complementary'>
         <div ref={this.bindTopDiv} />
         <Spacer />
         <div>
-          <ChallengeTitle>{title}</ChallengeTitle>
+          <ChallengeTitle>{changedTitle}</ChallengeTitle>
           <ChallengeDescription description={description} />
         </div>
         <ToolPanel guideUrl={guideUrl} />

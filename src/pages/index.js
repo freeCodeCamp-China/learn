@@ -34,11 +34,11 @@ const IndexPage = ({
   }
 }) => (
   <div className='index-page-wrapper'>
-    <Helmet title='欢迎参加 freeCodeCamp 编程挑战' />
+    <Helmet title='FCC 中文社区' />
     <Spacer />
     <Spacer />
     <h2>欢迎来到 freeCodeCamp 2018年新版课程</h2>
-    <p>我们拥有成千上万的编程挑战来帮助你提升你的编程技能。</p>
+    <p>我们准备了成千上万的编程挑战来帮助提升你的编程技能。</p>
     <p>每当独立完成5个终极项目，你就可以获得一个免费证书。</p>
     <p>是的，你没看错，所有的课程都是免费的。</p>
     <p>这一切要感谢成千上万的学员{' '}

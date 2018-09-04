@@ -13,21 +13,21 @@
       "id": "587d7fad367417b2b2512be1",
       "title": "Handle Click Events with JavaScript using the onclick property",
       "description": [
-        "You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called <code>DOMContentLoaded</code>. Here's the code that does this:",
+        "你希望代码仅在页面完成加载后执行。为此，你可将名为<code>DOMContentLoaded</code>的 JavaScript 事件附加到文档中。以下是实现的代码：",
         "<blockquote>document.addEventListener('DOMContentLoaded',function() {<br><br>});</blockquote>",
-        "You can implement event handlers that go inside of the <code>DOMContentLoaded</code> function. You can implement an <code>onclick</code> event handler which triggers when the user clicks on the element with id <code>getMessage</code>, by adding the following code:",
+        "你可以在<code>DOMContentLoaded</code>函数内部添加事件处理方法。你可以添加<code>onclick</code>事件处理器，当用户点击 id 为<code>getMessage</code>的元素时会触发事件。添加以下代码：",
         "<blockquote>document.getElementById('getMessage').onclick=function(){};</blockquote>",
         "<hr>",
-        "Add a click event handler inside of the <code>DOMContentLoaded</code> function for the element with id of <code>getMessage</code>."
+        "在<code>DOMContentLoaded</code>函数内为 id 为<code>getMessage</code>的元素添加一个 click 事件处理器。"
       ],
       "tests": [
         {
-          "text": "Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.",
-          "testString": "assert(code.match(/document\\.getElementById\\(\\s*?('|\")getMessage\\1\\s*?\\)/g), 'Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.');"
+          "text": "你的代码应该用<code>document.getElementById</code>方法来选择<code>getMessage</code>元素。",
+          "testString": "assert(code.match(/document\\.getElementById\\(\\s*?('|\")getMessage\\1\\s*?\\)/g), '你的代码应该用<code>document.getElementById</code>方法来选择<code>getMessage</code>元素。');"
         },
         {
-          "text": "Your code should add an <code>onclick</code> event handler.",
-          "testString": "assert(typeof document.getElementById('getMessage').onclick === 'function', 'Your code should add an <code>onclick</code> event handler.');"
+          "text": "你的代码应该添加<code>onclick</code>事件处理器。",
+          "testString": "assert(typeof document.getElementById('getMessage').onclick === 'function', '你的代码应该添加<code>onclick</code>事件处理器。');"
         }
       ],
       "solutions": [],
@@ -42,10 +42,10 @@
           "contents": [
             "<script>",
             "  document.addEventListener('DOMContentLoaded',function(){",
-            "    // Add your code below this line",
+            "    // 在这行下面添加代码",
             "    ",
             "    ",
-            "    // Add your code above this line",
+            "    // 在这行上面添加代码",
             "  });",
             "</script>",
             "<style>",
@@ -93,17 +93,17 @@
       "id": "587d7fad367417b2b2512be2",
       "title": "Change Text with click Events",
       "description": [
-        "When the click event happens, you can use JavaScript to update an HTML element.",
-        "For example, when a user clicks the \"Get Message\" button, it changes the text of the element with the class <code>message</code> to say \"Here is the message\".",
-        "This works by adding the following code within the click event:",
+        "当点击事件发生时，你可以使用 JavaScript 更新 HTML 元素。",
+        "例如，当用户点击 \"Get Message\" 按钮时，它将改变类名<code>message</code>元素的文本为 \"Here is the message\"。",
+        "通过在点击事件内添加以下代码实现：",
         "<code>document.getElementsByClassName('message')[0].innerHTML=\"Here is the message\";</code>",
         "<hr>",
-        "Add code inside the <code>onclick</code> event handler to change the text inside the <code>message</code> element to say \"Here is the message\"."
+        "在<code>onclick</code>事件处理器中添加代码，改变<code>message</code>元素内的文字为 \"Here is the message\"。"
       ],
       "tests": [
         {
-          "text": "Your code should use the <code>document.getElementsByClassName</code> method to select the element with class <code>message</code> and set its <code>innerHTML</code> to the given string.",
-          "testString": "assert(code.match(/document\\.getElementsByClassName\\(\\s*?('|\")message\\1\\s*?\\)\\[0\\]\\.innerHTML\\s*?=\\s*?('|\")Here is the message\\2/g), 'Your code should use the <code>document.getElementsByClassName</code> method to select the element with class <code>message</code> and set its <code>innerHTML</code> to the given string.');"
+          "text": "你的代码应该使用<code>document.getElementsByClassName</code>方法来选择类名为<code>message</code>的元素，然后将其<code>innerHTML</code>改为给定文字。",
+          "testString": "assert(code.match(/document\\.getElementsByClassName\\(\\s*?('|\")message\\1\\s*?\\)\\[0\\]\\.innerHTML\\s*?=\\s*?('|\")Here is the message\\2/g), '你的代码应该使用<code>document.getElementsByClassName</code>方法来选择类名为<code>message</code>的元素，然后将其<code>innerHTML</code>改为给定文字。');"
         }
       ],
       "solutions": [],
@@ -119,10 +119,10 @@
             "<script>",
             "  document.addEventListener('DOMContentLoaded',function(){",
             "    document.getElementById('getMessage').onclick=function(){",
-            "      // Add your code below this line",
+            "      // 在这行下面添加代码",
             "      ",
             "      ",
-            "      // Add your code above this line",
+            "      // 在这行上面添加代码",
             "    }",
             "  });",
             "</script>",
@@ -171,44 +171,43 @@
       "id": "587d7fae367417b2b2512be3",
       "title": "Get JSON with the JavaScript XMLHttpRequest Method",
       "description": [
-        "You can also request data from an external source. This is where APIs come into play.",
-        "Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another. You'll learn how to update HTML with the data we get from APIs using a technology called AJAX.",
-        "Most web APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation.",
-        "JSON syntax looks very similar to JavaScript object literal notation. JSON has object properties and their current values, sandwiched between a <code>{</code> and a <code>}</code>.",
-        "These properties and their values are often referred to as \"key-value pairs\".",
-        "However, JSON transmitted by APIs are sent as <code>bytes</code>, and your application receives it as a <code>string</code>. These can be converted into JavaScript objects, but they are not JavaScript objects by default. The <code>JSON.parse</code> method parses the string and constructs the JavaScript object described by it.",
-        "You can request the JSON from freeCodeCamp's Cat Photo API. Here's the code you can put in your click event to do this:",
+        "你还可以从外部链接请求数据，这就是 API 发挥作用的地方。",
+        "请记住，API（或叫应用程序编程接口）是计算机用来互相通信的工具。你将学习如何通过 AJAX技术 从 API 获得的数据来跟新 HTML。",
+        "JSON 语法与 JavaScript 对象字面符号非常相似，JSON 具有对象属性以及其当前值，夹在<code>{</code> and a <code>}</code>之间。",
+        "这些属性及其值通常称为 \"键值对\"。",
+        "但是，JSON 是由 API 以<code>bytes</code> 形式传输的，你的程序以<code>string</code>接受它。它们能转换成为 JavaScript 对象，但默认情况下它们不是 JavaScript 对象。 <code>JSON.parse</code>方法解析字符串并构造它描述的 JavaScript 对象。",
+        "你可以从 freeCodeCamp 的 Cat Photo API 请求 JSON，以下是你可以在点击事件中添加的代码：",
         "<blockquote>req=new XMLHttpRequest();<br>req.open(\"GET\",'/json/cats.json',true);<br>req.send();<br>req.onload=function(){<br>&nbsp;&nbsp;json=JSON.parse(req.responseText);<br>&nbsp;&nbsp;document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);<br>};</blockquote>",
-        "Here's a review of what each piece is doing. The JavaScript <code>XMLHttpRequest</code> object has a number of properties and methods that are used to transfer data. First, an instance of the <code>XMLHttpRequest</code> object is created and saved in the <code>req</code> variable.",
-        "Next, the <code>open</code> method initializes a request - this example is requesting data from an API, therefore is a \"GET\" request. The second argument for <code>open</code> is the URL of the API you are requesting data from. The third argument is a Boolean value where <code>true</code> makes it an asynchronous request.",
-        "The <code>send</code> method sends the request. Finally, the <code>onload</code> event handler parses the returned data and applies the <code>JSON.stringify</code> method to convert the JavaScript object into a string. This string is then inserted as the message text.",
+        "这里介绍每行代码的作用，JavaScript <code>XMLHttpRequest</code> 对象具有许多用于传输数据的属性和方法。首先，创建一个<code>XMLHttpRequest</code>对象实例，并保存在<code>req</code>变量里 。",
+        "接着, <code>open</code> 方法初始化请求 - 此示例从 API 请求数据，因此是个 \"GET\" 请求。第二个参数 <code>open</code> 是你要从中请求数据的 API 的 URL。第三个参数是一个布尔值， <code>true</code>使其成为异步请求。",
+        "该<code>send</code>方法发送请求，最后，<code>onload</code>事件处理程序解析返回的数据并应用该<code>JSON.stringify</code>方法将JavaScript对象转换为字符串，然后将此字符串作为消息文本插入。",
         "<hr>",
-        "Update the code to create and send a \"GET\" request to the freeCodeCamp Cat Photo API. Then click the \"Get Message\" button. Your AJAX function will replace the \"The message will go here\" text with the raw JSON output from the API."
+        "更新代码以创建并向 freeCodeCamp Cat Photo API 发送 \"GET\" 请求。然后点击 \"Get Message\" 按钮，你的 AJAX 函数将使用 API 的原生 JSON 替换 \"消息在此处\" 的文本。"
       ],
       "tests": [
         {
-          "text": "Your code should create a new <code>XMLHttpRequest</code>.",
-          "testString": "assert(code.match(/new\\s+?XMLHttpRequest\\(\\s*?\\)/g), 'Your code should create a new <code>XMLHttpRequest</code>.');"
+          "text": "你的代码应该创建一个新的<code>XMLHttpRequest</code>。",
+          "testString": "assert(code.match(/new\\s+?XMLHttpRequest\\(\\s*?\\)/g), '您的代码应该创建一个新的 <code>XMLHttpRequest</code>。');"
         },
         {
-          "text": "Your code should use the <code>open</code> method to initialize a \"GET\" request to the freeCodeCamp Cat Photo API.",
-          "testString": "assert(code.match(/\\.open\\(\\s*?('|\")GET\\1\\s*?,\\s*?('|\")\\/json\\/cats\\.json\\2\\s*?,\\s*?true\\s*?\\)/g), 'Your code should use the <code>open</code> method to initialize a \"GET\" request to the freeCodeCamp Cat Photo API.');"
+          "text": "你的代码应使用该<code>open</code>方法初始化对 freeCodeCamp Cat Photo API 的 \"GET\" 请求。",
+          "testString": "assert(code.match(/\\.open\\(\\s*?('|\")GET\\1\\s*?,\\s*?('|\")\\/json\\/cats\\.json\\2\\s*?,\\s*?true\\s*?\\)/g), '你的代码应使用该<code>open</code>方法初始化对 freeCodeCamp Cat Photo API 的 \"GET\" 请求。');"
         },
         {
-          "text": "Your code should use the <code>send</code> method to send the request.",
-          "testString": "assert(code.match(/\\.send\\(\\s*\\)/g), 'Your code should use the <code>send</code> method to send the request.');"
+          "text": "你的代码应使用该<code>send</code>方法发送请求。",
+          "testString": "assert(code.match(/\\.send\\(\\s*\\)/g), '你的代码应使用该<code>send</code>方法发送请求。');"
         },
         {
-          "text": "Your code should have an <code>onload</code> event handler set to a function.",
-          "testString": "assert(code.match(/\\.onload\\s*=\\s*function\\(\\s*?\\)\\s*?{/g), 'Your code should have an <code>onload</code> event handler set to a function.');"
+          "text": "你的代码应该有一个<code>onload</code>设置为函数的事件处理程序。",
+          "testString": "assert(code.match(/\\.onload\\s*=\\s*function\\(\\s*?\\)\\s*?{/g), '你的代码应该有一个<code>onload</code>设置为函数的事件处理程序。');"
         },
         {
-          "text": "Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.",
-          "testString": "assert(code.match(/JSON\\.parse\\(.*\\.responseText\\)/g), 'Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.');"
+          "text": "你的代码应该使用该<code>JSON.parse</code>方法来解析<code>responseText</code>。",
+          "testString": "assert(code.match(/JSON\\.parse\\(.*\\.responseText\\)/g), '你的代码应该使用该<code>JSON.parse</code>方法来解析<code>responseText</code>。');"
         },
         {
-          "text": "Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.",
-          "testString": "assert(code.match(/document\\.getElementsByClassName\\(\\s*?('|\")message\\1\\s*?\\)\\[0\\]\\.innerHTML\\s*?=\\s*?JSON\\.stringify\\(.+?\\)/g), 'Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.');"
+          "text": "你的代码应该用<code>message</code>获取元素，并将其内部 HTML 转换为 JSON 数据字符串。",
+          "testString": "assert(code.match(/document\\.getElementsByClassName\\(\\s*?('|\")message\\1\\s*?\\)\\[0\\]\\.innerHTML\\s*?=\\s*?JSON\\.stringify\\(.+?\\)/g), '你的代码应该用<code>message</code>获取元素，并将其内部 HTML 转换为 JSON 数据字符串。');"
         }
       ],
       "solutions": [],
@@ -224,10 +223,10 @@
             "<script>",
             "  document.addEventListener('DOMContentLoaded',function(){",
             "    document.getElementById('getMessage').onclick=function(){",
-            "      // Add your code below this line",
+            "      // 在这行下面添加代码",
             "      ",
             "      ",
-            "      // Add your code above this line",
+            "      // 在这行上面添加代码",
             "    };",
             "  });",
             "</script>",
@@ -276,23 +275,23 @@
       "id": "587d7fae367417b2b2512be4",
       "title": "Access the JSON Data from an API",
       "description": [
-        "In the previous challenge, you saw how to get JSON data from the freeCodeCamp Cat Photo API.",
-        "Now you'll take a closer look at the returned data to better understand the JSON format. Recall some notation in JavaScript:",
-        "<blockquote>[ ] -> Square brackets represent an array<br>{ } -> Curly brackets represent an object<br>\" \" -> Double quotes represent a string. They are also used for key names in JSON</blockquote>",
-        "Understanding the structure of the data that an API returns is important because it influences how you retrieve the values you need.",
-        "On the right, click the \"Get Message\" button to load the freeCodeCamp Cat Photo API JSON into the HTML.",
-        "The first and last character you see in the JSON data are square brackets <code>[ ]</code>. This means that the returned data is an array. The second character in the JSON data is a curly <code>{</code> bracket, which starts an object. Looking closely, you can see that there are three separate objects. The JSON data is an array of three objects, where each object contains information about a cat photo.",
-        "You learned earlier that objects contain \"key-value pairs\" that are separated by commas. In the Cat Photo example, the first object has <code>\"id\":0</code> where \"id\" is a key and 0 is its corresponding value. Similarly, there are keys for \"imageLink\", \"altText\", and \"codeNames\". Each cat photo object has these same keys, but with different values.",
-        "Another interesting \"key-value pair\" in the first object is <code>\"codeNames\":[\"Juggernaut\",\"Mrs. Wallace\",\"ButterCup\"]</code>. Here \"codeNames\" is the key and its value is an array of three strings. It's possible to have arrays of objects as well as a key with an array as a value.",
-        "Remember how to access data in arrays and objects. Arrays use bracket notation to access a specific index of an item. Objects use either bracket or dot notation to access the value of a given property. Here's an example that prints the \"altText\" of the first cat photo - note that the parsed JSON data in the editor is saved in a variable called <code>json</code>:",
-        "<blockquote>console.log(json[0].altText);<br>// Prints \"A white cat wearing a green helmet shaped melon on its head.\"</blockquote>",
+        "在前面的挑战中，你了解了如何从 freeCodeCamp Cat Photo API 获取 JSON 数据。",
+        "现在，你将进一步观察返回的数据来更好的了解 JSON 格式，回忆一下 JavaScript 中的一些符号：",
+        "<blockquote>[ ] -> 方括号表示数组<br>{ } -> 大括号表示对象<br>\" \" -> 双引号表示字符串，它们还用于表示 JSON 中的键名</blockquote>",
+        "理解 API 返回数据的结构是必需的，它将影响你如何获取你所需的值。",
+        "在右侧，点击 \"Get Message\" 按钮，将 freeCodeCamp Cat Photo API JSON 加载到页面中。",
+        "你看到在 JSON 数据中的第一个和最后一个字符是中括号<code>[ ]</code>，这意味着返回的数据是一个数组。JSON 数据中的第二个符号是一个大括号<code>{</code>，这意味着是一个对象。再仔细看，你会发现有三个独立的对象，这个 JSON 数据是一个包含三个对象的数组，它们各自都包含了 cat photo 的信息。",
+        "你之前了解了对象包含了用逗号分隔的 \"键值对\"。在 Cat Photo 示例中，第一个对象的<code>\"id\":0</code>\"id\" 是键，0 是其对应的值，类似的，\"imageLink\", \"altText\", and \"codeNames\" 都有对应的键。每个 cat photo 对象具有相同的键，但具有不同的值 ",
+        "在第一个对象中有一个有趣的 \"键值对\" 它是<code>\"codeNames\":[\"Juggernaut\",\"Mrs. Wallace\",\"ButterCup\"]</code>。 \"codeNames\" 是键，它的值是包含三个字符串的数组。对象数组以及数组作为键可以作为值 ",
+        "记住如何访问数组和对象中的数据，数组使用括号表示法来访问项目的特定索引，对象使用括号或点表示法来访问给定属性的值。这是打印第一张 cat photo 的“altText”的示例 - 请注意，编辑器中解析的 JSON 数据保存在名为<code>json</code>的变量中：",
+        "<blockquote>console.log(json[0].altText);<br>// 打印 \"头上戴着绿色瓜状头盔的白猫。\"</blockquote>",
         "<hr>",
-        "For the cat with the \"id\" of 2, print to the console the second value in the <code>codeNames</code> array. You should use bracket and dot notation on the object (which is saved in the variable <code>json</code>) to access the value."
+        "对于 \"id\" 是 2 的猫， 打印<code>codeNames</code>数组的第二个值到控制台，你应该在对象上使用括号或者点表示法（保存在变量<code>json</code>）中来访问该值。"
       ],
       "tests": [
         {
-          "text": "Your code should use bracket and dot notation to access the proper code name, and print \"Loki\" to the console.",
-          "testString": "assert(code.match(/(?:json\\[2\\]\\.codeNames\\[1\\]|json\\[2\\]\\[('|\")codeNames\\1\\]\\[1\\])/g), 'Your code should use bracket and dot notation to access the proper code name, and print \"Loki\" to the console.');"
+          "text": "你的代码应该使用括号和点表示法来读取正确的代码名称，并将 \"Loki\" 打印到控制台。",
+          "testString": "assert(code.match(/(?:json\\[2\\]\\.codeNames\\[1\\]|json\\[2\\]\\[('|\")codeNames\\1\\]\\[1\\])/g), '你的代码应该使用括号和点表示法来读取正确的代码名称，并将 \"Loki\" 打印到控制台。');"
         }
       ],
       "solutions": [],
@@ -314,10 +313,10 @@
             "      req.onload=function(){",
             "        json=JSON.parse(req.responseText);",
             "        document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);",
-            "        // Add your code below this line",
+            "        // 在这行下面添加代码",
             "        ",
             "        ",
-            "        // Add your code above this line",
+            "        // 在这行上面添加代码",
             "      };",
             "    };",
             "  });",
@@ -367,29 +366,29 @@
       "id": "587d7fae367417b2b2512be5",
       "title": "Convert JSON Data to HTML",
       "description": [
-        "Now that you're getting data from a JSON API, you can display it in the HTML.",
-        "You can use a <code>forEach</code> method to loop through the data since the cat photo objects are held in an array. As you get to each item, you can modify the HTML elements.",
-        "First, declare an html variable with <code>var html = \"\";</code>.",
-        "Then, loop through the JSON, adding HTML to the variable that wraps the key names in <code>strong</code> tags, followed by the value. When the loop is finished, you render it.",
-        "Here's the code that does this:",
+        "现在你可以从 JSON API 获取数据了，你可以在 HTML 中显示它。",
+        "既然 cat photo 对象保存在数组里，你可以使用<code>forEach</code>方法来遍历它。当你拿到每个对象时，你就可以修改 HTML 元素了。",
+        "首先，用<code>var html = \"\";</code>声明一个变量。",
+        "接着，遍历 JSON，将 HTML 添加到用<code>strong</code>标记键名的变量，后面跟着值。当循环结束后渲染它。",
+        "这是执行此操作的代码：",
         "<blockquote>json.forEach(function(val) {</br>&nbsp;&nbsp;var keys = Object.keys(val);</br>&nbsp;&nbsp;html += \"&lt;div class = 'cat'&gt;\";</br>&nbsp;&nbsp;keys.forEach(function(key) {</br>&nbsp;&nbsp;&nbsp;&nbsp;html += \"&lt;strong&gt;\" + key + \"&lt;/strong&gt;: \" + val[key] + \"&lt;br&gt;\";</br>&nbsp;&nbsp;});</br>&nbsp;&nbsp;html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>",
         "<hr>",
-        "Add a <code>forEach</code> method to loop over the JSON data and create the HTML elements to display it.",
-        "Here is some example JSON",
-        "<blockquote>[</br>&nbsp;&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;\"id\":0,</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"imageLink\":\"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg\",</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"altText\":\"A white cat wearing a green helmet shaped melon on its head. \",</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"codeNames\":[ \"Juggernaut\", \"Mrs. Wallace\", \"Buttercup\"</br>&nbsp;&nbsp;&nbsp;&nbsp;]</br>&nbsp;&nbsp;}</br>]</blockquote>"
+        "添加一个<code>forEach</code>循环 JSON 数据的方法，并创建 HTML 元素以显示它。",
+        "这些是一下 JSON 示例",
+        "<blockquote>[</br>&nbsp;&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;\"id\":0,</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"imageLink\":\"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg\",</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"altText\":\"一只头上戴着绿色瓜状头盔的白猫\",</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"codeNames\":[ \"Juggernaut\", \"Mrs. Wallace\", \"Buttercup\"</br>&nbsp;&nbsp;&nbsp;&nbsp;]</br>&nbsp;&nbsp;}</br>]</blockquote>"
       ],
       "tests": [
         {
-          "text": "Your code should store the data in the <code>html</code> variable",
-          "testString": "assert(code.match(/html\\s+?(\\+=|=\\shtml\\s\\+)/g), 'Your code should store the data in the <code>html</code> variable');"
+          "text": "你的代码应该将数据保存在<code>html</code>变量中。",
+          "testString": "assert(code.match(/html\\s+?(\\+=|=\\shtml\\s\\+)/g), '你的代码应该将数据保存在<code>html</code>变量中。');"
         },
         {
-          "text": "Your code should use a <code>forEach</code> method to loop over the JSON data from the API.",
-          "testString": "assert(code.match(/json\\.forEach/g), 'Your code should use a <code>forEach</code> method to loop over the JSON data from the API.');"
+          "text": "你的代码应该使用<code>forEach</code>方法来遍历 API 中的 JSON 数据。",
+          "testString": "assert(code.match(/json\\.forEach/g), '你的代码应该使用<code>forEach</code>方法来遍历 API 中的 JSON 数据。');"
         },
         {
-          "text": "Your code should wrap the key names in <code>strong</code> tags.",
-          "testString": "assert(code.match(/<strong>.+<\\/strong>/g), 'Your code should wrap the key names in <code>strong</code> tags.');"
+          "text": "你的代码应该将键名包装在<code>strong</code>标签中。",
+          "testString": "assert(code.match(/<strong>.+<\\/strong>/g), '你的代码应该将键名包装在<code>strong</code>标签中。');"
         }
       ],
       "solutions": [],
@@ -411,11 +410,11 @@
             "      req.onload=function(){",
             "        json=JSON.parse(req.responseText);",
             "        var html = \"\";",
-            "        // Add your code below this line",
+            "        // 在这行下面添加代码",
             "        ",
             "        ",
             "        ",
-            "        // Add your code above this line",
+            "        // 在这行上面添加代码",
             "        document.getElementsByClassName('message')[0].innerHTML=html;",
             "      };",
             "    };",
@@ -466,17 +465,17 @@
       "id": "587d7fae367417b2b2512be6",
       "title": "Render Images from Data Sources",
       "description": [
-        "The last few challenges showed that each object in the JSON array contains an <code>imageLink</code> key with a value that is the URL of a cat's image.",
-        "When you're looping through these objects, you can use this <code>imageLink</code> property to display this image in an <code>img</code> element.",
-        "Here's the code that does this:",
+        "前几个挑战中表明，JSON 数组中的每个对象都包含一个<code>imageLink</code>键，其值为猫图像的 URL。",
+        "当你遍历这些对象的时候，你可以使用<code>imageLink</code>属性在<code>img</code>元素中显示此图像。",
+        "这是执行此操作的代码：",
         "<code>html += \"&lt;img src = '\" + val.imageLink + \"' \" + \"alt='\" + val.altText + \"'&gt;\";</code>",
         "<hr>",
-        "Add code to use the <code>imageLink</code> and <code>altText</code> properties in an <code>img</code> tag."
+        "添加代码以在<code>img</code>标签中使用<code>imageLink</code>和<code>altText</code>属性。"
       ],
       "tests": [
         {
-          "text": "You should use the <code>imageLink</code> property to display the images.",
-          "testString": "assert(code.match(/val\\.imageLink/g), 'You should use the <code>imageLink</code> property to display the images.');"
+          "text": "你应该使用<code>imageLink</code>属性来显示图像。",
+          "testString": "assert(code.match(/val\\.imageLink/g), '你应该使用<code>imageLink</code>属性来显示图像。');"
         }
       ],
       "solutions": [],
@@ -500,10 +499,10 @@
             "        var html = \"\";",
             "        json.forEach(function(val) {",
             "          html += \"<div class = 'cat'>\";",
-            "          // Add your code below this line",
+            "          // 在这行下面添加代码",
             "          ",
             "          ",
-            "          // Add your code above this line",
+            "          // 在这行上面添加代码",
             "          html += \"</div><br>\";",
             "        });",
             "        document.getElementsByClassName('message')[0].innerHTML=html;",
@@ -556,17 +555,17 @@
       "id": "587d7fae367417b2b2512be7",
       "title": "Pre-filter JSON to Get the Data You Need",
       "description": [
-        "If you don't want to render every cat photo you get from the freeCodeCamp Cat Photo API, you can pre-filter the JSON before looping through it.",
-        "Given that the JSON data is stored in an array, you can use the <code>filter</code> method to filter out the cat whose \"id\" key has a value of 1.",
-        "Here's the code to do this:",
+        "如果你不希望渲染每张从 freeCodeCamp Cat Photo API 取回的猫照片，你可以在循环先预先过滤 JSON 数据。",
+        "鉴于 JSON 数据都存储在数组中，你可以使用<code>filter</code>方法过滤掉 \"id\" 键值为 1 的猫。",
+        "这是执行此操作的代码：",
         "<blockquote>json = json.filter(function(val) {<br>&nbsp;&nbsp;return (val.id !== 1);<br>});</blockquote>",
         "<hr>",
-        "Add code to <code>filter</code> the json data to remove the cat with the \"id\" value of 1."
+        "将<code>filter</code>代码添加到 JSON 数据中来移除 \"id\" 值为 1 的猫。"
       ],
       "tests": [
         {
-          "text": "Your code should use the <code>filter</code> method.",
-          "testString": "assert(code.match(/json\\.filter/g), 'Your code should use the <code>filter</code> method.');"
+          "text": "你的代码应该使用<code>filter</code>方法。",
+          "testString": "assert(code.match(/json\\.filter/g), '你的代码应该使用<code>filter</code>方法。');"
         }
       ],
       "solutions": [],
@@ -588,10 +587,10 @@
             "      req.onload=function(){",
             "        json=JSON.parse(req.responseText);",
             "        var html = \"\";",
-            "        // Add your code below this line",
+            "        // 在这行下面添加代码",
             "        ",
             "        ",
-            "        // Add your code above this line",
+            "        // 在这行上面添加代码",
             "         json.forEach(function(val) {",
             "           html += \"<div class = 'cat'>\"",
             "           ",
@@ -649,32 +648,32 @@
       "id": "587d7faf367417b2b2512be8",
       "title": "Get Geolocation Data to Find A User's GPS Coordinates",
       "description": [
-        "Another cool thing you can do is access your user's current location. Every browser has a built in navigator that can give you this information.",
-        "The navigator will get the user's current longitude and latitude.",
-        "You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.",
-        "By selecting allow, you will see the text on the output phone change to your latitude and longitude.",
-        "Here's code that does this:",
+        "你还能做一件很酷的事就是访问你用户当前的地理位置，每个浏览器都有内置的导航器，可以为你提供这些信息。",
+        "导航器会获取用户当前的经度和纬度。",
+        "您将看到允许或阻止此站点了解您当前位置的提示。只要代码正确，挑战就可以以任何一种方式完成。",
+        "通过选择允许，你将看到输出手机上的文本更改为你的纬度和经度",
+        "这是执行此操作的代码：",
         "<blockquote>if (navigator.geolocation){<br>&nbsp;&nbsp;navigator.geolocation.getCurrentPosition(function(position) {<br>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('data').innerHTML=\"latitude: \"+ position.coords.latitude +  \"&lt;br&gt;longitude: \" +  position.coords.longitude;<br>&nbsp;&nbsp;});<br>}</blockquote>",
-        "First, it checks if the <code>navigator.geolocation</code> object exists. If it does, the <code>getCurrentPosition</code> method on that object is called, which initiates an asynchronous request for the user's position. If the request is successful, the callback function in the method runs. This function accesses the <code>position</code> object's values for latitude and longitude using dot notation and updates the HTML.",
+        "首先，它检查<code>navigator.geolocation</code>对象是否存在。如果是，<code>getCurrentPosition</code>则调用该对象上的方法，该方法启动对用户位置的异步请求。如果请求成功，则运行方法中的回调函数。此函数<code>position</code>使用点表示法访问对象的纬度和经度值，并更新页面。",
         "<hr>",
-        "Add the example code inside the <code>script</code> tags to check a user's current location and insert it into the HTML."
+        "在<code>script</code>标记内添加示例代码以检查用户的当前位置并将其插入HTM"
       ],
       "tests": [
         {
-          "text": "Your code should use <code>navigator.geolocation</code> to access the user&#39;s current location.",
-          "testString": "assert(code.match(/navigator\\.geolocation\\.getCurrentPosition/g), 'Your code should use <code>navigator.geolocation</code> to access the user&#39;s current location.');"
+          "text": "你的代码应该用于<code>navigator.geolocation</code>访问用户的当前位置。",
+          "testString": "assert(code.match(/navigator\\.geolocation\\.getCurrentPosition/g), '你的代码应该用于<code>navigator.geolocation</code>访问用户的当前位置。');"
         },
         {
-          "text": "Your code should use <code>position.coords.latitude</code> to display the user&#39;s latitudinal location.",
-          "testString": "assert(code.match(/position\\.coords\\.latitude/g), 'Your code should use <code>position.coords.latitude</code> to display the user&#39;s latitudinal location.');"
+          "text": "你的代码应该用于<code>position.coords.latitude</code>显示用户的纬度位置。",
+          "testString": "assert(code.match(/position\\.coords\\.latitude/g), '你的代码应该用于<code>position.coords.latitude</code>显示用户的纬度位置。');"
         },
         {
-          "text": "Your code should use <code>position.coords.longitude</code> to display the user&#39;s longitudinal location.",
-          "testString": "assert(code.match(/position\\.coords\\.longitude/g), 'Your code should use <code>position.coords.longitude</code> to display the user&#39;s longitudinal location.');"
+          "text": "你的代码应该用于<code>position.coords.longitude</code>显示用户的经度位置。",
+          "testString": "assert(code.match(/position\\.coords\\.longitude/g), '你的代码应该用于<code>position.coords.longitude</code>显示用户的经度位置。');"
         },
         {
-          "text": "You should display the user&#39;s position within the <code>data</code> div element.",
-          "testString": "assert(code.match(/document\\.getElementById\\(\\s*?('|\")data\\1\\s*?\\)\\.innerHTML/g), 'You should display the user&#39;s position within the <code>data</code> div element.');"
+          "text": "你应该在<code>data</code>div 元素中显示用户的位置。",
+          "testString": "assert(code.match(/document\\.getElementById\\(\\s*?('|\")data\\1\\s*?\\)\\.innerHTML/g), '你应该在<code>data</code>div 元素中显示用户的位置。');"
         }
       ],
       "solutions": [],
@@ -688,10 +687,10 @@
           "name": "index",
           "contents": [
             "<script>",
-            "  // Add your code below this line",
+            "  // 在这行下面添加代码",
             "  ",
             "  ",
-            "  // Add your code above this line",
+            "  // 在这行上面添加代码",
             "</script>",
             "<h4>You are here:</h4>",
             "<div id=\"data\">",
@@ -707,40 +706,41 @@
       "id": "587d7faf367417b2b2512be9",
       "title": "Post Data with the JavaScript XMLHttpRequest Method",
       "description": [
-        "In the previous examples, you received data from an external resource. You can also send data to an external resource, as long as that resource supports AJAX requests and you know the URL.",
-        "JavaScript's <code>XMLHttpRequest</code> method is also used to post data to a server. Here's an example:",
+        "在前面的示例中，你在外部资源获取数据，你也可以将数据发送到外部资源，只要该资源支持 AJAX 请求并且你知道 URL。",
+        "",
+        "JavaScript 的<code>XMLHttpRequest</code>方法也用于将数据发布到服务器，这是个例子：",
         "<blockquote>req=new XMLHttpRequest();<br>req.open(\"POST\",url,true);<br>req.setRequestHeader('Content-Type','text/plain');<br>req.onreadystatechange=function(){<br>&nbsp;&nbsp;if(req.readyState==4 && req.status==200){<br>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementsByClassName('message')[0].innerHTML=req.responseText;<br>&nbsp;&nbsp;}<br>};<br>req.send(userName);</blockquote>",
-        "You've seen several of these methods before. Here the <code>open</code> method initializes the request as a \"POST\" to the given URL of the external resource, and uses the <code>true</code> Boolean to make it asynchronous.",
-        "The <code>setRequestHeader</code> method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the <code>open</code> method, but before the <code>send</code> method. The two parameters are the name of the header and the value to set as the body of that header.",
-        "Next, the <code>onreadystatechange</code> event listener handles a change in the state of the request. A <code>readyState</code> of 4 means the operation is complete, and a <code>status</code> of 200 means it was a successful request. The document's HTML can be updated.",
-        "Finally, the <code>send</code> method sends the request with the <code>userName</code> value, which was given by the user in the <code>input</code> field.",
+        "你在之前见过其中几种方法。这里<code>open</code>方法将请求初始化为对外部资源的给定 URL 的 \"POST\"，并使用<code>true</code>布尔值使其异步。",
+        "<code>setRequestHeader</code>方法设置HTTP请求标头的值，该标头包含有关发送人和请求的信息。它必须在<code>open</code>方法之后调用，但在<code>send</code>方法之前调用。这两个参数是标题的名称和要设置为该标题正文的值。",
+        "接下来，<code>onreadystatechange</code>事件侦听器处理请求状态的更改。<code>readyState</code>为 4 表示操作完成，<code>status</code>200表示操作成功。文档的HTML可以更新。",
+        "最后，该<code>send</code>方法发送带有<code>userName</code>值的请求，该值由用户在<code>input</code>字段中给出。",
         "<hr>",
-        "Update the code to create and send a \"POST\" request. Then enter your name in input box and click \"Send Message\". Your AJAX function will replace \"Reply from Server will be here.\" with the reply of the server. In this case, it is your name appended with \" loves cats\"."
+        "更新代码以创建并发送 \"POST\" 请求。然后在输入框中输入你的姓名，你的 AJAX 函数会用服务器返回的数据替换 \"来自服务器的回复将在这里\"。在这种情况下，你的名字附加 \"爱猫\"。"
       ],
       "tests": [
         {
-          "text": "Your code should create a new <code>XMLHttpRequest</code>.",
-          "testString": "assert(code.match(/new\\s+?XMLHttpRequest\\(\\s*?\\)/g), 'Your code should create a new <code>XMLHttpRequest</code>.');"
+          "text": "你的代码应该创建一个新的<code>XMLHttpRequest</code>。",
+          "testString": "assert(code.match(/new\\s+?XMLHttpRequest\\(\\s*?\\)/g), '你的代码应该创建一个新的<code>XMLHttpRequest</code>。');"
         },
         {
-          "text": "Your code should use the <code>open</code> method to initialize a \"POST\" request to the server.",
-          "testString": "assert(code.match(/\\.open\\(\\s*?('|\")POST\\1\\s*?,\\s*?url\\s*?,\\s*?true\\s*?\\)/g), 'Your code should use the <code>open</code> method to initialize a \"POST\" request to the server.');"
+          "text": "你的代码应该使用该<code>open</code>方法初始化到服务器的 \"POST\" 请求。",
+          "testString": "assert(code.match(/\\.open\\(\\s*?('|\")POST\\1\\s*?,\\s*?url\\s*?,\\s*?true\\s*?\\)/g), '你的代码应该使用该<code>open</code>方法初始化到服务器的 \"POST\" 请求。');"
         },
         {
-          "text": "Your code should use the <code>setRequestHeader</code> method.",
-          "testString": "assert(code.match(/\\.setRequestHeader\\(\\s*?('|\")Content-Type\\1\\s*?,\\s*?('|\")text\\/plain\\2\\s*?\\)/g), 'Your code should use the <code>setRequestHeader</code> method.');"
+          "text": "你的代码应该使用该<code>setRequestHeader</code>方法。",
+          "testString": "assert(code.match(/\\.setRequestHeader\\(\\s*?('|\")Content-Type\\1\\s*?,\\s*?('|\")text\\/plain\\2\\s*?\\)/g), '你的代码应该使用该<code>setRequestHeader</code>方法。');"
         },
         {
-          "text": "Your code should have an <code>onreadystatechange</code> event handler set to a function.",
-          "testString": "assert(code.match(/\\.onreadystatechange\\s*?=/g), 'Your code should have an <code>onreadystatechange</code> event handler set to a function.');"
+          "text": "你的代码应该有一个<code>onreadystatechange</code>设置为函数的事件处理程序。",
+          "testString": "assert(code.match(/\\.onreadystatechange\\s*?=/g), '你的代码应该有一个<code>onreadystatechange</code>设置为函数的事件处理程序。');"
         },
         {
-          "text": "Your code should get the element with class <code>message</code> and change its inner HTML to the <code>responseText</code>.",
-          "testString": "assert(code.match(/document\\.getElementsByClassName\\(\\s*?('|\")message\\1\\s*?\\)\\[0\\]\\.innerHTML\\s*?=\\s*?.+?\\.responseText/g), 'Your code should get the element with class <code>message</code> and change its inner HTML to the <code>responseText</code>.');"
+          "text": "你的代码应该使用类获取元素<code>message</code>并将其内部HTML更改为<code>responseText</code>。",
+          "testString": "assert(code.match(/document\\.getElementsByClassName\\(\\s*?('|\")message\\1\\s*?\\)\\[0\\]\\.innerHTML\\s*?=\\s*?.+?\\.responseText/g), '你的代码应该使用类获取元素<code>message</code>并将其内部HTML更改为<code>responseText</code>。');"
         },
         {
-          "text": "Your code should use the <code>send</code> method.",
-          "testString": "assert(code.match(/\\.send\\(\\s*?userName\\s*?\\)/g), 'Your code should use the <code>send</code> method.');"
+          "text": "你的代码应该使用该<code>send</code>方法。",
+          "testString": "assert(code.match(/\\.send\\(\\s*?userName\\s*?\\)/g), '你的代码应该使用该<code>send</code>方法。');"
         }
       ],
       "solutions": [],
@@ -758,10 +758,10 @@
             "    document.getElementById('sendMessage').onclick=function(){",
             "    ",
             "      var userName=document.getElementById('name').value;",
-            "      // Add your code below this line",
+            "      // 在这行下面添加代码",
             "      ",
             "      ",
-            "      // Add your code above this line",
+            "      // 在这行上面添加代码",
             "    };",
             "  });",
             "</script>",

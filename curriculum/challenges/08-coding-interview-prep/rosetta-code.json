@@ -8,24 +8,24 @@
     {
       "title": "100 doors",
       "description": [
-        "<p>There are 100 doors in a row that are all initially closed. You make 100 passes by the doors. The first time through, visit every door and 'toggle' the door (if the door is closed, open it; if it is open, close it). The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...) and toggle it. The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc., until you only visit the 100th door.</p>",
-        "<p>Implement a function to determine the state of the doors after the last pass. Return the final result in an array, with only the door number included in the array if it is open.</p>"
+        "<p>有连续100扇默认被关闭的门，从门口经过100次。第一次经过时，参观每一扇门并“切换”它们 (门若是关闭的，则打开它；反之关闭它)；第二次经过时，参观编号为2的倍数的门（如：2号门、4号门、6号门等)并“切换”它们；第三次经过时，参观编号为3的倍数的门（如：3号门、6号门、9号门等等），以此类推，直到你参观编号为100倍数的门。</p>",
+        "<p>编写函数来判断：当经过最后一扇门时，各个门的状态是打开还是关闭的。将最终结果以数组形式返回（只包含状态为打开的门的编号）。</p>"
       ],
       "solutions": [
         "function getFinalOpenedDoors (numDoors) {\n  // this is the final pattern (always squares).\n  // thus, the most efficient solution simply returns an array of squares up to numDoors).\n  const finalState = [];\n  let i = 1;\n  while (Math.pow(i, 2) <= numDoors) {\n    finalState.push(Math.pow(i, 2));\n    i++;\n  }\n  return finalState;\n}\n"
       ],
       "tests": [
         {
-          "text": "<code>getFinalOpenedDoors</code> is a function.",
-          "testString": "assert(typeof getFinalOpenedDoors === 'function', '<code>getFinalOpenedDoors</code> is a function.');"
+          "text": "<code>getFinalOpenedDoors</code> 是一个函数。",
+          "testString": "assert(typeof getFinalOpenedDoors === 'function', '<code>getFinalOpenedDoors</code> 是一个函数。');"
         },
         {
-          "text": "<code>getFinalOpenedDoors</code> should return an array.",
-          "testString": "assert(Array.isArray(getFinalOpenedDoors(100)), '<code>getFinalOpenedDoors</code> should return an array.');"
+          "text": "<code>getFinalOpenedDoors</code> 应当返回数组。",
+          "testString": "assert(Array.isArray(getFinalOpenedDoors(100)), '<code>getFinalOpenedDoors</code> 应当返回数组。');"
         },
         {
-          "text": "<code>getFinalOpenedDoors</code> did not produce the correct results.",
-          "testString": "assert.deepEqual(getFinalOpenedDoors(100), solution, '<code>getFinalOpenedDoors</code> did not produce the correct results.');"
+          "text": "<code>getFinalOpenedDoors</code> 没有输出正确结果。",
+          "testString": "assert.deepEqual(getFinalOpenedDoors(100), solution, '<code>getFinalOpenedDoors</code> 没有输出正确结果。');"
         }
       ],
       "id": "594810f028c0303b75339acb",
@@ -38,7 +38,7 @@
           "name": "index",
           "contents": [
             "function getFinalOpenedDoors (numDoors) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "}"
           ],
           "head": [],
@@ -51,18 +51,18 @@
     {
       "title": "24 game",
       "description": [
-        "<p>Implement a function that takes a string of four digits as its argument, with each digit from 1 ──► 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return \"no solution exists.\"</p>",
-        "<p>Rules:</p>",
-        " Only the following operators/functions are allowed: multiplication, division, addition, subtraction",
-        " Division should use floating point or rational arithmetic, etc, to preserve remainders.",
-        " Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong).",
-        " The order of the digits when given does not have to be preserved.",
-        "<p>Example inputs:</p>",
+        "<p>实现函数，其参数为从1~9中任选4个可重复的数字组成的字符串，并返回一个运算结果为24的算数表达式。如果不存在该表达式，就返回\"不存在该表达式\"。</p>",
+        "<p>规则：</p>",
+        "只有如下运算规则可以使用：乘、除、加、减",
+        "除法应使用浮点运算或分数来保留余数。",
+        "不可以将字符串中4个字符组成数字（例如：由1、2、2、1组成的参数，返回 12+12 的表达式是错误的）。",
+        "4个数字字符使用顺序可以与给出顺序不一致。",
+        "<p>示例输入：</p>",
         "<code>solve24(\"4878\");</code>",
         "<code>solve24(\"1234\");</code>",
         "<code>solve24(\"6789\");</code>",
         "<code>solve24(\"1127\");</code>",
-        "<p>Example outputs (strings):</p>",
+        "<p>示例输出（字符串）：</p>",
         "<code>(7-8/8)*4</code>",
         "<code>3*1*4*2</code>",
         "<code>(6*8)/(9-7)</code>",
@@ -73,24 +73,24 @@
       ],
       "tests": [
         {
-          "text": "<code>solve24</code> is a function.",
-          "testString": "assert(typeof solve24 === 'function', '<code>solve24</code> is a function.');"
+          "text": "<code>solve24</code> 是一个函数。",
+          "testString": "assert(typeof solve24 === 'function', '<code>solve24</code> 是一个函数。');"
         },
         {
-          "text": "<code>solve24(\"4878\")</code> should return <code>(7-8/8)*4</code> or <code>4*(7-8/8)</code>",
-          "testString": "assert(include(answers[0], solve24(testCases[0])), '<code>solve24(\"4878\")</code> should return <code>(7-8/8)*4</code> or <code>4*(7-8/8)</code>');"
+          "text": "<code>solve24(\"4878\")</code> 应当返回 <code>(7-8/8)*4</code> 或者 <code>4*(7-8/8)</code>",
+          "testString": "assert(include(answers[0], solve24(testCases[0])), '<code>solve24(\"4878\")</code> 应当返回 <code>(7-8/8)*4</code> 或者 <code>4*(7-8/8)</code>');"
         },
         {
-          "text": "<code>solve24(\"1234\")</code> should return any arrangement of <code>1*2*3*4</code>",
-          "testString": "assert(include(answers[1], solve24(testCases[1])), '<code>solve24(\"1234\")</code> should return any arrangement of <code>1*2*3*4</code>');"
+          "text": "<code>solve24(\"1234\")</code> 应当返回类似 <code>1*2*3*4</code> 的排列",
+          "testString": "assert(include(answers[1], solve24(testCases[1])), '<code>solve24(\"1234\")</code> 应当返回 <code>1*2*3*4</code>') 的排列;"
         },
         {
-          "text": "<code>solve24(\"6789\")</code> should return <code>(6*8)/(9-7)</code> or <code>(8*6)/(9-7)</code>",
-          "testString": "assert(include(answers[2], solve24(testCases[2])), '<code>solve24(\"6789\")</code> should return <code>(6*8)/(9-7)</code> or <code>(8*6)/(9-7)</code>');"
+          "text": "<code>solve24(\"6789\")</code> 应当返回 <code>(6*8)/(9-7)</code> 或者 <code>(8*6)/(9-7)</code>",
+          "testString": "assert(include(answers[2], solve24(testCases[2])), '<code>solve24(\"6789\")</code> 应当返回 <code>(6*8)/(9-7)</code> 或者 <code>(8*6)/(9-7)</code>');"
         },
         {
-          "text": "<code>solve24(\"1127\")</code> should return a permutation of <code>(1+7)*(1*2)</code>",
-          "testString": "assert(include(answers[3], solve24(testCases[3])), '<code>solve24(\"1127\")</code> should return a permutation of <code>(1+7)*(1*2)</code>');"
+          "text": "<code>solve24(\"1127\")</code> 应当返回 <code>(1+7)*(1*2)</code> 的排列",
+          "testString": "assert(include(answers[3], solve24(testCases[3])), '<code>solve24(\"1127\")</code> 应当返回 <code>(1+7)*(1*2)</code>') 的排列;"
         }
       ],
       "id": "5951e88f64ebf159166a1176",
@@ -103,7 +103,7 @@
           "name": "index",
           "contents": [
             "function solve24 (numStr) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}"
           ],
@@ -134,15 +134,15 @@
     {
       "title": "9 billion names of God the integer",
       "description": [
-        "<p>This task is a variation of the <a href=\"https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary\" title=\"wp: The Nine Billion Names of God#Plot_summary\">short story by Arthur C. Clarke</a>.</p>",
-        "<p>(Solvers should be aware of the consequences of completing this task.)</p>",
-        "<p>In detail, to specify what is meant by a  “name”:</p>",
-        "<p>The integer 1 has 1 name “1”.</p>",
-        "<p>The integer 2 has 2 names “1+1”, and “2”.</p>",
-        "<p>The integer 3 has 3 names “1+1+1”, “2+1”,  and “3”.</p>",
-        "<p>The integer 4 has 5 names “1+1+1+1”, “2+1+1”, “2+2”, “3+1”, “4”.</p>",
-        "<p>The integer 5 has 7 names “1+1+1+1+1”, “2+1+1+1”, “2+2+1”, “3+1+1”, “3+2”, “4+1”, “5”.</p>",
-        "<p>This can be visualized in the following form:</p>",
+        "<p>这个任务是由<a href=\"https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary\" title=\"wp: The Nine Billion Names of God#Plot_summary\">的短篇小说改编而成。</p>",
+        "<p>（解决者应该意识到完成这项任务的后果。）</p>",
+        "<p>详细地说，指定“名称”的含义：</p>",
+        "<p>整数1有1个名字 “1”。</p>",
+        "<p>整数2有2个名字 “1+1” 和 “2”。</p>",
+        "<p>整数3有3个名字 “1+1+1”，“2+1” 和 “3”。</p>",
+        "<p>整数4有5个名字 “1+1+1+1”，“2+1+1”，“2+2”，“3+1”，“4”。</p>",
+        "<p>整数5有7个名字 “1+1+1+1+1”，“2+1+1+1”，“2+2+1”，“3+1+1”，“3+2”，“4+1”，“5”。</p>",
+        "<p>下面的例子会更形象一些：</p>",
         "<pre>",
         "          1",
         "        1   1",
@@ -151,42 +151,42 @@
         "  1   2   2   1   1",
         "1   3   3   2   1   1",
         "</pre>",
-        "<p>Where row  $n$  corresponds to integer  $n$,  and each column  $C$  in row  $m$  from left to right corresponds to the number of names beginning with $C$.</p>",
-        "<p>Optionally note that the sum of the  $n$-th  row  $P(n)$  is the   <a href=\"http://mathworld.wolfram.com/PartitionFunctionP.html\" title=\"link: http://mathworld.wolfram.com/PartitionFunctionP.html\">integer partition function</a>.</p>",
-        "Task",
-        "<p>Implement a function that returns the sum of the  $n$-th  row.</p>"
+        "<p>其中第$n$行对应整数$n$，且从左至右开始，第$m$行、第$C$列对应以$C$开头的名称数。</p>",
+        "<p>（可选）注意，第n行数字总和$P(n)$是<a href=\"http://mathworld.wolfram.com/PartitionFunctionP.html\" title=\"link: http://mathworld.wolfram.com/PartitionFunctionP.html\">整数配分函数</a>。</p>",
+        "任务",
+        "<p>实现函数，计算第$n$行数字总和。</p>"
       ],
       "solutions": [
         "function numberOfNames (num) {\n  const cache = [\n    [1]\n  ];\n  for (let l = cache.length; l < num + 1; l++) {\n    let Aa;\n    let Mi;\n    const r = [0];\n    for (let x = 1; x < l + 1; x++) {\n      r.push(r[r.length - 1] + (Aa = cache[l - x < 0 ? cache.length - (l - x) : l - x])[(Mi = Math.min(x, l - x)) < 0 ? Aa.length - Mi : Mi]);\n    }\n    cache.push(r);\n  }\n  return cache[num][cache[num].length - 1];\n}\n"
       ],
       "tests": [
         {
-          "text": "<code>numberOfNames</code> is a function.",
-          "testString": "assert(typeof numberOfNames === 'function', '<code>numberOfNames</code> is a function.');"
+          "text": "<code>numberOfNames</code> 是一个函数。",
+          "testString": "assert(typeof numberOfNames === 'function', '<code>numberOfNames</code> 是一个函数。');"
         },
         {
-          "text": "<code>numberOfNames(5)</code> should equal 7.",
-          "testString": "assert.equal(numberOfNames(5), 7, '<code>numberOfNames(5)</code> should equal 7.');"
+          "text": "<code>numberOfNames(5)</code> 应返回7。",
+          "testString": "assert.equal(numberOfNames(5), 7, '<code>numberOfNames(5)</code> 应返回7。');"
         },
         {
-          "text": "<code>numberOfNames(12)</code> should equal 77.",
-          "testString": "assert.equal(numberOfNames(12), 77, '<code>numberOfNames(12)</code> should equal 77.');"
+          "text": "<code>numberOfNames(12)</code> 应返回77。",
+          "testString": "assert.equal(numberOfNames(12), 77, '<code>numberOfNames(12)</code> 应返回77。');"
         },
         {
-          "text": "<code>numberOfNames(18)</code> should equal 385.",
-          "testString": "assert.equal(numberOfNames(18), 385, '<code>numberOfNames(18)</code> should equal 385.');"
+          "text": "<code>numberOfNames(18)</code> 应返回385。",
+          "testString": "assert.equal(numberOfNames(18), 385, '<code>numberOfNames(18)</code> 应返回385。');"
         },
         {
-          "text": "<code>numberOfNames(23)</code> should equal 1255.",
-          "testString": "assert.equal(numberOfNames(23), 1255, '<code>numberOfNames(23)</code> should equal 1255.');"
+          "text": "<code>numberOfNames(23)</code> 应返回1255。",
+          "testString": "assert.equal(numberOfNames(23), 1255, '<code>numberOfNames(23)</code> 应返回1255。');"
         },
         {
-          "text": "<code>numberOfNames(42)</code> should equal 53174.",
-          "testString": "assert.equal(numberOfNames(42), 53174, '<code>numberOfNames(42)</code> should equal 53174.');"
+          "text": "<code>numberOfNames(42)</code> 应返回53174。",
+          "testString": "assert.equal(numberOfNames(42), 53174, '<code>numberOfNames(42)</code> 应返回53174。');"
         },
         {
-          "text": "<code>numberOfNames(123)</code> should equal 2552338241.",
-          "testString": "assert.equal(numberOfNames(123), 2552338241, '<code>numberOfNames(123)</code> should equal 2552338241.');"
+          "text": "<code>numberOfNames(123)</code> 应返回2552338241。",
+          "testString": "assert.equal(numberOfNames(123), 2552338241, '<code>numberOfNames(123)</code> 应返回2552338241。');"
         }
       ],
       "id": "5949b579404977fbaefcd736",
@@ -199,7 +199,7 @@
           "name": "index",
           "contents": [
             "function numberOfNames (num) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}"
           ],
@@ -211,7 +211,7 @@
     {
       "title": "ABC Problem",
       "description": [
-        "<p>You are given a collection of ABC blocks (e.g., childhood alphabet blocks). There are 20 blocks with two letters on each block. A complete alphabet is guaranteed amongst all sides of the blocks. The sample collection of blocks:</p>",
+        "<p>给你一个ABC块集合 （例如：儿童字母积木），有20个方块，每个方块上有两个字母。一个完整的字母表保证有所有的块，下面是示例：</p>",
         "<p>(B O)</p>",
         "<p>(X K)</p>",
         "<p>(D Q)</p>",
@@ -232,46 +232,46 @@
         "<p>(L Y)</p>",
         "<p>(P C)</p>",
         "<p>(Z M)</p>",
-        "<p>Some rules to keep in mind:</p>",
-        "Once a letter on a block is used, that block cannot be used again.",
-        "The function should be case-insensitive.",
-        "<p>Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.</p>"
+        "<p>需要记住的一些规则：</p>",
+        "一旦使用了块上的一个字母，这个块就不能再使用了。",
+        "函数应不区分大小写。",
+        "<p>实现一个函数，该函数接受一个字符串(单词)，并确定该单词是否可以用给定的块集合拼写。</p>"
       ],
       "solutions": [
         "function canMakeWord (word) {\n  const characters = 'BO XK DQ CP NA GT RE TG QD FS JW HU VI AN OB ER FS LY PC ZM';\n  const blocks = characters.split(' ').map(pair => pair.split(''));\n\n  const letters = [...word.toUpperCase()];\n  let length = letters.length;\n  const copy = new Set(blocks);\n\n  letters.forEach(letter => {\n    for (let block of copy) {\n      const index = block.indexOf(letter);\n\n      if (index !== -1) {\n        length--;\n        copy.delete(block);\n        break;\n      }\n    }\n  });\n  return !length;\n}\n"
       ],
       "tests": [
         {
-          "text": "<code>canMakeWord</code> is a function.",
-          "testString": "assert(typeof canMakeWord === 'function', '<code>canMakeWord</code> is a function.');"
+          "text": "<code>canMakeWord</code> 是一个函数。",
+          "testString": "assert(typeof canMakeWord === 'function', '<code>canMakeWord</code> 是一个函数。');"
         },
         {
-          "text": "<code>canMakeWord</code> should return a boolean.",
-          "testString": "assert(typeof canMakeWord('hi') === 'boolean', '<code>canMakeWord</code> should return a boolean.');"
+          "text": "<code>canMakeWord</code> 应返回布尔值。",
+          "testString": "assert(typeof canMakeWord('hi') === 'boolean', '<code>canMakeWord</code> 应返回布尔值。');"
         },
         {
-          "text": "<code>canMakeWord(\"bark\")</code> should return true.",
-          "testString": "assert(canMakeWord(words[0]), '<code>canMakeWord(\"bark\")</code> should return true.');"
+          "text": "<code>canMakeWord(\"bark\")</code> 应返回 TRUE。",
+          "testString": "assert(canMakeWord(words[0]), '<code>canMakeWord(\"bark\")</code> 应返回 TRUE。');"
         },
         {
-          "text": "<code>canMakeWord(\"BooK\")</code> should return false.",
-          "testString": "assert(!canMakeWord(words[1]), '<code>canMakeWord(\"BooK\")</code> should return false.');"
+          "text": "<code>canMakeWord(\"BooK\")</code> 应返回 FALSE。",
+          "testString": "assert(!canMakeWord(words[1]), '<code>canMakeWord(\"BooK\")</code> 应返回 FALSE。');"
         },
         {
-          "text": "<code>canMakeWord(\"TReAT\")</code> should return true.",
-          "testString": "assert(canMakeWord(words[2]), '<code>canMakeWord(\"TReAT\")</code> should return true.');"
+          "text": "<code>canMakeWord(\"TReAT\")</code> 应返回 TRUE。",
+          "testString": "assert(canMakeWord(words[2]), '<code>canMakeWord(\"TReAT\")</code> 应返回 TRUE。');"
         },
         {
-          "text": "<code>canMakeWord(\"COMMON\")</code> should return false.",
-          "testString": "assert(!canMakeWord(words[3]), '<code>canMakeWord(\"COMMON\")</code> should return false.');"
+          "text": "<code>canMakeWord(\"COMMON\")</code> 应返回 FALSE。",
+          "testString": "assert(!canMakeWord(words[3]), '<code>canMakeWord(\"COMMON\")</code> 应返回 FALSE。');"
         },
         {
-          "text": "<code>canMakeWord(\"squAD\")</code> should return true.",
-          "testString": "assert(canMakeWord(words[4]), '<code>canMakeWord(\"squAD\")</code> should return true.');"
+          "text": "<code>canMakeWord(\"squAD\")</code> 应返回 TRUE。",
+          "testString": "assert(canMakeWord(words[4]), '<code>canMakeWord(\"squAD\")</code> 应返回 TRUE。');"
         },
         {
-          "text": "<code>canMakeWord(\"conFUSE\")</code> should return true.",
-          "testString": "assert(canMakeWord(words[5]), '<code>canMakeWord(\"conFUSE\")</code> should return true.');"
+          "text": "<code>canMakeWord(\"conFUSE\")</code> 应返回 TRUE。",
+          "testString": "assert(canMakeWord(words[5]), '<code>canMakeWord(\"conFUSE\")</code> 应返回 TRUE。');"
         }
       ],
       "id": "594810f028c0303b75339acc",
@@ -284,7 +284,7 @@
           "name": "index",
           "contents": [
             "function canMakeWord (word) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "}"
           ],
           "head": [],
@@ -297,35 +297,35 @@
     {
       "title": "Abundant, deficient and perfect number classifications",
       "description": [
-        "<p>These define three classifications of positive integers based on their <a href=\"http://rosettacode.org/wiki/Proper divisors\" title=\"Proper divisors\">proper divisors</a>.</p>",
-        "<p>Let $P(n)$ be the sum of the proper divisors of n where proper divisors are all positive integers n other than n itself.</p>",
-        "<p>If <code>P(n) < n</code> then n is classed as \"deficient\"</p>",
-        "<p>If <code>P(n) === n</code> then n is classed as \"perfect\"</p>",
-        "<p>If <code>P(n) > n</code> then n is classed as \"abundant\"</p>",
-        "<p>Example:</p>",
-        "<p>6 has proper divisors of 1, 2, and 3.</p>",
-        "<p>1 + 2 + 3 = 6, so 6 is classed as a perfect number.</p>",
-        "<p>Implement a function that calculates how many of the integers from 1 to 20,000 (inclusive) are in each of the three classes. Output the result as an array in the following format <code>[deficient, perfect, abundant]</code>.</p>"
+        "<p>它们根据适当的<a href=\"http://rosettacode.org/wiki/Proper divisors\" title=\"合适的除数\">除数</a>定义了三个正整数分类。</p>",
+        "<p>假设$P(n)$是n的固有因数的和，其中固有因数都是正整数n而不是n本身。</p>",
+        "<p>如果<code>P(n) < n</code>，那么n被分类为\"deficient\"</p>",
+        "<p>如果<code>P(n) === n</code>，那么n被分类为\"perfect\"</p>",
+        "<p>如果<code>P(n) > n</code>，那么n被分类为\"abundant\"</p>",
+        "<p>例如：</p>",
+        "<p>6含有1、2、3共3个除数</p>",
+        "<p>1 + 2 + 3 = 6，因此6被分类为\"perfect\"</p>",
+        "<p>实现一个函数，该函数计算三个分类中1到20000(包含)的整数的数量。将结果输出为以下格式的数组<code>[deficient, perfect, abundant]</code>。</p>"
       ],
       "solutions": [
         "function getDPA (num) {\n  const dpa = [1, 0, 0];\n  for (let n = 2; n <= num; n += 1) {\n    let ds = 1;\n    const e = Math.sqrt(n);\n    for (let d = 2; d < e; d += 1) {\n      if (n % d === 0) {\n        ds += d + (n / d);\n      }\n    }\n    if (n % e === 0) {\n      ds += e;\n    }\n    dpa[ds < n ? 0 : ds === n ? 1 : 2] += 1;\n  }\n  return dpa;\n}\n"
       ],
       "tests": [
         {
-          "text": "<code>getDPA</code> is a function.",
-          "testString": "assert(typeof getDPA === 'function', '<code>getDPA</code> is a function.');"
+          "text": "<code>getDPA</code> 是一个函数。",
+          "testString": "assert(typeof getDPA === 'function', '<code>getDPA</code> 是一个函数。');"
         },
         {
-          "text": "<code>getDPA</code> should return an array.",
-          "testString": "assert(Array.isArray(getDPA(100)), '<code>getDPA</code> should return an array.');"
+          "text": "<code>getDPA</code> 应返回数组。",
+          "testString": "assert(Array.isArray(getDPA(100)), '<code>getDPA</code> 应返回数组。');"
         },
         {
-          "text": "<code>getDPA</code> return value should have a length of 3.",
-          "testString": "assert(getDPA(100).length === 3, '<code>getDPA</code> return value should have a length of 3.');"
+          "text": "<code>getDPA</code> 应返回长度为3的值。",
+          "testString": "assert(getDPA(100).length === 3, '<code>getDPA</code> 应返回长度为3的值。');"
         },
         {
-          "text": "<code>getDPA(20000)</code> should equal [15043, 4, 4953]",
-          "testString": "assert.deepEqual(getDPA(20000), solution, '<code>getDPA(20000)</code> should equal [15043, 4, 4953]');"
+          "text": "<code>getDPA(20000)</code> 应等于[15043, 4, 4953]",
+          "testString": "assert.deepEqual(getDPA(20000), solution, '<code>getDPA(20000)</code> 应等于[15043, 4, 4953]');"
         }
       ],
       "id": "594810f028c0303b75339acd",
@@ -338,7 +338,7 @@
           "name": "index",
           "contents": [
             "function getDPA (num) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "}"
           ],
           "head": [],
@@ -351,31 +351,31 @@
     {
       "title": "Accumulator factory",
       "description": [
-        "<p>Create a function that takes a single (numeric) argument and returns another function that is an accumulator. The returned accumulator function in turn also takes a single numeric argument, and returns the sum of all the numeric values passed in so far to that accumulator (including the initial value passed when the accumulator was created).</p>",
-        "<p>Rules:</p>",
-        "<p>Do not use global variables.</p>",
-        "<p>Hint:</p>",
-        "<p>Closures save outer state.</p>"
+        "<p>创建一个接收单个(数值)参数并返回另一个累加器函数的函数。返回的累加器函数依次接受一个数值参数，并返回迄今为止传递给累加器的所有数值的总和（包括在创建累加器时传递的初始值）。</p>",
+        "<p>规则：</p>",
+        "<p>不得使用全局变量：</p>",
+        "<p>提示：</p>",
+        "<p>闭包保存外部状态。</p>"
       ],
       "solutions": [
         "function accumulator (sum) {\n  return function (n) {\n    return sum += n;\n  };\n}\n"
       ],
       "tests": [
         {
-          "text": "<code>accumulator</code> is a function.",
-          "testString": "assert(typeof accumulator === 'function', '<code>accumulator</code> is a function.');"
+          "text": "<code>accumulator</code> 是一个函数。",
+          "testString": "assert(typeof accumulator === 'function', '<code>accumulator</code> 是一个函数。');"
         },
         {
-          "text": "<code>accumulator(0)</code> should return a function.",
-          "testString": "assert(typeof accumulator(0) === 'function', '<code>accumulator(0)</code> should return a function.');"
+          "text": "<code>accumulator(0)</code> 应返回一个函数。",
+          "testString": "assert(typeof accumulator(0) === 'function', '<code>accumulator(0)</code> 应返回一个函数。');"
         },
         {
-          "text": "<code>accumulator(0)(2)</code> should return a number.",
-          "testString": "assert(typeof accumulator(0)(2) === 'number', '<code>accumulator(0)(2)</code> should return a number.');"
+          "text": "<code>accumulator(0)(2)</code> 应返回一个数字。",
+          "testString": "assert(typeof accumulator(0)(2) === 'number', '<code>accumulator(0)(2)</code> 应返回一个数字。');"
         },
         {
-          "text": "Passing in the values 3, -4, 1.5, and 5 should return 5.5.",
-          "testString": "assert(testFn(5) === 5.5, 'Passing in the values 3, -4, 1.5, and 5 should return 5.5.');"
+          "text": "传入值3、-4、1.5和5，应返回5.5。",
+          "testString": "assert(testFn(5) === 5.5, '传入值3、-4、1.5和5，应返回5.5。');"
         }
       ],
       "id": "594810f028c0303b75339ace",
@@ -388,7 +388,7 @@
           "name": "index",
           "contents": [
             "function accumulator (sum) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "}"
           ],
           "head": [],
@@ -405,39 +405,39 @@
     {
       "title": "Ackermann function",
       "description": [
-        "<p>The Ackermann function is a classic example of a recursive function, notable especially because it is not a primitive recursive function. It grows very quickly in value, as does the size of its call tree.</p>",
-        "<p>The Ackermann function is usually defined as follows:</p>",
+        "<p>阿克曼函数是递归函数的一个经典示例，特别值得注意的是：它不是一个原始的递归函数。它的值增长非常快，且调用树的大小也是如此。</p>",
+        "<p>阿克曼函数通常定义如下：</p>",
         "$$A(m, n) =",
         " \\begin{cases}",
         " n+1 & \\mbox{if } m = 0 \\\\",
         " A(m-1, 1) & \\mbox{if } m > 0 \\mbox{ and } n = 0 \\\\",
         " A(m-1, A(m, n-1)) & \\mbox{if } m > 0 \\mbox{ and } n > 0.",
         " \\end{cases}$$",
-        "<p>Its arguments are never negative and it always terminates. Write a function which returns the value of $A(m, n)$. Arbitrary precision is preferred (since the function grows so quickly), but not required.</p>"
+        "<p>它的参数值不是负数，且该函数会停止。 编写函数，且返回$A(m, n)$。任意精度优先（因为函数增长非常快），注意这不是必须的。</p>"
       ],
       "solutions": [
         "function ack (m, n) {\n  return m === 0 ? n + 1 : ack(m - 1, n === 0 ? 1 : ack(m, n - 1));\n}\n"
       ],
       "tests": [
         {
-          "text": "<code>ack</code> is a function.",
-          "testString": "assert(typeof ack === 'function', '<code>ack</code> is a function.');"
+          "text": "<code>ack</code> 是一个函数。",
+          "testString": "assert(typeof ack === 'function', '<code>ack</code> 是一个函数。');"
         },
         {
-          "text": "<code>ack(0, 0)</code> should return 1.",
-          "testString": "assert(ack(0, 0) === 1, '<code>ack(0, 0)</code> should return 1.');"
+          "text": "<code>ack(0, 0)</code> 应返回1。",
+          "testString": "assert(ack(0, 0) === 1, '<code>ack(0, 0)</code> 应返回1。');"
         },
         {
-          "text": "<code>ack(1, 1)</code> should return 3.",
-          "testString": "assert(ack(1, 1) === 3, '<code>ack(1, 1)</code> should return 3.');"
+          "text": "<code>ack(1, 1)</code> 应返回3。",
+          "testString": "assert(ack(1, 1) === 3, '<code>ack(1, 1)</code> 应返回3。');"
         },
         {
-          "text": "<code>ack(2, 5)</code> should return 13.",
-          "testString": "assert(ack(2, 5) === 13, '<code>ack(2, 5)</code> should return 13.');"
+          "text": "<code>ack(2, 5)</code> 应返回13。",
+          "testString": "assert(ack(2, 5) === 13, '<code>ack(2, 5)</code> 应返回13。');"
         },
         {
-          "text": "<code>ack(3, 3)</code> should return 61.",
-          "testString": "assert(ack(3, 3) === 61, '<code>ack(3, 3)</code> should return 61.');"
+          "text": "<code>ack(3, 3)</code> 应返回61。",
+          "testString": "assert(ack(3, 3) === 61, '<code>ack(3, 3)</code> 应返回61。');"
         }
       ],
       "id": "594810f028c0303b75339acf",
@@ -450,7 +450,7 @@
           "name": "index",
           "contents": [
             "function ack (m, n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "}"
           ],
           "head": [],
@@ -461,8 +461,8 @@
     {
       "title": "Align columns",
       "description": [
-        "<p>Given a text file of many lines, where fields within a line are delineated by a single <code>$</code> character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.</p>",
-        "<p>Use the following text to test your programs:</p>",
+        "<p>给定一个包含许多行的文本文件，其中一行中的字段由单个<code>$</code>字符划分，编写程序，确保每个列中的单词被至少一个空格分隔用以对齐字段的每一列。此外，允许列中的每个单词在其列中被左对齐、右对齐或居中对齐。</p>",
+        "<p>使用如下文本来测试你的程序：</p>",
         "<pre>",
         "Given$a$text$file$of$many$lines",
         "where$fields$within$a$line$",
@@ -475,33 +475,33 @@
         "justified,$right$justified",
         "or$center$justified$within$its$column.",
         "</pre>",
-        "<p>Note that:</p>",
-        "The example input texts lines may, or may not, have trailing dollar characters.",
-        "All columns should share the same alignment.",
-        "Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.",
-        "Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal.",
-        "The minimum space between columns should be computed from the text and not hard-coded.",
-        "It is not a requirement to add separating characters between or around columns."
+        "<p>需要注意的是：</p>",
+        "示例输入文本行可能包含或不包含尾随的美元符号。",
+        "所有列都应该共享相同的对齐方式。",
+        "对于任务目的而言，与行尾相邻产生的连续空格字符是无关紧要的。",
+        "输出文本将在纯文本编辑器或基本终端上以单倍行距的字体显示。",
+        "列之间的最小空间应该从文本计算，而不是硬编码。",
+        "在列之间或列周围添加分隔字符不是必需的。"
       ],
       "solutions": [
         "const testArr = [\n  'Given$a$text$file$of$many$lines',\n  'where$fields$within$a$line$',\n  'are$delineated$by$a$single$\"dollar\"$character',\n  'write$a$program',\n  'that$aligns$each$column$of$fields$',\n  'by$ensuring$that$words$in$each$',\n  'column$are$separated$by$at$least$one$space.',\n  'Further,$allow$for$each$word$in$a$column$to$be$either$left$',\n  'justified,$right$justified',\n  'or$center$justified$within$its$column.'\n];\n\nString.prototype.repeat = function (n) { return new Array(1 + parseInt(n)).join(this); };\n\nfunction formatText (input, justification) {\n  let x, y, max, cols = 0, diff, left, right;\n  for (x = 0; x < input.length; x++) {\n    input[x] = input[x].split('$');\n    if (input[x].length > cols) {\n      cols = input[x].length;\n    }\n  }\n  for (x = 0; x < cols; x++) {\n    max = 0;\n    for (y = 0; y < input.length; y++) {\n      if (input[y][x] && max < input[y][x].length) {\n        max = input[y][x].length;\n      }\n    }\n    for (y = 0; y < input.length; y++) {\n      if (input[y][x]) {\n        diff = (max - input[y][x].length) / 2;\n        left = ' '.repeat(Math.floor(diff));\n        right = ' '.repeat(Math.ceil(diff));\n        if (justification === 'left') {\n          right += left; left = '';\n        }\n        if (justification === 'right') {\n          left += right; right = '';\n        }\n        input[y][x] = left + input[y][x] + right;\n      }\n    }\n  }\n  for (x = 0; x < input.length; x++) {\n    input[x] = input[x].join(' ');\n  }\n  input = input.join('\\n');\n  return input;\n}\n"
       ],
       "tests": [
         {
-          "text": "<code>formatText</code> is a function.",
-          "testString": "assert(typeof formatText === 'function', '<code>formatText</code> is a function.');"
+          "text": "<code>formatText</code> 是一个函数。",
+          "testString": "assert(typeof formatText === 'function', '<code>formatText</code> 是一个函数。');"
         },
         {
-          "text": "<code>formatText</code> with the above input and \"right\" justification should produce the following: ",
-          "testString": "assert.strictEqual(formatText(testInput, 'right'), rightAligned, '<code>formatText</code> with the above input and \"right\" justification should produce the following: ');"
+          "text": "<code>formatText</code> 有上述输入并\"右\"对齐，且产生如下结果：",
+          "testString": "assert.strictEqual(formatText(testInput, 'right'), rightAligned, '<code>formatText</code> 有上述输入并\"右\"对齐，且产生如下结果：');"
         },
         {
-          "text": "<code>formatText</code> with the above input and \"left\" justification should produce the following: ",
-          "testString": "assert.strictEqual(formatText(testInput, 'left'), leftAligned, '<code>formatText</code> with the above input and \"left\" justification should produce the following: ');"
+          "text": "<code>formatText</code> 有上述输入并\"左\"对齐，且产生如下结果：",
+          "testString": "assert.strictEqual(formatText(testInput, 'left'), leftAligned, '<code>formatText</code> 有上述输入并\"左\"对齐，且产生如下结果：');"
         },
         {
-          "text": "<code>formatText</code> with the above input and \"center\" justification should produce the following: ",
-          "testString": "assert.strictEqual(formatText(testInput, 'center'), centerAligned, '<code>formatText</code> with the above input and \"center\" justification should produce the following: ');"
+          "text": "<code>formatText</code> 有上述输入并\"居中\"对齐，且产生如下结果：",
+          "testString": "assert.strictEqual(formatText(testInput, 'center'), centerAligned, '<code>formatText</code> 有上述输入并\"居中\"对齐，且产生如下结果：');"
         }
       ],
       "id": "594810f028c0303b75339ad0",
@@ -527,7 +527,7 @@
             "];",
             "",
             "function formatText (input, justification) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "}"
           ],
           "head": [],

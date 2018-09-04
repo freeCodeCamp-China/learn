@@ -17,11 +17,11 @@ function Header() {
         <FCCSearch />
         <ul id='top-right-nav'>
           <li>
-            <Link to='/'>Curriculum</Link>
+            <Link to='/'>课程</Link>
           </li>
           <li>
             <a href='https://forum.freecodecamp.org' target='_blank'>
-              Forum
+              论坛
             </a>
           </li>
           <li>

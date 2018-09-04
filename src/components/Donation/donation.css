@@ -40,13 +40,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #006400;
+  border: 2px solid #029950;
 }
 
 #donate-amount-panel a:hover, #donate-amount-panel a:focus, #donate-amount-panel a.active {
   text-decoration: none;
   color: white;
-  background-color: #006400;
+  background-color: #029950;
   font-weight: bold;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .donation-email-container input {
-  color: #006400;
+  color: #029950;
   font-weight: normal;
   border: none;
 }

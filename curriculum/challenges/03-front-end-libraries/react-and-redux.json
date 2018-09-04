@@ -24,11 +24,11 @@
       "title": "Getting Started with React Redux",
       "releasedOn": "December 25, 2017",
       "description": [
-        "This series of challenges introduces how to use Redux with React. First, here's a review of some of the key principles of each technology. React is a view library that you provide with data, then it renders the view in an efficient, predictable way. Redux is a state management framework that you can use to simplify the management of your application's state. Typically, in a React Redux app, you create a single Redux store that manages the state of your entire app. Your React components subscribe to only the pieces of data in the store that are relevant to their role. Then, you dispatch actions directly from React components, which then trigger store updates.",
-        "Although React components can manage their own state locally, when you have a complex app, it's generally better to keep the app state in a single location with Redux. There are exceptions when individual components may have local state specific only to them. Finally, because Redux is not designed to work with React out of the box, you need to use the <code>react-redux</code> package. It provides a way for you to pass Redux <code>state</code> and <code>dispatch</code> to your React components as <code>props</code>.",
-        "Over the next few challenges, first, you'll create a simple React component which allows you to input new text messages. These are added to an array that's displayed in the view. This should be a nice review of what you learned in the React lessons. Next, you'll create a Redux store and actions that manage the state of the messages array. Finally, you'll use <code>react-redux</code> to connect the Redux store with your component, thereby extracting the local state into the Redux store.",
+        "这一系列挑战介绍的是 Redux 和 React 的配合，我们先来回顾一下这两种技术的关键原则是什么。React 是提供数据的视图库，能以高效、可预测的方式渲染视图。Redux 是状态管理框架，可用于简化 APP 应用状态的管理。在 React Redux app 应用中，通常可创建单一的 Redux store 来管理整个应用的状态。React 组件仅订阅 store 中与其角色相关的数据，你可直接从 React 组件中分发 actions 以触发 store 对象的更新。",
+        "React 组件可以在本地管理自己的状态，但是对于复杂的应用来说，它的状态最好是用 Redux 保存在单一位置，有特定本地状态的独立组件例外。最后一点是，Redux 没有内置的 React，需要安装<code>react-redux</code>包，通过这个方式把 Redux 的<code>state</code>和<code>dispatch</code>作为<code>props</code>传给组件。",
+        "在接下来的挑战中，先要创建一个可输入新文本消息的 React 组件，添加这些消息到数组里，在视图上显示数组。接着，创建 Redux store 和 actions 来管理消息数组的状态。最后，使用<code>react-redux</code>连接 Redux store 和组件，从而将本地状态提取到 Redux store 中。",
         "<hr>",
-        "Start with a <code>DisplayMessages</code> component. Add a constructor to this component and initialize it with a state that has two properties: <code>input</code>, that's set to an empty string, and <code>messages</code>, that's set to an empty array."
+        "创建<code>DisplayMessages</code>组件，把构造函数添加到此组件中，使用含两个属性的状态初始化该组件，这两个属性为：input（设置为空字符串），<code>messages</code>（设置为空数组）。"
       ],
       "files": {
         "indexjsx": {
@@ -37,9 +37,9 @@
           "name": "index",
           "contents": [
             "class DisplayMessages extends React.Component {",
-            "  // change code below this line",
+            "// 请在本行以下添加你的代码",
             "",
-            "  // change code above this line",
+            "// 请在本行以上添加你的代码",
             "  render() {",
             "    return <div />",
             "  }",
@@ -53,16 +53,16 @@
       },
       "tests": [
         {
-          "text": "The <code>DisplayMessages</code> component should render an empty <code>div</code> element.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find('div').text() === '' })(), 'The <code>DisplayMessages</code> component should render an empty <code>div</code> element.');"
+          "text": "<code>DisplayMessages</code>组件应渲染空的<code>div</code>元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find('div').text() === '' })(), '<code>DisplayMessages</code>组件应渲染空的<code>div</code>元素。');"
         },
         {
-          "text": "The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.",
-          "testString": "getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })(), 'The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.');"
+          "text": "<code>DisplayMessages</code>组件的构造函数应调用<code>super</code>，传入<code>props</code>。",
+          "testString": "getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })(), '<code>DisplayMessages</code>组件的构造函数应调用<code>super</code>，传入<code>props</code>。');"
         },
         {
-          "text": "The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: \"\", messages: []}</code>.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === 'object' && initialState.input === '' && Array.isArray(initialState.messages) && initialState.messages.length === 0; })(), 'The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: \"\", messages: []}</code>.');"
+          "text": "<code>DisplayMessages</code>组件的初始状态应是<code>{input: \"\", messages: []}</code>。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === 'object' && initialState.input === '' && Array.isArray(initialState.messages) && initialState.messages.length === 0; })(), '<code>DisplayMessages</code>组件的初始状态应是<code>{input: \"\", messages: []}</code>。');"
         }
       ],
       "solutions": [
@@ -77,11 +77,11 @@
       "title": "Manage State Locally First",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Here you'll finish creating the <code>DisplayMessages</code> component.",
+        "这一关的任务是完成<code>DisplayMessages</code>组件的创建。",
         "<hr>",
-        "First, in the <code>render()</code> method, have the component render an <code>input</code> element, <code>button</code> element, and <code>ul</code> element. When the <code>input</code> element changes, it should trigger a <code>handleChange()</code> method. Also, the <code>input</code> element should render the value of <code>input</code> that's in the component's state. The <code>button</code> element should trigger a <code>submitMessage()</code> method when it's clicked.",
-        "Second, write these two methods. The <code>handleChange()</code> method should update the <code>input</code> with what the user is typing. The <code>submitMessage()</code> method should concatenate the current message (stored in <code>input</code>) to the <code>messages</code> array in local state, and clear the value of the <code>input</code>.",
-        "Finally, use the <code>ul</code> to map over the array of <code>messages</code> and render it to the screen as a list of <code>li</code> elements."
+        "首先，在<code>render()</code>方法中，让组件渲染<code>input</code>、<code>button</code>、<code>ul</code>三个元素。<code>input</code>元素的改变会触发<code>handleChange()</code>方法。此外，<code>input</code>元素会渲染组件状态中<code>input</code>的值。点击按钮<code>button</code>需触发<code>submitMessage()</code>方法。",
+        "接着，写出这两种方法。<code>handleChange()</code>方法会更新<code>input</code>为用户正在输入的内容。<code>submitMessage()</code>方法把当前存储在<code>input</code>的消息与本地状态的<code>messages</code>数组连接起来，并清除<code>input</code>的值。",
+        "最后，在<code>ul</code>中展示<code>messages</code>数组，其中每个元素内容需放到<code>li</code>元素内。"
       ],
       "files": {
         "indexjsx": {
@@ -97,15 +97,15 @@
             "      messages: []",
             "    }",
             "  }",
-            "  // add handleChange() and submitMessage() methods here",
+            "// 请把 handleChange()、submitMessage() 写在这里",
             "",
             "  render() {",
             "    return (",
             "      <div>",
-            "        <h2>Type in a new Message:</h2>",
-            "        { /* render an input, button, and ul here */ }",
+            "        <h2>键入新 Message</h2>",
+            "        { /* 在此渲染 input、button、ul*/ }",
             "",
-            "        { /* change code above this line */ }",
+            "        { /* 请在本行以上添加你的代码 */ }",
             "      </div>",
             "    );",
             "  }",
@@ -119,28 +119,28 @@
       },
       "tests": [
         {
-          "text": "The <code>DisplayMessages</code> component should initialize with a state equal to <code>{ input: \"\", messages: [] }</code>.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && initialState.input === '' && initialState.messages.length === 0); })(), 'The <code>DisplayMessages</code> component should initialize with a state equal to <code>{ input: \"\", messages: [] }</code>.');"
+          "text": "<code>DisplayMessages</code>组件的初始状态应是<code>{ input: \"\", messages: [] }</code>。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && initialState.input === '' && initialState.messages.length === 0); })(), '<code>DisplayMessages</code>组件的初始状态应是<code>{ input: \"\", messages: [] }</code>。');"
         },
         {
-          "text": "The <code>DisplayMessages</code> component should render a <code>div</code> containing an <code>h2</code> element, a <code>button</code> element, a <code>ul</code> element, and <code>li</code> elements as children.",
-          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const state = () => { mockedComponent.setState({messages: ['__TEST__MESSAGE']}); return waitForIt(() => mockedComponent )}; const updated = await state(); assert(updated.find('div').length === 1 && updated.find('h2').length === 1 && updated.find('button').length === 1 && updated.find('ul').length === 1, 'The <code>DisplayMessages</code> component should render a <code>div</code> containing an <code>h2</code> element, a <code>button</code> element, a <code>ul</code> element, and <code>li</code> elements as children.'); }; "
+          "text": "<code>DisplayMessages</code>组件应渲染含<code>h2</code>、<code>button</code>、<code>ul</code>、<code>li</code>四个子元素的<code>div</code>。",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const state = () => { mockedComponent.setState({messages: ['__TEST__MESSAGE']}); return waitForIt(() => mockedComponent )}; const updated = await state(); assert(updated.find('div').length === 1 && updated.find('h2').length === 1 && updated.find('button').length === 1 && updated.find('ul').length === 1, '<code>DisplayMessages</code>组件应渲染含<code>h2</code>、<code>button</code>、<code>ul</code>、<code>li</code>四个子元素的<code>div</code>。'); }; "
         },
         {
-          "text": "The <code>input</code> element should render the value of <code>input</code> in local state.",
-          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const testValue = '__TEST__EVENT__INPUT'; const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const updated = await changed(); assert(updated.find('input').props().value === testValue, 'The <code>input</code> element should render the value of <code>input</code> in local state.'); }; "
+          "text": "<code>input</code>元素应渲染本地状态中的<code>input</code>值。",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const testValue = '__TEST__EVENT__INPUT'; const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const updated = await changed(); assert(updated.find('input').props().value === testValue, '<code>input</code>元素应渲染本地状态中的<code>input</code>值。'); }; "
         },
         {
-          "text": "Calling the method <code>handleChange</code> should update the <code>input</code> value in state to the current input.",
-          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage = '__TEST__EVENT__MESSAGE__'; const changed = () => { causeChange(mockedComponent, testMessage); return waitForIt(() => mockedComponent )}; const afterInput = await changed(); assert(initialState.input === '' && afterInput.state().input === '__TEST__EVENT__MESSAGE__', 'Calling the method <code>handleChange</code> should update the <code>input</code> value in state to the current input.');  }; "
+          "text": "调用<code>handleChange</code>方法时应更新状态中的<code>input</code>值为当前输入。",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage = '__TEST__EVENT__MESSAGE__'; const changed = () => { causeChange(mockedComponent, testMessage); return waitForIt(() => mockedComponent )}; const afterInput = await changed(); assert(initialState.input === '' && afterInput.state().input === '__TEST__EVENT__MESSAGE__', '调用<code>handleChange</code>方法时应更新状态中的<code>input</code>值为当前输入。');  }; "
         },
         {
-          "text": "Clicking the <code>Add message</code> button should call the method <code>submitMessage</code> which should add the current <code>input</code> to the <code>messages</code> array in state.",
-          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage_1 = '__FIRST__MESSAGE__'; const firstChange = () => { causeChange(mockedComponent, testMessage_1); return waitForIt(() => mockedComponent )}; const firstResult = await firstChange(); const firstSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit_1 = await firstSubmit(); const submitState_1 = afterSubmit_1.state(); const testMessage_2 = '__SECOND__MESSAGE__'; const secondChange = () => { causeChange(mockedComponent, testMessage_2); return waitForIt(() => mockedComponent )}; const secondResult = await secondChange(); const secondSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit_2 = await secondSubmit(); const submitState_2 = afterSubmit_2.state(); assert(initialState.messages.length === 0 && submitState_1.messages.length === 1 && submitState_2.messages.length === 2 && submitState_2.messages[1] === testMessage_2, 'Clicking the <code>Add message</code> button should call the method <code>submitMessage</code> which should add the current <code>input</code> to the <code>messages</code> array in state.'); }; "
+          "text": "单击<code>Add message</code>按钮应调用<code>submitMessage</code>方法，添加当前<code>输入</code>到状态中的<code>消息</code>数组。",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage_1 = '__FIRST__MESSAGE__'; const firstChange = () => { causeChange(mockedComponent, testMessage_1); return waitForIt(() => mockedComponent )}; const firstResult = await firstChange(); const firstSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit_1 = await firstSubmit(); const submitState_1 = afterSubmit_1.state(); const testMessage_2 = '__SECOND__MESSAGE__'; const secondChange = () => { causeChange(mockedComponent, testMessage_2); return waitForIt(() => mockedComponent )}; const secondResult = await secondChange(); const secondSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit_2 = await secondSubmit(); const submitState_2 = afterSubmit_2.state(); assert(initialState.messages.length === 0 && submitState_1.messages.length === 1 && submitState_2.messages.length === 2 && submitState_2.messages[1] === testMessage_2, '单击<code>Add message</code>按钮应调用<code>submitMessage</code>方法，添加当前<code>输入</code>到状态中的<code>消息</code>数组。'); }; "
         },
         {
-          "text": "The <code>submitMessage</code> method should clear the current input.",
-          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage = '__FIRST__MESSAGE__'; const firstChange = () => { causeChange(mockedComponent, testMessage); return waitForIt(() => mockedComponent )}; const firstResult = await firstChange(); const firstState = firstResult.state(); const firstSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit = await firstSubmit(); const submitState = afterSubmit.state(); assert(firstState.input === testMessage && submitState.input === '', 'The <code>submitMessage</code> method should clear the current input.'); }; "
+          "text": "<code>submitMessage</code>方法应清除当前输入。",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage = '__FIRST__MESSAGE__'; const firstChange = () => { causeChange(mockedComponent, testMessage); return waitForIt(() => mockedComponent )}; const firstResult = await firstChange(); const firstState = firstResult.state(); const firstSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit = await firstSubmit(); const submitState = afterSubmit.state(); assert(firstState.input === testMessage && submitState.input === '', '<code>submitMessage</code>方法应清除当前输入。'); }; "
         }
       ],
       "solutions": [
@@ -155,10 +155,10 @@
       "title": "Extract State Logic to Redux",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Now that you finished the React component, you need to move the logic it's performing locally in its <code>state</code> into Redux. This is the first step to connect the simple React app to Redux. The only functionality your app has is to add new messages from the user to an unordered list. The example is simple in order to demonstrate how React and Redux work together.",
+        "完成 React 组件后，我们需要把在本地<code>状态</code>执行的逻辑移到 Redux 中，这是为小规模 React 应用添加 Redux 的第一步。该应用的唯一功能是把用户的新消息添加到无序列表中。下面我们用简单的示例来演示 React 和 Redux 之间的配合。",
         "<hr>",
-        "First, define an action type 'ADD' and set it to a const <code>ADD</code>. Next, define an action creator <code>addMessage()</code> which creates the action to add a message. You'll need to pass a <code>message</code> to this action creator and include the message in the returned <code>action</code>.",
-        "Then create a reducer called <code>messageReducer()</code> that handles the state for the messages. The initial state should equal an empty array. This reducer should add a message to the array of messages held in state, or return the current state. Finally, create your Redux store and pass it the reducer."
+        "首先，定义 action 的类型 'ADD'，将其设置为常量<code>ADD</code>。接着，定义创建 action 的函数<code>addMessage()</code>，用该函数创建添加消息的 action，把<code>message</code>传给创建 action 的函数并返回包含该消息的<code>action</code>",
+        "接着，创建名为<code>messageReducer()</code>的 reducer 方法，为这些消息处理状态。初始状态应为空数组。reducer 向状态中的消息数组添加消息，或返回当前状态。最后，创建 Redux store 并传给 reducer。"
       ],
       "files": {
         "indexjsx": {
@@ -166,7 +166,7 @@
           "ext": "jsx",
           "name": "index",
           "contents": [
-            "// define ADD, addMessage(), messageReducer(), and store here:",
+            "// 请在此处定义 ADD、addMessage()、messageReducer()、store：",
             ""
           ],
           "head": [],
@@ -175,28 +175,28 @@
       },
       "tests": [
         {
-          "text": "The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>",
-          "testString": "assert(ADD === 'ADD', 'The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>');"
+          "text": "应存在一个值为字符串<code>ADD</code>的常量<code>ADD</code>。",
+          "testString": "assert(ADD === 'ADD', '应存在一个值为字符串<code>ADD</code>的常量<code>ADD</code>。');"
         },
         {
-          "text": "The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and message equal to the message that is passed in.",
-          "testString": "assert((function() { const addAction = addMessage('__TEST__MESSAGE__'); return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__'; })(), 'The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and message equal to the message that is passed in.');"
+          "text": "创建 action 的函数<code>addMessage</code>应返回<code>type</code>等于<code>ADD</code>的对象，其返回的消息即被传入的消息。",
+          "testString": "assert((function() { const addAction = addMessage('__TEST__MESSAGE__'); return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__'; })(), '创建 action 的函数<code>addMessage</code>应返回<code>type</code>等于<code>ADD</code>的对象，其返回的消息即被传入的消息。');"
         },
         {
-          "text": "<code>messageReducer</code> should be a function.",
-          "testString": "assert(typeof messageReducer === 'function', '<code>messageReducer</code> should be a function.');"
+          "text": "<code>messageReducer</code>应是一个函数。",
+          "testString": "assert(typeof messageReducer === 'function', '<code>messageReducer</code>应是一个函数。');"
         },
         {
-          "text": "The store should exist and have an initial state set to an empty array.",
-          "testString": "assert((function() { const initialState = store.getState(); return typeof store === 'object' && initialState.length === 0; })(), 'The store should exist and have an initial state set to an empty array.');"
+          "text": "存在一个 store 且其初始状态为空数组。",
+          "testString": "assert((function() { const initialState = store.getState(); return typeof store === 'object' && initialState.length === 0; })(), '存在一个 store 且其初始状态为空数组。');"
         },
         {
-          "text": "Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.",
-          "testString": "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage('__A__TEST__MESSAGE')); const addState = store.getState(); return (isFrozen && addState[0] === '__A__TEST__MESSAGE'); })(), 'Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.');"
+          "text": "分发<code>addMessage</code>到 store 应添加新消息到状态中消息数组。",
+          "testString": "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage('__A__TEST__MESSAGE')); const addState = store.getState(); return (isFrozen && addState[0] === '__A__TEST__MESSAGE'); })(), '分发<code>addMessage</code>到 store 应添加新消息到状态中消息数组。');"
         },
         {
-          "text": "The <code>messageReducer</code> should return the current state if called with any other actions.",
-          "testString": "assert((function() { const addState = store.getState(); store.dispatch({type: 'FAKE_ACTION'}); const testState = store.getState(); return (addState === testState); })(), 'The <code>messageReducer</code> should return the current state if called with any other actions.');"
+          "text": "<code>messageReducer</code>被其它任何 actions 调用时应返回当前状态。",
+          "testString": "assert((function() { const addState = store.getState(); store.dispatch({type: 'FAKE_ACTION'}); const testState = store.getState(); return (addState === testState); })(), '<code>messageReducer</code>被其它任何 actions 调用时应返回当前状态。');"
         }
       ],
       "solutions": [
@@ -211,12 +211,12 @@
       "title": "Use Provider to Connect Redux to React",
       "releasedOn": "December 25, 2017",
       "description": [
-        "In the last challenge, you created a Redux store to handle the messages array and created an action for adding new messages. The next step is to provide React access to the Redux store and the actions it needs to dispatch updates. React Redux provides its <code>react-redux</code> package to help accomplish these tasks.",
-        "React Redux provides a small API with two key features: <code>Provider</code> and <code>connect</code>. Another challenge covers <code>connect</code>. The <code>Provider</code> is a wrapper component from React Redux that wraps your React app. This wrapper then allows you to access the Redux <code>store</code> and <code>dispatch</code> functions throughout your component tree. <code>Provider</code> takes two props, the Redux store and the child components of your app. Defining the <code>Provider</code> for an App component might look like this:",
+        "在上一挑战中，你创建了 Redux store 和 action，分别用于处理消息数组和添加新消息。下一步要为 React 提供访问 Redux store 及发起更新所需的 actions。<code>react-redux</code>包可帮助我们完成这些任务。",
+        "React Redux 提供的 API 有两个关键的功能：<code>Provider</code>和<code>connect</code>。你会在另一个挑战中学<code>connect</code>。<code>Provider</code>是 React Redux 包装 React 应用的 wrapper 组件，它允许你访问整个组件树中的 Redux<code>store</code>及<code>dispatch（分发）</code>方法。<code>Provider</code>需要两个 props：Redux store 和 APP 应用的子组件。用于 APP 组件的<code>Provider</code>可这样定义：",
         "<blockquote>&lt;Provider store={store}&gt;<br>&nbsp;&nbsp;&lt;App/&gt;<br>&lt;/Provider&gt;</blockquote>",
         "<hr>",
-        "The code editor now shows all your Redux and React code from the past several challenges. It includes the Redux store, actions, and the <code>DisplayMessages</code> component. The only new piece is the <code>AppWrapper</code> component at the bottom. Use this top level component to render the <code>Provider</code> from <code>ReactRedux</code>, and pass the Redux store as a prop. Then render the <code>DisplayMessages</code> component as a child. Once you are finished, you should see your React component rendered to the page.",
-        "<strong>Note:</strong>&nbsp;React Redux is available as a global variable here, so you can access the Provider with dot notation. The code in the editor takes advantage of this and sets it to a constant <code>Provider</code> for you to use in the <code>AppWrapper</code> render method."
+        "此时，编辑器上显示的是过去几个挑战中所有代码，包括 Redux store、actions、<code>DisplayMessages</code>组件。新出现的代码是底部的<code>AppWrapper</code>组件，这个顶级组件可用于渲染<code>ReactRedux</code>的<code>Provider</code>，并把 Redux 的 store 作为 props 传入。接着，渲染<code>DisplayMessages</code>为子组件。完成这些任务后，你会看到 React 组件渲染到页面上。",
+        "<strong>注意：</strong>&nbsp;React Redux 在此可作全局变量，因此你可通过点号表示法访问 Provider。利用这一点，编辑器上的代码把<code>Provider</code>设置为常量，便于你在<code>AppWrapper</code>渲染方法中使用。"
       ],
       "files": {
         "indexjsx": {
@@ -224,7 +224,7 @@
           "ext": "jsx",
           "name": "index",
           "contents": [
-            "// Redux Code:",
+            "// Redux 代码：",
             "const ADD = 'ADD';",
             "",
             "const addMessage = (message) => {",
@@ -250,7 +250,7 @@
             "",
             "const store = Redux.createStore(messageReducer);",
             "",
-            "// React Code:",
+            "// React 代码：",
             "",
             "class DisplayMessages extends React.Component {",
             "  constructor(props) {",
@@ -298,9 +298,9 @@
             "const Provider = ReactRedux.Provider;",
             "",
             "class AppWrapper extends React.Component {",
-            "  // render the Provider here",
+            "  // 在此渲染 Provider",
             "",
-            "  // change code above this line",
+            "  // 请在本行以上添加你的代码",
             "};"
           ],
           "tail": [
@@ -311,20 +311,20 @@
       },
       "tests": [
         {
-          "text": "The <code>AppWrapper</code> should render.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'The <code>AppWrapper</code> should render.');"
+          "text": "<code>AppWrapper</code>应渲染。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), '<code>AppWrapper</code>应渲染。');"
         },
         {
-          "text": "The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.",
-          "testString": "getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput('index').replace(/\\s/g,'').includes('<Providerstore={store}>'); })(), 'The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.');"
+          "text": "<code>Provider</code>组件应传入相当于 Redux store 的<code>store</code>参数。",
+          "testString": "getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput('index').replace(/\\s/g,'').includes('<Providerstore={store}>'); })(), '<code>Provider</code>组件应传入相当于 Redux store 的<code>store</code>参数。');"
         },
         {
-          "text": "<code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').find('DisplayMessages').length === 1; })(), '<code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.');"
+          "text": "<code>DisplayMessages</code>应渲染为<code>AppWrapper</code>的子组件。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').find('DisplayMessages').length === 1; })(), '<code>DisplayMessages</code>应渲染为<code>AppWrapper</code>的子组件。');"
         },
         {
-          "text": "The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h2').length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('ul').length === 1; })(), 'The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.');"
+          "text": "<code>DisplayMessages</code>组件应渲染 h2、input、button、<code>ul</code>四个元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h2').length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('ul').length === 1; })(), '<code>DisplayMessages</code>组件应渲染 h2、input、button、<code>ul</code>四个元素。');"
         }
       ],
       "solutions": [
@@ -339,11 +339,11 @@
       "title": "Map State to Props",
       "releasedOn": "December 25, 2017",
       "description": [
-        "The <code>Provider</code> component allows you to provide <code>state</code> and <code>dispatch</code> to your React components, but you must specify exactly what state and actions you want. This way, you make sure that each component only has access to the state it needs. You accomplish this by creating two functions: <code>mapStateToProps()</code> and <code>mapDispatchToProps()</code>.",
-        "In these functions, you declare what pieces of state you want to have access to and which action creators you need to be able to dispatch. Once these functions are in place, you'll see how to use the React Redux <code>connect</code> method to connect them to your components in another challenge.",
-        "<strong>Note:</strong>&nbsp;Behind the scenes, React Redux uses the <code>store.subscribe()</code> method to implement <code>mapStateToProps()</code>.",
+        "<code>Provider</code>可向 React 组件提供<code>state</code>和<code>dispatch</code>，但你必须确切地指定所需要的 state 和 actions，以确保每个组件只能访问所需的 state。完成这个任务，你需要创建两个函数：<code>mapStateToProps()</code>、<code>mapDispatchToProps()</code>。",
+        "在这两个函数中，声明 state 中函数所要访问的部分及需要 dispatch 的创建 action 的函数。完成这些，我们就可以迎接下一个挑战，学习如何使用 React Redux 的<code>connect</code>方法来把函数连接到组件了。",
+        "<strong>注意：</strong>&nbsp;在幕后，React Redux 用<code>store.subscribe()</code>方法来实现<code>mapStateToProps()</code>。",
         "<hr>",
-        "Create a function <code>mapStateToProps()</code>. This function should take <code>state</code> as an argument, then return an object which maps that state to specific property names. These properties will become accessible to your component via <code>props</code>. Since this example keeps the entire state of the app in a single array, you can pass that entire state to your component. Create a property <code>messages</code> in the object that's being returned, and set it to <code>state</code>."
+        "创建<code>mapStateToProps()</code>函数，以<code>state</code>为参数，然后返回一个对象，该对象把 state 映射到特定属性名上，这些属性能通过<code>props</code>访问组件。由于此示例把 app 应用的整个状态保存在单一数组中，你可把整个状态传给组件。在返回的对象中创建<code>messages</code>属性，并设置为<code>state</code>。"
       ],
       "files": {
         "indexjsx": {
@@ -353,7 +353,7 @@
           "contents": [
             "const state = [];",
             "",
-            "// change code below this line",
+            "// 请在本行以下添加你的代码",
             ""
           ],
           "head": [],
@@ -362,20 +362,20 @@
       },
       "tests": [
         {
-          "text": "The const <code>state</code> should be an empty array.",
-          "testString": "assert(Array.isArray(state) && state.length === 0, 'The const <code>state</code> should be an empty array.');"
+          "text": "常量<code>state</code>应为空数组。",
+          "testString": "assert(Array.isArray(state) && state.length === 0, '常量<code>state</code>应为空数组。');"
         },
         {
-          "text": "<code>mapStateToProps</code> should be a function.",
-          "testString": "assert(typeof mapStateToProps === 'function', '<code>mapStateToProps</code> should be a function.');"
+          "text": "<code>mapStateToProps</code>应为函数。",
+          "testString": "assert(typeof mapStateToProps === 'function', '<code>mapStateToProps</code>应为函数。');"
         },
         {
-          "text": "<code>mapStateToProps</code> should return an object.",
-          "testString": "assert(typeof mapStateToProps() === 'object', '<code>mapStateToProps</code> should return an object.');"
+          "text": "<code>mapStateToProps</code>应返还一个对象。",
+          "testString": "assert(typeof mapStateToProps() === 'object', '<code>mapStateToProps</code><code>mapStateToProps</code>应返还一个对象。');"
         },
         {
-          "text": "Passing an array as state to <code>mapStateToProps</code> should return this array assigned to a key of <code>messages</code>.",
-          "testString": "assert(mapStateToProps(['messages']).messages.pop() === 'messages', 'Passing an array as state to <code>mapStateToProps</code> should return this array assigned to a key of <code>messages</code>.');"
+          "text": "把 state 数组传入<code>mapStateToProps</code>后应返回赋值给<code>messages</code>键的数组。",
+          "testString": "assert(mapStateToProps(['messages']).messages.pop() === 'messages', '把 state 数组传入<code>mapStateToProps</code>后应返回赋值给<code>messages</code>键的数组。');"
         }
       ],
       "solutions": [
@@ -390,11 +390,11 @@
       "title": "Map Dispatch to Props",
       "releasedOn": "December 25, 2017",
       "description": [
-        "The <code>mapDispatchToProps()</code> function is used to provide specific action creators to your React components so they can dispatch actions against the Redux store. It's similar in structure to the <code>mapStateToProps()</code> function you wrote in the last challenge. It returns an object that maps dispatch actions to property names, which become component <code>props</code>. However, instead of returning a piece of <code>state</code>, each property returns a function that calls <code>dispatch</code> with an action creator and any relevant action data. You have access to this <code>dispatch</code> because it's passed in to <code>mapDispatchToProps()</code> as a parameter when you define the function, just like you passed <code>state</code> to <code>mapStateToProps()</code>. Behind the scenes, React Redux is using Redux's <code>store.dispatch()</code> to conduct these dispatches with <code>mapDispatchToProps()</code>. This is similar to how it uses <code>store.subscribe()</code> for components that are mapped to <code>state</code>.",
-        "For example, you have a <code>loginUser()</code> action creator that takes a <code>username</code> as an action payload. The object returned from <code>mapDispatchToProps()</code> for this action creator would look something like:",
+        "<code>mapDispatchToProps()</code>函数可为 React 组件提供特定的创建 action 的函数，以便组件可 dispatch actions，从而更改 Redux store 中的数据。该函数的结构跟上一挑战中的<code>mapStateToProps()</code>函数相似，它返回一个对象，把 dispatch actions 映射到属性名上，该属性名成为<code>props</code>。然而，每个属性都返回一个用 action creator 及与 action 相关的所有数据调用<code>dispatch</code>的函数，而不是返回<code>state</code>的一部分。你可以访问<code>dispatch</code>，因为在定义函数时，我们以参数形式把它传入<code>mapDispatchToProps()</code>了，这跟<code>state</code>传入<code>mapDispatchToProps()</code>是一样的。在幕后，React Redux 用 Redux 的<code>store.dispatch()</code>来管理这些含<code>mapDispatchToProps()</code>的dispatches，这跟它使用<code>store.subscribe()</code>来订阅映射到<code>state</code>的组件的方式类似。",
+        "例如，创建 action 的函数<code>loginUser()</code>把<code>username</code>作为 action payload，<code>mapDispatchToProps()</code>返回给创建 action 的函数的对象如下：",
         "<blockquote>{<br>&nbsp;&nbsp;submitLoginUser: function(username) {<br>&nbsp;&nbsp;&nbsp;&nbsp;dispatch(loginUser(username));<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "<hr>",
-        "The code editor provides an action creator called <code>addMessage()</code>. Write the function <code>mapDispatchToProps()</code> that takes <code>dispatch</code> as an argument, then returns an object. The object should have a property <code>submitNewMessage</code> set to the dispatch function, which takes a parameter for the new message to add when it dispatches <code>addMessage()</code>."
+        "编辑器上提供的是创建 action 的函数<code>addMessage()</code>。写出接收<code>dispatch</code>为参数的函数<code>mapDispatchToProps()</code>，返回一个 dispatch 函数对象，其属性为<code>submitNewMessage</code>。该函数在 dispatch <code>addMessage()</code>时为新消息提供一个参数。"
       ],
       "files": {
         "indexjsx": {
@@ -409,7 +409,7 @@
             "  }",
             "};",
             "",
-            "// change code below this line",
+            "// 请在本行以下添加你的代码",
             ""
           ],
           "head": [],
@@ -418,20 +418,20 @@
       },
       "tests": [
         {
-          "text": "<code>addMessage</code> should return an object with keys <code>type</code> and <code>message</code>.",
-          "testString": "assert((function() { const addMessageTest = addMessage(); return ( addMessageTest.hasOwnProperty('type') && addMessageTest.hasOwnProperty('message')); })(), '<code>addMessage</code> should return an object with keys <code>type</code> and <code>message</code>.');"
+          "text": "<code>addMessage</code>应返回含<code>type</code>和<code>message</code>两个键的对象。",
+          "testString": "assert((function() { const addMessageTest = addMessage(); return ( addMessageTest.hasOwnProperty('type') && addMessageTest.hasOwnProperty('message')); })(), '<code>addMessage</code>应返回含<code>type</code>和<code>message</code>两个键的对象。');"
         },
         {
-          "text": "<code>mapDispatchToProps</code> should be a function.",
-          "testString": "assert(typeof mapDispatchToProps === 'function', '<code>mapDispatchToProps</code> should be a function.');"
+          "text": "<code>mapDispatchToProps</code>应为函数。",
+          "testString": "assert(typeof mapDispatchToProps === 'function', '<code>mapDispatchToProps</code>应为函数。');"
         },
         {
-          "text": "<code>mapDispatchToProps</code> should return an object.",
-          "testString": "assert(typeof mapDispatchToProps() === 'object', '<code>mapDispatchToProps</code> should return an object.');"
+          "text": "<code>mapDispatchToProps</code>应返回一个对象。",
+          "testString": "assert(typeof mapDispatchToProps() === 'object', '<code>mapDispatchToProps</code>应返回一个对象。');"
         },
         {
-          "text": "Dispatching <code>addMessage</code> with <code>submitNewMessage</code> from <code>mapDispatchToProps</code> should return a message to the dispatch function.",
-          "testString": "assert((function() { let testAction; const dispatch = (fn) => { testAction = fn; }; let dispatchFn = mapDispatchToProps(dispatch); dispatchFn.submitNewMessage('__TEST__MESSAGE__'); return (testAction.type === 'ADD' && testAction.message === '__TEST__MESSAGE__'); })(), 'Dispatching <code>addMessage</code> with <code>submitNewMessage</code> from <code>mapDispatchToProps</code> should return a message to the dispatch function.');"
+          "text": "从<code>mapDispatchToProps</code>通过<code>submitNewMessage</code>分发<code>addMessage</code>，应向 dispatch 函数返回一条消息。",
+          "testString": "assert((function() { let testAction; const dispatch = (fn) => { testAction = fn; }; let dispatchFn = mapDispatchToProps(dispatch); dispatchFn.submitNewMessage('__TEST__MESSAGE__'); return (testAction.type === 'ADD' && testAction.message === '__TEST__MESSAGE__'); })(), '从<code>mapDispatchToProps</code>通过<code>submitNewMessage</code>分发<code>addMessage</code>，应向 dispatch 函数返回一条消息。');"
         }
       ],
       "solutions": [
@@ -446,12 +446,12 @@
       "title": "Connect Redux to React",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Now that you've written both the <code>mapStateToProps()</code> and the <code>mapDispatchToProps()</code> functions, you can use them to map <code>state</code> and <code>dispatch</code> to the <code>props</code> of one of your React components. The <code>connect</code> method from React Redux can handle this task. This method takes two optional arguments, <code>mapStateToProps()</code> and <code>mapDispatchToProps()</code>. They are optional because you may have a component that only needs access to <code>state</code> but doesn't need to dispatch any actions, or vice versa.",
-        "To use this method, pass in the functions as arguments, and immediately call the result with your component. This syntax is a little unusual and looks like:",
+        "既然写了<code>mapStateToProps()</code>、<code>mapDispatchToProps()</code>两个函数，现在你可以用它们来把<code>state</code>和<code>dispatch</code>映射到 React 组件的<code>props</code>了。React Redux 的<code>connect</code>方法可以完成这个任务。此方法有<code>mapStateToProps()</code>、<code>mapDispatchToProps()</code>两个可选参数，它们是可选的，原因是你的组件可能仅需要访问<code>状态</code>但不需要分发任何 actions，反之亦然。",
+        "为了使用此方法，需要传入函数参数并在调用时传入组件。这种语法有些不寻常，如下所示：",
         "<code>connect(mapStateToProps, mapDispatchToProps)(MyComponent)</code>",
-        "<strong>Note:</strong>&nbsp;If you want to omit one of the arguments to the <code>connect</code> method, you pass <code>null</code> in its place.",
+        "<strong>注意：</strong>&nbsp;如果要省略<code>connect</code>方法中的某个参数，则应当用<code>null</code>替换这个参数。",
         "<hr>",
-        "The code editor has the <code>mapStateToProps()</code> and <code>mapDispatchToProps()</code> functions and a new React component called <code>Presentational</code>. Connect this component to Redux with the <code>connect</code> method from the <code>ReactRedux</code> global object, and call it immediately on the <code>Presentational</code> component. Assign the result to a new <code>const</code> called <code>ConnectedComponent</code> that represents the connected component. That's it, now you're connected to Redux! Try changing either of <code>connect</code>'s arguments to <code>null</code> and observe the test results."
+        "在编辑器上有两个函数：<code>mapStateToProps()</code>、<code>mapDispatchToProps()</code>，还有一个叫<code>Presentational</code>的 React 组件。用<code>ReactRedux</code>全局对象中的<code>connect</code>方法将此组件连接到 Redux，并立即在<code>Presentational</code>组件中调用，把结果赋值给一个名为<code>ConnectedComponent</code>的代表已连接组件的新常量。大功告成！你已成功把 React 连接到 Redux！尝试更改任何一个<code>connect</code>参数为<code>null</code>并观察测试结果。"
       ],
       "files": {
         "indexjsx": {
@@ -490,7 +490,7 @@
             "};",
             "",
             "const connect = ReactRedux.connect;",
-            "// change code below this line",
+            "// 请在本行以下添加你的代码",
             ""
           ],
           "tail": [
@@ -514,16 +514,16 @@
       },
       "tests": [
         {
-          "text": "The <code>Presentational</code> component should render.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'The <code>Presentational</code> component should render.');"
+          "text": "应渲染<code>Presentational</code>组件。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), '应渲染<code>Presentational</code>组件。');"
         },
         {
-          "text": "The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return props.messages === '__INITIAL__STATE__'; })(), 'The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.');"
+          "text": "<code>Presentational</code>组件应通过<code>connect</code>接收一个<code>messages</code>属性。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return props.messages === '__INITIAL__STATE__'; })(), '<code>Presentational</code>组件应通过<code>connect</code>接收一个<code>messages</code>属性。');"
         },
         {
-          "text": "The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return typeof props.submitNewMessage === 'function'; })(), 'The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.');"
+          "text": "<code>Presentational</code>组件应通过<code>connect</code>接收一个<code>submitNewMessage</code>属性。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return typeof props.submitNewMessage === 'function'; })(), '<code>Presentational</code>组件应通过<code>connect</code>接收一个<code>submitNewMessage</code>属性。');"
         }
       ],
       "solutions": [
@@ -538,10 +538,10 @@
       "title": "Connect Redux to the Messages App",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Now that you understand how to use <code>connect</code> to connect React to Redux, you can apply what you've learned to your React component that handles messages.",
-        "In the last lesson, the component you connected to Redux was named <code>Presentational</code>, and this wasn't arbitrary. This term <i>generally</i> refers to React components that are not directly connected to Redux. They are simply responsible for the presentation of UI and do this as a function of the props they receive. By contrast, container components are connected to Redux. These are typically responsible for dispatching actions to the store and often pass store state to child components as props.",
+        "知道<code>connect</code>怎么实现 React 和 Redux 的连接后，我们可以在 React 组件中应用上面学到的内容。",
+        "在上一课，连接到 Redux 的组件命名为<code>Presentational</code>，这个命名不是任意的，这样的术语通常是指未直接连接到 Redux 的 React 组件，他们只负责执行接收 props 的函数来实现 UI 的呈现。与上一挑战相比，本挑战需要把容器组件连接到 Redux。这些组件通常负责把 actions 分派给 store，且经常给子组件传入 store state 属性。",
         "<hr>",
-        "The code editor has all the code you've written in this section so far. The only change is that the React component is renamed to <code>Presentational</code>. Create a new component held in a constant called <code>Container</code> that uses <code>connect</code> to connect the <code>Presentational</code> component to Redux. Then, in the <code>AppWrapper</code>, render the React Redux <code>Provider</code> component. Pass <code>Provider</code> the Redux <code>store</code> as a prop and render <code>Container</code> as a child. Once everything is setup, you will see the messages app rendered to the page again."
+        "到目前为止，我们的编辑器上已包含了整个章节的代码，唯一不同的是，React 组件被重新命名为<code>Presentational</code>，即展示层组件。创建一个新组件，保存在名为<code>Container</code>的常量中。这个常量用<code>connect</code>把<code>Presentational</code>组件和 Redux 连接起来。然后，在<code>AppWrapper</code>中渲染 React Redux 的<code>Provider</code>组件，给<code>Provider</code>传入 Redux<code>store</code>属性并渲染<code>Container</code>为子组件。完成这些，消息 app 应用会再次渲染页面。"
       ],
       "files": {
         "indexjsx": {
@@ -633,7 +633,7 @@
             "const Provider = ReactRedux.Provider;",
             "const connect = ReactRedux.connect;",
             "",
-            "// define the Container component here:",
+            "// 在此定义 Container 组件：",
             "",
             "",
             "class AppWrapper extends React.Component {",
@@ -641,7 +641,7 @@
             "    super(props);",
             "  }",
             "  render() {",
-            "    // complete the return statement:",
+            "    // 完成返回声明：",
             "    return (null);",
             "  }",
             "};"
@@ -654,24 +654,24 @@
       },
       "tests": [
         {
-          "text": "The <code>AppWrapper</code> should render to the page.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'The <code>AppWrapper</code> should render to the page.');"
+          "text": "<code>AppWrapper</code>应渲染该页面。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), '<code>AppWrapper</code>应渲染该页面。');"
         },
         {
-          "text": "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');"
+          "text": "<code>Presentational</code>组件应渲染<code>h2</code>、<code>input</code>、<code>button</code>、<code>ul</code>四个元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), '<code>Presentational</code>组件应渲染<code>h2</code>、<code>input</code>、<code>button</code>、<code>ul</code>四个元素。');"
         },
         {
-          "text": "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); return ( PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1 ); })(), 'The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');"
+          "text": "<code>Presentational</code>组件应渲染<code>h2</code>、<code>input</code>、<code>button</code>、<code>ul</code>四个元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); return ( PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1 ); })(), '<code>Presentational</code>组件应渲染<code>h2</code>、<code>input</code>、<code>button</code>、<code>ul</code>四个元素。');"
         },
         {
-          "text": "The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), 'The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.');"
+          "text": "<code>Presentational</code>组件应接收 Redux store 的<code>消息</code>属性。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), '<code>Presentational</code>组件应接收 Redux store 的<code>消息</code>属性。');"
         },
         {
-          "text": "The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })(), 'The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.');"
+          "text": "<code>Presentational</code>组件应接收创建 action 的函数<code>submitMessage</code>属性。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })(), '<code>Presentational</code>组件应接收创建 action 的函数<code>submitMessage</code>属性。');"
         }
       ],
       "solutions": [
@@ -686,10 +686,10 @@
       "title": "Extract Local State into Redux",
       "releasedOn": "December 25, 2017",
       "description": [
-        "You're almost done! Recall that you wrote all the Redux code so that Redux could control the state management of your React messages app. Now that Redux is connected, you need to extract the state management out of the <code>Presentational</code> component and into Redux. Currently, you have Redux connected, but you are handling the state locally within the <code>Presentational</code> component.",
+        "胜利就在眼前了！请回顾一下为管理 React messages app 的状态写的 Redux 代码。现在有了连接好的 Redux，你还要从<code>Presentational</code>组件中提取状态管理到 Redux，在<code>Presentational</code>组件内处理本地状态。",
         "<hr>",
-        "In the <code>Presentational</code> component, first, remove the <code>messages</code> property in the local <code>state</code>. These messages will be managed by Redux. Next, modify the <code>submitMessage()</code> method so that it dispatches <code>submitNewMessage()</code> from <code>this.props</code>, and pass in the current message input from local <code>state</code> as an argument. Because you removed <code>messages</code> from local state, remove the <code>messages</code> property from the call to <code>this.setState()</code> here as well. Finally, modify the <code>render()</code> method so that it maps over the messages received from <code>props</code> rather than <code>state</code>.",
-        "Once these changes are made, the app will continue to function the same, except Redux manages the state. This example also illustrates how a component may have local <code>state</code>: your component still tracks user input locally in its own <code>state</code>. You can see how Redux provides a useful state management framework on top of React. You achieved the same result using only React's local state at first, and this is usually possible with simple apps. However, as your apps become larger and more complex, so does your state management, and this is the problem Redux solves."
+        "在<code>Presentational</code>组件中，先删除本地<code>state</code>中的<code>messages</code>属性，被删的 messages 将由 Redux 管理。接着，修改<code>submitMessage()</code>方法，使该方法从<code>this.props</code>那里分发<code>submitNewMessage()</code>；从本地<code>state</code>中传入当前消息输入作为参数。因本地状态删除了<code>messages</code>属性，所以在调用<code>this.setState()</code>时也要删除该属性。最后，修改<code>render()</code>方法，使其所映射的消息是从<code>props</code>接收的，而不是<code>state</code>",
+        "完成这些更改后，我们的应用会实现 Redux 管理应用的状态，但它继续运行着相同的功能。此示例还阐明了组件获得本地状态的方式，即在自己的状态中继续跟踪用户本地输入。由此可见，Redux 为 React 提供了很有用的状态管理框架。先前，你仅使用 React 的本地状态也实现了相同的结果，这在应付简单的应用时通常是可行的。但是，随着应用变得越来越大，越来越复杂，应用的状态管理也变得非常困难，Redux 就是为解决这样的问题而诞生的。"
       ],
       "files": {
         "indexjsx": {
@@ -725,7 +725,7 @@
             "const Provider = ReactRedux.Provider;",
             "const connect = ReactRedux.connect;",
             "",
-            "// Change code below this line",
+            "// 请在本行以下添加你的代码",
             "class Presentational extends React.Component {",
             "  constructor(props) {",
             "    super(props);",
@@ -767,7 +767,7 @@
             "    );",
             "  }",
             "};",
-            "// Change code above this line",
+            "// 请在本行以上添加你的代码",
             "",
             "const mapStateToProps = (state) => {",
             "  return {messages: state}",
@@ -801,40 +801,36 @@
       },
       "tests": [
         {
-          "text": "The <code>AppWrapper</code> should render to the page.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'The <code>AppWrapper</code> should render to the page.');"
+          "text": "<code>AppWrapper</code>应该渲染该页面。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), '<code>AppWrapper</code>应该渲染该页面。');"
         },
         {
-          "text": "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');"
+          "text": "<code>Presentational</code>组件应渲染<code>h2</code>、<code>input</code>、<code>button</code>、<code>ul</code>四个元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), '<code>Presentational</code>组件应渲染<code>h2</code>、<code>input</code>、<code>button</code>、<code>ul</code>四个元素。');"
         },
         {
-          "text": "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); return ( PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1 ); })(), 'The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');"
+          "text": "<code>Presentational</code>组件应接收 Redux store 的<code>消息</code>属性。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), '<code>Presentational</code>组件应接收 Redux store 的<code>消息</code>属性。');"
         },
         {
-          "text": "The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), 'The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.');"
+          "text": "<code>Presentational</code>组件应接收创建 action 的函数<code>submitMessage</code>属性。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })(), '<code>Presentational</code>组件应接收创建 action 的函数<code>submitMessage</code>属性。');"
         },
         {
-          "text": "The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })(), 'The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.');"
+          "text": "<code>Presentational</code>组件的状态应包含一个初始化为空字符串的input属性。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalState = mockedComponent.find('Presentational').instance().state; return typeof PresentationalState.input === 'string' && Object.keys(PresentationalState).length === 1; })(), '<code>Presentational</code>组件的状态应包含一个初始化为空字符串的input属性。');"
         },
         {
-          "text": "The state of the <code>Presentational</code> component should contain one property, <code>input</code>, which is initialized to an empty string.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalState = mockedComponent.find('Presentational').instance().state; return typeof PresentationalState.input === 'string' && Object.keys(PresentationalState).length === 1; })(), 'The state of the <code>Presentational</code> component should contain one property, <code>input</code>, which is initialized to an empty string.');"
+          "text": "键入<code>input</code>元素应更新<code>Presentational</code>组件的状态。",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const testValue = '__MOCK__INPUT__'; const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); let initialInput = mockedComponent.find('Presentational').find('input'); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const updated = await changed(); const updatedInput = updated.find('Presentational').find('input'); assert(initialInput.props().value === '' && updatedInput.props().value === '__MOCK__INPUT__', '键入<code>input</code>元素应更新<code>Presentational</code>组件的状态。'); }; "
         },
         {
-          "text": "Typing in the <code>input</code> element should update the state of the <code>Presentational</code> component.",
-          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const testValue = '__MOCK__INPUT__'; const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); let initialInput = mockedComponent.find('Presentational').find('input'); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const updated = await changed(); const updatedInput = updated.find('Presentational').find('input'); assert(initialInput.props().value === '' && updatedInput.props().value === '__MOCK__INPUT__', 'Typing in the <code>input</code> element should update the state of the <code>Presentational</code> component.'); }; "
+          "text": "在<code>Presentational</code>组件上 dispatch <code>submitMessage</code>应更新 Redux store 并清除本地状态中的输入。",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); let beforeProps = mockedComponent.find('Presentational').props(); const testValue = '__TEST__EVENT__INPUT__'; const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const clickButton = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterChange = await changed(); const afterChangeInput = afterChange.find('input').props().value; const afterClick = await clickButton(); const afterProps = mockedComponent.find('Presentational').props(); assert(beforeProps.messages.length === 0 && afterChangeInput === testValue && afterProps.messages.pop() === testValue && afterClick.find('input').props().value === '', '在<code>Presentational</code>组件上 dispatch <code>submitMessage</code>应更新 Redux store 并清除本地状态中的输入。'); }; "
         },
         {
-          "text": "Dispatching the <code>submitMessage</code> on the <code>Presentational</code> component should update Redux store and clear the input in local state.",
-          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); let beforeProps = mockedComponent.find('Presentational').props(); const testValue = '__TEST__EVENT__INPUT__'; const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const clickButton = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterChange = await changed(); const afterChangeInput = afterChange.find('input').props().value; const afterClick = await clickButton(); const afterProps = mockedComponent.find('Presentational').props(); assert(beforeProps.messages.length === 0 && afterChangeInput === testValue && afterProps.messages.pop() === testValue && afterClick.find('input').props().value === '', 'Dispatching the <code>submitMessage</code> on the <code>Presentational</code> component should update Redux store and clear the input in local state.'); }; "
-        },
-        {
-          "text": "The <code>Presentational</code> component should render the <code>messages</code> from the Redux store.",
-          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); let beforeProps = mockedComponent.find('Presentational').props(); const testValue = '__TEST__EVENT__INPUT__'; const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const clickButton = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterChange = await changed(); const afterChangeInput = afterChange.find('input').props().value; const afterClick = await clickButton(); const afterProps = mockedComponent.find('Presentational').props(); assert(beforeProps.messages.length === 0 && afterChangeInput === testValue && afterProps.messages.pop() === testValue && afterClick.find('input').props().value === '' && afterClick.find('ul').childAt(0).text() === testValue, 'The <code>Presentational</code> component should render the <code>messages</code> from the Redux store.'); }; "
+          "text": "<code>Presentational</code>组件应渲染 Redux store 中的<code>messages</code>",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); let beforeProps = mockedComponent.find('Presentational').props(); const testValue = '__TEST__EVENT__INPUT__'; const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const clickButton = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterChange = await changed(); const afterChangeInput = afterChange.find('input').props().value; const afterClick = await clickButton(); const afterProps = mockedComponent.find('Presentational').props(); assert(beforeProps.messages.length === 0 && afterChangeInput === testValue && afterProps.messages.pop() === testValue && afterClick.find('input').props().value === '' && afterClick.find('ul').childAt(0).text() === testValue, '<code>Presentational</code>组件应渲染 Redux store 中的<code>messages</code>'); }; "
         }
       ],
       "solutions": [
@@ -849,12 +845,12 @@
       "title": "Moving Forward From Here",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Congratulations! You finished the lessons on React and Redux. There's one last item worth pointing out before you move on. Typically, you won't write React apps in a code editor like this. This challenge gives you a glimpse of what the syntax looks like if you're working with npm and a file system on your own machine. The code should look similar, except for the use of <code>import</code> statements (these pull in all of the dependencies that have been provided for you in the challenges). The \"Managing Packages with npm\" section covers npm in more detail.",
-        "Finally, writing React and Redux code generally requires some configuration. This can get complicated quickly. If you are interested in experimenting on your own machine, the",
-        "<a id='CRA' target ='_blank' href='https://github.com/facebookincubator/create-react-app'>Create React App</a> comes configured and ready to go.",
-        "Alternatively, you can enable Babel as a JavaScript Preprocessor in CodePen, add React and ReactDOM as external JavaScript resources, and work there as well.",
+        "恭喜你完成了 React 和 Redux 的所有课程！在继续前进前，还有一点值得我们注意。通常，我们不会在这样的编辑器中编写 React 应用代码。如果你在自己的计算机上使用 npm 和文件系统，这个挑战可让你一瞥 React 应用的语法之貌。除了使用<code>import</code>语句（这些语句引入了各挑战中提供的所有依赖关系），其代码看起来类似。“管理包（含 npm）”这一节更详细地介绍了 npm。",
+        "最后，写 React 和 Redux 的代码通常需要一些配置，且很快会变得复杂起来。如果你想在自己的机器上尝试写代码，点击链接",
+        "<a id='CRA' target ='_blank' href='https://github.com/facebookincubator/create-react-app'>创建 React App</a>可获取已配置好的现成代码。",
+        "另一种做法是在 CodePen 中启用 Babel 作为 JavaScript 预处理器，将 React 和 ReactDOM 添加为外部 JavaScript 资源，在那里编写应用。",
         "<hr>",
-        "Log the message <code>'Now I know React and Redux!'</code> to the console."
+        "把<code>'Now I know React and Redux!'</code>这一消息输出到控制台。"
       ],
       "files": {
         "indexjsx": {
@@ -862,14 +858,14 @@
           "ext": "jsx",
           "name": "index",
           "contents": [
-            "// import React from 'react'",
-            "// import ReactDOM from 'react-dom'",
-            "// import { Provider, connect } from 'react-redux'",
-            "// import { createStore, combineReducers, applyMiddleware } from 'redux'",
-            "// import thunk from 'redux-thunk'",
+            "// 从'react'导入 React",
+            "// 从'react-dom'导入 ReactDOM",
+            "// 从'react-redux'导入{ Provider, connect }",
+            "// 从'redux'导入{ createStore, combineReducers, applyMiddleware }",
+            "// 从'redux-thunk'导入 thunk",
             "",
-            "// import rootReducer from './redux/reducers'",
-            "// import App from './components/App'",
+            "// 从'./redux/reducers'导入 rootReducer",
+            "// 从'./components/App'导入 App",
             "",
             "// const store = createStore(",
             "//   rootReducer,",
@@ -883,7 +879,7 @@
             "//   document.getElementById('root')",
             "// );",
             "",
-            "// change code below this line",
+            "// 请在本行以下添加你的代码",
             ""
           ],
           "head": [],
@@ -892,8 +888,8 @@
       },
       "tests": [
         {
-          "text": "The message <code>Now I know React and Redux!</code> should be logged to the console.",
-          "testString": "assert(editor.getValue().includes('console.log(\"Now I know React and Redux!\")') || editor.getValue().includes('console.log(\\'Now I know React and Redux!\\')'), 'The message <code>Now I know React and Redux!</code> should be logged to the console.');"
+          "text": "<code>Now I know React and Redux!</code>这一消息应输出到控制台。",
+          "testString": "assert(editor.getValue().includes('console.log(\"Now I know React and Redux!\")') || editor.getValue().includes('console.log(\\'Now I know React and Redux!\\')'), '<code>Now I know React and Redux!</code>这一消息应输出到控制台。');"
         }
       ],
       "solutions": [

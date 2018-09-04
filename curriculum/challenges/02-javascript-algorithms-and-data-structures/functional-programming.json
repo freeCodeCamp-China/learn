@@ -171,7 +171,7 @@
         "JavaScript 提供了许多处理常见任务的方法，所以你无需写出计算机应如何执行它们。例如，你可以用<code>map</code>函数替代上面提到的<code>for</code>循环来处理数组迭代。这有助于避免语义错误，如调试章节介绍的\"Off By One Errors\"。",
         "考虑这样的场景：你正在浏览器中浏览网页，并想操作你打开的标签。下面我们来试试用面向对象的思路来描述这种情景。",
         "窗口对象由选项卡组成，通常会打开多个窗口。窗口对象中每个打开网站的标题都保存在一个数组中。在对浏览器进行了如打开新标签、合并窗口、关闭标签之类的操作后，你需要输出所有打开的标签。关掉的标签将从数组中删除，新打开的标签（为简单起见）则添加到数组的末尾。",
-        "代码编辑器中显示了此功能的实现，其中包含<code>tabOpen()</code>，<code>tabClose()</code>，和 <code>join()</code>函数。<code>tabs</code>数组是窗口对象的一部分用于储存打开页面的名称。",
+        "代码编辑器中显示了此功能的实现，其中包含<code>tabOpen()</code>，<code>tabClose()</code>，和<code>join()</code>函数。<code>tabs</code>数组是窗口对象的一部分用于储存打开页面的名称。",
         "<h4>说明<h4>",
         "在编辑器中运行代码。它使用了有副作用的方法，导致输出错误。打开标签的最终列表应该是<code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']</code>但输出会略有不同。",
         "仔细阅读代码，看看你是否能找出问题所在，然后进入下一个挑战，了解更多信息。"
@@ -1089,8 +1089,8 @@
           "testString": "assert(code.match(/\\.reduce/g), '应该使用<code>reduce</code>方法。');"
         },
         {
-          "text": "The <code>averageRating</code>应等于 8.675。",
-          "testString": "assert(averageRating == 8.675, 'The <code>averageRating</code>应等于 8.675。');"
+          "text": "The<code>averageRating</code>应等于 8.675。",
+          "testString": "assert(averageRating == 8.675, 'The<code>averageRating</code>应等于 8.675。');"
         },
         {
           "text": "不能使用<code>for</code>循环。",
@@ -1306,8 +1306,8 @@
           "testString": "assert(code.match(/\\.concat/g), '应该使用<code>concat</code>方法。');"
         },
         {
-          "text": "<code>globalArray</code> variable 应保持不变。",
-          "testString": "assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]), '<code>globalArray</code> variable 应保持不变。');"
+          "text": "<code>globalArray</code>variable 应保持不变。",
+          "testString": "assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]), '<code>globalArray</code>variable 应保持不变。');"
         },
         {
           "text": "<code>nonMutatingSort(globalArray)</code>应返回<code>[2, 3, 5, 6, 9]</code>。",
@@ -1581,8 +1581,8 @@
       ],
       "tests": [
         {
-          "text": "应该使用<code>some</code> method.",
-          "testString": "assert(code.match(/\\.some/g), '应该使用<code>some</code> method.');"
+          "text": "应该使用<code>some</code>method.",
+          "testString": "assert(code.match(/\\.some/g), '应该使用<code>some</code>method.');"
         },
         {
           "text": "<code>checkPositive([1, 2, 3, -4, 5])</code>应返回<code>true</code>。",
