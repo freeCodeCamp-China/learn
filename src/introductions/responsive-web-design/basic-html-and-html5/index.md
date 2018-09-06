@@ -5,9 +5,11 @@ superBlock: Responsive Web Design
 ---
 ## Introduction to Basic HTML & HTML5
 
-HTML, or HyperText Markup Language, is a markup language used to describe the structure of a web page. It uses a special syntax or notation to organize and give information about the page to the browser. Elements usually have opening and closing tags that surround and give meaning to content. For example, there are different tag options to place around text to show whether it is a heading, a paragraph, or a list.
+HTML 的全称是 HyperText Markup Language（超文本标记语言），它是一种用来描述网页结构的标记语言。
 
-For example:
+它采用一种特殊的语法或符号来组织网页的内容，元素通常都有开始标记和结束标记，例如标题、段落、列表。
+
+举个例子：
 ```html
 <h1>Top level heading: Maybe a page title</h1>
 
@@ -33,8 +35,8 @@ Becomes:
 </ol>
 
 ---
-The HyperText part of HTML comes from the early days of the web and its original use case. Pages usually contained static documents that contained references to other documents. These references contained hypertext links used by the browser to navigate to the reference document so the user could read the reference document without having to manually search for it.
+HTML 的 HyperText 超文本部分来自 Web 的早期和最初的用例。页面通常包含静态文档，其中包含对其他文档的引用。这些引用包含浏览器用于导航到引用文档的超文本链接，这样用户就可以阅读引用文档，而无需手动搜索。
 
-As web pages and web applications grow more complex, the W3 Consortium updates the HTML specification to ensure that a webpage can be shown reliably on any browser. The latest version of HTML is HTML5.
+随着 Web 页面和 Web 应用程序变得越来越复杂，W3C 更新了 HTML 规范，以确保网页能够在任何浏览器上显示。最新版本的 HTML 是 HTML5。
 
-This section introduces how to use HTML elements to give structure and meaning to your web content.
+本章介绍了如何使用 HTML 元素为 Web 内容赋予结构和语义。

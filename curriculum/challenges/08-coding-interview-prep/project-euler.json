@@ -8,30 +8,31 @@
       "id": "5900f36e1000cf542c50fe80",
       "challengeType": 5,
       "title": "Problem 1: Multiples of 3 and 5",
+      "title_zh": "关卡 1：3 和 5 的倍数",
       "tests": [
         {
-          "text": "<code>multiplesOf3and5(1000)</code> should return 233168.",
-          "testString": "assert.strictEqual(multiplesOf3and5(1000), 233168, '<code>multiplesOf3and5(1000)</code> should return 233168.');"
+          "text": "<code>multiplesOf3and5(1000)</code>应该返回 233168。",
+          "testString": "assert.strictEqual(multiplesOf3and5(1000), 233168, '<code>multiplesOf3and5(1000)</code>应该返回 233168。');"
         },
         {
-          "text": "<code>multiplesOf3and5(49)</code> should return 543.",
-          "testString": "assert.strictEqual(multiplesOf3and5(49), 543, '<code>multiplesOf3and5(49)</code> should return 543.');"
+          "text": "<code>multiplesOf3and5(49)</code>应该返回 543。",
+          "testString": "assert.strictEqual(multiplesOf3and5(49), 543, '<code>multiplesOf3and5(49)</code>应该返回 543。');"
         },
         {
-          "text": "<code>multiplesOf3and5(19564)</code> should return 89301183.",
-          "testString": "assert.strictEqual(multiplesOf3and5(19564), 89301183, '<code>multiplesOf3and5(19564)</code> should return 89301183.');"
+          "text": "<code>multiplesOf3and5(19564)</code>应该返回 89301183。",
+          "testString": "assert.strictEqual(multiplesOf3and5(19564), 89301183, '<code>multiplesOf3and5(19564)</code>应该返回 89301183。');"
         },
         {
-          "text": "Your function is not returning the correct result using our tests values.",
-          "testString": "assert.strictEqual(multiplesOf3and5(8456), 16687353, 'Your function is not returning the correct result using our tests values.');"
+          "text": "在我们提供的测试用例中，你的函数没有返回预期的结果。",
+          "testString": "assert.strictEqual(multiplesOf3and5(8456), 16687353, '在我们提供的测试用例中，你的函数没有返回预期的结果。');"
         }
       ],
       "solutions": [
         "const multiplesOf3and5 = (number) => {\n  var total = 0;\n\n  for(var i = 0; i < number; i++) {\n    if(i % 3 == 0 || i % 5 == 0) {\n      total += i;\n    }\n  }\n  return total;\n};"
       ],
       "description": [
-        "If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.",
-        "Find the sum of all the multiples of 3 or 5 below the provided parameter value <code>number</code>."
+        "如果我们列出 10 以内所有 3 或 5 的倍数，我们将得到 3、5、6 和 9，这些数的和是 23。",
+        "求给定参数值 n 以内的所有 3 或 5 的倍数的和。"
       ],
       "files": {
         "indexjs": {
@@ -40,7 +41,7 @@
           "name": "index",
           "contents": [
             "function multiplesOf3and5(number) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -55,35 +56,36 @@
       "id": "5900f36e1000cf542c50fe81",
       "challengeType": 5,
       "title": "Problem 2: Even Fibonacci Numbers",
+      "title_zh": "关卡 2：偶斐波那契数",
       "tests": [
         {
-          "text": "<code>fiboEvenSum(10)</code> should return 188.",
-          "testString": "assert.strictEqual(fiboEvenSum(10), 188, '<code>fiboEvenSum(10)</code> should return 188.');"
+          "text": "<code>fiboEvenSum(10)</code>应该返回 188。",
+          "testString": "assert.strictEqual(fiboEvenSum(10), 188, '<code>fiboEvenSum(10)</code>应该返回 188。');"
         },
         {
-          "text": "<code>fiboEvenSum(23)</code> should return 60696.",
-          "testString": "assert.strictEqual(fiboEvenSum(23), 60696, '<code>fiboEvenSum(23)</code> should return 60696.');"
+          "text": "<code>fiboEvenSum(23)</code>应该返回 60696。",
+          "testString": "assert.strictEqual(fiboEvenSum(23), 60696, '<code>fiboEvenSum(23)</code>应该返回 60696。');"
         },
         {
-          "text": "<code>fiboEvenSum(43)</code> should return 1485607536.",
-          "testString": "assert.strictEqual(fiboEvenSum(43), 1485607536, '<code>fiboEvenSum(43)</code> should return 1485607536.');"
+          "text": "<code>fiboEvenSum(43)</code>应该返回 1485607536。",
+          "testString": "assert.strictEqual(fiboEvenSum(43), 1485607536, '<code>fiboEvenSum(43)</code>应该返回 1485607536。');"
         },
         {
-          "text": "Your function is not returning the correct result using our tests values.",
-          "testString": "assert.strictEqual(fiboEvenSum(18), 3382, 'Your function is not returning the correct result using our tests values.');"
+          "text": "在我们提供的测试用例中，你的函数没有返回预期的结果。",
+          "testString": "assert.strictEqual(fiboEvenSum(18), 3382, '在我们提供的测试用例中，你的函数没有返回预期的结果。');"
         },
         {
-          "text": "Your function should return an <code>even</code> value.",
-          "testString": "assert.equal(fiboEvenSum(31) % 2 === 0, true, 'Your function should return an <code>even</code> value.');"
+          "text": "你的函数应该返回一个 <code>奇数</code> 值。",
+          "testString": "assert.equal(fiboEvenSum(31) % 2 === 0, true, '你的函数应该返回一个 <code>奇数</code> 值。');"
         }
       ],
       "solutions": [
         "const fiboEvenSum = (number) => {\n  let temp, sum = 0, a = 0, b = 1;\n    while (number >= 0) {\n      temp = a;\n      a = b;\n      b += temp;\n      number --;\n      if ((b % 2) === 0) {\n        sum += b;\n      }\n    }\n\n  return sum;\n}"
       ],
       "description": [
-        "Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be:",
+        "斐波那契数列中的每一项都是前两项的和。 由 1 和 2 开始生成的斐波那契数列的前 10 项为：",
         "<div style='text-align: center;'>1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...</div>",
-        "By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms."
+        "考虑该斐波那契数列中不超过四百万的项，求其中为偶数的项之和。"
       ],
       "files": {
         "indexjs": {
@@ -92,7 +94,7 @@
           "name": "index",
           "contents": [
             "function fiboEvenSum(number) {",
-            "  // You can do it!",
+            "  // 你可以做到的！",
             "  return true;",
             "}",
             "",
@@ -107,38 +109,39 @@
       "id": "5900f36f1000cf542c50fe82",
       "challengeType": 5,
       "title": "Problem 3: Largest prime factor",
+      "title_zh": "关卡 3：最大质因数",
       "tests": [
         {
-          "text": "<code>largestPrimeFactor(2)</code> should return 2.",
-          "testString": "assert.strictEqual(largestPrimeFactor(2), 2, '<code>largestPrimeFactor(2)</code> should return 2.');"
+          "text": "<code>largestPrimeFactor(2)</code>应该返回 2。",
+          "testString": "assert.strictEqual(largestPrimeFactor(2), 2, '<code>largestPrimeFactor(2)</code>应该返回 2。');"
         },
         {
-          "text": "<code>largestPrimeFactor(3)</code> should return 3.",
-          "testString": "assert.strictEqual(largestPrimeFactor(3), 3, '<code>largestPrimeFactor(3)</code> should return 3.');"
+          "text": "<code>largestPrimeFactor(3)</code>应该返回 3。",
+          "testString": "assert.strictEqual(largestPrimeFactor(3), 3, '<code>largestPrimeFactor(3)</code>应该返回 3。');"
         },
         {
-          "text": "<code>largestPrimeFactor(5)</code> should return 5.",
-          "testString": "assert.strictEqual(largestPrimeFactor(5), 5, '<code>largestPrimeFactor(5)</code> should return 5.');"
+          "text": "<code>largestPrimeFactor(5)</code>应该返回 5。",
+          "testString": "assert.strictEqual(largestPrimeFactor(5), 5, '<code>largestPrimeFactor(5)</code>应该返回 5。');"
         },
         {
-          "text": "<code>largestPrimeFactor(7)</code> should return 7.",
-          "testString": "assert.strictEqual(largestPrimeFactor(7), 7, '<code>largestPrimeFactor(7)</code> should return 7.');"
+          "text": "<code>largestPrimeFactor(7)</code>应该返回 7。",
+          "testString": "assert.strictEqual(largestPrimeFactor(7), 7, '<code>largestPrimeFactor(7)</code>应该返回 7。');"
         },
         {
-          "text": "<code>largestPrimeFactor(13195)</code> should return 29.",
-          "testString": "assert.strictEqual(largestPrimeFactor(13195), 29, '<code>largestPrimeFactor(13195)</code> should return 29.');"
+          "text": "<code>largestPrimeFactor(13195)</code>应该返回 29。",
+          "testString": "assert.strictEqual(largestPrimeFactor(13195), 29, '<code>largestPrimeFactor(13195)</code>应该返回 29。');"
         },
         {
-          "text": "<code>largestPrimeFactor(600851475143)</code> should return 6857.",
-          "testString": "assert.strictEqual(largestPrimeFactor(600851475143), 6857, '<code>largestPrimeFactor(600851475143)</code> should return 6857.');"
+          "text": "<code>largestPrimeFactor(600851475143)</code>应该返回 6857。",
+          "testString": "assert.strictEqual(largestPrimeFactor(600851475143), 6857, '<code>largestPrimeFactor(600851475143)</code>应该返回 6857。');"
         }
       ],
       "solutions": [
         "const largestPrimeFactor = (number)=>{\n  let largestFactor = number;\n  for(let i = 2;i<largestFactor;i++){\n  if(!(largestFactor%i)){\n    largestFactor = largestFactor/i;\n    largestPrimeFactor(largestFactor);\n  }\n  }\n  return largestFactor;\n}"
       ],
       "description": [
-        "The prime factors of 13195 are 5, 7, 13 and 29.",
-        "What is the largest prime factor of the number 600851475143 ?"
+        "13195 的所有质因数为 5、7、13 和 29。",
+        "600851475143 最大的质因数是多少？"
       ],
       "files": {
         "indexjs": {
@@ -147,7 +150,7 @@
           "name": "index",
           "contents": [
             "function largestPrimeFactor(number) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -162,22 +165,23 @@
       "id": "5900f3701000cf542c50fe83",
       "challengeType": 5,
       "title": "Problem 4: Largest palindrome product",
+      "title_zh": "关卡 4：最大回文乘积",
       "tests": [
         {
-          "text": "<code>largestPalindromeProduct(2)</code> should return 9009.",
-          "testString": "assert.strictEqual(largestPalindromeProduct(2), 9009, '<code>largestPalindromeProduct(2)</code> should return 9009.');"
+          "text": "<code>largestPalindromeProduct(2)</code>应该返回 9009。",
+          "testString": "assert.strictEqual(largestPalindromeProduct(2), 9009, '<code>largestPalindromeProduct(2)</code>应该返回 9009。');"
         },
         {
-          "text": "<code>largestPalindromeProduct(3)</code> should return 906609.",
-          "testString": "assert.strictEqual(largestPalindromeProduct(3), 906609, '<code>largestPalindromeProduct(3)</code> should return 906609.');"
+          "text": "<code>largestPalindromeProduct(3)</code>应该返回 906609。",
+          "testString": "assert.strictEqual(largestPalindromeProduct(3), 906609, '<code>largestPalindromeProduct(3)</code>应该返回 906609。');"
         }
       ],
       "solutions": [
         "const largestPalindromeProduct = (digit)=>{\n  let start = 1;\n  let end = Number(`1e${digit}`) - 1;\n let palindrome = [];\n  for(let i=start;i<=end;i++){\n    for(let j=start;j<=end;j++){\n      let product = i*j;\n      let palindromeRegex = /\\b(\\d)(\\d?)(\\d?).?\\3\\2\\1\\b/gi;\n      palindromeRegex.test(product) && palindrome.push(product);\n    }\n }\n return Math.max(...palindrome);\n}"
       ],
       "description": [
-        "A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.",
-        "Find the largest palindrome made from the product of two 3-digit numbers."
+        "回文数就是从前往后和从后往前读都一样的数。由两个 2 位数相乘得到的最大回文乘积是 9009 = 91 × 99。",
+        "找出由两个 3 位数相乘得到的最大回文乘积。"
       ],
       "files": {
         "indexjs": {
@@ -186,7 +190,7 @@
           "name": "index",
           "contents": [
             "function largestPalindromeProduct(digit) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -201,26 +205,27 @@
       "id": "5900f3711000cf542c50fe84",
       "challengeType": 5,
       "title": "Problem 5: Smallest multiple",
+      "title_zh": "关卡 5：最小倍数",
       "tests": [
         {
-          "text": "<code>smallestMult(5)</code> should return 60.",
-          "testString": "assert.strictEqual(smallestMult(5), 60, '<code>smallestMult(5)</code> should return 60.');"
+          "text": "<code>smallestMult(5)</code>应该返回 60。",
+          "testString": "assert.strictEqual(smallestMult(5), 60, '<code>smallestMult(5)</code>应该返回 60。');"
         },
         {
-          "text": "<code>smallestMult(10)</code> should return 2520.",
-          "testString": "assert.strictEqual(smallestMult(10), 2520, '<code>smallestMult(10)</code> should return 2520.');"
+          "text": "<code>smallestMult(10)</code>应该返回 2520。",
+          "testString": "assert.strictEqual(smallestMult(10), 2520, '<code>smallestMult(10)</code>应该返回 2520。');"
         },
         {
-          "text": "<code>smallestMult(20)</code> should return 232792560.",
-          "testString": "assert.strictEqual(smallestMult(20), 232792560, '<code>smallestMult(20)</code> should return 232792560.');"
+          "text": "<code>smallestMult(20)</code>应该返回 232792560。",
+          "testString": "assert.strictEqual(smallestMult(20), 232792560, '<code>smallestMult(20)</code>应该返回 232792560。');"
         }
       ],
       "solutions": [
         "function smallestMult(n){\n  function gcd(a, b) {\n    return b === 0 ? a : gcd(b, a%b); // Euclidean algorithm\n  }\n\n  function lcm(a, b) {\n    return a * b / gcd(a, b);\n  }\n  var result = 1;\n  for(var i = 2; i <= n; i++) {\n    result = lcm(result, i);\n  }\n  return result;\n}"
       ],
       "description": [
-        "2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.",
-        "What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?"
+        "2520 是最小的能够被 1 到 10 整除的数。",
+        "最小的能够被 1 到 20 整除的正数是多少？"
       ],
       "files": {
         "indexjs": {
@@ -229,7 +234,7 @@
           "name": "index",
           "contents": [
             "function smallestMult(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -244,30 +249,31 @@
       "id": "5900f3721000cf542c50fe85",
       "challengeType": 5,
       "title": "Problem 6: Sum square difference",
+      "title_zh": "关卡 6：平方的和与和的平方之差",
       "tests": [
         {
-          "text": "<code>sumSquareDifference(10)</code> should return 2640.",
-          "testString": "assert.strictEqual(sumSquareDifference(10), 2640, '<code>sumSquareDifference(10)</code> should return 2640.');"
+          "text": "<code>sumSquareDifference(10)</code>应该返回 2640。",
+          "testString": "assert.strictEqual(sumSquareDifference(10), 2640, '<code>sumSquareDifference(10)</code>应该返回 2640。');"
         },
         {
-          "text": "<code>sumSquareDifference(20)</code> should return 41230.",
-          "testString": "assert.strictEqual(sumSquareDifference(20), 41230, '<code>sumSquareDifference(20)</code> should return 41230.');"
+          "text": "<code>sumSquareDifference(20)</code>应该返回 41230。",
+          "testString": "assert.strictEqual(sumSquareDifference(20), 41230, '<code>sumSquareDifference(20)</code>应该返回 41230。');"
         },
         {
-          "text": "<code>sumSquareDifference(100)</code> should return 25164150.",
-          "testString": "assert.strictEqual(sumSquareDifference(100), 25164150, '<code>sumSquareDifference(100)</code> should return 25164150.');"
+          "text": "<code>sumSquareDifference(100)</code>应该返回 25164150。",
+          "testString": "assert.strictEqual(sumSquareDifference(100), 25164150, '<code>sumSquareDifference(100)</code>应该返回 25164150。');"
         }
       ],
       "solutions": [
         "const sumSquareDifference = (number)=>{\n  let squareOfSum = Math.pow(sumOfArithmeticSeries(1,1,number),2);\n  let sumOfSquare = sumOfSquareOfNumbers(number);\n return squareOfSum - sumOfSquare;\n}\n\nfunction sumOfArithmeticSeries(a,d,n){\n  return (n/2)*(2*a+(n-1)*d);\n}\n\nfunction sumOfSquareOfNumbers(n){\n return (n*(n+1)*(2*n+1))/6;\n}"
       ],
       "description": [
-        "The sum of the squares of the first ten natural numbers is,",
+        "前十个自然数的平方的和是",
         "<div style='text-align: center;'>1<sup>2</sup> + 2<sup>2</sup> + ... + 10<sup>2</sup> = 385</div>",
-        "The square of the sum of the first ten natural numbers is,",
+        "前十个自然数的和的平方是",
         "<div style='text-align: center;'>(1 + 2 + ... + 10)<sup>2</sup> = 55<sup>2</sup> = 3025</div>",
-        "Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.",
-        "Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum."
+        "因此前十个自然数的平方的和与和的平方之差是 3025 − 385 = 2640。",
+        "求前一百个自然数的平方的和与和的平方之差。"
       ],
       "files": {
         "indexjs": {
@@ -276,7 +282,7 @@
           "name": "index",
           "contents": [
             "function sumSquareDifference(number) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -291,34 +297,35 @@
       "id": "5900f3731000cf542c50fe86",
       "challengeType": 5,
       "title": "Problem 7: 10001st prime",
+      "title_zh": "关卡 7：第 10001 个素数",
       "tests": [
         {
-          "text": "<code>nthPrime(6)</code> should return 13.",
-          "testString": "assert.strictEqual(nthPrime(6), 13, '<code>nthPrime(6)</code> should return 13.');"
+          "text": "<code>nthPrime(6)</code>应该返回 13。",
+          "testString": "assert.strictEqual(nthPrime(6), 13, '<code>nthPrime(6)</code>应该返回 13。');"
         },
         {
-          "text": "<code>nthPrime(10)</code> should return 29.",
-          "testString": "assert.strictEqual(nthPrime(10), 29, '<code>nthPrime(10)</code> should return 29.');"
+          "text": "<code>nthPrime(10)</code>应该返回 29。",
+          "testString": "assert.strictEqual(nthPrime(10), 29, '<code>nthPrime(10)</code>应该返回 29。');"
         },
         {
-          "text": "<code>nthPrime(100)</code> should return 541.",
-          "testString": "assert.strictEqual(nthPrime(100), 541, '<code>nthPrime(100)</code> should return 541.');"
+          "text": "<code>nthPrime(100)</code>应该返回 541。",
+          "testString": "assert.strictEqual(nthPrime(100), 541, '<code>nthPrime(100)</code>应该返回 541。');"
         },
         {
-          "text": "<code>nthPrime(1000)</code> should return 7919.",
-          "testString": "assert.strictEqual(nthPrime(1000), 7919, '<code>nthPrime(1000)</code> should return 7919.');"
+          "text": "<code>nthPrime(1000)</code>应该返回 7919。",
+          "testString": "assert.strictEqual(nthPrime(1000), 7919, '<code>nthPrime(1000)</code>应该返回 7919。');"
         },
         {
-          "text": "<code>nthPrime(10001)</code> should return 104743.",
-          "testString": "assert.strictEqual(nthPrime(10001), 104743, '<code>nthPrime(10001)</code> should return 104743.');"
+          "text": "<code>nthPrime(10001)</code>应该返回 104743。",
+          "testString": "assert.strictEqual(nthPrime(10001), 104743, '<code>nthPrime(10001)</code>应该返回 104743。');"
         }
       ],
       "solutions": [
         "const nthPrime = (number)=>{\n let pN = 2;\n let step = 0;\n while (step<number) {\n   let isPrime = true;\n   for(let i = 2;i<pN;i++){\n      if(!(pN%i)){\n        isPrime = false;\n        break;\n      }\n   }\n   isPrime ? step++ : '';\n    pN++;\n }\n return pN-1;\n}"
       ],
       "description": [
-        "By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.",
-        "What is the 10 001st prime number?"
+        "列出前 6 个素数，它们分别是 2、3、5、7、11 和 13。我们可以看出，第 6 个素数是 13。",
+        "第 10,001 个素数是多少？"
       ],
       "files": {
         "indexjs": {
@@ -327,7 +334,7 @@
           "name": "index",
           "contents": [
             "function nthPrime(number) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -342,21 +349,22 @@
       "id": "5900f3741000cf542c50fe87",
       "challengeType": 5,
       "title": "Problem 8: Largest product in a series",
+      "title_zh": "关卡 8：连续数字最大乘积",
       "tests": [
         {
-          "text": "<code>largestProductinaSeries(4)</code> should return 5832.",
-          "testString": "assert.strictEqual(largestProductinaSeries(4), 5832, '<code>largestProductinaSeries(4)</code> should return 5832.');"
+          "text": "<code>largestProductinaSeries(4)</code>应该返回 5832。",
+          "testString": "assert.strictEqual(largestProductinaSeries(4), 5832, '<code>largestProductinaSeries(4)</code>应该返回 5832。');"
         },
         {
-          "text": "<code>largestProductinaSeries(13)</code> should return 23514624000.",
-          "testString": "assert.strictEqual(largestProductinaSeries(13), 23514624000, '<code>largestProductinaSeries(13)</code> should return 23514624000.');"
+          "text": "<code>largestProductinaSeries(13)</code>应该返回 23514624000。",
+          "testString": "assert.strictEqual(largestProductinaSeries(13), 23514624000, '<code>largestProductinaSeries(13)</code>应该返回 23514624000。');"
         }
       ],
       "solutions": [
         "const largestProductinaSeries = (number)=>{\n  let thousandDigits = [7,3,1,6,7,1,7,6,5,3,1,3,3,0,6,2,4,9,1,9,2,2,5,1,1,9,6,7,4,4,2,6,5,7,4,7,4,2,3,5,5,3,4,9,1,9,4,9,3,4,9,6,9,8,3,5,2,0,3,1,2,7,7,4,5,0,6,3,2,6,2,3,9,5,7,8,3,1,8,0,1,6,9,8,4,8,0,1,8,6,9,4,7,8,8,5,1,8,4,3,8,5,8,6,1,5,6,0,7,8,9,1,1,2,9,4,9,4,9,5,4,5,9,5,0,1,7,3,7,9,5,8,3,3,1,9,5,2,8,5,3,2,0,8,8,0,5,5,1,1,1,2,5,4,0,6,9,8,7,4,7,1,5,8,5,2,3,8,6,3,0,5,0,7,1,5,6,9,3,2,9,0,9,6,3,2,9,5,2,2,7,4,4,3,0,4,3,5,5,7,6,6,8,9,6,6,4,8,9,5,0,4,4,5,2,4,4,5,2,3,1,6,1,7,3,1,8,5,6,4,0,3,0,9,8,7,1,1,1,2,1,7,2,2,3,8,3,1,1,3,6,2,2,2,9,8,9,3,4,2,3,3,8,0,3,0,8,1,3,5,3,3,6,2,7,6,6,1,4,2,8,2,8,0,6,4,4,4,4,8,6,6,4,5,2,3,8,7,4,9,3,0,3,5,8,9,0,7,2,9,6,2,9,0,4,9,1,5,6,0,4,4,0,7,7,2,3,9,0,7,1,3,8,1,0,5,1,5,8,5,9,3,0,7,9,6,0,8,6,6,7,0,1,7,2,4,2,7,1,2,1,8,8,3,9,9,8,7,9,7,9,0,8,7,9,2,2,7,4,9,2,1,9,0,1,6,9,9,7,2,0,8,8,8,0,9,3,7,7,6,6,5,7,2,7,3,3,3,0,0,1,0,5,3,3,6,7,8,8,1,2,2,0,2,3,5,4,2,1,8,0,9,7,5,1,2,5,4,5,4,0,5,9,4,7,5,2,2,4,3,5,2,5,8,4,9,0,7,7,1,1,6,7,0,5,5,6,0,1,3,6,0,4,8,3,9,5,8,6,4,4,6,7,0,6,3,2,4,4,1,5,7,2,2,1,5,5,3,9,7,5,3,6,9,7,8,1,7,9,7,7,8,4,6,1,7,4,0,6,4,9,5,5,1,4,9,2,9,0,8,6,2,5,6,9,3,2,1,9,7,8,4,6,8,6,2,2,4,8,2,8,3,9,7,2,2,4,1,3,7,5,6,5,7,0,5,6,0,5,7,4,9,0,2,6,1,4,0,7,9,7,2,9,6,8,6,5,2,4,1,4,5,3,5,1,0,0,4,7,4,8,2,1,6,6,3,7,0,4,8,4,4,0,3,1,9,9,8,9,0,0,0,8,8,9,5,2,4,3,4,5,0,6,5,8,5,4,1,2,2,7,5,8,8,6,6,6,8,8,1,1,6,4,2,7,1,7,1,4,7,9,9,2,4,4,4,2,9,2,8,2,3,0,8,6,3,4,6,5,6,7,4,8,1,3,9,1,9,1,2,3,1,6,2,8,2,4,5,8,6,1,7,8,6,6,4,5,8,3,5,9,1,2,4,5,6,6,5,2,9,4,7,6,5,4,5,6,8,2,8,4,8,9,1,2,8,8,3,1,4,2,6,0,7,6,9,0,0,4,2,2,4,2,1,9,0,2,2,6,7,1,0,5,5,6,2,6,3,2,1,1,1,1,1,0,9,3,7,0,5,4,4,2,1,7,5,0,6,9,4,1,6,5,8,9,6,0,4,0,8,0,7,1,9,8,4,0,3,8,5,0,9,6,2,4,5,5,4,4,4,3,6,2,9,8,1,2,3,0,9,8,7,8,7,9,9,2,7,2,4,4,2,8,4,9,0,9,1,8,8,8,4,5,8,0,1,5,6,1,6,6,0,9,7,9,1,9,1,3,3,8,7,5,4,9,9,2,0,0,5,2,4,0,6,3,6,8,9,9,1,2,5,6,0,7,1,7,6,0,6,0,5,8,8,6,1,1,6,4,6,7,1,0,9,4,0,5,0,7,7,5,4,1,0,0,2,2,5,6,9,8,3,1,5,5,2,0,0,0,5,5,9,3,5,7,2,9,7,2,5,7,1,6,3,6,2,6,9,5,6,1,8,8,2,6,7,0,4,2,8,2,5,2,4,8,3,6,0,0,8,2,3,2,5,7,5,3,0,4,2,0,7,5,2,9,6,3,4,5,0];\n let numberOfDigits = thousandDigits.length;\n let currentIndex = 0;\n let productOfAdjDigits = [];\n\n  while(currentIndex<=(numberOfDigits-number)){\n   let currentAdj = thousandDigits.slice(currentIndex,currentIndex+number);\n    let isAdjDigits = false;\n\n    productOfAdjDigits.push(currentAdj.reduce((prev,cur)=>{\n     return prev*cur;\n    }));\n\n    currentIndex++;\n }\n\n return Math.max(...productOfAdjDigits);\n}"
       ],
       "description": [
-        "The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.",
+        "在下面这个 1000 位正整数中，连续 4 个数字的最大乘积是 9 × 9 × 8 × 9 = 5832。",
         "",
         "<div style='text-align: center;'>73167176531330624919225119674426574742355349194934</div>",
         "<div style='text-align: center;'>96983520312774506326239578318016984801869478851843</div>",
@@ -378,7 +386,7 @@
         "<div style='text-align: center;'>84580156166097919133875499200524063689912560717606</div>",
         "<div style='text-align: center;'>05886116467109405077541002256983155200055935729725</div>",
         "<div style='text-align: center;'>71636269561882670428252483600823257530420752963450</div>",
-        "Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?"
+        "找出这个 1000 位正整数中乘积最大的连续13个数字。它们的乘积是多少？"
       ],
       "files": {
         "indexjs": {
@@ -387,7 +395,7 @@
           "name": "index",
           "contents": [
             "function largestProductinaSeries(number) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  let thousandDigits = [7,3,1,6,7,1,7,6,5,3,1,3,3,0,6,2,4,9,1,9,2,2,5,1,1,9,6,7,4,4,2,6,5,7,4,7,4,2,3,5,5,3,4,9,1,9,4,9,3,4,9,6,9,8,3,5,2,0,3,1,2,7,7,4,5,0,6,3,2,6,2,3,9,5,7,8,3,1,8,0,1,6,9,8,4,8,0,1,8,6,9,4,7,8,8,5,1,8,4,3,8,5,8,6,1,5,6,0,7,8,9,1,1,2,9,4,9,4,9,5,4,5,9,5,0,1,7,3,7,9,5,8,3,3,1,9,5,2,8,5,3,2,0,8,8,0,5,5,1,1,1,2,5,4,0,6,9,8,7,4,7,1,5,8,5,2,3,8,6,3,0,5,0,7,1,5,6,9,3,2,9,0,9,6,3,2,9,5,2,2,7,4,4,3,0,4,3,5,5,7,6,6,8,9,6,6,4,8,9,5,0,4,4,5,2,4,4,5,2,3,1,6,1,7,3,1,8,5,6,4,0,3,0,9,8,7,1,1,1,2,1,7,2,2,3,8,3,1,1,3,6,2,2,2,9,8,9,3,4,2,3,3,8,0,3,0,8,1,3,5,3,3,6,2,7,6,6,1,4,2,8,2,8,0,6,4,4,4,4,8,6,6,4,5,2,3,8,7,4,9,3,0,3,5,8,9,0,7,2,9,6,2,9,0,4,9,1,5,6,0,4,4,0,7,7,2,3,9,0,7,1,3,8,1,0,5,1,5,8,5,9,3,0,7,9,6,0,8,6,6,7,0,1,7,2,4,2,7,1,2,1,8,8,3,9,9,8,7,9,7,9,0,8,7,9,2,2,7,4,9,2,1,9,0,1,6,9,9,7,2,0,8,8,8,0,9,3,7,7,6,6,5,7,2,7,3,3,3,0,0,1,0,5,3,3,6,7,8,8,1,2,2,0,2,3,5,4,2,1,8,0,9,7,5,1,2,5,4,5,4,0,5,9,4,7,5,2,2,4,3,5,2,5,8,4,9,0,7,7,1,1,6,7,0,5,5,6,0,1,3,6,0,4,8,3,9,5,8,6,4,4,6,7,0,6,3,2,4,4,1,5,7,2,2,1,5,5,3,9,7,5,3,6,9,7,8,1,7,9,7,7,8,4,6,1,7,4,0,6,4,9,5,5,1,4,9,2,9,0,8,6,2,5,6,9,3,2,1,9,7,8,4,6,8,6,2,2,4,8,2,8,3,9,7,2,2,4,1,3,7,5,6,5,7,0,5,6,0,5,7,4,9,0,2,6,1,4,0,7,9,7,2,9,6,8,6,5,2,4,1,4,5,3,5,1,0,0,4,7,4,8,2,1,6,6,3,7,0,4,8,4,4,0,3,1,9,9,8,9,0,0,0,8,8,9,5,2,4,3,4,5,0,6,5,8,5,4,1,2,2,7,5,8,8,6,6,6,8,8,1,1,6,4,2,7,1,7,1,4,7,9,9,2,4,4,4,2,9,2,8,2,3,0,8,6,3,4,6,5,6,7,4,8,1,3,9,1,9,1,2,3,1,6,2,8,2,4,5,8,6,1,7,8,6,6,4,5,8,3,5,9,1,2,4,5,6,6,5,2,9,4,7,6,5,4,5,6,8,2,8,4,8,9,1,2,8,8,3,1,4,2,6,0,7,6,9,0,0,4,2,2,4,2,1,9,0,2,2,6,7,1,0,5,5,6,2,6,3,2,1,1,1,1,1,0,9,3,7,0,5,4,4,2,1,7,5,0,6,9,4,1,6,5,8,9,6,0,4,0,8,0,7,1,9,8,4,0,3,8,5,0,9,6,2,4,5,5,4,4,4,3,6,2,9,8,1,2,3,0,9,8,7,8,7,9,9,2,7,2,4,4,2,8,4,9,0,9,1,8,8,8,4,5,8,0,1,5,6,1,6,6,0,9,7,9,1,9,1,3,3,8,7,5,4,9,9,2,0,0,5,2,4,0,6,3,6,8,9,9,1,2,5,6,0,7,1,7,6,0,6,0,5,8,8,6,1,1,6,4,6,7,1,0,9,4,0,5,0,7,7,5,4,1,0,0,2,2,5,6,9,8,3,1,5,5,2,0,0,0,5,5,9,3,5,7,2,9,7,2,5,7,1,6,3,6,2,6,9,5,6,1,8,8,2,6,7,0,4,2,8,2,5,2,4,8,3,6,0,0,8,2,3,2,5,7,5,3,0,4,2,0,7,5,2,9,6,3,4,5,0];",
             "  return true;",
             "}",
@@ -403,28 +411,29 @@
       "id": "5900f3761000cf542c50fe88",
       "challengeType": 5,
       "title": "Problem 9: Special Pythagorean triplet",
+      "title_zh": "关卡 9：特殊毕达哥拉斯三元组",
       "tests": [
         {
-          "text": "<code>specialPythagoreanTriplet(1000)</code> should return 31875000.",
-          "testString": "assert.strictEqual(specialPythagoreanTriplet(1000), 31875000, '<code>specialPythagoreanTriplet(1000)</code> should return 31875000.');"
+          "text": "<code>specialPythagoreanTriplet(1000)</code>应该返回 31875000。",
+          "testString": "assert.strictEqual(specialPythagoreanTriplet(1000), 31875000, '<code>specialPythagoreanTriplet(1000)</code>应该返回 31875000。');"
         },
         {
-          "text": "<code>specialPythagoreanTriplet(24)</code> should return 480.",
-          "testString": "assert.strictEqual(specialPythagoreanTriplet(24), 480, '<code>specialPythagoreanTriplet(24)</code> should return 480.');"
+          "text": "<code>specialPythagoreanTriplet(24)</code>应该返回 480。",
+          "testString": "assert.strictEqual(specialPythagoreanTriplet(24), 480, '<code>specialPythagoreanTriplet(24)</code>应该返回 480。');"
         },
         {
-          "text": "<code>specialPythagoreanTriplet(120)</code> should return 49920.",
-          "testString": "assert.strictEqual(specialPythagoreanTriplet(120), 49920, '<code>specialPythagoreanTriplet(120)</code> should return 49920.');"
+          "text": "<code>specialPythagoreanTriplet(120)</code>应该返回 49920。",
+          "testString": "assert.strictEqual(specialPythagoreanTriplet(120), 49920, '<code>specialPythagoreanTriplet(120)</code>应该返回 49920。');"
         }
       ],
       "solutions": [
         "const specialPythagoreanTriplet = (n)=>{\n let sumOfabc = n;\n let a,b,c;\n for(a = 1; a<=sumOfabc/3; a++){\n for(b = a+1; b<=sumOfabc/2; b++){\n c = Math.sqrt(a*a+b*b);\n if((a+b+c) == sumOfabc){\n return a*b*c;\n }\n }\n }\n}"
       ],
       "description": [
-        "A Pythagorean triplet is a set of three natural numbers, <var>a</var> < <var>b</var> < <var>c</var>, for which,",
+        "毕达哥拉斯三元组是三个自然数 <var>a</var> < <var>b</var> < <var>c</var> 组成的集合，并满足",
         "<div style='text-align: center;'><var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>",
-        "For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.",
-        "There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000. Find the product <var>abc</var>."
+        "例如 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>。",
+        "有且只有一个毕达哥拉斯三元组满足 <var>a</var> + <var>b</var> + <var>c</var> = 1000。求这个三元组的乘积 abc。"
       ],
       "files": {
         "indexjs": {
@@ -434,7 +443,7 @@
           "contents": [
             "function specialPythagoreanTriplet(n) {",
             " let sumOfabc = n;",
-            " // Good luck!",
+            " // 祝你好运！",
             " return true;",
             "}",
             "",
@@ -449,30 +458,31 @@
       "id": "5900f3761000cf542c50fe89",
       "challengeType": 5,
       "title": "Problem 10: Summation of primes",
+      "title_zh": "关卡 10：素数的和",
       "tests": [
         {
-          "text": "<code>primeSummation(17)</code> should return 41.",
-          "testString": "assert.strictEqual(primeSummation(17), 41, '<code>primeSummation(17)</code> should return 41.');"
+          "text": "<code>primeSummation(17)</code>应该返回 41。",
+          "testString": "assert.strictEqual(primeSummation(17), 41, '<code>primeSummation(17)</code>应该返回 41。');"
         },
         {
-          "text": "<code>primeSummation(2001)</code> should return 277050.",
-          "testString": "assert.strictEqual(primeSummation(2001), 277050, '<code>primeSummation(2001)</code> should return 277050.');"
+          "text": "<code>primeSummation(2001)</code>应该返回 277050。",
+          "testString": "assert.strictEqual(primeSummation(2001), 277050, '<code>primeSummation(2001)</code>应该返回 277050。');"
         },
         {
-          "text": "<code>primeSummation(140759)</code> should return 873608362.",
-          "testString": "assert.strictEqual(primeSummation(140759), 873608362, '<code>primeSummation(140759)</code> should return 873608362.');"
+          "text": "<code>primeSummation(140759)</code>应该返回 873608362。",
+          "testString": "assert.strictEqual(primeSummation(140759), 873608362, '<code>primeSummation(140759)</code>应该返回 873608362。');"
         },
         {
-          "text": "<code>primeSummation(2000000)</code> should return 142913828922.",
-          "testString": "assert.strictEqual(primeSummation(2000000), 142913828922, '<code>primeSummation(2000000)</code> should return 142913828922.');"
+          "text": "<code>primeSummation(2000000)</code>应该返回 142913828922。",
+          "testString": "assert.strictEqual(primeSummation(2000000), 142913828922, '<code>primeSummation(2000000)</code>应该返回 142913828922。');"
         }
       ],
       "solutions": [
         "//noprotect\nfunction primeSummation(n) {\n  // Initialise an array containing only prime numbers\n  let primes = [2];\n  let result = 2;\n\n  function isPrime(y, primes) {\n    // Find sqrt(y)\n    const sqrt = Math.floor(Math.sqrt(y));\n\n    // Divide y by each applicable prime, return false if any of them divide y\n    for (let i = 0; i < primes.length && primes[i] <= sqrt; i++) {\n      if (y % primes[i] === 0) {\n        return false;\n      }\n    }\n\n    // At this point x must be prime\n    return true;\n  }\n\n  // For every odd integer, add it to the array if it is prime\n  for (let x = 3; x < n; x += 2) {\n    if (isPrime(x, primes)) {\n      if (x > n) {\n        return result;\n      } else {\n        result += x;\n        primes.push(x);\n      }\n    }\n  }\n\n  return result;\n}"
       ],
       "description": [
-        "The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.",
-        "Find the sum of all the primes below n."
+        "所有小于 10 的素数的和是 2 + 3 + 5 + 7 = 17。",
+        "求所有小于给定参数值 n 的素数的和。"
       ],
       "files": {
         "indexjs": {
@@ -481,7 +491,7 @@
           "name": "index",
           "contents": [
             "function primeSummation(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -496,21 +506,22 @@
       "id": "5900f3781000cf542c50fe8a",
       "challengeType": 5,
       "title": "Problem 11: Largest product in a grid",
+      "title_zh": "关卡 11：方阵中的最大乘积",
       "tests": [
         {
-          "text": "<code>largestGridProduct(grid)</code> should return 70600674.",
-          "testString": "assert.strictEqual(largestGridProduct(grid), 70600674, '<code>largestGridProduct(grid)</code> should return 70600674.');"
+          "text": "<code>largestGridProduct(grid)</code>应该返回 70600674。",
+          "testString": "assert.strictEqual(largestGridProduct(grid), 70600674, '<code>largestGridProduct(grid)</code>应该返回 70600674。');"
         },
         {
-          "text": "<code>largestGridProduct(testGrid)</code> should return 14169081.",
-          "testString": "assert.strictEqual(largestGridProduct(testGrid), 14169081, '<code>largestGridProduct(testGrid)</code> should return 14169081.');"
+          "text": "<code>largestGridProduct(testGrid)</code>应该返回 14169081。",
+          "testString": "assert.strictEqual(largestGridProduct(testGrid), 14169081, '<code>largestGridProduct(testGrid)</code>应该返回 14169081。');"
         }
       ],
       "solutions": [
         "function largestGridProduct(arr) {\n  let maxProduct = 0;\n  let currProduct = 0;\n\n  function maxProductChecker(n) {\n    if (n > maxProduct) {\n      return maxProduct = n;\n    }\n  }\n\n  // loop rows\n  for (let r = 0; r < arr.length; r++) {\n    // loop columns\n    for (let c = 0; c < arr[r].length; c++) {\n      const limit = arr[r].length - 3;\n\n      // check horizontal\n      if (c < limit) {\n        currProduct = arr[r][c] * arr[r][c + 1] * arr[r][c + 2] * arr[r][c + 3];\n        maxProductChecker(currProduct);\n      }\n\n      // check vertical\n      if (r < limit) {\n        currProduct = arr[r][c] * arr[r + 1][c] * arr[r + 2][c] * arr[r + 3][c];\n        maxProductChecker(currProduct);\n      }\n\n      // check diagonal [\\]\n      if (c < limit && r < limit) {\n        currProduct = arr[r][c] * arr[r + 1][c + 1] * arr[r + 2][c + 2] * arr[r + 3][c + 3];\n        maxProductChecker(currProduct);\n      }\n\n      // check diagonal [/]\n      if (c > 3 && r < limit) {\n        currProduct = arr[r][c] * arr[r + 1][c - 1] * arr[r + 2][c - 2] * arr[r + 3][c - 3];\n        maxProductChecker(currProduct);\n      }\n    }\n  }\n\n  return maxProduct;\n}\n\n const grid = [  [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],\n  [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],\n  [81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 3, 49, 13, 36, 65],\n  [52, 70, 95, 23, 4, 60, 11, 42, 69, 24, 68, 56, 1, 32, 56, 71, 37, 2, 36, 91],\n  [22, 31, 16, 71, 51, 67, 63, 89, 41, 92, 36, 54, 22, 40, 40, 28, 66, 33, 13, 80],\n  [24, 47, 32, 60, 99, 3, 45, 2, 44, 75, 33, 53, 78, 36, 84, 20, 35, 17, 12, 50],\n  [32, 98, 81, 28, 64, 23, 67, 10, 26, 38, 40, 67, 59, 54, 70, 66, 18, 38, 64, 70],\n  [67, 26, 20, 68, 2, 62, 12, 20, 95, 63, 94, 39, 63, 8, 40, 91, 66, 49, 94, 21],\n  [24, 55, 58, 5, 66, 73, 99, 26, 97, 17, 78, 78, 96, 83, 14, 88, 34, 89, 63, 72],\n  [21, 36, 23, 9, 75, 0, 76, 44, 20, 45, 35, 14, 0, 61, 33, 97, 34, 31, 33, 95],\n  [78, 17, 53, 28, 22, 75, 31, 67, 15, 94, 3, 80, 4, 62, 16, 14, 9, 53, 56, 92],\n  [16, 39, 5, 42, 96, 35, 31, 47, 55, 58, 88, 24, 0, 17, 54, 24, 36, 29, 85, 57],\n  [86, 56, 0, 48, 35, 71, 89, 7, 5, 44, 44, 37, 44, 60, 21, 58, 51, 54, 17, 58],\n  [19, 80, 81, 68, 5, 94, 47, 69, 28, 73, 92, 13, 86, 52, 17, 77, 4, 89, 55, 40],\n  [4, 52, 8, 83, 97, 35, 99, 16, 7, 97, 57, 32, 16, 26, 26, 79, 33, 27, 98, 66],\n  [88, 36, 68, 87, 57, 62, 20, 72, 3, 46, 33, 67, 46, 55, 12, 32, 63, 93, 53, 69],\n  [4, 42, 16, 73, 38, 25, 39, 11, 24, 94, 72, 18, 8, 46, 29, 32, 40, 62, 76, 36],\n  [20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74, 4, 36, 16],\n  [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],\n  [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]\n];\n\nconst testGrid = [\n  [40, 17, 81, 18, 57],\n  [74, 4, 36, 16, 29],\n  [36, 42, 69, 73, 45],\n  [51, 54, 69, 16, 92],\n  [7, 97, 57, 32, 16]\n];"
       ],
       "description": [
-        "In the 20×20 grid below, four numbers along a diagonal line have been marked in red.",
+        "在如下的 20×20 方阵中，有四个呈对角线排列的数被标红了。",
         "",
         "<div style='text-align: center;'>08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08</div>",
         "<div style='text-align: center;'>49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00</div>",
@@ -533,8 +544,8 @@
         "<div style='text-align: center;'>20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54</div>",
         "<div style='text-align: center;'>01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48</div>",
         "",
-        "The product of these numbers is 26 × 63 × 78 × 14 = 1788696.",
-        "What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?"
+        "这四个数的乘积是 26 × 63 × 78 × 14 = 1788696。",
+        "在这个 20×20 方阵中，四个在同一方向（从下至上、从上至下、从右至左、从左至右或者对角线）上相邻的数的乘积最大是多少？"
       ],
       "files": {
         "indexjs": {
@@ -543,11 +554,11 @@
           "name": "index",
           "contents": [
             "function largestGridProduct(arr) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return arr;",
             "}",
             "",
-            "// Only change code above this line",
+            "// 只需修改此行以上的代码",
             "const grid = [",
             "  [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],",
             "  [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],",
@@ -590,27 +601,28 @@
       "id": "5900f3781000cf542c50fe8b",
       "challengeType": 5,
       "title": "Problem 12: Highly divisible triangular number",
+      "title_zh": "关卡 12：高度可约的三角形数",
       "tests": [
         {
-          "text": "<code>divisibleTriangleNumber(5)</code> should return 28.",
-          "testString": "assert.strictEqual(divisibleTriangleNumber(5), 28, '<code>divisibleTriangleNumber(5)</code> should return 28.');"
+          "text": "<code>divisibleTriangleNumber(5)</code>应该返回 28。",
+          "testString": "assert.strictEqual(divisibleTriangleNumber(5), 28, '<code>divisibleTriangleNumber(5)</code>应该返回 28。');"
         },
         {
-          "text": "<code>divisibleTriangleNumber(23)</code> should return 630.",
-          "testString": "assert.strictEqual(divisibleTriangleNumber(23), 630, '<code>divisibleTriangleNumber(23)</code> should return 630.');"
+          "text": "<code>divisibleTriangleNumber(23)</code>应该返回 630。",
+          "testString": "assert.strictEqual(divisibleTriangleNumber(23), 630, '<code>divisibleTriangleNumber(23)</code>应该返回 630。');"
         },
         {
-          "text": "<code>divisibleTriangleNumber()</code> should return 76576500.",
-          "testString": "assert.strictEqual(divisibleTriangleNumber(500), 76576500, '<code>divisibleTriangleNumber()</code> should return 76576500.');"
+          "text": "<code>divisibleTriangleNumber()</code>应该返回 76576500。",
+          "testString": "assert.strictEqual(divisibleTriangleNumber(500), 76576500, '<code>divisibleTriangleNumber()</code>应该返回 76576500。');"
         }
       ],
       "solutions": [
         "function divisibleTriangleNumber(n) {\n  let counter = 1;\n  let triangleNumber = counter++;\n\n  function getFactors(num) {\n    let factors = [];\n\n    let possibleFactor = 1;\n    let sqrt = Math.sqrt(num);\n\n    while (possibleFactor <= sqrt) {\n      if (num % possibleFactor == 0) {\n        factors.push(possibleFactor);\n        var otherPossibleFactor = num / possibleFactor;\n        if (otherPossibleFactor > possibleFactor) {\n          factors.push(otherPossibleFactor);\n        }\n      }\n      possibleFactor++;\n    }\n\n    return factors;\n  }\n\n  while (getFactors(triangleNumber).length < n) {\n    triangleNumber += counter++;\n  }\n  console.log(triangleNumber)\n  return triangleNumber;\n}"
       ],
       "description": [
-        "The sequence of triangle numbers is generated by adding the natural numbers. So the 7th triangle number would be 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. The first ten terms would be:",
+        "三角形数数列是通过逐个加上自然数来生成的。例如，第 7 个三角形数是 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28。三角形数数列的前十项分别是：",
         "<div style='text-align: center;'>1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...</div>",
-        "Let us list the factors of the first seven triangle numbers:",
+        "让我们列举出前七个三角形数的所有约数：",
         "<div style='padding-left: 4em;'><b>1:</b> 1</div>",
         "<div style='padding-left: 4em;'><b>3:</b> 1, 3</div>",
         "<div style='padding-left: 4em;'><b>6:</b> 1, 2, 3, 6</div>",
@@ -618,8 +630,8 @@
         "<div style='padding-left: 4em;'><b>15:</b> 1, 3, 5, 15</div>",
         "<div style='padding-left: 4em;'><b>21:</b> 1, 3, 7, 21</div>",
         "<div style='padding-left: 4em;'><b>28:</b> 1, 2, 4, 7, 14, 28</div>",
-        "We can see that 28 is the first triangle number to have over five divisors.",
-        "What is the value of the first triangle number to have over five hundred divisors?"
+        "我们可以看出，28 是第一个拥有超过 5 个约数的三角形数。",
+        "第一个拥有超过 500 个约数的三角形数是多少？"
       ],
       "files": {
         "indexjs": {
@@ -628,7 +640,7 @@
           "name": "index",
           "contents": [
             "function divisibleTriangleNumber(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -643,21 +655,22 @@
       "id": "5900f37a1000cf542c50fe8c",
       "challengeType": 5,
       "title": "Problem 13: Large sum",
+      "title_zh": "关卡 13：大和",
       "tests": [
         {
-          "text": "<code>largeSum(testNums)</code> should return 8348422521.",
-          "testString": "assert.strictEqual(largeSum(testNums), 8348422521, '<code>largeSum(testNums)</code> should return 8348422521.');"
+          "text": "<code>largeSum(testNums)</code>应该返回 8348422521。",
+          "testString": "assert.strictEqual(largeSum(testNums), 8348422521, '<code>largeSum(testNums)</code>应该返回 8348422521。');"
         },
         {
-          "text": "<code>largeSum(fiftyDigitNums)</code> should return 5537376230.",
-          "testString": "assert.strictEqual(largeSum(fiftyDigitNums), 5537376230, '<code>largeSum(fiftyDigitNums)</code> should return 5537376230.');"
+          "text": "<code>largeSum(fiftyDigitNums)</code>应该返回 5537376230。",
+          "testString": "assert.strictEqual(largeSum(fiftyDigitNums), 5537376230, '<code>largeSum(fiftyDigitNums)</code>应该返回 5537376230。');"
         }
       ],
       "solutions": [
         "function largeSum(arr) {\n\n  let sum = 0;\n\n  arr.forEach(function(num) {\n    sum += parseInt(num, 10);\n  });\n\n  sum = sum.toString(10);\n\n  sum = sum.substr(0, 1) + sum.substr(2);\n\n  let firstTen = sum.slice(0, 10);\n  return parseInt(firstTen, 10);\n}"
       ],
       "description": [
-        "Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.",
+        "计算出以下一百个 50 位数的和的前十位数字。",
         "",
         "37107287533902102798797998220837590246510135740250",
         "46376937677490009712648124896970078050417018260538",
@@ -767,11 +780,11 @@
           "name": "index",
           "contents": [
             "function largeSum(arr) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
-            "// only change code above this line",
+            "// 只需修改此行以上的代码",
             "",
             "const testNums = [",
             "  '37107287533902102798797998220837590246510135740250',",
@@ -897,32 +910,33 @@
       "id": "5900f37a1000cf542c50fe8d",
       "challengeType": 5,
       "title": "Problem 14: Longest Collatz sequence",
+      "title_zh": "关卡 14：最长考拉兹序列",
       "tests": [
         {
-          "text": "<code>longestCollatzSequence(14)</code> should return 9.",
-          "testString": "assert.strictEqual(longestCollatzSequence(14), 9, '<code>longestCollatzSequence(14)</code> should return 9.');"
+          "text": "<code>longestCollatzSequence(14)</code>应该返回 9。",
+          "testString": "assert.strictEqual(longestCollatzSequence(14), 9, '<code>longestCollatzSequence(14)</code>应该返回 9。');"
         },
         {
-          "text": "<code>longestCollatzSequence(5847)</code> should return 3711.",
-          "testString": "assert.strictEqual(longestCollatzSequence(5847), 3711, '<code>longestCollatzSequence(5847)</code> should return 3711.');"
+          "text": "<code>longestCollatzSequence(5847)</code>应该返回 3711。",
+          "testString": "assert.strictEqual(longestCollatzSequence(5847), 3711, '<code>longestCollatzSequence(5847)</code>应该返回 3711。');"
         },
         {
-          "text": "<code>longestCollatzSequence(1000000)</code> should return 837799.",
-          "testString": "assert.strictEqual(longestCollatzSequence(1000000), 837799, '<code>longestCollatzSequence(1000000)</code> should return 837799.');"
+          "text": "<code>longestCollatzSequence(1000000)</code>应该返回 837799。",
+          "testString": "assert.strictEqual(longestCollatzSequence(1000000), 837799, '<code>longestCollatzSequence(1000000)</code>应该返回 837799。');"
         }
       ],
       "solutions": [
         "function longestCollatzSequence(limit) {\n  let longestSequenceLength = 0;\n  let startingNum = 0;\n\n  function sequenceLength(num) {\n    let length = 1;\n\n    while (num >= 1) {\n      if (num === 1) {        break;\n      } else if (num % 2 === 0) {\n        num = num / 2;\n        length++;\n      } else {\n        num = num * 3 + 1;\n        length++;\n      }\n    }\n    return length;\n  }\n\n  for (let i = 2; i < limit; i++) {\n    let currSequenceLength = sequenceLength(i);\n    if (currSequenceLength > longestSequenceLength) {\n      longestSequenceLength = currSequenceLength;\n      startingNum = i;\n    }\n  }\n  return startingNum;\n}"
       ],
       "description": [
-        "The following iterative sequence is defined for the set of positive integers:",
-        "<div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (<var>n</var> is even)</div>",
-        "<div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1 (<var>n</var> is odd)</div>",
-        "Using the rule above and starting with 13, we generate the following sequence:",
+        "在正整数集上定义如下的迭代序列：",
+        "<div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (若 <var>n</var> 为偶数)</div>",
+        "<div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1 (若 <var>n</var> 为奇数)</div>",
+        "从 13 开始应用上述规则，我们可以生成如下的序列：",
         "<div style='text-align: center;'>13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1</div>",
-        "It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.",
-        "Which starting number, under one million, produces the longest chain?",
-        "NOTE: Once the chain starts the terms are allowed to go above one million."
+        "可以看出这个序列（从 13 开始到 1 结束）共有 10 项。尽管还没有被证明，但我们普遍认为，从任何数开始最终都能迭代至 1（“考拉兹猜想”）。",
+        "从小于一百万的哪个数开始，能够生成最长的序列呢？",
+        "<b>注意：</b>序列开始生成后允许其中的项超过一百万。"
       ],
       "files": {
         "indexjs": {
@@ -931,7 +945,7 @@
           "name": "index",
           "contents": [
             "function longestCollatzSequence(limit) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -946,29 +960,30 @@
       "id": "5900f37b1000cf542c50fe8e",
       "challengeType": 5,
       "title": "Problem 15: Lattice paths",
+      "title_zh": "关卡 15：网格路径",
       "tests": [
         {
-          "text": "<code>latticePaths(4)</code> should return 70.",
-          "testString": "assert.strictEqual(latticePaths(4), 70, '<code>latticePaths(4)</code> should return 70.');"
+          "text": "<code>latticePaths(4)</code>应该返回 70。",
+          "testString": "assert.strictEqual(latticePaths(4), 70, '<code>latticePaths(4)</code>应该返回 70。');"
         },
         {
-          "text": "<code>latticePaths(9)</code> should return 48620.",
-          "testString": "assert.strictEqual(latticePaths(9), 48620, '<code>latticePaths(9)</code> should return 48620.');"
+          "text": "<code>latticePaths(9)</code>应该返回 48620。",
+          "testString": "assert.strictEqual(latticePaths(9), 48620, '<code>latticePaths(9)</code>应该返回 48620。');"
         },
         {
-          "text": "<code>latticePaths(20)</code> should return 137846528820.",
-          "testString": "assert.strictEqual(latticePaths(20), 137846528820, '<code>latticePaths(20)</code> should return 137846528820.');"
+          "text": "<code>latticePaths(20)</code>应该返回 137846528820。",
+          "testString": "assert.strictEqual(latticePaths(20), 137846528820, '<code>latticePaths(20)</code>应该返回 137846528820。');"
         }
       ],
       "solutions": [
         "function latticePaths(gridSize) {\n  let paths = 1;\n\n  for (let i = 0; i < gridSize; i++) {\n    paths *= (2 * gridSize) - i;\n    paths /= i + 1;\n  }\n  return paths;\n}"
       ],
       "description": [
-        "Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.",
+        "从一个 2×2 方阵的左上角出发，只允许向右或向下移动，则恰好有 6 条通往右下角的路径。",
         "",
         "<img class=\"img-responsive center-block\" alt=\"a diagram of 6 2 by 2 grids showing all the routes to the bottom right corner\" src=\"https://i.imgur.com/1Atixoj.gif\">",
         "",
-        "How many such routes are there through a 20×20 grid?"
+        "对于 20×20 方阵来说，这样的路径有多少条？"
       ],
       "files": {
         "indexjs": {
@@ -977,7 +992,7 @@
           "name": "index",
           "contents": [
             "function latticePaths(gridSize) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -992,26 +1007,27 @@
       "id": "5900f37d1000cf542c50fe8f",
       "challengeType": 5,
       "title": "Problem 16: Power digit sum",
+      "title_zh": "关卡 16：幂的数字和",
       "tests": [
         {
-          "text": "<code>powerDigitSum(15)</code> should return 26.",
-          "testString": "assert.strictEqual(powerDigitSum(15), 26, '<code>powerDigitSum(15)</code> should return 26.');"
+          "text": "<code>powerDigitSum(15)</code>应该返回 26。",
+          "testString": "assert.strictEqual(powerDigitSum(15), 26, '<code>powerDigitSum(15)</code>应该返回 26。');"
         },
         {
-          "text": "<code>powerDigitSum(128)</code> should return 166.",
-          "testString": "assert.strictEqual(powerDigitSum(128), 166, '<code>powerDigitSum(128)</code> should return 166.');"
+          "text": "<code>powerDigitSum(128)</code>应该返回 166。",
+          "testString": "assert.strictEqual(powerDigitSum(128), 166, '<code>powerDigitSum(128)</code>应该返回 166。');"
         },
         {
-          "text": "<code>powerDigitSum(1000)</code> should return 1366.",
-          "testString": "assert.strictEqual(powerDigitSum(1000), 1366, '<code>powerDigitSum(1000)</code> should return 1366.');"
+          "text": "<code>powerDigitSum(1000)</code>应该返回 1366。",
+          "testString": "assert.strictEqual(powerDigitSum(1000), 1366, '<code>powerDigitSum(1000)</code>应该返回 1366。');"
         }
       ],
       "solutions": [
         "function powerDigitSum(exponent) {\n  const bigNum = [1];\n  let sum = 0;\n\n  for (let i = 1; i <= exponent; i++) {\n    let count = bigNum.length + 1;\n    let overflow = 0;\n    for (let j = 0; j < count; j++) {\n      let digit = bigNum[j] || 0;\n      digit = 2 * digit + overflow;\n\n      if (digit > 9) {\n        digit -= 10;\n        overflow = 1;\n      } else {\n        overflow = 0;\n      }\n\n      bigNum[j] = digit;\n    }\n  }\n\n  bigNum.forEach(function(num) {\n    return sum += num;\n  });\n\n  return sum;\n}"
       ],
       "description": [
-        "2<sup>15</sup> = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.",
-        "What is the sum of the digits of the number 2<sup>1000</sup>?"
+        "2<sup>15</sup> = 32768，而 32768 的各位数字之和是 3 + 2 + 7 + 6 + 8 = 26。",
+        "2<sup>1000</sup> 的各位数字之和是多少？"
       ],
       "files": {
         "indexjs": {
@@ -1020,7 +1036,7 @@
           "name": "index",
           "contents": [
             "function powerDigitSum(exponent) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -1035,27 +1051,28 @@
       "id": "5900f37d1000cf542c50fe90",
       "challengeType": 5,
       "title": "Problem 17: Number letter counts",
+      "title_zh": "关卡 17：表达数字的英文字母计数",
       "tests": [
         {
-          "text": "<code>numberLetterCounts(5)</code> should return 19.",
-          "testString": "assert.strictEqual(numberLetterCounts(5), 19, '<code>numberLetterCounts(5)</code> should return 19.');"
+          "text": "<code>numberLetterCounts(5)</code>应该返回 19。",
+          "testString": "assert.strictEqual(numberLetterCounts(5), 19, '<code>numberLetterCounts(5)</code>应该返回 19。');"
         },
         {
-          "text": "<code>numberLetterCounts(150)</code> should return 1903.",
-          "testString": "assert.strictEqual(numberLetterCounts(150), 1903, '<code>numberLetterCounts(150)</code> should return 1903.');"
+          "text": "<code>numberLetterCounts(150)</code>应该返回 1903。",
+          "testString": "assert.strictEqual(numberLetterCounts(150), 1903, '<code>numberLetterCounts(150)</code>应该返回 1903。');"
         },
         {
-          "text": "<code>numberLetterCounts(1000)</code> should return 21124.",
-          "testString": "assert.strictEqual(numberLetterCounts(1000), 21124, '<code>numberLetterCounts(1000)</code> should return 21124.');"
+          "text": "<code>numberLetterCounts(1000)</code>应该返回 21124。",
+          "testString": "assert.strictEqual(numberLetterCounts(1000), 21124, '<code>numberLetterCounts(1000)</code>应该返回 21124。');"
         }
       ],
       "solutions": [
         "function numberLetterCounts(limit) {\n  const dictionary = {\n    0: '',\n    1: 'one',\n    2: 'two',\n    3: 'three',\n    4: 'four',\n    5: 'five',\n    6: 'six',\n    7: 'seven',\n    8: 'eight',\n    9: 'nine',\n    10: 'ten',\n    11: 'eleven',\n    12: 'twelve',\n    13: 'thirteen',\n    14: 'fourteen',\n    15: 'fifteen',\n    16: 'sixteen',\n    17: 'seventeen',\n    18: 'eighteen',\n    19: 'nineteen',\n    20: 'twenty',\n    30: 'thirty',\n    40: 'forty',\n    50: 'fifty',\n    60: 'sixty',\n    70: 'seventy',\n    80: 'eighty',\n    90: 'ninety',\n    1000: 'onethousand'\n  };\n\n  let numString = '';\n\n  function convertToString(num) {\n    // check dictionary for number\n    if (dictionary[num]) {\n      return dictionary[num];\n    } else {\n      const hundreds = Math.floor(num / 100);\n      const tens =  Math.floor((num / 10) % 10) * 10;\n      const remainder = num % 10;\n\n      let tempStr = '';\n\n      if (hundreds === 0) {\n        tempStr += dictionary[tens] + dictionary[remainder];\n      } else {\n        tempStr += dictionary[hundreds] + 'hundred';\n\n        if (tens !== 0 || remainder !== 0) {\n          tempStr += 'and';\n        }\n\n        if (tens < 20) {\n          const lessThanTwenty = tens + remainder;\n          tempStr += dictionary[lessThanTwenty];\n        } else {\n          tempStr += dictionary[tens] + dictionary[remainder];\n        }\n      }\n      // console.log(num, hundreds, tens, remainder);\n      return tempStr;\n    }\n  }\n\n  for (let i = 1; i <= limit; i++) {\n    numString += convertToString(i);\n  }\n  return numString.length;\n}"
       ],
       "description": [
-        "If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.",
-        "If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used? ",
-        "<b>NOTE:</b> Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of \"and\" when writing out numbers is in compliance with British usage."
+        "如果把 1 到 5 写成英文单词，分别是：one, two, three, four, five，这些单词一共用了 3 + 3 + 5 + 4 + 4 = 19 个字母。",
+        "如果把 1 到 1000 都写成英文单词，一共要用多少个字母？",
+        "<b>注意：</b> 不要算上空格和连字符。 例如，342（three hundred and forty-two）包含23个字母，而 115（one hundred and fifteen）包含 20 个字母。单词 “and” 的使用方式遵循英式英语的规则。"
       ],
       "files": {
         "indexjs": {
@@ -1064,7 +1081,7 @@
           "name": "index",
           "contents": [
             "function numberLetterCounts(limit) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -1079,26 +1096,27 @@
       "id": "5900f37e1000cf542c50fe91",
       "challengeType": 5,
       "title": "Problem 18: Maximum path sum I",
+      "title_zh": "关卡 18：最大路径和 I",
       "tests": [
         {
-          "text": "<code>maximumPathSumI(testTriangle)</code> should return 23.",
-          "testString": "assert.strictEqual(maximumPathSumI(testTriangle), 23, '<code>maximumPathSumI(testTriangle)</code> should return 23.');"
+          "text": "<code>maximumPathSumI(testTriangle)</code>应该返回 23。",
+          "testString": "assert.strictEqual(maximumPathSumI(testTriangle), 23, '<code>maximumPathSumI(testTriangle)</code>应该返回 23。');"
         },
         {
-          "text": "<code>maximumPathSumI(numTriangle)</code> should return 1074.",
-          "testString": "assert.strictEqual(maximumPathSumI(numTriangle), 1074, '<code>maximumPathSumI(numTriangle)</code> should return 1074.');"
+          "text": "<code>maximumPathSumI(numTriangle)</code>应该返回 1074。",
+          "testString": "assert.strictEqual(maximumPathSumI(numTriangle), 1074, '<code>maximumPathSumI(numTriangle)</code>应该返回 1074。');"
         }
       ],
       "solutions": [
         "const testTriangle = [[3, 0, 0, 0],\n  [7, 4, 0, 0],\n  [2, 4, 6, 0],\n  [8, 5, 9, 3]];\n\nfunction maximumPathSumI(triangle) {\n  let maxSum = triangle.slice();\n\n  for (let i = triangle.length - 1; i > 0; i--) {\n    let currentRow = maxSum[i];\n    let previousRow = maxSum[i - 1];\n    const temp = [];\n    for (let j = 0; j < i; j++) {\n      temp.push(Math.max((currentRow[j] + previousRow[j]), (currentRow[j + 1] + previousRow[j])));\n    }\n    maxSum[i - 1] = temp;\n    maxSum.pop();\n  }\n  return maxSum[0][0];\n}"
       ],
       "description": [
-        "By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.",
+        "从下面展示的三角形的顶端出发，不断移动到在下一行与其相邻的元素，能够得到的最大路径和是 23。",
         "<span style='display: block; text-align: center;'><b style='color: red;'>3</b><br><b style='color: red;'>7</b> 4<br>2 <b style='color: red;'>4</b> 6<br>8 5 <b style='color: red;'>9</b> 3</span>",
-        "That is, 3 + 7 + 4 + 9 = 23.",
-        "Find the maximum total from top to bottom of the triangle below:",
+        "如上图，最大路径和为 3 + 7 + 4 + 9 = 23。",
+        "求从下面展示的三角形顶端出发到达底部，所能够得到的最大路径和：",
         "<span style='display: block; text-align: center;'>75<br>95 64<br>17 47 82<br>18 35 87 10<br>20 04 82 47 65<br>19 01 23 75 03 34<br>88 02 77 73 07 63 67<br>99 65 04 28 06 16 70 92<br>41 41 26 56 83 40 80 70 33<br>41 48 72 33 47 32 37 16 94 29<br>53 71 44 65 25 43 91 52 97 51 14<br>70 11 33 28 77 73 17 78 39 68 17 57<br>91 71 52 38 17 14 91 43 58 50 27 29 48<br>63 66 04 68 89 53 67 30 73 16 69 87 40 31<br>04 62 98 27 23 09 70 98 73 93 38 53 60 04 23</span>",
-        "<b>NOTE:</b> As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)"
+        "<b>注意:</b> 在这个问题中，由于只有 16384 条路径，通过尝试所有的路径来解决问题是可行的。但是，对于第 67 题，虽然是一道相同类型的题目，但是三角形将拥有一百行，此时暴力破解将不能解决，而需要一个更加聪明的办法！;o)"
       ],
       "files": {
         "indexjs": {
@@ -1107,7 +1125,7 @@
           "name": "index",
           "contents": [
             "function maximumPathSumI(triangle) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -1129,27 +1147,28 @@
       "id": "5900f37f1000cf542c50fe92",
       "challengeType": 5,
       "title": "Problem 19: Counting Sundays",
+      "title_zh": "关卡 19：数星期日",
       "tests": [
         {
-          "text": "<code>countingSundays(1943, 1946)</code> should return 6.",
-          "testString": "assert.strictEqual(countingSundays(1943, 1946), 6, '<code>countingSundays(1943, 1946)</code> should return 6.');"
+          "text": "<code>countingSundays(1943, 1946)</code>应该返回 6。",
+          "testString": "assert.strictEqual(countingSundays(1943, 1946), 6, '<code>countingSundays(1943, 1946)</code>应该返回 6。');"
         },
         {
-          "text": "<code>countingSundays(1995, 2000)</code> should return 9.",
-          "testString": "assert.strictEqual(countingSundays(1995, 2000), 9, '<code>countingSundays(1995, 2000)</code> should return 9.');"
+          "text": "<code>countingSundays(1995, 2000)</code>应该返回 9。",
+          "testString": "assert.strictEqual(countingSundays(1995, 2000), 9, '<code>countingSundays(1995, 2000)</code>应该返回 9。');"
         },
         {
-          "text": "<code>countingSundays(1901, 2000)</code> should return 171.",
-          "testString": "assert.strictEqual(countingSundays(1901, 2000), 171, '<code>countingSundays(1901, 2000)</code> should return 171.');"
+          "text": "<code>countingSundays(1901, 2000)</code>应该返回 171。",
+          "testString": "assert.strictEqual(countingSundays(1901, 2000), 171, '<code>countingSundays(1901, 2000)</code>应该返回 171。');"
         }
       ],
       "solutions": [
         "function countingSundays(firstYear, lastYear) {\n  let sundays = 0;\n\n  for (let year = firstYear; year <= lastYear; year++) {\n    for (let month = 1; month <= 12; month++) {\n      const thisDate = new Date(year, month, 1);\n      if (thisDate.getDay() === 0) {\n        sundays++;\n      }\n    }\n  }\n  return sundays;\n}"
       ],
       "description": [
-        "You are given the following information, but you may prefer to do some research for yourself.",
-        "<ul><li>1 Jan 1900 was a Monday.</li><li>Thirty days has September,<br>April, June and November.<br>All the rest have thirty-one,<br>Saving February alone,<br>Which has twenty-eight, rain or shine.<br>And on leap years, twenty-nine.</li><li>A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.</li>",
-        "How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?"
+        "下列信息是已知的，当然你也不妨自己再验证一下。",
+        "<ul><li>1900 年 1 月 1 日是星期一。</li><li>三十天在九月中，<br>四六十一也相同。<br>剩下都是三十一，<br>除去二月不统一。<br>二十八天平常年，<br>多加一天在闰年。</li><li>闰年指的是能够被 4 整除却不能被 100 整除的年份，或者能够被 400 整除的年份。</li>",
+        "在二十世纪（1901 年 1 月 1 日到 2000 年 12 月 31 日）中，有多少个月的 1 号是星期天？"
       ],
       "files": {
         "indexjs": {
@@ -1158,7 +1177,7 @@
           "name": "index",
           "contents": [
             "function countingSundays(firstYear, lastYear) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -1173,33 +1192,34 @@
       "id": "5900f3801000cf542c50fe93",
       "challengeType": 5,
       "title": "Problem 20: Factorial digit sum",
+      "title_zh": "关卡 20：阶乘数字和",
       "tests": [
         {
-          "text": "<code>sumFactorialDigits(10)</code> should return 27.",
-          "testString": "assert.strictEqual(sumFactorialDigits(10), 27, '<code>sumFactorialDigits(10)</code> should return 27.');"
+          "text": "<code>sumFactorialDigits(10)</code>应该返回 27。",
+          "testString": "assert.strictEqual(sumFactorialDigits(10), 27, '<code>sumFactorialDigits(10)</code>应该返回 27。');"
         },
         {
-          "text": "<code>sumFactorialDigits(25)</code> should return 72.",
-          "testString": "assert.strictEqual(sumFactorialDigits(25), 72, '<code>sumFactorialDigits(25)</code> should return 72.');"
+          "text": "<code>sumFactorialDigits(25)</code>应该返回 72。",
+          "testString": "assert.strictEqual(sumFactorialDigits(25), 72, '<code>sumFactorialDigits(25)</code>应该返回 72。');"
         },
         {
-          "text": "<code>sumFactorialDigits(50)</code> should return 216.",
-          "testString": "assert.strictEqual(sumFactorialDigits(50), 216, '<code>sumFactorialDigits(50)</code> should return 216.');"
+          "text": "<code>sumFactorialDigits(50)</code>应该返回 216。",
+          "testString": "assert.strictEqual(sumFactorialDigits(50), 216, '<code>sumFactorialDigits(50)</code>应该返回 216。');"
         },
         {
-          "text": "<code>sumFactorialDigits(75)</code> should return 432.",
-          "testString": "assert.strictEqual(sumFactorialDigits(75), 432, '<code>sumFactorialDigits(75)</code> should return 432.');"
+          "text": "<code>sumFactorialDigits(75)</code>应该返回 432。",
+          "testString": "assert.strictEqual(sumFactorialDigits(75), 432, '<code>sumFactorialDigits(75)</code>应该返回 432。');"
         },
         {
-          "text": "<code>sumFactorialDigits(100)</code> should return 648.",
-          "testString": "assert.strictEqual(sumFactorialDigits(100), 648, '<code>sumFactorialDigits(100)</code> should return 648.');"
+          "text": "<code>sumFactorialDigits(100)</code>应该返回 648。",
+          "testString": "assert.strictEqual(sumFactorialDigits(100), 648, '<code>sumFactorialDigits(100)</code>应该返回 648。');"
         }
       ],
       "solutions": [],
       "description": [
-        "<var>n</var>! means <var>n</var> × (<var>n</var> − 1) × ... × 3 × 2 × 1",
-        "For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,<br>and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.",
-        "Find the sum of the digits <var>n</var>!"
+        "<var>n</var>! 的意思是 <var>n</var> × (<var>n</var> − 1) × ... × 3 × 2 × 1",
+        "例如，10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800，<br>，所以 10! 的各位数字和是 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27。",
+        "求出给定参数值 n! 的各位数字和。"
       ],
       "files": {
         "indexjs": {
@@ -1208,7 +1228,7 @@
           "name": "index",
           "contents": [
             "function sumFactorialDigits(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1223,30 +1243,31 @@
       "id": "5900f3811000cf542c50fe94",
       "challengeType": 5,
       "title": "Problem 21: Amicable numbers",
+      "title_zh": "关卡 21：亲和数",
       "tests": [
         {
-          "text": "<code>sumAmicableNum(1000)</code> should return 504.",
-          "testString": "assert.strictEqual(sumAmicableNum(1000), 504, '<code>sumAmicableNum(1000)</code> should return 504.');"
+          "text": "<code>sumAmicableNum(1000)</code>应该返回 504。",
+          "testString": "assert.strictEqual(sumAmicableNum(1000), 504, '<code>sumAmicableNum(1000)</code>应该返回 504。');"
         },
         {
-          "text": "<code>sumAmicableNum(2000)</code> should return 2898.",
-          "testString": "assert.strictEqual(sumAmicableNum(2000), 2898, '<code>sumAmicableNum(2000)</code> should return 2898.');"
+          "text": "<code>sumAmicableNum(2000)</code>应该返回 2898。",
+          "testString": "assert.strictEqual(sumAmicableNum(2000), 2898, '<code>sumAmicableNum(2000)</code>应该返回 2898。');"
         },
         {
-          "text": "<code>sumAmicableNum(5000)</code> should return 8442.",
-          "testString": "assert.strictEqual(sumAmicableNum(5000), 8442, '<code>sumAmicableNum(5000)</code> should return 8442.');"
+          "text": "<code>sumAmicableNum(5000)</code>应该返回 8442。",
+          "testString": "assert.strictEqual(sumAmicableNum(5000), 8442, '<code>sumAmicableNum(5000)</code>应该返回 8442。');"
         },
         {
-          "text": "<code>sumAmicableNum(10000)</code> should return 31626.",
-          "testString": "assert.strictEqual(sumAmicableNum(10000), 31626, '<code>sumAmicableNum(10000)</code> should return 31626.');"
+          "text": "<code>sumAmicableNum(10000)</code>应该返回 31626。",
+          "testString": "assert.strictEqual(sumAmicableNum(10000), 31626, '<code>sumAmicableNum(10000)</code>应该返回 31626。');"
         }
       ],
       "solutions": [],
       "description": [
-        "Let d(<var>n</var>) be defined as the sum of proper divisors of <var>n</var> (numbers less than <var>n</var> which divide evenly into <var>n</var>).",
-        "If d(<var>a</var>) = <var>b</var> and d(<var>b</var>) = <var>a</var>, where <var>a</var> ≠ <var>b</var>, then <var>a</var> and <var>b</var> are an amicable pair and each of <var>a</var> and <var>b</var> are called amicable numbers.",
-        "For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.",
-        "Evaluate the sum of all the amicable numbers under <var>n</var>."
+        "记 d(<var>n</var>) 为 <var>n</var> 的所有真因数(小于 <var>n</var> 且整除 <var>n</var> 的正整数)之和。",
+        "如果 d(<var>a</var>) = <var>b</var> 且 d(<var>b</var>) = <var>a</var>，同时 <var>a</var> ≠ <var>b</var>，那么 <var>a</var> 和 <var>b</var> 构成一个亲和数对，<var>a</var> 和 <var>b</var> 被称为亲和数。",
+        "例如，220 的真因数包括 1、2、4、5、10、11、20、22、44、55和100，因此 d(220) = 284；而 284 的真因数包括 1、2、4、71 和142，因此 d(284) = 220。",
+        "求所有小于给定参数值 n 的亲和数的和。"
       ],
       "files": {
         "indexjs": {
@@ -1255,7 +1276,7 @@
           "name": "index",
           "contents": [
             "function sumAmicableNum(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1270,25 +1291,26 @@
       "id": "5a51eabcad78bf416f316e2a",
       "challengeType": 5,
       "title": "Problem 22: Names scores",
+      "title_zh": "关卡 22：姓名得分",
       "tests": [
         {
-          "text": "<code>namesScores(test1)</code> should return 791.",
-          "testString": "assert.strictEqual(namesScores(test1), 791, '<code>namesScores(test1)</code> should return 791.');"
+          "text": "<code>namesScores(test1)</code>应该返回 791。",
+          "testString": "assert.strictEqual(namesScores(test1), 791, '<code>namesScores(test1)</code>应该返回 791。');"
         },
         {
-          "text": "<code>namesScores(test2)</code> should return 1468.",
-          "testString": "assert.strictEqual(namesScores(test2), 1468, '<code>namesScores(test2)</code> should return 1468.');"
+          "text": "<code>namesScores(test2)</code>应该返回 1468。",
+          "testString": "assert.strictEqual(namesScores(test2), 1468, '<code>namesScores(test2)</code>应该返回 1468。');"
         },
         {
-          "text": "<code>namesScores(names)</code> should return 871198282.",
-          "testString": "assert.strictEqual(namesScores(names), 871198282, '<code>namesScores(names)</code> should return 871198282.');"
+          "text": "<code>namesScores(names)</code>应该返回 871198282。",
+          "testString": "assert.strictEqual(namesScores(names), 871198282, '<code>namesScores(names)</code>应该返回 871198282。');"
         }
       ],
       "solutions": [],
       "description": [
-        "Using <code>names</code>, an array containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.",
-        "For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.",
-        "What is the total of all the name scores in the file?"
+        "在给出的 <code>names</code> 数组中包含了五千多个姓氏。首先将它们按照字母序排列，然后计算出每个姓氏的字母值，乘以它在按字母顺序排列后的位置，以计算出姓名得分。",
+        "例如，按照字母序排列后，位于第 938 位的姓氏 COLIN 的字母值是 3 + 15 + 12 + 9 + 14 = 53。因此，COLIN 的姓氏得分是 938 × 53 = 49714。",
+        "文件中所有姓名的姓名得分之和是多少？"
       ],
       "files": {
         "indexjs": {
@@ -1297,11 +1319,11 @@
           "name": "index",
           "contents": [
             "function namesScores(arr) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return arr;",
             "}",
             "",
-            "// Only change code above this line",
+            "// 只需修改此行以上的代码",
             "const test1 = ['THIS', 'IS', 'ONLY', 'A', 'TEST'];",
             "const test2 = ['I', 'REPEAT', 'THIS', 'IS', 'ONLY', 'A', 'TEST'];",
             "",
@@ -1318,30 +1340,31 @@
       "id": "5900f3831000cf542c50fe96",
       "challengeType": 5,
       "title": "Problem 23: Non-abundant sums",
+      "title_zh": "关卡 23：并非盈数之和",
       "tests": [
         {
-          "text": "<code>sumOfNonAbundantNumbers(10000)</code> should return 3731004.",
-          "testString": "assert(sumOfNonAbundantNumbers(10000) === 3731004, '<code>sumOfNonAbundantNumbers(10000)</code> should return 3731004.');"
+          "text": "<code>sumOfNonAbundantNumbers(10000)</code>应该返回 3731004。",
+          "testString": "assert(sumOfNonAbundantNumbers(10000) === 3731004, '<code>sumOfNonAbundantNumbers(10000)</code>应该返回 3731004。');"
         },
         {
-          "text": "<code>sumOfNonAbundantNumbers(15000)</code> should return 4039939.",
-          "testString": "assert(sumOfNonAbundantNumbers(15000) === 4039939, '<code>sumOfNonAbundantNumbers(15000)</code> should return 4039939.');"
+          "text": "<code>sumOfNonAbundantNumbers(15000)</code>应该返回 4039939。",
+          "testString": "assert(sumOfNonAbundantNumbers(15000) === 4039939, '<code>sumOfNonAbundantNumbers(15000)</code>应该返回 4039939。');"
         },
         {
-          "text": "<code>sumOfNonAbundantNumbers(20000)</code> should return 4159710.",
-          "testString": "assert(sumOfNonAbundantNumbers(20000) === 4159710, '<code>sumOfNonAbundantNumbers(20000)</code> should return 4159710.');"
+          "text": "<code>sumOfNonAbundantNumbers(20000)</code>应该返回 4159710。",
+          "testString": "assert(sumOfNonAbundantNumbers(20000) === 4159710, '<code>sumOfNonAbundantNumbers(20000)</code>应该返回 4159710。');"
         },
         {
-          "text": "<code>sumOfNonAbundantNumbers(28123)</code> should return 4179871.",
-          "testString": "assert(sumOfNonAbundantNumbers(28123) === 4179871, '<code>sumOfNonAbundantNumbers(28123)</code> should return 4179871.');"
+          "text": "<code>sumOfNonAbundantNumbers(28123)</code>应该返回 4179871。",
+          "testString": "assert(sumOfNonAbundantNumbers(28123) === 4179871, '<code>sumOfNonAbundantNumbers(28123)</code>应该返回 4179871。');"
         }
       ],
       "solutions": [],
       "description": [
-        "A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.",
-        "A number <var>n</var> is called deficient if the sum of its proper divisors is less than <var>n</var> and it is called abundant if this sum exceeds <var>n</var>.",
-        "As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.",
-        "Find the sum of all positive integers <= <var>n</var> which cannot be written as the sum of two abundant numbers."
+        "完全数是指真因数之和等于自身的那些数。例如，28 的真因数之和为 1 + 2 + 4 + 7 + 14 = 28，因此 28 是一个完全数。",
+        "如果一个数 <var>n</var> 的真因数之和小于 <var>n</var>，这个数被称为亏数；反之则被称为盈数。",
+        "由于 12 是最小的盈数，它的真因数之和为 1 + 2 + 3 + 4 + 6 = 16，所以最小的能够表示成两个盈数之和的数是 24。通过数学分析可以得出，所有大于 28123 的数都可以被写成两个盈数的和；尽管我们知道最大的不能被写成两个盈数的和的数要小于这个值，但这是通过分析所能得到的最好上界。",
+        "找出所有小于等于给定参数值 n 且不能被写成两个盈数之和的正整数，并求它们的和。"
       ],
       "files": {
         "indexjs": {
@@ -1350,7 +1373,7 @@
           "name": "index",
           "contents": [
             "function sumOfNonAbundantNumbers(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1365,29 +1388,30 @@
       "id": "5900f3841000cf542c50fe97",
       "challengeType": 5,
       "title": "Problem 24: Lexicographic permutations",
+      "title_zh": "关卡 24：字典序排列",
       "tests": [
         {
-          "text": "<code>lexicographicPermutations(699999)</code> should return 1938246570.",
-          "testString": "assert(lexicographicPermutations(699999) == 1938246570, '<code>lexicographicPermutations(699999)</code> should return 1938246570.');"
+          "text": "<code>lexicographicPermutations(699999)</code>应该返回 1938246570。",
+          "testString": "assert(lexicographicPermutations(699999) == 1938246570, '<code>lexicographicPermutations(699999)</code>应该返回 1938246570。');"
         },
         {
-          "text": "<code>lexicographicPermutations(899999)</code> should return 2536987410.",
-          "testString": "assert(lexicographicPermutations(899999) == 2536987410, '<code>lexicographicPermutations(899999)</code> should return 2536987410.');"
+          "text": "<code>lexicographicPermutations(899999)</code>应该返回 2536987410。",
+          "testString": "assert(lexicographicPermutations(899999) == 2536987410, '<code>lexicographicPermutations(899999)</code>应该返回 2536987410。');"
         },
         {
-          "text": "<code>lexicographicPermutations(900000)</code> should return 2537014689.",
-          "testString": "assert(lexicographicPermutations(900000) == 2537014689, '<code>lexicographicPermutations(900000)</code> should return 2537014689.');"
+          "text": "<code>lexicographicPermutations(900000)</code>应该返回 2537014689。",
+          "testString": "assert(lexicographicPermutations(900000) == 2537014689, '<code>lexicographicPermutations(900000)</code>应该返回 2537014689。');"
         },
         {
-          "text": "<code>lexicographicPermutations(999999)</code> should return 2783915460.",
-          "testString": "assert(lexicographicPermutations(999999) == 2783915460, '<code>lexicographicPermutations(999999)</code> should return 2783915460.');"
+          "text": "<code>lexicographicPermutations(999999)</code>应该返回 2783915460。",
+          "testString": "assert(lexicographicPermutations(999999) == 2783915460, '<code>lexicographicPermutations(999999)</code>应该返回 2783915460。');"
         }
       ],
       "solutions": [],
       "description": [
-        "A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4. If all of the permutations are listed numerically or alphabetically, we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are:",
+        "排列指的是将一组物体进行有顺序的放置。例如，3124 是数字 1、2、3、4 的一个排列。如果把所有排列按照数字大小或字母先后进行排序，我们称之为字典序排列。0、1、2 的字典序排列是：",
         "<div style='text-align: center;'>012   021   102   120   201   210</div>",
-        "What is the <var>n</var>th lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?"
+        "数字 0、1、2、3、4、5、6、7、8、9 的字典序排列中第 <var>n</var> 位的排列是什么？"
       ],
       "files": {
         "indexjs": {
@@ -1396,7 +1420,7 @@
           "name": "index",
           "contents": [
             "function lexicographicPermutations(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1411,32 +1435,33 @@
       "id": "5900f3851000cf542c50fe98",
       "challengeType": 5,
       "title": "Problem 25: 1000-digit Fibonacci number",
+      "title_zh": "关卡 25：一千位斐波那契数",
       "tests": [
         {
-          "text": "<code>digitFibonacci(5)</code> should return 20.",
-          "testString": "assert(digitFibonacci(5) == 20, '<code>digitFibonacci(5)</code> should return 20.');"
+          "text": "<code>digitFibonacci(5)</code>应该返回 20。",
+          "testString": "assert(digitFibonacci(5) == 20, '<code>digitFibonacci(5)</code>应该返回 20。');"
         },
         {
-          "text": "<code>digitFibonacci(10)</code> should return 44.",
-          "testString": "assert(digitFibonacci(10) == 44, '<code>digitFibonacci(10)</code> should return 44.');"
+          "text": "<code>digitFibonacci(10)</code>应该返回 44。",
+          "testString": "assert(digitFibonacci(10) == 44, '<code>digitFibonacci(10)</code>应该返回 44。');"
         },
         {
-          "text": "<code>digitFibonacci(15)</code> should return 68.",
-          "testString": "assert(digitFibonacci(15) == 68, '<code>digitFibonacci(15)</code> should return 68.');"
+          "text": "<code>digitFibonacci(15)</code>应该返回 68。",
+          "testString": "assert(digitFibonacci(15) == 68, '<code>digitFibonacci(15)</code>应该返回 68。');"
         },
         {
-          "text": "<code>digitFibonacci(20)</code> should return 92.",
-          "testString": "assert(digitFibonacci(20) == 92, '<code>digitFibonacci(20)</code> should return 92.');"
+          "text": "<code>digitFibonacci(20)</code>应该返回 92。",
+          "testString": "assert(digitFibonacci(20) == 92, '<code>digitFibonacci(20)</code>应该返回 92。');"
         }
       ],
       "solutions": [],
       "description": [
-        "The Fibonacci sequence is defined by the recurrence relation:",
-        "<div style='padding-left: 4em;'>F<sub>n</sub> = F<sub>n−1</sub> + F<sub>n−2</sub>, where F<sub>1</sub> = 1 and F<sub>2</sub> = 1.</div>",
-        "Hence the first 12 terms will be:",
+        "斐波那契数列是按如下递归关系定义的数列：",
+        "<div style='padding-left: 4em;'>F<sub>n</sub> = F<sub>n−1</sub> + F<sub>n−2</sub>，并约定 F<sub>1</sub> = 1、F<sub>2</sub> = 1.</div>",
+        "因此斐波那契数列的前 12 项分别是：",
         "<div style='padding-left: 4em; display: inline-grid; grid-template-rows: auto; row-gap: 7px;'><div>F<sub>1</sub> = 1</div><div>F<sub>2</sub> = 1</div><div>F<sub>3</sub> = 2</div><div>F<sub>4</sub> = 3</div><div>F<sub>5</sub> = 5</div><div>F<sub>6</sub> = 8</div><div>F<sub>7</sub> = 13</div><div>F<sub>8</sub> = 21</div><div>F<sub>9</sub> = 34</div><div>F<sub>10</sub> = 55</div><div>F<sub>11</sub> = 89</div><div>F<sub>12</sub> = 144</div></div>",
-        "The 12th term, F<sub>12</sub>, is the first term to contain three digits.",
-        "What is the index of the first term in the Fibonacci sequence to contain <var>n</var> digits?"
+        "第一个有三位数字的项是第 12 项 F<sub>12</sub>。",
+        "在斐波那契数列中，第一个有 1000 位数字的是第几项？"
       ],
       "files": {
         "indexjs": {
@@ -1445,7 +1470,7 @@
           "name": "index",
           "contents": [
             "function digitFibonacci(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1460,30 +1485,31 @@
       "id": "5900f3861000cf542c50fe99",
       "challengeType": 5,
       "title": "Problem 26: Reciprocal cycles",
+      "title_zh": "关卡 26：倒数的循环节",
       "tests": [
         {
-          "text": "<code>reciprocalCycles(700)</code> should return 659.",
-          "testString": "assert(reciprocalCycles(700) == 659, '<code>reciprocalCycles(700)</code> should return 659.');"
+          "text": "<code>reciprocalCycles(700)</code>应该返回 659。",
+          "testString": "assert(reciprocalCycles(700) == 659, '<code>reciprocalCycles(700)</code>应该返回 659。');"
         },
         {
-          "text": "<code>reciprocalCycles(800)</code> should return 743.",
-          "testString": "assert(reciprocalCycles(800) == 743, '<code>reciprocalCycles(800)</code> should return 743.');"
+          "text": "<code>reciprocalCycles(800)</code>应该返回 743。",
+          "testString": "assert(reciprocalCycles(800) == 743, '<code>reciprocalCycles(800)</code>应该返回 743。');"
         },
         {
-          "text": "<code>reciprocalCycles(900)</code> should return 887.",
-          "testString": "assert(reciprocalCycles(900) == 887, '<code>reciprocalCycles(900)</code> should return 887.');"
+          "text": "<code>reciprocalCycles(900)</code>应该返回 887。",
+          "testString": "assert(reciprocalCycles(900) == 887, '<code>reciprocalCycles(900)</code>应该返回 887。');"
         },
         {
-          "text": "<code>reciprocalCycles(1000)</code> should return 983.",
-          "testString": "assert(reciprocalCycles(1000) == 983, '<code>reciprocalCycles(1000)</code> should return 983.');"
+          "text": "<code>reciprocalCycles(1000)</code>应该返回 983。",
+          "testString": "assert(reciprocalCycles(1000) == 983, '<code>reciprocalCycles(1000)</code>应该返回 983。');"
         }
       ],
       "solutions": [],
       "description": [
-        "A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:",
+        "单位分数指分子为 1 的分数。分母为 2 至 10 的单位分数的十进制表示如下所示：",
         "<div style='padding-left: 4em; display: inline-grid; grid-template-rows: auto; row-gap: 7px;'><div><sup>1</sup>/<sub>2</sub> = 0.5</div><div><sup>1</sup>/<sub>3</sub> = 0.(3)</div><div><sup>1</sup>/<sub>4</sub> = 0.25</div><div><sup>1</sup>/<sub>5</sub> = 0.2</div><div><sup>1</sup>/<sub>6</sub> = 0.1(6)</div><div><sup>1</sup>/<sub>7</sub> = 0.(142857)</div><div><sup>1</sup>/<sub>8</sub> = 0.125</div><div><sup>1</sup>/<sub>9</sub> = 0.(1)</div><div><sup>1</sup>/<sub>10</sub> = 0.1</div></div>",
-        "Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be seen that <sup>1</sup>/<sub>7</sub> has a 6-digit recurring cycle.",
-        "Find the value of <var>d</var> < <var>n</var> for which <sup>1</sup>/<sub>d</sub> contains the longest recurring cycle in its decimal fraction part."
+        "这里 0.1(6) 表示 0.166666…，括号内表示有一位循环节。可以看出，<sup>1</sup>/<sub>7</sub> 有六位循环节。",
+        "找出小于给定参数值 n 的正整数 d，其倒数的十进制表示小数部分有最长的循环节。"
       ],
       "files": {
         "indexjs": {
@@ -1492,7 +1518,7 @@
           "name": "index",
           "contents": [
             "function reciprocalCycles(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1507,35 +1533,36 @@
       "id": "5900f3871000cf542c50fe9a",
       "challengeType": 5,
       "title": "Problem 27: Quadratic primes",
+      "title_zh": "关卡 27：二次“素数生成”多项式",
       "tests": [
         {
-          "text": "<code>quadraticPrimes(200)</code> should return -4925.",
-          "testString": "assert(quadraticPrimes(200) == -4925, '<code>quadraticPrimes(200)</code> should return -4925.');"
+          "text": "<code>quadraticPrimes(200)</code>应该返回 -4925。",
+          "testString": "assert(quadraticPrimes(200) == -4925, '<code>quadraticPrimes(200)</code>应该返回 -4925。');"
         },
         {
-          "text": "<code>quadraticPrimes(500)</code> should return -18901.",
-          "testString": "assert(quadraticPrimes(500) == -18901, '<code>quadraticPrimes(500)</code> should return -18901.');"
+          "text": "<code>quadraticPrimes(500)</code>应该返回 -18901。",
+          "testString": "assert(quadraticPrimes(500) == -18901, '<code>quadraticPrimes(500)</code>应该返回 -18901。');"
         },
         {
-          "text": "<code>quadraticPrimes(800)</code> should return -43835.",
-          "testString": "assert(quadraticPrimes(800) == -43835, '<code>quadraticPrimes(800)</code> should return -43835.');"
+          "text": "<code>quadraticPrimes(800)</code>应该返回 -43835。",
+          "testString": "assert(quadraticPrimes(800) == -43835, '<code>quadraticPrimes(800)</code>应该返回 -43835。');"
         },
         {
-          "text": "<code>quadraticPrimes(1000)</code> should return -59231.",
-          "testString": "assert(quadraticPrimes(1000) == -59231, '<code>quadraticPrimes(1000)</code> should return -59231.');"
+          "text": "<code>quadraticPrimes(1000)</code>应该返回 -59231。",
+          "testString": "assert(quadraticPrimes(1000) == -59231, '<code>quadraticPrimes(1000)</code>应该返回 -59231。');"
         }
       ],
       "solutions": [],
       "description": [
-        "Euler discovered the remarkable quadratic formula:",
+        "欧拉发现了这个著名的二次多项式：",
         "$n^2 + n + 41$",
-        "It turns out that the formula will produce 40 primes for the consecutive integer values $0 \\le n \\le 39$. However, when $n = 40, 40^2 + 40 + 41 = 40(40 + 1) + 41$ is divisible by 41, and certainly when $n = 41, 41^2 + 41 + 41$ is clearly divisible by 41.",
-        "The incredible formula $n^2 - 79n + 1601$ was discovered, which produces 80 primes for the consecutive values $0 \\le n \\le 79$. The product of the coefficients, −79 and 1601, is −126479.",
-        "Considering quadratics of the form:",
+        "对于连续的整数 $0 \\le n \\le 39$，这个二次多项式生成了 40 个素数。然而，当 $n = 40 时，40^2 + 40 + 41 = 40(40 + 1) + 41$ 能够被41整除，同时显然当 $n = 41, 41^2 + 41 + 41$ 也能被 41 整除。",
+        "随后，另一个神奇的多项式 $n^2 - 79n + 1601$ 被发现了，对于连续的整数 $0 \\le n \\le 79$，它生成了80个素数。这个多项式的系数 −79 和 1601 的乘积为 −126479。",
+        "考虑以下形式的二次多项式：",
         "",
-        "$n^2 + an + b$, where $|a| < range$ and $|b| \\le range$where $|n|$ is the modulus/absolute value of $n$e.g. $|11| = 11$ and $|-4| = 4$",
+        "$n^2 + an + b$, 满足 $|a| < 给定参数值 range$ and $|b| \\le 给定参数值 range$。其中 $|n|$ 指 n 的模或绝对值。例如 $|11| = 11$ and $|-4| = 4$",
         "",
-        "Find the product of the coefficients, $a$ and $b$, for the quadratic expression that produces the maximum number of primes for consecutive values of $n$, starting with $n = 0$."
+        "这其中存在某个二次多项式能够对从 0 开始尽可能多的连续整数 $n 都生成素数，求其系数 $a$ 和 $b$ 的乘积。"
       ],
       "files": {
         "indexjs": {
@@ -1544,7 +1571,7 @@
           "name": "index",
           "contents": [
             "function quadraticPrimes(range) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return range;",
             "}",
             "",
@@ -1559,34 +1586,35 @@
       "id": "5900f3881000cf542c50fe9b",
       "challengeType": 5,
       "title": "Problem 28: Number spiral diagonals",
+      "title_zh": "关卡 28：螺旋数阵对角线",
       "tests": [
         {
-          "text": "<code>spiralDiagonals(101)</code> should return 692101.",
-          "testString": "assert(spiralDiagonals(101) == 692101, '<code>spiralDiagonals(101)</code> should return 692101.');"
+          "text": "<code>spiralDiagonals(101)</code>应该返回 692101。",
+          "testString": "assert(spiralDiagonals(101) == 692101, '<code>spiralDiagonals(101)</code>应该返回 692101。');"
         },
         {
-          "text": "<code>spiralDiagonals(303)</code> should return 18591725.",
-          "testString": "assert(spiralDiagonals(303) == 18591725, '<code>spiralDiagonals(303)</code> should return 18591725.');"
+          "text": "<code>spiralDiagonals(303)</code>应该返回 18591725。",
+          "testString": "assert(spiralDiagonals(303) == 18591725, '<code>spiralDiagonals(303)</code>应该返回 18591725。');"
         },
         {
-          "text": "<code>spiralDiagonals(505)</code> should return 85986601.",
-          "testString": "assert(spiralDiagonals(505) == 85986601, '<code>spiralDiagonals(505)</code> should return 85986601.');"
+          "text": "<code>spiralDiagonals(505)</code>应该返回 85986601。",
+          "testString": "assert(spiralDiagonals(505) == 85986601, '<code>spiralDiagonals(505)</code>应该返回 85986601。');"
         },
         {
-          "text": "<code>spiralDiagonals(1001)</code> should return 669171001.",
-          "testString": "assert(spiralDiagonals(1001) == 669171001, '<code>spiralDiagonals(1001)</code> should return 669171001.');"
+          "text": "<code>spiralDiagonals(1001)</code>应该返回 669171001。",
+          "testString": "assert(spiralDiagonals(1001) == 669171001, '<code>spiralDiagonals(1001)</code>应该返回 669171001。');"
         }
       ],
       "solutions": [],
       "description": [
-        "Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:",
+        "从 1 开始，按顺时针顺序向右铺开的 5 × 5 螺旋数阵如下所示：",
         "21 22 23 24 25",
         "20  7  8  9 10",
         "19  6  1  2 11",
         "18  5  4  3 12",
         "17 16 15 14 13",
-        "It can be verified that the sum of the numbers on the diagonals is 101.",
-        "What is the sum of the numbers on the diagonals in a n by n spiral formed in the same way?"
+        "可以验证，该数阵对角线上的数之和是 101。",
+        "以同样方式构成的给定参数值 n × n 螺旋数阵对角线上的数之和是多少？"
       ],
       "files": {
         "indexjs": {
@@ -1595,7 +1623,7 @@
           "name": "index",
           "contents": [
             "function spiralDiagonals(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1610,34 +1638,35 @@
       "id": "5900f3891000cf542c50fe9c",
       "challengeType": 5,
       "title": "Problem 29: Distinct powers",
+      "title_zh": "关卡 29：不同的幂",
       "tests": [
         {
-          "text": "<code>distinctPowers(15)</code> should return 177.",
-          "testString": "assert.strictEqual(distinctPowers(15), 177, '<code>distinctPowers(15)</code> should return 177.');"
+          "text": "<code>distinctPowers(15)</code>应该返回 177。",
+          "testString": "assert.strictEqual(distinctPowers(15), 177, '<code>distinctPowers(15)</code>应该返回 177。');"
         },
         {
-          "text": "<code>distinctPowers(20)</code> should return 324.",
-          "testString": "assert.strictEqual(distinctPowers(20), 324, '<code>distinctPowers(20)</code> should return 324.');"
+          "text": "<code>distinctPowers(20)</code>应该返回 324。",
+          "testString": "assert.strictEqual(distinctPowers(20), 324, '<code>distinctPowers(20)</code>应该返回 324。');"
         },
         {
-          "text": "<code>distinctPowers(25)</code> should return 519.",
-          "testString": "assert.strictEqual(distinctPowers(25), 519, '<code>distinctPowers(25)</code> should return 519.');"
+          "text": "<code>distinctPowers(25)</code>应该返回 519。",
+          "testString": "assert.strictEqual(distinctPowers(25), 519, '<code>distinctPowers(25)</code>应该返回 519。');"
         },
         {
-          "text": "<code>distinctPowers(30)</code> should return 755.",
-          "testString": "assert.strictEqual(distinctPowers(30), 755, '<code>distinctPowers(30)</code> should return 755.');"
+          "text": "<code>distinctPowers(30)</code>应该返回 755。",
+          "testString": "assert.strictEqual(distinctPowers(30), 755, '<code>distinctPowers(30)</code>应该返回 755。');"
         }
       ],
       "solutions": [],
       "description": [
-        "Consider all integer combinations of ab for 2 ≤ a ≤ 5 and 2 ≤ b ≤ 5:",
-        "22=4, 23=8, 24=16, 25=32",
-        "32=9, 33=27, 34=81, 35=243",
-        "42=16, 43=64, 44=256, 45=1024",
-        "52=25, 53=125, 54=625, 55=3125",
-        "If they are then placed in numerical order, with any repeats removed, we get the following sequence of 15 distinct terms:",
+        "考虑所有满足 2 ≤ a ≤ 5 和 2 ≤ b ≤ 5 的整数组合生成的幂 a<sup>b</sup>：",
+        "2<sup>2</sup>=4, 2<sup>3</sup>=8, 2<sup>4</sup>=16, 2<sup>5</sup>=32",
+        "3<sup>2</sup>=9, 3<sup>3</sup>=27, 3<sup>4</sup>=81, 3<sup>5</sup>=243",
+        "4<sup>2</sup>=16, 4<sup>3</sup>=64, 4<sup>4</sup>=256, 4<sup>5</sup>=1024",
+        "5<sup>2</sup>=25, 5<sup>3</sup>=125, 5<sup>4</sup>=625, 5<sup>5</sup>=3125",
+        "如果把这些幂按照大小排列并去重，我们得到以下由 15 个不同的项组成的序列：",
         "4, 8, 9, 16, 25, 27, 32, 64, 81, 125, 243, 256, 625, 1024, 3125",
-        "How many distinct terms are in the sequence generated by ab for 2 ≤ a ≤ n and 2 ≤ b ≤ n?"
+        "在所有满足 2 ≤ a ≤ n 和 2 ≤ b ≤ n 的整数组合生成的幂 a<sup>b</sup> 排列并去重所得到的序列中，有多少个不同的项？"
       ],
       "files": {
         "indexjs": {
@@ -1646,7 +1675,7 @@
           "name": "index",
           "contents": [
             "function distinctPowers(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1661,33 +1690,34 @@
       "id": "5900f38a1000cf542c50fe9d",
       "challengeType": 5,
       "title": "Problem 30: Digit n powers",
+      "title_zh": "关卡 30：各位数字的五次幂",
       "tests": [
         {
-          "text": "<code>digitnPowers(2)</code> should return 0.",
-          "testString": "assert(digitnPowers(2) == 0, '<code>digitnPowers(2)</code> should return 0.');"
+          "text": "<code>digitnPowers(2)</code>应该返回 0。",
+          "testString": "assert(digitnPowers(2) == 0, '<code>digitnPowers(2)</code>应该返回 0。');"
         },
         {
-          "text": "<code>digitnPowers(3)</code> should return 1301.",
-          "testString": "assert(digitnPowers(3) == 1301, '<code>digitnPowers(3)</code> should return 1301.');"
+          "text": "<code>digitnPowers(3)</code>应该返回 1301。",
+          "testString": "assert(digitnPowers(3) == 1301, '<code>digitnPowers(3)</code>应该返回 1301。');"
         },
         {
-          "text": "<code>digitnPowers(4)</code> should return 19316.",
-          "testString": "assert(digitnPowers(4) == 19316, '<code>digitnPowers(4)</code> should return 19316.');"
+          "text": "<code>digitnPowers(4)</code>应该返回 19316。",
+          "testString": "assert(digitnPowers(4) == 19316, '<code>digitnPowers(4)</code>应该返回 19316。');"
         },
         {
-          "text": "<code>digitnPowers(5)</code> should return 443839.",
-          "testString": "assert(digitnPowers(5) == 443839, '<code>digitnPowers(5)</code> should return 443839.');"
+          "text": "<code>digitnPowers(5)</code>应该返回 443839。",
+          "testString": "assert(digitnPowers(5) == 443839, '<code>digitnPowers(5)</code>应该返回 443839。');"
         }
       ],
       "solutions": [],
       "description": [
-        "Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:",
-        "1634 = 14 + 64 + 34 + 44",
-        "8208 = 84 + 24 + 04 + 84",
-        "9474 = 94 + 44 + 74 + 44",
-        "As 1 = 14 is not a sum it is not included.",
-        "The sum of these numbers is 1634 + 8208 + 9474 = 19316.",
-        "Find the sum of all the numbers that can be written as the sum of n powers of their digits."
+        "令人惊讶的是，只有三个数可以写成它们各位数字的四次幂之和：",
+        "1634 = 1<sup>4</sup> + 6<sup>4 + 3<sup>4 + 4<sup>4",
+        "8208 = 8<sup>4</sup> + 2<sup>4</sup> + 0<sup>4</sup> + 8<sup>4</sup>",
+        "9474 = 9<sup>4</sup> + 4<sup>4</sup> + 7<sup>4</sup> + 4<sup>4</sup>",
+        "由于 1 = 1<sup>4</sup> 不是一个和，所以这里并没有把它包括进去。",
+        "这些数的和是 1634 + 8208 + 9474 = 19316。",
+        "找出所有可以写成它们各位数字的给定参数 n 次幂之和的数，并求这些数的和。"
       ],
       "files": {
         "indexjs": {
@@ -1696,7 +1726,7 @@
           "name": "index",
           "contents": [
             "function digitnPowers(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1711,31 +1741,32 @@
       "id": "5900f38b1000cf542c50fe9e",
       "challengeType": 5,
       "title": "Problem 31: Coin sums",
+      "title_zh": "关卡 31：硬币求和",
       "tests": [
         {
-          "text": "<code>coinSums(50)</code> should return 451.",
-          "testString": "assert(coinSums(50) == 451, '<code>coinSums(50)</code> should return 451.');"
+          "text": "<code>coinSums(50)</code>应该返回 451。",
+          "testString": "assert(coinSums(50) == 451, '<code>coinSums(50)</code>应该返回 451。');"
         },
         {
-          "text": "<code>coinSums(100)</code> should return 4563.",
-          "testString": "assert(coinSums(100) == 4563, '<code>coinSums(100)</code> should return 4563.');"
+          "text": "<code>coinSums(100)</code>应该返回 4563。",
+          "testString": "assert(coinSums(100) == 4563, '<code>coinSums(100)</code>应该返回 4563。');"
         },
         {
-          "text": "<code>coinSums(150)</code> should return 21873.",
-          "testString": "assert(coinSums(150) == 21873, '<code>coinSums(150)</code> should return 21873.');"
+          "text": "<code>coinSums(150)</code>应该返回 21873。",
+          "testString": "assert(coinSums(150) == 21873, '<code>coinSums(150)</code>应该返回 21873。');"
         },
         {
-          "text": "<code>coinSums(200)</code> should return 73682.",
-          "testString": "assert(coinSums(200) == 73682, '<code>coinSums(200)</code> should return 73682.');"
+          "text": "<code>coinSums(200)</code>应该返回 73682。",
+          "testString": "assert(coinSums(200) == 73682, '<code>coinSums(200)</code>应该返回 73682。');"
         }
       ],
       "solutions": [],
       "description": [
-        "In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:",
-        "1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p).",
-        "It is possible to make £2 in the following way:",
+        "英国的货币单位包括英镑 £ 和便士 p，在流通中的硬币一共有八种：",
+        "1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p)。",
+        "以下是组成 £2 的其中一种可行方式：",
         "1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p",
-        "How many different ways can £(n) be made using any number of coins?"
+        "不限定使用的硬币数目，组成 £n 有多少种不同的方式？"
       ],
       "files": {
         "indexjs": {
@@ -1744,7 +1775,7 @@
           "name": "index",
           "contents": [
             "function coinSums(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1759,27 +1790,28 @@
       "id": "5900f38c1000cf542c50fe9f",
       "challengeType": 5,
       "title": "Problem 32: Pandigital products",
+      "title_zh": "关卡 32：全数字的乘积",
       "tests": [
         {
-          "text": "<code>pandigitalProducts()</code> is a function.",
-          "testString": "assert(typeof pandigitalProducts === 'function', '<code>pandigitalProducts()</code> is a function.');"
+          "text": "<code>pandigitalProducts()</code> is a function。",
+          "testString": "assert(typeof pandigitalProducts === 'function', '<code>pandigitalProducts()</code> is a function。');"
         },
         {
-          "text": "<code>pandigitalProducts()</code> should return 45228.",
-          "testString": "assert.strictEqual(pandigitalProducts(), 45228, '<code>pandigitalProducts()</code> should return 45228.');"
+          "text": "<code>pandigitalProducts()</code>应该返回 45228。",
+          "testString": "assert.strictEqual(pandigitalProducts(), 45228, '<code>pandigitalProducts()</code>应该返回 45228。');"
         }
       ],
       "solutions": [
         "function pandigitalProducts() {\n  function is1to9Pandigital(...numbers) {\n    const digitStr = concatenateNums(...numbers);\n    // check if length is 9\n    if (digitStr.length !== 9) {\n      return false;\n    }\n    // check if pandigital\n    for (let i = digitStr.length; i > 0; i--) {\n      if (digitStr.indexOf(i.toString()) === -1) {\n        return false;\n      }\n    }\n    return true;\n  }\n  function concatenateNums(...numbers) {\n    let digitStr = '';\n    for (let i = 0; i < numbers.length; i++) {\n      digitStr += numbers[i].toString();\n    }\n    return digitStr;\n  }\n\n  const pandigitalNums = [];\n  let sum = 0;\n  for (let mult1 = 2; mult1 < 9876; mult1++) {\n    let mult2 = 123;\n    while (concatenateNums(mult1, mult2, mult1 * mult2).length < 10) {\n      if (is1to9Pandigital(mult1, mult2, mult1 * mult2) && !pandigitalNums.includes(mult1 * mult2)) {\n        pandigitalNums.push(mult1 * mult2);\n        sum += mult1 * mult2;\n      }\n      mult2++;\n    }\n  }\n  return sum;\n}"
       ],
       "description": [
-        "We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.",
+        "如果一个 n 位数包含了 1 至 n 的所有数字恰好一次，我们称它为全数字的；例如，五位数 15234 就是 1 至 5 全数字的。",
         "",
-        "The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital.",
+        "7254 是一个特殊的乘积，因为在等式 39 × 186 = 7254 中，被乘数、乘数和乘积恰好是 1 至 9 全数字的。",
         "",
-        "Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital.",
+        "找出所有被乘数、乘数和乘积恰好是 1 至 9 全数字的乘法等式，并求出这些等式中乘积的和。",
         "",
-        "HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum."
+        "<b>注意</b>：有些乘积可能从多个乘法等式中得到，但在求和的时候只计算一次。"
       ],
       "files": {
         "indexjs": {
@@ -1788,7 +1820,7 @@
           "name": "index",
           "contents": [
             "function pandigitalProducts() {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -1803,20 +1835,21 @@
       "id": "5900f38d1000cf542c50fea0",
       "challengeType": 5,
       "title": "Problem 33: Digit cancelling fractions",
+      "title_zh": "关卡 33：消去数字的分数",
       "tests": [
         {
-          "text": "<code>digitCancellingFractions()</code> should return 100.",
-          "testString": "assert.strictEqual(digitCancellingFractions(), 100, '<code>digitCancellingFractions()</code> should return 100.');"
+          "text": "<code>digitCancellingFractions()</code>应该返回 100。",
+          "testString": "assert.strictEqual(digitCancellingFractions(), 100, '<code>digitCancellingFractions()</code>应该返回 100。');"
         }
       ],
       "solutions": [
         "function digitCancellingFractions() {\n  function isCurious(numerator, denominator) {\n    const fraction = numerator / denominator;\n    const numString = numerator.toString();\n    const denString = denominator.toString();\n\n    if (numString[1] === '0' && denString[1] === '0') {\n      // trivial\n      return false;\n    }\n    for (let i = 0; i < 2; i++) {\n      for (let j = 0; j < 2; j++) {\n        if (numString[i] === denString[j]) {\n          const newNum = parseInt(numString[1 - i], 10);\n          const newDen = parseInt(denString[1 - j], 10);\n          if (newNum / newDen === fraction) {\n            return true;\n          }\n        }\n      }\n    }\n    return false;\n  }\n  function findLargestDivisor(a, b) {\n    let gcd = a > b ? b : a;\n    while (gcd > 1) {\n      if (a % gcd === 0 && b % gcd === 0) {\n        return gcd;\n      }\n      gcd--;\n    }\n    return gcd;\n  }\n\n  function simplifyFraction(numerator, denominator) {\n    const divisor = findLargestDivisor(numerator, denominator);\n    return [numerator / divisor, denominator / divisor];\n  }\n\n  let multipleNumerator = 1;\n  let multipleDenominator = 1;\n\n  for (let denominator = 11; denominator < 100; denominator++) {\n    for (let numerator = 10; numerator < denominator; numerator++) {\n      if (isCurious(numerator, denominator)) {\n        multipleNumerator *= numerator;\n        multipleDenominator *= denominator;\n      }\n    }\n  }\n\n  return simplifyFraction(multipleNumerator, multipleDenominator)[1];\n}"
       ],
       "description": [
-        "The fraction <sup>49</sup>/<sub>98</sub> is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub>, which is correct, is obtained by cancelling the 9s.",
-        "We shall consider fractions like, <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub>, to be trivial examples.",
-        "There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.",
-        "If the product of these four fractions is given in its lowest common terms, find the value of the denominator."
+        "<sup>49</sup>/<sub>98</sub> 是一个有趣的分数，因为缺乏经验的数学家可能在约简时错误地认为，等式 <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub>之所以成立，是因为在分数线上下同时抹除了 9 的缘故。",
+        "我们也会想到，存在诸如 <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub> 这样的平凡解。",
+        "这类有趣的分数恰好有四个非平凡的例子，它们的分数值小于 1，且分子和分母都是两位数。",
+        "将这四个分数的乘积写成最简分数，求此时分母的值。"
       ],
       "files": {
         "indexjs": {
@@ -1825,7 +1858,7 @@
           "name": "index",
           "contents": [
             "function digitCancellingFractions() {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -1840,17 +1873,18 @@
       "id": "5900f38e1000cf542c50fea1",
       "challengeType": 5,
       "title": "Problem 34: Digit factorials",
+      "title_zh": "关卡 34：各位数字的阶乘",
       "tests": [
         {
-          "text": "<code>digitFactorial()</code> should return { sum: 40730, numbers: [145, 40585] }.",
-          "testString": "assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] }, '<code>digitFactorial()</code> should return { sum: 40730, numbers: [145, 40585] }.');"
+          "text": "<code>digitFactorial()</code>应该返回 { sum: 40730, numbers: [145, 40585] }。",
+          "testString": "assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] }, '<code>digitFactorial()</code>应该返回 { sum: 40730, numbers: [145, 40585] }。');"
         }
       ],
       "solutions": [],
       "description": [
-        "145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.",
-        "Find the numbers and the sum of the numbers which are equal to the sum of the factorial of their digits.",
-        "Note: as 1! = 1 and 2! = 2 are not sums they are not included."
+        "145 是个有趣的数，因为 1! + 4! + 5! = 1 + 24 + 120 = 145。",
+        "找出所有各位数字的阶乘和等于其本身的数，并求它们的和。",
+        "<b>注意</b>：因为 1! = 1 和 2! = 2 不是和的形式，所以它们并不在讨论范围内。"
       ],
       "files": {
         "indexjs": {
@@ -1859,7 +1893,7 @@
           "name": "index",
           "contents": [
             "function digitFactorial() {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  var sum = 0;",
             "  var numbers = [];",
             "  return { sum, numbers };",
@@ -1876,37 +1910,38 @@
       "id": "5900f38f1000cf542c50fea2",
       "challengeType": 5,
       "title": "Problem 35: Circular primes",
+      "title_zh": "关卡 35：圆周素数",
       "tests": [
         {
-          "text": "<code>circularPrimes(100)</code> should return 13.",
-          "testString": "assert(circularPrimes(100) == 13, '<code>circularPrimes(100)</code> should return 13.');"
+          "text": "<code>circularPrimes(100)</code>应该返回 13。",
+          "testString": "assert(circularPrimes(100) == 13, '<code>circularPrimes(100)</code>应该返回 13。');"
         },
         {
-          "text": "<code>circularPrimes(100000)</code> should return 43.",
-          "testString": "assert(circularPrimes(100000) == 43, '<code>circularPrimes(100000)</code> should return 43.');"
+          "text": "<code>circularPrimes(100000)</code>应该返回 43。",
+          "testString": "assert(circularPrimes(100000) == 43, '<code>circularPrimes(100000)</code>应该返回 43。');"
         },
         {
-          "text": "<code>circularPrimes(250000)</code> should return 45.",
-          "testString": "assert(circularPrimes(250000) == 45, '<code>circularPrimes(250000)</code> should return 45.');"
+          "text": "<code>circularPrimes(250000)</code>应该返回 45。",
+          "testString": "assert(circularPrimes(250000) == 45, '<code>circularPrimes(250000)</code>应该返回 45。');"
         },
         {
-          "text": "<code>circularPrimes(500000)</code> should return 49.",
-          "testString": "assert(circularPrimes(500000) == 49, '<code>circularPrimes(500000)</code> should return 49.');"
+          "text": "<code>circularPrimes(500000)</code>应该返回 49。",
+          "testString": "assert(circularPrimes(500000) == 49, '<code>circularPrimes(500000)</code>应该返回 49。');"
         },
         {
-          "text": "<code>circularPrimes(750000)</code> should return 49.",
-          "testString": "assert(circularPrimes(750000) == 49, '<code>circularPrimes(750000)</code> should return 49.');"
+          "text": "<code>circularPrimes(750000)</code>应该返回 49。",
+          "testString": "assert(circularPrimes(750000) == 49, '<code>circularPrimes(750000)</code>应该返回 49。');"
         },
         {
-          "text": "<code>circularPrimes(1000000)</code> should return 55.",
-          "testString": "assert(circularPrimes(1000000) == 55, '<code>circularPrimes(1000000)</code> should return 55.');"
+          "text": "<code>circularPrimes(1000000)</code>应该返回 55。",
+          "testString": "assert(circularPrimes(1000000) == 55, '<code>circularPrimes(1000000)</code>应该返回 55。');"
         }
       ],
       "solutions": [],
       "description": [
-        "The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.",
-        "There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.",
-        "How many circular primes are there below n, whereas 100 <= n <= 1000000?"
+        "197 被称为圆周素数，因为将它逐位旋转所得到的数：197、971 和 719 都是素数。",
+        "小于 100 的圆周素数有十三个：2、3、5、7、11、13、17、31、37、71、73、79 和 97。",
+        "小于给定参数 n （100 <= n <= 1000000）的圆周素数有多少个？"
       ],
       "files": {
         "indexjs": {
@@ -1915,7 +1950,7 @@
           "name": "index",
           "contents": [
             "function circularPrimes(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1930,29 +1965,30 @@
       "id": "5900f3901000cf542c50fea3",
       "challengeType": 5,
       "title": "Problem 36: Double-base palindromes",
+      "title_zh": "关卡 36：双进制回文数",
       "tests": [
         {
-          "text": "<code>doubleBasePalindromes(1000)</code> should return 1772.",
-          "testString": "assert(doubleBasePalindromes(1000) == 1772, '<code>doubleBasePalindromes(1000)</code> should return 1772.');"
+          "text": "<code>doubleBasePalindromes(1000)</code>应该返回 1772。",
+          "testString": "assert(doubleBasePalindromes(1000) == 1772, '<code>doubleBasePalindromes(1000)</code>应该返回 1772。');"
         },
         {
-          "text": "<code>doubleBasePalindromes(50000)</code> should return 105795.",
-          "testString": "assert(doubleBasePalindromes(50000) == 105795, '<code>doubleBasePalindromes(50000)</code> should return 105795.');"
+          "text": "<code>doubleBasePalindromes(50000)</code>应该返回 105795。",
+          "testString": "assert(doubleBasePalindromes(50000) == 105795, '<code>doubleBasePalindromes(50000)</code>应该返回 105795。');"
         },
         {
-          "text": "<code>doubleBasePalindromes(500000)</code> should return 286602.",
-          "testString": "assert(doubleBasePalindromes(500000) == 286602, '<code>doubleBasePalindromes(500000)</code> should return 286602.');"
+          "text": "<code>doubleBasePalindromes(500000)</code>应该返回 286602。",
+          "testString": "assert(doubleBasePalindromes(500000) == 286602, '<code>doubleBasePalindromes(500000)</code>应该返回 286602。');"
         },
         {
-          "text": "<code>doubleBasePalindromes(1000000)</code> should return 872187.",
-          "testString": "assert(doubleBasePalindromes(1000000) == 872187, '<code>doubleBasePalindromes(1000000)</code> should return 872187.');"
+          "text": "<code>doubleBasePalindromes(1000000)</code>应该返回 872187。",
+          "testString": "assert(doubleBasePalindromes(1000000) == 872187, '<code>doubleBasePalindromes(1000000)</code>应该返回 872187。');"
         }
       ],
       "solutions": [],
       "description": [
-        "The decimal number, 585 = 10010010012 (binary), is palindromic in both bases.",
-        "Find the sum of all numbers, less than n, whereas 1000 <= n <= 1000000, which are palindromic in base 10 and base 2.",
-        "(Please note that the palindromic number, in either base, may not include leading zeros.)"
+        "十进制数 585 = 1001001001<sub>2</sub>（二进制表示），因此它在这两种进制下都是回文数。",
+        "找出所有小于给定参数 n（1000 <= n <= 1000000），且在十进制和二进制下均回文的数，并求它们的和。",
+        "（请注意，无论在哪种进制下，回文数均不考虑前导零。）"
       ],
       "files": {
         "indexjs": {
@@ -1961,7 +1997,7 @@
           "name": "index",
           "contents": [
             "function doubleBasePalindromes(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -1976,29 +2012,30 @@
       "id": "5900f3911000cf542c50fea4",
       "challengeType": 5,
       "title": "Problem 37: Truncatable primes",
+      "title_zh": "关卡 37：可截素数",
       "tests": [
         {
-          "text": "<code>truncatablePrimes(8)</code> should return 1986.",
-          "testString": "assert(truncatablePrimes(8) == 1986, '<code>truncatablePrimes(8)</code> should return 1986.');"
+          "text": "<code>truncatablePrimes(8)</code>应该返回 1986。",
+          "testString": "assert(truncatablePrimes(8) == 1986, '<code>truncatablePrimes(8)</code>应该返回 1986。');"
         },
         {
-          "text": "<code>truncatablePrimes(9)</code> should return 5123.",
-          "testString": "assert(truncatablePrimes(9) == 5123, '<code>truncatablePrimes(9)</code> should return 5123.');"
+          "text": "<code>truncatablePrimes(9)</code>应该返回 5123。",
+          "testString": "assert(truncatablePrimes(9) == 5123, '<code>truncatablePrimes(9)</code>应该返回 5123。');"
         },
         {
-          "text": "<code>truncatablePrimes(10)</code> should return 8920.",
-          "testString": "assert(truncatablePrimes(10) == 8920, '<code>truncatablePrimes(10)</code> should return 8920.');"
+          "text": "<code>truncatablePrimes(10)</code>应该返回 8920。",
+          "testString": "assert(truncatablePrimes(10) == 8920, '<code>truncatablePrimes(10)</code>应该返回 8920。');"
         },
         {
-          "text": "<code>truncatablePrimes(11)</code> should return 748317.",
-          "testString": "assert(truncatablePrimes(11) == 748317, '<code>truncatablePrimes(11)</code> should return 748317.');"
+          "text": "<code>truncatablePrimes(11)</code>应该返回 748317。",
+          "testString": "assert(truncatablePrimes(11) == 748317, '<code>truncatablePrimes(11)</code>应该返回 748317。');"
         }
       ],
       "solutions": [],
       "description": [
-        "The number 3797 has an interesting property. Being prime itself, it is possible to continuously remove digits from left to right, and remain prime at each stage: 3797, 797, 97, and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.",
-        "Find the sum of the only n (8 <= n <= 11) primes that are both truncatable from left to right and right to left.",
-        "NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes."
+        "3797 有着奇特的性质。不仅它本身是一个素数，而且如果从左往右逐一截去数字，剩下的仍然都是素数：3797、797、97 和 7；同样地，如果从右往左逐一截去数字，剩下的也依然都是素数：3797、379、37 和 3。",
+        "只有 11 个素数，无论从左往右还是从右往左逐一截去数字，剩下的仍然都是素数，求这些数的和。",
+        "注意：2、3、5 和 7 不被视为可截素数。"
       ],
       "files": {
         "indexjs": {
@@ -2007,7 +2044,7 @@
           "name": "index",
           "contents": [
             "function truncatablePrimes(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -2022,23 +2059,24 @@
       "id": "5900f3931000cf542c50fea5",
       "challengeType": 5,
       "title": "Problem 38: Pandigital multiples",
+      "title_zh": "关卡 38：全数字的倍数",
       "tests": [
         {
-          "text": "<code>pandigitalMultiples()</code> should return 932718654.",
-          "testString": "assert.strictEqual(pandigitalMultiples(), 932718654, '<code>pandigitalMultiples()</code> should return 932718654.');"
+          "text": "<code>pandigitalMultiples()</code>应该返回 932718654。",
+          "testString": "assert.strictEqual(pandigitalMultiples(), 932718654, '<code>pandigitalMultiples()</code>应该返回 932718654。');"
         }
       ],
       "solutions": [
         "function pandigitalMultiples() {\n\n  function get9DigitConcatenatedProduct(num) {\n    // returns false if concatenated product is not 9 digits\n    let concatenatedProduct = num.toString();\n    for (let i = 2; concatenatedProduct.length < 9; i++) {\n      concatenatedProduct += num * i;\n    }\n    return concatenatedProduct.length === 9 ? concatenatedProduct : false;\n  }\n\n  function is1to9Pandigital(num) {\n    const numStr = num.toString();\n\n    // check if length is not 9\n    if (numStr.length !== 9) {\n      return false;\n    }\n\n    // check if pandigital\n    for (let i = 9; i > 0; i--) {\n      if (numStr.indexOf(i.toString()) === -1) {\n        return false;\n      }\n    }\n    return true;\n  }\n\n  let largestNum = 0;\n  for (let i = 9999; i >= 9000; i--) {\n    const concatenatedProduct =  get9DigitConcatenatedProduct(i);\n    if (is1to9Pandigital(concatenatedProduct) && concatenatedProduct > largestNum) {\n      largestNum = parseInt(concatenatedProduct);\n      break;\n    }\n  }\n  return largestNum;\n}"
       ],
       "description": [
-        "Take the number 192 and multiply it by each of 1, 2, and 3:",
+        "将 192 分别与 1、2、3 相乘：",
         "192 × 1 = 192",
         "192 × 2 = 384",
         "192 × 3 = 576",
-        "By concatenating each product we get the 1 to 9 pandigital, 192384576. We will call 192384576 the concatenated product of 192 and (1, 2, 3).",
-        "The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5, giving the pandigital, 918273645, which is the concatenated product of 9 and (1, 2, 3, 4, 5).",
-        "What is the largest 1 to 9 pandigital 9-digit number that can be formed as the concatenated product of an integer with (1, 2, ... , <var>n</var>) where <var>n</var> > 1?"
+        "同样地，将 9 分别与 1、2、3、4、5 相乘，得到 1 至 9 全数字的数 918273645，即是 9 和 (1,2,3,4,5) 的连接乘积。",
+        "The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5, giving the pandigital, 918273645, which is the concatenated product of 9 and (1, 2, 3, 4, 5)。",
+        "对于 <var>n</var> > 1，所有某个整数和 (1,2, … ,n) 的连接乘积所构成的数中，最大的 1 至 9 全数字的数是多少？"
       ],
       "files": {
         "indexjs": {
@@ -2047,7 +2085,7 @@
           "name": "index",
           "contents": [
             "function pandigitalMultiples() {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -2062,29 +2100,30 @@
       "id": "5900f3931000cf542c50fea6",
       "challengeType": 5,
       "title": "Problem 39: Integer right triangles",
+      "title_zh": "关卡 39：整数边长直角三角形",
       "tests": [
         {
-          "text": "<code>intRightTriangles(500)</code> should return 420.",
-          "testString": "assert(intRightTriangles(500) == 420, '<code>intRightTriangles(500)</code> should return 420.');"
+          "text": "<code>intRightTriangles(500)</code>应该返回 420。",
+          "testString": "assert(intRightTriangles(500) == 420, '<code>intRightTriangles(500)</code>应该返回 420。');"
         },
         {
-          "text": "<code>intRightTriangles(800)</code> should return 420.",
-          "testString": "assert(intRightTriangles(800) == 420, '<code>intRightTriangles(800)</code> should return 420.');"
+          "text": "<code>intRightTriangles(800)</code>应该返回 420。",
+          "testString": "assert(intRightTriangles(800) == 420, '<code>intRightTriangles(800)</code>应该返回 420。');"
         },
         {
-          "text": "<code>intRightTriangles(900)</code> should return 840.",
-          "testString": "assert(intRightTriangles(900) == 840, '<code>intRightTriangles(900)</code> should return 840.');"
+          "text": "<code>intRightTriangles(900)</code>应该返回 840。",
+          "testString": "assert(intRightTriangles(900) == 840, '<code>intRightTriangles(900)</code>应该返回 840。');"
         },
         {
-          "text": "<code>intRightTriangles(1000)</code> should return 840.",
-          "testString": "assert(intRightTriangles(1000) == 840, '<code>intRightTriangles(1000)</code> should return 840.');"
+          "text": "<code>intRightTriangles(1000)</code>应该返回 840。",
+          "testString": "assert(intRightTriangles(1000) == 840, '<code>intRightTriangles(1000)</code>应该返回 840。');"
         }
       ],
       "solutions": [],
       "description": [
-        "If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.",
-        "{20,48,52}, {24,45,51}, {30,40,50}",
-        "For which value of p ≤ n, is the number of solutions maximised?"
+        "若三边长 {a, b, c} 均为整数的直角三角形周长为 p，当 p = 120 时，恰好存在三个不同的解：",
+        "{20, 48, 52}, {24, 45, 51}, {30, 40, 50}",
+        "在所有的 p ≤ n 中，p 取何值时有解的数目最多？"
       ],
       "files": {
         "indexjs": {
@@ -2093,7 +2132,7 @@
           "name": "index",
           "contents": [
             "function intRightTriangles(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -2108,28 +2147,29 @@
       "id": "5900f3941000cf542c50fea7",
       "challengeType": 5,
       "title": "Problem 40: Champernowne's constant",
+      "title_zh": "关卡 40：钱珀瑙恩常数",
       "tests": [
         {
-          "text": "<code>champernownesConstant(100)</code> should return 5.",
-          "testString": "assert.strictEqual(champernownesConstant(100), 5, '<code>champernownesConstant(100)</code> should return 5.');"
+          "text": "<code>champernownesConstant(100)</code>应该返回 5。",
+          "testString": "assert.strictEqual(champernownesConstant(100), 5, '<code>champernownesConstant(100)</code>应该返回 5。');"
         },
         {
-          "text": "<code>champernownesConstant(1000)</code> should return 15.",
-          "testString": "assert.strictEqual(champernownesConstant(1000), 15, '<code>champernownesConstant(1000)</code> should return 15.');"
+          "text": "<code>champernownesConstant(1000)</code>应该返回 15。",
+          "testString": "assert.strictEqual(champernownesConstant(1000), 15, '<code>champernownesConstant(1000)</code>应该返回 15。');"
         },
         {
-          "text": "<code>champernownesConstant(1000000)</code> should return 210.",
-          "testString": "assert.strictEqual(champernownesConstant(1000000), 210, '<code>champernownesConstant(1000000)</code> should return 210.');"
+          "text": "<code>champernownesConstant(1000000)</code>应该返回 210。",
+          "testString": "assert.strictEqual(champernownesConstant(1000000), 210, '<code>champernownesConstant(1000000)</code>应该返回 210。');"
         }
       ],
       "solutions": [
         "function champernownesConstant(n) {\n  let fractionalPart = '';\n  for (let i = 0; fractionalPart.length <= n; i++) {\n    fractionalPart += i.toString();\n  }\n\n  let product = 1;\n  for (let i = 0; i < n.toString().length; i++) {\n    const index = 10 ** i;\n    product *= parseInt(fractionalPart[index], 10);\n  }\n\n  return product;\n}"
       ],
       "description": [
-        "An irrational decimal fraction is created by concatenating the positive integers:",
+        "将所有正整数连接起来构造的一个十进制无理数如下所示：",
         "<span style='display: block; text-align: center;'>0.12345678910<b style='color: red;'>1</b>112131415161718192021...</span>",
-        "It can be seen that the 12<sup>th</sup> digit of the fractional part is 1.",
-        "If <i>d<sub>n</sub></i> represents the <i>n</i><sup>th</sup> digit of the fractional part, find the value of the following expression.",
+        "可以看出小数点后第 12 位数字是 1。",
+        "如果 d<sub>n</sub> 表示上述无理数小数点后的第 n 位数字，求下式的值：",
         "<span style='display: block; text-align: center;'>d<sub>1</sub> × d<sub>10</sub> × d<sub>100</sub> × d<sub>1000</sub> × d<sub>10000</sub> × d<sub>100000</sub> × d<sub>1000000</sub></span>"
       ],
       "files": {
@@ -2139,7 +2179,7 @@
           "name": "index",
           "contents": [
             "function champernownesConstant(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",
@@ -2154,22 +2194,23 @@
       "id": "5900f3951000cf542c50fea8",
       "challengeType": 5,
       "title": "Problem 41: Pandigital prime",
+      "title_zh": "关卡 41：全数字的素数",
       "tests": [
         {
-          "text": "<code>pandigitalPrime(4)</code> should return 4231.",
-          "testString": "assert(pandigitalPrime(4) == 4231, '<code>pandigitalPrime(4)</code> should return 4231.');"
+          "text": "<code>pandigitalPrime(4)</code>应该返回 4231。",
+          "testString": "assert(pandigitalPrime(4) == 4231, '<code>pandigitalPrime(4)</code>应该返回 4231。');"
         },
         {
-          "text": "<code>pandigitalPrime(7)</code> should return 7652413.",
-          "testString": "assert(pandigitalPrime(7) == 7652413, '<code>pandigitalPrime(7)</code> should return 7652413.');"
+          "text": "<code>pandigitalPrime(7)</code>应该返回 7652413。",
+          "testString": "assert(pandigitalPrime(7) == 7652413, '<code>pandigitalPrime(7)</code>应该返回 7652413。');"
         }
       ],
       "solutions": [
         "function pandigitalPrime(n) {\n  function isPrime(num) {\n    for (let i = 2, s = Math.sqrt(num); i <= s; i++) {\n      if (num % i === 0) {\n        return false;\n      }\n    }\n    return num !== 1;\n  }\n\n  function getPermutations(n) {\n    if (n === 1) {\n      permutations.push(digitsArr.join(''));\n    } else {\n      for (let i = 0; i < n - 1; i++) {\n        getPermutations(n - 1);\n        // swap(n % 2 === 0 ? i : 0, n - 1);\n        if (n % 2 === 0) {\n          swap(i, n - 1);\n        } else {\n          swap(0, n - 1);\n        }\n      }\n      getPermutations(n - 1);\n    }\n  }\n  function swap(x, y) {\n    let temp = digitsArr[x];\n    digitsArr[x] = digitsArr[y];\n    digitsArr[y] = temp;\n  }\n  let max = 0;\n  let permutations = [];\n  let digitsArr;\n  let pandigitalNum = '';\n\n  for (let max = n; max > 0; max--) {\n    pandigitalNum += max;\n  }\n\n  for (let i = 0; i < pandigitalNum.length; i++) {\n    if (max > 0) {\n      break;\n    } else {\n      permutations = [];\n      const currMax = pandigitalNum.slice(i);\n      digitsArr = currMax.split('');\n      getPermutations(digitsArr.length);\n\n      // sort permutations in descending order\n      permutations.sort(function(a, b) {\n        return b - a;\n      });\n\n      for (let perm of permutations) {\n        const thisPerm = parseInt(perm);\n        if (isPrime(thisPerm)) {\n          max = thisPerm;\n          break;\n        }\n      }\n    }\n  }\n\n  return max;\n}"
       ],
       "description": [
-        "We shall say that an <i>n</i>-digit number is pandigital if it makes use of all the digits 1 to <i>n</i> exactly once. For example, 2143 is a 4-digit pandigital and is also prime.",
-        "What is the largest <i>n</i>-length digit pandigital prime that exists?"
+        "如果一个 n 位数恰好使用了 1 至 n 每个数字各一次，我们就称其为全数字的。例如，2143 就是一个 4 位全数字数，同时它恰好也是一个素数。",
+        "最大的全数字的素数是多少？"
       ],
       "files": {
         "indexjs": {
@@ -2178,7 +2219,7 @@
           "name": "index",
           "contents": [
             "function pandigitalPrime(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return n;",
             "}",
             "",
@@ -2193,30 +2234,31 @@
       "id": "5900f3961000cf542c50fea9",
       "challengeType": 5,
       "title": "Problem 42: Coded triangle numbers",
+      "title_zh": "关卡 42：编码三角形数",
       "tests": [
         {
-          "text": "<code>codedTriangleNumbers(1400)</code> should return 129.",
-          "testString": "assert(codedTriangleNumbers(1400) == 129, '<code>codedTriangleNumbers(1400)</code> should return 129.');"
+          "text": "<code>codedTriangleNumbers(1400)</code>应该返回 129。",
+          "testString": "assert(codedTriangleNumbers(1400) == 129, '<code>codedTriangleNumbers(1400)</code>应该返回 129。');"
         },
         {
-          "text": "<code>codedTriangleNumbers(1500)</code> should return 137.",
-          "testString": "assert(codedTriangleNumbers(1500) == 137, '<code>codedTriangleNumbers(1500)</code> should return 137.');"
+          "text": "<code>codedTriangleNumbers(1500)</code>应该返回 137。",
+          "testString": "assert(codedTriangleNumbers(1500) == 137, '<code>codedTriangleNumbers(1500)</code>应该返回 137。');"
         },
         {
-          "text": "<code>codedTriangleNumbers(1600)</code> should return 141.",
-          "testString": "assert(codedTriangleNumbers(1600) == 141, '<code>codedTriangleNumbers(1600)</code> should return 141.');"
+          "text": "<code>codedTriangleNumbers(1600)</code>应该返回 141。",
+          "testString": "assert(codedTriangleNumbers(1600) == 141, '<code>codedTriangleNumbers(1600)</code>应该返回 141。');"
         },
         {
-          "text": "<code>codedTriangleNumbers(1786)</code> should return 162.",
-          "testString": "assert(codedTriangleNumbers(1786) == 162, '<code>codedTriangleNumbers(1786)</code> should return 162.');"
+          "text": "<code>codedTriangleNumbers(1786)</code>应该返回 162。",
+          "testString": "assert(codedTriangleNumbers(1786) == 162, '<code>codedTriangleNumbers(1786)</code>应该返回 162。');"
         }
       ],
       "solutions": [],
       "description": [
-        "The nth term of the sequence of triangle numbers is given by, tn = ½n(n+1); so the first ten triangle numbers are:",
-        "1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...",
-        "By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = t10. If the word value is a triangle number then we shall call the word a triangle word.",
-        "Using words array of n-length, how many are triangle words?"
+        "三角形数序列的第 n 项由公式 t<sub>n</sub> = ½n(n+1)给出；因此前十个三角形数是：",
+        "1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ..。",
+        "将一个单词的每个字母分别转化为其在字母表中的顺序并相加，我们可以计算出一个单词的值。例如，单词SKY的值就是 19 + 11 + 25 = 55 = t<sub>10</sub>。如果一个单词的值是一个三角形数，我们就称这个单词为三角形单词。",
+        "在 wrods 数组里截取长度为给定参数值 n 的数组，其中有多少个三角形单词？"
       ],
       "files": {
         "indexjs": {
@@ -2225,10 +2267,10 @@
           "name": "index",
           "contents": [
             "function codedTriangleNumbers(n) {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return 1;",
             "}",
-            "// only change code above this line",
+            "// 只需修改此行以上的代码",
             "",
             "const words = ['A','ABILITY','ABLE','ABOUT','ABOVE','ABSENCE','ABSOLUTELY','ACADEMIC','ACCEPT','ACCESS','ACCIDENT','ACCOMPANY','ACCORDING','ACCOUNT','ACHIEVE','ACHIEVEMENT','ACID','ACQUIRE','ACROSS','ACT','ACTION','ACTIVE','ACTIVITY','ACTUAL','ACTUALLY','ADD','ADDITION','ADDITIONAL','ADDRESS','ADMINISTRATION','ADMIT','ADOPT','ADULT','ADVANCE','ADVANTAGE','ADVICE','ADVISE','AFFAIR','AFFECT','AFFORD','AFRAID','AFTER','AFTERNOON','AFTERWARDS','AGAIN','AGAINST','AGE','AGENCY','AGENT','AGO','AGREE','AGREEMENT','AHEAD','AID','AIM','AIR','AIRCRAFT','ALL','ALLOW','ALMOST','ALONE','ALONG','ALREADY','ALRIGHT','ALSO','ALTERNATIVE','ALTHOUGH','ALWAYS','AMONG','AMONGST','AMOUNT','AN','ANALYSIS','ANCIENT','AND','ANIMAL','ANNOUNCE','ANNUAL','ANOTHER','ANSWER','ANY','ANYBODY','ANYONE','ANYTHING','ANYWAY','APART','APPARENT','APPARENTLY','APPEAL','APPEAR','APPEARANCE','APPLICATION','APPLY','APPOINT','APPOINTMENT','APPROACH','APPROPRIATE','APPROVE','AREA','ARGUE','ARGUMENT','ARISE','ARM','ARMY','AROUND','ARRANGE','ARRANGEMENT','ARRIVE','ART','ARTICLE','ARTIST','AS','ASK','ASPECT','ASSEMBLY','ASSESS','ASSESSMENT','ASSET','ASSOCIATE','ASSOCIATION','ASSUME','ASSUMPTION','AT','ATMOSPHERE','ATTACH','ATTACK','ATTEMPT','ATTEND','ATTENTION','ATTITUDE','ATTRACT','ATTRACTIVE','AUDIENCE','AUTHOR','AUTHORITY','AVAILABLE','AVERAGE','AVOID','AWARD','AWARE','AWAY','AYE','BABY','BACK','BACKGROUND','BAD','BAG','BALANCE','BALL','BAND','BANK','BAR','BASE','BASIC','BASIS','BATTLE','BE','BEAR','BEAT','BEAUTIFUL','BECAUSE','BECOME','BED','BEDROOM','BEFORE','BEGIN','BEGINNING','BEHAVIOUR','BEHIND','BELIEF','BELIEVE','BELONG','BELOW','BENEATH','BENEFIT','BESIDE','BEST','BETTER','BETWEEN','BEYOND','BIG','BILL','BIND','BIRD','BIRTH','BIT','BLACK','BLOCK','BLOOD','BLOODY','BLOW','BLUE','BOARD','BOAT','BODY','BONE','BOOK','BORDER','BOTH','BOTTLE','BOTTOM','BOX','BOY','BRAIN','BRANCH','BREAK','BREATH','BRIDGE','BRIEF','BRIGHT','BRING','BROAD','BROTHER','BUDGET','BUILD','BUILDING','BURN','BUS','BUSINESS','BUSY','BUT','BUY','BY','CABINET','CALL','CAMPAIGN','CAN','CANDIDATE','CAPABLE','CAPACITY','CAPITAL','CAR','CARD','CARE','CAREER','CAREFUL','CAREFULLY','CARRY','CASE','CASH','CAT','CATCH','CATEGORY','CAUSE','CELL','CENTRAL','CENTRE','CENTURY','CERTAIN','CERTAINLY','CHAIN','CHAIR','CHAIRMAN','CHALLENGE','CHANCE','CHANGE','CHANNEL','CHAPTER','CHARACTER','CHARACTERISTIC','CHARGE','CHEAP','CHECK','CHEMICAL','CHIEF','CHILD','CHOICE','CHOOSE','CHURCH','CIRCLE','CIRCUMSTANCE','CITIZEN','CITY','CIVIL','CLAIM','CLASS','CLEAN','CLEAR','CLEARLY','CLIENT','CLIMB','CLOSE','CLOSELY','CLOTHES','CLUB','COAL','CODE','COFFEE','COLD','COLLEAGUE','COLLECT','COLLECTION','COLLEGE','COLOUR','COMBINATION','COMBINE','COME','COMMENT','COMMERCIAL','COMMISSION','COMMIT','COMMITMENT','COMMITTEE','COMMON','COMMUNICATION','COMMUNITY','COMPANY','COMPARE','COMPARISON','COMPETITION','COMPLETE','COMPLETELY','COMPLEX','COMPONENT','COMPUTER','CONCENTRATE','CONCENTRATION','CONCEPT','CONCERN','CONCERNED','CONCLUDE','CONCLUSION','CONDITION','CONDUCT','CONFERENCE','CONFIDENCE','CONFIRM','CONFLICT','CONGRESS','CONNECT','CONNECTION','CONSEQUENCE','CONSERVATIVE','CONSIDER','CONSIDERABLE','CONSIDERATION','CONSIST','CONSTANT','CONSTRUCTION','CONSUMER','CONTACT','CONTAIN','CONTENT','CONTEXT','CONTINUE','CONTRACT','CONTRAST','CONTRIBUTE','CONTRIBUTION','CONTROL','CONVENTION','CONVERSATION','COPY','CORNER','CORPORATE','CORRECT','COS','COST','COULD','COUNCIL','COUNT','COUNTRY','COUNTY','COUPLE','COURSE','COURT','COVER','CREATE','CREATION','CREDIT','CRIME','CRIMINAL','CRISIS','CRITERION','CRITICAL','CRITICISM','CROSS','CROWD','CRY','CULTURAL','CULTURE','CUP','CURRENT','CURRENTLY','CURRICULUM','CUSTOMER','CUT','DAMAGE','DANGER','DANGEROUS','DARK','DATA','DATE','DAUGHTER','DAY','DEAD','DEAL','DEATH','DEBATE','DEBT','DECADE','DECIDE','DECISION','DECLARE','DEEP','DEFENCE','DEFENDANT','DEFINE','DEFINITION','DEGREE','DELIVER','DEMAND','DEMOCRATIC','DEMONSTRATE','DENY','DEPARTMENT','DEPEND','DEPUTY','DERIVE','DESCRIBE','DESCRIPTION','DESIGN','DESIRE','DESK','DESPITE','DESTROY','DETAIL','DETAILED','DETERMINE','DEVELOP','DEVELOPMENT','DEVICE','DIE','DIFFERENCE','DIFFERENT','DIFFICULT','DIFFICULTY','DINNER','DIRECT','DIRECTION','DIRECTLY','DIRECTOR','DISAPPEAR','DISCIPLINE','DISCOVER','DISCUSS','DISCUSSION','DISEASE','DISPLAY','DISTANCE','DISTINCTION','DISTRIBUTION','DISTRICT','DIVIDE','DIVISION','DO','DOCTOR','DOCUMENT','DOG','DOMESTIC','DOOR','DOUBLE','DOUBT','DOWN','DRAW','DRAWING','DREAM','DRESS','DRINK','DRIVE','DRIVER','DROP','DRUG','DRY','DUE','DURING','DUTY','EACH','EAR','EARLY','EARN','EARTH','EASILY','EAST','EASY','EAT','ECONOMIC','ECONOMY','EDGE','EDITOR','EDUCATION','EDUCATIONAL','EFFECT','EFFECTIVE','EFFECTIVELY','EFFORT','EGG','EITHER','ELDERLY','ELECTION','ELEMENT','ELSE','ELSEWHERE','EMERGE','EMPHASIS','EMPLOY','EMPLOYEE','EMPLOYER','EMPLOYMENT','EMPTY','ENABLE','ENCOURAGE','END','ENEMY','ENERGY','ENGINE','ENGINEERING','ENJOY','ENOUGH','ENSURE','ENTER','ENTERPRISE','ENTIRE','ENTIRELY','ENTITLE','ENTRY','ENVIRONMENT','ENVIRONMENTAL','EQUAL','EQUALLY','EQUIPMENT','ERROR','ESCAPE','ESPECIALLY','ESSENTIAL','ESTABLISH','ESTABLISHMENT','ESTATE','ESTIMATE','EVEN','EVENING','EVENT','EVENTUALLY','EVER','EVERY','EVERYBODY','EVERYONE','EVERYTHING','EVIDENCE','EXACTLY','EXAMINATION','EXAMINE','EXAMPLE','EXCELLENT','EXCEPT','EXCHANGE','EXECUTIVE','EXERCISE','EXHIBITION','EXIST','EXISTENCE','EXISTING','EXPECT','EXPECTATION','EXPENDITURE','EXPENSE','EXPENSIVE','EXPERIENCE','EXPERIMENT','EXPERT','EXPLAIN','EXPLANATION','EXPLORE','EXPRESS','EXPRESSION','EXTEND','EXTENT','EXTERNAL','EXTRA','EXTREMELY','EYE','FACE','FACILITY','FACT','FACTOR','FACTORY','FAIL','FAILURE','FAIR','FAIRLY','FAITH','FALL','FAMILIAR','FAMILY','FAMOUS','FAR','FARM','FARMER','FASHION','FAST','FATHER','FAVOUR','FEAR','FEATURE','FEE','FEEL','FEELING','FEMALE','FEW','FIELD','FIGHT','FIGURE','FILE','FILL','FILM','FINAL','FINALLY','FINANCE','FINANCIAL','FIND','FINDING','FINE','FINGER','FINISH','FIRE','FIRM','FIRST','FISH','FIT','FIX','FLAT','FLIGHT','FLOOR','FLOW','FLOWER','FLY','FOCUS','FOLLOW','FOLLOWING','FOOD','FOOT','FOOTBALL','FOR','FORCE','FOREIGN','FOREST','FORGET','FORM','FORMAL','FORMER','FORWARD','FOUNDATION','FREE','FREEDOM','FREQUENTLY','FRESH','FRIEND','FROM','FRONT','FRUIT','FUEL','FULL','FULLY','FUNCTION','FUND','FUNNY','FURTHER','FUTURE','GAIN','GAME','GARDEN','GAS','GATE','GATHER','GENERAL','GENERALLY','GENERATE','GENERATION','GENTLEMAN','GET','GIRL','GIVE','GLASS','GO','GOAL','GOD','GOLD','GOOD','GOVERNMENT','GRANT','GREAT','GREEN','GREY','GROUND','GROUP','GROW','GROWING','GROWTH','GUEST','GUIDE','GUN','HAIR','HALF','HALL','HAND','HANDLE','HANG','HAPPEN','HAPPY','HARD','HARDLY','HATE','HAVE','HE','HEAD','HEALTH','HEAR','HEART','HEAT','HEAVY','HELL','HELP','HENCE','HER','HERE','HERSELF','HIDE','HIGH','HIGHLY','HILL','HIM','HIMSELF','HIS','HISTORICAL','HISTORY','HIT','HOLD','HOLE','HOLIDAY','HOME','HOPE','HORSE','HOSPITAL','HOT','HOTEL','HOUR','HOUSE','HOUSEHOLD','HOUSING','HOW','HOWEVER','HUGE','HUMAN','HURT','HUSBAND','I','IDEA','IDENTIFY','IF','IGNORE','ILLUSTRATE','IMAGE','IMAGINE','IMMEDIATE','IMMEDIATELY','IMPACT','IMPLICATION','IMPLY','IMPORTANCE','IMPORTANT','IMPOSE','IMPOSSIBLE','IMPRESSION','IMPROVE','IMPROVEMENT','IN','INCIDENT','INCLUDE','INCLUDING','INCOME','INCREASE','INCREASED','INCREASINGLY','INDEED','INDEPENDENT','INDEX','INDICATE','INDIVIDUAL','INDUSTRIAL','INDUSTRY','INFLUENCE','INFORM','INFORMATION','INITIAL','INITIATIVE','INJURY','INSIDE','INSIST','INSTANCE','INSTEAD','INSTITUTE','INSTITUTION','INSTRUCTION','INSTRUMENT','INSURANCE','INTEND','INTENTION','INTEREST','INTERESTED','INTERESTING','INTERNAL','INTERNATIONAL','INTERPRETATION','INTERVIEW','INTO','INTRODUCE','INTRODUCTION','INVESTIGATE','INVESTIGATION','INVESTMENT','INVITE','INVOLVE','IRON','IS','ISLAND','ISSUE','IT','ITEM','ITS','ITSELF','JOB','JOIN','JOINT','JOURNEY','JUDGE','JUMP','JUST','JUSTICE','KEEP','KEY','KID','KILL','KIND','KING','KITCHEN','KNEE','KNOW','KNOWLEDGE','LABOUR','LACK','LADY','LAND','LANGUAGE','LARGE','LARGELY','LAST','LATE','LATER','LATTER','LAUGH','LAUNCH','LAW','LAWYER','LAY','LEAD','LEADER','LEADERSHIP','LEADING','LEAF','LEAGUE','LEAN','LEARN','LEAST','LEAVE','LEFT','LEG','LEGAL','LEGISLATION','LENGTH','LESS','LET','LETTER','LEVEL','LIABILITY','LIBERAL','LIBRARY','LIE','LIFE','LIFT','LIGHT','LIKE','LIKELY','LIMIT','LIMITED','LINE','LINK','LIP','LIST','LISTEN','LITERATURE','LITTLE','LIVE','LIVING','LOAN','LOCAL','LOCATION','LONG','LOOK','LORD','LOSE','LOSS','LOT','LOVE','LOVELY','LOW','LUNCH','MACHINE','MAGAZINE','MAIN','MAINLY','MAINTAIN','MAJOR','MAJORITY','MAKE','MALE','MAN','MANAGE','MANAGEMENT','MANAGER','MANNER','MANY','MAP','MARK','MARKET','MARRIAGE','MARRIED','MARRY','MASS','MASTER','MATCH','MATERIAL','MATTER','MAY','MAYBE','ME','MEAL','MEAN','MEANING','MEANS','MEANWHILE','MEASURE','MECHANISM','MEDIA','MEDICAL','MEET','MEETING','MEMBER','MEMBERSHIP','MEMORY','MENTAL','MENTION','MERELY','MESSAGE','METAL','METHOD','MIDDLE','MIGHT','MILE','MILITARY','MILK','MIND','MINE','MINISTER','MINISTRY','MINUTE','MISS','MISTAKE','MODEL','MODERN','MODULE','MOMENT','MONEY','MONTH','MORE','MORNING','MOST','MOTHER','MOTION','MOTOR','MOUNTAIN','MOUTH','MOVE','MOVEMENT','MUCH','MURDER','MUSEUM','MUSIC','MUST','MY','MYSELF','NAME','NARROW','NATION','NATIONAL','NATURAL','NATURE','NEAR','NEARLY','NECESSARILY','NECESSARY','NECK','NEED','NEGOTIATION','NEIGHBOUR','NEITHER','NETWORK','NEVER','NEVERTHELESS','NEW','NEWS','NEWSPAPER','NEXT','NICE','NIGHT','NO','NOBODY','NOD','NOISE','NONE','NOR','NORMAL','NORMALLY','NORTH','NORTHERN','NOSE','NOT','NOTE','NOTHING','NOTICE','NOTION','NOW','NUCLEAR','NUMBER','NURSE','OBJECT','OBJECTIVE','OBSERVATION','OBSERVE','OBTAIN','OBVIOUS','OBVIOUSLY','OCCASION','OCCUR','ODD','OF','OFF','OFFENCE','OFFER','OFFICE','OFFICER','OFFICIAL','OFTEN','OIL','OKAY','OLD','ON','ONCE','ONE','ONLY','ONTO','OPEN','OPERATE','OPERATION','OPINION','OPPORTUNITY','OPPOSITION','OPTION','OR','ORDER','ORDINARY','ORGANISATION','ORGANISE','ORGANIZATION','ORIGIN','ORIGINAL','OTHER','OTHERWISE','OUGHT','OUR','OURSELVES','OUT','OUTCOME','OUTPUT','OUTSIDE','OVER','OVERALL','OWN','OWNER','PACKAGE','PAGE','PAIN','PAINT','PAINTING','PAIR','PANEL','PAPER','PARENT','PARK','PARLIAMENT','PART','PARTICULAR','PARTICULARLY','PARTLY','PARTNER','PARTY','PASS','PASSAGE','PAST','PATH','PATIENT','PATTERN','PAY','PAYMENT','PEACE','PENSION','PEOPLE','PER','PERCENT','PERFECT','PERFORM','PERFORMANCE','PERHAPS','PERIOD','PERMANENT','PERSON','PERSONAL','PERSUADE','PHASE','PHONE','PHOTOGRAPH','PHYSICAL','PICK','PICTURE','PIECE','PLACE','PLAN','PLANNING','PLANT','PLASTIC','PLATE','PLAY','PLAYER','PLEASE','PLEASURE','PLENTY','PLUS','POCKET','POINT','POLICE','POLICY','POLITICAL','POLITICS','POOL','POOR','POPULAR','POPULATION','POSITION','POSITIVE','POSSIBILITY','POSSIBLE','POSSIBLY','POST','POTENTIAL','POUND','POWER','POWERFUL','PRACTICAL','PRACTICE','PREFER','PREPARE','PRESENCE','PRESENT','PRESIDENT','PRESS','PRESSURE','PRETTY','PREVENT','PREVIOUS','PREVIOUSLY','PRICE','PRIMARY','PRIME','PRINCIPLE','PRIORITY','PRISON','PRISONER','PRIVATE','PROBABLY','PROBLEM','PROCEDURE','PROCESS','PRODUCE','PRODUCT','PRODUCTION','PROFESSIONAL','PROFIT','PROGRAM','PROGRAMME','PROGRESS','PROJECT','PROMISE','PROMOTE','PROPER','PROPERLY','PROPERTY','PROPORTION','PROPOSE','PROPOSAL','PROSPECT','PROTECT','PROTECTION','PROVE','PROVIDE','PROVIDED','PROVISION','PUB','PUBLIC','PUBLICATION','PUBLISH','PULL','PUPIL','PURPOSE','PUSH','PUT','QUALITY','QUARTER','QUESTION','QUICK','QUICKLY','QUIET','QUITE','RACE','RADIO','RAILWAY','RAIN','RAISE','RANGE','RAPIDLY','RARE','RATE','RATHER','REACH','REACTION','READ','READER','READING','READY','REAL','REALISE','REALITY','REALIZE','REALLY','REASON','REASONABLE','RECALL','RECEIVE','RECENT','RECENTLY','RECOGNISE','RECOGNITION','RECOGNIZE','RECOMMEND','RECORD','RECOVER','RED','REDUCE','REDUCTION','REFER','REFERENCE','REFLECT','REFORM','REFUSE','REGARD','REGION','REGIONAL','REGULAR','REGULATION','REJECT','RELATE','RELATION','RELATIONSHIP','RELATIVE','RELATIVELY','RELEASE','RELEVANT','RELIEF','RELIGION','RELIGIOUS','RELY','REMAIN','REMEMBER','REMIND','REMOVE','REPEAT','REPLACE','REPLY','REPORT','REPRESENT','REPRESENTATION','REPRESENTATIVE','REQUEST','REQUIRE','REQUIREMENT','RESEARCH','RESOURCE','RESPECT','RESPOND','RESPONSE','RESPONSIBILITY','RESPONSIBLE','REST','RESTAURANT','RESULT','RETAIN','RETURN','REVEAL','REVENUE','REVIEW','REVOLUTION','RICH','RIDE','RIGHT','RING','RISE','RISK','RIVER','ROAD','ROCK','ROLE','ROLL','ROOF','ROOM','ROUND','ROUTE','ROW','ROYAL','RULE','RUN','RURAL','SAFE','SAFETY','SALE','SAME','SAMPLE','SATISFY','SAVE','SAY','SCALE','SCENE','SCHEME','SCHOOL','SCIENCE','SCIENTIFIC','SCIENTIST','SCORE','SCREEN','SEA','SEARCH','SEASON','SEAT','SECOND','SECONDARY','SECRETARY','SECTION','SECTOR','SECURE','SECURITY','SEE','SEEK','SEEM','SELECT','SELECTION','SELL','SEND','SENIOR','SENSE','SENTENCE','SEPARATE','SEQUENCE','SERIES','SERIOUS','SERIOUSLY','SERVANT','SERVE','SERVICE','SESSION','SET','SETTLE','SETTLEMENT','SEVERAL','SEVERE','SEX','SEXUAL','SHAKE','SHALL','SHAPE','SHARE','SHE','SHEET','SHIP','SHOE','SHOOT','SHOP','SHORT','SHOT','SHOULD','SHOULDER','SHOUT','SHOW','SHUT','SIDE','SIGHT','SIGN','SIGNAL','SIGNIFICANCE','SIGNIFICANT','SILENCE','SIMILAR','SIMPLE','SIMPLY','SINCE','SING','SINGLE','SIR','SISTER','SIT','SITE','SITUATION','SIZE','SKILL','SKIN','SKY','SLEEP','SLIGHTLY','SLIP','SLOW','SLOWLY','SMALL','SMILE','SO','SOCIAL','SOCIETY','SOFT','SOFTWARE','SOIL','SOLDIER','SOLICITOR','SOLUTION','SOME','SOMEBODY','SOMEONE','SOMETHING','SOMETIMES','SOMEWHAT','SOMEWHERE','SON','SONG','SOON','SORRY','SORT','SOUND','SOURCE','SOUTH','SOUTHERN','SPACE','SPEAK','SPEAKER','SPECIAL','SPECIES','SPECIFIC','SPEECH','SPEED','SPEND','SPIRIT','SPORT','SPOT','SPREAD','SPRING','STAFF','STAGE','STAND','STANDARD','STAR','START','STATE','STATEMENT','STATION','STATUS','STAY','STEAL','STEP','STICK','STILL','STOCK','STONE','STOP','STORE','STORY','STRAIGHT','STRANGE','STRATEGY','STREET','STRENGTH','STRIKE','STRONG','STRONGLY','STRUCTURE','STUDENT','STUDIO','STUDY','STUFF','STYLE','SUBJECT','SUBSTANTIAL','SUCCEED','SUCCESS','SUCCESSFUL','SUCH','SUDDENLY','SUFFER','SUFFICIENT','SUGGEST','SUGGESTION','SUITABLE','SUM','SUMMER','SUN','SUPPLY','SUPPORT','SUPPOSE','SURE','SURELY','SURFACE','SURPRISE','SURROUND','SURVEY','SURVIVE','SWITCH','SYSTEM','TABLE','TAKE','TALK','TALL','TAPE','TARGET','TASK','TAX','TEA','TEACH','TEACHER','TEACHING','TEAM','TEAR','TECHNICAL','TECHNIQUE','TECHNOLOGY','TELEPHONE','TELEVISION','TELL','TEMPERATURE','TEND','TERM','TERMS','TERRIBLE','TEST','TEXT','THAN','THANK','THANKS','THAT','THE','THEATRE','THEIR','THEM','THEME','THEMSELVES','THEN','THEORY','THERE','THEREFORE','THESE','THEY','THIN','THING','THINK','THIS','THOSE','THOUGH','THOUGHT','THREAT','THREATEN','THROUGH','THROUGHOUT','THROW','THUS','TICKET','TIME','TINY','TITLE','TO','TODAY','TOGETHER','TOMORROW','TONE','TONIGHT','TOO','TOOL','TOOTH','TOP','TOTAL','TOTALLY','TOUCH','TOUR','TOWARDS','TOWN','TRACK','TRADE','TRADITION','TRADITIONAL','TRAFFIC','TRAIN','TRAINING','TRANSFER','TRANSPORT','TRAVEL','TREAT','TREATMENT','TREATY','TREE','TREND','TRIAL','TRIP','TROOP','TROUBLE','TRUE','TRUST','TRUTH','TRY','TURN','TWICE','TYPE','TYPICAL','UNABLE','UNDER','UNDERSTAND','UNDERSTANDING','UNDERTAKE','UNEMPLOYMENT','UNFORTUNATELY','UNION','UNIT','UNITED','UNIVERSITY','UNLESS','UNLIKELY','UNTIL','UP','UPON','UPPER','URBAN','US','USE','USED','USEFUL','USER','USUAL','USUALLY','VALUE','VARIATION','VARIETY','VARIOUS','VARY','VAST','VEHICLE','VERSION','VERY','VIA','VICTIM','VICTORY','VIDEO','VIEW','VILLAGE','VIOLENCE','VISION','VISIT','VISITOR','VITAL','VOICE','VOLUME','VOTE','WAGE','WAIT','WALK','WALL','WANT','WAR','WARM','WARN','WASH','WATCH','WATER','WAVE','WAY','WE','WEAK','WEAPON','WEAR','WEATHER','WEEK','WEEKEND','WEIGHT','WELCOME','WELFARE','WELL','WEST','WESTERN','WHAT','WHATEVER','WHEN','WHERE','WHEREAS','WHETHER','WHICH','WHILE','WHILST','WHITE','WHO','WHOLE','WHOM','WHOSE','WHY','WIDE','WIDELY','WIFE','WILD','WILL','WIN','WIND','WINDOW','WINE','WING','WINNER','WINTER','WISH','WITH','WITHDRAW','WITHIN','WITHOUT','WOMAN','WONDER','WONDERFUL','WOOD','WORD','WORK','WORKER','WORKING','WORKS','WORLD','WORRY','WORTH','WOULD','WRITE','WRITER','WRITING','WRONG','YARD','YEAH','YEAR','YES','YESTERDAY','YET','YOU','YOUNG','YOUR','YOURSELF','YOUTH'];",
             "",
@@ -2243,24 +2285,25 @@
       "id": "5900f3971000cf542c50feaa",
       "challengeType": 5,
       "title": "Problem 43: Sub-string divisibility",
+      "title_zh": "关卡 43：子串的可整除性",
       "tests": [
         {
-          "text": "<code>substringDivisibility()</code> should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].",
-          "testString": "assert.deepEqual(substringDivisibility(), [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ], '<code>substringDivisibility()</code> should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].');"
+          "text": "<code>substringDivisibility()</code>应该返回 [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ]。",
+          "testString": "assert.deepEqual(substringDivisibility(), [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ], '<code>substringDivisibility()</code>应该返回 [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ]。');"
         }
       ],
       "solutions": [],
       "description": [
-        "The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.",
-        "Let d1 be the 1st digit, d2 be the 2nd digit, and so on. In this way, we note the following:",
-        "d2d3d4=406 is divisible by 2",
-        "d3d4d5=063 is divisible by 3",
-        "d4d5d6=635 is divisible by 5",
-        "d5d6d7=357 is divisible by 7",
-        "d6d7d8=572 is divisible by 11",
-        "d7d8d9=728 is divisible by 13",
-        "d8d9d10=289 is divisible by 17",
-        "Find the numbers of all 0 to 9 pandigital numbers with this property."
+        "1406357289 是一个 0 至 9 全数字数，因为它由 0 到 9 这十个数字排列而成；但除此之外，它还有一个有趣的性质：子串的可整除性。",
+        "记 <sub>d1</sub> 是它的第一个数字，<sub>d2</sub> 是第二个数字，依此类推，我们注意到：",
+        "d<sub>2</sub>d<sub>3</sub>d<sub>4</sub>=406 能被 2 整除",
+        "d<sub>3</sub>d<sub>4</sub>d<sub>5</sub>=063 能被 3 整除",
+        "d<sub>4</sub>d<sub>5</sub>d<sub>6</sub>=635 能被 5 整除",
+        "d<sub>5</sub>d<sub>6</sub>d<sub>7</sub>=357 能被 7 整除",
+        "d<sub>6</sub>d<sub>7</sub>d<sub>8</sub>=572 能被 11 整除",
+        "d<sub>7</sub>d<sub>8</sub>d<sub>9</sub>=728 能被 13 整除",
+        "d<sub>8</sub>d<sub>9</sub>d<sub>10</sub>=289 能被 17 整除",
+        "找出所有满足同样性质的 0 至 9 全数字数，并求它们的和。"
       ],
       "files": {
         "indexjs": {
@@ -2269,7 +2312,7 @@
           "name": "index",
           "contents": [
             "function substringDivisibility() {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return [];",
             "}",
             "",
@@ -2284,20 +2327,21 @@
       "id": "5900f3981000cf542c50feab",
       "challengeType": 5,
       "title": "Problem 44: Pentagon numbers",
+      "title_zh": "关卡 44：五边形数",
       "tests": [
         {
-          "text": "<code>pentagonNumbers()</code> should return 5482660.",
-          "testString": "assert.strictEqual(pentagonNumbers(), 5482660, '<code>pentagonNumbers()</code> should return 5482660.');"
+          "text": "<code>pentagonNumbers()</code>应该返回 5482660。",
+          "testString": "assert.strictEqual(pentagonNumbers(), 5482660, '<code>pentagonNumbers()</code>应该返回 5482660。');"
         }
       ],
       "solutions": [
         "function pentagonNumbers() {\n  function isPentagonal(num) {\n  // Formula found by solving pentagonal number\n  // equation for n.\n  const n = (Math.sqrt((24 * num) + 1) + 1) / 6;\n  return n % 1 === 0;\n  }\n\n  function pentagonal(num) {\n    return (num * ((3 * num) - 1)) / 2;\n  }\n  let result;\n  let i = 1;\n  while (!result) {\n  i++;\n  const num1 = (i * ((3 * i) - 1)) / 2; // Pentagonal num formula\n  const minDiff = num1 - (((i - 1) * ((3 * (i - 1)) - 1)) / 2);\n  let j = i - 1;\n  while (j > 0 && !result) {\n  const num2 = (j * ((3 * j) - 1)) / 2;\n  if (isPentagonal(num1 - num2) && isPentagonal(num1 + num2)) {\n        result = num1 - num2;\n      }\n      j--;\n    }\n  }\n  return result;\n  }"
       ],
       "description": [
-        "Pentagonal numbers are generated by the formula, P<sub>n</sub>=<var>n</var>(3<var>n</var>−1)/2. The first ten pentagonal numbers are:",
+        "五边形数由公式 P<sub>n</sub>=<var>n</var>(3<var>n</var>−1)/2 生成。前十个五边形数是：",
         "<span style='display: block; text-align: center;'>1, 5, 12, 22, 35, 51, 70, 92, 117, 145, ...</span>",
-        "It can be seen that P<sub>4</sub> + P<sub>7</sub> = 22 + 70 = 92 = P<sub>8</sub>. However, their difference, 70 − 22 = 48, is not pentagonal.",
-        "Find the pair of pentagonal numbers, P<sub>j</sub> and P<sub>k</sub>, for which their sum and difference are pentagonal and D = |P<sub>k</sub> − P<sub>j</sub>| is minimised; what is the value of D?"
+        "可以看出 P<sub>4</sub> + P<sub>7</sub> = 22 + 70 = 92 = P<sub>8</sub>。然而，它们的差 70 − 22 = 48 并不是五边形数。",
+        "在所有和差均为五边形数的五边形数对 P<sub>j</sub> 和 P<sub>k</sub> 中，找出使 D = |P<sub>k</sub> − P<sub>j</sub>| 最小的一对；此时D的值是多少？"
       ],
       "files": {
         "indexjs": {
@@ -2306,7 +2350,7 @@
           "name": "index",
           "contents": [
             "function pentagonNumbers() {",
-            "  // Good luck!",
+            "  // 祝你好运！",
             "  return true;",
             "}",
             "",

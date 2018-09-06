@@ -57,7 +57,6 @@ export class SidePanel extends PureComponent {
     // MathJax.Hub.Queue(['Typeset', MathJax.Hub,
     // document.querySelector('.challenge-instructions')]);
     const { title, initConsole } = this.props;
-    // console.log('update: '+ title)
     if (title !== prevProps.title) {
       initConsole('');
       const node = ReactDom.findDOMNode(this.descriptionTop);
@@ -73,9 +72,7 @@ export class SidePanel extends PureComponent {
 
   render() {
     const { title, description, guideUrl, tests } = this.props;
-    console.log('render: '+ title)
     const arr = title.replace(': ','|').split('|')
-
     dict.forEach(function(item){
       if(item.english == arr[0]){
         arr[0] = item.chinese     
@@ -84,9 +81,7 @@ export class SidePanel extends PureComponent {
         arr[1] = item.chinese     
       }
     })
-    console.log(arr)
     const changedTitle = arr.join('：')
-    console.log(changedTitle)
     return (
       <div className='instructions-panel' role='complementary'>
         <div ref={this.bindTopDiv} />

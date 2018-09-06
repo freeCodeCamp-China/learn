@@ -1,6 +1,6 @@
 {
-    "name": "Learn | freeCodeCamp",
-    "short_name": "Learn | freeCodeCamp",
+    "name": "课程|FCC中文社区",
+    "short_name": "课程|FCC中文社区",
     "icons": [
         {
             "src": "/assets/android-chrome-36x36.png",
@@ -48,7 +48,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#006400",
-    "background_color": "#006400",
+    "theme_color": "#029950",
+    "background_color": "#029950",
     "display": "standalone"
 }

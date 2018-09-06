@@ -8,13 +8,13 @@
       "id": "bd7123c9c441eddfaeb4bdef",
       "title": "Comment Your JavaScript Code",
       "description": [
-        "被注释的代码块在 JavaScript 之中是不会执行的。注释是一个非常好的方式让你自己以及其他人明白这段代码是怎么执行的。",
+        "被注释的代码块在 JavaScript 之中是不会执行的。在代码中写注释是一个非常好的方式让你自己和其他人理解代码。",
         "JavaScript 中的注释方式有以下两种：",
-        "使用<code>//</code>来告诉 JavaScript 来忽略当前行的代码",
+        "使用<code>//</code>注释掉当前行的代码",
         "<blockquote>// 这是一条单行注释。</blockquote>",
         "你也可以使用多行注释来注释你的代码，以<code>/*</code>开始，用<code>*/</code>来结束，就像下面这样：",
         "<blockquote>/* 这是一个<br>多行注释 */</blockquote>",
-        "<strong>最佳实践</strong><br>给你写的代码添加注释，让你的代码看起来更加清晰易懂。良好的注释能够清晰地传达你写代码的意图——无论是别人看你的代码还是以后你自己再看的时候。",
+        "<strong>最佳实践</strong><br>写代码的时候，要定期添加注释对部分代码块进行解释。适当的注释能让别人和你自己更容易看懂代码。",
         "<hr>",
         "尝试创建这两种类型的注释。"
       ],
@@ -47,14 +47,14 @@
       "id": "bd7123c9c443eddfaeb5bdef",
       "title": "Declare JavaScript Variables",
       "description": [
-        "在计算机科学中,<code>data</code>(数据)就是一切，它对于计算机意义重大。JavaScript 提供七种不同的<dfn>data types</dfn>(数据类型)，它们是<code>undefined</code>（未定义）， <code>null</code>（空），<code>boolean</code>（布尔型），<code>string</code>（字符串），<code>symbol</code>(符号)，<code>number</code>（数字），和<code>object</code>（对象）。",
-        "例如，计算机区分数字（例如数字<code>12</code>）和字符集合的字符串<code>strings</code>（例如<code>\"12\"</code>，<code>\"dog\"</code>或<code>\"123 cats\"</code>）。计算机可以对数字执行数学运算，但不能对字符串执行数学运算。",
-        "<code>Variables</code>（变量）允许计算机以一种动态的形式来存储和操作数据，通过操作指向数据的指针而不是数据本身来避免了内存泄露，以上的七种数据类型都可以存储到一个变量（variable）中。",
-        "<code>Variables</code> 非常类似于你在数学中使用的 x，y 变量，都是以一个简单命名的名称来代替我们赋值给它的数据。计算机中的<code>variables</code>（变量）与数学中的变量不同的是，计算机可以在不同的时间存储不同类型的变量。",
+        "在计算机科学中，<dfn>数据</dfn>就是一切，它对于计算机意义重大。JavaScript 提供七种不同的<dfn>数据类型</dfn>，它们是<code>undefined</code>（未定义）， <code>null</code>（空），<code>boolean</code>（布尔型），<code>string</code>（字符串），<code>symbol</code>(符号)，<code>number</code>（数字），和<code>object</code>（对象）。",
+        "例如，计算机区分数字和字符集合的字符串，例如数字<code>12</code>和字符串<code>\"12\"</code>，<code>\"dog\"</code>或<code>\"123 cats\"</code>。计算机可以对数字执行数学运算，但不能对字符串执行数学运算。",
+        "<dfn>变量</dfn>允许计算机以一种动态的形式来存储和操作数据，通过操作指向数据的指针而不是数据本身来避免了内存泄露，以上的七种数据类型都可以存储到一个变量中。",
+        "<code>变量</code>非常类似于你在数学中使用的 x，y 变量，都是以一个简单命名的名称来代替我们赋值给它的数据。计算机中的<code>变量</code>与数学中的变量不同的是，计算机可以在不同的时间存储不同类型的变量。",
         "通过在变量的前面使用关键字<code>var</code>，声明一个变量，例如：",
         "<blockquote>var ourName;</blockquote>",
-        "上面代码的意思是创建一个名为<code>ourName</code>的<code>variable</code>（变量），在 JavaScript 中我们以分号结束语句。",
-        "<code>Variable</code>（变量）名称可以由数字、字母、<code>$</code> 或者 <code>_</code>组成，但是不能包含空格或者以数字为开头。",
+        "上面代码的意思是创建一个名为<code>ourName</code>的<code>变量</code>，在 JavaScript 中我们以分号结束语句。",
+        "<code>变量</code>名称可以由数字、字母、美元符号<code>$</code> 或者 下划线<code>_</code>组成，但是不能包含空格或者以数字为开头。",
         "<hr>",
         "使用<code>var</code> 关键字来创建一个名为<code>myName</code>的变量。",
         "<strong>提示</strong><br>如果遇到困难了，请看下<code>ourName</code>的例子是怎么写的。"
@@ -94,10 +94,10 @@
       "description": [
         "在 JavaScript 中，你可以使用赋值运算符将值存储在变量中。",
         "<code>myVariable = 5;</code>",
-        "这条语句把<code>Number</code>值<code>5</code>赋给变量<code>myVariable</code>。",
+        "这条语句把<code>Number</code>类型的值<code>5</code>赋给变量<code>myVariable</code>。",
         "赋值过程是从右到左进行的。在将值分配给运算符左侧的变量之前，将解析<code>=</code>运算符右侧的所有内容。",
         "<blockquote>myVar = 5;<br>myNum = myVar;</blockquote>",
-        "数值<code>5</code>被赋给变量<code>myVar</code>中，然后再次将变量<code>myVar</code>解析为 5 并将其赋给<code>myNum</code>变量。",
+        "数值<code>5</code>被赋给变量<code>myVar</code>中，然后再次将变量<code>myVar</code>解析为<code>5</code>并将其赋给<code>myNum</code>变量。",
         "<hr>",
         "把数值<code>7</code>赋给变量 <code>a</code>。",
         "把变量<code>a</code>中的内容赋给变量<code>b</code>。"
@@ -156,7 +156,7 @@
       "id": "56533eb9ac21ba0edf2244a9",
       "title": "Initializing Variables with the Assignment Operator",
       "description": [
-        "通常地我们会在<dfn>initialize</dfn>开始声明变量的时候就会给变量赋一个初始值。",
+        "通常在声明变量的时候会给变量<dfn>初始化</dfn>一个初始值。",
         "<code>var myVar = 0;</code>",
         "创建一个名为<code>myVar</code>的变量并指定一个初始值<code>0</code>。",
         "<hr>",
@@ -253,7 +253,7 @@
       "title": "Understanding Case Sensitivity in Variables",
       "description": [
         "在 JavaScript 中所有的变量和函数名都是大小写敏感的。要区别对待大写字母和小写字母。",
-        "<code>MYVAR</code>与<code>MyVar</code>和<code>myvar</code>是截然不同的变量。这就有可能导致多个截然不同的变量却有着有相似的名字。正是由于以上原因所以强烈地建议你，<em>不要</em>使用这一特性。（以免给自己带来麻烦）",
+        "<code>MYVAR</code>与<code>MyVar</code>和<code>myvar</code>是截然不同的变量。这有可能导致出现多个相似名字的的变量。所以强烈地建议你，为了保持代码清晰不要使用这一特性。",
         "<h4>最佳实践</h4>",
         "使用<dfn>驼峰命名法</dfn>来书写一个 Javascript 变量，在<dfn>驼峰命名法</dfn>中，变量名的第一个单词的首写字母小写，后面的单词的第一个字母大写。",
         "<strong>示例：</strong>",

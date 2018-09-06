@@ -10,7 +10,7 @@ import ButtonSpacer from '../../components/util/ButtonSpacer';
 import { MarkdownRemark, AllChallengeNode } from '../../redux/propTypes';
 
 import './intro.css';
-
+const dict = require('../../components/Map/components/dict.json')
 const propTypes = {
   data: PropTypes.shape({
     markdownRemark: MarkdownRemark,
@@ -19,11 +19,18 @@ const propTypes = {
 };
 
 function renderMenuItems({ edges = [] }) {
-  return edges.map(({ node }) => node).map(({ title, fields: { slug } }) => (
-    <Link key={'intro-' + slug} to={slug}>
-      <ListGroupItem>{title}</ListGroupItem>
-    </Link>
-  ));
+  return edges.map(({ node }) => node).map(({ title, fields: { slug } }) => {
+    dict.forEach(item =>{
+      if(item.english == title){
+        title = item.chinese
+      }
+    })
+    return (
+      <Link key={'intro-' + slug} to={slug}>
+        <ListGroupItem>{title}</ListGroupItem>
+      </Link>
+    )
+  });
 }
 
 function handleCurriculumClick() {
@@ -49,7 +56,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
       </FullWidthRow>
       <FullWidthRow>
         <Link className='btn btn-lg btn-primary btn-block' to={firstLessonPath}>
-          Go to the first lesson
+          回到第一个小节
         </Link>
         <ButtonSpacer />
         <Button
@@ -58,13 +65,13 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
           className='btn-primary-invert'
           onClick={handleCurriculumClick}
           >
-          View the curriculum
+          查看所有的课程
         </Button>
         <ButtonSpacer />
         <hr />
       </FullWidthRow>
       <FullWidthRow>
-        <h2 className='intro-toc-title'>Upcoming Lessons</h2>
+        <h2 className='intro-toc-title'>课程目录</h2>
         <ListGroup className='intro-toc'>
           {allChallengeNode ? renderMenuItems(allChallengeNode) : null}
         </ListGroup>

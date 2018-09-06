@@ -37,7 +37,15 @@ const metaKeywords = [
   'end',
   'learn',
   'tutorial',
-  'programming'
+  'programming',
+  'freecodecamp',
+  'FCC',
+  'FCC 中文社区',
+  'Web 前端开发',
+  '编程',
+  '前端',
+  '后端',
+  '免费学编程'
 ];
 
 const mapStateToProps = createSelector(
@@ -89,8 +97,7 @@ class Layout extends PureComponent {
             {
               name: 'description',
               content:
-                'Learn to code with free online courses, programming ' +
-                'projects, and interview preparation for developer jobs.'
+                '免费在线学编程、项目实战、面试攻略、找到一份好工作。'
             },
             { name: 'keywords', content: metaKeywords.join(', ') }
           ]}

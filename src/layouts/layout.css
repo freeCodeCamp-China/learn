@@ -3,7 +3,7 @@ main {
   height: 100%;
 }
 .reflex-layout.reflex-container.vertical {
-  flex-wrap: wrap; 
+  /*flex-wrap: wrap; */
 }
 .reflex-layout.vertical > .reflex-splitter,
 .reflex-layout > .reflex-element {
@@ -18,7 +18,7 @@ main {
   overflow-y: scroll;
 }
 .reflex-layout > .reflex-element {
-  min-width: 320px;
+  /*min-width: 320px;*/
 }
 
 .reflex-layout.vertical .reflex-splitter:hover {

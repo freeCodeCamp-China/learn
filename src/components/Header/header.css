@@ -86,8 +86,8 @@ header {
 
 /* Search bar */
 .fcc_searchBar {
-  flex-grow: 0.8;
-  padding: 2px 10px 0;
+  flex-grow: 0.2;
+  padding: 2px 0px 0;
 }
 .ais-SearchBox-form {
   margin-bottom: 0;
