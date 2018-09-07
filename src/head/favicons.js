@@ -7,9 +7,9 @@ const favicons = [
     sizes='180x180'
   />,
   <link
-    href='/assets/favicon-32x32.png'
+    href='/assets/favicon-64x64.png'
     rel='icon'
-    sizes='32x32'
+    sizes='64x64'
     type='image/png'
   />,
   <link
@@ -18,17 +18,11 @@ const favicons = [
     sizes='192x192'
     type='image/png'
   />,
-  <link
-    href='/assets/favicon-16x16.png'
-    rel='icon'
-    sizes='16x16'
-    type='image/png'
-  />,
   <link href='/assets/site.webmanifest' rel='manifest' />,
-  <link color='#006400' href='/assets/safari-pinned-tab.svg' rel='mask-icon' />,
-  <meta content='#006400' name='msapplication-TileColor' />,
+  <link color='##029950' href='/assets/safari-pinned-tab.svg' rel='mask-icon' />,
+  <meta content='##029950' name='msapplication-TileColor' />,
   <meta content='/assets/mstile-144x144.png' name='msapplication-TileImage' />,
-  <meta content='#006400' name='theme-color' />
+  <meta content='##029950' name='theme-color' />
 ];
 
 export default favicons;

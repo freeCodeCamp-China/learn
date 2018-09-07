@@ -15,7 +15,7 @@
         "开始标记像这样：<code>&#60;h1&#62;</code>",
         "结束标记像这样：<code>&#60;/h1&#62;</code>",
         "开始标记和结束标记的唯一区别就是结束标记多了一个<code>/</code>。",
-        "每个挑战都有测试，任何时候点击<strong>运行测试</strong>按钮就可以运行测试。如果代码通过测试，将会弹出一个窗口，你就可以提交你的代码并顺利进入下一个挑战。",
+        "每个挑战都有测试，任何时候点击<strong>运行测试</strong>按钮就可以运行测试。如果代码通过测试，将会弹出一个窗口，你就可以进入下一个挑战。反之，测试区会显示你没有通过测试的原因。",
         "<hr>",
         "请把<code>h1</code>元素的内容改为：<code>Hello World</code>。"
       ],
@@ -23,7 +23,7 @@
         {
           "text": "<code>h1</code>元素的内容应该为：<code>Hello World</code>。",
           "testString":
-            "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), '<code>h1</code>元素的内容应该为：<code>Hello World</code>。');"
+            "assert.isTrue((/^hello(\\s)+world$/gi).test($('h1').text()), '<code>h1</code>元素的内容应该为：<code>Hello World</code>。');"
         }
       ],
       "challengeType": 0,
@@ -42,9 +42,9 @@
       "id": "bad87fee1348bd9aedf0887a",
       "title": "Headline with the h2 Element",
       "description": [
-        "在接下来的几节课里，我们将会由浅入深地制作一个关于猫咪的相册。",
+        "在接下来的几节课里，我们将会由浅入深地制作一个 CatPhotoApp。",
         "这节课将会引入<code>h2</code>元素。",
-        "这些元素用来告诉浏览器，网站的结构长什么样子。<code>h1</code>元素通常被用作主标题，<code>h2</code>元素通常被用作副标题，还有<code>h3</code>、<code>h4</code>、<code>h5</code>、<code>h6</code>元素，它们分别用作不同级别的标题。",
+        "这些元素用来告诉浏览器，网站的结构是什么样子。<code>h1</code>元素通常被用作主标题，<code>h2</code>元素通常被用作副标题，还有<code>h3</code>、<code>h4</code>、<code>h5</code>、<code>h6</code>元素，它们分别用作不同级别的标题。",
         "<hr>",
         "在<code>h1</code>元素下面创建一个<code>h2</code>元素，元素内容为：<code>CatPhotoApp</code>。"
       ],
@@ -60,14 +60,14 @@
             "assert(code.match(/<\\/h2>/g) && code.match(/<\\/h2>/g).length === code.match(/<h2>/g).length, '<code>h2</code>元素应该有结束标记。');"
         },
         {
-          "text": "<code>h2</code>元素的内容应该为：<code>CatPhotoApp</code>。",
+          "text": "<code>h2</code>元素的内容应为：<code>CatPhotoApp</code>。",
           "testString":
-            "assert.isTrue((/CatPhotoApp/gi).test($(\"h2\").text()), '<code>h2</code>元素的内容应该为：<code>CatPhotoApp</code>。');"
+            "assert.isTrue((/CatPhotoApp/gi).test($(\"h2\").text()), '<code>h2</code>元素的内容应为：<code>CatPhotoApp</code>。');"
         },
         {
-          "text": "<code>h1</code>元素的内容应该为：<code>Hello World</code>。",
+          "text": "<code>h1</code>元素的内容应为：<code>Hello World</code>。",
           "testString":
-            "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), '<code>h1</code>元素的内容应该为：<code>Hello World</code>。');"
+            "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), '<code>h1</code>元素的内容应为：<code>Hello World</code>。');"
         }
       ],
       "challengeType": 0,
@@ -100,7 +100,7 @@
         },
         {
           "text":
-            "<code>p</code>元素的内容应该为：<code>Hello Paragraph</code>。",
+            "<code>p</code>元素的内容应为：<code>Hello Paragraph</code>。",
           "testString":
             "assert.isTrue((/hello(\\s)+paragraph/gi).test($(\"p\").text()), '<code>p</code>元素的内容应该为：<code>Hello Paragraph</code>。');"
         },
@@ -335,7 +335,7 @@
         {
           "text": "新建的段落应该包含关键词：猫咪。",
           "testString":
-            "assert.isTrue((/养猫/).test($(\"p\").text()), '新建的段落应该包含关键词：猫咪。');"
+            "assert.isTrue((/猫咪/).test($(\"p\").text()), '新建的段落应该包含关键词：猫咪。');"
         },
         {
           "text": "代码中应该包含<code>main</code>元素。",
@@ -1260,26 +1260,26 @@
       "id": "bad87fee1348bd9aedf08835",
       "title": "Create a Set of Checkboxes",
       "description": [
-        "<code>checkboxes</code>（多选按钮）就好比多项选择题，正确答案有多个。",
-        "多选按钮是<code>input</code>输入框的另一种类型。",
-        "每一个多选按钮都应该嵌套在它自己的<code>label</code>（标签）元素中。",
-        "所有关联的多选按钮应该拥有相同的<code>name</code>属性。",
-        "最佳实践是在<code>label</code>元素上设置for属性，让其值与多选按钮的<code>id</code>属性值相等，这样就在<code>label</code>元素和它的子元素多选按钮之间创建了一种链接关系。例如：",
-        "下面是一个多选按钮的例子：",
+        "<code>checkboxes</code>（复选框）就好比多项选择题，正确答案有多个。",
+        "复选框是<code>input</code>输入框的另一种类型。",
+        "每一个复选框都应该嵌套在它自己的<code>label</code>（标签）元素中。",
+        "所有关联的复选框应该拥有相同的<code>name</code>属性。",
+        "最佳实践是在<code>label</code>元素上设置<code>for</code>属性，让其值与复选框的<code>id</code>属性值相等，这样就在<code>label</code>元素和它的子元素复选框之间创建了一种链接关系。例如：",
+        "下面是一个复选框的例子：",
         "<code>&#60;label for=\"loving\"&#62;&#60;input id=\"loving\" type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
         "<hr>",
-        "给表单添加三个多选按钮，每个多选按钮都被嵌套进<code>label</code>元素中，并且它的<code>name</code>属性均为<code>personality</code>。"
+        "给表单添加三个复选框，每个复选框都被嵌套进<code>label</code>元素中，并且它的<code>name</code>属性均为<code>personality</code>。"
       ],
       "tests": [
         {
-          "text": "表单应该有三个多选按钮。",
+          "text": "表单应该有三个复选框。",
           "testString":
-            "assert($('input[type=\"checkbox\"]').length > 2, '表单应该有三个多选按钮。');"
+            "assert($('input[type=\"checkbox\"]').length > 2, '表单应该有三个复选框。');"
         },
         {
-          "text": "每个多选按钮都应该被嵌套进<code>label</code>元素中。",
+          "text": "每个复选框都应该被嵌套进<code>label</code>元素中。",
           "testString":
-            "assert($('label > input[type=\"checkbox\"]:only-child').length > 2, '每个多选按钮都应该被嵌套进<code>label</code>元素中。');"
+            "assert($('label > input[type=\"checkbox\"]:only-child').length > 2, '每个复选框都应该被嵌套进<code>label</code>元素中。');"
         },
         {
           "text": "确保<code>label</code>元素有结束标记。",
@@ -1288,9 +1288,9 @@
         },
         {
           "text":
-            "设置多选按钮的<code>name</code>属性均为<code>personality</code>。",
+            "设置复选框的<code>name</code>属性均为<code>personality</code>。",
           "testString":
-            "assert($('label > input[type=\"checkbox\"]').filter(\"[name='personality']\").length > 2, '设置多选按钮的<code>name</code>属性均为<code>personality</code>。');"
+            "assert($('label > input[type=\"checkbox\"]').filter(\"[name='personality']\").length > 2, '设置复选框的<code>name</code>属性均为<code>personality</code>。');"
         }
       ],
       "challengeType": 0,
