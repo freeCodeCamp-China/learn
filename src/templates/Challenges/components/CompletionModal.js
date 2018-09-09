@@ -109,7 +109,7 @@ export class CompletionModal extends PureComponent {
             bsStyle='primary'
             onClick={submitChallenge}
             >
-            提交代码并去往下一个关卡。(Ctrl + Enter)
+            继续闯关
           </Button>
           {showDownloadButton
             ? <Button

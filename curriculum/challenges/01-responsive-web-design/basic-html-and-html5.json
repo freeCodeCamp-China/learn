@@ -232,7 +232,7 @@
         {
           "text": "注释掉<code>p</code>元素，这样它就从网页上消失了。",
           "testString":
-            "assert(($(\"p\").length === 0), '注释<code>p</code>元素，这样它就从网页上消失了。);"
+            "assert(($(\"p\").length === 0), '注释掉<code>p</code>元素，这样它就从网页上消失了。');"
         },
         {
           "text": "确保每一个注释都以<code>--&#62;</code>结尾。",
@@ -317,10 +317,10 @@
         "HTML5 引入了很多更具描述性的 HTML 元素，例如：<code>header</code>、<code>footer</code>、<code>nav</code>、<code>video</code>、<code>article</code>、<code>section</code>等等。",
         "这些元素让 HTML 更易读，同时有助于搜索引擎优化和无障碍访问。",
         "<code>main</code>元素让搜索引擎和开发者瞬间就能找到网页的主要内容。",
-        "<strong>注意</strong><br>在后面的应用无障碍课程中我们会接触到更多新的 HTML5 元素，以及明白它们的用处。",
+        "<strong>提示：</strong>在后面的应用无障碍课程中我们会接触到更多新的 HTML5 元素，以及明白它们的用处。",
         "<hr>",
-        "在现有的段落下创建一个新的段落，段落内容为：养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。",
-        "在第一个段落前添加<code><main></code>，在第二个段落后添加<code></main></code>。"
+        "在现有的段落下创建一个新的段落，段落内容为：<code>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</code>",
+        "在第一个段落前添加<code>&#60main&#62</code>，在第二个段落后添加<code>&#60/main&#62</code>。"
       ],
       "tests": [
         {
@@ -490,7 +490,7 @@
       "title": "Link to Internal Sections of a Page with Anchor Elements",
       "description": [
         "锚点同样也可以用来在网页内不同区域的跳转。",
-        "用一个井号<code>#</code>加上你想跳转区域对应的<code>id</code>属性值，然后设置锚点的<code>href</code>属性为这两者的和，这样就可以创建一个内部链接。<code>id</code>是用来描述网页元素的一个属性，它的值在整个页面中唯一。",
+        "设置锚点的<code>href</code>属性值为井号<code>#</code>加上想跳转区域对应的<code>id</code>属性值，这样就可以创建一个内部跳转。<code>id</code>是用来描述网页元素的一个属性，它的值在整个页面中唯一。",
         "下面是用来创建内部锚点的例子：",
         "<blockquote>&lt;a href=\"#contacts-header\"&gt;Contacts&lt;/a&gt;<br>...<br>&lt;h2 id=\"contacts-header\"&gt;Contacts&lt;/h2&gt;</blockquote>",
         "当用户点击了<code>Contacts</code>链接，页面就会跳转到网页的<b>Contacts</b>区域。",
@@ -511,14 +511,14 @@
             "assert($('footer').length == 1, '页面中应该只有一个<code>footer</code>元素。');"
         },
         {
-          "text": "锚点的<code>href</code>属性应为：\"#footer\"。",
+          "text": "锚点的<code>href</code>属性应为 \"#footer\"。",
           "testString":
-            "assert($('a').eq(0).attr('href') == \"#footer\", 锚点的<code>href</code>属性应为：\"#footer\"。');"
+            "assert($('a').eq(0).attr('href') == \"#footer\", '锚点的<code>href</code>属性应为 \"#footer\"。');"
         },
         {
           "text": "锚点不应该有<code>target</code>属性。",
           "testString":
-            "assert(typeof $('a').eq(0).attr('target') == typeof undefined || $('a').eq(0).attr('target') == true, 锚点不应该有<code>target</code>属性。');"
+            "assert(typeof $('a').eq(0).attr('target') == typeof undefined || $('a').eq(0).attr('target') == true, '锚点不应该有<code>target</code>属性。');"
         },
         {
           "text": "锚点的文本应为<code>Jump to Bottom</code>。",
@@ -596,14 +596,14 @@
             "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().is(\"p\") || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\")), '锚点应嵌套在新段落内。');"
         },
         {
-          "text": "段落的文本应为：View more （记得 more 后面有一个空格）。",
+          "text": "段落应该包含文本 View more （记得 more 后面有一个空格）。",
           "testString":
-            "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi) || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi)), '段落的文本应为：View more （记得 more 后面有一个空格）。');"
+            "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi) || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi)), '段落应该包含文本 View more （记得 more 后面有一个空格）。');"
         },
         {
-          "text": "段落的文本不应该为：View more。",
+          "text": "锚点不应该包含文本 View more 。",
           "testString":
-            "assert(!$(\"a\").text().match(/View\\smore/gi), '段落的文本不应该为：View more。');"
+            "assert(!$(\"a\").text().match(/View\\smore/gi), '锚点不应该包含文本 View more 。');"
         },
         {
           "text": "确保每个段落有结束标记。",
@@ -653,7 +653,7 @@
         {
           "text": "锚点的<code>href</code>属性应为 \"#\"。",
           "testString":
-            "assert($(\"a\").attr(\"href\") === \"#\", '锚点的<code>href</code>属性应为 \"#\"。);"
+            "assert($(\"a\").attr(\"href\") === \"#\", '锚点的<code>href</code>属性应为 \"#\"。');"
         }
       ],
       "challengeType": 0,
@@ -702,7 +702,7 @@
             "assert(new RegExp(\"#\").test($(\"a\").children(\"img\").parent().attr(\"href\")), '锚点的<code>href</code>属性应为<code>#</code>。');"
         },
         {
-          "text": "确保所有的锚点都有结束标记。",
+          "text": "确保每个锚点都有结束标记。",
           "testString":
             "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, '确保所有的锚点都有结束标记。');"
         }
@@ -758,7 +758,7 @@
             "assert(code.match(/<\\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\\/ul>/gi).length === code.match(/<ul/gi).length, '确保<code>ul</code>无序列表有结束标记。');"
         },
         {
-          "text": "确保<code>li</code>条目都有结束标记。",
+          "text": "确保每个<code>li</code>条目都有结束标记。",
           "testString":
             "assert(code.match(/<\\/li>/gi) && code.match(/<li[\\s>]/gi) && code.match(/<\\/li>/gi).length === code.match(/<li[\\s>]/gi).length, '确保<code>li</code>条目都有结束标记。');"
         }
@@ -838,9 +838,9 @@
             "assert(code.match(/<\\/ol>/g) && code.match(/<\\/ol>/g).length === code.match(/<ol>/g).length, '确保<code>ol</code>有序列表有结束标记。');"
         },
         {
-          "text": "确保<code>li</code>条目有结束标记。",
+          "text": "确保每个<code>li</code>条目都有结束标记。",
           "testString":
-            "assert(code.match(/<\\/li>/g) && code.match(/<li>/g) && code.match(/<\\/li>/g).length === code.match(/<li>/g).length, '确保<code>li</code>条目有结束标记。');"
+            "assert(code.match(/<\\/li>/g) && code.match(/<li>/g) && code.match(/<\\/li>/g).length === code.match(/<li>/g).length, '确保每个<code>li</code>条目都有结束标记。');"
         }
       ],
       "challengeType": 0,
@@ -1039,7 +1039,7 @@
             "    <li>同类</li>",
             "  </ol>",
             "  <input type=\"text\" placeholder=\"猫咪图片地址\">",
-            "<main>"
+            "</main>"
           ],
           "head": [],
           "tail": []
@@ -1401,7 +1401,7 @@
         "和其他普通元素一样，你可以用<code>&#60;div&#62;</code>来标记一个<code>div</code>元素的开始，用<code>&#60;/div&#62;</code>来标记一个<code>div</code>元素的结束。",
         "<hr>",
         "把无序列表、有序列表和段落都嵌套进同一个<code>div</code>元素。",
-        "提示：试着在第一个<code><p></code>之前插入<code>div</code>开始标记，在<code></ol></code>之后插入<code>div</code>结束标记，这样，所有的列表都位于<code>div</code>之内。"
+        "提示：试着在第一个<code>&#60p&#62</code>之前插入<code>div</code>开始标记，在<code>&#60/ol&#62</code>之后插入<code>div</code>结束标记，这样，所有的列表都位于<code>div</code>之内。"
       ],
       "tests": [
         {
@@ -1478,7 +1478,7 @@
         "这是网页结构一个例子：",
         "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;!-- Your HTML code goes here --&gt;<br>&lt;/html&gt;</blockquote>",
         "<hr>",
-        "在代码编辑器的顶部添加一个<code>DOCTYPE（文档类型）</code>为 HTML5的声明，然后添加一个<code>html</code>元素，再添加一个<code>h1</code>元素，标题的文本可以随意填。"
+        "在代码编辑器的顶部添加一个<code>DOCTYPE（文档类型）</code>为 HTML5 的声明，然后添加一个<code>html</code>元素，再添加一个<code>h1</code>元素，标题的文本可以随意填。"
       ],
       "tests": [
         {
@@ -1514,7 +1514,7 @@
       "title": "Define the Head and Body of an HTML Document",
       "description": [
         "<code>html</code>的结构主要分为两大部分：<code>head</code>、<code>body</code>。关于网页的描述都应该放入<code>head</code>标签，网页的内容都应该放入<code>body</code>标签。",
-        "比如<code>link</code>、code>meta</code>、<code>title</code>和<code>style</code>都应该放入<code>head</code>标签。",
+        "比如<code>link</code>、<code>meta</code>、<code>title</code>和<code>style</code>都应该放入<code>head</code>标签。",
         "这是网页布局的一个例子：",
         "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;head&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- metadata elements --&gt;<br>&nbsp;&nbsp;&lt;/head&gt;<br>&nbsp;&nbsp;&lt;body&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- page contents --&gt;<br>&nbsp;&nbsp;&lt;/body&gt;<br>&lt;/html&gt;</blockquote>",
         "<hr>",

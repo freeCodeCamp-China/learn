@@ -36,7 +36,7 @@ function ToolPanel({
     <Fragment>
       <div className='tool-panel-group'>
         <Button block={true} bsStyle='primary' onClick={executeChallenge}>
-          运行测试（Ctrl + Enter）
+          运行测试
         </Button>
         <Button
           block={true}

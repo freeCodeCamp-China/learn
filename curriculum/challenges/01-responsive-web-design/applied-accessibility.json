@@ -8,17 +8,17 @@
       "id": "587d774c367417b2b2512a9c",
       "title": "Add a Text Alternative to Images for Visually Impaired Accessibility",
       "description": [
-        "It's likely you've seen an <code>alt</code> attribute on an <code>img</code> tag in other challenges. <code>Alt</code> text describes the content of the image and provides a text-alternative. This helps in case the image fails to load or can't be seen by a user. It's also used by search engines to understand what an image contains to include it in search results. Here's an example:",
+        "在其他挑战里你应该已经见到过<code>img</code>标签的<code>alt</code>属性了。<code>alt</code>属性中的文本作为备用文字描述了图片的内容，这可以帮助用户在图片加载失败或者不可见的情况下理解图片内容，也有助于搜索引擎理解图片内容，并将其加入到搜索结果中。例如：",
         "<code>&lt;img src=&quot;importantLogo.jpeg&quot; alt=&quot;Company logo&quot;&gt;</code>",
-        "People with visual impairments rely on screen readers to convert web content to an audio interface. They won't get information if it's only presented visually. For images, screen readers can access the <code>alt</code> attribute and read its contents to deliver key information.",
-        "Good <code>alt</code> text is short but descriptive, and meant to briefly convey the meaning of the image. You should always include an <code>alt</code> attribute on your image. Per HTML5 specification, this is now considered mandatory.",
+        "那些无法通过视觉获取信息的用户，只能通过屏幕阅读器将网页内容转换为音频的方式获取信息，而屏幕阅读器通过识别<code>alt</code>属性，并朗读其中的内容，来告知用户图片包含的关键信息。",
+        "良好的<code>alt</code>文本可以简明扼要地描述图片信息，所以你应该为图片添加<code>alt</code>属性。另外，HTML5 标准也在考虑强制要求对图片添加<code>alt</code>属性。",
         "<hr>",
-        "Camper Cat happens to be both a coding ninja and an actual ninja, and is building a website to share his knowledge. The profile picture he wants to use shows his skills, and should be appreciated by all site visitors. Add an <code>alt</code> attribute in the <code>img</code> tag, that explains Camper Cat is doing karate. (The image <code>src</code> doesn't link to an actual file, so you should see the <code>alt</code> text in the display.)"
+        "碰巧，Camper Cat 是忍者中写代码最厉害的，他正在建立一个可以分享忍者知识的网站。在这个网站中，他想使用一张图片来展示他的忍者技能。为了可以让所有的访问者都能获取图片中的信息，Camper Cat 给<code>img</code>标签添加了一个<code>alt</code>属性（当图片的<code>src</code>属性没有指向任何图片时，显示器上才可看到<code>alt</code>属性中的文本）。"
       ],
       "tests": [
         {
-          "text": "Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.",
-          "testString": "assert($('img').attr('alt'), 'Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.');"
+          "text": "你的<code>img</code>标签应该包含一个非空的<code>alt</code>属性。",
+          "testString": "assert($('img').attr('alt'), '你的<code>img</code>标签应该包含一个非空的<code>alt</code>属性。');"
         }
       ],
       "solutions": [],
@@ -43,22 +43,22 @@
       "id": "587d774c367417b2b2512a9d",
       "title": "Know When Alt Text Should be Left Blank",
       "description": [
-        "In the last challenge, you learned that including an <code>alt</code> attribute on img tags is mandatory. However, sometimes images are grouped with a caption already describing them, or are used for decoration only. In these cases <code>alt</code> text may seem redundant or unnecessary.",
-        "In situations when an image is already explained with text content, or does not add meaning to a page, the <code>img</code> still needs an <code>alt</code> attribute, but it can be set to an empty string. Here's an example:",
+        "在上一个挑战中，我们了解到<code>img</code>标签必须有一个<code>alt</code>属性。在图片已经有了文字说明，或者仅仅为了美化页面的情况下，<code>alt</code>属性似乎有些多余。",
+        "即便如此，我们仍然需要为<code>img</code>标签添加<code>alt</code>属性，这时可以把它设为空，例如：",
         "<code>&lt;img src=&quot;visualDecoration.jpeg&quot; alt=&quot;&quot;&gt;</code>",
-        "Background images usually fall under the 'decorative' label as well. However, they are typically applied with CSS rules, and therefore not part of the markup screen readers process.",
-        "<strong>Note</strong><br>For images with a caption, you may still want to include <code>alt</code> text, since it helps search engines catalog the content of the image.",
+        "对于背景图片，它们通常起装饰作用，而且含有 CSS 类，所以背景图片不会被屏幕阅读器处理。",
+        "<strong>注意：</strong><br>对于有标题的图片，我们依然需要添加<code>alt</code>属性，因为这样有助于搜索引擎记录图片内容。",
         "<hr>",
-        "Camper Cat has coded a skeleton page for the blog part of his website. He's planning to add a visual break between his two articles with a decorative image of a samurai sword. Add an <code>alt</code> attribute to the <code>img</code> tag and set it to an empty string. (Note that the image <code>src</code> doesn't link to an actual file - don't worry that there are no swords showing in the display.)"
+        "Camper Cat 已经大体写好了博客页面。他打算使用忍者刀图片作为两篇文章之间的分割线，并为图片添加一个空的<code>alt</code>属性（注意：这里<code>img</code>标签的<code>src</code>属性提供的链接是无效的，因此页面上可能不会显示图片，不用担心）。"
       ],
       "tests": [
         {
-          "text": "Your <code>img</code> tag should have an <code>alt</code> attribute.",
-          "testString": "assert(!($('img').attr('alt') == undefined), 'Your <code>img</code> tag should have an <code>alt</code> attribute.');"
+          "text": "你的<code>img</code>标签应该包含<code>alt</code>属性。",
+          "testString": "assert(!($('img').attr('alt') == undefined), '你的<code>img</code>标签应该包含<code>alt</code>属性。');"
         },
         {
-          "text": "The <code>alt</code> attribute should be set to an empty string.",
-          "testString": "assert($('img').attr('alt') == '', 'The <code>alt</code> attribute should be set to an empty string.');"
+          "text": "<code>alt</code>属性对应的值应该为空。",
+          "testString": "assert($('img').attr('alt') == '', '<code>alt</code>属性对应的值应该为空。');"
         }
       ],
       "solutions": [],
@@ -93,23 +93,23 @@
       "id": "587d774d367417b2b2512a9e",
       "title": "Use Headings to Show Hierarchical Relationships of Content",
       "description": [
-        "Headings (<code>h1</code> through <code>h6</code> elements) are workhorse tags that help provide structure and labeling to your content. Screen readers can be set to read only the headings on a page so the user gets a summary. This means it is important for the heading tags in your markup to have semantic meaning and relate to each other, not be picked merely for their size values.",
-        "<em>Semantic meaning</em> means that the tag you use around content indicates the type of information it contains.",
-        "If you were writing a paper with an introduction, a body, and a conclusion, it wouldn't make much sense to put the conclusion as a subsection of the body in your outline. It should be its own section. Similarly, the heading tags in a webpage need to go in order and indicate the hierarchical relationships of your content.",
-        "Headings with equal (or higher) rank start new implied sections, headings with lower rank start subsections of the previous one.",
-        "As an example, a page with an <code>h2</code> element followed by several subsections labeled with <code>h4</code> tags would confuse a screen reader user. With six choices, it's tempting to use a tag because it looks better in a browser, but you can use CSS to edit the relative sizing.",
-        "One final point, each page should always have one (and only one) <code>h1</code> element, which is the main subject of your content. This and the other headings are used in part by search engines to understand the topic of the page.",
+        "标题标签（包括<code>h1</code>到<code>h6</code>）有很高的使用率，它们用于描述内容的主题。在屏幕阅读器中，用户为更快地了解页面内容，可以设置让阅读器只朗读页面标题。这意味着标题标签之间以及标签本身都应语义化，不应仅仅为了获得不同字号而使用不同级别的标题标签。",
+        "<em>语义化</em>：标签名能准确地表达它所含内容的信息类型。",
+        "对于一篇含有引言、正文、结论的论文，把结论作为引言的一部分没有任何意义，因为结论应该是独立的章节。类似地，页面中的标题标签也应该是有序的，并且能表明内容的层次关系。",
+        "在使用中，相同级别（或者更高级别）的标题标签用于开启新的章节，低一级别的标题标签用于开启上一级标题标签的子小节。",
+        "举个例子：一个<code>h2</code>标签后紧跟若干<code>h4</code>标签的页面，会让使用屏幕阅读器的用户感到困惑。尽管在页面中，使用这 6 个标题标签可以控制内容的的视觉样式，但我们应该使用 CSS 来调整。",
+        "最后一点，每个页面应该只有一个<code>h1</code>标签，用来说明页面主要内容。<code>h1</code>标签和其他的标题标签可以让搜索引擎获取页面的大纲。",
         "<hr>",
-        "Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the <code>h5</code> tags to the proper heading level to indicate they are subsections of the <code>h2</code> ones."
+        "Camper Cat 希望他的网站有一个介绍如何成为忍者页面。请帮助他修改标题标签，使它们语义化且顺序正确。你需要将所有的<code>h5</code>标题标签调整为恰当的级别，使它们是<code>h2</code>标题标签的子级。"
       ],
       "tests": [
         {
-          "text": "Your code should have six <code>h3</code> tags.",
-          "testString": "assert($('h3').length === 6, 'Your code should have six <code>h3</code> tags.');"
+          "text": "你的代码应该包含 6 个<code>h3</code>标签。",
+          "testString": "assert($('h3').length === 6, '你的代码应该包含 6 个<code>h3</code>标签。');"
         },
         {
-          "text": "Your code should not have any <code>h5</code> tags.",
-          "testString": "assert($('h5').length === 0, 'Your code should not have any <code>h5</code> tags.');"
+          "text": "你的代码不应包含 <code>h5</code> 标签。",
+          "testString": "assert($('h5').length === 0, '你的代码不应包含 <code>h5</code> 标签。');"
         }
       ],
       "solutions": [],
@@ -148,21 +148,21 @@
       "id": "587d774e367417b2b2512a9f",
       "title": "Jump Straight to the Content Using the main Element",
       "description": [
-        "HTML5 introduced a number of new elements that give developers more options while also incorporating accessibility features. These tags include <code>main</code>, <code>header</code>, <code>footer</code>, <code>nav</code>, <code>article</code>, and <code>section</code>, among others.",
-        "By default, a browser renders these elements similarly to the humble <code>div</code>. However, using them where appropriate gives additional meaning in your markup. The tag name alone can indicate the type of information it contains, which adds semantic meaning to that content. Assistive technologies can access this information to provide better page summary or navigation options to their users.",
-        "The <code>main</code> element is used to wrap (you guessed it) the main content, and there should be only one per page. It's meant to surround the information that's related to the central topic of your page. It's not meant to include items that repeat across pages, like navigation links or banners.",
-        "The <code>main</code> tag also has an embedded landmark feature that assistive technology can use to quickly navigate to the main content. If you've ever seen a \"Jump to Main Content\" link at the top of a page, using a main tag automatically gives assistive devices that functionality.",
+        "HTML5 添加了诸如<code>main</code>、<code>header</code>、<code>footer</code>、<code>nav</code>、<code>article</code>、<code>section</code>等大量新标签，这些新标签为开发人员提供更多的选择和辅助特性。",
+        "默认情况下，浏览器呈现这些新标签的方式与<code>div</code>相似。然而，合理地使用它们，可以使你的标签更加的语义化。辅助技术（如：屏幕阅读器）可以通过这些标签为用户提供更加准确的、易于理解的页面信息。",
+        "<code>main</code>标签用于呈现网页的主体内容，且每个页面只能有一个。这意味着它只应包含与页面中心主题相关的信息，而不应包含如导航连接、网页横幅等可以在多个页面中重复出现的内容。",
+        "<code>main</code>标签的语义化特性可以使辅助技术快速定位到页面的主体。有些页面中有 “跳转到主要内容” 的链接，使用<code>main</code>标签可以使辅助设备自动获得这个功能。",
         "<hr>",
-        "Camper Cat has some big ideas for his ninja weapons page. Help him set up his markup by adding opening and closing <code>main</code> tags between the <code>header</code> and <code>footer</code> (covered in other challenges). Keep the <code>main</code> tags empty for now."
+        "Camper Cat 对他的忍者武器页面有一些新的想法，请帮助他在<code>header</code>标签和<code>footer</code>标签（在接下来的挑战中会详细介绍）之间添加完整<code>main</code>标签来使页面语义化。在这个挑战中，你可以先让<code>main</code>为空。"
       ],
       "tests": [
         {
-          "text": "Your code should have one <code>main</code> tag.",
-          "testString": "assert($('main').length == 1, 'Your code should have one <code>main</code> tag.');"
+          "text": "你的代码应该有一个<code>main</code>标签。",
+          "testString": "assert($('main').length == 1, '你的代码应该有一个<code>main</code>标签。');"
         },
         {
-          "text": "The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.",
-          "testString": "assert(code.match(/<\\/header>\\s*?<main>\\s*?<\\/main>/gi), 'The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.');"
+          "text": "<code>main</code>标签应该在<code>header</code>标签与<code>footer</code>标签之间。",
+          "testString": "assert(code.match(/<\\/header>\\s*?<main>\\s*?<\\/main>/gi), '<code>main</code>标签应该在<code>header</code>标签与<code>footer</code>标签之间。');"
         }
       ],
       "solutions": [],
@@ -192,22 +192,22 @@
       "id": "587d774e367417b2b2512aa0",
       "title": "Wrap Content in the article Element",
       "description": [
-        "<code>article</code> is another one of the new HTML5 elements that adds semantic meaning to your markup. <code>Article</code> is a sectioning element, and is used to wrap independent, self-contained content. The tag works well with blog entries, forum posts, or news articles.",
-        "Determining whether content can stand alone is usually a judgement call, but there are a couple simple tests you can use. Ask yourself if you removed all surrounding context, would that content still make sense? Similarly for text, would the content hold up if it were in an RSS feed?",
-        "Remember that folks using assistive technologies rely on organized, semantically meaningful markup to better understand your work.",
-        "<strong>Note about <code>section</code> and <code>div</code></strong><br>The <code>section</code> element is also new with HTML5, and has a slightly different semantic meaning than <code>article</code>. An <code>article</code> is for standalone content, and a <code>section</code> is for grouping thematically related content. They can be used within each other, as needed. For example, if a book is the <code>article</code>, then each chapter is a <code>section</code>. When there's no relationship between groups of content, then use a <code>div</code>.",
-        "<blockquote>&lt;div&gt; - groups content<br>&lt;section&gt; - groups related content<br>&lt;article&gt; - groups independent, self-contained content<br></blockquote>",
+        "<code>article</code>是另一个具有语义化特性的 HTML5 新标签。<code>article</code>是一个分段标签，用于呈现独立及完整的内容。这个标签适用于博客入口、论坛帖子或者新闻文章。",
+        "有些技巧可以用来判断内容是否独立，像是如果内容脱离了上下文，是否仍然有意义？类似地，对于 RSS 提要中的文本，它是否有意义？",
+        "请牢记，使用辅助设备的用户依赖组织良好的、语义化的标签来获取页面中的信息。",
+        "<strong>请注意<code>section</code>和<code>div</code>的区别：</strong><br><code>section</code>也是一个 HTML5 新标签，与<code>article</code>标签的语义含义略有不同。<code>article</code>用于独立的、完整的内容，而<code>section</code>用于对与主题相关的内容进行分组。它们可以根据需要嵌套着使用。举个例子：如果一本书是一个<code>article</code>的话，那么每个章节就是<code>section</code>。当内容组之间没有联系时，可以使用<code>div</code>。",
+        "<blockquote>&lt;div&gt; - 内容组<br>&lt;section&gt; - 有联系的内容组<br>&lt;article&gt; - 独立完整的内容<br></blockquote>",
         "<hr>",
-        "Camper Cat used <code>article</code> tags to wrap the posts on his blog page, but he forgot to use them around the top one. Change the <code>div</code> tag to use an <code>article</code> tag instead."
+        "Camper Cat 打算使用<code>article</code>标签来呈现他的博客页面里的帖子，但是他忘记在顶部的帖子上使用它。请使用<code>article</code>标签来代替<code>div</code>标签。"
       ],
       "tests": [
         {
-          "text": "Your code should have three <code>article</code> tags.",
-          "testString": "assert($('article').length == 3, 'Your code should have three <code>article</code> tags.');"
+          "text": "你的代码中应该有 3 个<code>article</code>标签。",
+          "testString": "assert($('article').length == 3, '你的代码中应该有 3 个<code>article</code>标签。');"
         },
         {
-          "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "text": "你的代码不应包含<code>div</code>标签。",
+          "testString": "assert($('div').length == 0, '你的代码不应包含<code>div</code>标签。');"
         }
       ],
       "solutions": [],
@@ -251,28 +251,28 @@
       "id": "587d7787367417b2b2512aa1",
       "title": "Make Screen Reader Navigation Easier with the header Landmark",
       "description": [
-        "The next HTML5 element that adds semantic meaning and improves accessibility is the <code>header</code> tag. It's used to wrap introductory information or navigation links for its parent tag, and works well around content that's repeated at the top on multiple pages.",
-        "<code>header</code> shares the embedded landmark feature you saw with <code>main</code>, allowing assistive technologies to quickly navigate to that content.",
-        "<strong>Note</strong><br><code>header</code> is meant for use in the <code>body</code> tag of your HTML document. This is different than the <code>head</code> element, which contains the page's title, meta information, etc.",
+        "<code>header</code>也是一个具有语义化的、提升页面可访问性的 HTML5 标签。它可以为父级标签呈现简介信息或者导航链接，适用于那些在多个页面顶部重复出现的内容。",
+        "与<code>main</code>类似，<code>header</code>的语义化特性也可以使辅助技术快速定位到它的内容。",
+        "<strong>注意：</strong><br><code>header</code>用在 HTML 文档的<code>body</code>标签中。这点与包含页面标题、元信息的<code>head</code>标签不同。",
         "<hr>",
-        "Camper Cat is writing some great articles about ninja training, and wants to add a page for them to his site. Change the top <code>div</code> that currently contains the <code>h1</code> to a <code>header</code> tag instead."
+        "Camper Cat 正在写一些训练忍者的精彩文章，并为它们建立一个新的页面。请使用<code>header</code>替换页面顶端包含<code>h1</code>的<code>div</code>标签。"
       ],
       "tests": [
         {
-          "text": "Your code should have one <code>header</code> tag.",
-          "testString": "assert($('header').length == 1, 'Your code should have one <code>header</code> tag.');"
+          "text": "你的代码应该包含 1 个<code>header</code>标签。",
+          "testString": "assert($('header').length == 1, '你的代码应该包含 1 个<code>header</code>标签。');"
         },
         {
-          "text": "Your <code>header</code> tags should wrap around the <code>h1</code>.",
-          "testString": "assert($('header').children('h1').length == 1, 'Your <code>header</code> tags should wrap around the <code>h1</code>.');"
+          "text": "你的<code>header</code>标签应该包含<code>h1</code>。",
+          "testString": "assert($('header').children('h1').length == 1, '你的<code>header</code>标签应该包含<code>h1</code>。');"
         },
         {
-          "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "text": "你的代码不应有任何<code>div</code>标签。",
+          "testString": "assert($('div').length == 0, '你的代码不应有任何<code>div</code>标签。');"
         },
         {
-          "text": "Make sure your <code>header</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/header>/g) && code.match(/<\\/header>/g).length === code.match(/<header>/g).length, 'Make sure your <code>header</code> element has a closing tag.');"
+          "text": "确保你的<code>header</code>标签是闭合的。",
+          "testString": "assert(code.match(/<\\/header>/g) && code.match(/<\\/header>/g).length === code.match(/<header>/g).length, '确保你的<code>header</code>标签是闭合的。');"
         }
       ],
       "solutions": [],
@@ -320,27 +320,27 @@
       "id": "587d7788367417b2b2512aa2",
       "title": "Make Screen Reader Navigation Easier with the nav Landmark",
       "description": [
-        "The <code>nav</code> element is another HTML5 item with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page.",
-        "If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a <code>nav</code> tag as well. Using a <code>footer</code> (covered in the next challenge) is sufficient.",
+        "<code>nav</code>也是一个具有语义化特性的 HTML5 标签，用于呈现页面中的主导航链接。它可以使屏幕阅读器快速识别页面中的导航信息。",
+        "对于页面底部辅助性质的站点链接，不需要使用<code>nav</code>，用<code>footer</code>（在下个挑战中介绍）会更好。",
         "<hr>",
-        "Camper Cat included navigation links at the top of his training page, but wrapped them in a <code>div</code>. Change the <code>div</code> to a <code>nav</code> tag to improve the accessibility on his page."
+        "Camper Cat 在他的忍者训练页面顶端使用了很多导航链接，但把它们写在了<code>div</code>中。请将<code>div</code>更改为<code>nav</code>标签，以提升页面的可访问性。"
       ],
       "tests": [
         {
-          "text": "Your code should have one <code>nav</code> tag.",
-          "testString": "assert($('nav').length == 1, 'Your code should have one <code>nav</code> tag.');"
+          "text": "你的代码应该有 1 个<code>nav</code>标签。",
+          "testString": "assert($('nav').length == 1, '你的代码应该有 1 个<code>nav</code>标签。');"
         },
         {
-          "text": "Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.",
-          "testString": "assert($('nav').children('ul').length == 1, 'Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.');"
+          "text": "你的<code>nav</code>标签应该包含<code>ul</code>标签及其列表项。",
+          "testString": "assert($('nav').children('ul').length == 1, '你的<code>nav</code>标签应该包含<code>ul</code>标签及其列表项。');"
         },
         {
-          "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "text": "你的代码不应包含<code>div</code>标签。",
+          "testString": "assert($('div').length == 0, '你的代码不应包含<code>div</code>标签。');"
         },
         {
-          "text": "Make sure your <code>nav</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/nav>/g) && code.match(/<\\/nav>/g).length === code.match(/<nav>/g).length, 'Make sure your <code>nav</code> element has a closing tag.');"
+          "text": "确保你的<code>nav</code>标签是闭合的。",
+          "testString": "assert(code.match(/<\\/nav>/g) && code.match(/<\\/nav>/g).length === code.match(/<nav>/g).length, '确保你的<code>nav</code>标签是闭合的。');"
         }
       ],
       "solutions": [],
@@ -394,22 +394,22 @@
       "id": "587d7788367417b2b2512aa3",
       "title": "Make Screen Reader Navigation Easier with the footer Landmark",
       "description": [
-        "Similar to <code>header</code> and <code>nav</code>, the <code>footer</code> element has a built-in landmark feature that allows assistive devices to quickly navigate to it. It's primarily used to contain copyright information or links to related documents that usually sit at the bottom of a page.",
+        "与<code>header</code>和<code>nav</code>类似，<code>footer</code>也具有语义化特性，可以使辅助设备快速定位到它。它位于页面底部，用于呈现版权信息或者相关文档链接。",
         "<hr>",
-        "Camper Cat's training page is making good progress. Change the <code>div</code> he used to wrap his copyright information at the bottom of the page to a <code>footer</code> element."
+        "Camper Cat 的忍者训练页面进展顺利。请将他在页面底部呈现版权信息的<code>div</code>标签更改为<code>footer</code>标签。"
       ],
       "tests": [
         {
-          "text": "Your code should have one <code>footer</code> tag.",
-          "testString": "assert($('footer').length == 1, 'Your code should have one <code>footer</code> tag.');"
+          "text": "你的代码中应该包含 1 个<code>footer</code>标签。",
+          "testString": "assert($('footer').length == 1, '你的代码中应该包含 1 个<code>footer</code>标签。');"
         },
         {
-          "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "text": "你的代码中不应包含<code>div</code>标签。",
+          "testString": "assert($('div').length == 0, '你的代码应不应包含<code>div</code>标签。');"
         },
         {
-          "text": "Your code should have an opening and closing <code>footer</code> tag.",
-          "testString": "assert(code.match(/<footer>\\s*&copy; 2016 Camper Cat\\s*<\\/footer>/g), 'Your code should have an opening and closing <code>footer</code> tag.');"
+          "text": "你代码中的<code>footer</code>应该是闭合的。",
+          "testString": "assert(code.match(/<footer>\\s*&copy; 2016 Camper Cat\\s*<\\/footer>/g), '你代码中的<code>footer</code>应该是闭合的。');"
         }
       ],
       "solutions": [],
@@ -466,43 +466,43 @@
       "id": "587d7789367417b2b2512aa4",
       "title": "Improve Accessibility of Audio Content with the audio Element",
       "description": [
-        "HTML5's <code>audio</code> element gives semantic meaning when it wraps sound or audio stream content in your markup. Audio content also needs a text alternative to be accessible to people who are deaf or hard of hearing. This can be done with nearby text on the page or a link to a transcript.",
-        "The <code>audio</code> tag supports the <code>controls</code> attribute. This shows the browser default play, pause, and other controls, and supports keyboard functionality. This is a boolean attribute, meaning it doesn't need a value, its presence on the tag turns the setting on.",
-        "Here's an example:",
+        "HTML5 的<code>audio</code>标签用于呈现音频内容，它也具有语义化特性。可以在<code>audio</code>上下文中为音频内容添加文字说明或者字幕链接，使听觉障碍用户也能获取音频中的信息。",
+        "<code>audio</code>支持<code>controls</code>属性，可以使浏览器为音频提供具有开始、暂停等功能的播放控件。<code>controls</code>属性是一个布尔属性，只要这个属性出现在<code>audio</code>标签中，浏览器就会开启播放控件。",
+        "举个例子：",
         "<blockquote>&lt;audio id=&quot;meowClip&quot; controls&gt;<br>&nbsp;&nbsp;&lt;source src=&quot;audio/meow.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;<br>&nbsp;&nbsp;&lt;source src=&quot;audio/meow.ogg&quot; type=&quot;audio/ogg&quot; /&gt;<br>&lt;/audio&gt;<br></blockquote>",
-        "<strong>Note</strong><br>Multimedia content usually has both visual and auditory components. It needs synchronized captions and a transcript so users with visual and/or auditory impairments can access it. Generally, a web developer is not responsible for creating the captions or transcript, but needs to know to include them.",
+        "<strong>注意：</strong><br>多媒体内容通常同时包含音频与视频部分，它需要同步音频与字幕，以使视觉或听觉障碍用户可以获取它的内容。一般情况下，网页开发者不需要创建音频与字幕，但是需要将它们添加到多媒体中。",
         "<hr>",
-        "Time to take a break from Camper Cat and meet fellow camper Zersiax (@zersiax), a champion of accessibility and a screen reader user. To hear a clip of his screen reader in action, add an <code>audio</code> element after the <code>p</code>. Include the <code>controls</code> attribute. Then place a <code>source</code> tag inside the <code>audio</code> tags with the <code>src</code> attribute set to \"https://s3.amazonaws.com/freecodecamp/screen-reader.mp3\" and <code>type</code> attribute set to \"audio/mpeg\".",
-        "<strong>Note</strong><br>The audio clip may sound fast and be difficult to understand, but that is a normal speed for screen reader users."
+        "是时候让 Camper Cat 休息一下，并与朋友 camper Zersiax (@zersiax) 会面。Zersiax 是一位屏幕阅读器用户，同时也是无障碍设计的高手。为了体验 Zersiax 的屏幕阅读器的朗读效果，请在<code>p</code>标签之后添加一个具有<code>controls</code>属性的<code>audio</code>标签。然后在<code>audio</code>标签内添加一个<code>source</code>标签，并且设置<code>src</code>属性为\"https://s3.amazonaws.com/freecodecamp/screen-reader.mp3\"，并且设置<code>type</code>属性为\"audio/mpeg\".",
+        "<strong>注意：</strong><br>音频片段的播放速度可能会快到另我们难以理解，但是对于屏幕阅读器用户来说这是正常速度。"
       ],
       "tests": [
         {
-          "text": "Your code should have one <code>audio</code> tag.",
-          "testString": "assert($('audio').length === 1, 'Your code should have one <code>audio</code> tag.');"
+          "text": "你的代码应该包含一个<code>audio</code>标签。",
+          "testString": "assert($('audio').length === 1, '你的代码应该包含一个<code>audio</code>标签。');"
         },
         {
-          "text": "Make sure your <code>audio</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/audio>/g).length === 1 && code.match(/<audio.*>[\\s\\S]*<\\/audio>/g), 'Make sure your <code>audio</code> element has a closing tag.');"
+          "text": "确保你的<code>audio</code>标签是闭合的。",
+          "testString": "assert(code.match(/<\\/audio>/g).length === 1 && code.match(/<audio.*>[\\s\\S]*<\\/audio>/g), '确保你的<code>audio</code>标签是闭合的。');"
         },
         {
-          "text": "The <code>audio</code> tag should have the <code>controls</code> attribute.",
-          "testString": "assert($('audio').attr('controls'), 'The <code>audio</code> tag should have the <code>controls</code> attribute.');"
+          "text": "<code>audio</code>标签应具有<code>controls</code>属性。",
+          "testString": "assert($('audio').attr('controls'), '<code>audio</code>标签应具有<code>controls</code>属性。');"
         },
         {
-          "text": "Your code should have one <code>source</code> tag.",
-          "testString": "assert($('source').length === 1, 'Your code should have one <code>source</code> tag.');"
+          "text": "你的代码应具有<code>source</code>标签。",
+          "testString": "assert($('source').length === 1, '你的代码应具有<code>source</code>标签。');"
         },
         {
-          "text": "Your <code>source</code> tag should be inside the <code>audio</code> tags.",
-          "testString": "assert($('audio').children('source').length === 1, 'Your <code>source</code> tag should be inside the <code>audio</code> tags.');"
+          "text": "<code>source</code>标签应该在<code>audio</code>标签中。",
+          "testString": "assert($('audio').children('source').length === 1, '<code>source</code>标签应该在<code>audio</code>标签中。');"
         },
         {
-          "text": "The value for the <code>src</code> attribute on the <code>source</code> tag should match the link in the instructions exactly.",
-          "testString": "assert($('source').attr('src') === 'https://s3.amazonaws.com/freecodecamp/screen-reader.mp3', 'The value for the <code>src</code> attribute on the <code>source</code> tag should match the link in the instructions exactly.');"
+          "text": "<code>source</code>标签中<code>src</code>属性的值应该与教程中的链接一致。",
+          "testString": "assert($('source').attr('src') === 'https://s3.amazonaws.com/freecodecamp/screen-reader.mp3', '<code>source</code>标签中<code>src</code>属性的值应该与教程中的链接一致。');"
         },
         {
-          "text": "Your code should include a <code>type</code> attribute on the <code>source</code> tag with a value of audio/mpeg.",
-          "testString": "assert($('source').attr('type') === 'audio/mpeg', 'Your code should include a <code>type</code> attribute on the <code>source</code> tag with a value of audio/mpeg.');"
+          "text": "<code>source</code>标签中应具有<code>type</code>属性，其值为 audio/mpeg。",
+          "testString": "assert($('source').attr('type') === 'audio/mpeg', '<code>source</code>标签中应具有<code>type</code>属性，其值为 audio/mpeg。');"
         }
       ],
       "solutions": [],
@@ -536,37 +536,37 @@
       "id": "587d778a367417b2b2512aa5",
       "title": "Improve Chart Accessibility with the figure Element",
       "description": [
-        "HTML5 introduced the <code>figure</code> element, along with the related <code>figcaption</code>. Used together, these items wrap a visual representation (like an image, diagram, or chart) along with its caption. This gives a two-fold accessibility boost by both semantically grouping related content, and providing a text alternative that explains the <code>figure</code>.",
-        "For data visualizations like charts, the caption can be used to briefly note the trends or conclusions for users with visual impairments. Another challenge covers how to move a table version of the chart's data off-screen (using CSS) for screen reader users.",
-        "Here's an example - note that the <code>figcaption</code> goes inside the <code>figure</code> tags and can be combined with other elements:",
+        "HTML5 引入了<code>figure</code>标签以及与之相关的<code>figcaption</code>标签。它们一起用于展示可视化信息（如：图片、图表）及其标题。这样通过语义化对内容进行分组并配以用于解释<code>figure</code>的文字，可以极大的提升内容的可访问性。",
+        "对于图表之类的可视化数据，标题可以为屏幕阅读器用户提供简要的说明。但是这里有一个难点，如何处理那些超出屏幕可视范围（使用 CSS ）的表格版本的图表数据，以使屏幕阅读器用户也可以获取信息。",
+        "举个例子——注意<code>figcaption</code>包含在<code>figure</code>标签中，并且可以与其他标签组合使用：",
         "<blockquote>&lt;figure&gt;<br>&nbsp;&nbsp;&lt;img src=&quot;roundhouseDestruction.jpeg&quot; alt=&quot;Photo of Camper Cat executing a roundhouse kick&quot;&gt;<br>&nbsp;&nbsp;&lt;br&gt;<br>&nbsp;&nbsp;&lt;figcaption&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;Master Camper Cat demonstrates proper form of a roundhouse kick.<br>&nbsp;&nbsp;&lt;/figcaption&gt;<br>&lt;/figure&gt;<br></blockquote>",
         "<hr>",
-        "Camper Cat is hard at work creating a stacked bar chart showing the amount of time per week to spend training in stealth, combat, and weapons. Help him structure his page better by changing the <code>div</code> tag he used to a <code>figure</code> tag, and the <code>p</code> tag that surrounds the caption to a <code>figcaption</code> tag."
+        "Camper Cat 正在努力创建一张条形图，用来显示每周用于隐形、战斗、武器训练的时间。请帮助完善他的页面，将他的用于呈现图表的<code>div</code>标签修改为<code>figure</code>标签，用于呈现图表标题的<code>p</code>标签改为<code>figcaption</code>标签。"
       ],
       "tests": [
         {
-          "text": "Your code should have one <code>figure</code> tag.",
-          "testString": "assert($('figure').length == 1, 'Your code should have one <code>figure</code> tag.');"
+          "text": "你的代码应该有 1 个<code>figure</code>标签。",
+          "testString": "assert($('figure').length == 1, '你的代码应该有 1 个<code>figure</code>标签。');"
         },
         {
-          "text": "Your code should have one <code>figcaption</code> tag.",
-          "testString": "assert($('figcaption').length == 1, 'Your code should have one <code>figcaption</code> tag.');"
+          "text": "你的代码应该有 1 个<code>figcaption</code>标签。",
+          "testString": "assert($('figcaption').length == 1, '你的代码应该有 1 个<code>figcaption</code>标签。');"
         },
         {
-          "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "text": "你的代码不应有<code>div</code>标签。",
+          "testString": "assert($('div').length == 0, '你的代码不应有<code>div</code>标签。');"
         },
         {
-          "text": "Your code should not have any <code>p</code> tags.",
-          "testString": "assert($('p').length == 0, 'Your code should not have any <code>p</code> tags.');"
+          "text": "你的代码不应有<code>p</code>标签。",
+          "testString": "assert($('p').length == 0, '你的代码不应有<code>div</code>标签。');"
         },
         {
-          "text": "The <code>figcaption</code> should be a child of the <code>figure</code> tag.",
-          "testString": "assert($('figure').children('figcaption').length == 1, 'The <code>figcaption</code> should be a child of the <code>figure</code> tag.');"
+          "text": "<code>figcaption</code>应该为<code>figure</code>的子标签。",
+          "testString": "assert($('figure').children('figcaption').length == 1, '<code>figcaption</code>应该为<code>figure</code>的子标签。');"
         },
         {
-          "text": "Make sure your <code>figure</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/figure>/g) && code.match(/<\\/figure>/g).length === code.match(/<figure>/g).length, 'Make sure your <code>figure</code> element has a closing tag.');"
+          "text": "请确保你的<code>figure</code>标签是闭合的。",
+          "testString": "assert(code.match(/<\\/figure>/g) && code.match(/<\\/figure>/g).length === code.match(/<figure>/g).length, '请确保你的<code>figure</code>标签是闭合的。');"
         }
       ],
       "solutions": [],
@@ -630,22 +630,22 @@
       "id": "587d778a367417b2b2512aa6",
       "title": "Improve Form Field Accessibility with the label Element",
       "description": [
-        "Improving accessibility with semantic HTML markup applies to using both appropriate tag names as well as attributes. The next several challenges cover some important scenarios using attributes in forms.",
-        "The <code>label</code> tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The <code>for</code> attribute on a <code>label</code> tag explicitly associates that <code>label</code> with the form control and is used by screen readers.",
-        "You learned about radio buttons and their labels in a lesson in the Basic HTML section. In that lesson, we wrapped the radio button input element inside a <code>label</code> element along with the label text in order to make the text clickable. Another way to achieve this is by using the <code>for</code> attribute as explained in this lesson.",
-        "The value of the <code>for</code> attribute must be the same as the value of the <code>id</code> attribute of the form control. Here's an example:",
+        "合理地使用语义化的 HTML 标签和属性可以提升页面可访问性。在接下来的挑战中，你将会看到使用表单属性的重要场景。",
+        "<code>label</code>标签用于呈现特定表单控件的文本，通常是选项的名称。这些文本代表了选项的含义，使表单具有更好的可读性。<code>label</code>标签的<code>for</code>属性指定了与<code>label</code>绑定的表单控件，并且屏幕阅读器也会读取<code>for</code>属性。",
+        "在 HTML 基础章节的课程中，我们已经了解了单选按钮标签。在那节课程中，我们为了可以点击单选按钮的名称，将<code>input</code>标签放在<code>label</code>标签中。在本节课程中，我们介绍了另外一种实现这个功能的方法，那就是使用<code>for</code>属性。",
+        "<code>for</code>属性的值必须与表达控件的<code>id</code>属性的值相同。举个例子：",
         "<blockquote>&lt;form&gt;<br>&nbsp;&nbsp;&lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;<br>&nbsp;&nbsp;&lt;input type=&quottext&quot; id=&quot;name&quot; name=&quot;name&quot;&gt;<br>&lt;/form&gt;<br></blockquote>",
         "<hr>",
-        "Camper Cat expects a lot of interest in his thoughtful blog posts, and wants to include an email sign up form. Add a <code>for</code> attribute on the email <code>label</code> that matches the <code>id</code> on its <code>input</code> field."
+        "Camper Cat 希望他的博客文章能有很多订阅，他想添加一个电子邮件注册表单。请为表示电子邮件的<code>label</code>标签添加<code>for</code>属性，并设置属性值与<code>input</code>标签的<code>id</code>属性值相同。"
       ],
       "tests": [
         {
-          "text": "Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.",
-          "testString": "assert($('label').attr('for'), 'Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.');"
+          "text": "你的<code>label</code>标签应该有 1 个非空的<code>for</code>属性。",
+          "testString": "assert($('label').attr('for'), '你的<code>label</code>标签应该有 1 个非空的<code>for</code>属性。');"
         },
         {
-          "text": "Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.",
-          "testString": "assert($('label').attr('for') == 'email', 'Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.');"
+          "text": "<code>for</code>属性的值应该与<code>input</code>标签的 id 值 email 相同。",
+          "testString": "assert($('label').attr('for') == 'email', '<code>for</code>属性的值应该与<code>input</code>标签的 id 值 email 相同。');"
         }
       ],
       "solutions": [],
@@ -700,34 +700,34 @@
       "id": "587d778b367417b2b2512aa7",
       "title": "Wrap Radio Buttons in a fieldset Element for Better Accessibility",
       "description": [
-        "The next form topic covers accessibility of radio buttons. Each choice is given a <code>label</code> with a <code>for</code> attribute tying to the <code>id</code> of the corresponding item as covered in the last challenge. Since radio buttons often come in a group where the user must choose one, there's a way to semantically show the choices are part of a set.",
-        "The <code>fieldset</code> tag surrounds the entire grouping of radio buttons to achieve this. It often uses a <code>legend</code> tag to provide a description for the grouping, which is read by screen readers for each choice in the <code>fieldset</code> element.",
-        "The <code>fieldset</code> wrapper and <code>legend</code> tag are not necessary when the choices are self-explanatory, like a gender selection. Using a <code>label</code> with the <code>for</code> attribute for each radio button is sufficient.",
-        "Here's an example:",
+        "下一个表单主题与单选按钮的可访问性有关。在上一个挑战中，单选按钮含有一个拥有<code>for</code>属性的<code>label</code>标签，<code>for</code>属性指向相关选项的<code>id</code>。然而单选按钮通常成组出现，用户必须其中选择一项。本次挑战介绍一种可以语义化呈现单选按钮组的方法。",
+        "使用<code>fieldset</code>标签将单选按钮组包含在里面就可以实现这个目的，通常还会使用<code>legend</code>标签来为单选按钮组提供文字说明。屏幕阅读器也可以朗读这些文字。",
+        "当选项的含义很明确时，如：性别选择，<code>fieldset</code>标签与<code>legend</code>标签就可以省略。这时，使用含有<code>for</code>属性的<code>label</code>标签就足够了。",
+        "举个例子：",
         "<blockquote>&lt;form&gt;<br>&nbsp;&nbsp;&lt;fieldset&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;Choose one of these three items:&lt;/legend&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input id=&quot;one&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;one&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;one&quot;&gt;Choice One&lt;/label&gt;&lt;br&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input id=&quot;two&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;two&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;two&quot;&gt;Choice Two&lt;/label&gt;&lt;br&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input id=&quot;three&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;three&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;three&quot;&gt;Choice Three&lt;/label&gt;<br>&nbsp;&nbsp;&lt;/fieldset&gt;<br>&lt;/form&gt;<br></blockquote>",
         "<hr>",
-        "Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons, and learned from our last lesson to use label tags with <code>for</code> attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the div tag surrounding the radio buttons to a fieldset tag, and change the p tag inside it to a legend."
+        "当用户使用邮件注册时，Camper Cat 想知道他们的忍者等级。通过上一个挑战的学习，Camper Cat 创建了一组单选按钮，并为每个选项的<code>label</code>标签添加了<code>for</code>属性，但是 Camper Cat 的代码依然需要你的帮助。请将包含单选按钮组的<code>div</code>标签替换为<code>fieldset</code>标签；将<code>p</code>标签替换为<code>legend</code>标签。"
       ],
       "tests": [
         {
-          "text": "Your code should have a <code>fieldset</code> tag around the radio button set.",
-          "testString": "assert($('fieldset').length == 1, 'Your code should have a <code>fieldset</code> tag around the radio button set.');"
+          "text": "你的代码应该使用 1 个<code>fieldset</code>标签包含单选按钮组。",
+          "testString": "assert($('fieldset').length == 1, '你的代码应该使用 1 个<code>fieldset</code>标签包含单选按钮组。');"
         },
         {
-          "text": "Make sure your <code>fieldset</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/fieldset>/g) && code.match(/<\\/fieldset>/g).length === code.match(/<fieldset>/g).length, 'Make sure your <code>fieldset</code> element has a closing tag.');"
+          "text": "确保<code>fieldset</code>标签是闭合的。",
+          "testString": "assert(code.match(/<\\/fieldset>/g) && code.match(/<\\/fieldset>/g).length === code.match(/<fieldset>/g).length, '确保<code>fieldset</code>标签是闭合的。');"
         },
         {
-          "text": "Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.",
-          "testString": "assert($('legend').length == 1, 'Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.');"
+          "text": "你的代码应该有 1 个包含询问用户忍者等级文字的<code>legend</code>标签。",
+          "testString": "assert($('legend').length == 1, '你的代码应该有 1 个包含询问用户忍者等级文字的<code>legend</code>标签。');"
         },
         {
-          "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "text": "你的代码不应该含有<code>div</code>标签。",
+          "testString": "assert($('div').length == 0, '你的代码不应该含有<code>div</code>标签。');"
         },
         {
-          "text": "Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.",
-          "testString": "assert($('p').length == 4, 'Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.');"
+          "text": "你的代码不应该有包含询问用户忍者等级文字的<code>p</code>标签。",
+          "testString": "assert($('p').length == 4, '你的代码不应该有包含询问用户忍者等级文字的<code>p</code>标签。');"
         }
       ],
       "solutions": [],
@@ -793,30 +793,30 @@
       "id": "587d778b367417b2b2512aa8",
       "title": "Add an Accessible Date Picker",
       "description": [
-        "Forms often include the <code>input</code> field, which can be used to create several different form controls. The <code>type</code> attribute on this element indicates what kind of input will be created.",
-        "You may have noticed the <code>text</code> and <code>submit</code> input types in prior challenges, and HTML5 introduced an option to specify a <code>date</code> field. Depending on browser support, a date picker shows up in the <code>input</code> field when it's in focus, which makes filling in a form easier for all users.",
-        "For older browsers, the type will default to <code>text</code>, so it helps to show users the expected date format in the label or as placeholder text just in case.",
-        "Here's an example:",
+        "表单中经常出现<code>input</code>标签，它可以用来创建多种表单控件。它的<code>type</code>属性指定了所要创建的<code>input</code>标签类型。",
+        "在以前的挑战中，你可能已经见过<code>text</code>与<code>submit</code>类型的<code>input</code>标签，HTML5 引入了<code>date</code>类型来创建时间选择器。依赖于浏览器的支持，当点击<code>input</code>标签时，时间选择器会显示出来，这可以让用户填写表单更加容易。",
+        "对于旧版本的浏览器，<code>type</code>属性的默认值是<code>text</code>。这种情况下，可以利用<code>label</code>标签或者占位文本来提示用户<code>input</code>标签的输入类型为日期。",
+        "举个例子：",
         "<blockquote>&lt;label for=&quot;input1&quot;&gt;Enter a date:&lt;/label&gt;<br>&lt;input type=&quot;date&quot; id=&quot;input1&quot; name=&quot;input1&quot;&gt;<br></blockquote>",
         "<hr>",
-        "Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competitors to see what date works best. Add an <code>input</code> tag with a <code>type</code> attribute of \"date\", an <code>id</code> attribute of \"pickdate\", and a <code>name</code> attribute of \"date\"."
+        "Camper Cat 想举办一场比武大会，他想收集参赛者的最佳参赛时间。请为 Camper Cat 的页面添加一个<code>type</code>属性且值为 date，<code>id</code>属性为 pickdate，<code>name</code>属性为 date 的<code>input</code>标签。"
       ],
       "tests": [
         {
-          "text": "Your code should add one <code>input</code> tag for the date selector field.",
-          "testString": "assert($('input').length == 2, 'Your code should add one <code>input</code> tag for the date selector field.');"
+          "text": "你的代码中应该有 1 个<code>input</code>标签。",
+          "testString": "assert($('input').length == 2, '你的代码中应该有 1 个<code>input</code>标签。');"
         },
         {
-          "text": "Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.",
-          "testString": "assert($('input').attr('type') == 'date', 'Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.');"
+          "text": "你的<code>input</code>标签的<code>type</code>属性值应该为 date。",
+          "testString": "assert($('input').attr('type') == 'date', '你的<code>input</code>标签的<code>type</code>属性值应该为 date。');"
         },
         {
-          "text": "Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.",
-          "testString": "assert($('input').attr('id') == 'pickdate', 'Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.');"
+          "text": "你的<code>input</code>标签的<code>id</code>属性值应该为 pickdate。",
+          "testString": "assert($('input').attr('id') == 'pickdate', '你的<code>input</code>标签的<code>id</code>属性值应该为 pickdate。');"
         },
         {
-          "text": "Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.",
-          "testString": "assert($('input').attr('name') == 'date', 'Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.');"
+          "text": "你的<code>input</code>标签的<code>name</code>属性值应该为 date。",
+          "testString": "assert($('input').attr('name') == 'date', '你的<code>input</code>标签的<code>name</code>属性值应该为 date。');"
         }
       ],
       "solutions": [],
@@ -862,28 +862,28 @@
       "id": "587d778c367417b2b2512aa9",
       "title": "Standardize Times with the HTML5 datetime Attribute",
       "description": [
-        "Continuing with the date theme, HTML5 also introduced the <code>time</code> element along with a <code>datetime</code> attribute to standardize times. This is an inline element that can wrap a date or time on a page. A valid format of that date is held by the <code>datetime</code> attribute. This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's written in an informal or colloquial manner in the text.",
-        "Here's an example:",
+        "继续日期主题。HTML5 还引入了<code>time</code>标签与<code>datetime</code>属性来标准化时间。<code>time</code>是一个行内标签，用于在页面中呈现日期或时间，而<code>datetime</code>属性保存了日期的有效格式，辅助设备可以访问这个值。通过标准化时间格式，即使时间在文本中是以非正式的或口语化的形式编写，辅助设备依然可以获取准确的时间和日期。",
+        "举个例子：",
         "<code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code>",
         "<hr>",
-        "Camper Cat's Mortal Kombat survey results are in! Wrap a <code>time</code> tag around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\" and add a <code>datetime</code> attribute to it set to \"2016-09-15\"."
+        "Camper Cat 的比武大会的时间确定了！请使用<code>time</code>标签包含文本 \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\"，并将<code>datetime</code>属性设置为 \"2016-09-15\"。"
       ],
       "tests": [
         {
-          "text": "Your <code>time</code> tags should wrap around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\".",
-          "testString": "assert($('time').text().match(/Thursday, September 15th/g), 'Your <code>time</code> tags should wrap around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\".');"
+          "text": "<code>time</code>标签应该包含文本\"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\"。",
+          "testString": "assert($('time').text().match(/Thursday, September 15th/g), '<code>time</code>标签应该包含文本\"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\"。');"
         },
         {
-          "text": "Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.",
-          "testString": "assert($('time').attr('datetime'), 'Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.');"
+          "text": "<code>time</code>标签应该有 1 个非空的<code>datetime</code>属性。",
+          "testString": "assert($('time').attr('datetime'), '<code>time</code>标签应该有 1 个非空的<code>datetime</code>属性。');"
         },
         {
-          "text": "Your <code>datetime</code> attribute should be set to a value of 2016-09-15.",
-          "testString": "assert($('time').attr('datetime') === \"2016-09-15\", 'Your <code>datetime</code> attribute should be set to a value of 2016-09-15.');"
+          "text": "<code>datetime</code>属性的值应该为 2016-09-15。",
+          "testString": "assert($('time').attr('datetime') === \"2016-09-15\", '<code>datetime</code>属性的值应该为 2016-09-15。');"
         },
         {
-          "text": "Make sure your <code>time</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/time>/g) && code.match(/<\\/time>/g).length === 4, 'Make sure your <code>time</code> element has a closing tag.');"
+          "text": "确保<code>time</code>标签是闭合的。",
+          "testString": "assert(code.match(/<\\/time>/g) && code.match(/<\\/time>/g).length === 4, '确保<code>time</code>标签是闭合的。');"
         }
       ],
       "solutions": [],
@@ -937,34 +937,34 @@
       "id": "587d778d367417b2b2512aaa",
       "title": "Make Elements Only Visible to a Screen Reader by Using Custom CSS",
       "description": [
-        "Have you noticed that all of the applied accessibility challenges so far haven't used any CSS? This is to show the importance of a logical document outline, and using semantically meaningful tags around your content before introducing the visual design aspect.",
-        "However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.",
-        "Here's an example of the CSS rules that accomplish this:",
+        "到目前为止，所有关于可访问性的挑战都没有使用 CSS。这是为了让你在关注外观样式之前，先把页面的逻辑结构写清，以及明确语义化标签的重要性。",
+        "然而，如果我们需要在页面中添加一些只对屏幕阅读器可见的内容时，CSS 可以提升页面的可访问性。当信息以可视化形式（如：图表）展示，而屏幕阅读器用户需要一种替代方式（如：表格）来获取信息时，就会出现这种情况。CSS 被用来将这些仅供屏幕阅读器使用的信息定位到浏览器可见区域之外。",
+        "举个例子：",
         "<blockquote>.sr-only {<br>&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;left: -10000px;<br>&nbsp;&nbsp;width: 1px;<br>&nbsp;&nbsp;height: 1px;<br>&nbsp;&nbsp;top: auto;<br>&nbsp;&nbsp;overflow: hidden;<br>}</blockquote>",
-        "<strong>Note</strong><br>The following CSS approaches will NOT do the same thing:",
+        "<strong>注意：</strong><br>下面的 CSS 代码与上面的结果不同：",
         "<ul>",
-        "<li><code>display: none;</code> or <code>visibility: hidden;</code> hides content for everyone, including screen reader users</li>",
-        "<li>Zero values for pixel sizes, such as <code>width: 0px; height: 0px;</code> removes that element from the flow of your document, meaning screen readers will ignore it</li>",
+        "<li><code>display: none;</code>或<code>visibility: hidden;</code>会把内容彻底隐藏起来，对于屏幕阅读器也不例外。</li>",
+        "<li>如果把值设置为 0px，如<code>width: 0px; height: 0px;</code>，意味着让元素脱离文档流，这样做也会让元素被屏幕阅读器忽略。</li>",
         "</ul>",
         "<hr>",
-        "Camper Cat created a really cool stacked bar chart for his training page, and put the data into a table for his visually impaired users. The table already has an <code>sr-only</code> class, but the CSS rules aren't filled in yet. Give the <code>position</code> an absolute value, the <code>left</code> a -10000px value, and the <code>width</code> and <code>height</code> both 1px values."
+        "Camper Cat 为他的训练页面创建了一个十分酷炫的条形图，并将数据放入表格中，供屏幕阅读器用户使用。表格已经有了一个<code>sr-only</code>类，但是还没有添加 CSS 规则。请设置<code>position</code>的值为 absolute，<code>left</code> 的值为 -10000px，<code>width</code>与<code>height</code>的值为 1px。"
       ],
       "tests": [
         {
-          "text": "Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.",
-          "testString": "assert($('.sr-only').css('position') == 'absolute', 'Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.');"
+          "text": "<code>sr-only</code>类中的<code>position</code>属性的值应为 absolute。",
+          "testString": "assert($('.sr-only').css('position') == 'absolute', '<code>sr-only</code>类中的<code>position</code>属性的值应为 absolute。');"
         },
         {
-          "text": "Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.",
-          "testString": "assert($('.sr-only').css('left') == '-10000px', 'Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.');"
+          "text": "<code>sr-only</code>类中的<code>left</code>属性的值应为 -10000px。",
+          "testString": "assert($('.sr-only').css('left') == '-10000px', '<code>sr-only</code>类中的<code>left</code>属性的值应为 -10000px。');"
         },
         {
-          "text": "Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.",
-          "testString": "assert(code.match(/width:\\s*?1px/gi), 'Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.');"
+          "text": "<code>sr-only</code>类中的<code>width</code>属性的值应为 1px。",
+          "testString": "assert(code.match(/width:\\s*?1px/gi), '<code>sr-only</code>类中的<code>sr-only</code>属性的值应为 1px。');"
         },
         {
-          "text": "Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.",
-          "testString": "assert(code.match(/height:\\s*?1px/gi), 'Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.');"
+          "text": "<code>sr-only</code>类中的<code>height</code>属性的值应为 1px。",
+          "testString": "assert(code.match(/height:\\s*?1px/gi), '<code>sr-only</code>类中的<code>height</code>属性的值应为 1px。');"
         }
       ],
       "solutions": [],
@@ -1071,19 +1071,19 @@
       "id": "587d778e367417b2b2512aab",
       "title": "Improve Readability with High Contrast Text",
       "description": [
-        "Low contrast between the foreground and background colors can make text difficult to read. Sufficient contrast improves the readability of your content, but what exactly does \"sufficient\" mean?",
-        "The Web Content Accessibility Guidelines (WCAG) recommend at least a 4.5 to 1 contrast ratio for normal text. The ratio is calculated by comparing the relative luminance values of two colors. This ranges from 1:1 for the same color, or no contrast, to 21:1 for white against black, the strongest contrast. There are many contrast checking tools available online that calculate this ratio for you.",
+        "低对比度的前景色与背景色会使文本难以阅读。足够的对比度可以提高内容的可读性，但是怎样的对比度才算是 “足够” 的？",
+        "Web 内容无障碍指南（WCAG）建议正常文本的对比度至少为 4.5 : 1。对比度是通过比较两种颜色的相对亮度值来计算的，其范围是从相同颜色的 1 : 1（无对比度）到白色与黑色的最高对比度 21 : 1。网上有很多可以帮助你计算对比度的工具。",
         "<hr>",
-        "Camper Cat's choice of light gray text on a white background for his recent blog post has a 1.5:1 contrast ratio, making it hard to read. Change the <code>color</code> of the text from the current gray (<code>#D3D3D3</code>) to a darker gray (<code>#636363</code>) to improve the contrast ratio to 6:1."
+        "Camper Cat 为他的博客选择了白色背景，浅灰色文字，对比度为 1.5 : 1，这使博客文章难以阅读。请将文字的<code>color</code>从当前的浅灰色（<code>#D3D3D3</code>）修改为深灰色（<code>#636363</code>），以使对比度提升到 6 : 1。"
       ],
       "tests": [
         {
-          "text": "Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.",
-          "testString": "assert($('body').css('color') == 'rgb(99, 99, 99)', 'Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.');"
+          "text": "你应该将<code>body</code>的<code>color</code>修改为深灰色。",
+          "testString": "assert($('body').css('color') == 'rgb(99, 99, 99)', '你应该将<code>body</code>的<code>color</code>修改为深灰色。');"
         },
         {
-          "text": "Your code should not change the <code>background-color</code> for the <code>body</code>.",
-          "testString": "assert($('body').css('background-color') == 'rgb(255, 255, 255)', 'Your code should not change the <code>background-color</code> for the <code>body</code>.');"
+          "text": "你不应该修改<code>body</code>的<code>background-color</code>。",
+          "testString": "assert($('body').css('background-color') == 'rgb(255, 255, 255)', '你不应该修改<code>body</code>的<code>background-color</code>。');"
         }
       ],
       "solutions": [],
@@ -1124,21 +1124,21 @@
       "id": "587d778f367417b2b2512aac",
       "title": "Avoid Colorblindness Issues by Using Sufficient Contrast",
       "description": [
-        "Color is a large part of visual design, but its use introduces two accessibility issues. First, color alone should not be used as the only way to convey important information because screen reader users won't see it. Second, foreground and background colors need sufficient contrast so colorblind users can distinguish them.",
-        "Previous challenges covered having text alternatives to address the first issue. The last challenge introduced contrast checking tools to help with the second. The WCAG-recommended contrast ratio of 4.5:1 applies for color use as well as gray-scale combinations.",
-        "Colorblind users have trouble distinguishing some colors from others - usually in hue but sometimes lightness as well. You may recall the contrast ratio is calculated using the relative luminance (or lightness) values of the foreground and background colors.",
-        "In practice, the 4.5:1 ratio can be reached by darkening the darker color and lightening the lighter one with the aid of a color contrast checker. Darker colors on the color wheel are considered to be blues, violets, magentas, and reds, whereas lighter colors are oranges, yellows, greens, and blue-greens.",
+        "颜色是可视化设计的重要组成部分，但是使用颜色也引入了两个可访问性问题。首先，不能仅仅使用颜色作为传达重要信息的唯一方式，因为屏幕阅读器无法获取这些信息。其次，前景色与背景色需要有足够的对比度，这样色盲用户才可以识别它们。",
+        "在之前的挑战中，我们用文本备用方案解决了第一个问题。在上一个挑战中，我们使用对比度检测工具解决了第二问题。WCAG 建议为颜色及灰度组合使用 4.5 : 1 的对比度。",
+        "色盲用户无法将一些颜色与另一些颜色区分出来——通常是因为色调，也有时候是因为亮度。你可能想起对比度是用前景色与背景色的相对亮度计算的。",
+        "实践中，在对比度检测工具的帮助下，我们可以将较暗的颜色变暗、将较淡的颜色变淡的方法来使对比度达到 4.5 : 1。在色轮中，较暗的颜色通常是蓝色、紫色、洋红和红色，而较淡的颜色通常是橙色、黄色、绿色和蓝绿色。",
         "<hr>",
-        "Camper Cat is experimenting with using color for his blog text and background, but his current combination of a greenish <code>background-color</code> with maroon text <code>color</code> has a 2.5:1 contrast ratio. You can easily adjust the lightness of the colors since he declared them using the CSS <code>hsl()</code> property (which stands for hue, saturation, lightness) by changing the third argument. Increase the <code>background-color</code> lightness value from 35% to 55%, and decrease the <code>color</code> lightness value from 20% to 15%. This improves the contrast to 5.9:1."
+        "Camper Cat 正在尝试为他的博客文本与背景使用颜色，但是他目前使用的组合是绿色的<code>background-color</code>与栗色的<code>color</code>，它们的对比度为 2.5 : 1。Camper Cat 使用了 CSS 的<code>hsl()</code>（hsl为hue, saturation, lightness的缩写）属性来设置颜色，所以通过修改<code>hsl()</code>属性的第三个参数，可以很容易的调整颜色的亮度。请将<code>background-color</code>的亮度从 35% 增加到 55%，<code>color</code>的亮度从 20% 减少到 15%，这样可以使对比度达到 5.9 : 1。"
       ],
       "tests": [
         {
-          "text": "Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.",
-          "testString": "assert(code.match(/color:\\s*?hsl\\(0,\\s*?55%,\\s*?15%\\)/gi), 'Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.');"
+          "text": "你应该将<code>color</code>属性的亮度值设置为 15%。",
+          "testString": "assert(code.match(/color:\\s*?hsl\\(0,\\s*?55%,\\s*?15%\\)/gi), '你应该将<code>color</code>属性的亮度值设置为 15%。');"
         },
         {
-          "text": "Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.",
-          "testString": "assert(code.match(/background-color:\\s*?hsl\\(120,\\s*?25%,\\s*?55%\\)/gi), 'Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.');"
+          "text": "你应该将<code>background-color</code>属性的亮度值设置为 55%。",
+          "testString": "assert(code.match(/background-color:\\s*?hsl\\(120,\\s*?25%,\\s*?55%\\)/gi), '你应该将<code>background-color</code>属性的亮度值设置为 55%。');"
         }
       ],
       "solutions": [],
@@ -1179,16 +1179,16 @@
       "id": "587d778f367417b2b2512aad",
       "title": "Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information",
       "description": [
-        "There are various forms of colorblindness. These can range from a reduced sensitivity to a certain wavelength of light to the inability to see color at all. The most common form is a reduced sensitivity to detect greens.",
-        "For example, if two similar green colors are the foreground and background color of your content, a colorblind user may not be able to distinguish them. Close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.",
-        "<strong>Note</strong><br>Some online color picking tools include visual simulations of how colors appear for different types of colorblindness. These are great resources in addition to online contrast checking calculators.",
+        "色盲的形式有很多种，它的表现可以从对特定波长光波的感知度较低，到几乎无法看到颜色。最常见的形式是对绿色的低感知度。",
+        "例如：如果内容的前景色与背景色是两种相近的绿色，那么色盲用户可能会无法识别它们。可以将色轮上相邻的颜色认为是相近的，我们不应用这些颜色来表示重要的信息。",
+        "<strong>注意：</strong><br>一些在线颜色拾取器有色盲模拟功能，可以模拟颜色在不同形式色盲的视觉中的呈现结果，它们和在线对比度检查器一样，都是很好的工具。",
         "<hr>",
-        "Camper Cat is testing different styles for an important button, but the yellow (<code>#FFFF33</code>) <code>background-color</code> and the green (<code>#33FF33</code>) text <code>color</code> are neighboring hues on the color wheel and virtually indistinguishable for some colorblind users. (Their similar lightness also fails the contrast ratio check). Change the text <code>color</code> to a dark blue (<code>#003366</code>) to solve both problems."
+        "Camper Cat 正在用不同样式测试一个重要按钮。在色轮上，黄色（<code>#FFFF33</code>）的<code>background-color</code>和绿色（<code>#33FF33</code>）的文本<code>color</code>是相邻的色调，一些色盲用户几乎无法区分它们，而它们相近的亮度会使对比度测试失败。为了解决这两个问题，请将文本的<code>color</code>修改为深蓝色（<code>#003366</code>）。"
       ],
       "tests": [
         {
-          "text": "Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.",
-          "testString": "assert($('button').css('color') == 'rgb(0, 51, 102)', 'Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.');"
+          "text": "<code>button</code>的文本<code>color</code>应该是深蓝色。",
+          "testString": "assert($('button').css('color') == 'rgb(0, 51, 102)', '<code>button</code>的文本<code>color</code>应该是深蓝色。');"
         }
       ],
       "solutions": [],
@@ -1227,19 +1227,19 @@
       "id": "587d778f367417b2b2512aae",
       "title": "Give Links Meaning by Using Descriptive Link Text",
       "description": [
-        "Screen reader users have different options for what type of content their device reads. This includes skipping to (or over) landmark elements, jumping to the main content, or getting a page summary from the headings. Another option is to only hear the links available on a page.",
-        "Screen readers do this by reading the link text, or what's between the anchor (<code>a</code>) tags. Having a list of \"click here\" or \"read more\" links isn't helpful. Instead, you should use brief but descriptive text within the <code>a</code> tags to provide more meaning for these users.",
+        "屏幕阅读器用户可以选择其设备读取的内容的类型，这包括跳转到（或跳过）标志标签，以便跳转到主要内容，或者从标题中获取页面摘要，还可以选择只听取页面中的有效链接。",
+        "屏幕阅读器通过阅读链接文本或者锚点标签（<code>a</code>）之间的内容来完成这个操作。拥有 \"click here\" 或者 \"read more\" 列表并没有什么用处。相反地，应该在<code>a</code>标签中使用简洁的描述性语言来为用户提供更多的信息。",
         "<hr>",
-        "The link text that Camper Cat is using is not very descriptive without the surrounding context. Move the anchor (<code>a</code>) tags so they wrap around the text \"information about batteries\" instead of \"Click here\"."
+        "Camper Cat 在链接中使用的文本在脱离上下文的情况下，描述性不是很好。请修改锚点标签（<code>a</code>），使其包含的文本从 \"click here\" 变为 \"information about batteries\"。"
       ],
       "tests": [
         {
-          "text": "Your code should move the anchor <code>a</code> tags from around the words \"Click here\" to wrap around the words \"information about batteries\".",
-          "testString": "assert($('a').text().match(/^(information about batteries)$/g), 'Your code should move the anchor <code>a</code> tags from around the words \"Click here\" to wrap around the words \"information about batteries\".');"
+          "text": "请修改<code>a</code>标签，将其包含的文本从 \"click here\" 改为 \"information about batteries\"。",
+          "testString": "assert($('a').text().match(/^(information about batteries)$/g), '请修改<code>a</code>标签，将其包含的文本从 \"click here\" 改为 \"information about batteries\"。');"
         },
         {
-          "text": "Make sure your <code>a</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a href=(''|\"\")>/g).length, 'Make sure your <code>a</code> element has a closing tag.');"
+          "text": "确保<code>a</code>标签是闭合的。",
+          "testString": "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a href=(''|\"\")>/g).length, '确保<code>a</code>标签是闭合的。');"
         }
       ],
       "solutions": [],
@@ -1271,29 +1271,29 @@
       "id": "587d7790367417b2b2512aaf",
       "title": "Make Links Navigatable with HTML Access Keys",
       "description": [
-        "HTML offers the <code>accesskey</code> attribute to specify a shortcut key to activate or bring focus to an element. This can make navigation more efficient for keyboard-only users.",
-        "HTML5 allows this attribute to be used on any element, but it's particularly useful when it's used with interactive ones. This includes links, buttons, and form controls.",
-        "Here's an example:",
+        "HTML 提供<code>accesskey</code>属性，用于指定激活标签或者使标签获得焦点的快捷键，这可以使键盘用户的导航更加有效。",
+        "HTML5 允许在任何标签上使用这个属性。该属性对于交互类标签（如链接、按钮、表单控件等）十分有用。",
+        "举个例子：",
         "<code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code>",
         "<hr>",
-        "Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an <code>accesskey</code> attribute to both links and set the first one to \"g\" (for Garfield) and the second one to \"c\" (for Chuck Norris)."
+        "Camper Cat 希望为他的两篇博客的标题的链接设置快捷键，以使用户可以快速导航到文章的全文。请为这两个链接添加<code>accesskey</code>属性，并将第一个设置为 \"g\"（表示 Garfield），第二个设置为 \"c\"（表示 Chuck Norris）。"
       ],
       "tests": [
         {
-          "text": "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"first\".",
-          "testString": "assert($('#first').attr('accesskey'), 'Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"first\".');"
+          "text": "你应该为<code>id</code>是 \"first\" 的<code>a</code>标签添加<code>accesskey</code>属性。",
+          "testString": "assert($('#first').attr('accesskey'), '你应该为<code>id</code>是 \"first\" 的<code>a</code>标签添加<code>accesskey</code>属性。');"
         },
         {
-          "text": "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"second\".",
-          "testString": "assert($('#second').attr('accesskey'), 'Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"second\".');"
+          "text": "你应该为<code>id</code>是 \"second\" 的<code>a</code>标签添加<code>accesskey</code>属性。",
+          "testString": "assert($('#second').attr('accesskey'), '你应该为<code>id</code>是 \"second\" 的<code>a</code>标签添加<code>accesskey</code>属性。');"
         },
         {
-          "text": "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"first\" to \"g\". Note that case matters.",
-          "testString": "assert($('#first').attr('accesskey') == 'g', 'Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"first\" to \"g\". Note that case matters.');"
+          "text": "你应该将<code>id</code>是 \"first\" 的<code>a</code>标签的<code>accesskey</code>属性值设置为小写 \"g\"。",
+          "testString": "assert($('#first').attr('accesskey') == 'g', '你应该将<code>id</code>是 \"first\" 的<code>a</code>标签的<code>accesskey</code>属性值设置为小写 \"g\"。');"
         },
         {
-          "text": "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"second\" to \"c\". Note that case matters.",
-          "testString": "assert($('#second').attr('accesskey') == 'c', 'Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"second\" to \"c\". Note that case matters.');"
+          "text": "你应该将<code>id</code>是 \"second\" 的<code>a</code>标签的<code>accesskey</code>属性值设置为小写 \"c\"。",
+          "testString": "assert($('#second').attr('accesskey') == 'c', '你应该将<code>id</code>是 \"second\" 的<code>a</code>标签的<code>accesskey</code>属性值设置为小写 \"c\"。')"
         }
       ],
       "solutions": [],
@@ -1338,21 +1338,21 @@
       "id": "587d7790367417b2b2512ab0",
       "title": "Use tabindex to Add Keyboard Focus to an Element",
       "description": [
-        "The HTML <code>tabindex</code> attribute has three distinct functions relating to an element's keyboard focus. When it's on a tag, it indicates that element can be focused on. The value (an integer that's positive, negative, or zero) determines the behavior.",
-        "Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page. It's in the same order as the elements come in the HTML source markup. This same functionality can be given to other elements, such as <code>div</code>, <code>span</code>, and <code>p</code>, by placing a <code>tabindex=\"0\"</code> attribute on them. Here's an example:",
+        "HTML 的<code>tabindex</code>属性有三个不同与标签焦点的功能。当它在标签上时，表示标签可以获得焦点。它的值可以是零、负整数及正整数，并决定了标签的行为。",
+        "当用户在页面中使用 tab 键时，有些标签，如：链接、表单控件，可以自动获得焦点。它们获得焦点的顺序与它们出现在文档流中的顺序一致。我们可以通过将<code>tabindex</code>属性值设为 0，来给其他标签赋予相同的功能，如：<code>div</code>、<code>span</code>、<code>p</code>等。举个例子：",
         "<code>&lt;div tabindex=&quot;0&quot;&gt;I need keyboard focus!&lt;/div&gt;</code>",
-        "<strong>Note</strong><br>A negative <code>tabindex</code> value (typically -1) indicates that an element is focusable, but is not reachable by the keyboard. This method is generally used to bring focus to content programmatically (like when a <code>div</code> used for a pop-up window is activated), and is beyond the scope of these challenges.",
+        "<strong>注意：</strong><br><code>tabindex</code>属性值为负整数（通常为 -1）的标签也是有焦点的，只是不可以通过 tab 键来获得焦点。这种方法通常用于以编程的方式使内容获得焦点（如：激活用于弹出框的<code>div</code>标签），但是它超出了当前挑战的范围。",
         "<hr>",
-        "Camper Cat created a new survey to collect information about his users. He knows input fields automatically get keyboard focus, but he wants to make sure his keyboard users pause at the instructions while tabbing through the items. Add a <code>tabindex</code> attribute to the <code>p</code> tag and set its value to \"0\". Bonus - using <code>tabindex</code> also enables the CSS pseudo-class <code>:focus</code> to work on the <code>p</code> tag."
+        "Camper Cat 新建了一个调查，用来收集他的用户的信息。他知道输入框可以自动获得键盘焦点，但他希望确保当键盘用户切换标签时，焦点可以停留在指示文字上。请给<code>p</code>标签添加<code>tabindex</code>属性，并将它的值设置为 0。注意：使用<code>tabindex</code>属性可以使 CSS 伪类<code>:focus</code>在<code>p</code>标签上生效。"
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.",
-          "testString": "assert($('p').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.');"
+          "text": "你应该为表单中的<code>p</code>标签添加<code>tabindex</code>属性。",
+          "testString": "assert($('p').attr('tabindex'), '你应该为表单中的<code>p</code>标签添加<code>tabindex</code>属性。');"
         },
         {
-          "text": "Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.",
-          "testString": "assert($('p').attr('tabindex') == '0', 'Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.');"
+          "text": "你应该将<code>p</code>标签的<code>tabindex</code>属性值设置为 0。",
+          "testString": "assert($('p').attr('tabindex') == '0', '你应该将<code>p</code>标签的<code>tabindex</code>属性值设置为 0。');"
         }
       ],
       "solutions": [],
@@ -1422,31 +1422,31 @@
       "id": "587d7790367417b2b2512ab1",
       "title": "Use tabindex to Specify the Order of Keyboard Focus for Several Elements",
       "description": [
-        "The <code>tabindex</code> attribute also specifies the exact tab order of elements. This is achieved when the value of the attribute is set to a positive number of 1 or higher.",
-        "Setting a tabindex=\"1\" will bring keyboard focus to that element first. Then it cycles through the sequence of specified <code>tabindex</code> values (2, 3, etc.), before moving to default and <code>tabindex=\"0\"</code> items.",
-        "It's important to note that when the tab order is set this way, it overrides the default order (which uses the HTML source). This may confuse users who are expecting to start navigation from the top of the page. This technique may be necessary in some circumstances, but in terms of accessibility, take care before applying it.",
-        "Here's an example:",
+        "<code>tabindex</code>属性还可以指定标签的 tab 键顺序，将它的值设置为大于或等于 1 就可以实现这个功能。",
+        "<code>tabindex</code>属性值为 1 的标签将首先获得键盘焦点，然后焦点将按照指定的<code>tabindex</code>的值（如：2，3 等）的顺序进行移动，直到回到默认的或<code>tabindex</code>值为 0 的标签上，如此循环。",
+        "需要注意的是，当按照这种方式设置 tab 键顺序时，将会覆盖默认的顺序（标签在文档流中出现的顺序）。这可能会令那些希望从页面顶部开始导航的用户感到困惑。这个技术在某些情况下可能是必要的，但是对可访问性而言，在应用时要十分小心。",
+        "举个例子：",
         "<code>&lt;div tabindex=&quot;1&quot;&gt;I get keyboard focus, and I get it first!&lt;/div&gt;</code>",
         "<code>&lt;div tabindex=&quot;2&quot;&gt;I get keyboard focus, and I get it second!&lt;/div&gt;</code>",
         "<hr>",
-        "Camper Cat has a search field on his Inspirational Quotes page that he plans to position in the upper right corner with CSS. He wants the search <code>input</code> and submit <code>input</code> form controls to be the first two items in the tab order. Add a <code>tabindex</code> attribute set to \"1\" to the search <code>input</code>, and a <code>tabindex</code> attribute set to \"2\" to the submit <code>input</code>."
+        "Camper Cat 在他的励志名言页面中有一个搜索区域，他打算使用 CSS 将这个区域定位在页面的右上角。Camper Cat 希望他的搜索<code>input</code>与提交<code>input</code>表单控件是 tab 键顺序的前两项。请为搜索<code>input</code>添加<code>tabindex</code>属性，其值为 1。为提交<code>input</code>添加<code>tabindex</code>属性，其值为 2。"
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.",
-          "testString": "assert($('#search').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.');"
+          "text": "你应该为搜索<code>input</code>标签添加<code>tabindex</code>属性。",
+          "testString": "assert($('#search').attr('tabindex'), '你应该为搜索<code>input</code>标签添加<code>tabindex</code>属性。');"
         },
         {
-          "text": "Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.",
-          "testString": "assert($('#submit').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.');"
+          "text": "你应该为提交<code>input</code>标签添加<code>tabindex</code>属性。",
+          "testString": "assert($('#submit').attr('tabindex'), '你应该为提交<code>input</code>标签添加<code>tabindex</code>属性。');"
         },
         {
-          "text": "Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.",
-          "testString": "assert($('#search').attr('tabindex') == '1', 'Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.');"
+          "text": "搜索<code>input</code>标签的<code>tabindex</code>属性值应该为 1。",
+          "testString": "assert($('#search').attr('tabindex') == '1', '搜索<code>input</code>标签的<code>tabindex</code>属性值应该为 1。');"
         },
         {
-          "text": "Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.",
-          "testString": "assert($('#submit').attr('tabindex') == '2', 'Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.');"
+          "text": "提交<code>input</code>标签的<code>tabindex</code>属性值应该为 2。",
+          "testString": "assert($('#submit').attr('tabindex') == '2', '提交<code>input</code>标签的<code>tabindex</code>属性值应该为 2。');"
         }
       ],
       "solutions": [],
@@ -1498,3 +1498,4 @@
     }
   ]
 }
+

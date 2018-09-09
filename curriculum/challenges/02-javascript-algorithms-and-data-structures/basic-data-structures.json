@@ -519,7 +519,7 @@
       "tests": [
         {
           "text": "<code>filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18)</code>应该返回<code>[ [10, 8, 3], [14, 6, 23] ]</code>。",
-          "testString": "assert.deepEqual(filteredArray([ [10, 8, 3], [14, 6, 23], [3, 18, 6] ], 18), [[10, 8, 3], [14, 6, 23]], '<code>filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18)</code>应该返回<code>[ [10, 8, 3], [14, 6, 23] ]</code>');。"
+          "testString": "assert.deepEqual(filteredArray([ [10, 8, 3], [14, 6, 23], [3, 18, 6] ], 18), [[10, 8, 3], [14, 6, 23]], '<code>filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18)</code>应该返回<code>[ [10, 8, 3], [14, 6, 23] ]</code>。');"
         },
         {
           "text": "<code>filteredArray([ [\"trumpets\", 2], [\"flutes\", 4], [\"saxophones\", 2] ], 2)</code>应该返回<code>[ [\"flutes\", 4] ]</code>。",

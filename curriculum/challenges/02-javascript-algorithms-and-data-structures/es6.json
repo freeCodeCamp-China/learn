@@ -12,7 +12,7 @@
         "<blockquote>var camper = 'James';<br>var camper = 'David';<br>console.log(camper);<br>// 打印出 'David'</blockquote>",
         "在上面的代码中，<code>camper</code>的初始值为<code>'James'</code>，然后又被覆盖成了<code>'David'</code>。",
         "在小型的应用中，你可能不会遇到这样的问题，但是当你的代码规模变得更加庞大的时候，就可能会在不经意间覆盖了之前定义的变量。",
-        "这样的行为不会报错导致了 debug 非常困难。<br>",
+        "这样的行为不会报错，导致了 debug 非常困难。<br>",
         "在 ES6 中引入了新的关键字<code>let</code>来解决<code>var</code>关键字带来的潜在问题。",
         "如果你在上面的代码中，使用了<code>let</code>关键字来代替<code>var</code>关键字，结果会是一个报错。",
         "<blockquote>let camper = 'James';<br>let camper = 'David'; // 报错</blockquote>",
@@ -292,7 +292,7 @@
       "id": "587d7b87367417b2b2512b43",
       "title": "Use Arrow Functions to Write Concise Anonymous Functions",
       "description": [
-        "在 JavaScript 里，我们会经常遇到不需要给函数命名的情况，尤其是在需要将以个函数作为参数传给另外一个函数的时候，在这些时候，我们会创建行内函数。因为这些函数不会再其他地方复用，所以我们不要给它们命名。",
+        "在 JavaScript 里，我们会经常遇到不需要给函数命名的情况，尤其是在需要将一个函数作为参数传给另外一个函数的时候。这时，我们会创建匿名函数。因为这些函数不会在其他地方复用，所以我们不需要给它们命名。",
         "这种情况下，我们通常会使用以下语法：",
         "<blockquote>const myFunc = function() {<br>&nbsp;&nbsp;const myVar = \"value\";<br>&nbsp;&nbsp;return myVar;<br>}</blockquote>",
         "ES6 提供了其他写匿名函数的方式的语法糖。你可以使用箭头函数：",
@@ -622,7 +622,7 @@
       "title": "Use Destructuring Assignment to Assign Variables from Objects",
       "description": [
         "我们之前看到了展开操作符是如何展开数组的内容的。",
-        "我们队对象也可以做同样的操作。<dfn>解构赋值</dfn> 就是可以从对象中直接获取对应值的语法。",
+        "对于对象，我们也可以做同样的操作。<dfn>解构赋值</dfn> 就是可以从对象中直接获取对应值的语法。",
         "看看以下 ES5 的代码：",
         "<blockquote>var voxel = {x: 3.6, y: 7.4, z: 6.54 };<br>var x = voxel.x; // x = 3.6<br>var y = voxel.y; // y = 7.4<br>var z = voxel.z; // z = 6.54</blockquote>",
         "使用 ES6 的解构语法可以完成同样的赋值语句：",

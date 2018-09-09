@@ -926,7 +926,7 @@
         },
         {
           "text": "不能使用<code>splice</code>方法。",
-          "testString": "assert(!code.match(/\\.splice/g), '不能使用<code>splice</code>方法。;"
+          "testString": "assert(!code.match(/\\.splice/g), '不能使用<code>splice</code>方法。');"
         },
         {
           "text": "不能改变<code>inputCities</code>数组。",
