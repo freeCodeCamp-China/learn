@@ -68,15 +68,15 @@
       "title": "Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()",
       "description": [
         "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。",
-        "Cross-site scripting (XSS) is a frequent type of attack where malicious scripts are injected into vulnerable pages, with the purpose of stealing sensitive data like session cookies, or passwords.",
-        "The basic rule to lower the risk of an XSS attack is simple: “Never trust user’s input”. As a developer you should always sanitize all the input coming from the outside. This includes data coming from forms, GET query urls, and even from POST bodies. Sanitizing means that you should find and encode the characters that may be dangerous e.g. <, >.",
-        "Modern browsers can help mitigating the risk by adopting better software strategies. Often these are configurable via http headers.",
-        "The X-XSS-Protection HTTP header is a basic protection. The browser detects a potential injected script using a heuristic filter. If the header is enabled, the browser changes the script code, neutralizing it.",
-        "It still has limited support."
+        "跨站脚本攻击 (XSS) 是一种比较常见的攻击手段，通过给页面注入恶意脚本来获取用户的 session, 密码等信息。",
+        "防止这类型的攻击也非常简单：“永远不要相信用户的输入”。 作为一名开发人员，你一定要对所有外部的输入进行审查，其中包括来自表单，GET 请求，POST 请求主体的内容。审核就是说你需要查找并给有潜在风险的字符进行编码，例如：<, >.",
+        "现代浏览器已经有非常好的软件策略来应对着类型问题。通常是通过配置 http 头部来实现.",
+        "X-XSS-Protection HTTP 头部是一个基本的防护。浏览器通过启发式过滤法则来检测有潜在风险的注入脚本，这是有如果这个头部被启用了，浏览器就能改成脚本里面的代码从而使恶意代码不再生效。",
+        "但是浏览器对这个功能的支持有限。"
       ],
       "tests": [
         {
-          "text": "helmet.xssFilter() middleware should be mounted correctly",
+          "text": "helmet.xssFilter() 应该被正确地加载",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'xXssProtection'); assert.property(data.headers, 'x-xss-protection'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
@@ -90,11 +90,11 @@
       "title": "Avoid Inferring the Response MIME Type with helmet.noSniff()",
       "description": [
         "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。",
-        "Browsers can use content or MIME sniffing to adapt to different datatypes coming from a response. They override the Content-Type headers to guess and process the data. While this can be convenient in some scenarios, it can also lead to some dangerous attacks. This middleware sets the X-Content-Type-Options header to nosniff. This instructs the browser to not bypass the provided Content-Type."
+        "浏览器可以通过探查 ``content`` 或者 ``MIME`` 头部来判断不同的响应内容。这两个的优先级比 ``Content-Type`` 还高，浏览器可以通过这两个头部来猜测并处理响应。这个在某些情况下非常实用，但也会造成一定的潜在风险。我们可以通过中间件来设置 ``X-Content-Type-Options`` 头部为 ``nosniff``。 这样，浏览器就不会绕过 ``Content-Type`` 这个头了。"
       ],
       "tests": [
         {
-          "text": "helmet.noSniff() middleware should be mounted correctly",
+          "text": "helmet.noSniff() 中间件应该被正确加载",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'nosniff'); assert.equal(data.headers['x-content-type-options'], 'nosniff'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
@@ -108,11 +108,11 @@
       "title": "Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()",
       "description": [
         "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。",
-        "Some web applications will serve untrusted HTML for download. Some versions of Internet Explorer by default open those HTML files in the context of your site. This means that an untrusted HTML page could start doing bad things in the context of your pages. This middleware sets the X-Download-Options header to noopen. This will prevent IE users from executing downloads in the trusted site’s context."
+        "有些网站会下载不安全的 HTML 文件，某些版本的 IE 默认情况下还会在你网站的作用域下打开这些 HTML 文件。换句话说，这些不安全的 HTML 页面可以在你的网站做恶意行为。我们可以通过中间件来设置 ``X-Download-Options`` 头部为 ``noopen``。这样就可以防治 IE 在不信任的网站下执行下载的文件。"
       ],
       "tests": [
         {
-          "text": "helmet.ieNoOpen() middleware should be mounted correctly",
+          "text": "helmet.ieNoOpen() 中间件应该被正确加载",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'ienoopen'); assert.equal(data.headers['x-download-options'], 'noopen'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
@@ -126,17 +126,17 @@
       "title": "Ask Browsers to Access Your Site via HTTPS Only with helmet.hsts()",
       "description": [
         "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。",
-        "HTTP Strict Transport Security (HSTS) is a web security policy which helps to protect websites against protocol downgrade attacks and cookie hijacking. If your website can be accessed via HTTPS you can ask user’s browsers to avoid using insecure HTTP. By setting the header Strict-Transport-Security, you tell the browsers to use HTTPS for the future requests in a specified amount of time. This will work for the requests coming after the initial request.",
-        "Configure helmet.hsts() to use HTTPS for the next 90 days. Pass the config object {maxAge: timeInMilliseconds, force: true}. Glitch already has hsts enabled. To override its settings you need to set the field \"force\" to true in the config object. We will intercept and restore the Glitch header, after inspecting it for testing.",
-        "Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and a SSL/TSL Certificate."
+        "HTTP严格安全传输 (HSTS) 是一个能帮助我们防护网站被协议降低攻击和 Cookie 挟持的 WEB 安全协议。如果你的网站支持 HTTPS 的话你可以让你的用户停止使用不安全的 HTTP。通过设置头部 ``Strict-Transport-Security``, 你告诉浏览器使用在未来的某段指定时间内使用 HTTPS 来请求网站内容。首次请求之后所以的后续请求都将使用 HTTPS",
+        "配置 helmet.hsts() 在未来的90天内使用 HTTPS。传递配置对象 {maxAge: timeInMilliseconds, force: true}. Glitch 默认已经开启 ``hsts``. 但你仍然可以通过 \"force\" 来覆盖它的配置。为了测试，我们会审查 Glitch 请求头部，然后拦截并恢复。",
+        "注意: 配置 HTTPS 需要域名以及 SSL/TSL 证书。"
       ],
       "tests": [
         {
-          "text": "helmet.hsts() middleware should be mounted correctly",
+          "text": "helmet.hsts() 中间件应该被正确加载",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'hsts'); assert.property(data.headers, 'strict-transport-security'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "maxAge should be equal to 7776000 ms (90 days)",
+          "text": "maxAge 应该等于 7776000 ms (90天)",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.match(data.headers['strict-transport-security'], /^max-age=777600000;?/); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
@@ -150,11 +150,11 @@
       "title": "Disable DNS Prefetching with helmet.dnsPrefetchControl()",
       "description": [
         "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。",
-        "To improve performance, most browsers prefetch DNS records for the links in a page. In that way the destination ip is already known when the user clicks on a link. This may lead to over-use of the DNS service (if you own a big website, visited by millions people…), privacy issues (one eavesdropper could infer that you are on a certain page), or page statistics alteration (some links may appear visited even if they are not). If you have high security needs you can disable DNS prefetching, at the cost of a performance penalty."
+        "为了提高性能，大部分浏览器都提交获取页面上链接的 DNS 记录。这样的话当用户点击一个链接的时候浏览器已经提前知道 IP 地址了。但这也会造成 DNS 服务的过度使用（如果你是一个大型网站，有这千万级的用户），隐私问题 (窃听者可以推测你在某个页面上)，和页面数据准确性（有些没访问过的链接会被标记成已访问）。如果你对安全性要求比较高，你应该禁用 DNZ 预加载。当然，这样做性能上会有一点点损失."
       ],
       "tests": [
         {
-          "text": "helmet.dnsPrefetchControl() middleware should be mounted correctly",
+          "text": "helmet.dnsPrefetchControl() 中间件应该被正确加载",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'dnsPrefetchControl'); assert.equal(data.headers['x-dns-prefetch-control'], 'off'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
@@ -168,11 +168,11 @@
       "title": "Disable Client-Side Caching with helmet.noCache()",
       "description": [
         "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。",
-        "If you are releasing an update for your website, and you want the users to always download the newer version, you can (try to) disable caching on client’s browser. It can be useful in development too. Caching has performance benefits, which you will lose, so only use this option when there is a real need."
+        "如果你为你的网站发布了一个更新，你想要用户永远使用最新的版本。你可以通过禁用浏览器的缓存来实现。这个功能在开发环境中也非常有用。当然你会失去缓存在性能上的优势，所以你应该在真正有必要的时候才用这个功能"
       ],
       "tests": [
         {
-          "text": "helmet.noCache() middleware should be mounted correctly",
+          "text": "helmet.noCache() 中间件应该被正确加载",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'nocache'); assert.equal(data.headers['cache-control'], 'no-store, no-cache, must-revalidate, proxy-revalidate'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
@@ -186,17 +186,17 @@
       "title": "Set a Content Security Policy with helmet.contentSecurityPolicy()",
       "description": [
         "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。",
-        "This challenge highlights one promising new defense that can significantly reduce the risk and impact of many type of attacks in modern browsers. By setting and configuring a Content Security Policy you can prevent the injection of anything unintended into your page. This will protect your app from XSS vulnerabilities, undesired tracking, malicious frames, and much more. CSP works by defining a whitelist of content sources which are trusted. You can configure them for each kind of resource a web page may need (scripts, stylesheets, fonts, frames, media, and so on…). There are multiple directives available, so a website owner can have a granular control. See HTML 5 Rocks, KeyCDN for more details. Unfortunately CSP is unsupported by older browser.",
-        "By default, directives are wide open, so it’s important to set the defaultSrc directive as a fallback. Helmet supports both defaultSrc and default-src naming styles. The fallback applies for most of the unspecified directives. In this exercise, use helmet.contentSecurityPolicy(), and configure it setting the defaultSrc directive to [\"self\"] (the list of allowed sources must be in an array), in order to trust only your website address by default. Set also the scriptSrc directive so that you will allow scripts to be downloaded from your website, and from the domain 'trusted-cdn.com'.",
-        "Hint: in the \"'self'\" keyword, the single quotes are part of the keyword itself, so it needs to be enclosed in double quotes to be working."
+        "这个挑战重点讨论一种现代浏览器中有效并且能大幅度减轻安全风险和很多种类型常见攻击的安全防护。通过配置内容安全策略你可以防治很多类型的脚本恶意注入。这会让你的应用远离 XSS 风险，攻击, 恶意 frames, 和很多很多其他攻击. CSP 通过配置资源白名单来工作. 你可以给任何一种类型的页面资源 (脚本, 样式文件, 字体, frames, 媒体文件等等等）做这个配置， 它支持很多指令, 所以网站管理员可以做细致的控制. 更多详情请参考 HTML 5 Rocks, KeyCDN，不幸的是 老的浏览器不支持 CSP。",
+        "默认的指令很容易受到攻击, 所以设置 defaultSrc 指令作为降级方案很重要. Helmet 同时支持 defaultSrc 和 default-src 命名规范. 降级方案可以被应用在大部分指令上， 在这个练习中, 我们使用 helmet.contentSecurityPolicy(), 并配置 defaultSrc 指令为 [\"self\"] (允许的资源列表必须在一个数组当中), 如果想只信任你的网站域名。另外再配置 scriptSrc 指令这样你就可以限制脚本只能在你的网站域名上下载, 或者你信任的域名 'trusted-cdn.com'.",
+        "提示: 在 \"'self'\" 关键词, 单引号也是关键词的一部分, 所以你应该用双引号来包起它才能正常工作."
       ],
       "tests": [
         {
-          "text": "helmet.csp() middleware should be mounted correctly",
+          "text": "helmet.csp() 中间件应该被正确加载",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'csp'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "Your csp config is not correct. defaultSrc should be [\"'self'\"] and scriptSrc should be [\"'self'\", 'trusted-cdn.com']",
+          "text": "你的 csp 配置不正确. defaultSrc 应该是 [\"'self'\"] 并且scriptSrc 应该是 [\"'self'\", 'trusted-cdn.com']",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { var cspHeader = Object.keys(data.headers).filter(function(k){ return k === 'content-security-policy' || k === 'x-webkit-csp' || k === 'x-content-security-policy' })[0]; assert.equal(data.headers[cspHeader], \"default-src 'self'; script-src 'self' trusted-cdn.com\"); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
@@ -210,7 +210,7 @@
       "title": "Configure Helmet Using the ‘parent’ helmet() Middleware",
       "description": [
         "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。",
-        "app.use(helmet()) will automatically include all the middleware introduced above, except noCache(), and contentSecurityPolicy(), but these can be enabled if necessary. You can also disable or configure any other middleware individually, using a configuration object.",
+        "app.use(helmet()) 会自动加载 noCache() 和 contentSecurityPolicy() 外上面所有提到的中间件，但有需要的话这两个中间件也被启用。你也可以使用配置对象来一个个地禁用或者配置中间件。",
         "// Example",
         "<code>app.use(helmet({</code>",
         "<code>  frameguard: {         // configure</code>",
@@ -224,7 +224,7 @@
         "<code>  },</code>",
         "<code> dnsPrefetchControl: false     // disable</code>",
         "<code>}))</code>",
-        "We introduced each middleware separately for teaching purpose, and for ease of testing. Using the ‘parent’ helmet() middleware is easiest, and cleaner, for a real project."
+        "为了教学和方便测试我们是一个个地讲解中间件，但通过使用 ‘parent’ helmet() 是最清晰和简洁的，特别是在真实的项目中。"
       ],
       "tests": [
         {
@@ -241,19 +241,19 @@
       "id": "58a25bcef9fc0f352b528e7c",
       "title": "Understand BCrypt Hashes",
       "description": [
-        "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'>GitHub</a>.",
-        "BCrypt hashes are very secure. A hash is basically a fingerprint of the original data- always unique. This is accomplished by feeding the original data into a algorithm and having returned a fixed length result. To further complicate this process and make it more secure, you can also <em>salt</em> your hash. Salting your hash involves adding random data to the original data before the hashing process which makes it even harder to crack the hash.",
-        "BCrypt hashes will always looks like <code>$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code> which does have a structure. The first small bit of data <code>$2a</code> is defining what kind of hash algorithm was used. The next portion <code>$13</code> defines the <em>cost</em>. Cost is about how much power it takes to compute the hash. It is on a logarithmic scale of 2^cost and determines how many times the data is put through the hashing algorithm. For example, at a cost of 10 you are able to hash 10 passwords a second on an average computer, however at a cost of 15 it takes 3 seconds per hash... and to take it further, at a cost of 31 it would takes multiple days to complete a hash. A cost of 12 is considered very secure at this time. The last portion of your hash <code>$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code>, looks like 1 large string of numbers, periods, and letters but it is actually 2 separate pieces of information. The first 22 characters is the salt in plain text, and the rest is the hashed password!",
-        "<hr>To begin using BCrypt, add it as a dependency in your project and require it as 'bcrypt' in your server.",
-        "Submit your page when you think you've got it right."
+        "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'> GitHub </a>上克隆。",
+        "BCrypt 哈希非常安全. 哈希其实就是原数据的加密形式，非常安全，这通过把原始数据放进哈希算法然后返回固定长度的字符串实现。为了让这个过程更复杂跟安全，你还可以加你的哈希添加 <em>盐</em>。加盐其实就是给在哈希算法工作前给源数据添加随机的字符串数据，这会让破解哈希更加复杂",
+        "BCrypt 看起来像这样子 <code>$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code>，它遵循固定的结构. 前面一小节 <code>$2a</code> 说明了该哈希采用什么算法。下一部分 <code>$13</code> 定义了 <em>代价</em>. 代价就是用多少计算资源来生成哈希。 它的对数刻度是 2^cost 它决定了数据被放入哈希算法多少次。举个例子，如果代价为10也就是说你能够在一个普通的计算机上每秒钟哈希10个密码。然而，如果代价为15，那每个哈希都要3秒钟，再举例子，如果代价是31at a cost of 31，那每次哈希能耗费好几天。通常代价为12就已经足够安全。哈希的最后一部分 <code>$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code>, 看起来像随机字符，句号，字母组成的随机字符串。但实际上它有两部分内容。前面22个字符就是纯文本的盐，剩下的就是加密过的密码！",
+        "<hr>要开始使用 BCrypt, 只需添加到你的依赖列表，然后在你的服务器引入 'bcrypt'",
+        "提交页面当你觉得已经完成的时候。"
       ],
       "tests": [
         {
-          "text": "BCyrpt is a dependency",
+          "text": "BCyrpt 已被添加到依赖列表",
           "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'bcrypt', 'Your project should list \"bcrypt\" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })"
         },
         {
-          "text": "BCrypt has been properly required",
+          "text": "BCrypt 已经被正确引入",
           "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /bcrypt.*=.*require.*('|\")bcrypt('|\")/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })"
         }
       ],
@@ -266,16 +266,16 @@
       "id": "58a25bcff9fc0f352b528e7d",
       "title": "Hash and Compare Passwords Asynchronously",
       "description": [
-        "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'>GitHub</a>.",
-        "As hashing is designed to be computationally intensive, it is recommended to do so asyncronously on your server as to avoid blocking incoming connections while you hash. All you have to do to hash a password asynchronous is call <code>bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => { /*Store hash in your db*/ });</code>",
-        "<hr>Add this hashing function to your server(we've already defined the variables used in the function for you to use) and log it to the console for you to see! At this point you would normally save the hash to your database.",
-        "Now when you need to figure out if a new input is the same data as the hash you would just use the compare function <code>bcrypt.compare(myPlaintextPassword, hash, (err, res) => { /*res == true or false*/ });</code>. Add this into your existing hash function(since you need to wait for the hash to complete before calling the compare function) after you log the completed hash and log 'res' to the console within the compare. You should see in the console a hash then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword' then it should say false.",
+        "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'> GitHub </a>上克隆。",
+        "哈希会占用很大计算机资源并且会耗费比较多时间，比较推荐的做法是用异步的方法用调用哈希算法这样就不会阻挡其他的访问了。异步调用哈希方法非常简单，只需要 <code>bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => { /*Store hash in your db*/ });</code>",
+        "<hr>把这段哈希方法添加到你的服务器(我们已经定义好这个方法的变量给你直接使用了) 然后输入到控制台! 完成之后你通常需要把哈希过的值保存到数据库。",
+        "当你需要对比用户输入的值是否和之前哈希过的值一样的时候，你只需要调用对比函数 <code>bcrypt.compare(myPlaintextPassword, hash, (err, res) => { /*res == true or false*/ });</code>. 把这个添加到你已有的哈希方法(你需要等哈希完成之后才能调用对比方法) 在你输入哈希过的值之后在对比方法里面输入 'res' 到控制台. 你会看到一个哈希值和 ``true`` 被打印出来。如果你在对比方法里面把 'myPlaintextPassword' 改变成 'someOtherPlaintextPassword' 那么应该会输出 ``false``",
         "<pre>bcrypt.hash('passw0rd!', 13, (err, hash) => {\n  console.log(hash); //$2a$12$Y.PHPE15wR25qrrtgGkiYe2sXo98cjuMCG1YwSI5rJW1DSJp0gEYS\n  bcrypt.compare('passw0rd!', hash, (err, res) => {\n      console.log(res); //true\n  });\n});</pre>",
-        "Submit your page when you think you've got it right."
+        "提交页面当你觉得已经完成的时候。"
       ],
       "tests": [
         {
-          "text": "Async hash generated and correctly compared",
+          "text": "异步生成哈希并正确地对比",
           "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /START_ASYNC[^]*bcrypt.hash.*myPlaintextPassword( |),( |)saltRounds( |),( |).*err( |),( |)hash[^]*END_ASYNC/gi, 'You should call bcrypt.hash on myPlaintextPassword and saltRounds and handle err and hash as a result in the callback'); assert.match(data, /START_ASYNC[^]*bcrypt.hash[^]*bcrypt.compare.*myPlaintextPassword( |),( |)hash( |),( |).*err( |),( |)res[^]*}[^]*}[^]*END_ASYNC/gi, 'Nested within the hash function should be the compare function comparing myPlaintextPassword to hash'); }, xhr => { throw new Error(xhr.statusText); })"
         }
       ],
@@ -288,15 +288,15 @@
       "id": "58a25bcff9fc0f352b528e7e",
       "title": "Hash and Compare Passwords Synchronously",
       "description": [
-        "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'>GitHub</a>.",
-        "Hashing synchronously is just as easy to do but can cause lag if using it server side with a high cost or with hashing done very often. Hashing with this method is as easy as calling <code>var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);</code>",
-        "<hr>Add this method of hashing to your code and then log the result to the console. Again, the variables used are already defined in the server so you wont need to adjust them. You may notice even though you are hashing the same password as in the async function, the result in the console is different- this is due to the salt being randomly generated each time as seen by the first 22 characters in the third string of the hash.",
-        "Now to compare a password input with the new sync hash, you would use the compareSync method: <code>var result = bcrypt.compareSync(myPlaintextPassword, hash);</code> with the result being a boolean true or false. Add this function in and log to the console the result to see it working.",
-        "Submit your page when you think you've got it right. If you ran into errors during these challenges you can take a look at the example completed code <a href='https://gist.github.com/JosephLivengood/9a2698fb63e42d9d8b4b84235c08b4c4'>here</a>."
+        "温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'> GitHub </a>上克隆。",
+        "同步哈希也是非常简单的，但是会造成延迟特别是在哈希计算量大并且次数多的情况下。同步进行哈希是通过调用 <code>var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);</code>",
+        "<hr>把同步哈希添加到你的代码并输入到控制台，和之前一样，需要用到的变量已经提前定义好，你不需要做任何改动。你可能已经注意到，即使你是用异步的方式哈希同一个密码，结果也是不一样的。这是因为每次哈希的盐都是随机生成的，你可以通过第三个哈希字符串的头22的字符来验证。",
+        "当你需要对比用户输入的值, 你只需要使用 compareSync 方法: <code>var result = bcrypt.compareSync(myPlaintextPassword, hash);</code> 返回的结果为 ``true`` 或者 ``false``。添加这个方法并输出把控制台来验证同步哈希已经成功了。",
+        "提交页面当你觉得已经完成的时候。如果你遇到任何错误，你可以参考这个<a href='https://gist.github.com/JosephLivengood/9a2698fb63e42d9d8b4b84235c08b4c4'>链接</a>中已经完成的代码。"
       ],
       "tests": [
         {
-          "text": "Sync hash generated and correctly compared",
+          "text": "同步生成哈希并正确地对比",
           "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /START_SYNC[^]*hash.*=.*bcrypt.hashSync.*myPlaintextPassword( |),( |)saltRounds[^]*END_SYNC/gi, 'You should call bcrypt.hashSync on myPlaintextPassword with saltRounds'); assert.match(data, /START_SYNC[^]*result.*=.*bcrypt.compareSync.*myPlaintextPassword( |),( |)hash[^]*END_SYNC/gi, 'You should call bcrypt.compareSync on myPlaintextPassword with the hash generated in the last line'); }, xhr => { throw new Error(xhr.statusText); })"
         }
       ],

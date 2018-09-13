@@ -130,7 +130,7 @@
       ],
       "tests": [
         {
-          "text": "Root level logger middleware should be active",
+          "text": "根级记录器中间件应该被激活",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/root-middleware-logger').then(data => { assert.isTrue(data.passed, '根级日志记录器未按照预期执行'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
@@ -142,21 +142,21 @@
       "id": "587d7fb1367417b2b2512bf4",
       "title": "Chain Middleware to Create a Time Server",
       "description": [
-        "Middleware can be mounted at a specific route using<code>app.METHOD(path, middlewareFunction)</code>. Middleware can also be chained inside route definition.",
-        "Look at the following example:",
+        "使用<code>app.METHOD(path, middlewareFunction)</code>可以将中间件挂载到指定的路由。中间件也可以在路由定义中链接。",
+        "请看以下示例：",
         "<blockquote>app.get('/user', function(req, res, next) {<br>  req.user = getTheUserSync();  // Hypothetical synchronous operation<br>  next();<br>}, function(req, res) {<br>  res.send(req.user);<br>})</blockquote>",
-        "This approach is useful to split the server operations into smaller units. That leads a to a better app structure, and the possibility to reuse code in different places. This approach can also be used to perform some validation on the data. At each point of the middleware stack you can block the execution of the current chain and pass control to functions specifically designed to handle errors. Or you can pass control to the next matching route, to handle special cases. We will see how in the advanced Express section.",
-        "In the route<code>app.get('/now', ...)</code>chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the<code>req.time</code>key. You can use<code>new Date().toString()</code>. In the handler, respond with a JSON object, taking the structure<code>{time: req.time}</code>.",
-        "Hint: The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct."
+        "此方法可用于将服务操作拆分为较小的单元。这样可以让应用拥有更好的结构，以便于在不同的位置上复用代码。此方法还可用于对数据执行某些验证。在每一个中间件堆栈中，你都可以阻止当前链的执行，并将控制权传递给专门设计用于处理错误的函数。或者你可以将控制权传递给下一个匹配的路径，以处理特殊情况。我们将在高级 Express 章节中看到。",
+        "在路由<code>app.get('/now', ...)</code>链中，在中间件函数中，你应该在<code>req.time</code>里将当前时间添加到请求对象中。你可以使用<code>new Date().toString()</code>。在处理函数中，使用<code>{time: req.time}</code>结构的 JSON 对象来响应。",
+        "提示: 如果不链接中间件，测试将不能通过。如果将中间件函数挂载在其他地方，即使输出结果正确，测试也会失败。"
       ],
       "tests": [
         {
-          "text": "The /now endpoint should have mounted middleware",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { assert.equal(data.stackLength, 2, '\"/now\" route has no mounted middleware'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "路由 /now 应该已经挂载了中间件",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { assert.equal(data.stackLength, 2, '路由 \"/now\" 没挂载中间件'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "The /now endpoint should return a time that is +/- 20 secs from now",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { var now = new Date(); assert.isAtMost(Math.abs(new Date(data.time) - now), 20000, 'the returned time is not between +- 20 secs from now'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "路由 /now 应该返回一个从现在开始 +/-20 秒的时间",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { var now = new Date(); assert.isAtMost(Math.abs(new Date(data.time) - now), 20000, '返回时间不在现在 的 +/-20 秒之间'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -167,18 +167,18 @@
       "id": "587d7fb2367417b2b2512bf5",
       "title": "Get Route Parameter Input from the Client",
       "description": [
-        "When building an API, we have to allow users to comunicate us what they want to get from our service. For example, if the client is requesting information about a user stored in the database, they need a way to let us know which user they're interested in. One possible way to achieve this result is using route parameters. Route parameters are named segments of the URL, delimited by slashes (/). Each segment captures the value of the part of the URL which matches its position. The captured values can be found in the<code>req.params</code>object.",
+        "在构建 API 时，我们要让用户告诉我们他们想从服务中获取什么。举个例子，如果客户请求数据库中存储的用户信息，他们需要一种方法让我们知道他们对哪个用户感兴趣。实现这个需求的的方式就是使用路由参数。路由参数是由斜杠 (/) 分隔的 URL 命名段。每一小段能捕获与其位置匹配的 URL 部分的值。捕获的值能够在<code>req.params</code>对象中找到。",
         "<blockquote>route_path: '/user/:userId/book/:bookId'<br>actual_request_URL: '/user/546/book/6754' <br>req.params: {userId: '546', bookId: '6754'}</blockquote>",
-        "Build an echo server, mounted at the route<code>GET /:word/echo</code>. Respond with a JSON object, taking the structure<code>{echo: word}</code>. You can find the word to be repeated at<code>req.params.word</code>. You can test your route from your browser's address bar, visiting some matching routes, e.g. your-app-rootpath/freecodecamp/echo"
+        "在路由中<code>GET /:word/echo</code>构建一个 echo 服务，响应一个采用<code>{echo: word}</code>结构的 JSON 对象。你可以在<code>req.params.word</code>中找到要重复的单词。你可以在浏览器的地址栏测试你的路由，访问一些匹配的路由，比如：your-app-rootpath/freecodecamp/echo"
       ],
       "tests": [
         {
-          "text": "Test 1 : Your echo server should repeat words correctly",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/eChOtEsT/echo').then(data => { assert.equal(data.echo, 'eChOtEsT', 'Test 1: the echo server is not working as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "测试 1：你的 echo 服务应该正确地重复单词",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/eChOtEsT/echo').then(data => { assert.equal(data.echo, 'eChOtEsT', '测试 1：echo 没有按预期正常执行') }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "Test 2 : Your echo server should repeat words correctly",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/ech0-t3st/echo').then(data => { assert.equal(data.echo, 'ech0-t3st', 'Test 2: the echo server is not working as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "测试 2：你的 echo 服务应该正确地重复单词",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/ech0-t3st/echo').then(data => { assert.equal(data.echo, 'ech0-t3st', '测试 2：echo 没有按预期正常执行') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -189,19 +189,19 @@
       "id": "587d7fb2367417b2b2512bf6",
       "title": "Get Query Parameter Input from the Client",
       "description": [
-        "Another common way to get input from the client is by encoding the data after the route path, using a query string. The query string is delimited by a question mark (?), and includes field=value couples. Each couple is separated by an ampersand (&). Express can parse the data from the query string, and populate the object<code>req.query</code>. Some characters cannot be in URLs, they have to be encoded in a <a href='https://en.wikipedia.org/wiki/Percent-encoding' target='_blank'>different format</a> before you can send them. If you use the API from JavaScript, you can use specific methods to encode/decode these characters.",
+        "从客户端获取输入的另一种常见方式是使用查询字符串对路由路径中的数据进行编码。查询字符串使用标记 (?) 分隔，并且包含一对<code>field=value</code>。每一对键值使用符号 (&) 分隔。Express 能够从查询字符串中分析这些数据，并且把它放到<code>req.query</code>对象中。有些字符不能在出现在 URL 中，它们在发送前必须以<a href='https://en.wikipedia.org/wiki/Percent-encoding' target='_blank'>不同的格式</a>进行编码。如果你使用来自 JavaScript 的 API，你可以使用特定的方法来编码/解码这些字符。",
         "<blockquote>route_path: '/library'<br>actual_request_URL: '/library?userId=546&bookId=6754' <br>req.query: {userId: '546', bookId: '6754'}</blockquote>",
-        "Build an API endpoint, mounted at<code>GET /name</code>. Respond with a JSON document, taking the structure<code>{ name: 'firstname lastname'}</code>. The first and last name parameters should be encoded in a query string e.g.<code>?first=firstname&last=lastname</code>.",
-        "TIP: In the following exercise we are going to receive data from a POST request, at the same<code>/name</code>route path. If you want you can use the method<code>app.route(path).get(handler).post(handler)</code>. This syntax allows you to chain different verb handlers on the same path route. You can save a bit of typing, and have cleaner code."
+        "构建一个 API ，使用路由挂载<code>GET /name</code>。使用一个 JSON 文件来响应，它的结构是这样的：<code>{ name: 'firstname lastname'}</code>。名字和姓氏参数应该编码在查询参数中，举个例子：<code>?first=firstname&last=lastname</code>.",
+        "提示: 在下面的练习中，我们将从相同的<code>/name</code>路由路径中 POST 请求接收数据。如果你愿意，你可以使用<code>app.route(path).get(handler).post(handler)</code>这中写法，此语法允许你在同一路径路由上链接不同的 HTTP 动词处理函数。可以节省一点打字时间，并且可以让代码看起来更清晰。"
       ],
       "tests": [
         {
-          "text": "Test 1 : Your API endpoint should respond with the correct name",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/name?first=Mick&last=Jagger').then(data => { assert.equal(data.name, 'Mick Jagger', 'Test 1: \"GET /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "测试 1：你的 API 应该使用正确的名称来响应",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/name?first=Mick&last=Jagger').then(data => { assert.equal(data.name, 'Mick Jagger', '测试 1：\"GET /name\" 路由的行为不符合预期') }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "Test 2 : Your APi endpoint should respond with the correct name",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/name?last=Richards&first=Keith').then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"GET /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "测试 2：你的 API 应该使用正确的名称来响应",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/name?last=Richards&first=Keith').then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2：\"GET /name\" 路由的行为不符合预期') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -212,19 +212,19 @@
       "id": "587d7fb2367417b2b2512bf7",
       "title": "Use body-parser to Parse POST Requests",
       "description": [
-        "Besides GET there is another common http verb, it is POST. POST is the default method used to send client data with HTML forms. In the REST convention POST is used to send data to create new items in the database (a new user, or a new blog post). We don’t have a database in this project, but we are going to learn how to handle POST requests anyway.",
-        "In these kind of requests the data doesn’t appear in the URL, it is hidden in the request body. This is a part of the HTML request, also called payload. Since HTML is text based, even if you don’t see the data, it doesn’t mean that they are secret. The raw content of an HTTP POST request is shown below:",
+        "除了 GET 还有另一个常见的 http 动词，它是 POST。POST 是使用 HTML 表单发送客户端数据的默认方法。在 REST 规范中，POST 常用于发送数据，以便在数据库中创建新项目（新用户或新博客文章）。我们在这个项目中没有使用数据库，我们将学习如何处理 POST 请求。",
+        "在这些类型的请求中，数据不会出现在 URL 中，而是隐藏在请求正文中。这也是 HTML 请求的一部分，被称为负载。因为 HTML 是基于文本的，你看不到数据，这并不意味着它们是加密的。HTTP POST 请求的原始内容如下所示：",
         "<blockquote>POST /path/subpath HTTP/1.0<br>From: john@example.com<br>User-Agent: someBrowser/1.0<br>Content-Type: application/x-www-form-urlencoded<br>Content-Length: 20<br>name=John+Doe&age=25</blockquote>",
-        "As you can see the body is encoded like the query string. This is the default format used by HTML forms. With Ajax we can also use JSON to be able to handle data having a more complex structure. There is also another type of encoding: multipart/form-data. This one is used to upload binary files.",
-        "In this exercise we will use an urlencoded body.",
-        "To parse the data coming from POST requests, you have to install a package: the body-parser. This package allows you to use a series of middleware, which can decode data in different formats. See the docs <a href=\"https://github.com/expressjs/body-parser\" target=\"_blank\" >here</a>.",
-        "Install the body-parser module in your package.json. Then require it at the top of the file. Store it in a variable named bodyParser.",
-        "The middleware to handle url encoded data is returned by<code>bodyParser.urlencoded({extended: false})</code>.<code>extended=false</code>is a configuration option that tells the parser to use the classic encoding. When using it, values can be only strings or arrays. The extended version allows more data flexibility, but it is outmatched by JSON. Pass to<code>app.use()</code>the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it."
+        "正如你所看到的，正文被编码成了查询字符串。这是 HTML 表单使用的默认格式。使用 Ajax，我们还可以使用 JSON 来处理具有更复杂结构的数据。还有另一种类型的编码：multipart/form-data。它用来上传二进制文件。",
+        "在本练习中，我们将使用网址编码 body。",
+        "要解析来自 POST 请求的数据，你必须安装一个包：body-parser。这个包允许你使用一套可以解码不同格式数据的中间件，在<a href=\"https://github.com/expressjs/body-parser\" target=\"_blank\" >这里</a>查看文档。",
+        "在 package.json 中安装 body-parser 模块，然后在文件顶部 require 进来，用变量 bodyParser 保存它。",
+        "处理 URL 编码数据通过中间件的<code>bodyParser.urlencoded({extended: false})</code>方法。<code>extended=false</code>是一个配置选项，告诉解析器使用经典编码。当你使用它时，值只能是字符串或者数组。继承版使用起来数据更加灵活，它比 JSON 更好。传递给<code>app.use()</code>上一次方法调用返回的函数。通常中间件必须挂载在所有需要它的路由之前。"
       ],
       "tests": [
         {
-          "text": "The 'body-parser' middleware should be mounted",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/add-body-parser').then(data => { assert.isAbove(data.mountedAt, 0, '\"body-parser\" is not mounted correctly') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "'body-parser' 中间件应该被挂载",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/add-body-parser').then(data => { assert.isAbove(data.mountedAt, 0, '\"body-parser\" 没有正确挂载') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -235,24 +235,24 @@
       "id": "587d7fb2367417b2b2512bf8",
       "title": "Get Data from POST Requests",
       "description": [
-        "Mount a POST handler at the path<code>/name</code>. It’s the same path as before. We have prepared a form in the html frontpage. It will submit the same data of exercise 10 (Query string). If the body-parser is configured correctly, you should find the parameters in the object<code>req.body</code>. Have a look at the usual library example:",
+        "在路径<code>/name</code>处挂载一个 POST 处理方法。和前面一样。我们已经在 html 首页准备了一份表格。它将提交与练习 10 相同的数据（查询字符串）。如果 body-parser 正确配置好了，你就可以在<code>req.body</code>对象中找到请求的参数。来看看一个常规的请求 /library 例子：",
         "<blockquote>route: POST '/library'<br>urlencoded_body: userId=546&bookId=6754 <br>req.body: {userId: '546', bookId: '6754'}</blockquote>",
-        "Respond with the same JSON object as before:<code>{name: 'firstname lastname'}</code>. Test if your endpoint works using the html form we provided in the app frontpage.",
-        "Tip: There are several other http methods other than GET and POST. And by convention there is a correspondence between the http verb, and the operation you are going to execute on the server. The conventional mapping is:",
-        "POST (sometimes PUT) - Create a new resource using the information sent with the request,",
-        "GET - Read an existing resource without modifying it,",
-        "PUT or PATCH (sometimes POST) - Update a resource using the data sent,",
-        "DELETE => Delete a resource.",
-        "There are also a couple of other methods which are used to negotiate a connection with the server. Except from GET, all the other methods listed above can have a payload (i.e. the data into the request body). The body-parser middleware works with these methods as well."
+        "和前面一样响应一个 JSON 对象<code>{name: 'firstname lastname'}</code>。你可以使用首页应用提供的 html 表单，来测试你的 API 是否正常工作。",
+        "提示: 除了 GET 和 POST，还有其他几种 http 方法。按照惯例，http 动词之间有对应关系，它们分别对应你在服务端执行的某种操作，传统的对应关系：",
+        "POST (有时候是 PUT) - 使用请求发送信息，以创建新资源，",
+        "GET - 读取已存在的资源，不用修改它，",
+        "PUT 或者 PATCH (有时候是 POST) - 发送数据，以更新资源，",
+        "DELETE => 删除一个资源。",
+        "还有一些其他方法，常用于与服务进行交互。除了 GET 之外，上面列出的所有方法都可以负载数据（换言之，数据都能在请求体中找到）。也可以使用 body-parser 来正常工作。"
       ],
       "tests": [
         {
-          "text": "Test 1 : Your API endpoint should respond with the correct name",
-          "testString": "getUserInput => $.post(getUserInput('url') + '/name', {first: 'Mick', last: 'Jagger'}).then(data => { assert.equal(data.name, 'Mick Jagger', 'Test 1: \"POST /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "测试 1：你的 API 应该使用正确的名称来响应",
+          "testString": "getUserInput => $.post(getUserInput('url') + '/name', {first: 'Mick', last: 'Jagger'}).then(data => { assert.equal(data.name, 'Mick Jagger', '测试 1： \"POST /name\" 路由的行为不符合预期') }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "Test 2 : Your API endpoint should respond with the correct name",
-          "testString": "getUserInput => $.post(getUserInput('url') + '/name', {first: 'Keith', last: 'Richards'}).then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"POST /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "测试 2：你的 API 应该使用正确的名称来响应",
+          "testString": "getUserInput => $.post(getUserInput('url') + '/name', {first: 'Keith', last: 'Richards'}).then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"POST /name\" 路由的行为不符合预期') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
