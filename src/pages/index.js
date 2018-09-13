@@ -34,7 +34,7 @@ const IndexPage = ({
   }
 }) => (
   <div className='index-page-wrapper'>
-    <Helmet title='FCC 中文社区' />
+    <Helmet title='freeCodecamp 中文社区' />
     <Spacer />
     <Spacer />
     <h2>欢迎来到 freeCodeCamp 2018年新版课程</h2>
