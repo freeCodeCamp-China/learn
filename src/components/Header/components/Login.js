@@ -7,7 +7,7 @@ function Login() {
     <Button
       bsStyle='default'
       className='btn-cta'
-      href={'https://www.freecodecamp.org/account-login'}
+      href={'https://www.freecodecamp.one/account-login'}
       target='_blank'
       >
       登录

@@ -11,7 +11,7 @@ function Header() {
   return (
     <header>
       <nav id='top-nav'>
-        <a className='home-link' href='https://learn.freecodecamp.one'>
+        <a className='home-link' href='/'>
           <NavLogo />
         </a>
         <ul id='top-right-nav'>
@@ -19,9 +19,7 @@ function Header() {
             <Link to='/'>课程</Link>
           </li>
           <li>
-            <a href='https://forum.freecodecamp.org' target='_blank'>
-              论坛
-            </a>
+            <a href='https://forum.freecodecamp.org' target='_blank'>论坛</a>
           </li>
           <li>
             <UserState />

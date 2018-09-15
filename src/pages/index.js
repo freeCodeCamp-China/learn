@@ -37,16 +37,17 @@ const IndexPage = ({
     <Helmet title='freeCodecamp 中文社区' />
     <Spacer />
     <Spacer />
-    <h2>欢迎来到 freeCodeCamp 2018年新版课程</h2>
+    <h2>欢迎体验 freeCodeCamp 2018年新版课程</h2>
     <p>我们准备了成千上万的编程挑战来帮助提升你的编程技能。</p>
-    <p>每当独立完成5个终极项目，你就可以获得一个免费证书。</p>
+    <p>每当独立完成 5 个终极项目，你就可以获得一个免费证书。</p>
     <p>是的，你没看错，所有的课程都是免费的。</p>
-    <p>这一切要感谢成千上万的学员{' '}
-      <a href='https://donate.freecodecamp.org' target='_blank'>
-        捐款
+    <p>这一切都要感谢这 40 名{' '}
+      <a href='https://www.freecodecamp.one/volunteer' target='_blank'>
+        志愿者
       </a>{' '}
-      给我们。
+      。
     </p>
+    <p>大家花了两个月时间才有了今天的中文课程。</p>
     <p>
       如果你是编程新手，我们推荐你{' '}
       <Link to={slug}>从头开始</Link>。
