@@ -19,7 +19,7 @@ function Header() {
             <Link to='/'>课程</Link>
           </li>
           <li>
-            <a href='https://forum.freecodecamp.org' target='_blank'>论坛</a>
+            <a href='https://forum.freecodecamp.one' target='_blank'>论坛</a>
           </li>
           <li>
             <UserState />
