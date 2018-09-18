@@ -77,7 +77,7 @@
         "在 CSS 中，有上百种<code>属性</code>可以让你改变页面样式。",
         "通过<code>行内样式</code>：<code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>，就可以修改<code>h2</code>元素的颜色。",
         "<code>行内样式</code>只是改变元素单一样式的一种最直接的方法，当我们需要同时改变元素的很多样式时，<code>层叠样式表</code>往往是一个更不错的选择。",
-        "在代编码的顶部，创建一个<code>style</code>声明区域，如下方所示：",
+        "在代码的顶部，创建一个<code>style</code>声明区域，如下方所示：",
         "<blockquote>&#60;style&#62;<br>&#60;/style&#62;</blockquote>",
         "在<code>style</code>样式声明区域内，可以创建一个<code>元素选择器</code>，应用于所有的<code>h2</code>元素。例如，如果你想所有<code>h2</code>元素变成红色，可以添加下方的样式规则：",
         "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;h2 {color: red;}<br>&#60;/style&#62;</blockquote>",
@@ -435,7 +435,7 @@
         "除了大多数系统提供的默认字体以外，我们也可以使用自定义字体。网络上有各种各样的字体，不过在这个例子中，我们将会尝试使用<code>Google</code>字体库。",
         "<a href='https://fonts.google.com/' target='_blank'>Google 字体</a>是一个免费的字体库，可以通过在 CSS 里面设置字体的 URL 来引用。",
         "因此，下一步，我们将引入和使用<code>Google</code>字体。",
-        "引入<code>Google</code>字体，你需要复制<code>Google</code>字体的 URL，并粘贴到你的 HTML 里面。在这个挑战中，我们需要引入<code>Lobster</code>字体。因此，请复制以下代编码段，并粘贴到代编码编辑器顶部，即放到<code>style</code>标签之前。",
+        "引入<code>Google</code>字体，你需要复制<code>Google</code>字体的 URL，并粘贴到你的 HTML 里面。在这个挑战中，我们需要引入<code>Lobster</code>字体。因此，请复制以下代码段，并粘贴到代码编辑器顶部，即放到<code>style</code>标签之前。",
         "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "现在你可以设置<code>font-family</code>属性为<code>Lobster</code>，来使用<code>Lobster</code>字体。例子如下：<br><code>font-family: FAMILY_NAME, GENERIC_NAME;</code>.",
         "<code>GENERIC_NAME</code>是可选的，其他字体不可用时便作为后备字体，在下一个挑战中可以得到体现。",
@@ -1681,7 +1681,7 @@
       "title": "Use Clockwise Notation to Specify the Margin of an Element",
       "description": [
         "让我们再试一次，不过这一次轮到<code>margin</code>了。",
-        "同样，每个方向的外边距值可以在<code>margin</code>属性里面汇总声明，来代替分别声明<code>margin-top</code>，<code>margin-right</code>，<code>margin-bottom</code>和<code>margin-left</code>属性的方式，代编码如下：",
+        "同样，每个方向的外边距值可以在<code>margin</code>属性里面汇总声明，来代替分别声明<code>margin-top</code>，<code>margin-right</code>，<code>margin-bottom</code>和<code>margin-left</code>属性的方式，代码如下：",
         "<code>margin: 10px 20px 10px 20px;</code>",
         "这四个值按顺时针排序：上，右，下，左，并且设置的效果等同于特定声明每一个方向的<code>margin</code>。",
         "<hr>",
@@ -1759,7 +1759,7 @@
       "description": [
         "你已经通过设置元素的<code>id</code>和<code>class</code>，来显示你想要的样式，而它们也被分别叫做 ID 选择器和 Class 选择器。另外，也还有其他的 CSS 选择器，可以让我们给特定的元素设置样式。",
         "让我们再次通过猫咪图片项目来练习 CSS 选择器。",
-        "在这个挑战里，你会使用<code>[attr=value]</code>属性选择器修改复选框的样式。这个选择器使用特定的属性值来匹配和设置元素样式。例如，下面的代编码会改变所有<code>type</code>为<code>radio</code>的元素的外边距。",
+        "在这个挑战里，你会使用<code>[attr=value]</code>属性选择器修改复选框的样式。这个选择器使用特定的属性值来匹配和设置元素样式。例如，下面的代码会改变所有<code>type</code>为<code>radio</code>的元素的外边距。",
         "<blockquote>[type='radio'] {<br>&nbsp;&nbsp;margin: 20px 0px 20px 0px;<br>}</blockquote>",
         "<hr>",
         "使用<code>type</code>属性选择器，尝试改变复选框的上外边距为 10px，下外边距为 15px。"
@@ -2460,7 +2460,7 @@
         "例如，红色的<code>#FF0000</code>十六进制编码可以缩写成<code>#F00</code>。在这种缩写形式里，三个数字分别代表着红（R），绿（G），蓝（B）颜色。",
         "这样，颜色的可能性减少到了大约 4000 种。且在浏览器里<code>#FF0000</code>和<code>#F00</code>完全是同一种颜色。",
         "<hr>",
-        "接下来，使用缩写的十六进制编码帮元素设置正确的颜色。",
+        "接下来，使用缩写的十六进制编码给元素设置正确的颜色。",
         "<table class='table table-striped'><tr><th>Color</th><th>Short Hex Code</th></tr><tr><td>Cyan</td><td><code>#0FF</code></td></tr><tr><td>Green</td><td><code>#0F0</code></td></tr><tr><td>Red</td><td><code>#F00</code></td></tr><tr><td>Fuchsia</td><td><code>#F0F</code></td></tr></table>"
       ],
       "tests": [
