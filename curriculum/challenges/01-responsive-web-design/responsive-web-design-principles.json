@@ -117,8 +117,8 @@
           "testString": "assert($('img').css('width') == '100px', '<code>img</code> 标签的 <code>width</code> 值应为 100px。');"
         },
         {
-          "text": "<code>img</code> 标签应含有 100px 的 <code>height</code>。",
-          "testString": "assert($('img').css('height') == '100px', '<code>img</code> 标签应含有 100px 的 <code>height</code>。');"
+          "text": "<code>img</code> 标签的 <code>height</code> 值应为 100px。",
+          "testString": "assert($('img').css('height') == '100px', '<code>img</code> 标签的 <code>height</code> 值应为 100px。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -150,7 +150,7 @@
         "四个不同的视窗单位分别是：",
         "<ul><li><code>vw</code>：如 <code>10vw</code> 的意思是视窗宽度的 10%。</li><li><code>vh：</code> 如 <code>3vh</code> 的意思是视窗高度的 3%。</li><li><code>vmin：</code> 如 <code>70vmin</code> 的意思是视窗中较小尺寸的 70% (高度 VS 宽度)。</li><li><code>vmax：</code> 如 <code>100vmax</code> 的意思是视窗中较大尺寸的 100% (高度 VS 宽度)。</li></ul>",
         "<hr>",
-        "设置 <code>h2</code> 标签 <code>width</code> 为视窗宽度的 80%，并且段落 <code>width</code> 为视窗高度和宽度中较小值的 70%。"
+        "设置 <code>h2</code> 标签的 <code>width</code> 为视窗宽度的 80%，<code>p</code> 标签的 <code>width</code> 为视窗高度和宽度中较小值的 75%。"
       ],
       "tests": [
         {

@@ -1026,9 +1026,9 @@
       "description": [
         "之前我们写过这样的代码：",
         "<code>var myName = \"your name\";</code>",
-        "<code>\"your name\"</code>被称作<dfn>字符串字面量</dfn>。字符串是用单引号或双引号包裹起来的一连串的零个或多个字符。",
+        "<code>\"your name\"</code>被称作<dfn>字符串变量</dfn>。字符串是用单引号或双引号包裹起来的一连串的零个或多个字符。",
         "<hr>",
-        "创建两个新的<code>字符串</code>变量：<code>myFirstName</code>和<code>myLastName</code>分别为它们赋值为你的姓和名。"
+        "创建两个新的<code>字符串变量</code>：<code>myFirstName</code>和<code>myLastName</code>，并用你的姓和名分别为它们赋值。"
       ],
       "solutions": [
         "var myFirstName = \"Alan\";\nvar myLastName = \"Turing\";"
@@ -1072,11 +1072,11 @@
         "定义一个字符串必须要用单引号或双引号来包裹它。那么当你的字符串里面包含：<code>\"</code>或者<code>'</code>时该怎么办呢?",
         "在 JavaScript 中，你可以通过在引号前面使用<dfn>反斜杠</dfn>（<code>\\</code>）来转义引号。",
         "<code>var sampleStr = \"Alan said, \\\"Peter is learning JavaScript\\\".\";</code>",
-        "有了转义符号 JavaScript 就知道这个单引号或双引号并不是字符串的结尾，而是字符串内的字符。所以，上面的字符串打印到控制台的结果为：",
+        "有了转义符号，JavaScript 就知道这个单引号或双引号并不是字符串的结尾，而是字符串内的字符。所以，上面的字符串打印到控制台的结果为：",
         "<code>Alan said, \"Peter is learning JavaScript\".</code>",
         "<hr>",
         "使用<dfn>反斜杠</dfn>将一个字符串赋值给变量<code>myStr</code>，打印到控制台，输出为：",
-        "<code>I am a \"double quoted\" string inside \"double quotes\"</code>"
+        "<code>I am a \"double quoted\" string inside \"double quotes\".</code>"
       ],
       "releasedOn": "January 1, 2016",
       "solutions": [

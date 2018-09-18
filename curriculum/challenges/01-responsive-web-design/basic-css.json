@@ -77,7 +77,7 @@
         "在 CSS 中，有上百种<code>属性</code>可以让你改变页面样式。",
         "通过<code>行内样式</code>：<code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>，就可以修改<code>h2</code>元素的颜色。",
         "<code>行内样式</code>只是改变元素单一样式的一种最直接的方法，当我们需要同时改变元素的很多样式时，<code>层叠样式表</code>往往是一个更不错的选择。",
-        "在代码的顶部，创建一个<code>style</code>声明区域，如下方所示：",
+        "在代编码的顶部，创建一个<code>style</code>声明区域，如下方所示：",
         "<blockquote>&#60;style&#62;<br>&#60;/style&#62;</blockquote>",
         "在<code>style</code>样式声明区域内，可以创建一个<code>元素选择器</code>，应用于所有的<code>h2</code>元素。例如，如果你想所有<code>h2</code>元素变成红色，可以添加下方的样式规则：",
         "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;h2 {color: red;}<br>&#60;/style&#62;</blockquote>",
@@ -435,7 +435,7 @@
         "除了大多数系统提供的默认字体以外，我们也可以使用自定义字体。网络上有各种各样的字体，不过在这个例子中，我们将会尝试使用<code>Google</code>字体库。",
         "<a href='https://fonts.google.com/' target='_blank'>Google 字体</a>是一个免费的字体库，可以通过在 CSS 里面设置字体的 URL 来引用。",
         "因此，下一步，我们将引入和使用<code>Google</code>字体。",
-        "引入<code>Google</code>字体，你需要复制<code>Google</code>字体的 URL，并粘贴到你的 HTML 里面。在这个挑战中，我们需要引入<code>Lobster</code>字体。因此，请复制以下代码段，并粘贴到代码编辑器顶部，即放到<code>style</code>标签之前。",
+        "引入<code>Google</code>字体，你需要复制<code>Google</code>字体的 URL，并粘贴到你的 HTML 里面。在这个挑战中，我们需要引入<code>Lobster</code>字体。因此，请复制以下代编码段，并粘贴到代编码编辑器顶部，即放到<code>style</code>标签之前。",
         "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "现在你可以设置<code>font-family</code>属性为<code>Lobster</code>，来使用<code>Lobster</code>字体。例子如下：<br><code>font-family: FAMILY_NAME, GENERIC_NAME;</code>.",
         "<code>GENERIC_NAME</code>是可选的，其他字体不可用时便作为后备字体，在下一个挑战中可以得到体现。",
@@ -615,12 +615,12 @@
       ],
       "tests": [
         {
-          "text": "你的<code>img</code>元素应该含有<code>smaller-image</code>class。",
-          "testString": "assert($(\"img[src='https://bit.ly/fcc-relaxing-cat']\").attr('class') === \"smaller-image\", '你的<code>img</code>元素应该含有<code>smaller-image</code>class。');"
+          "text": "<code>img</code>元素应该含有<code>smaller-image</code> class。",
+          "testString": "assert($(\"img[src='https://ofa83l6ao.qnssl.com/relaxing-cat.jpg']\").attr('class') === \"smaller-image\", '<code>img</code>元素应该含有<code>smaller-image</code> class。');"
         },
         {
-          "text": "你的图片应为 100px（像素），且浏览器缩放应为 100%。",
-          "testString": "assert($(\"img\").width() === 100, '你的图片应为 100px（像素），且浏览器缩放应为 100%。');"
+          "text": "图片宽度应为 100px（像素），且浏览器缩放应为默认 100%。",
+          "testString": "assert($(\"img\").width() === 100, '你的图片应为 100px（像素），且浏览器缩放应为默认 100%。');"
         }
       ],
       "challengeType": 0,
@@ -1308,7 +1308,7 @@
       "id": "bad87fee1348bd9aedf08822",
       "title": "Adjust the Margin of an Element",
       "description": [
-        "<code>margin（外边距）</code>控制元素边框与其他元素之间的距离大小。",
+        "<code>margin（外边距）</code>控制元素的边框与其他元素之间的距离。",
         "在这里，我们可以看到蓝色盒子和红色盒子都在黄色盒子里。请注意，红色盒子的<code>margin</code>值要比蓝色盒子的大，让它看起来比蓝色盒子要小。",
         "当你增加蓝色的<code>margin</code>值，它会增加元素边框到其他周围元素的距离。",
         "<hr>",
@@ -1608,20 +1608,20 @@
       ],
       "tests": [
         {
-          "text": "<code>blue-box</code>class 的上内边距应为<code>40px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", '<code>blue-box</code>class 的上内边距应为<code>40px</code>。');"
+          "text": "<code>blue-box</code> class 的上内边距应为<code>40px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", '<code>blue-box</code> class 的上内边距应为<code>40px</code>。');"
         },
         {
-          "text": "<code>blue-box</code>class 的右内边距应为<code>20px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", '<code>blue-box</code>class 的右内边距应为<code>40px</code>。');"
+          "text": "<code>blue-box</code> class 的右内边距应为<code>20px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", '<code>blue-box</code> class 的右内边距应为<code>40px</code>。');"
         },
         {
-          "text": "<code>blue-box</code>class 的下内边距应为<code>20px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", '<code>blue-box</code>class 的下内边距应为<code>20px</code>。);"
+          "text": "<code>blue-box</code> class 的下内边距应为<code>20px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", '<code>blue-box</code> class 的下内边距应为<code>20px</code>。');"
         },
         {
-          "text": "<code>blue-box</code>class 的左内边距应为<code>20px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", '<code>blue-box</code>class 的左内边距应为<code>20px</code>。');"
+          "text": "<code>blue-box</code> class 的左内边距应为<code>20px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", '<code>blue-box</code> class 的左内边距应为<code>20px</code>。');"
         },
         {
           "text": "你应该按照顺时针排序，汇总声明的方式来设置<code>blue-box</code>的<code>padding</code>值。",
@@ -1681,7 +1681,7 @@
       "title": "Use Clockwise Notation to Specify the Margin of an Element",
       "description": [
         "让我们再试一次，不过这一次轮到<code>margin</code>了。",
-        "同样，每个方向的外边距值可以在<code>margin</code>属性里面汇总声明，来代替分别声明<code>margin-top</code>，<code>margin-right</code>，<code>margin-bottom</code>和<code>margin-left</code>属性的方式，代码如下：",
+        "同样，每个方向的外边距值可以在<code>margin</code>属性里面汇总声明，来代替分别声明<code>margin-top</code>，<code>margin-right</code>，<code>margin-bottom</code>和<code>margin-left</code>属性的方式，代编码如下：",
         "<code>margin: 10px 20px 10px 20px;</code>",
         "这四个值按顺时针排序：上，右，下，左，并且设置的效果等同于特定声明每一个方向的<code>margin</code>。",
         "<hr>",
@@ -1759,7 +1759,7 @@
       "description": [
         "你已经通过设置元素的<code>id</code>和<code>class</code>，来显示你想要的样式，而它们也被分别叫做 ID 选择器和 Class 选择器。另外，也还有其他的 CSS 选择器，可以让我们给特定的元素设置样式。",
         "让我们再次通过猫咪图片项目来练习 CSS 选择器。",
-        "在这个挑战里，你会使用<code>[attr=value]</code>属性选择器修改复选框的样式。这个选择器使用特定的属性值来匹配和设置元素样式。例如，下面的代码会改变所有<code>type</code>为<code>radio</code>的元素的外边距。",
+        "在这个挑战里，你会使用<code>[attr=value]</code>属性选择器修改复选框的样式。这个选择器使用特定的属性值来匹配和设置元素样式。例如，下面的代编码会改变所有<code>type</code>为<code>radio</code>的元素的外边距。",
         "<blockquote>[type='radio'] {<br>&nbsp;&nbsp;margin: 20px 0px 20px 0px;<br>}</blockquote>",
         "<hr>",
         "使用<code>type</code>属性选择器，尝试改变复选框的上外边距为 10px，下外边距为 15px。"
@@ -2133,14 +2133,14 @@
       "description": [
         "我们刚刚证明了浏览器读取 CSS 是由上到下的。这就意味着，如果发生冲突，浏览器将会应用最后声明的样式。",
         "不过我们还没结束，还有其他方法来覆盖 CSS 样式。你还记得 id 属性吗？",
-        "通过给<code>h1</code>元素设置 id，且声明 id 的字体颜色设置为<code>orange</code>，来覆盖<code>pink-text</code>和<code>blue-text</code>class 的样式。",
+        "通过给<code>h1</code>元素添加 id 属性，属性值为<code>orange</code>，来覆盖<code>pink-text</code>和<code>blue-text</code>class 的样式。",
         "<hr>",
-        "<code>h1</code>元素的设置<code>orange-text</code>的id属性。设置方式如下：",
+        "给<code>h1</code>元素添加 id 属性，属性值为<code>orange-text</code>。设置方式如下：",
         "<code>&#60;h1 id=\"orange-text\"&#62;</code>",
         "<code>h1</code>元素继续保留<code>blue-text</code>和<code>pink-text</code>class。",
-        "在<code>style</code>标签里面创建<code>orange-text</code>id 选择器。例子如下：",
-        "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
-        "注意：无论在<code>pink-text</code>class 的上面或者下面声明，id 属性优先性始终会高于 class。"
+        "在<code>style</code>元素中创建名为<code>orange-text</code>的 id 选择器。例子如下：",
+        "<blockquote>#orange-text {<br>&nbsp;&nbsp;color: orange;<br>}</blockquote>",
+        "注意：无论在<code>pink-text</code>class 的上面或者下面声明，id 选择器的优先级总是会高于 class 选择器。"
       ],
       "tests": [
         {
@@ -2152,16 +2152,16 @@
           "testString": "assert($(\"h1\").hasClass(\"blue-text\"), '<code>h1</code>元素应该包含<code>blue-text</code>class。');"
         },
         {
-          "text": "<code>h1</code>的 id 设置为<code>orange-text</code>。",
-          "testString": "assert($(\"h1\").attr(\"id\") === \"orange-text\", '<code>h1</code>的 id 设置为<code>orange-text</code>。');"
+          "text": "<code>h1</code>的 id 属性值为<code>orange-text</code>。",
+          "testString": "assert($(\"h1\").attr(\"id\") === \"orange-text\", '<code>h1</code>的 id 属性值为<code>orange-text</code>。');"
         },
         {
           "text": "应该只有一个<code>h1</code>元素。",
           "testString": "assert(($(\"h1\").length === 1), '应该只有一个<code>h1</code>元素。');"
         },
         {
-          "text": "创建<code>orange-text</code>id 的 CSS 样式声明。",
-          "testString": "assert(code.match(/#orange-text\\s*{/gi), '创建<code>orange-text</code>id 的 CSS 样式声明。"
+          "text": "创建名为<code>orange-text</code>的 id 选择器。",
+          "testString": "assert(code.match(/#orange-text\\s*{/gi), '创建名为<code>orange-text</code>的 id 选择器。"
         },
         {
           "text": "不要在<code>h1</code>元素里面使用<code>style（行内样式）</code>。",
@@ -2335,12 +2335,12 @@
       "id": "bad87fee1348bd9aedf08726",
       "title": "Use Hex Code for Specific Colors",
       "description": [
-        "你知道在 CSS 里面还有其他方式来代表颜色吗？其中一个方法叫做十六进制码，简称<code>hex</code>。",
-        "我们日常使用最多的计数方法，基于十进制，使用 0 到 9 数字来表示。而<code>十六进制码</code>（<code>hex</code>）基于 16 位数字，它含有 16 种不同字符。十六进制与十进制一样，0-9 表示着 0 到 9 的值，不同的是，A，B，C，D，E，F 表示着十六进制 10 到 15 的值。总的来说，0 到 F 在<code>十六进制</code>里代表着数字，提供了 16 种可能性。你可以在<a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>这里</a>找到更多的相关信息。",
+        "你知道在 CSS 里面还有其他方式来代表颜色吗？其中一个方法叫做十六进制编码，简称<code>hex</code>。",
+        "我们日常使用最多的计数方法，基于十进制，使用 0 到 9 数字来表示。而<code>十六进制编码</code>（<code>hex</code>）基于 16 位数字，它含有 16 种不同字符。十六进制与十进制一样，0-9 表示着 0 到 9 的值，不同的是，A，B，C，D，E，F 表示着十六进制 10 到 15 的值。总的来说，0 到 F 在<code>十六进制</code>里代表着数字，提供了 16 种可能性。你可以在<a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>这里</a>找到更多的相关信息。",
         "在 CSS 里面，我们可以用使用 6 个十六进制的数字来代表颜色，每两个数字控制一种颜色，分别是红（R），绿（G），蓝（B）。例如，<code>#000000</code>代表着黑色，同时也是最小的值。你可以在<a target='_blank' href='https://en.wikipedia.org/wiki/RGB_color_model'>这里</a>找到更多的相关信息。",
         "<blockquote>body {<br>&nbsp;&nbsp;color: #000000;<br>}</blockquote>",
         "<hr>",
-        "使用<code>#000000</code>的十六进制码来替换<code>body</code>元素的黑色背景。"
+        "使用<code>#000000</code>的十六进制编码来替换<code>body</code>元素的黑色背景。"
       ],
       "tests": [
         {
@@ -2348,8 +2348,8 @@
           "testString": "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", '<code>body</code>元素的背景颜色应该是黑色。');"
         },
         {
-          "text": "使用<code>十六进制码</code>来替换<code>black</code>的写法。",
-          "testString": "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#000(000)?((\\s*})|(;[\\s\\S]*?}))/gi), '使用<code>十六进制码</code>来替换<code>black</code>的写法。');"
+          "text": "使用<code>十六进制编码</code>来替换<code>black</code>的写法。",
+          "testString": "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#000(000)?((\\s*})|(;[\\s\\S]*?}))/gi), '使用<code>十六进制编码</code>来替换<code>black</code>的写法。');"
         }
       ],
       "challengeType": 0,
@@ -2374,13 +2374,13 @@
       "id": "bad87fee1348bd9aedf08721",
       "title": "Use Hex Code to Mix Colors",
       "description": [
-        "回顾一下，<code>hex</code>使用 6 个十六进制码来表示着颜色，2 个一组，分别代表着红（R），绿（G），蓝（B）。",
+        "回顾一下，<code>hex</code>使用 6 个十六进制编码来表示颜色，2 个一组，分别代表着红（R），绿（G），蓝（B）。",
         "通过三原色，我们可以创建 1600 万种不同颜色！",
-        "例如，橘色是纯红色混合一些绿色而成的，没有蓝色的参与。在十六进制码里面，它被转译为<code>#FFA500</code>",
+        "例如，橘色是纯红色混合一些绿色而成的，没有蓝色的参与。在十六进制编码里面，它被转译为<code>#FFA500</code>。",
         "<code>0</code>是十六进制里面最小的数字，表示着没有颜色。",
         "<code>F</code>是十六进制里面最大的数字，表示着最高的亮度。",
         "<hr>",
-        "<code>style</code>标签里面的颜色值用正确的十六进制码替换。",
+        "把<code>style</code>标签里面的颜色值用正确的十六进制编码替换。",
         "<table class='table table-striped'><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue</td><td><code>#1E90FF</code></td></tr><tr><td>Green</td><td><code>#00FF00</code></td></tr><tr><td>Orange</td><td><code>#FFA500</code></td></tr><tr><td>Red</td><td><code>#FF0000</code></td></tr></table>"
       ],
       "tests": [
@@ -2389,32 +2389,32 @@
           "testString": "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', '文本内容为<code>I am red!</code>的<code>h1</code>元素的字体颜色应该为<code>red</code>。');"
         },
         {
-          "text": "使用<code>十六进制码</code>替换<code>red</code>关键词。",
-          "testString": "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#FF0000\\s*?;\\s*?}/gi), '使用<code>十六进制码</code>替换<code>red</code>关键词。');"
+          "text": "使用<code>十六进制编码</code>替换<code>red</code>关键词。",
+          "testString": "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#FF0000\\s*?;\\s*?}/gi), '使用<code>十六进制编码</code>替换<code>red</code>关键词。');"
         },
         {
           "text": "文本内容为<code>I am green!</code>的<code>h1</code>元素的字体颜色应该为<code>green</code>。",
           "testString": "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', '文本内容为<code>I am green!</code>的<code>h1</code>元素的字体颜色应该为<code>green</code>。');"
         },
         {
-          "text": "使用<code>十六进制码</code>替换<code>green</code>关键词。",
-          "testString": "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#00FF00\\s*?;\\s*?}/gi), '使用<code>十六进制码</code>替换<code>green</code>关键词。');"
+          "text": "使用<code>十六进制编码</code>替换<code>green</code>关键词。",
+          "testString": "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#00FF00\\s*?;\\s*?}/gi), '使用<code>十六进制编码</code>替换<code>green</code>关键词。');"
         },
         {
           "text": "文本内容为<code>I am dodger blue!</code>的<code>h1</code>元素的字体颜色应该为<code>dodger blue</code>。",
           "testString": "assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)', '文本内容为<code>I am dodger blue!</code>的<code>h1</code>元素的字体颜色应该为<code>dodger blue</code>。');"
         },
         {
-          "text": "使用<code>十六进制码</code>替换<code>dodgerblue</code>关键词。",
-          "testString": "assert(code.match(/\\.dodger-blue-text\\s*?{\\s*?color:\\s*?#1E90FF\\s*?;\\s*?}/gi), '使用<code>十六进制码</code>替换<code>dodgerblue</code>关键词。');"
+          "text": "使用<code>十六进制编码</code>替换<code>dodgerblue</code>关键词。",
+          "testString": "assert(code.match(/\\.dodger-blue-text\\s*?{\\s*?color:\\s*?#1E90FF\\s*?;\\s*?}/gi), '使用<code>十六进制编码</code>替换<code>dodgerblue</code>关键词。');"
         },
         {
           "text": "文本内容为<code>I am orange!</code>的<code>h1</code>元素的字体颜色应该为<code>orange</code>。",
           "testString": "assert($('.orange-text').css('color') === 'rgb(255, 165, 0)', '文本内容为<code>I am orange!</code>的<code>h1</code>元素的字体颜色应该为<code>orange</code>。');"
         },
         {
-          "text": "使用<code>十六进制码</code>替换<code>orange</code>关键词。",
-          "testString": "assert(code.match(/\\.orange-text\\s*?{\\s*?color:\\s*?#FFA500\\s*?;\\s*?}/gi), '使用<code>十六进制码</code>替换<code>orange</code>关键词。');"
+          "text": "使用<code>十六进制编码</code>替换<code>orange</code>关键词。",
+          "testString": "assert(code.match(/\\.orange-text\\s*?{\\s*?color:\\s*?#FFA500\\s*?;\\s*?}/gi), '使用<code>十六进制编码</code>替换<code>orange</code>关键词。');"
         }
       ],
       "challengeType": 0,
@@ -2456,11 +2456,11 @@
       "id": "bad87fee1348bd9aedf08719",
       "title": "Use Abbreviated Hex Code",
       "description": [
-        "许多人对超过 1600 万种颜色的可能性感到不知所措，并且很难记住十六进制码。幸运的是，它也提供缩写的方法。",
-        "例如，红色的<code>#FF0000</code>十六进制码可以缩写成<code>#F00</code>。在这种缩写形式里，三个数字分别代表着红（R），绿（G），蓝（B）颜色。",
+        "许多人对超过 1600 万种颜色的可能性感到不知所措，并且很难记住十六进制编码。幸运的是，它也提供缩写的方法。",
+        "例如，红色的<code>#FF0000</code>十六进制编码可以缩写成<code>#F00</code>。在这种缩写形式里，三个数字分别代表着红（R），绿（G），蓝（B）颜色。",
         "这样，颜色的可能性减少到了大约 4000 种。且在浏览器里<code>#FF0000</code>和<code>#F00</code>完全是同一种颜色。",
         "<hr>",
-        "接下来，使用缩写的十六进制码帮元素设置正确的颜色。",
+        "接下来，使用缩写的十六进制编码帮元素设置正确的颜色。",
         "<table class='table table-striped'><tr><th>Color</th><th>Short Hex Code</th></tr><tr><td>Cyan</td><td><code>#0FF</code></td></tr><tr><td>Green</td><td><code>#0F0</code></td></tr><tr><td>Red</td><td><code>#F00</code></td></tr><tr><td>Fuchsia</td><td><code>#F0F</code></td></tr></table>"
       ],
       "tests": [
@@ -2469,32 +2469,32 @@
           "testString": "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', '文本内容为<code>I am red!</code>的<code>h1</code>元素的字体颜色应该为<code>red</code>。');"
         },
         {
-          "text": "要使用缩写的<code>red</code>的<code>十六进制码</code>，而不是<code>#FF0000</code>。",
-          "testString": "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#F00\\s*?;\\s*?}/gi), '要使用缩写的<code>red</code>的<code>十六进制码</code>，而不是<code>#FF0000</code>。');"
+          "text": "要使用缩写的<code>red</code>的<code>十六进制编码</code>，而不是<code>#FF0000</code>。",
+          "testString": "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#F00\\s*?;\\s*?}/gi), '要使用缩写的<code>red</code>的<code>十六进制编码</code>，而不是<code>#FF0000</code>。');"
         },
         {
           "text": "文本内容为<code>I am green!</code>的<code>h1</code>元素的字体颜色应该为<code>green</code>。",
           "testString": "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', '文本内容为<code>I am green!</code>的<code>h1</code>元素的字体颜色应该为<code>green</code>。');"
         },
         {
-          "text": "要使用缩写的<code>green</code>的<code>十六进制码</code>，而不是<code>#00FF00</code>的十六进制码。",
-          "testString": "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#0F0\\s*?;\\s*?}/gi), '要使用缩写的<code>green</code>的<code>十六进制码</code>，而不是<code>#00FF00</code>。');"
+          "text": "要使用缩写的<code>green</code>的<code>十六进制编码</code>，而不是<code>#00FF00</code>的十六进制编码。",
+          "testString": "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#0F0\\s*?;\\s*?}/gi), '要使用缩写的<code>green</code>的<code>十六进制编码</code>，而不是<code>#00FF00</code>。');"
         },
         {
           "text": "文本内容为<code>I am cyan!</code>的<code>h1</code>元素的字体颜色应该为<code>cyan</code>。",
           "testString": "assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)', '文本内容为<code>I am cyan!</code>的<code>h1</code>元素的字体颜色应该为<code>cyan</code>。');"
         },
         {
-          "text": "要使用缩写的<code>cyan</code>的<code>十六进制码</code>，而不是<code>#00FFFF</code>的十六进制码。",
-          "testString": "assert(code.match(/\\.cyan-text\\s*?{\\s*?color:\\s*?#0FF\\s*?;\\s*?}/gi), '要使用缩写的<code>cyan</code>的<code>十六进制码</code>，而不是<code>#00FFFF</code>。');"
+          "text": "要使用缩写的<code>cyan</code>的<code>十六进制编码</code>，而不是<code>#00FFFF</code>的十六进制编码。",
+          "testString": "assert(code.match(/\\.cyan-text\\s*?{\\s*?color:\\s*?#0FF\\s*?;\\s*?}/gi), '要使用缩写的<code>cyan</code>的<code>十六进制编码</code>，而不是<code>#00FFFF</code>。');"
         },
         {
           "text": "文本内容为<code>I am fuchsia!</code>的<code>h1</code>元素的字体颜色应该为<code>fuchsia</code>。",
           "testString": "assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)', '文本内容为<code>I am fuchsia!</code>的<code>h1</code>元素的字体颜色应该为<code>fuchsia</code>。');"
         },
         {
-          "text": "要使用缩写的<code>fuchsia</code>的<code>十六进制码</code>，而不是<code>#FF00FF</code>的十六进制码。",
-          "testString": "assert(code.match(/\\.fuchsia-text\\s*?{\\s*?color:\\s*?#F0F\\s*?;\\s*?}/gi), '要使用缩写的<code>fuchsia</code>的<code>十六进制码</code>，而不是<code>#FF00FF</code>。');"
+          "text": "要使用缩写的<code>fuchsia</code>的<code>十六进制编码</code>，而不是<code>#FF00FF</code>的十六进制编码。",
+          "testString": "assert(code.match(/\\.fuchsia-text\\s*?{\\s*?color:\\s*?#F0F\\s*?;\\s*?}/gi), '要使用缩写的<code>fuchsia</code>的<code>十六进制编码</code>，而不是<code>#FF00FF</code>。');"
         }
       ],
       "challengeType": 0,
@@ -2541,12 +2541,12 @@
         "<code>rgb(0, 0, 0)</code>",
         "白色的 RGB 值声明如下：",
         "<code>rgb(255, 255, 255)</code>",
-        "RGB 不像十六进制码，并不需要用到 6 位十六进制数字。在 RGB 里，你只需要指定每种颜色的亮度大小，从 0 到 255。",
-        "在数学的角度来看，如果将十六进制的一种颜色的两位数字相乘，16 乘以 16 也等于 256。所以，从 0 到 255 计算的 RGB 值的具有十六进制码相同的颜色可能性。",
-        "下面是通过使用 RGB 码设置背景颜色为橘色的例子：",
+        "RGB 不像十六进制编码，并不需要用到 6 位十六进制数字。在 RGB 里，你只需要指定每种颜色的亮度大小，从 0 到 255。",
+        "在数学的角度来看，如果将十六进制的一种颜色的两位数字相乘，16 乘以 16 也等于 256。所以，从 0 到 255 计算的 RGB 值的具有十六进制编码相同的颜色可能性。",
+        "下面是通过使用 RGB 值设置背景颜色为橘色的例子：",
         "<blockquote>body {<br>&nbsp;&nbsp;background-color: rgb(255, 165, 0);<br>}</blockquote>",
         "<hr>",
-        "让我们用<code>rgb(0, 0, 0)</code>的 RGB 值替换<code>body</code>元素背景颜色的十六进制码。"
+        "让我们用<code>rgb(0, 0, 0)</code>的 RGB 值替换<code>body</code>元素背景颜色的十六进制编码。"
       ],
       "tests": [
         {
@@ -2555,7 +2555,7 @@
         },
         {
           "text": "<code>body</code>元素的背景颜色的黑色值应该为<code>RGB</code>值。",
-          "testString": "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), '<code>body</code>元素的背景颜色的黑色值应该为<code>RGB</code>值。);"
+          "testString": "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), '<code>body</code>元素的背景颜色的黑色值应该为<code>RGB</code>值。');"
         }
       ],
       "challengeType": 0,
@@ -2580,9 +2580,9 @@
       "id": "bad82fee1348bd9aedf08721",
       "title": "Use RGB to Mix Colors",
       "description": [
-        "就像使用十六进制代码一样，你可以通过不同值的组合，来混合得到不同的 RGB 颜色。",
+        "就像使用十六进制编码一样，你可以通过不同值的组合，来混合得到不同的 RGB 颜色。",
         "<hr>",
-        "将<code>style</code>标签里面中的十六进制代码替换为正确的 RGB 值。",
+        "将<code>style</code>标签里面中的十六进制编码替换为正确的 RGB 值。",
         "<table class='table table-striped'><tr><th>Color</th><th>RGB</th></tr><tr><td>Blue</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna</td><td><code>rgb(160, 82, 45)</code></td></tr></table>"
       ],
       "tests": [
@@ -2902,7 +2902,7 @@
         "这样会创建一个<code>--penguin-skin</code>变量并赋值为<code>gray（灰色）</code>。",
         "现在，其他元素可通过该变量来设置为<code>gray（灰色）</code>。",
         "<hr>",
-        "在<code>penguin</code>class 里面，创建一个<code>--penguin-skin</code>变量，且赋值为code>gray（灰色）</code>。"
+        "在<code>penguin</code>class 里面，创建一个<code>--penguin-skin</code>变量，且赋值为<code>gray（灰色）</code>。"
       ],
       "tests": [
         {
@@ -3860,8 +3860,7 @@
       "id": "5a9d72a1424fe3d0e10cad15",
       "title": "Change a variable for a specific area",
       "description": [
-        "当你在<code>:root</code>里创建变量时，里面设置的变量会影响整个页面。",
-        "When you create your variables in <code>:root</code> they will set the value of that variable for the whole page.",
+        "当你在<code>:root</code>里创建变量时，这些变量的作用域是整个页面。",
         "如果在元素里创建相同的变量，会重写<code>:root</code>变量设置的值。",
         "<hr>",
         "在<code>penguin</code>class 里，设置<code>--penguin-belly</code>的值为<code>white</code>。"
