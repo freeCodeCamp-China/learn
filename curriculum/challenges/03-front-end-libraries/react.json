@@ -1888,10 +1888,10 @@
       "title": "Create a Controlled Input",
       "releasedOn": "December 25, 2017",
       "description": [
-        "您的应用程序可能在<code>state</code>和渲染的 UI 之间有更复杂的交互。例如，用于文本输入的表单控件元素（如<code>input</code>和<code>textarea</code>）在用户键入时在 DOM 中维护自己的 state。通过 React，您可以将这种可变 state 转移到 React 组件的<code>state</code>中。用户的输入变成了应用程序<code>state</code>的一部分，因此 React 控制该输入字段的值。通常，如果您的 React 组件具有用户可以键入的输入字段，那么它将是一个受控的输入表单。",
+        "你的应用程序可能在<code>state</code>和渲染的 UI 之间有更复杂的交互。例如，用于文本输入的表单控件元素（如<code>input</code>和<code>textarea</code>）在用户键入时在 DOM 中维护自己的 state。通过 React，你可以将这种可变 state 转移到 React 组件的<code>state</code>中。用户的输入变成了应用程序<code>state</code>的一部分，因此 React 控制该输入字段的值。通常，如果你的 React 组件具有用户可以键入的输入字段，那么它将是一个受控的输入表单。",
         "<hr>",
         "代码编辑器具有一个名为<code>ControlledInput</code>的组件框架，用于创建受控的<code>input</code>元素。组件的<code>state</code>已经被包含空字符串的<code>input</code>属性初始化。此值表示用户在<code>input</code>字段中键入的文本。",
-        "首先，创建一个名为<code>handleChange()</code>的方法，该方法具有一个名为<code>event</code>的参数。方法被调用时，它接收一个<code>event</code>对象，该对象包含一个来自<code>input</code>元素的字符串文本。您可以使用方法内的<code>event.target.value</code>来访问这个字符串。用这个新字符串更新组件的<code>state</code>的<code>input</code>属性。",
+        "首先，创建一个名为<code>handleChange()</code>的方法，该方法具有一个名为<code>event</code>的参数。方法被调用时，它接收一个<code>event</code>对象，该对象包含一个来自<code>input</code>元素的字符串文本。你可以使用方法内的<code>event.target.value</code>来访问这个字符串。用这个新字符串更新组件的<code>state</code>的<code>input</code>属性。",
         "在 render 方法中，在<code>h4</code>标签之上创建<code>input</code>元素。添加一个<code>value</code>属性，它等于组件的<code>state</code>的<code>input</code>属性。然后将<code>onChange()</code>事件处理程序设置到<code>handleChange()</code>方法。",
         "在输入框中键入时，该文本由<code>handleChange()</code>方法处理，该文本被设置为本地<code>state</code>中的<code>input</code>属性，并渲染在页面上的<code>input</code>框中。组件<code>state</code>是输入数据的唯一真实来源。",
         "最后也是最重要的，不要忘记在构造函数中添加必要的绑定。"
@@ -1960,12 +1960,12 @@
       "title": "Create a Controlled Form",
       "releasedOn": "December 25, 2017",
       "description": [
-        "The last challenge showed that React can control the internal state for certain elements like <code>input</code> and <code>textarea</code>, which makes them controlled components. This applies to other form elements as well, including the regular HTML <code>form</code>元素。",
+        "上一个挑战展示了 React 能控制某些元素的内部 state，比如<code>input</code>和<code>textarea</code>，这使得这些元素成为受控组件。这也适用于其他表单元素，包括常规的 HTML 表单<code>form</code>元素。",
         "<hr>",
-        "The <code>MyForm</code> component is set up with an empty <code>form</code> with a submit handler. The submit handler will be called when the form is submitted.",
-        "We've added a button which submits the form. You can see it has the <code>type</code> set to <code>submit</code> indicating it is the button controlling the form. Add the <code>input</code> element in the <code>form</code> and set its <code>value</code> and <code>onChange()</code> attributes like the last challenge. You should then complete the <code>handleSubmit</code> method so that it sets the component state property <code>submit</code> to the current input value in the local <code>state</code>.",
-        "<strong>Note:</strong>&nbsp; You also must call <code>event.preventDefault()</code> in the submit handler, to prevent the default form submit behavior which will refresh the web page.",
-        "Finally, create an <code>h1</code> tag after the <code>form</code> which renders the <code>submit</code> value from the component's <code>state</code>. You can then type in the form and click the button (or press enter), and you should see your input rendered to the page."
+        "<code>MyForm</code>组件中是一个带有提交处理程序的空<code>form</code>元素，提交处理程序将在提交表单时被调用。",
+        "我们增加了一个提交表单的按钮。你可以看到它的<code>type</code>被设置为<code>submit</code>，表明它是控制表单的按钮。在表单中添加<code>input</code>元素，并像上次挑战一样设置其<code>value</code>和<code>onChange()</code>属性。然后，你应该完成<code>handleSubmit</code>方法，以便将组件 state 属性<code>submit</code>设置为本地<code>state</code>下的当前输入值。",
+        "<strong>注意：</strong>&nbsp; 你还必须在提交处理程序中调用<code>event.preventDefault()</code>，以防止默认的表单提交行为刷新网页。",
+        "最后，在<code>form</code>元素之后创建一个<code>h1</code>标签，该标签从组件的<code>state</code>渲染<code>submit</code>的值。然后，你可以在表单中键入任何内容，然后单击按钮（或按 enter 键），你的输入会渲染到页面上。"
       ],
       "files": {
         "indexjsx": {
@@ -2018,24 +2018,24 @@
       },
       "tests": [
         {
-          "text": "<code>MyForm</code> should return a <code>div</code> element which contains a <code>form</code> and an <code>h1</code> tag. The form should include an <code>input</code> and a <code>button</code>.",
-          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyForm)); return (mockedComponent.find('div').children().find('form').length === 1 && mockedComponent.find('div').children().find('h1').length === 1 && mockedComponent.find('form').children().find('input').length === 1 && mockedComponent.find('form').children().find('button').length === 1) })(), '<code>MyForm</code> should return a <code>div</code> element which contains a <code>form</code> and an <code>h1</code> tag. The form should include an <code>input</code> and a <code>button</code>.');"
+          "text": "<code>MyForm</code>应该返回一个包含<code>form</code>和<code>h1</code>标签的<code>div</code>元素，其中，表单中应该包括一个<code>input</code>和一个<code>button</code>。",
+          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyForm)); return (mockedComponent.find('div').children().find('form').length === 1 && mockedComponent.find('div').children().find('h1').length === 1 && mockedComponent.find('form').children().find('input').length === 1 && mockedComponent.find('form').children().find('button').length === 1) })(), '<code>MyForm</code>应该返回一个包含<code>form</code>和<code>h1</code>标签的<code>div</code>元素，其中，表单中应该包括一个<code>input</code>和一个<code>button</code>。');"
         },
         {
-          "text": "The state of <code>MyForm</code> should initialize with <code>input</code> and <code>submit</code> properties, both set to empty strings.",
-          "testString": "assert(Enzyme.mount(React.createElement(MyForm)).state('input') === '' && Enzyme.mount(React.createElement(MyForm)).state('submit') === '', 'The state of <code>MyForm</code> should initialize with <code>input</code> and <code>submit</code> properties, both set to empty strings.');"
+          "text": "<code>MyForm</code>的 state 应该用<code>input</code>和<code>submit</code>属性初始化，且两者都为空字符串。",
+          "testString": "assert(Enzyme.mount(React.createElement(MyForm)).state('input') === '' && Enzyme.mount(React.createElement(MyForm)).state('submit') === '', '<code>MyForm</code>的 state 应该用<code>input</code>和<code>submit</code>属性初始化，且两者都为空字符串。');"
         },
         {
-          "text": "Typing in the <code>input</code> element should update the <code>input</code> property of the component&apos;s state.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '' }); return waitForIt(() => mockedComponent.state('input'))}; const _2 = () => { mockedComponent.find('input').simulate('change', { target: { value: 'TestInput' }}); return waitForIt(() => ({ state: mockedComponent.state('input'), inputVal: mockedComponent.find('input').props().value }))}; const before = await _1(); const after = await _2(); assert(before === '' && after.state === 'TestInput' && after.inputVal === 'TestInput', 'Typing in the <code>input</code> element should update the <code>input</code> property of the component&apos;s state.'); }; "
+          "text": "<code>input</code>元素中的输入应该会更新组件中 state 的<code>input</code>属性。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '' }); return waitForIt(() => mockedComponent.state('input'))}; const _2 = () => { mockedComponent.find('input').simulate('change', { target: { value: 'TestInput' }}); return waitForIt(() => ({ state: mockedComponent.state('input'), inputVal: mockedComponent.find('input').props().value }))}; const before = await _1(); const after = await _2(); assert(before === '' && after.state === 'TestInput' && after.inputVal === 'TestInput', '<code>input</code>元素中的输入应该会更新组件中 state 的<code>input</code>属性。'); }; "
         },
         {
-          "text": "Submitting the form should run <code>handleSubmit</code> which should set the <code>submit</code> property in state equal to the current input.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '' }); mockedComponent.setState({submit: ''}); mockedComponent.find('input').simulate('change', {target: {value: 'SubmitInput'}}); return waitForIt(() => mockedComponent.state('submit'))}; const _2 = () => { mockedComponent.find('form').simulate('submit'); return waitForIt(() => mockedComponent.state('submit'))}; const before = await _1(); const after = await _2(); assert(before === '' && after === 'SubmitInput', 'Submitting the form should run <code>handleSubmit</code> which should set the <code>submit</code> property in state equal to the current input.'); };"
+          "text": "提交表单应该运行<code>handleSubmit</code>，它应该将 state 中的<code>submit</code>属性设置为当前输入。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '' }); mockedComponent.setState({submit: ''}); mockedComponent.find('input').simulate('change', {target: {value: 'SubmitInput'}}); return waitForIt(() => mockedComponent.state('submit'))}; const _2 = () => { mockedComponent.find('form').simulate('submit'); return waitForIt(() => mockedComponent.state('submit'))}; const before = await _1(); const after = await _2(); assert(before === '' && after === 'SubmitInput', '提交表单应该运行<code>handleSubmit</code>，它应该将 state 中的<code>submit</code>属性设置为当前输入。'); };"
         },
         {
-          "text": "The <code>h1</code> header should render the value of the <code>submit</code> field from the component&apos;s state.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '' }); mockedComponent.setState({submit: ''}); mockedComponent.find('input').simulate('change', {target: {value: 'TestInput'}}); return waitForIt(() => mockedComponent.find('h1').text())}; const _2 = () => { mockedComponent.find('form').simulate('submit'); return waitForIt(() => mockedComponent.find('h1').text())}; const before = await _1(); const after = await _2(); assert(before === '' && after === 'TestInput', 'The <code>h1</code> header should render the value of the <code>submit</code> field from the component&apos;s state.'); }; "
+          "text": "<code>h1</code>标题应该从组件的 state 渲染<code>submit</code>字段的值。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '' }); mockedComponent.setState({submit: ''}); mockedComponent.find('input').simulate('change', {target: {value: 'TestInput'}}); return waitForIt(() => mockedComponent.find('h1').text())}; const _2 = () => { mockedComponent.find('form').simulate('submit'); return waitForIt(() => mockedComponent.find('h1').text())}; const before = await _1(); const after = await _2(); assert(before === '' && after === 'TestInput', '<code>h1</code>标题应该从组件的 state 渲染<code>submit</code>字段的值。'); }; "
         }
       ],
       "solutions": [
@@ -2050,11 +2050,11 @@
       "title": "Pass State as Props to Child Components",
       "releasedOn": "December 25, 2017",
       "description": [
-        "You saw a lot of examples that passed props to child JSX elements and child React components in previous challenges. You may be wondering where those props come from. A common pattern is to have a stateful component containing the <code>state</code> important to your app, that then renders child components. You want these components to have access to some pieces of that <code>state</code>, which are passed in as props.",
-        "For example, maybe you have an <code>App</code> component that renders a <code>Navbar</code>, among other components. In your <code>App</code>, you have <code>state</code> that contains a lot of user information, but the <code>Navbar</code> only needs access to the user's username so it can display it. You pass that piece of <code>state</code> to the <code>Navbar</code> component as a prop.",
-        "This pattern illustrates some important paradigms in React. The first is <em>unidirectional data flow</em>. State flows in one direction down the tree of your application's components, from the stateful parent component to child components. The child components only receive the state data they need. The second is that complex stateful apps can be broken down into just a few, or maybe a single, stateful组件。 The rest of your components simply receive state from the parent as props, and render a UI from that state. It begins to create a separation where state management is handled in one part of code and UI rendering in another. This principle of separating state logic from UI logic is one of React's key principles. When it's used correctly, it makes the design of complex, stateful applications much easier to manage.",
+        "在之前的挑战中，你看到了很多将 props 传递给子 JSX 元素和子 React 组件的例子。你可能想知道那些 props 是从哪里来的。一个常见的模式是：有状态组件中包含对应用程序很重要的<code>state</code>，然后用它渲染子组件。你希望这些组件能够访问该<code>state</code>的某些部分，就把这些部分作为 props 传入。",
+        "例如，也许你有一个<code>App</code>组件可以渲染<code>Navbar</code>以及其他组件。在你的<code>App</code>中，你的<code>state</code>中包含大量用户信息，但是<code>Navbar</code>只需要访问用户的用户名就可以显示出来，这时你将该<code>state</code>作为一个 prop 传递给<code>Navbar</code>组件即可。",
+        "这个模式说明了 React 中的一些重要范例。第一个是<em>单向数据流</em>，state 沿着应用程序组件树的一个方向流动，从有状态父组件到子组件，子组件只接收它们需要的 state 数据。第二，复杂的有状态应用程序可以分解成几个，或者可能是一个单一的有状态组件。其余组件只是从父组件简单的接收 state 作为 props，并从该 state 渲染 UI。它开始创建一种分离，在这种分离中，state 管理在代码的一部分中处理，而 UI 渲染在另一部分中处理。将 state 逻辑与 UI 逻辑分离是 React 的关键原则之一。当它被正确使用时，它使得复杂的、有状态的应用程序的设计变得更容易管理。",
         "<hr>",
-        "The <code>MyApp</code> component is stateful and renders a <code>Navbar</code> component as a child. Pass the <code>name</code> property in its <code>state</code> down to the child component, then show the <code>name</code> in the <code>h1</code> tag that's part of the <code>Navbar</code> render method."
+        "<code>MyApp</code>组件是有状态的，它将<code>Navbar</code>组件渲染成它的为子组件。将<code>MyApp</code>组件<code>state</code>中的<code>name</code>属性向下传递给子组件，然后在<code>h1</code>标签中显示<code>name</code>，<code>name</code>是<code>Navbar</code>render 方法的一部分。"
       ],
       "files": {
         "indexjsx": {
@@ -2099,16 +2099,16 @@
       },
       "tests": [
         {
-          "text": "The <code>MyApp</code> component should render with a <code>Navbar</code> component inside.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1 && mockedComponent.find('Navbar').length === 1; })(), 'The <code>MyApp</code> component should render with a <code>Navbar</code> component inside.');"
+          "text": "<code>MyApp</code>组件应该在内部渲染一个<code>Navbar</code>组件。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1 && mockedComponent.find('Navbar').length === 1; })(), '<code>MyApp</code>组件应该在内部渲染一个<code>Navbar</code>组件。');"
         },
         {
-          "text": "The <code>Navbar</code> component should receive the <code>MyApp</code> state property <code>name</code> as props.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const setState = () => { mockedComponent.setState({name: 'TestName'}); return waitForIt(() => mockedComponent.find('Navbar').props() )}; const navProps = await setState(); assert(navProps.name === 'TestName', 'The <code>Navbar</code> component should receive the <code>MyApp</code> state property <code>name</code> as props.'); }; "
+          "text": "<code>Navbar</code>组件应该接收<code>Navbar</code>的 state 中的<code>name</code>属性作为 props。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const setState = () => { mockedComponent.setState({name: 'TestName'}); return waitForIt(() => mockedComponent.find('Navbar').props() )}; const navProps = await setState(); assert(navProps.name === 'TestName', '<code>Navbar</code>组件应该接收<code>Navbar</code>的 state 中的<code>name</code>属性作为 props。'); }; "
         },
         {
-          "text": "The <code>h1</code> element in <code>Navbar</code> should render the <code>name</code> prop.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const navH1Before = mockedComponent.find('Navbar').find('h1').text(); const setState = () => { mockedComponent.setState({name: 'TestName'}); return waitForIt(() => mockedComponent.find('Navbar').find('h1').text() )}; const navH1After = await setState(); assert(new RegExp('TestName').test(navH1After) && navH1After !== navH1Before, 'The <code>h1</code> element in <code>Navbar</code> should render the <code>name</code> prop.'); }; "
+          "text": "<code>Navbar</code>中的<code>h1</code>元素应该渲染 prop<code>name</code>。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const navH1Before = mockedComponent.find('Navbar').find('h1').text(); const setState = () => { mockedComponent.setState({name: 'TestName'}); return waitForIt(() => mockedComponent.find('Navbar').find('h1').text() )}; const navH1After = await setState(); assert(new RegExp('TestName').test(navH1After) && navH1After !== navH1Before, '<code>Navbar</code>中的<code>h1</code>元素应该渲染 prop<code>name</code>。'); }; "
         }
       ],
       "solutions": [
@@ -2123,10 +2123,10 @@
       "title": "Pass a Callback as Props",
       "releasedOn": "December 25, 2017",
       "description": [
-        "You can pass <code>state</code> as props to child components, but you're not limited to passing data. You can also pass handler functions or any method that's defined on a React component to a child组件。 This is how you allow child components to interact with their parent components. You pass methods to a child just like a regular prop. It's assigned a name and you have access to that method name under <code>this.props</code> in the child组件。",
+        "你可以将<code>state</code>作为 props 传递给子组件，但不仅限于传递数据。你也可以将处理函数或在 React 组件中定义的任何方法传递给子组件。这就是允许子组件与父组件交互的方式。你可以把方法像普通 prop 一样传递给子组件，它会被分配一个名字，你可以在子组件中的<code>this.props</code>下访问该方法的名字。",
         "<hr>",
-        "There are three components outlined in the code editor. The <code>MyApp</code> component is the parent that will render the <code>GetInput</code> and <code>RenderInput</code> child components. Add the <code>GetInput</code> component to the render method in <code>MyApp</code>, then pass it a prop called <code>input</code> assigned to <code>inputValue</code> from <code>MyApp</code>&apos;s <code>state</code>. Also create a prop called <code>handleChange</code> and pass the input handler <code>handleChange</code> to it.",
-        "Next, add <code>RenderInput</code> to the render method in <code>MyApp</code>, then create a prop called <code>input</code> and pass the <code>inputValue</code> from <code>state</code> to it. Once you are finished you will be able to type in the <code>input</code> field in the <code>GetInput</code> component, which then calls the handler method in its parent via props. This updates the input in the <code>state</code> of the parent, which is passed as props to both children. Observe how the data flows between the components and how the single source of truth remains the <code>state</code> of the parent组件。 Admittedly, this example is a bit contrived, but should serve to illustrate how data and callbacks can be passed between React components."
+        "代码编辑器中列出了三个组件。<code>MyApp</code>是父组件，<code>GetInput</code>和<code>RenderInput</code>是它的子组件。将<code>GetInput</code>组件添加到<code>MyApp</code>的 render 方法，然后将一个名为<code>input</code>的 prop 传递给<code>MyApp</code>的<code>state</code>中的<code>inputValue</code>。还要创建一个名为<code>handleChange</code>的 prop，并将输入处理程序<code>handleChange</code>传递给它。",
+        "接下来，将<code>RenderInput</code>添加到<code>MyApp</code>中的 render 方法中，然后创建一个名为<code>input</code>的 prop，并将<code>state</code>中的<code>inputValue</code>传递给它。完成后，你将能够在<code>GetInput</code>组件中的<code>input</code>字段中键入内容，然后该组件通过 props 调用其父组件中的处理函数方法。这将更新处于父组件<code>state</code>中的 input，该 input 将作为 props 传递给两个子组件。观察数据如何在组件之间流动，以及单一数据源如何保持父组件<code>state</code>。诚然，这个示例有点做作，但是应该能用来说明数据和回调是如何在 React 组件之间传递的。"
       ],
       "files": {
         "indexjsx": {
@@ -2196,24 +2196,24 @@
       },
       "tests": [
         {
-          "text": "The <code>MyApp</code> component should render.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1; })(), 'The <code>MyApp</code> component should render.');"
+          "text": "应该渲染<code>MyApp</code>组件。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1; })(), '应该渲染<code>MyApp</code>组件。');"
         },
         {
-          "text": "The <code>GetInput</code> component should render.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('GetInput').length === 1; })(), 'The <code>GetInput</code> component should render.');"
+          "text": "应该渲染<code>GetInput</code>组件。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('GetInput').length === 1; })(), '应该渲染<code>GetInput</code>组件。');"
         },
         {
-          "text": "The <code>RenderInput</code> component should render.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('RenderInput').length === 1; })(), 'The <code>RenderInput</code> component should render.');"
+          "text": "应该渲染<code>RenderInput</code>组件。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('RenderInput').length === 1; })(), '应该渲染<code>RenderInput</code>组件。');"
         },
         {
-          "text": "The <code>GetInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props and contain an <code>input</code> element which modifies <code>MyApp</code> state.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ''}); return waitForIt(() => mockedComponent.state() )}; const state_2 = () => { mockedComponent.find('input').simulate('change', {target: {value: 'TestInput'}}); return waitForIt(() => mockedComponent.state() )}; const updated_1 = await state_1(); const updated_2 = await state_2(); assert(updated_1.inputValue === '' && updated_2.inputValue === 'TestInput', 'The <code>GetInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props and contain an <code>input</code> element which modifies <code>MyApp</code> state.'); }; "
+          "text": "<code>GetInput</code>组件应该接收<code>MyApp</code>的 state 属性<code>inputValue</code>作为 props，并包含一个修改<code>MyApp</code>state 的<code>input</code>元素。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ''}); return waitForIt(() => mockedComponent.state() )}; const state_2 = () => { mockedComponent.find('input').simulate('change', {target: {value: 'TestInput'}}); return waitForIt(() => mockedComponent.state() )}; const updated_1 = await state_1(); const updated_2 = await state_2(); assert(updated_1.inputValue === '' && updated_2.inputValue === 'TestInput', '<code>GetInput</code>组件应该接收<code>MyApp</code>的 state 属性<code>inputValue</code>作为 props，并包含一个修改<code>MyApp</code>state 的<code>input</code>元素。'); }; "
         },
         {
-          "text": "The <code>RenderInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: 'TestName'}); return waitForIt(() => mockedComponent )}; const updated_1 = await state_1(); assert(updated_1.find('p').text().includes('TestName'), 'The <code>RenderInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props.'); }; "
+          "text": "<code>RenderInput</code>组件应该接收<code>MyApp</code>state 属性<code>inputValue</code>作为 props。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: 'TestName'}); return waitForIt(() => mockedComponent )}; const updated_1 = await state_1(); assert(updated_1.find('p').text().includes('TestName'), '<code>RenderInput</code>组件应该接收<code>MyApp</code>state 属性<code>inputValue</code>作为 props。'); }; "
         }
       ],
       "solutions": [
@@ -2228,7 +2228,7 @@
       "title": "Use the Lifecycle Method componentWillMount",
       "releasedOn": "December 25, 2017",
       "description": [
-        "React components have several special methods that provide opportunities to perform actions at specific points in the lifecycle of a组件。 These are called lifecycle methods, or lifecycle hooks, and allow you to catch components at certain points in time. This can be before they are rendered, before they update, before they receive props, before they unmount, and so on. Here is a list of some of the main lifecycle methods:",
+        "React 组件有几种特殊方法，可以在组件生命周期的特定点执行操作。这些称为生命周期方法或生命周期钩子，允许你在特定时间点捕获组件。这可以在渲染之前、更新之前、接收 props 之前、卸载之前等等。以下是一些主要生命周期方法的列表：",
         "<code>componentWillMount()</code>",
         "<code>componentDidMount()</code>",
         "<code>componentWillReceiveProps()</code>",
@@ -2236,9 +2236,9 @@
         "<code>componentWillUpdate()</code>",
         "<code>componentDidUpdate()</code>",
         "<code>componentWillUnmount()</code>",
-        "The next several lessons will cover some of the basic use cases for these lifecycle methods.",
+        "接下来的几节课将讲述这些生命周期方法的一些基本用例。",
         "<hr>",
-        "The <code>componentWillMount()</code> method is called before the <code>render()</code> method when a component is being mounted to the DOM. Log something to the console within <code>componentWillMount()</code> - you may want to have your browser console open to see the output."
+        "当组件被挂载到 DOM 时，<code>componentWillMount()</code>方法在<code>render()</code>方法之前被调用。在<code>componentWillMount()</code>中将一些内容记录到控制台--你需要打开浏览器控制台以查看输出。"
       ],
       "files": {
         "indexjsx": {
@@ -2268,12 +2268,12 @@
       },
       "tests": [
         {
-          "text": "<code>MyComponent</code> should render a <code>div</code>元素。",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').length === 1; })(), '<code>MyComponent</code> should render a <code>div</code>元素。');"
+          "text": "<code>MyComponent</code>应该渲染一个<code>div</code>元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').length === 1; })(), '<code>MyComponent</code>应该渲染一个<code>div</code>元素。');"
         },
         {
-          "text": "<code>console.log</code> should be called in <code>componentWillMount</code>.",
-          "testString": "assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,''); return lifecycle.includes('console.log('); })(), '<code>console.log</code> should be called in <code>componentWillMount</code>.');"
+          "text": "应该在<code>componentWillMount</code>中调用<code>console.log</code>。",
+          "testString": "assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,''); return lifecycle.includes('console.log('); })(), '应该在<code>componentWillMount</code>中调用<code>console.log</code>。');"
         }
       ],
       "solutions": [
@@ -2288,10 +2288,10 @@
       "title": "Use the Lifecycle Method componentDidMount",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Most web developers, at some point, need to call an API endpoint to retrieve data. If you're working with React, it's important to know where to perform this action.",
-        "The best practice with React is to place API calls or any calls to your server in the lifecycle method <code>componentDidMount()</code>. This method is called after a component is mounted to the DOM. Any calls to <code>setState()</code> here will trigger a re-rendering of your组件。 When you call an API in this method, and set your state with the data that the API returns, it will automatically trigger an update once you receive the data.",
+        "某些时候，大多数 web 开发人员需要调用 API 端点来检索数据。如果你正在使用 React，知道在哪里执行这个动作是很重要的。",
+        "React 的最佳实践是在生命周期方法<code>componentDidMount()</code>中对服务器进行 API 调用或任何其他调用。将组件装载到 DOM 后会调用此方法。此处对<code>setState()</code>的任何调用都将触发组件的重新渲染。在此方法中调用 API 并使用 API​​ 返回的数据设置 state 时，一旦收到数据，它将自动触发更新。",
         "<hr>",
-        "There is a mock API call in <code>componentDidMount()</code>. It sets state after 2.5 seconds to simulate calling a server to retrieve data. This example requests the current total active users for a site. In the render method, render the value of <code>activeUsers</code> in the <code>h1</code>. Watch what happens in the preview, and feel free to change the timeout to see the different effects."
+        "<code>componentDidMount()</code>中有一个模拟 API 调用。它在 2.5 秒后设置 state，以模拟调用服务器检索数据。本示例请求站点的当前活动用户总数。在 render 方法中，把<code>activeUsers</code>渲染到<code>h1</code>标签中。观看预览中发生的事情，随意更改超时时间以查看不同的效果。"
       ],
       "files": {
         "indexjsx": {
@@ -2330,16 +2330,16 @@
       },
       "tests": [
         {
-          "text": "<code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.",
-          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return (mockedComponent.find('div').length === 1 && mockedComponent.find('h1').length === 1); })(), '<code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.');"
+          "text": "<code>MyComponent</code>应该渲染一个包含<code>h1</code>标签的<code>div</code>元素。",
+          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return (mockedComponent.find('div').length === 1 && mockedComponent.find('h1').length === 1); })(), '<code>MyComponent</code>应该渲染一个包含<code>h1</code>标签的<code>div</code>元素。');"
         },
         {
-          "text": "Component state should be updated with a timeout function in <code>componentDidMount</code>.",
-          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return new RegExp('setTimeout(.|\\n)+setState(.|\\n)+activeUsers').test(String(mockedComponent.instance().componentDidMount)); })(), 'Component state should be updated with a timeout function in <code>componentDidMount</code>.');"
+          "text": "组件 state 应该用<code>componentDidMount</code>中的延时函数来更新。",
+          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return new RegExp('setTimeout(.|\\n)+setState(.|\\n)+activeUsers').test(String(mockedComponent.instance().componentDidMount)); })(), '组件 state 应该用<code>componentDidMount</code>中的延时函数来更新。');"
         },
         {
-          "text": "The <code>h1</code> tag should render the <code>activeUsers</code> value from <code>MyComponent</code>&apos;s state.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ activeUsers: 1237 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const second = () => { mockedComponent.setState({ activeUsers: 1000 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const firstValue = await first(); const secondValue = await second(); assert(new RegExp('1237').test(firstValue) && new RegExp('1000').test(secondValue), 'The <code>h1</code> tag should render the <code>activeUsers</code> value from <code>MyComponent</code>&apos;s state.'); }; "
+          "text": "<code>h1</code>标签应该从<code>MyComponent</code>的 state 渲染<code>activeUsers</code>值。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ activeUsers: 1237 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const second = () => { mockedComponent.setState({ activeUsers: 1000 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const firstValue = await first(); const secondValue = await second(); assert(new RegExp('1237').test(firstValue) && new RegExp('1000').test(secondValue), '<code>h1</code>标签应该从<code>MyComponent</code>的 state 渲染<code>activeUsers</code>值。'); }; "
         }
       ],
       "solutions": [
@@ -2354,11 +2354,11 @@
       "title": "Add Event Listeners",
       "releasedOn": "December 25, 2017",
       "description": [
-        "The <code>componentDidMount()</code> method is also the best place to attach any event listeners you need to add for specific functionality. React provides a synthetic event system which wraps the native event system present in browsers. This means that the synthetic event system behaves exactly the same regardless of the user's browser - even if the native events may behave differently between different browsers.",
-        "You've already been using some of these synthetic event handlers such as <code>onClick()</code>. React's synthetic event system is great to use for most interactions you'll manage on DOM elements. However, if you want to attach an event handler to the document or window objects, you have to do this directly.",
+        "<code>componentDidMount()</code>方法也是添加特定功能所需的任何事件监听器的最佳位置。React 提供了一个合成事件系统，它将本地事件系统封装在浏览器中。这意味着，不管用户的浏览器如何，合成事件系统的行为都完全相同--即使不同浏览器之间的本地事件的行为可能不同。",
+        "你已经使用了一些合成事件处理程序，如<code>onClick()</code>。React 的合成事件系统非常适合用于你在 DOM 元素上管理的大多数交互。但是，如果要将事件处理程序附加到 document 或 window 对象，则必须直接执行此操作。",
         "<hr>",
-        "Attach an event listener in the <code>componentDidMount()</code> method for <code>keydown</code> events and have these events trigger the callback <code>handleKeyPress()</code>. You can use <code>document.addEventListener()</code> which takes the event (in quotes) as the first argument and the callback as the second argument.",
-        "Then, in <code>componentWillUnmount()</code>, remove this same event listener. You can pass the same arguments to <code>document.removeEventListener()</code>. It's good practice to use this lifecycle method to do any clean up on React components before they are unmounted and destroyed. Removing event listeners is an example of one such clean up action."
+        "在<code>componentDidMount()</code>方法中为<code>keydown</code>事件添加事件监听器，并让这些事件触发回调<code>handleKeyPress()</code>。你可以使用<code>document.addEventListener()</code>，它将事件（用引号括起来）作为第一个参数，将回调作为第二个参数。",
+        "然后，在<code>componentWillUnmount()</code>中移除相同的事件监听器。你可以把相同的参数传递给<code>document.removeEventListener()</code>。在卸载和销毁 React 组件之前，最好使用这种生命周期方法对它们进行清理。移除事件监听器就是这样一个清理操作的例子。"
       ],
       "files": {
         "indexjsx": {
@@ -2410,20 +2410,20 @@
       },
       "tests": [
         {
-          "text": "<code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.",
-          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').children().find('h1').length === 1; })(), '<code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.');"
+          "text": "<code>MyComponent</code>应该渲染一个包含<code>h1</code>标签的<code>div</code>元素。",
+          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').children().find('h1').length === 1; })(), '<code>MyComponent</code>应该渲染一个包含<code>h1</code>标签的<code>div</code>元素。');"
         },
         {
-          "text": "A keydown listener should be attached to the document in <code>componentDidMount</code>.",
-          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp('document\\.addEventListener(.|\\n|\\r)+keydown(.|\\n|\\r)+this\\.handleKeyPress').test(didMountString); })(), 'A keydown listener should be attached to the document in <code>componentDidMount</code>.');"
+          "text": "应该在<code>componentDidMount</code>中将 keydown 事件监听添加到到 document 上。",
+          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp('document\\.addEventListener(.|\\n|\\r)+keydown(.|\\n|\\r)+this\\.handleKeyPress').test(didMountString); })(), '应该在<code>componentDidMount</code>中将 keydown 事件监听添加到到 document 上。');"
         },
         {
-          "text": "The keydown listener should be removed from the document in <code>componentWillUnmount</code>.",
-          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp('document\\.removeEventListener(.|\\n|\\r)+keydown(.|\\n|\\r)+this\\.handleKeyPress').test(willUnmountString); })(), 'The keydown listener should be removed from the document in <code>componentWillUnmount</code>.');"
+          "text": "应该在<code>componentWillUnmount</code>中将 document 上的 keydown 事件监听移除。",
+          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp('document\\.removeEventListener(.|\\n|\\r)+keydown(.|\\n|\\r)+this\\.handleKeyPress').test(willUnmountString); })(), '应该在<code>componentWillUnmount</code>中将 document 上的 keydown 事件监听移除。');"
         },
         {
-          "text": "Once the component has mounted, pressing <code>enter</code> should update its state and the rendered <code>h1</code> tag.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state('message'); const beforeText = mockedComponent.find('h1').text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state('message'), text: mockedComponent.find('h1').text()}; });}; const afterKeyPress = await pressEnterKey(); assert(beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text, 'Once the component has mounted, pressing <code>enter</code> should update its state and the rendered <code>h1</code> tag.'); }; "
+          "text": "一旦组件装载完毕，按<code>enter</code>应该会更新其 state 并渲染到<code>h1</code>标签。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state('message'); const beforeText = mockedComponent.find('h1').text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state('message'), text: mockedComponent.find('h1').text()}; });}; const afterKeyPress = await pressEnterKey(); assert(beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text, '一旦组件装载完毕，按<code>enter</code>应该会更新其 state 并渲染到<code>h1</code>标签。'); }; "
         }
       ],
       "solutions": [
@@ -2438,12 +2438,12 @@
       "title": "Manage Updates with Lifecycle Methods",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Another lifecycle method is <code>componentWillReceiveProps()</code> which is called whenever a component is receiving new props. This method receives the new props as an argument, which is usually written as <code>nextProps</code>. You can use this argument and compare with <code>this.props</code> and perform actions before the component updates. For example, you may call <code>setState()</code> locally before the update is processed.",
-        "Another method is <code>componentDidUpdate()</code>, and is called immediately after a component re-renders. Note that rendering and mounting are considered different things in the component lifecycle. When a page first loads, all components are mounted and this is where methods like <code>componentWillMount()</code> and <code>componentDidMount()</code> are called. After this, as state changes, components re-render themselves. The next challenge covers this in more detail.",
+        "另一个生命周期方法是<code>componentWillReceiveProps()</code>，只要组件将要接收新的 props 就会调用它。此方法接收新的 props（通常写为<code>nextProps</code>）作为参数。你可以使用此参数并与<code>this.props</code>进行比较，并在组件更新之前执行操作。例如，你可以在处理更新之前在本地调用<code>setState()</code>。",
+        "还有一个方法是<code>componentDidUpdate()</code>，它在组件重新渲染后立即调用。请注意，渲染和装载在组件生命周期中是不同的。当页面第一次加载时，所有组件都被装载，这就是调用<code>componentWillMount()</code>和<code>componentDidMount()</code>等方法的地方。此后，随着 state 的变化，组件会重新渲染自己。下一个挑战将更详细地讨论这一点。",
         "<hr>",
-        "The child component <code>Dialog</code> receives <code>message</code> props from its parent, the <code>Controller</code>组件。 Write the <code>componentWillReceiveProps()</code> method in the <code>Dialog</code> component and have it log <code>this.props</code> and <code>nextProps</code> to the console. You'll need to pass <code>nextProps</code> as an argument to this method and although it's possible to name it anything, name it <code>nextProps</code> here.",
-        "Next, add <code>componentDidUpdate()</code> in the <code>Dialog</code> component, and log a statement that says the component has updated. This method works similar to <code>componentWillUpdate()</code>, which is provided for you. Now click the button to change the message and watch your browser console. The order of the console statements show the order the methods are called.",
-        "<strong>Note:</strong>&nbsp;You'll need to write the lifecycle methods as normal functions and not as arrow functions to pass the tests (there is also no advantage to writing lifecycle methods as arrow functions)."
+        "子组件<code>Dialog</code>从其父组件<code>Controller</code>接收<code>message</code>props。在<code>Dialog</code>组件中编写<code>componentWillReceiveProps()</code>方法，并将<code>this.props</code>和<code>nextProps</code>记录到控制台。你需要将<code>nextProps</code>作为参数传递给此方法，虽然可以将其命名为任何名称，但请将其命名为<code>nextProps</code>。",
+        "接下来，在<code>Dialog</code>组件中添加<code>componentDidUpdate()</code>，并记录一条说明组件已更新的语句。此方法的工作方式类似于为你提供的<code>componentWillUpdate()</code>。现在单击按钮更改消息并观察浏览器控制台。控制台语句的顺序显示了调用方法的顺序。",
+        "<strong>注意：/strong>&nbsp;为了通过测试，你需要将生命周期方法编写为普通函数，而不是箭头函数（将生命周期方法编写为箭头函数也没有好处）。"
       ],
       "files": {
         "indexjsx": {
@@ -2497,20 +2497,20 @@
       },
       "tests": [
         {
-          "text": "The <code>Controller</code> component should render the <code>Dialog</code> component as a child.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('Dialog').length === 1; })(), 'The <code>Controller</code> component should render the <code>Dialog</code> component as a child.');"
+          "text": "<code>Controller</code>组件应该将<code>Dialog</code>组件渲染为子组件。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('Dialog').length === 1; })(), '<code>Controller</code>组件应该将<code>Dialog</code>组件渲染为子组件。');"
         },
         {
-          "text": "The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>this.props</code> to the console.",
-          "testString": "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); return lifecycleChild.includes('console.log') && lifecycleChild.includes('this.props') })(), 'The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>this.props</code> to the console.');"
+          "text": "<code>Dialog</code>组件中的<code>componentWillReceiveProps</code>方法应将<code>this.props</code>记录到控制台。",
+          "testString": "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); return lifecycleChild.includes('console.log') && lifecycleChild.includes('this.props') })(), '<code>Dialog</code>组件中的<code>componentWillReceiveProps</code>方法应将<code>this.props</code>记录到控制台。');"
         },
         {
-          "text": "The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>nextProps</code> to the console.",
-          "testString": "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); const nextPropsAsParameterTest = /componentWillReceiveProps(| *?= *?)(\\(|)nextProps(\\)|)( *?=> *?{| *?{|{)/; const nextPropsInConsoleLogTest = /console\\.log\\(.*?nextProps\\b.*?\\)/; return ( lifecycleChild.includes('console.log') && nextPropsInConsoleLogTest.test(lifecycleChild) && nextPropsAsParameterTest.test(lifecycleChild) ); })(), 'The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>nextProps</code> to the console.');"
+          "text": "<code>Dialog</code>组件中的<code>componentWillReceiveProps</code>方法应将<code>nextProps</code>记录到控制台。",
+          "testString": "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); const nextPropsAsParameterTest = /componentWillReceiveProps(| *?= *?)(\\(|)nextProps(\\)|)( *?=> *?{| *?{|{)/; const nextPropsInConsoleLogTest = /console\\.log\\(.*?nextProps\\b.*?\\)/; return ( lifecycleChild.includes('console.log') && nextPropsInConsoleLogTest.test(lifecycleChild) && nextPropsAsParameterTest.test(lifecycleChild) ); })(), '<code>Dialog</code>组件中的<code>componentWillReceiveProps</code>方法应将<code>nextProps</code>记录到控制台。');"
         },
         {
-          "text": "The <code>Dialog</code> component should call the <code>componentDidUpdate</code> method and log a message to the console.",
-          "testString": "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentDidUpdate.toString().replace(/ /g,''); return lifecycleChild.length !== 'undefined' && lifecycleChild.includes('console.log'); })(), 'The <code>Dialog</code> component should call the <code>componentDidUpdate</code> method and log a message to the console.');"
+          "text": "<code>Dialog</code>组件应调用<code>componentDidUpdate</code>方法并将消息记录到控制台。",
+          "testString": "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentDidUpdate.toString().replace(/ /g,''); return lifecycleChild.length !== 'undefined' && lifecycleChild.includes('console.log'); })(), '<code>Dialog</code>组件应调用<code>componentDidUpdate</code>方法并将消息记录到控制台。');"
         }
       ],
       "solutions": [
@@ -2525,10 +2525,10 @@
       "title": "Optimize Re-Renders with shouldComponentUpdate",
       "releasedOn": "December 25, 2017",
       "description": [
-        "So far, if any component receives new <code>state</code> or new <code>props</code>, it re-renders itself and all its children. This is usually okay. But React provides a lifecycle method you can call when child components receive new <code>state</code> or <code>props</code>, and declare specifically if the components should update or not. The method is <code>shouldComponentUpdate()</code>, and it takes <code>nextProps</code> and <code>nextState</code> as parameters.",
-        "This method is a useful way to optimize performance. For example, the default behavior is that your component re-renders when it receives new <code>props</code>, even if the <code>props</code> haven't changed. You can use <code>shouldComponentUpdate()</code> to prevent this by comparing the <code>props</code>. The method must return a <code>boolean</code> value that tells React whether or not to update the组件。 You can compare the current props (<code>this.props</code>) to the next props (<code>nextProps</code>) to determine if you need to update or not, and return <code>true</code> or <code>false</code> accordingly.",
+        "到目前为止，如果任何组件接收到新的<code>state</code>或新的<code>props</code>，它会重新渲染自己及其所有子组件。这通常是好的。但是 React 提供了一种生命周期方法，当子组件接收到新的<code>state</code>或<code>props</code>时，你可以调用该方法，并特别声明组件是否应该更新。方法是<code>shouldComponentUpdate()</code>，它将<code>nextProps</code>和<code>nextState</code>作为参数。",
+        "这种方法是优化性能的有效方法。例如，默认行为是，当组件接收到新的<code>props</code>时，即使<code>props</code>没有改变，它也会重新渲染。你可以通过使用<code>shouldComponentUpdate()</code>比较<code>props</code>来防止这种情况。该方法必须返回一个布尔值，该值告诉 React 是否更新组件。你可以比较当前的 props（<code>this.props</code>）和下一个 props（<code>nextProps</code>），以确定你是否需要更新，并相应地返回<code>true</code>或<code>false</code>。",
         "<hr>",
-        "The <code>shouldComponentUpdate()</code> method is added in a component called <code>OnlyEvens</code>. Currently, this method returns <code>true</code> so <code>OnlyEvens</code> re-renders every time it receives new <code>props</code>. Modify the method so <code>OnlyEvens</code> updates only if the <code>value</code> of its new props is even. Click the <code>Add</code> button and watch the order of events in your browser's console as the other lifecycle hooks are triggered."
+        "<code>shouldComponentUpdate()</code>方法添加到名为<code>OnlyEvens</code>的组件中。目前，该方法返回<code>true</code>，因此每次收到新的<code>props</code>时，<code>OnlyEvens</code>都会重新渲染。修改该方法，以便<code>OnlyEvens</code>仅在其新 props 的<code>value</code>为偶数时更新。单击<code>Add</code>按钮，在触发其他生命周期钩子时，在浏览器控制台中查看事件的顺序。"
       ],
       "files": {
         "indexjsx": {
@@ -2588,20 +2588,20 @@
       },
       "tests": [
         {
-          "text": "The <code>Controller</code> component should render the <code>OnlyEvens</code> component as a child.",
-          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('OnlyEvens').length === 1; })(), 'The <code>Controller</code> component should render the <code>OnlyEvens</code> component as a child.');"
+          "text": "<code>Controller</code>组件应该将<code>OnlyEvens</code>组件渲染为子组件。",
+          "testString": "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('OnlyEvens').length === 1; })(), '<code>Controller</code>组件应该将<code>OnlyEvens</code>组件渲染为子组件。');"
         },
         {
-          "text": "The <code>shouldComponentUpdate</code> method should be defined on the <code>OnlyEvens</code>组件。",
-          "testString": "assert((() => { const child = React.createElement(OnlyEvens).type.prototype.shouldComponentUpdate.toString().replace(/s/g,''); return child !== 'undefined'; })(), 'The <code>shouldComponentUpdate</code> method should be defined on the <code>OnlyEvens</code>组件。');"
+          "text": "应该在<code>OnlyEvens</code>组件上定义<code>shouldComponentUpdate</code>方法。",
+          "testString": "assert((() => { const child = React.createElement(OnlyEvens).type.prototype.shouldComponentUpdate.toString().replace(/s/g,''); return child !== 'undefined'; })(), '应该在<code>OnlyEvens</code>组件上定义<code>shouldComponentUpdate</code>方法。');"
         },
         {
-          "text": "The <code>OnlyEvens</code> component should return an <code>h1</code> tag which renders the value of <code>this.props.value</code>.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 1000 }); return waitForIt(() => mockedComponent.find('h1').html()); }; const second = () => { mockedComponent.setState({ value: 10 }); return waitForIt(() => mockedComponent.find('h1').html()); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === '<h1>1000</h1>' && secondValue === '<h1>10</h1>', 'The <code>OnlyEvens</code> component should return an <code>h1</code> tag which renders the value of <code>this.props.value</code>.'); }; "
+          "text": "<code>OnlyEvens</code>组件应该返回一个<code>h1</code>标签，该标签渲染<code>this.props.value</code>的值。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 1000 }); return waitForIt(() => mockedComponent.find('h1').html()); }; const second = () => { mockedComponent.setState({ value: 10 }); return waitForIt(() => mockedComponent.find('h1').html()); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === '<h1>1000</h1>' && secondValue === '<h1>10</h1>', '<code>OnlyEvens</code>组件应该返回一个<code>h1</code>标签，该标签渲染<code>this.props.value</code>的值。'); }; "
         },
         {
-          "text": "<code>OnlyEvens</code> should re-render only when <code>nextProps.value</code> is even.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 8 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const second = () => { mockedComponent.setState({ value: 7 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const third = () => { mockedComponent.setState({ value: 42 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(firstValue === '8' && secondValue === '8' && thirdValue === '42', '<code>OnlyEvens</code> should re-render only when <code>nextProps.value</code> is even.'); }; "
+          "text": "只有在<code>nextProps.value</code>为偶数时，<code>OnlyEvens</code>才会重新渲染。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 8 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const second = () => { mockedComponent.setState({ value: 7 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const third = () => { mockedComponent.setState({ value: 42 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(firstValue === '8' && secondValue === '8' && thirdValue === '42', '只有在<code>nextProps.value</code>为偶数时，<code>OnlyEvens</code>才会重新渲染。'); }; "
         }
       ],
       "solutions": [
@@ -2616,16 +2616,16 @@
       "title": "Introducing Inline Styles",
       "releasedOn": "December 25, 2017",
       "description": [
-        "There are other complex concepts that add powerful capabilities to your React code. But you may be wondering about the more simple problem of how to style those JSX elements you create in React. You likely know that it won't be exactly the same as working with HTML because of <a target=\"_blank\" href=\"define-an-html-class-in-jsx\"> the way you apply classes to JSX elements</a>.",
-        "If you import styles from a stylesheet, it isn't much different at all. You apply a class to your JSX element using the <code>className</code> attribute, and apply styles to the class in your stylesheet. Another option is to apply <strong><em>inline</em></strong> styles, which are very common in ReactJS development.",
-        "You apply inline styles to JSX elements similar to how you do it in HTML, but with a few JSX differences. Here's an example of an inline style in HTML:",
+        "还有其他复杂的概念可以为你的 React 代码增加强大的功能。但是，你可能会想知道更简单的问题，比如：如何对在 React 中创建的 JSX 元素进行风格化。你可能知道，由于<a target=\"_blank\" href=\"define-an-html-class-in-jsx\">将 class 应用于 JSX 元素的方式</a>与 HTML 中的使用并不完全相同。",
+        "如果从样式表导入样式，它就没有太大的不同。使用<code>className</code>属性将 class 应用于 JSX 元素，并将样式应用于样式表中的 class。另一种选择是使用<strong><em>内联</em></strong>样式，这在 ReactJS 开发中非常常见。",
+        "你将内联样式应用于 JSX 元素，类似于你在 HTML 中的操作方式，但有一些 JSX 差异。以下是 HTML 中内联样式的示例：",
         "<code>&lt;div style=\"color: yellow; font-size: 16px\"&gt;Mellow Yellow&lt;/div&gt;</code>",
-        "JSX elements use the <code>style</code> attribute, but because of the way JSX is transpiled, you can't set the value to a <code>string</code>. Instead, you set it equal to a JavaScript <code>object</code>. Here's an example:",
+        "JSX 元素使用<code>style</code>属性，但是由于 JSX 的传输方式，你不能将值设置为<code>字符串</code>。相反，你应将其设置为 JavaScript<code>对象</code>。这里有一个例子：",
         "<code>&lt;div style={{color: \"yellow\", fontSize: 16}}&gt;Mellow Yellow&lt;/div&gt;</code>",
-        "Notice how we camelCase the \"fontSize\" property? This is because React will not accept kebab-case keys in the style object. React will apply the correct property name for us in the HTML.",
+        "注意我们使用驼峰式命名的 \"fontSize\" 属性，这是因为 React 不会接受样式对象中的连字符。React 将在 HTML 中为我们应用正确的属性名称。",
         "<hr>",
-        "Add a <code>style</code> attribute to the <code>div</code> in the code editor to give the text a color of red and font size of 72px.",
-        "Note that you can optionally set the font size to be a number, omitting the units \"px\", or write it as \"72px\"."
+        "在代码编辑器的<code>div</code>中添加一个<code>style</code>属性，使文本颜色为红色，字体大小为 72px。",
+        "请注意，你可以选择将字体大小设置为数字，省略单位 \"px\"，或者将其写为 \"72px\"。"
       ],
       "files": {
         "indexjsx": {
@@ -2651,16 +2651,16 @@
       },
       "tests": [
         {
-          "text": "The component should render a <code>div</code>元素。",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().type() === 'div'; })(), 'The component should render a <code>div</code>元素。');"
+          "text": "组件应该渲染一个<code>div</code>元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().type() === 'div'; })(), '组件应该渲染一个<code>div</code>元素。');"
         },
         {
-          "text": "The <code>div</code> element should have a color of <code>red</code>.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().props().style.color === 'red'; })(), 'The <code>div</code> element should have a color of <code>red</code>.');"
+          "text": "<code>div</code>元素应该是<code>红色</code>的。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().props().style.color === 'red'; })(), '<code>div</code>元素应该是<code>红色</code>的。');"
         },
         {
-          "text": "The <code>div</code> element should have a font size of <code>72px</code>.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === '72' || mockedComponent.children().props().style.fontSize === '72px'); })(), 'The <code>div</code> element should have a font size of <code>72px</code>.');"
+          "text": "<code>div</code>元素的字体大小应为<code>72px</code>。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === '72' || mockedComponent.children().props().style.fontSize === '72px'); })(), '<code>div</code>元素的字体大小应为<code>72px</code>。');"
         }
       ],
       "solutions": [
@@ -2675,10 +2675,10 @@
       "title": "Add Inline Styles in React",
       "releasedOn": "December 25, 2017",
       "description": [
-        "You may have noticed in the last challenge that there were several other syntax differences from HTML inline styles in addition to the <code>style</code> attribute set to a JavaScript object. First, the names of certain CSS style properties use camel case. For example, the last challenge set the size of the font with <code>fontSize</code> instead of <code>font-size</code>. Hyphenated words like <code>font-size</code> are invalid syntax for JavaScript object properties, so React uses camel case. As a rule, any hyphenated style properties are written using camel case in JSX.",
-        "All property value length units (like <code>height</code>, <code>width</code>, and <code>fontSize</code>) are assumed to be in <code>px</code> unless otherwise specified. If you want to use <code>em</code>, for example, you wrap the value and the units in quotes, like <code>{fontSize: \"4em\"}</code>. Other than the length values that default to <code>px</code>, all other property values should be wrapped in quotes.",
+        "在上一次挑战中，你可能已经注意到，除了设置为 JavaScript 对象的<code>style</code>属性之外，与 HTML 内联样式相比，React 的内联样式还有其他几个语法差异。首先，某些 CSS 样式属性的名称使用驼峰式命名。例如，最后一个挑战用<code>fontSize</code>而不是<code>font-size</code>来设置字体的大小。对于 JavaScript 对象属性来说，像<code>font-size</code>这样的连字符命名是无效的语法，所以 React 使用驼峰式命名。通常，任何连字符的 style 属性在 JSX 中都是使用驼峰式命名的。",
+        "除非另有规定，否则所有属性值是长度的（如<code>height</code>、<code>width</code>和<code>fontSize</code>）其单位都假定为<code>px</code>。例如，如果要使用<code>em</code>，可以用引号将值和单位括起来，例如<code>{fontSize: \"4em\"}</code>。除了默认为<code>px</code>的长度值之外，所有其他属性值都应该用引号括起来。",
         "<hr>",
-        "If you have a large set of styles, you can assign a style <code>object</code> to a constant to keep your code organized. Uncomment the <code>styles</code> constant and declare an <code>object</code> with three style properties and their values. Give the <code>div</code> a color of <code>\"purple\"</code>, a font-size of <code>40</code>, and a border of <code>\"2px solid purple\"</code>. Then set the <code>style</code> attribute equal to the <code>styles</code> constant."
+        "如果你有大量样式，你可以将 style<code>对象</code>分配给一个常量，以保持代码的组织有序。取消对<code>styles</code>常量的注释，并声明具有三个样式属性及对应值的<code>对象</code>。使<code>div</code>的颜色为<code>\"purple\"</code>、字号为<code>40</code>、边框为<code>\"2px solid purple\"</code>。然后设置<code>style</code>属性，使其等于<code>styles</code>常量。"
       ],
       "files": {
         "indexjsx": {
@@ -2708,28 +2708,28 @@
       },
       "tests": [
         {
-          "text": "The <code>styles</code> variable should be an <code>object</code> with three properties.",
-          "testString": "assert(Object.keys(styles).length === 3, 'The <code>styles</code> variable should be an <code>object</code> with three properties.');"
+          "text": "<code>styles</code>变量应该是具有三个属性的<code>对象</code>。",
+          "testString": "assert(Object.keys(styles).length === 3, '<code>styles</code>变量应该是具有三个属性的<code>对象</code>。');"
         },
         {
-          "text": "The <code>styles</code> variable should have a <code>color</code> property set to a value of <code>purple</code>.",
-          "testString": "assert(styles.color === 'purple', 'The <code>styles</code> variable should have a <code>color</code> property set to a value of <code>purple</code>.');"
+          "text": "<code>styles</code>变量的<code>color</code>属性应该设置为<code>purple</code>。",
+          "testString": "assert(styles.color === 'purple', '<code>styles</code>变量的<code>color</code>属性应该设置为<code>purple</code>。');"
         },
         {
-          "text": "The <code>styles</code> variable should have a <code>fontSize</code> property set to a value of <code>40</code>.",
-          "testString": "assert(styles.fontSize === 40, 'The <code>styles</code> variable should have a <code>fontSize</code> property set to a value of <code>40</code>.');"
+          "text": "<code>styles</code>变量应该将<code>fontSize</code>属性设置为<code>40</code>。",
+          "testString": "assert(styles.fontSize === 40, '<code>styles</code>变量应该将<code>fontSize</code>属性设置为<code>40</code>。');"
         },
         {
-          "text": "The <code>styles</code> variable should have a <code>border</code> property set to a value of <code>2px solid purple</code>.",
-          "testString": "assert(styles.border === \"2px solid purple\", 'The <code>styles</code> variable should have a <code>border</code> property set to a value of <code>2px solid purple</code>.');"
+          "text": "<code>styles</code>变量的<code>border</code>属性应该设置为<code>2px solid purple</code>。",
+          "testString": "assert(styles.border === \"2px solid purple\", '<code>styles</code>变量的<code>border</code>属性应该设置为<code>2px solid purple</code>。');"
         },
         {
-          "text": "The component should render a <code>div</code>元素。",
-          "testString": "assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return mockedComponent.type() === 'div'; })(), 'The component should render a <code>div</code>元素。');"
+          "text": "组件应该渲染一个<code>div</code>元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return mockedComponent.type() === 'div'; })(), '组件应该渲染一个<code>div</code>元素。');"
         },
         {
-          "text": "The <code>div</code> element should have its styles defined by the <code>styles</code> object.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return (mockedComponent.props().style.color === \"purple\" && mockedComponent.props().style.fontSize === 40 && mockedComponent.props().style.border === \"2px solid purple\"); })(), 'The <code>div</code> element should have its styles defined by the <code>styles</code> object.');"
+          "text": "<code>div</code>元素的样式应该由<code>styles</code>对象定义。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return (mockedComponent.props().style.color === \"purple\" && mockedComponent.props().style.fontSize === 40 && mockedComponent.props().style.border === \"2px solid purple\"); })(), '<code>div</code>元素的样式应该由<code>styles</code>对象定义。');"
         }
       ],
       "solutions": [
@@ -2744,10 +2744,10 @@
       "title": "Use Advanced JavaScript in React Render Method",
       "releasedOn": "December 25, 2017",
       "description": [
-        "In previous challenges, you learned how to inject JavaScript code into JSX code using curly braces, <code>{ }</code>, for tasks like accessing props, passing props, accessing state, inserting comments into your code, and most recently, styling your components. These are all common use cases to put JavaScript in JSX, but they aren't the only way that you can utilize JavaScript code in your React components.",
-        "You can also write JavaScript directly in your <code>render</code> methods, before the <code>return</code> statement, <strong><em>without</em></strong> inserting it inside of curly braces. This is because it is not yet within the JSX code. When you want to use a variable later in the JSX code <em>inside</em> the <code>return</code> statement, you place the variable name inside curly braces.",
+        "在之前的挑战中，你学习了如何使用大括号<code>{ }</code>将 JavaScript 代码插入到 JSX 代码中，用于访问 props、传递 props、访问 state、在代码中插入注释以及最近学习的定制组件样式等任务。这些都是将 JavaScript 放在 JSX 中的常见用例，但是在 React 组件中使用 JavaScript 代码还有其他方式。",
+        "在<code>render</code>方法中编写 JavaScript，你可以把 JavaScript 直接放在<code>return</code>语句之前，而<strong><em>不必</em></strong>将其插入大括号中。这是因为它还不在 JSX 代码中。当你稍后想在<code>return</code>语句中的 JSX 代码中使用变量时，可以将变量名放在大括号中。",
         "<hr>",
-        "In the code provided, the <code>render</code> method has an array that contains 20 phrases to represent the answers found in the classic 1980's Magic Eight Ball toy. The button click event is bound to the <code>ask</code> method, so each time the button is clicked a random number will be generated and stored as the <code>randomIndex</code> in state. On line 52, delete the string <code>\"change me!\"</code> and reassign the <code>answer</code> const so your code randomly accesses a different index of the <code>possibleAnswers</code> array each time the component updates. Finally, insert the <code>answer</code> const inside the <code>p</code> tags."
+        "在提供的代码中，<code>render</code>方法中有一个包含 20 个短语的数组，用于表示 20 世纪 80 年代经典魔术八球玩具中的答案。绑定<code>ask</code>方法到按钮的单击事件，每次单击该按钮时，将生成随机数并将其存储为 state 中的<code>randomIndex</code>。在第 52 行，删除字符串<code>\"change me!\"</code>并重新分配<code>answer</code>常量，以便每次组件更新时，你的代码随机访问<code>possibleAnswers</code>数组的不同索引。最后，在<code>p</code>标签内插入<code>answer</code>常量。"
       ],
       "files": {
         "indexjsx": {
@@ -2837,28 +2837,28 @@
       },
       "tests": [
         {
-          "text": "The <code>MagicEightBall</code> component should exist and should render to the page.",
-          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).find('MagicEightBall').length, 1, 'The <code>MagicEightBall</code> component should exist and should render to the page.');"
+          "text": "<code>MagicEightBall</code>组件应该存在并被渲染到页面。",
+          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).find('MagicEightBall').length, 1, '<code>MagicEightBall</code>组件应该存在并被渲染到页面。');"
         },
         {
-          "text": "<code>MagicEightBall</code>&apos;s first child should be an <code>input</code>元素。",
-          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(0).name(), 'input', '<code>MagicEightBall</code>&apos;s first child should be an <code>input</code>元素。');"
+          "text": "<code>MagicEightBall</code>的第一个子元素应该是<code>input</code>元素。",
+          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(0).name(), 'input', '<code>MagicEightBall</code>的第一个子元素应该是<code>input</code>元素。');"
         },
         {
-          "text": "<code>MagicEightBall</code>&apos;s third child should be a <code>button</code>元素。",
-          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(2).name(), 'button', '<code>MagicEightBall</code>&apos;s third child should be a <code>button</code>元素。');"
+          "text": "<code>MagicEightBall</code>的第三个子元素应该是<code>button</code>元素。",
+          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(2).name(), 'button', '<code>MagicEightBall</code>的第三个子元素应该是<code>button</code>元素。');"
         },
         {
-          "text": "<code>MagicEightBall</code>&apos;s state should be initialized with a property of <code>userInput</code> and a property of <code>randomIndex</code> both set to a value of an empty string.",
-          "testString": "assert(Enzyme.mount(React.createElement(MagicEightBall)).state('randomIndex') === '' && Enzyme.mount(React.createElement(MagicEightBall)).state('userInput') === '', '<code>MagicEightBall</code>&apos;s state should be initialized with a property of <code>userInput</code> and a property of <code>randomIndex</code> both set to a value of an empty string.');"
+          "text": "<code>MagicEightBall</code>的 state 应该用<code>userInput</code>属性和<code>randomIndex</code>属性初始化，并且这两个属性的值都应该是空字符串。",
+          "testString": "assert(Enzyme.mount(React.createElement(MagicEightBall)).state('randomIndex') === '' && Enzyme.mount(React.createElement(MagicEightBall)).state('userInput') === '', '<code>MagicEightBall</code>的 state 应该用<code>userInput</code>属性和<code>randomIndex</code>属性初始化，并且这两个属性的值都应该是空字符串。');"
         },
         {
-          "text": "When <code>MagicEightBall</code> is first mounted to the DOM, it should return an empty <code>p</code>元素。",
-          "testString": "assert(Enzyme.mount(React.createElement(MagicEightBall)).find('p').length === 1 && Enzyme.mount(React.createElement(MagicEightBall)).find('p').text() === '', 'When <code>MagicEightBall</code> is first mounted to the DOM, it should return an empty <code>p</code>元素。');"
+          "text": "当<code>MagicEightBall</code>第一次加载到 DOM 中时，它应该返回一个空的<code>p</code>元素。",
+          "testString": "assert(Enzyme.mount(React.createElement(MagicEightBall)).find('p').length === 1 && Enzyme.mount(React.createElement(MagicEightBall)).find('p').text() === '', '当<code>MagicEightBall</code>第一次加载到 DOM 中时，它应该返回一个空的<code>p</code>元素。');"
         },
         {
-          "text": "When text is entered into the <code>input</code> element and the button is clicked, the <code>MagicEightBall</code> component should return a <code>p</code> element that contains a random element from the <code>possibleAnswers</code> array.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MagicEightBall)); const simulate = () => { comp.find('input').simulate('change', { target: { value: 'test?' }}); comp.find('button').simulate('click'); }; const result = () => comp.find('p').text(); const _1 = () => { simulate(); return waitForIt(() => result()) }; const _2 = () => { simulate(); return waitForIt(() => result()) }; const _3 = () => { simulate(); return waitForIt(() => result()) }; const _4 = () => { simulate(); return waitForIt(() => result()) }; const _5 = () => { simulate(); return waitForIt(() => result()) }; const _6 = () => { simulate(); return waitForIt(() => result()) }; const _7 = () => { simulate(); return waitForIt(() => result()) }; const _8 = () => { simulate(); return waitForIt(() => result()) }; const _9 = () => { simulate(); return waitForIt(() => result()) }; const _10 = () => { simulate(); return waitForIt(() => result()) }; const _1_val = await _1(); const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); const _6_val = await _6(); const _7_val = await _7(); const _8_val = await _8(); const _9_val = await _9(); const _10_val = await _10(); const actualAnswers = [_1_val, _2_val, _3_val, _4_val, _5_val, _6_val, _7_val, _8_val, _9_val, _10_val]; const hasIndex = actualAnswers.filter((answer, i) => possibleAnswers.indexOf(answer) !== -1); const notAllEqual = new Set(actualAnswers); assert(notAllEqual.size > 1 && hasIndex.length === 10, 'When text is entered into the <code>input</code> element and the button is clicked, the <code>MagicEightBall</code> component should return a <code>p</code> element that contains a random element from the <code>possibleAnswers</code> array.');}"
+          "text": "当文本被输入到<code>input</code>元素中并点击按钮时，<code>MagicEightBall</code>组件应该返回一个<code>p</code>元素，该元素包含数组<code>possibleAnswers</code>中的随机一个元素。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MagicEightBall)); const simulate = () => { comp.find('input').simulate('change', { target: { value: 'test?' }}); comp.find('button').simulate('click'); }; const result = () => comp.find('p').text(); const _1 = () => { simulate(); return waitForIt(() => result()) }; const _2 = () => { simulate(); return waitForIt(() => result()) }; const _3 = () => { simulate(); return waitForIt(() => result()) }; const _4 = () => { simulate(); return waitForIt(() => result()) }; const _5 = () => { simulate(); return waitForIt(() => result()) }; const _6 = () => { simulate(); return waitForIt(() => result()) }; const _7 = () => { simulate(); return waitForIt(() => result()) }; const _8 = () => { simulate(); return waitForIt(() => result()) }; const _9 = () => { simulate(); return waitForIt(() => result()) }; const _10 = () => { simulate(); return waitForIt(() => result()) }; const _1_val = await _1(); const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); const _6_val = await _6(); const _7_val = await _7(); const _8_val = await _8(); const _9_val = await _9(); const _10_val = await _10(); const actualAnswers = [_1_val, _2_val, _3_val, _4_val, _5_val, _6_val, _7_val, _8_val, _9_val, _10_val]; const hasIndex = actualAnswers.filter((answer, i) => possibleAnswers.indexOf(answer) !== -1); const notAllEqual = new Set(actualAnswers); assert(notAllEqual.size > 1 && hasIndex.length === 10, '当文本被输入到<code>input</code>元素中并点击按钮时，<code>MagicEightBall</code>组件应该返回一个<code>p</code>元素，该元素包含数组<code>possibleAnswers</code>中的随机一个元素。');}"
         }
       ],
       "solutions": [
@@ -2873,10 +2873,10 @@
       "title": "Render with an If/Else Condition",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Another application of using JavaScript to control your rendered view is to tie the elements that are rendered to a condition. When the condition is true, one view renders. When it's false, it's a different view. You can do this with a standard <code>if/else</code> statement in the <code>render()</code> method of a React组件。",
+        "使用 JavaScript 控制渲染视图的另一个应用是将渲染的元素绑定到一个条件。当条件为真时，将呈现一个视图，反之，则呈现另一种视图。你可以在 React 组件的<code>render()</code>方法中使用的标准<code>if/else</code>语句来实现这一点。",
         "<hr>",
-        "MyComponent contains a <code>boolean</code> in its state which tracks whether you want to display some element in the UI or not. The <code>button</code> toggles the state of this value. Currently, it renders the same UI every time. Rewrite the <code>render()</code> method with an <code>if/else</code> statement so that if <code>display</code> is <code>true</code>, you return the current markup. Otherwise, return the markup without the <code>h1</code>元素。",
-        "<strong>Note:</strong>&nbsp;You must write an <code>if/else</code> to pass the tests. Use of the ternary operator will not pass here."
+        "MyComponent 的 state 中包含一个<code>布尔值</code>，用于跟踪是否要在 UI 中显示某个元素。<code>按钮</code>切换此值的状态。目前，它每次都呈现相同的 UI。用<code>if/else</code>语句重写<code>render()</code>方法，如果<code>display</code>为<code>true</code>则返回当前标记。否则，返回不带<code>h1</code>元素的标记。",
+        "<strong>注意：</strong>&nbsp;写<code>if/else</code>语句才能通过测试，使用三元运算符是不会通过的。"
       ],
       "files": {
         "indexjsx": {
@@ -2917,20 +2917,20 @@
       },
       "tests": [
         {
-          "text": "<code>MyComponent</code> should exist and render.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length === 1; })(), '<code>MyComponent</code> should exist and render.');"
+          "text": "<code>MyComponent</code>应该存在并被渲染。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length === 1; })(), '<code>MyComponent</code>应该存在并被渲染。');"
         },
         {
-          "text": "When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 2 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 1, 'When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.'); }; "
+          "text": "当<code>display</code>被设置为<code>true</code>时，<code>div</code>、<code>button</code>和<code>h1</code>标签应该被渲染。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 2 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 1, '当<code>display</code>被设置为<code>true</code>时，<code>div</code>、<code>button</code>和<code>h1</code>标签应该被渲染。'); }; "
         },
         {
-          "text": "When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 0, 'When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.'); }; "
+          "text": "当<code>display</code>被设置为<code>false</code>时，只有<code>div</code>和<code>button</code>应该被渲染。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 0, '当<code>display</code>被设置为<code>false</code>时，只有<code>div</code>和<code>button</code>应该被渲染。'); }; "
         },
         {
-          "text": "The render method should use an <code>if/else</code> statement to check the condition of <code>this.state.display</code>.",
-          "testString": "getUserInput => assert(getUserInput('index').includes('if') && getUserInput('index').includes('else'), 'The render method should use an <code>if/else</code> statement to check the condition of <code>this.state.display</code>.');"
+          "text": "render 方法中应该使用<code>if/else</code>语句来检查<code>this.state.display</code>的条件。",
+          "testString": "getUserInput => assert(getUserInput('index').includes('if') && getUserInput('index').includes('else'), 'render 方法中应该使用<code>if/else</code>语句来检查<code>this.state.display</code>的条件。');"
         }
       ],
       "solutions": [
@@ -2945,11 +2945,11 @@
       "title": "Use && for a More Concise Conditional",
       "releasedOn": "December 25, 2017",
       "description": [
-        "The if/else statements worked in the last challenge, but there's a more concise way to achieve the same result. Imagine that you are tracking several conditions in a component and you want different elements to render depending on each of these conditions. If you write a lot of <code>else if</code> statements to return slightly different UIs, you may repeat code which leaves room for error. Instead, you can use the <code>&&</code> logical operator to perform conditional logic in a more concise way. This is possible because you want to check if a condition is <code>true</code>, and if it is, return some markup. Here's an example:",
+        "if/else 语句在上一次挑战中是有效的，但是有一种更简洁的方法可以达到同样的结果。假设你正在跟踪组件中的几个条件，并且希望根据这些条件中的每一个来渲染不同的元素。如果你写了很多<code>else if</code>语句来返回稍微不同的 UI，你可能会写很多重复代码，这就留下了出错的空间。相反，你可以使用<code>&&</code>逻辑运算符以更简洁的方式执行条件逻辑。这是完全可行的，因为你希望检查条件是否为真，如果为真，则返回一些标记。这里有一个例子：",
         "<code>{condition && &lt;p&gt;markup&lt;/p&gt;}</code>",
-        "If the <code>condition</code> is <code>true</code>, the markup will be returned. If the condition is <code>false</code>, the operation will immediately return <code>false</code> after evaluating the <code>condition</code> and return nothing. You can include these statements directly in your JSX and string multiple conditions together by writing <code>&&</code> after each one. This allows you to handle more complex conditional logic in your <code>render()</code> method without repeating a lot of code.",
+        "如果<code>condition</code>为 true，则返回标记。如果 condition 为 false，操作将在判断<code>condition</code>后立即返回<code>false</code>，并且不返回任何内容。你可以将这些语句直接包含在 JSX 中，并通过在每个条件后面写<code>&&</code>来将多个条件串在一起。这允许你在<code>render()</code>方法中处理更复杂的条件逻辑，而无需重复大量代码。",
         "<hr>",
-        "Solve the previous example again, so the <code>h1</code> only renders if <code>display</code> is <code>true</code>, but use the <code>&&</code> logical operator instead of an <code>if/else</code> statement."
+        "再来看看前面的示例，<code>h1</code>还是在<code>display</code>为<code>true</code>时被渲染，但使用<code>&&</code>逻辑运算符代替<code>if/else</code>语句。"
       ],
       "files": {
         "indexjsx": {
@@ -2989,20 +2989,20 @@
       },
       "tests": [
         {
-          "text": "<code>MyComponent</code> should exist and render.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length; })(), '<code>MyComponent</code> should exist and render.');"
+          "text": "<code>MyComponent</code>应该存在并被渲染。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length; })(), '<code>MyComponent</code>应该存在并被渲染。');"
         },
         {
-          "text": "When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find('div').length === 1 && updated.find('div').children().length === 2 && updated.find('button').length === 1 && updated.find('h1').length === 1, 'When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.'); }; "
+          "text": "当<code>display</code>被设置为<code>true</code>时，<code>div</code>、<code>button</code>和<code>h1</code>标签应该被渲染。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find('div').length === 1 && updated.find('div').children().length === 2 && updated.find('button').length === 1 && updated.find('h1').length === 1, '当<code>display</code>被设置为<code>true</code>时，<code>div</code>、<code>button</code>和<code>h1</code>标签应该被渲染。'); }; "
         },
         {
-          "text": "When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find('div').length === 1 && updated.find('div').children().length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 0, 'When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.'); }; "
+          "text": "当<code>display</code>被设置为<code>false</code>时，只有<code>div</code>和<code>button</code>应该被渲染。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find('div').length === 1 && updated.find('div').children().length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 0, '当<code>display</code>被设置为<code>false</code>时，只有<code>div</code>和<code>button</code>应该被渲染。'); }; "
         },
         {
-          "text": "The render method should use the && logical operator to check the condition of this.state.display.",
-          "testString": "getUserInput => assert(getUserInput('index').includes('&&'), 'The render method should use the && logical operator to check the condition of this.state.display.');"
+          "text": "render 方法应该使用<code>&&</code>逻辑运算符来检查<code>this.state.display</code>的条件。",
+          "testString": "getUserInput => assert(getUserInput('index').includes('&&'), 'render 方法应该使用<code>&&</code>逻辑运算符来检查<code>this.state.display</code>的条件。');"
         }
       ],
       "solutions": [
@@ -3017,11 +3017,11 @@
       "title": "Use a Ternary Expression for Conditional Rendering",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Before moving on to dynamic rendering techniques, there's one last way to use built-in JavaScript conditionals to render what you want: the <em><strong>ternary operator</strong></em>. The ternary operator is often utilized as a shortcut for <code>if/else</code> statements in JavaScript. They're not quite as robust as traditional <code>if/else</code> statements, but they are very popular among React developers. One reason for this is because of how JSX is compiled, <code>if/else</code> statements can't be inserted directly into JSX code. You might have noticed this a couple challenges ago &mdash; when an <code>if/else</code> statement was required, it was always <em>outside</em> the <code>return</code> statement. Ternary expressions can be an excellent alternative if you want to implement conditional logic within your JSX. Recall that a ternary operator has three parts, but you can combine several ternary expressions together. Here's the basic syntax:",
+        "在继续使用动态渲染技术之前，还有最后一种方法可以渲染你想要的东西，它使用内置的 JavaScript 条件：<em><strong>三元运算符</strong></em>。三元运算符经常被用作 JavaScript 中<code>if/else</code>语句的缩写。它们不像传统的<code>if/else</code>语句那样健壮，但是在 React 开发人员中非常流行，原因之一就是 JSX 的编译原理，<code>if/else</code>语句不能直接插入到 JSX 代码中。你可能在前几个挑战就注意到了这一点--当需要<code>if/else</code>语句时，它总是在<code>return</code>语句<em>外面</em>。如果你想在 JSX 中实现条件逻辑，三元表达式是一个很好的选择。回想一下，三元运算符有三个部分，但是你可以将多个三元表达式组合在一起。以下是基本语法：",
         "<blockquote>condition ? expressionIfTrue : expressionIfFalse</blockquote>",
         "<hr>",
-        "The code editor has three constants defined within the <code>CheckUserAge</code> component's <code>render()</code> method. They are called <code>buttonOne</code>, <code>buttonTwo</code>, and <code>buttonThree</code>. Each of these is assigned a simple JSX expression representing a button元素。 First, initialize the state of <code>CheckUserAge</code> with <code>input</code> and <code>userAge</code> both set to values of an empty string.",
-        "Once the component is rendering information to the page, users should have a way to interact with it. Within the component's <code>return</code> statement, set up a ternary expression that implements the following logic: when the page first loads, render the submit button, <code>buttonOne</code>, to the page. Then, when a user enters their age and clicks the button, render a different button based on the age. If a user enters a number less than <code>18</code>, render <code>buttonThree</code>. If a user enters a number greater than or equal to <code>18</code>, render <code>buttonTwo</code>."
+        "代码编辑器在<code>CheckUserAge</code>组件的<code>render()</code>方法中定义了三个常量，它们分别是<code>buttonOne</code>、<code>buttonTwo</code>和<code>buttonThree</code>。每个都分配了一个表示按钮元素的简单 JSX 表达式。首先，使用<code>input</code>和<code>userAge</code>初始化<code>CheckUserAge</code>的 state，并将其值设置为空字符串。",
+        "一旦组件将信息渲染给页面，用户应该有一种方法与之交互。在组件的<code>return</code>语句中，设置一个实现以下逻辑的三元表达式：当页面首次加载时，将提交按钮<code>buttonOne</code>渲染到页面。然后，当用户输入年龄并点击该按钮时，根据年龄渲染不同的按钮。如果用户输入的数字小于<code>18</code>，则渲染<code>buttonThree</code>。如果用户输入的数字大于或等于<code>18</code>，则渲染<code>buttonTwo</code>。"
       ],
       "files": {
         "indexjsx": {
@@ -3083,32 +3083,32 @@
       },
       "tests": [
         {
-          "text": "The <code>CheckUserAge</code> component should render with a single <code>input</code> element and a single <code>button</code>元素。",
-          "testString": "assert(Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('input').length === 1 && Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('button').length === 1, 'The <code>CheckUserAge</code> component should render with a single <code>input</code> element and a single <code>button</code>元素。');"
+          "text": "<code>CheckUserAge</code>组件应该渲染出单个<code>input</code>元素和单个<code>button</code>元素。",
+          "testString": "assert(Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('input').length === 1 && Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('button').length === 1, '<code>CheckUserAge</code>组件应该渲染出单个<code>input</code>元素和单个<code>button</code>元素。');"
         },
         {
-          "text": "The <code>CheckUserAge</code> component&apos;s state should be initialized with a property of <code>userAge</code> and a property of <code>input</code>, both set to a value of an empty string.",
-          "testString": "assert(Enzyme.mount(React.createElement(CheckUserAge)).state().input === '' && Enzyme.mount(React.createElement(CheckUserAge)).state().userAge === '', 'The <code>CheckUserAge</code> component&apos;s state should be initialized with a property of <code>userAge</code> and a property of <code>input</code>, both set to a value of an empty string.');"
+          "text": "<code>CheckUserAge</code>组件的 state 应该用<code>userAge</code>属性和<code>input</code>属性初始化，并且这两个属性的值都被设置为空字符串。",
+          "testString": "assert(Enzyme.mount(React.createElement(CheckUserAge)).state().input === '' && Enzyme.mount(React.createElement(CheckUserAge)).state().userAge === '', '<code>CheckUserAge</code>组件的 state 应该用<code>userAge</code>属性和<code>input</code>属性初始化，并且这两个属性的值都被设置为空字符串。');"
         },
         {
-          "text": "When the <code>CheckUserAge</code> component is first rendered to the DOM, the <code>button</code>&apos;s inner text should be Submit.",
-          "testString": "assert(Enzyme.mount(React.createElement(CheckUserAge)).find('button').text() === 'Submit', 'When the <code>CheckUserAge</code> component is first rendered to the DOM, the <code>button</code>&apos;s inner text should be Submit.');"
+          "text": "当<code>CheckUserAge</code>组件首次渲染到 DOM 时，<code>按钮</code>内部的文本应为 Submit。",
+          "testString": "assert(Enzyme.mount(React.createElement(CheckUserAge)).find('button').text() === 'Submit', '当<code>CheckUserAge</code>组件首次渲染到 DOM 时，<code>按钮</code>内部的文本应为 Submit。');"
         },
         {
-          "text": "When a number of less than 18 is entered into the <code>input</code> element and the <code>button</code> is clicked, the <code>button</code>&apos;s inner text should read <code>You Shall Not Pass</code>.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const initialButton = mockedComponent.find('button').text(); const enter3AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '3' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const enter17AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '17' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const userAge3 = await enter3AndClickButton(); const userAge17 = await enter17AndClickButton(); assert(initialButton === 'Submit' && userAge3 === 'You Shall Not Pass' && userAge17 === 'You Shall Not Pass', 'When a number of less than 18 is entered into the <code>input</code> element and the <code>button</code> is clicked, the <code>button</code>&apos;s inner text should read <code>You Shall Not Pass</code>.'); }; "
+          "text": "当小于 18 的数字输入到<code>input</code>元素中并点击该<code>按钮</code>时，该<code>按钮</code>的内部文本应该是<code>You Shall Not Pass</code>。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const initialButton = mockedComponent.find('button').text(); const enter3AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '3' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const enter17AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '17' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const userAge3 = await enter3AndClickButton(); const userAge17 = await enter17AndClickButton(); assert(initialButton === 'Submit' && userAge3 === 'You Shall Not Pass' && userAge17 === 'You Shall Not Pass', '当小于 18 的数字输入到<code>input</code>元素中并点击该<code>按钮</code>时，该<code>按钮</code>的内部文本应该是<code>You Shall Not Pass</code>。'); }; "
         },
         {
-          "text": "When a number greater than or equal to 18 is entered into the <code>input</code> element and the <code>button</code> is clicked, the <code>button</code>&apos;s inner text should read <code>You May Enter</code>.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const initialButton = mockedComponent.find('button').text(); const enter18AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '18' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const enter35AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '35' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const userAge18 = await enter18AndClickButton(); const userAge35 = await enter35AndClickButton(); assert(initialButton === 'Submit' && userAge18 === 'You May Enter' && userAge35 === 'You May Enter', 'When a number greater than or equal to 18 is entered into the <code>input</code> element and the <code>button</code> is clicked, the <code>button</code>&apos;s inner text should read <code>You May Enter</code>.'); }; "
+          "text": "当大于或等于 18 的数字输入到<code>input</code>元素中并点击该<code>按钮</code>时，该<code>按钮</code>的内部文本应该是<code>You May Enter</code>。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const initialButton = mockedComponent.find('button').text(); const enter18AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '18' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const enter35AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '35' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const userAge18 = await enter18AndClickButton(); const userAge35 = await enter35AndClickButton(); assert(initialButton === 'Submit' && userAge18 === 'You May Enter' && userAge35 === 'You May Enter', '当大于或等于 18 的数字输入到<code>input</code>元素中并点击该<code>按钮</code>时，该<code>按钮</code>的内部文本应该是<code>You May Enter</code>。'); }; "
         },
         {
-          "text": "Once a number has been submitted, and the value of the <code>input</code> is once again changed, the <code>button</code> should return to reading <code>Submit</code>.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const enter18AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '18' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const changeInputDontClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '5' }}); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const enter10AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '10' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const userAge18 = await enter18AndClickButton(); const changeInput1 = await changeInputDontClickButton(); const userAge10 = await enter10AndClickButton(); const changeInput2 = await changeInputDontClickButton(); assert(userAge18 === 'You May Enter' && changeInput1 === 'Submit' && userAge10 === 'You Shall Not Pass' && changeInput2 === 'Submit', 'Once a number has been submitted, and the value of the <code>input</code> is once again changed, the <code>button</code> should return to reading <code>Submit</code>.'); }; "
+          "text": "一旦提交了一个数字，并再次更改了<code>input</code>的值，该<code>按钮</code>内部文本应该变回<code>Submit</code>。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const enter18AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '18' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const changeInputDontClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '5' }}); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const enter10AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: '10' }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const userAge18 = await enter18AndClickButton(); const changeInput1 = await changeInputDontClickButton(); const userAge10 = await enter10AndClickButton(); const changeInput2 = await changeInputDontClickButton(); assert(userAge18 === 'You May Enter' && changeInput1 === 'Submit' && userAge10 === 'You Shall Not Pass' && changeInput2 === 'Submit', '一旦提交了一个数字，并再次更改了<code>input</code>的值，该<code>按钮</code>内部文本应该变回<code>Submit</code>。'); }; "
         },
         {
-          "text": "Your code should not contain any <code>if/else</code> statements.",
-          "testString": "assert(new RegExp(/(\\s|;)if(\\s|\\()/).test(Enzyme.mount(React.createElement(CheckUserAge)).instance().render.toString()) === false, 'Your code should not contain any <code>if/else</code> statements.');"
+          "text": "你的代码不应该包含任何<code>if/else</code>语句。",
+          "testString": "assert(new RegExp(/(\\s|;)if(\\s|\\()/).test(Enzyme.mount(React.createElement(CheckUserAge)).instance().render.toString()) === false, '你的代码不应该包含任何<code>if/else</code>语句。');"
         }
       ],
       "solutions": [
@@ -3123,12 +3123,12 @@
       "title": "Render Conditionally from Props",
       "releasedOn": "December 25, 2017",
       "description": [
-        "So far, you've seen how to use <code>if/else</code>, <code>&&,</code> <code>null</code> and the ternary operator (<code>condition ? expressionIfTrue : expressionIfFalse</code>) to make conditional decisions about what to render and when. However, there's one important topic left to discuss that lets you combine any or all of these concepts with another powerful React feature: props. Using props to conditionally render code is very common with React developers &mdash; that is, they use the value of a given prop to automatically make decisions about what to render.",
-        "In this challenge, you'll set up a child component to make rendering decisions based on props. You'll also use the ternary operator, but you can see how several of the other concepts that were covered in the last few challenges might be just as useful in this context.",
+        "到目前为止，你已经看到了如何使用<code>if/else</code>、<code>&&,</code>、<code>null</code>和三元运算符（<code>condition ? expressionIfTrue : expressionIfFalse</code>）对渲染什么和何时渲染做出有条件的判定。然而，还有一个重要的话题需要讨论，让你将这些概念中的任何一个或所有概念与另一个强大的 React 功能结合起来：props。使用 props 有条件地渲染代码在 React 开发人员中很常见--也就是说：他们使用给定 prop 的值来自动决定渲染什么。",
+        "在这个挑战中，你将设置一个子组件来根据 props 做出渲染决定。你可以使用三元运算符，但是你可以看到过去几个挑战中涵盖的其他几个概念在这种情况下可能同样有用。",
         "<hr>",
-        "The code editor has two components that are partially defined for you: a parent called <code>GameOfChance</code>, and a child called <code>Results</code>. They are used to create a simple game where the user presses a button to see if they win or lose.",
-        "First, you'll need a simple expression that randomly returns a different value every time it is run. You can use <code>Math.random()</code>. This method returns a value between <code>0</code> (inclusive) and <code>1</code> (exclusive) each time it is called. So for 50/50 odds, use <code>Math.random() > .5</code> in your expression. Statistically speaking, this expression will return <code>true</code> 50% of the time, and <code>false</code> the other 50%. On line 30, replace the comment with this expression to complete the variable declaration.",
-        "Now you have an expression that you can use to make a randomized decision in the code. Next you need to implement this. Render the <code>Results</code> component as a child of <code>GameOfChance</code>, and pass in <code>expression</code> as a prop called <code>fiftyFifty</code>. In the <code>Results</code> component, write a ternary expression to render the text <code>\"You win!\"</code> or <code>\"You lose!\"</code> based on the <code>fiftyFifty</code> prop that's being passed in from <code>GameOfChance</code>. Finally, make sure the <code>handleClick()</code> method is correctly counting each turn so the user knows how many times they've played. This also serves to let the user know the component has actually updated in case they win or lose twice in a row."
+        "代码编辑器有两个部分为你定义的组件：一个名为<code>GameOfChance</code>的父组件和一个名为<code>Results</code>的子组件。他们被用来创建一个简单的游戏，用户按下按钮来看他们是赢还是输。",
+        "首先，你需要一个简单的表达式，每次运行时都会随机返回一个不同的值。你可以使用<code>Math.random()</code>。每次调用此方法时，此方法返回<code>0</code>（包括）和<code>1</code>（不包括）之间的值。因此，对于50/50的几率，请在表达式中使用<code>Math.random() > .5</code>。从统计学上讲，这个表达式有 50％ 的几率返回<code>true</code>，另外 50％ 返回<code>false</code>。在第 30 行，用此表达式替换注释以完成变量声明。",
+        "现在你有了一个表达式，可以用来在代码中做出随机决定，接下来你需要实现以下功能：将<code>Results</code>组件渲染为<code>GameOfChance</code>的子组件，并将<code>expression</code>作为 prop 传递出去，prop 的名字是<code>fiftyFifty</code>。在<code>Results</code>组件中，编写一个三元表达式基于从<code>GameOfChance</code>传来的 prop<code>fiftyFifty</code>来渲染文本<code>\"You win!\"</code>或者<code>\"You lose!\"</code>。最后，确保<code>handleClick()</code>方法正确计算每个回合，以便用户知道他们玩过多少次。这也可以让用户知道组件实际上已经更新，以防他们连续赢两次或输两次时自己不知道。"
       ],
       "files": {
         "indexjsx": {
@@ -3186,32 +3186,32 @@
       },
       "tests": [
         {
-          "text": "The <code>GameOfChance</code> component should exist and render to the page.",
-          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).find('GameOfChance').length, 1, 'The <code>GameOfChance</code> component should exist and render to the page.');"
+          "text": "<code>GameOfChance</code>组件应该存在并渲染到页面。",
+          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).find('GameOfChance').length, 1, '<code>GameOfChance</code>组件应该存在并渲染到页面。');"
         },
         {
           "text": "<code>GameOfChance</code>应该返回单个<code>button</code>元素。",
           "testString": "assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).find('button').length, 1, '<code>GameOfChance</code>应该返回单个<code>button</code>元素。');"
         },
         {
-          "text": "<code>GameOfChance</code>应该返回单个instance of the <code>Results</code> component, which has a prop called <code>fiftyFifty</code>.",
-          "testString": "assert(Enzyme.mount(React.createElement(GameOfChance)).find('Results').length === 1 && Enzyme.mount(React.createElement(GameOfChance)).find('Results').props().hasOwnProperty('fiftyFifty') === true, '<code>GameOfChance</code>应该返回单个instance of the <code>Results</code> component, which has a prop called <code>fiftyFifty</code>.');"
+          "text": "<code>GameOfChance</code>应该返回<code>Results</code>组件的一个实例，它有一个名为<code>fiftyFifty</code>的 prop。",
+          "testString": "assert(Enzyme.mount(React.createElement(GameOfChance)).find('Results').length === 1 && Enzyme.mount(React.createElement(GameOfChance)).find('Results').props().hasOwnProperty('fiftyFifty') === true, '<code>GameOfChance</code>应该返回<code>Results</code>组件的一个实例，它有一个名为<code>fiftyFifty</code>的 prop。');"
         },
         {
-          "text": "<code>GameOfChance</code> state should be initialized with a property of <code>counter</code> set to a value of <code>1</code>.",
-          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).state().counter, 1, '<code>GameOfChance</code> state should be initialized with a property of <code>counter</code> set to a value of <code>1</code>.');"
+          "text": "<code>GameOfChance</code>的 state 应该使用值为<code>1</code>的<code>counter</code>属性来初始化。",
+          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).state().counter, 1, '<code>GameOfChance</code>的 state 应该使用值为<code>1</code>的<code>counter</code>属性来初始化。');"
         },
         {
-          "text": "When the <code>GameOfChance</code> component is first rendered to the DOM, a <code>p</code> element should be returned with the inner text of <code>Turn: 1</code>.",
-          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).find('p').text(), 'Turn: 1', 'When the <code>GameOfChance</code> component is first rendered to the DOM, a <code>p</code> element should be returned with the inner text of <code>Turn: 1</code>.');"
+          "text": "当<code>GameOfChance</code>组件第一次渲染到 DOM 时，应该返回一个<code>p</code>元素，其内部文本为<code>Turn: 1</code>。",
+          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).find('p').text(), 'Turn: 1', '当<code>GameOfChance</code>组件第一次渲染到 DOM 时，应该返回一个<code>p</code>元素，其内部文本为<code>Turn: 1</code>。');"
         },
         {
-          "text": "Each time the button is clicked, the counter state should be incremented by a value of 1, and a single <code>p</code> element should be rendered to the DOM that contains the text \"Turn: N\", where N is the value of the counter state.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(GameOfChance)); const simulate = () => { comp.find('button').simulate('click'); };const result = () => ({ count: comp.state('counter'), text: comp.find('p').text() });const _1 = () => { simulate(); return waitForIt(() => result())}; const _2 = () => { simulate(); return waitForIt(() => result())}; const _3 = () => { simulate(); return waitForIt(() => result())}; const _4 = () => { simulate(); return waitForIt(() => result())}; const _5 = () => { simulate(); return waitForIt(() => result())}; const _1_val = await _1(); const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); assert(_1_val.count === 2 && _1_val.text === 'Turn: 2' && _2_val.count === 3 && _2_val.text === 'Turn: 3' && _3_val.count === 4 && _3_val.text === 'Turn: 4' && _4_val.count === 5 && _4_val.text === 'Turn: 5' && _5_val.count === 6 && _5_val.text === 'Turn: 6', 'Each time the button is clicked, the counter state should be incremented by a value of 1, and a single <code>p</code> element should be rendered to the DOM that contains the text \"Turn: N\", where N is the value of the counter state.'); }; "
+          "text": "每次点击按钮，counter 应该增加 1，并且一个包含文本<code>\"Turn: N\"</code>的<code>p</code>元素应该渲染到DOM，其中<code>N</code>是 counter 的值。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(GameOfChance)); const simulate = () => { comp.find('button').simulate('click'); };const result = () => ({ count: comp.state('counter'), text: comp.find('p').text() });const _1 = () => { simulate(); return waitForIt(() => result())}; const _2 = () => { simulate(); return waitForIt(() => result())}; const _3 = () => { simulate(); return waitForIt(() => result())}; const _4 = () => { simulate(); return waitForIt(() => result())}; const _5 = () => { simulate(); return waitForIt(() => result())}; const _1_val = await _1(); const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); assert(_1_val.count === 2 && _1_val.text === 'Turn: 2' && _2_val.count === 3 && _2_val.text === 'Turn: 3' && _3_val.count === 4 && _3_val.text === 'Turn: 4' && _4_val.count === 5 && _4_val.text === 'Turn: 5' && _5_val.count === 6 && _5_val.text === 'Turn: 6', '每次点击按钮，counter 应该增加 1，并且一个包含文本<code>\"Turn: N\"</code>的<code>p</code>元素应该渲染到DOM，其中<code>N</code>是 counter 的值。'); }; "
         },
         {
-          "text": "When the <code>GameOfChance</code> component is first mounted to the DOM and each time the button is clicked thereafter, a single <code>h1</code> element should be returned that randomly renders either <code>You Win!</code> or <code>You Lose!</code>.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(GameOfChance)); const simulate = () => { comp.find('button').simulate('click'); };const result = () => ({ h1: comp.find('h1').length, text: comp.find('h1').text() });const _1 = result(); const _2 = () => { simulate(); return waitForIt(() => result())}; const _3 = () => { simulate(); return waitForIt(() => result())}; const _4 = () => { simulate(); return waitForIt(() => result())}; const _5 = () => { simulate(); return waitForIt(() => result())}; const _6 = () => { simulate(); return waitForIt(() => result())}; const _7 = () => { simulate(); return waitForIt(() => result())}; const _8 = () => { simulate(); return waitForIt(() => result())}; const _9 = () => { simulate(); return waitForIt(() => result())}; const _10 = () => { simulate(); return waitForIt(() => result())}; const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); const _6_val = await _6(); const _7_val = await _7(); const _8_val = await _8(); const _9_val = await _9(); const _10_val = await _10(); const __text = new Set([_1.text, _2_val.text, _3_val.text, _4_val.text, _5_val.text, _6_val.text, _7_val.text, _8_val.text, _9_val.text, _10_val.text]); const __h1 = new Set([_1.h1, _2_val.h1, _3_val.h1, _4_val.h1, _5_val.h1, _6_val.h1, _7_val.h1, _8_val.h1, _9_val.h1, _10_val.h1]); assert(__text.size === 2 && __h1.size === 1, 'When the <code>GameOfChance</code> component is first mounted to the DOM and each time the button is clicked thereafter, a single <code>h1</code> element should be returned that randomly renders either <code>You Win!</code> or <code>You Lose!</code>.'); }; "
+          "text": "当<code>GameOfChance</code>组件第一次挂载到 DOM 上时，每次按钮被点击，都应该返回一个<code>h1</code>元素，元素中随机渲染<code>You Win!</code>或者<code>You Lose!</code>。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(GameOfChance)); const simulate = () => { comp.find('button').simulate('click'); };const result = () => ({ h1: comp.find('h1').length, text: comp.find('h1').text() });const _1 = result(); const _2 = () => { simulate(); return waitForIt(() => result())}; const _3 = () => { simulate(); return waitForIt(() => result())}; const _4 = () => { simulate(); return waitForIt(() => result())}; const _5 = () => { simulate(); return waitForIt(() => result())}; const _6 = () => { simulate(); return waitForIt(() => result())}; const _7 = () => { simulate(); return waitForIt(() => result())}; const _8 = () => { simulate(); return waitForIt(() => result())}; const _9 = () => { simulate(); return waitForIt(() => result())}; const _10 = () => { simulate(); return waitForIt(() => result())}; const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); const _6_val = await _6(); const _7_val = await _7(); const _8_val = await _8(); const _9_val = await _9(); const _10_val = await _10(); const __text = new Set([_1.text, _2_val.text, _3_val.text, _4_val.text, _5_val.text, _6_val.text, _7_val.text, _8_val.text, _9_val.text, _10_val.text]); const __h1 = new Set([_1.h1, _2_val.h1, _3_val.h1, _4_val.h1, _5_val.h1, _6_val.h1, _7_val.h1, _8_val.h1, _9_val.h1, _10_val.h1]); assert(__text.size === 2 && __h1.size === 1, '当<code>GameOfChance</code>组件第一次挂载到 DOM 上时，每次按钮被点击，都应该返回一个<code>h1</code>元素，元素中随机渲染<code>You Win!</code>或者<code>You Lose!</code>。'); }; "
         }
       ],
       "solutions": [
@@ -3226,10 +3226,10 @@
       "title": "Change Inline CSS Conditionally Based on Component State",
       "releasedOn": "December 25, 2017",
       "description": [
-        "At this point, you've seen several applications of conditional rendering and the use of inline styles. Here's one more example that combines both of these topics. You can also render CSS conditionally based on the state of a React组件。 To do this, you check for a condition, and if that condition is met, you modify the styles object that's assigned to the JSX elements in the render method.",
-        "This paradigm is important to understand because it is a dramatic shift from the more traditional approach of applying styles by modifying DOM elements directly (which is very common with jQuery, for example). In that approach, you must keep track of when elements change and also handle the actual manipulation directly. It can become difficult to keep track of changes, potentially making your UI unpredictable. When you set a style object based on a condition, you describe how the UI should look as a function of the application's state. There is a clear flow of information that only moves in one direction. This is the preferred method when writing applications with React.",
+        "此时，你已经看到了一些条件渲染的应用程序和内联样式的使用。这里还有一个将这两个主题结合在一起的例子。你也可以根据 React 组件的 state 有条件地渲染 CSS。要执行此操作，请检查条件，如果满足该条件，则修改在 render 方法中分配给 JSX 元素的样式对象。",
+        "这个范例对于更加容易理解，因为相比传统的通过直接修改 DOM 元素来应用样式的方法（这在 jQuery 中非常常见），这种方法是一个戏剧性的转变。在传统方法中，你必须跟踪元素何时发生变化，并直接处理实际操作，这使得跟踪变化变得很困难，也可能会让你的用户界面变得不可预测。当你根据一个条件设置一个样式对象时，你描述了 UI 作为应用程序的状态函数应当如何展现。如此便有一个清晰的单向流动的信息流。这是使用 React 编写应用程序时的首选方法。",
         "<hr>",
-        "The code editor has a simple controlled input component with a styled border. You want to style this border red if the user types more than 15 characters of text in the input box. Add a condition to check for this and, if the condition is valid, set the input border style to <code>3px solid red</code>. You can try it out by entering text in the input."
+        "代码编辑器有一个简单的带有边框样式的受控 input 组件。如果用户在输入框中键入超过 15 个字符的文本，你希望将此边框变成红色。添加一个条件来检查这一点，如果条件有效，则将 input 的边框样式设置为<code>3px solid red</code>。你可以通过在 input 中输入文本来尝试。"
       ],
       "files": {
         "indexjsx": {
@@ -3277,24 +3277,24 @@
       },
       "tests": [
         {
-          "text": "The <code>GateKeeper</code> component should render a <code>div</code>元素。",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('div').length === 1; })(), 'The <code>GateKeeper</code> component should render a <code>div</code>元素。');"
+          "text": "<code>GateKeeper</code>组件应该渲染一个de>div</code>元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('div').length === 1; })(), '<code>GateKeeper</code>组件应该渲染一个de>div</code>元素。');"
         },
         {
-          "text": "The <code>GateKeeper</code> component should be initialized with a state key <code>input</code> set to an empty string.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.state().input === ''; })(), 'The <code>GateKeeper</code> component should be initialized with a state key <code>input</code> set to an empty string.');"
+          "text": "<code>GateKeeper</code>组件应使用设置为空字符串的 state <code>input</code>进行初始化。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.state().input === ''; })(), '<code>GateKeeper</code>组件应使用设置为空字符串的 state <code>input</code>进行初始化。');"
         },
         {
-          "text": "The <code>GateKeeper</code> component should render an <code>h3</code> tag and an <code>input</code> tag.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('h3').length === 1 && mockedComponent.find('input').length === 1; })(), 'The <code>GateKeeper</code> component should render an <code>h3</code> tag and an <code>input</code> tag.');"
+          "text": "<code>GateKeeper</code>组件应该渲染一个<code>h3</code>标签和一个<code>input</code>标签。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('h3').length === 1 && mockedComponent.find('input').length === 1; })(), '<code>GateKeeper</code>组件应该渲染一个<code>h3</code>标签和一个<code>input</code>标签。');"
         },
         {
-          "text": "The <code>input</code> tag should initially have a style of <code>1px solid black</code> for the <code>border</code> property.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('input').props().style.border === '1px solid black'; })(), 'The <code>input</code> tag should initially have a style of <code>1px solid black</code> for the <code>border</code> property.');"
+          "text": "<code>input</code>标签<code>border</code>属性的样式应该初始化为<code>1px solid black</code>。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('input').props().style.border === '1px solid black'; })(), '<code>input</code>标签<code>border</code>属性的样式应该初始化为<code>1px solid black</code>。');"
         },
         {
-          "text": "The <code>input</code> tag should be styled with a border of <code>3px solid red</code> if the input value in state is longer than 15 characters.",
-          "testString": "async () => {  const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); const simulateChange = (el, value) => el.simulate('change', {target: {value}}); let initialStyle = mockedComponent.find('input').props().style.border; const state_1 = () => { mockedComponent.setState({input: 'this is 15 char' }); return waitForIt(() => mockedComponent.find('input').props().style.border )}; const state_2 = () => { mockedComponent.setState({input: 'A very long string longer than 15 characters.' }); return waitForIt(() => mockedComponent.find('input').props().style.border )}; const style_1 = await state_1(); const style_2 = await state_2(); assert(initialStyle === '1px solid black' && style_1 === '1px solid black' && style_2 === '3px solid red', 'The <code>input</code> tag should be styled with a border of <code>3px solid red</code> if the input value in state is longer than 15 characters.'); }; "
+          "text": "如果 state 中 input 的值超过 15 个字符，则 <code>input</code> 标签的 border 样式应为<code>3px solid red</code>。",
+          "testString": "async () => {  const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); const simulateChange = (el, value) => el.simulate('change', {target: {value}}); let initialStyle = mockedComponent.find('input').props().style.border; const state_1 = () => { mockedComponent.setState({input: 'this is 15 char' }); return waitForIt(() => mockedComponent.find('input').props().style.border )}; const state_2 = () => { mockedComponent.setState({input: 'A very long string longer than 15 characters.' }); return waitForIt(() => mockedComponent.find('input').props().style.border )}; const style_1 = await state_1(); const style_2 = await state_2(); assert(initialStyle === '1px solid black' && style_1 === '1px solid black' && style_2 === '3px solid red', '如果 state 中 input 的值超过 15 个字符，则 <code>input</code> 标签的 border 样式应为<code>3px solid red</code>。'); }; "
         }
       ],
       "solutions": [
@@ -3309,12 +3309,12 @@
       "title": "Use Array.map() to Dynamically Render Elements",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Conditional rendering is useful, but you may need your components to render an unknown number of elements. Often in reactive programming, a programmer has no way to know what the state of an application is until runtime, because so much depends on a user's interaction with that program. Programmers need to write their code to correctly handle that unknown state ahead of time. Using <code>Array.map()</code> in React illustrates this concept.",
-        "For example, you create a simple \"To Do List\" app. As the programmer, you have no way of knowing how many items a user might have on their list. You need to set up your component to <em><strong>dynamically render</strong></em> the correct number of list elements long before someone using the program decides that today is laundry day. ",
+        "条件渲染很有用，但是你可能需要组件来渲染未知数量的元素。通常在响应式编程中，程序员在应用程序运行时之前无法知道其 state，因为这在很大程度上取决于用户与该程序的交互。程序员需要提前编写代码来正确处理未知状态。在 React 中使用<code>Array.map()</code>阐明了这个概念。",
+        "例如，你创建一个简单的“To Do List”应用程序。作为程序员，你无法知道用户可能在其列表中有多少项。你需要设置组件，以便在使用该程序的人决定今天今日待办事项之前<em><strong>动态渲染</strong></em>正确数量的列表元素。 ",
         "<hr>",
-        "The code editor has most of the <code>MyToDoList</code> component set up. Some of this code should look familiar if you completed the controlled form challenge. You'll notice a <code>textarea</code> and a <code>button</code>, along with a couple of methods that track their states, but nothing is rendered to the page yet.",
-        "Inside the <code>constructor</code>, create a <code>this.state</code> object and define two states: <code>userInput</code> should be initialized as an empty string, and <code>toDoList</code> should be initialized as an empty array. Next, delete the comment in the <code>render()</code> method next to the <code>items</code> variable. In its place, map over the <code>toDoList</code> array stored in the component's internal state and dynamically render a <code>li</code> for each item. Try entering the string <code>eat, code, sleep, repeat</code> into the <code>textarea</code>, then click the button and see what happens.",
-        "<strong>Note:</strong>&nbsp;You may know that all sibling child elements created by a mapping operation like this do need to be supplied with a unique <code>key</code> attribute. Don't worry, this is the topic of the next challenge."
+        "代码编辑器完成了<code>MyToDoList</code>组件的大部分设置。如果你完成了受控表单挑战，这些代码中的一些应该看起来很熟悉。你会注意到一个<code>textarea</code>和一个<code>button</code>，以及一些跟踪它们状态的方法，但是页面当前还没有任何东西被渲染。",
+        "在<code>constructor</code>中，创建一个<code>this.state</code>对象并定义两个 state：<code>userInput</code>应该初始化为空字符串，<code>toDoList</code>应该初始化为空数组。接下来，删除<code>items</code>变量旁边<code>render()</code>方法中的注释。取而代之的是，将存储在组件内部 state 中的<code>toDoList</code>数组一一映射并相应的动态呈现<code>li</code>元素。尝试在<code>textarea</code>中输入<code>eat, code, sleep, repeat</code>，然后点击按钮，看看会发生什么。",
+        "<strong>注意：</strong>&nbsp;你可能知道，像这样的映射操作创建的所有兄弟子元素都需要提供唯一的<code>key</code>属性。别担心，这是下一个挑战的主题。"
       ],
       "files": {
         "indexjsx": {
@@ -3374,28 +3374,28 @@
       },
       "tests": [
         {
-          "text": "The MyToDoList component should exist and render to the page.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').length === 1; })(), 'The MyToDoList component should exist and render to the page.');"
+          "text": "<code>MyToDoList</code>组件应该存在并渲染到页面。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').length === 1; })(), '<code>MyToDoList</code>组件应该存在并渲染到页面。');"
         },
         {
-          "text": "The first child of <code>MyToDoList</code> should be a <code>textarea</code>元素。",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(0).type() === 'textarea'; })(), 'The first child of <code>MyToDoList</code> should be a <code>textarea</code>元素。');"
+          "text": "<code>MyToDoList</code>组件的第一个子元素应该是<code>textarea</code>元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(0).type() === 'textarea'; })(), '<code>MyToDoList</code>组件的第一个子元素应该是<code>textarea</code>元素。');"
         },
         {
-          "text": "The third child of <code>MyToDoList</code> should be a <code>button</code>元素。",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(2).type() === 'button'; })(), 'The third child of <code>MyToDoList</code> should be a <code>button</code>元素。');"
+          "text": "<code>MyToDoList</code>组件的第三个子元素应该是<code>button</code>元素。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(2).type() === 'button'; })(), '<code>MyToDoList</code>组件的第三个子元素应该是<code>button</code>元素。');"
         },
         {
-          "text": "The state of <code>MyToDoList</code> should be initialized with <code>toDoList</code> as an empty array.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return Array.isArray(initialState.toDoList) === true && initialState.toDoList.length === 0; })(), 'The state of <code>MyToDoList</code> should be initialized with <code>toDoList</code> as an empty array.');"
+          "text": "<code>MyToDoList</code>的 state 应该使用被设置为空数组的<code>toDoList</code>进行初始化。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return Array.isArray(initialState.toDoList) === true && initialState.toDoList.length === 0; })(), '<code>MyToDoList</code>的 state 应该使用被设置为空数组的<code>toDoList</code>进行初始化。');"
         },
         {
-          "text": "The state of <code>MyToDoList</code> should be initialized with <code>userInput</code> as an empty string.",
-          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return typeof initialState.userInput === 'string' && initialState.userInput.length === 0; })(), 'The state of <code>MyToDoList</code> should be initialized with <code>userInput</code> as an empty string.');"
+          "text": "<code>MyToDoList</code>的 state 应该使用被设置为空字符串的<code>userInput</code>进行初始化。",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return typeof initialState.userInput === 'string' && initialState.userInput.length === 0; })(), '<code>MyToDoList</code>的 state 应该使用被设置为空字符串的<code>userInput</code>进行初始化。');"
         },
         {
-          "text": "When the <code>Create List</code> button is clicked, the <code>MyToDoList</code> component should dynamically return an unordered list that contains a list item element for every item of a comma-separated list entered into the <code>textarea</code>元素。",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const simulateChange = (el, value) => el.simulate('change', {target: {value}}); const state_1 = () => { return waitForIt(() => mockedComponent.find('ul').find('li'))}; const setInput = () => { return waitForIt(() => simulateChange(mockedComponent.find('textarea'), \"testA, testB, testC\"))}; const click = () => { return waitForIt(() => mockedComponent.find('button').simulate('click'))}; const state_2 = () => { return waitForIt(() => { const nodes = mockedComponent.find('ul').find('li'); return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') }; })}; const setInput_2 = () => { return waitForIt(() => simulateChange(mockedComponent.find('textarea'), \"t1, t2, t3, t4, t5, t6\"))}; const click_1 = () => { return waitForIt(() => mockedComponent.find('button').simulate('click'))}; const state_3 = () => { return waitForIt(() => { const nodes = mockedComponent.find('ul').find('li'); return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') }; })}; const awaited_state_1 = await state_1(); const awaited_setInput = await setInput(); const awaited_click = await click(); const awaited_state_2 = await state_2(); const awaited_setInput_2 = await setInput_2(); const awaited_click_1 = await click_1(); const awaited_state_3 = await state_3(); assert(awaited_state_1.length === 0 && awaited_state_2.nodes.length === 3 && awaited_state_3.nodes.length === 6 && awaited_state_2.text === 'testA testB testC' && awaited_state_3.text === 't1 t2 t3 t4 t5 t6', 'When the <code>Create List</code> button is clicked, the <code>MyToDoList</code> component should dynamically return an unordered list that contains a list item element for every item of a comma-separated list entered into the <code>textarea</code>元素。'); }; "
+          "text": "单击<code>Create List</code>按钮时，<code>MyToDoList</code>组件应该动态返回一个无序列表，该列表包含输入到<code>textarea</code>元素中的逗号分隔列表的每个项目的列表项目元素。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const simulateChange = (el, value) => el.simulate('change', {target: {value}}); const state_1 = () => { return waitForIt(() => mockedComponent.find('ul').find('li'))}; const setInput = () => { return waitForIt(() => simulateChange(mockedComponent.find('textarea'), \"testA, testB, testC\"))}; const click = () => { return waitForIt(() => mockedComponent.find('button').simulate('click'))}; const state_2 = () => { return waitForIt(() => { const nodes = mockedComponent.find('ul').find('li'); return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') }; })}; const setInput_2 = () => { return waitForIt(() => simulateChange(mockedComponent.find('textarea'), \"t1, t2, t3, t4, t5, t6\"))}; const click_1 = () => { return waitForIt(() => mockedComponent.find('button').simulate('click'))}; const state_3 = () => { return waitForIt(() => { const nodes = mockedComponent.find('ul').find('li'); return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') }; })}; const awaited_state_1 = await state_1(); const awaited_setInput = await setInput(); const awaited_click = await click(); const awaited_state_2 = await state_2(); const awaited_setInput_2 = await setInput_2(); const awaited_click_1 = await click_1(); const awaited_state_3 = await state_3(); assert(awaited_state_1.length === 0 && awaited_state_2.nodes.length === 3 && awaited_state_3.nodes.length === 6 && awaited_state_2.text === 'testA testB testC' && awaited_state_3.text === 't1 t2 t3 t4 t5 t6', '单击<code>Create List</code>按钮时，<code>MyToDoList</code>组件应该动态返回一个无序列表，该列表包含输入到<code>textarea</code>元素中的逗号分隔列表的每个项目的列表项目元素。'); }; "
         }
       ],
       "solutions": [
@@ -3410,10 +3410,10 @@
       "title": "Give Sibling Elements a Unique Key Attribute",
       "releasedOn": "December 25, 2017",
       "description": [
-        "The last challenge showed how the <code>map</code> method is used to dynamically render a number of elements based on user input. However, there was an important piece missing from that example. When you create an array of elements, each one needs a <code>key</code> attribute set to a unique value. React uses these keys to keep track of which items are added, changed, or removed. This helps make the re-rendering process more efficient when the list is modified in any way. Note that keys only need to be unique between sibling elements, they don't need to be globally unique in your application.",
+        "上一个挑战展示了如何使用<code>map</code>方法根据用户输入动态渲染多个元素。然而，这个例子中缺少一个重要的部分。创建元素数组时，每个元素都需要一个设置为唯一值的<code>key</code>属性。React 使用这些键来跟踪哪些项目被添加、更改或删除。这有助于在以任何方式修改列表时提高重新渲染过程的效率。请注意，键只需要在同级元素之间是唯一的，它们不需要在应用程序中是全局唯一的。",
         "<hr>",
-        "The code editor has an array with some front end frameworks and a stateless functional component named <code>Frameworks()</code>. <code>Frameworks()</code> needs to map the array to an unordered list, much like in the last challenge. Finish writing the <code>map</code> callback to return an <code>li</code> element for each framework in the <code>frontEndFrameworks</code> array. This time, make sure to give each <code>li</code> a <code>key</code> attribute, set to a unique value.",
-        "Normally, you want to make the key something that uniquely identifies the element being rendered. As a last resort the array index may be used, but typically you should try to use a unique identification."
+        "代码编辑器有一个数组，它包含一些前端框架和一个名为<code>Frameworks()</code>的无状态函数组件。<code>Frameworks()</code>需要将数组映射到无序列表，就像上一个挑战一样。完成<code>map</code>回调，为<code>frontEndFrameworks</code>数组中的每个框架返回一个<code>li</code>元素。这次，确保给每个<code>li</code>的<code>key</code>属性设置一个唯一的值。",
+        "通常，你希望使 key 能唯一标识要渲染的元素。作为最后的手段，可以使用数组索引，但通常你应该尝试使用唯一标识。"
       ],
       "files": {
         "indexjsx": {
@@ -3451,24 +3451,24 @@
       },
       "tests": [
         {
-          "text": "The <code>Frameworks</code> component should exist and render to the page.",
-          "testString": "assert(Enzyme.mount(React.createElement(Frameworks)).find('Frameworks').length === 1, 'The <code>Frameworks</code> component should exist and render to the page.');"
+          "text": "<code>Frameworks</code> 组件应该存在并渲染到页面。",
+          "testString": "assert(Enzyme.mount(React.createElement(Frameworks)).find('Frameworks').length === 1, '<code>Frameworks</code> 组件应该存在并渲染到页面。');"
         },
         {
-          "text": "<code>Frameworks</code> should render an <code>h1</code>元素。",
-          "testString": "assert(Enzyme.mount(React.createElement(Frameworks)).find('h1').length === 1, '<code>Frameworks</code> should render an <code>h1</code>元素。');"
+          "text": "<code>Frameworks</code>应该渲染一个<code>h1</code>元素。",
+          "testString": "assert(Enzyme.mount(React.createElement(Frameworks)).find('h1').length === 1, '<code>Frameworks</code>应该渲染一个<code>h1</code>元素。');"
         },
         {
-          "text": "<code>Frameworks</code> should render a <code>ul</code>元素。",
-          "testString": "assert(Enzyme.mount(React.createElement(Frameworks)).find('ul').length === 1, '<code>Frameworks</code> should render a <code>ul</code>元素。');"
+          "text": "<code>Frameworks</code>应该渲染一个<code>ul</code>元素。",
+          "testString": "assert(Enzyme.mount(React.createElement(Frameworks)).find('ul').length === 1, '<code>Frameworks</code>应该渲染一个<code>ul</code>元素。');"
         },
         {
-          "text": "The <code>ul</code> tag should render 6 child <code>li</code> elements.",
-          "testString": "assert(Enzyme.mount(React.createElement(Frameworks)).find('ul').children().length === 6 && Enzyme.mount(React.createElement(Frameworks)).find('ul').childAt(0).name() === 'li' && Enzyme.mount(React.createElement(Frameworks)).find('li').length === 6, 'The <code>ul</code> tag should render 6 child <code>li</code> elements.');"
+          "text": "<code>ul</code>标签应该渲染 6 个<code>li</code>子元素。",
+          "testString": "assert(Enzyme.mount(React.createElement(Frameworks)).find('ul').children().length === 6 && Enzyme.mount(React.createElement(Frameworks)).find('ul').childAt(0).name() === 'li' && Enzyme.mount(React.createElement(Frameworks)).find('li').length === 6, '<code>ul</code>标签应该渲染 6 个<code>li</code>子元素。');"
         },
         {
-          "text": "Each list item element should have a unique <code>key</code> attribute.",
-          "testString": "assert((() => { const ul = Enzyme.mount(React.createElement(Frameworks)).find('ul'); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key(), ul.childAt(4).key(), ul.childAt(5).key(), ]); return keys.size === 6; })(), 'Each list item element should have a unique <code>key</code> attribute.');"
+          "text": "每个列表项元素都应该有一个唯一的<code>key</code>属性。",
+          "testString": "assert((() => { const ul = Enzyme.mount(React.createElement(Frameworks)).find('ul'); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key(), ul.childAt(4).key(), ul.childAt(5).key(), ]); return keys.size === 6; })(), '每个列表项元素都应该有一个唯一的<code>key</code>属性。');"
         }
       ],
       "solutions": [
@@ -3483,10 +3483,10 @@
       "title": "Use Array.filter() to Dynamically Filter an Array",
       "releasedOn": "December 25, 2017",
       "description": [
-        "The <code>map</code> array method is a powerful tool that you will use often when working with React. Another method related to <code>map</code> is <code>filter</code>, which filters the contents of an array based on a condition, then returns a new array. For example, if you have an array of users that all have a property <code>online</code> which can be set to <code>true</code> or <code>false</code>, you can filter only those users that are online by writing:",
+        "<code>map</code>数组方法是一个强大的工具，在使用 React 时经常使用。与<code>map</code>相关的另一种方法是<code>filter</code>，它根据条件过滤数组的内容，然后返回一个新数组。例如，如果你有一个 users 数组，每个数组元素都有一个可以设置为<code>true</code>或<code>false</code>的<code>online</code>属性，你可以只过滤那些在线的用户：",
         "<code>let onlineUsers = users.filter(user => user.online);</code>",
         "<hr>",
-        "In the code editor, <code>MyComponent</code>&apos;s <code>state</code> is initialized with an array of users. Some users are online and some aren't. Filter the array so you see only the users who are online. To do this, first use <code>filter</code> to return a new array containing only the users whose <code>online</code> property is <code>true</code>. Then, in the <code>renderOnline</code> variable, map over the filtered array, and return a <code>li</code> element for each user that contains the text of their <code>username</code>. Be sure to include a unique <code>key</code> as well, like in the last challenges."
+        "在代码编辑器中，<code>MyComponent</code>的<code>state</code>由一个 users 数组初始化。有些用户在线，有些则不在线。过滤数组，以便你只看到在线用户。为此，首先使用<code>filter</code>返回一个新数组，该数组只包含<code>online</code>属性为<code>true</code>的用户。然后，在<code>renderOnline</code>变量中，映射经过过滤的数组，并为每个用户返回一个包含它们<code>username</code>文本的<code>li</code>元素。确保像上一个挑战一样包含一个独特的<code>key</code>。"
       ],
       "files": {
         "indexjsx": {
@@ -3548,24 +3548,24 @@
       },
       "tests": [
         {
-          "text": "<code>MyComponent</code> should exist and render to the page.",
-          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).find('MyComponent').length, 1, '<code>MyComponent</code> should exist and render to the page.');"
+          "text": "<code>MyComponent</code>应该存在并被渲染到页面。",
+          "testString": "assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).find('MyComponent').length, 1, '<code>MyComponent</code>应该存在并被渲染到页面。');"
         },
         {
-          "text": "<code>MyComponent</code>&apos;s state should be initialized to an array of six users.\")",
-          "testString": "assert(Array.isArray(Enzyme.mount(React.createElement(MyComponent)).state('users')) === true && Enzyme.mount(React.createElement(MyComponent)).state('users').length === 6, \"<code>MyComponent</code>&apos;s state should be initialized to an array of six users.\");"
+          "text": "<code>MyComponent</code>的 state 应该初始化为包含 6 个用户的数组。",
+          "testString": "assert(Array.isArray(Enzyme.mount(React.createElement(MyComponent)).state('users')) === true && Enzyme.mount(React.createElement(MyComponent)).state('users').length === 6, \"<code>MyComponent</code>的 state 应该初始化为包含 6 个用户的数组。\");"
         },
         {
-          "text": "<code>MyComponent</code> should return a <code>div</code>, an <code>h1</code>, and then an unordered list containing <code>li</code> elements for every user whose online status is set to <code>true</code>.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MyComponent)); const users = (bool) => ({users:[ { username: 'Jeff', online: bool }, { username: 'Alan', online: bool }, { username: 'Mary', online: bool }, { username: 'Jim', online: bool   }, { username: 'Laura', online: bool } ]}); const result = () => comp.find('li').length; const _1 = result(); const _2 = () => { comp.setState(users(true)); return waitForIt(() => result()) }; const _3 = () => { comp.setState(users(false)); return waitForIt(() => result()) }; const _4 = () => { comp.setState({ users: [] }); return waitForIt(() => result()) }; const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); assert(comp.find('div').length === 1 && comp.find('h1').length === 1 && comp.find('ul').length === 1 && _1 === 4 && _2_val === 5 && _3_val === 0 && _4_val === 0, '<code>MyComponent</code> should return a <code>div</code>, an <code>h1</code>, and then an unordered list containing <code>li</code> elements for every user whose online status is set to <code>true</code>.'); }; "
+          "text": "<code>MyComponent</code>应该返回一个<code>div</code>、一个<code>h1</code>和一个包含<code>li</code>元素的无序列表，该列表用于展示在线状态为<code>true</code>的每个用户。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MyComponent)); const users = (bool) => ({users:[ { username: 'Jeff', online: bool }, { username: 'Alan', online: bool }, { username: 'Mary', online: bool }, { username: 'Jim', online: bool   }, { username: 'Laura', online: bool } ]}); const result = () => comp.find('li').length; const _1 = result(); const _2 = () => { comp.setState(users(true)); return waitForIt(() => result()) }; const _3 = () => { comp.setState(users(false)); return waitForIt(() => result()) }; const _4 = () => { comp.setState({ users: [] }); return waitForIt(() => result()) }; const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); assert(comp.find('div').length === 1 && comp.find('h1').length === 1 && comp.find('ul').length === 1 && _1 === 4 && _2_val === 5 && _3_val === 0 && _4_val === 0, '<code>MyComponent</code>应该返回一个<code>div</code>、一个<code>h1</code>和一个包含<code>li</code>元素的无序列表，该列表用于展示在线状态为<code>true</code>的每个用户。'); }; "
         },
         {
-          "text": "<code>MyComponent</code> should render <code>li</code> elements that contain the username of each online user.",
-          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MyComponent)); const users = (bool) => ({users:[ { username: 'Jeff', online: bool }, { username: 'Alan', online: bool }, { username: 'Mary', online: bool }, { username: 'Jim', online: bool   }, { username: 'Laura', online: bool } ]}); const ul = () => { comp.setState(users(true)); return waitForIt(() => comp.find('ul').html()) }; const html = await ul(); assert(html === '<ul><li>Jeff</li><li>Alan</li><li>Mary</li><li>Jim</li><li>Laura</li></ul>', '<code>MyComponent</code> should render <code>li</code> elements that contain the username of each online user.'); }; "
+          "text": "<code>MyComponent</code>应该渲染包含每个在线用户用户名的<code>li</code>元素。",
+          "testString": "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MyComponent)); const users = (bool) => ({users:[ { username: 'Jeff', online: bool }, { username: 'Alan', online: bool }, { username: 'Mary', online: bool }, { username: 'Jim', online: bool   }, { username: 'Laura', online: bool } ]}); const ul = () => { comp.setState(users(true)); return waitForIt(() => comp.find('ul').html()) }; const html = await ul(); assert(html === '<ul><li>Jeff</li><li>Alan</li><li>Mary</li><li>Jim</li><li>Laura</li></ul>', '<code>MyComponent</code>应该渲染包含每个在线用户用户名的<code>li</code>元素。'); }; "
         },
         {
-          "text": "Each list item element should have a unique <code>key</code> attribute.",
-          "testString": "assert((() => { const ul = Enzyme.mount(React.createElement(MyComponent)).find('ul'); console.log(ul.debug()); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key() ]); return keys.size === 4; })(), 'Each list item element should have a unique <code>key</code> attribute.');"
+          "text": "每个列表项元素都应该有一个唯一的<code>key</code>属性。",
+          "testString": "assert((() => { const ul = Enzyme.mount(React.createElement(MyComponent)).find('ul'); console.log(ul.debug()); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key() ]); return keys.size === 4; })(), '每个列表项元素都应该有一个唯一的<code>key</code>属性。');"
         }
       ],
       "solutions": [
@@ -3580,8 +3580,8 @@
       "title": "Render React on the Server with renderToString",
       "releasedOn": "December 25, 2017",
       "description": [
-        "So far, you have been rendering React components on the client. Normally, this is what you will always do. However, there are some use cases where it makes sense to render a React component on the server. Since React is a JavaScript view library and you can run JavaScript on the server with Node, this is possible. In fact, React provides a <code>renderToString()</code> method you can use for this purpose.",
-        "There are two key reasons why rendering on the server may be used in a real world app. First, without doing this, your React apps would consist of a relatively empty HTML file and a large bundle of JavaScript when it's initially loaded to the browser. This may not be ideal for search engines that are trying to index the content of your pages so people can find you. If you render the initial HTML markup on the server and send this to the client, the initial page load contains all of the page's markup which can be crawled by search engines. Second, this creates a faster initial page load experience because the rendered HTML is smaller than the JavaScript code of the entire app. React will still be able to recognize your app and manage it after the initial load.",
+        "到目前为止，你已经能够在客户端上渲染 React 组件，一般来说我们都是这么做的。然而，在一些用例中，在服务器上渲染一个 React 组件是有意义的。由于 React 是一个 JavaScript 视图库，所以使用 Node 让 JavaScript 运行在服务器上是可行的。事实上，React 提供了一个可用于此目的的<code>renderToString()</code>方法。",
+        "有两个关键原因可以解释为什么服务器上的渲染可能会在真实世界的应用程序中使用。首先，如果不这样做，你的 React 应用程序将包含一个代码量很少的 HTML 文件和一大堆 JavaScript，当它最初加载到浏览器时。这对于搜索引擎来说可能不太理想，因为它们试图为你的网页内容生成索引，以便人们可以找到你。如果在服务器上渲染初始 HTML 标记并将其发送到客户端，则初始页面加载的内容包含搜索引擎可以抓取的所有页面标记。其次，这创造了更快的初始页面加载体验，因为渲染的 HTML 代码量要比整个应用程序的 JavaScript 代码小。React 仍然能够识别你的应用并在初始加载后进行管理。",
         "<hr>",
         "The <code>renderToString()</code> method is provided on <code>ReactDOMServer</code>, which is available here as a global object. The method takes one argument which is a React元素。 Use this to render <code>App</code> to a string."
       ],
@@ -3614,8 +3614,8 @@
       },
       "tests": [
         {
-          "text": "The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.",
-          "testString": "getUserInput => assert(getUserInput('index').replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div', 'The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.');"
+          "text": "<code>App</code>组件应该使用<code>ReactDOMServer.renderToString</code>渲染一个字符串。",
+          "testString": "getUserInput => assert(getUserInput('index').replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div', '<code>App</code>组件应该使用<code>ReactDOMServer.renderToString</code>渲染一个字符串。');"
         }
       ],
       "solutions": [

@@ -128,7 +128,7 @@
       "description": [
         "Web 开发者通常用<a href='http://www.ruanyifeng.com/blog/2009/04/lorem_ipsum.html'>lorem ipsum text</a>来做占位符，占位符就是占着位置的一些文字，没有实际意义。",
         "为什么叫<code>lorem ipsum text</code>呢?是因为<code>lorem ipsum</code>是古罗马西塞罗谚语的前两个单词。",
-        "从公元16世纪开始<code>lorem ipsum text</code>就被当做占位符了，这种传统延续到了互联网时代。于此同时，孙悟空也在五指山下被压了500年，然后就进化成程序猿了，是不是很巧合。^_^",
+        "从公元16世纪开始<code>lorem ipsum text</code>就被当做占位符了，这种传统延续到了互联网时代。与此同时，孙悟空也在五指山下被压了500年，然后就进化成程序猿了，是不是很巧合。^_^",
         "<hr>",
         "把<code>p</code>元素的内容更换为：<code>Monkey code 猴哥猴哥，你真了不得，金箍棒在手，问世间谁是英雄。</code>"
       ],
@@ -732,13 +732,13 @@
       "id": "bad87fee1348bd9aedf08827",
       "title": "Create a Bulleted Unordered List",
       "description": [
-        "HTML 有一个特定的元素用于创建<code>unordered lists（无序列表</code>, 也叫项目列表。",
-        "无序列表以<code>&#60;ul&#62;</code>元素开始，并包含一个或多个<code>&#60;li&#62;</code>元素，最后以<code>&#60;/ul&#62;</code>结尾。",
+        "HTML 有一个特定的元素用于创建无序列表<code>unordered lists（缩写 ul）</code>。",
+        "无序列表以<code>&#60;ul&#62;</code>开始，中间包含一个或多个<code>&#60;li&#62;</code>元素，最后以<code>&#60;/ul&#62;</code>结尾。",
         "例如: ",
-        "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;milk&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;cheese&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
-        "将会创建一个包含 \"milk\" 和 \"cheese\" 的项目列表。",
+        "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;牛奶&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;奶酪&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
+        "将会创建一个包含牛奶和奶酪的无序列表。",
         "<hr>",
-        "删除页面底部的两个<code>p</code>元素，然后在底部创建一个无序列表，其中包含猫咪最喜欢的三件事情。"
+        "删除页面底部的两个<code>p</code>元素，然后在底部创建一个无序列表，其中包含猫咪最喜欢的三件东西。"
       ],
       "tests": [
         {
@@ -788,24 +788,24 @@
       "id": "bad87fee1348bd9aedf08828",
       "title": "Create an Ordered List",
       "description": [
-        "HTML 有一个特定的元素用于创建<code>ordered lists（有序列表）</code>，也叫数字列表。",
-        "有序列表以<code>&#60;ol&#62;</code> 元素开始，并包含一个或多个<code>&#60;li&#62;</code>元素，最后以<code>&#60;/ol&#62;</code>结尾。",
+        "HTML 有一个特定的元素用于创建有序列表<code>ordered lists（缩写 ol）</code>。",
+        "有序列表以<code>&#60;ol&#62;</code>开始，中间包含一个或多个<code>&#60;li&#62;</code>元素，最后以<code>&#60;/ol&#62;</code>结尾。",
         "例如:",
-        "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
-        "将会创建一个包含 \"Garfield\" 和 \"Sylvester\" 的数字列表。",
+        "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;加菲猫&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;哆啦A梦&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
+        "将会创建一个包含加菲猫和哆啦A梦的有序列表。",
         "<hr>",
         "创建一个有序列表，内容是猫咪最讨厌的三件东西。"
       ],
       "tests": [
         {
-          "text": "页面应该有一个有序列表，内容是猫咪最喜欢的三件东西。",
+          "text": "页面应该有一个无序列表，内容是猫咪最喜欢的三件东西。",
           "testString":
-            "assert((/猫咪最喜欢的三件东西：/i).test($(\"ol\").prev().text()), '页面应该有一个有序列表，内容是猫咪最喜欢的三件东西。');"
+            "assert((/猫咪最喜欢的三件东西：/i).test($(\"ul\").prev().text()), '页面应该有一个有序列表，内容是猫咪最喜欢的三件东西。');"
         },
         {
-          "text": "页面应该有一个无序列表，内容是猫咪最讨厌的三件东西。",
+          "text": "页面应该有一个有序列表，内容是猫咪最讨厌的三件东西。",
           "testString":
-            "assert((/猫咪最讨厌的三件东西：/i).test($(\"ul\").prev().text()), '页面应该有一个无序列表，内容是猫咪最讨厌的三件东西。');"
+            "assert((/猫咪最讨厌的三件东西：/i).test($(\"ol\").prev().text()), '页面应该有一个有序列表，内容是猫咪最讨厌的三件东西。');"
         },
         {
           "text": "页面应该只有一个<code>ul</code>元素。",

@@ -1473,32 +1473,32 @@
       ],
       "tests": [
         {
-          "text": "pwRegex 应该使用两个正向<code>先行断言</code>。",
-          "testString": "assert(pwRegex.source.match(/\\(\\?=.*?\\)\\(\\?=.*?\\)/) !== null, 'pwRegex 应该使用两个肯定<code>先行断言</code>。');"
+          "text": "你的正则表达式应该使用两个正向<code>先行断言</code>。",
+          "testString": "assert(pwRegex.source.match(/\\(\\?=.*?\\)\\(\\?=.*?\\)/) !== null, '你的正则表达式应该使用两个正向<code>先行断言</code>。');"
         },
         {
-          "text": "pwRegex 不应该匹配<code>\"astronaut\"</code>。",
-          "testString": "assert(!pwRegex.test(\"astronaut\"), 'pwRegex 不应该匹配<code>\"astronaut\"</code>。');"
+          "text": "你的正则表达式不应该匹配<code>\"astronaut\"</code>。",
+          "testString": "assert(!pwRegex.test(\"astronaut\"), '你的正则表达式不应该匹配<code>\"astronaut\"</code>。');"
         },
         {
-          "text": "pwRegex 不应该匹配<code>\"airplanes\"</code>。",
-          "testString": "assert(!pwRegex.test(\"airplanes\"), 'pwRegex 不应该匹配<code>\"airplanes\"</code>。');"
+          "text": "你的正则表达式不应该匹配<code>\"airplanes\"</code>。",
+          "testString": "assert(!pwRegex.test(\"airplanes\"), '你的正则表达式不应该匹配<code>\"airplanes\"</code>。');"
         },
         {
-          "text": "pwRegex 应该匹配<code>\"bana12\"</code>。",
-          "testString": "assert(pwRegex.test(\"bana12\"), 'pwRegex 应该匹配<code>\"bana12\"</code>。');"
+          "text": "你的正则表达式应该匹配<code>\"bana12\"</code>。",
+          "testString": "assert(pwRegex.test(\"bana12\"), '你的正则表达式应该匹配<code>\"bana12\"</code>。');"
         },
         {
-          "text": "Your regex should match<code>\"abc123\"</code>。",
-          "testString": "assert(pwRegex.test(\"abc123\"), 'Your regex should match<code>\"abc123\"</code>。');"
+          "text": "你的正则表达式应该匹配<code>\"abc123\"</code>。",
+          "testString": "assert(pwRegex.test(\"abc123\"), '你的正则表达式应该匹配<code>\"abc123\"</code>。');"
         },
         {
-          "text": "pwRegex 不应该匹配<code>\"123\"</code>。",
-          "testString": "assert(!pwRegex.test(\"123\"), 'pwRegex 不应该匹配<code>\"123\"</code>。');"
+          "text": "你的正则表达式不应该匹配<code>\"123\"</code>。",
+          "testString": "assert(!pwRegex.test(\"123\"), '你的正则表达式不应该匹配<code>\"123\"</code>。');"
         },
         {
-          "text": "pwRegex 不应该匹配<code>\"1234\"</code>。",
-          "testString": "assert(!pwRegex.test(\"1234\"), 'pwRegex 不应该匹配<code>\"1234\"</code>。');"
+          "text": "你的正则表达式不应该匹配<code>\"1234\"</code>。",
+          "testString": "assert(!pwRegex.test(\"1234\"), '你的正则表达式不应该匹配<code>\"1234\"</code>。');"
         }
       ],
       "solutions": [],

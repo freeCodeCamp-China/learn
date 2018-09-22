@@ -8,33 +8,33 @@
       "id": "bd7158d8c443edefaeb5bdef",
       "title": "Timestamp Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://curse-arrow.glitch.me/' target='_blank'>https://curse-arrow.glitch.me/</a>.",
-        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
-        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-timestamp/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-timestamp/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
+        "构建一个功能类似于 <a href='https://curse-arrow.glitch.me/' target='_blank'>https://curse-arrow.glitch.me/</a> 的 JavaScript 全栈应用。",
+        "在开发这个项目的时，我们推荐你使用 Glitch（https://glitch.com/），在其上面编码，待你完成之后，你可以拷贝应用主页的链接到屏幕的输入框中，测试你的代码是否能通过项目需求。当然你也可以基于其他的平台来完成自己的项目，只要提供一个公开的主页便于我们测试就行。",
+        "参考示例：在 Glitch 上启动这个项目 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-timestamp/'>这个链接</a> 或者克隆 GitHub 上 <a href='https://github.com/freeCodeCamp/boilerplate-project-timestamp/'>这个仓库的代码</a> ! 如果你使用 Glitch，请记住将项目链接保存到妥当的地方!"
       ],
       "tests": [
         {
-          "text": "It should handle a valid date, and return the correct unix timestamp",
+          "text": "当处理一个有效的日期，返回正确的 unix 时间戳。",
           "testString": "getUserInput => $.get(getUserInput('url') + '/api/timestamp/2016-12-25').then(data => { assert.equal(data.unix, 1482624000000, 'Should be a valid unix timestamp'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "It should handle a valid date, and return the correct UTC string",
+          "text": "当处理一个有效的日期， 返回正确的 UTC 字符串。",
           "testString": "getUserInput => $.get(getUserInput('url')+ '/api/timestamp/2016-12-25').then(data => { assert.equal(data.utc, 'Sun, 25 Dec 2016 00:00:00 GMT', 'Should be a valid UTC date string'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "It should handle a valid unix date, and return the correct unix timestamp",
+          "text": "当处理一个有效的 unix 格式的日期, 返回正确的 unix 时间戳。",
           "testString": "getUserInput => $.get(getUserInput('url') + '/api/timestamp/1482624000000').then(data => { assert.equal(data.unix, 1482624000000) ;  }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "It should return the expected error message for an invalid date",
+          "text": "这个程序应该返回无效日期的预期错误消息",
           "testString": "getUserInput => $.get(getUserInput('url') + '/api/timestamp/this-is-not-a-date').then(data => { assert.equal(data.error.toLowerCase(), 'invalid date');}, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "It should handle an empty date parameter, and return the current time in unix format",
+          "text": "当处理一个空的日期参数的时候，返回当前时间的 unix 格式。",
           "testString": "getUserInput => $.get(getUserInput('url') + '/api/timestamp').then(data => { var now = Date.now(); assert.approximately(data.unix, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text": "It should handle an empty date parameter, and return the current time in UTC format",
+          "text": "当处理一个空的日期参数的时候，返回当前时间的 UTC 格式。",
           "testString": "getUserInput => $.get(getUserInput('url') + '/api/timestamp').then(data => { var now = Date.now(); var serverTime = (new Date(data.utc)).getTime(); assert.approximately(serverTime, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
@@ -48,13 +48,13 @@
       "id": "bd7158d8c443edefaeb5bdff",
       "title": "Request Header Parser Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://dandelion-roar.glitch.me/' target='_blank'>https://dandelion-roar.glitch.me/</a>.",
-        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
-        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-headerparser/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-headerparser/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
+        "构建一个功能类似于 <a href='https://dandelion-roar.glitch.me/' target='_blank'>https://dandelion-roar.glitch.me/</a> 的 JavaScript 全栈应用。",
+        "在开发这个项目的时，我们推荐你使用 Glitch（https://glitch.com/），在其上面编码，待你完成之后，你可以拷贝应用主页的链接到屏幕的输入框中，测试你的代码是否能通过项目需求。当然你也可以基于其他的平台来完成自己的项目，只要提供一个公开的主页便于我们测试就行。",
+        "参考示例：在 Glitch 上启动这个项目 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-headerparser/'>这个链接</a> 或者克隆 GitHub 上 <a href='https://github.com/freeCodeCamp/boilerplate-project-headerparser/'>这个仓库的代码</a>! 如果您使用 Glitch，请记住将项目链接保存到妥当的地方!"
       ],
       "tests": [
         {
-          "text": "I can get the IP address, language and operating system for my browser.",
+          "text": "我可以获得浏览器的IP地址、语言和操作系统信息。",
           "testString": ""
         }
       ],
@@ -68,21 +68,21 @@
       "id": "bd7158d8c443edefaeb5bd0e",
       "title": "URL Shortener Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://thread-paper.glitch.me/' target='_blank'>https://thread-paper.glitch.me/</a>.",
-        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
-        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-urlshortener/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-urlshortener/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
+        "构建一个功能类似于 <a href='https://thread-paper.glitch.me/' target='_blank'>https://thread-paper.glitch.me/</a> 的 JavaScript 全栈应用。",
+        "在开发这个项目的时，我们推荐你使用 Glitch（https://glitch.com/），在其上面编码，待你完成之后，你可以拷贝应用主页的链接到屏幕的输入框中，测试你的代码是否能通过项目需求。当然你也可以基于其他的平台来完成自己的项目，只要提供一个公开的主页便于我们测试就行。",
+        "参考示例：在 Glitch 上启动这个项目 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-urlshortener/'>这个链接</a> 或者克隆 GitHub 上 <a href='https://github.com/freeCodeCamp/boilerplate-project-urlshortener/'>这个仓库的代码</a>! 如果你使用 Glitch，请记住将项目链接保存到妥当的地方!"
       ],
       "tests": [
         {
-          "text": "I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.",
+          "text": "当我传入一个 url 作为参数时，我将在JSON响应中收到缩短的URL。",
           "testString": ""
         },
         {
-          "text": "If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.",
+          "text": "如果我传入一个无效的链接，则会返回一个包含 “没有遵循如 http://www.example.com 的有效格式” 的错误信息的 JSON 响应。",
           "testString": ""
         },
         {
-          "text": "When I visit that shortened URL, it will redirect me to my original link.",
+          "text": "当我访问这个短 URL 时, 将重定向到我原来的链接。",
           "testString": ""
         }
       ],
@@ -96,29 +96,29 @@
       "id": "5a8b073d06fa14fcfde687aa",
       "title": "Exercise Tracker",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://fuschia-custard.glitch.me/' target='_blank'>https://fuschia-custard.glitch.me/</a>.",
-        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
-        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-exercisetracker/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
+        "构建一个功能类似于 <a href='https://fuschia-custard.glitch.me/' target='_blank'>https://fuschia-custard.glitch.me/</a> 的 JavaScript 全栈应用。",
+        "在开发这个项目的时，我们推荐你使用 Glitch（https://glitch.com/），在其上面编码，待你完成之后，你可以拷贝应用主页的链接到屏幕的输入框中，测试你的代码是否能通过项目需求。当然你也可以基于其他的平台来完成自己的项目，只要提供一个公开的主页便于我们测试就行。",
+        "参考示例：在 Glitch 上启动这个项目 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-exercisetracker/'>这个链接</a> 或者克隆 GitHub 上 <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>这个仓库的代码</a>! 如果你使用 Glitch，请记住将项目链接保存到妥当的地方!"
       ],
       "tests": [
         {
-          "text": "I can create a user by posting form data username to /api/exercise/new-user and returned will be an object with username and <code>_id</code>.",
+          "text": "通过指定 `/api/exercise/new-user` 的 username 参数来创建用户, 并且返回一个具有 username 和 _id 的对象。",
           "testString": ""
         },
         {
-          "text": "I can get an array of all users by getting api/exercise/users with the same info as when creating a user.",
+          "text": "通过指定 `api/exercise/users` 的参数为创建用户时相同的信息，来获取到一个用户的数组。",
           "testString": ""
         },
         {
-          "text": "I can add an exercise to any user by posting form data userId(_id), description, duration, and optionally date to /api/exercise/add. If no date supplied it will use current date. App will return the user object with the exercise fields added.",
+          "text": "通过指定 `/api/exercise/add` 的 userId、description、duration 和 date（可选）参数, 去添加一条练习记录。 当没有传入 date 的时候，默认采用当前日期。 应用程序将返回添加了练习字段的用户对象。",
           "testString": ""
         },
         {
-          "text": "I can retrieve a full exercise log of any user by getting /api/exercise/log with a parameter of userId(_id). App will return the user object with added array log and count (total exercise count).",
+          "text": "通过指定 `/api/exercise/log` 的 userId 参数，可以获取任意用户的练习日志和总的练习次数。",
           "testString": ""
         },
         {
-          "text": "I can retrieve part of the log of any user by also passing along optional parameters of from & to or limit. (Date format yyyy-mm-dd, limit = int)",
+          "text": "我还可以通过传递可选参数 from & to 或 limit 来检索任何用户的部分日志。(日期格式如： yyyy-mm-dd, limit = int)",
           "testString": ""
         }
       ],
@@ -132,17 +132,17 @@
       "id": "bd7158d8c443edefaeb5bd0f",
       "title": "File Metadata Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://purple-paladin.glitch.me/' target='_blank'>https://purple-paladin.glitch.me/</a>.",
-        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
-        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-filemetadata/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-filemetadata/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
+        "构建一个功能类似于 <a href='https://purple-paladin.glitch.me/' target='_blank'>https://purple-paladin.glitch.me/</a> 的 JavaScript 全栈应用。",
+        "在开发这个项目的时，我们推荐你使用 Glitch（https://glitch.com/），在其上面编码，待你完成之后，你可以拷贝应用主页的链接到屏幕的输入框中，测试你的代码是否能通过项目需求。当然你也可以基于其他的平台来完成自己的项目，只要提供一个公开的主页便于我们测试就行。",
+        "参考示例：在 Glitch 上启动这个项目 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-filemetadata/'>这个链接</a> 或者克隆 GitHub 上 <a href='https://github.com/freeCodeCamp/boilerplate-project-filemetadata/'>这个仓库的代码</a>! 如果你使用 Glitch，请记住将项目链接保存到妥当的地方!"
       ],
       "tests": [
         {
-          "text": "I can submit a FormData object that includes a file upload.",
+          "text": "我可以提交包含文件上传的 FormData 对象。",
           "testString": ""
         },
         {
-          "text": "When I submit something, I will receive the file size in bytes within the JSON response.",
+          "text": "当我提交某些内容时，我将在 JSON 响应中收到以 bytes（字节）为单位的文件大小。",
           "testString": ""
         }
       ],

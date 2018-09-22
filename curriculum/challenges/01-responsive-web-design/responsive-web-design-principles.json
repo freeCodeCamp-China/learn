@@ -16,12 +16,12 @@
         "<code>@media (min-height: 350px) { /* CSS Rules */ }</code>",
         "只有当媒体类型与当前设备匹配时，才应用媒体查询中的 CSS。",
         "<hr>",
-        "增加一个设备的高度小于或等于 800px 时，<code>p</code> 标签的 <code>font-size</code> 为 10px 的媒体查询。"
+        "增加一个设备的高度小于或等于 800px 时，<code>p</code> 标签的 <code>font-size</code> 为 12px 的媒体查询。"
       ],
       "tests": [
         {
-          "text": "当设备 <code>height</code> 小于或等于 800px 时，<code>p</code> 元素 <code>font-size</code> 应为 10px。",
-          "testString": "assert($('p').css('font-size') == '10px', '当设备 <code>height</code> 小于或等于 800px 时，<code>p</code> 元素 <code>font-size</code> 应为 10px。');"
+          "text": "当设备 <code>height</code> 小于或等于 800px 时，<code>p</code> 元素 <code>font-size</code> 应为 12px。",
+          "testString": "assert($('p').css('font-size') == '12px', '当设备 <code>height</code> 小于或等于 800px 时，<code>p</code> 元素 <code>font-size</code> 应为 12px。');"
         },
         {
           "text": "使用 <code>@media</code> 为 <code>height</code> 小于或等于 800px 的设备添加一个媒体查询。",

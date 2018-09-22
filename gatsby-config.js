@@ -7,7 +7,7 @@ console.log(buildChallenges$)
 module.exports = {
   siteMetadata: {
     title: 'freeCodeCamp | Learn to code and help non-profits ',
-    siteUrl: 'https://learn.freecodecamp.org'
+    siteUrl: 'https://learn.freecodecamp.one'
   },
   proxy: {
     prefix: '/external',

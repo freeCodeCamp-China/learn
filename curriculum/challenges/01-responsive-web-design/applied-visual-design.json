@@ -8,23 +8,23 @@
       "id": "587d7791367417b2b2512ab3",
       "title": "Create Visual Balance Using the text-align Property",
       "description": [
-        "This section of the curriculum focuses on Applied Visual Design. The first group of challenges build on the given card layout to show a number of core principles.",
-        "Text is often a large part of web content. CSS has several options for how to align it with the <code>text-align</code> property.",
-        "<code>text-align: justify;</code> causes all lines of text except the last line to meet the left and right edges of the line box.",
-        "<code>text-align: center;</code> centers the text",
-        "<code>text-align: right;</code> right-aligns the text",
-        "And <code>text-align: left;</code> (the default) left-aligns the text.",
+        "这部分课程主要关于应用视觉设计。开始的挑战展示了一些核心的原则，代码基于一个指定的卡片布局。",
+        "web 内容大部分都是文本。CSS 里面的<code>text-align</code>属性可以控制文本的对齐方式。",
+        "<code>text-align: justify;</code>可以让除最后一行之外的文字两端对齐，即每行的左右两端都紧贴行的边缘。",
+        "<code>text-align: center;</code>可以让文本居中对齐。",
+        "<code>text-align: right;</code>可以让文本右对齐。",
+        "<code>text-align: left;</code>是<code>text-align</code>的默认值，它可以让文本左对齐。",
         "<hr>",
-        "Align the <code>h4</code> tag's text, which says \"Google\", to the center. Then justify the paragraph tag which contains information about how Google was founded."
+        "居中对齐<code>h4</code>标签文本，文本内容为 “Google”。两端对齐段落标签文本，文本介绍了 Google 的创立。"
       ],
       "tests": [
         {
-          "text": "Your code should use the text-align property on the <code>h4</code> tag to set it to center.",
-          "testString": "assert($('h4').css('text-align') == 'center', 'Your code should use the text-align property on the <code>h4</code> tag to set it to center.');"
+          "text": "你应该在<code>h4</code>标签上使用 text-align 属性设置文本居中对齐。",
+          "testString": "assert($('h4').css('text-align') == 'center', '你应该在<code>h4</code>标签上使用 text-align 属性设置文本居中对齐。');"
         },
         {
-          "text": "Your code should use the text-align property on the <code>p</code> tag to set it to justify.",
-          "testString": "assert($('p').css('text-align') == 'justify', 'Your code should use the text-align property on the <code>p</code> tag to set it to justify.');"
+          "text": "你应该在<code>p</code>标签上使用 text-align 属性设置文本两端对齐。",
+          "testString": "assert($('p').css('text-align') == 'justify', '你应该在<code>p</code>标签上使用 text-align 属性设置文本两端对齐。');"
         }
       ],
       "solutions": [],
@@ -62,11 +62,11 @@
             "  <div class=\"cardContent\">",
             "    <div class=\"cardText\">",
             "      <h4>Google</h4>",
-            "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+            "      <p>Google 由在斯坦福大学攻读理工博士的拉里·佩奇和谢尔盖·布林共同创建。</p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -80,15 +80,15 @@
       "id": "587d7791367417b2b2512ab4",
       "title": "Adjust the Width of an Element Using the width Property",
       "description": [
-        "You can specify the width of an element using the <code>width</code> property in CSS. Values can be given in relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element. Here's an example that changes the width of an image to 220px:",
+        "你可以使用 CSS 里面的<code>width</code>属性来指定元素的宽度。属性值可以是相对单位（比如 em），绝对单位（比如 px），或者包含块（父元素）宽度的百分比。下面这个例子把图片的宽度设置为 220px：",
         "<blockquote>img {<br>&nbsp;&nbsp;width: 220px;<br>}</blockquote>",
         "<hr>",
-        "Add a <code>width</code> property to the entire card and set it to an absolute value of 245px. Use the <code>fullCard</code> class to select the element."
+        "给卡片添加<code>width</code>属性，设置它的宽度为 245px。使用<code>fullCark</code> class 来选择元素。"
       ],
       "tests": [
         {
-          "text": "Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.",
-          "testString": "assert(code.match(/.fullCard\\s*{[\\s\\S][^}]*\\n*^\\s*width\\s*:\\s*245px\\s*;/gm), 'Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.');"
+          "text": "你应该使用<code>fullCard</code> class 选择器将卡片的<code>width</code>宽度属性更改为<code>245px</code>。",
+          "testString": "assert(code.match(/.fullCard\\s*{[\\s\\S][^}]*\\n*^\\s*width\\s*:\\s*245px\\s*;/gm), '你应该使用<code>fullCard</code> class 选择器将卡片的<code>width</code>宽度属性更改为<code>245px</code>。');"
         }
       ],
       "solutions": [],
@@ -127,11 +127,11 @@
             "  <div class=\"cardContent\">",
             "    <div class=\"cardText\">",
             "      <h4>Google</h4>",
-            "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+            "      <p>Google 由在斯坦福大学攻读理工博士的拉里·佩奇和谢尔盖·布林共同创建。</p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -145,15 +145,15 @@
       "id": "587d7791367417b2b2512ab5",
       "title": "Adjust the Height of an Element Using the height Property",
       "description": [
-        "You can specify the height of an element using the <code>height</code> property in CSS, similar to the <code>width</code> property. Here's an example that changes the height of an image to 20px:",
+        "和<code>width</code>属性类似，你可以使用 CSS 里面的<code>height</code>属性来指定元素的高度。下面这个例子把图片的高度设置为 20px：",
         "<blockquote>img {<br>&nbsp;&nbsp;height: 20px;<br>}</blockquote>",
         "<hr>",
-        "Add a <code>height</code> property to the <code>h4</code> tag and set it to 25px."
+        "给<code>h4</code>标签添加<code>height</code>属性并设置值为 25px。"
       ],
       "tests": [
         {
-          "text": "Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.",
-          "testString": "assert($('h4').css('height') == '25px', 'Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.');"
+          "text": "你应该设置<code>h4</code>的<code>height</code>属性，使其值为<code>25px</code>。",
+          "testString": "assert($('h4').css('height') == '25px', '你应该设置<code>h4</code>的<code>height</code>属性，使其值为<code>25px</code>。');"
         }
       ],
       "solutions": [],
@@ -193,11 +193,11 @@
             "  <div class=\"cardContent\">",
             "    <div class=\"cardText\">",
             "      <h4>Google</h4>",
-            "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+            "      <p>Google 由在斯坦福大学攻读理工博士的拉里·佩奇和谢尔盖·布林共同创建。</p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -211,22 +211,22 @@
       "id": "587d781a367417b2b2512ab7",
       "title": "Use the strong Tag to Make Text Bold",
       "description": [
-        "To make text bold, you can use the <code>strong</code> tag. This is often used to draw attention to text and symbolize that it is important. With the <code>strong</code> tag, the browser applies the CSS of <code>font-weight: bold;</code> to the element.",
+        "你可以使用<code>strong</code>标签来加粗文字。这通常用来强调文字，表示它很重要。添加了<code>strong</code>标签后，浏览器会给元素应用<code>font-weight:bold;</code>的 CSS 属性。",
         "<hr>",
-        "Wrap a <code>strong</code> tag around \"Stanford University\" inside the <code>p</code> tag."
+        "在<code>p</code>标签里的 “斯坦福大学” 外面添加<code>strong</code>标签。"
       ],
       "tests": [
         {
-          "text": "Your code should add one <code>strong</code> tag to the markup.",
-          "testString": "assert($('strong').length == 1, 'Your code should add one <code>strong</code> tag to the markup.');"
+          "text": "你应该有一个<code>strong</code>标签。",
+          "testString": "assert($('strong').length == 1, '你应该有一个<code>strong</code>标签。');"
         },
         {
-          "text": "The <code>strong</code> tag should be inside the <code>p</code> tag.",
-          "testString": "assert($('p').children('strong').length == 1, 'The <code>strong</code> tag should be inside the <code>p</code> tag.');"
+          "text": "<code>strong</code>标签应该在<code>p</code>标签里。",
+          "testString": "assert($('p').children('strong').length == 1, '<code>strong</code>标签应该在<code>p</code>标签里。');"
         },
         {
-          "text": "The <code>strong</code> tag should wrap around the words \"Stanford University\".",
-          "testString": "assert($('strong').text().match(/^Stanford University$/gi), 'The <code>strong</code> tag should wrap around the words \"Stanford University\".');"
+          "text": "<code>strong</code>标签应该包围 “斯坦福大学”。",
+          "testString": "assert($('strong').text().match(/^斯坦福大学$/gi), '<code>strong</code>标签应该包围 “斯坦福大学”。');"
         }
       ],
       "solutions": [],
@@ -269,11 +269,11 @@
             "  <div class=\"cardContent\">",
             "    <div class=\"cardText\">",
             "      <h4>Google</h4>",
-            "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+            "      <p>Google 由在斯坦福大学攻读理工博士的拉里·佩奇和谢尔盖·布林共同创建。</p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a><br><br>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -287,23 +287,23 @@
       "id": "587d781a367417b2b2512ab8",
       "title": "Use the u Tag to Underline Text",
       "description": [
-        "To underline text, you can use the <code>u</code> tag. This is often used to signify that a section of text is important, or something to remember. With the <code>u</code> tag, the browser applies the CSS of <code>text-decoration: underline;</code> to the element.",
+        "你可以使用<code>u</code>标签来给文字添加下划线。这通常用来表示这部分文字很重要，或者是一些值得注意的内容。添加了<code>u</code>标签后，浏览器会给元素应用<code>text-decoration: underline;</code>的 CSS 属性。",
         "<hr>",
-        "Wrap the <code>u</code> tag around the text \"Ph.D. students\". It should not include the parent <code>div</code> that has the class of <code>cardText</code>.",
-        "<strong>Note</strong><br>Try to avoid using the <code>u</code> tag when it could be confused for a link. Anchor tags also have a default underlined formatting."
+        "在 “理工博士” 外面添加<code>u</code>标签。不要给整个 class 为<code>cardText</code>的父<code>div</code>添加。",
+        "<strong>注意</strong>超链接标签默认给文本添加下划线，如果<code>u</code>标签的下滑线和页面的链接混淆，请避免使用它。"
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>u</code> tag to the markup.",
-          "testString": "assert($('u').length === 1, 'Your code should add a <code>u</code> tag to the markup.');"
+          "text": "你应该有一个<code>u</code>标签。",
+          "testString": "assert($('u').length === 1, '你应该有一个<code>u</code>标签。');"
         },
         {
-          "text": "The <code>u</code> tag should wrap around the text \"Ph.D. students\".",
-          "testString": "assert($('u').text() === 'Ph.D. students', 'The <code>u</code> tag should wrap around the text \"Ph.D. students\".');"
+          "text": "<code>u</code>标签应该包围 “理工博士”。",
+          "testString": "assert($('u').text() === '理工博士', '<code>u</code>标签应该包围 “理工博士”。');"
         },
         {
-          "text": "The <code>u</code> tag should not wrap around the parent <code>div</code> tag.",
-          "testString": "assert($('u').children('div').length === 0, 'The <code>u</code> tag should not wrap around the parent <code>div</code> tag.');"
+          "text": "<code>u</code>标签内不应包含额外的<code>div</code>标签。",
+          "testString": "assert($('u').children('div').length === 0, '<code>u</code>标签内不应包含额外的<code>div</code>标签。');"
         }
       ],
       "solutions": [],
@@ -346,11 +346,11 @@
             "  <div class=\"cardContent\">",
             "    <div class=\"cardText\">",
             "      <h4>Google</h4>",
-            "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at <strong>Stanford University</strong>.</p>",
+            "      <p>Google 由在<strong>斯坦福大学</strong>攻读理工博士的拉里·佩奇和谢尔盖·布林共同创建。</p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a><br><br>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -364,18 +364,18 @@
       "id": "587d781a367417b2b2512ab9",
       "title": "Use the em Tag to Italicize Text",
       "description": [
-        "To emphasize text, you can use the <code>em</code> tag. This displays text as italicized, as the browser applies the CSS of <code>font-style: italic;</code> to the element.",
+        "你可以使用 <code>em</code> 标签来强调文字。由于浏览器会给元素应用<code>font-style: italic;</code>CSS，这时文字会显示为斜体。",
         "<hr>",
-        "Wrap an <code>em</code> tag around the contents of the paragraph tag to give it emphasis."
+        "在段落标签里的文字外面添加<code>em</code>标签来强调段落。"
       ],
       "tests": [
         {
-          "text": "Your code should add an <code>em</code> tag to the markup.",
-          "testString": "assert($('em').length == 1, 'Your code should add an <code>em</code> tag to the markup.');"
+          "text": "你应该添加一个<code>em</code>标签。",
+          "testString": "assert($('em').length == 1, '你应该添加一个<code>em</code>标签。');"
         },
         {
-          "text": "The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.",
-          "testString": "assert($('p').children().length == 1 && $('em').children().length == 2, 'The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.');"
+          "text": "<code>em</code>标签应该包围<code>p</code>标签里的文本，而不是包围整个<code>p</code>标签。",
+          "testString": "assert($('p').children().length == 1 && $('em').children().length == 2, '<code>em</code>标签应该包围<code>p</code>标签里的文本，而不是包围整个<code>p</code>标签。');"
         }
       ],
       "solutions": [],
@@ -418,11 +418,11 @@
             "  <div class=\"cardContent\">",
             "    <div class=\"cardText\">",
             "      <h4>Google</h4>",
-            "      <p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p>",
+            "      <p>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a><br><br>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -436,22 +436,22 @@
       "id": "587d781b367417b2b2512aba",
       "title": "Use the s Tag to Strikethrough Text",
       "description": [
-        "To strikethrough text, which is when a horizontal line cuts across the characters, you can use the <code>s</code> tag. It shows that a section of text is no longer valid. With the <code>s</code> tag, the browser applies the CSS of <code>text-decoration: line-through;</code> to the element.",
+        "你可以用<code>s</code>标签来给文字添加删除线，<s>他的效果是在文字正中间有一条细线</s>。它代表着这段文字不再有效。添加了<code>s</code>标签后，浏览器会给元素应用<code>text-decoration: line-through;</code>CSS 属性。",
         "<hr>",
-        "Wrap the <code>s</code> tag around \"Google\" inside the <code>h4</code> tag and then add the word Alphabet beside it, which should not have the strikethrough formatting."
+        "在<code>h4</code>标签里的 “Google” 外添加<code>s</code>标签，然后在<code>s</code>标签外面添加单词 Alphabet，Alphabet 不要有删除线格式。"
       ],
       "tests": [
         {
-          "text": "Your code should add one <code>s</code> tag to the markup.",
-          "testString": "assert($('s').length == 1, 'Your code should add one <code>s</code> tag to the markup.');"
+          "text": "你应该添加一个<code>s</code>标签。",
+          "testString": "assert($('s').length == 1, '你应该添加一个<code>s</code>标签。');"
         },
         {
-          "text": "A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.",
-          "testString": "assert($('s').text().match(/Google/gi) && !$('s').text().match(/Alphabet/gi), 'A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.');"
+          "text": "<code>s</code>标签应该在<code>h4</code>标签内的 Google 文字外面，它不应该包含单词 Alphabet。",
+          "testString": "assert($('s').text().match(/Google/gi) && !$('s').text().match(/Alphabet/gi), '<code>s</code>标签应该在<code>h4</code>标签内的 Google 文字外面，它不应该包含单词 Alphabet。');"
         },
         {
-          "text": "Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.",
-          "testString": "assert($('h4').html().match(/Alphabet/gi), 'Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.');"
+          "text": "<code>h4</code>标签内应该有单词 Alphabet，Alphabet 应该没有删除线格式。",
+          "testString": "assert($('h4').html().match(/Alphabet/gi), '<code>h4</code>标签内应该有单词 Alphabet，Alphabet 应该没有删除线格式。');"
         }
       ],
       "solutions": [],
@@ -494,11 +494,11 @@
             "  <div class=\"cardContent\">",
             "    <div class=\"cardText\">",
             "      <h4>Google</h4>",
-            "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
+            "      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a><br><br>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -512,19 +512,19 @@
       "id": "587d781b367417b2b2512abb",
       "title": "Create a Horizontal Line Using the hr Element",
       "description": [
-        "You can use the <code>hr</code> tag to add a horizontal line across the width of its containing element. This can be used to define a change in topic or to visually separate groups of content.",
+        "你可以用<code>hr</code>标签来添加一条宽度撑满父元素的横线。它可以用来表示文档主题的改变，或者用来在视觉上将文档分隔成几个部分。",
         "<hr>",
-        "Add an <code>hr</code> tag underneath the <code>h4</code> which contains the card title.",
-        "<strong>Note</strong><br>In HTML, <code>hr</code> is a self-closing tag, and therefore doesn't need a separate closing tag."
+        "在包含卡片标题的<code>h4</code>下面添加一个<code>hr</code>标签。",
+        "<strong>注意</strong><br>在 HTML 里，<code>hr</code>是自关闭标签，所以不需要一个单独的关闭标签。"
       ],
       "tests": [
         {
-          "text": "Your code should add an <code>hr</code> tag to the markup.",
-          "testString": "assert($('hr').length == 1, 'Your code should add an <code>hr</code> tag to the markup.');"
+          "text": "你应该添加一个<code>hr</code>标签。",
+          "testString": "assert($('hr').length == 1, '你应该添加一个<code>hr</code>标签。');"
         },
         {
-          "text": "The <code>hr</code> tag should come between the title and the paragraph.",
-          "testString": "assert(code.match(/<\\/h4>\\s*?<hr(>|\\s*?\\/>)\\s*?<em>/gi), 'The <code>hr</code> tag should come between the title and the paragraph.');"
+          "text": "<code>hr</code>标签应该在标题和段落之间。",
+          "testString": "assert(code.match(/<\\/h4>\\s*?<hr(>|\\s*?\\/>)\\s*?<p>/gi), '<code>hr</code>标签应该在标题和段落之间。');"
         }
       ],
       "solutions": [],
@@ -567,12 +567,11 @@
             "  <div class=\"cardContent\">",
             "    <div class=\"cardText\">",
             "      <h4><s>Google</s>Alphabet</h4>",
-            "      ",
-            "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
+            "      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a><br><br>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -586,26 +585,26 @@
       "id": "587d781b367417b2b2512abc",
       "title": "Adjust the background-color Property of Text",
       "description": [
-        "Instead of adjusting your overall background or the color of the text to make the foreground easily readable, you can add a <code>background-color</code> to the element holding the text you want to emphasize. This challenge uses <code>rgba()</code> instead of <code>hex</code> codes or normal <code>rgb()</code>.",
-        "<blockquote>rgba stands for:<br>&nbsp;&nbsp;r = red<br>&nbsp;&nbsp;g = green<br>&nbsp;&nbsp;b = blue<br>&nbsp;&nbsp;a = alpha/level of opacity</blockquote>",
-        "The RGB values can range from 0 to 255. The alpha value can range from 1, which is fully opaque or a solid color, to 0, which is fully transparent or clear. <code>rgba()</code> is great to use in this case, as it allows you to adjust the opacity. This means you don't have to completely block out the background.",
-        "You'll use <code>background-color: rgba(45, 45, 45, 0.1)</code> for this challenge. It produces a dark gray color that is nearly transparent given the low opacity value of 0.1.",
+        "为了让页面更美观，除了设置整个页面的背景色以及文字颜色外，你还可以单独设置文字的背景色，即在文字的父元素上添加<code>background-color</code>属性。在本挑战里我们将使用<code>rgba()</code>颜色，而不是之前学到的<code>hex</code>编码或者<code>rgb()</code>颜色。",
+        "<blockquote>rgba 代表：<br>&nbsp;&nbsp;r = red 红色<br>&nbsp;&nbsp;g = green 绿色<br>&nbsp;&nbsp;b = blue 蓝色<br>&nbsp;&nbsp;a = alpha 透明度</blockquote>",
+        "RGB 值可以在 0 到 255 之间。alpha 值可以在 0 到 1 之间，其中 0 代表完全透明，1 代表完全不透明。<code>rgba()</code>非常棒，因为你可以设置颜色的透明度，这意味着你可以做出一些很漂亮的半透明效果。",
+        "在本挑战里你将会用到这个代码<code>background-color: rgba(45, 45, 45, 0.1)</code>。它表示背景是黑灰色，因为设置了透明度为 0.1，所以几乎是透明的。",
         "<hr>",
-        "To make the text stand out more, adjust the <code>background-color</code> of the <code>h4</code> element to the given <code>rgba()</code> value.",
-        "Also for the <code>h4</code>, remove the <code>height</code> property and add <code>padding</code> of 10px."
+        "为了让文字更醒目，设置<code>h4</code>元素的<code>background-color</code>属性值为上面指定的<code>rgba()</code>。",
+        "同时移除<code>h4</code>的<code>height</code>属性，并添加<code>padding</code>属性，值为 10px。"
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.",
-          "testString": "assert(code.match(/background-color:\\s*?rgba\\(\\s*?45\\s*?,\\s*?45\\s*?,\\s*?45\\s*?,\\s*?0?\\.1\\s*?\\)/gi), 'Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.');"
+          "text": "你应该给<code>h4</code>元素添加一个<code>background-color</code>属性并且赋值<code>rgba(45, 45, 45, 0.1)</code>。",
+          "testString": "assert(code.match(/background-color:\\s*?rgba\\(\\s*?45\\s*?,\\s*?45\\s*?,\\s*?45\\s*?,\\s*?0?\\.1\\s*?\\)/gi), '你应该给<code>h4</code>元素添加一个<code>background-color</code>属性并且赋值<code>rgba(45, 45, 45, 0.1)</code>。');"
         },
         {
-          "text": "Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.",
-          "testString": "assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px', 'Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.');"
+          "text": "你应该给<code>h4</code>元素添加一个<code>padding</code>属性并且赋值<code>10px</code>。",
+          "testString": "assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px', '你应该给<code>h4</code>元素添加一个<code>padding</code>属性并且赋值<code>10px</code>。');"
         },
         {
-          "text": "The <code>height</code> property on the <code>h4</code> element should be removed.",
-          "testString": "assert(!($('h4').css('height') == '25px'), 'The <code>height</code> property on the <code>h4</code> element should be removed.');"
+          "text": "<code>h4</code>元素的<code>height</code>属性应该被移除。",
+          "testString": "assert(!($('h4').css('height') == '25px'), '<code>h4</code>元素的<code>height</code>属性应该被移除。');"
         }
       ],
       "solutions": [],
@@ -651,11 +650,11 @@
             "    <div class=\"cardText\">",
             "      <h4>Alphabet</h4>",
             "      <hr>",
-            "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
+            "      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a><br><br>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -669,14 +668,14 @@
       "id": "587d781b367417b2b2512abd",
       "title": "Adjust the Size of a Header Versus a Paragraph Tag",
       "description": [
-        "The font size of header tags (<code>h1</code> through <code>h6</code>) should generally be larger than the font size of paragraph tags. This makes it easier for the user to visually understand the layout and level of importance of everything on the page. You use the <code>font-size</code> property to adjust the size of the text in an element.",
+        "标题（<code>h1</code>到<code>h6</code>）的文字应该比的段落的文字大，这样可以让用户更直观的看到页面的布局，同时能区别出不同元素的重要程度，更方便用户捕捉关键的信息。你可以使用<code>font-size</code>属性来设置元素内文字的大小。",
         "<hr>",
-        "To make the heading significantly larger than the paragraph, change the <code>font-size</code> of the <code>h4</code> tag to 27 pixels."
+        "把<code>h4</code>标签的<code>font-size</code>改成 27 像素，让标题更醒目。"
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.",
-          "testString": "assert($('h4').css('font-size') == '27px', 'Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.');"
+          "text": "你应该给<code>h4</code>元素添加一个<code>font-size</code>属性并且赋值<code>27px</code>。",
+          "testString": "assert($('h4').css('font-size') == '27px', '你应该给<code>h4</code>元素添加一个<code>font-size</code>属性并且赋值<code>27px</code>。');"
         }
       ],
       "solutions": [],
@@ -722,11 +721,11 @@
             "    <div class=\"cardText\">",
             "      <h4>Alphabet</h4>",
             "      <hr>",
-            "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
+            "      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a><br><br>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -740,21 +739,21 @@
       "id": "587d781b367417b2b2512abe",
       "title": "Add a box-shadow to a Card-like Element",
       "description": [
-        "The <code>box-shadow</code> property applies one or more shadows to an element.",
-        "The <code>box-shadow</code> property takes values for <code>offset-x</code> (how far to push the shadow horizontally from the element), <code>offset-y</code> (how far to push the shadow vertically from the element), <code>blur-radius</code>, <code>spread-radius</code> and a color value, in that order. The <code>blur-radius</code> and <code>spread-radius</code> values are optional.",
-        "Here's an example of the CSS to create multiple shadows with some blur, at mostly-transparent black colors:",
+        "<code>box-shadow</code>属性用来给元素添加阴影，该属性值是由逗号分隔的一个或多个阴影列表。",
+        "<code>box-shadow</code>属性的每个阴影依次由下面这些值描述：<ul><li><code>offset-x</code>阴影的水平偏移量；</li><li><code>offset-y</code>阴影的垂直偏移量;</li><li><code>blur-radius</code>模糊距离；</li><li><code>spread-radius</code>阴影尺寸；</li><li>颜色。</li></ul>其中<code>blur-raduis</code>和<code>spread-raduis</code>是可选的。",
+        "下面是创建了多个阴影的 CSS 例子，阴影加了模糊效果，颜色是透明度很高的黑色:",
         "<blockquote>box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</blockquote>",
         "<hr>",
-        "The element now has an id of <code>thumbnail</code>. With this selector, use the example CSS values above to place a <code>box-shadow</code> on the card."
+        "现在卡片已经添加了 id<code>thumbnail</code>。把上面的<code>box-shadow</code>值赋给卡片。"
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.",
-          "testString": "assert(code.match(/#thumbnail\\s*?{\\s*?box-shadow/g), 'Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.');"
+          "text": "你应该给 id 为<code>thumbnail</code>的元素添加<code>box-shadow</code>属性。",
+          "testString": "assert(code.match(/#thumbnail\\s*?{\\s*?box-shadow/g), '你应该给 id 为<code>thumbnail</code>的元素添加<code>box-shadow</code>属性。');"
         },
         {
-          "text": "You should use the given CSS for the <code>box-shadow</code> value.",
-          "testString": "assert(code.match(/box-shadow:\\s*?0\\s+?10px\\s+?20px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.19\\),\\s*?0\\s+?6px\\s+?6px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.23\\)/gi), 'You should use the given CSS for the <code>box-shadow</code> value.');"
+          "text": "<code>box-shadow</code>值应该是指定的 CSS 值。",
+          "testString": "assert(code.match(/box-shadow:\\s*?0\\s+?10px\\s+?20px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.19\\),\\s*?0\\s+?6px\\s+?6px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.23\\)/gi), '<code>box-shadow</code>值应该是指定的 CSS 值。');"
         }
       ],
       "solutions": [],
@@ -803,11 +802,11 @@
             "    <div class=\"cardText\">",
             "      <h4>Alphabet</h4>",
             "      <hr>",
-            "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
+            "      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a><br><br>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -821,16 +820,16 @@
       "id": "587d781c367417b2b2512abf",
       "title": "Decrease the Opacity of an Element",
       "description": [
-        "The <code>opacity</code> property in CSS is used to adjust the opacity, or conversely, the transparency for an item.",
-        "<blockquote>A value of 1 is opaque, which isn't transparent at all.<br>A value of 0.5 is half see-through.<br>A value of 0 is completely transparent.</blockquote>",
-        "The value given will apply to the entire element, whether that's an image with some transparency, or the foreground and background colors for a block of text.",
+        "CSS 里的<code>opacity</code>属性用来设置元素的透明度。",
+        "<blockquote>值 1 代表完全不透明。<br>值 0.5 代表半透明。<br>值 0 代表完全透明。</blockquote>",
+        "透明度会应用到元素内的所有内容，不论是图片，还是文本，或是背景色。",
         "<hr>",
-        "Set the <code>opacity</code> of the anchor tags to 0.7 using <code>links</code> class to select them."
+        "使用<code>links</code>class 选择所有的超链接并设置其<code>opacity</code>值为 0.7。"
       ],
       "tests": [
         {
-          "text": "Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.",
-          "testString": "assert.approximately(parseFloat($('.links').css('opacity')), 0.7, 0.1, 'Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.');"
+          "text": "你应该使用<code>links</code>class 选择所有的超链接并设置其<code>opacity</code>值为 0.7。",
+          "testString": "assert.approximately(parseFloat($('.links').css('opacity')), 0.7, 0.1, '你应该使用<code>links</code>class 选择所有的超链接并设置其<code>opacity</code>值为 0.7。');"
         }
       ],
       "solutions": [],
@@ -880,11 +879,11 @@
             "    <div class=\"cardText\">",
             "      <h4>Alphabet</h4>",
             "      <hr>",
-            "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
+            "      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a><br><br>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -898,20 +897,20 @@
       "id": "587d781c367417b2b2512ac0",
       "title": "Use the text-transform Property to Make Text Uppercase",
       "description": [
-        "The <code>text-transform</code> property in CSS is used to change the appearance of text. It's a convenient way to make sure text on a webpage appears consistently, without having to change the text content of the actual HTML elements.",
-        "The following table shows how the different <code>text-transform</code>values change the example text \"Transform me\".",
-        "<table class=\"table table-striped\"><thead><th>Value<th>Result<tbody><tr><td><code>lowercase</code><td>\"transform me\"<tr><td><code>uppercase</code><td>\"TRANSFORM ME\"<tr><td><code>capitalize</code><td>\"Transform Me\"<tr><td><code>initial</code><td>Use the default value<tr><td><code>inherit</code><td>Use the <code>text-transform</code> value from the parent element<tr><td><code>none</code><td><strong>Default:</strong> Use the original text</td></table>",
+        "CSS 里面的<code>text-transform</code>属性来改变英文中字母的大小写。它通常用来统一页面里英文的显示，且无需直接改变 HTML 元素中的文本。",
+        "下面的表格展示了<code>text-transform</code>的不同值对文字 “Transform me” 的影响。",
+        "<table class=\"table table-striped\"><thead><th>Value<th>Result<tbody><tr><td><code>lowercase</code><td>\"transform me\"<tr><td><code>uppercase</code><td>\"TRANSFORM ME\"<tr><td><code>capitalize</code><td>\"Transform Me\"<tr><td><code>initial</code><td>使用默认值<tr><td><code>inherit</code><td>使用父元素的<code>text-transform</code>值。<tr><td><code>none</code><td><strong>Default:</strong>不改变文字。</td></table>",
         "<hr>",
-        "Transform the text of the <code>h4</code> to be uppercase using the <code>text-transform</code> property."
+        "使用<code>text-transform</code>属性把<code>h4</code>内的英文的所有字母变成大写。"
       ],
       "tests": [
         {
-          "text": "The <code>h4</code> text should be uppercase.",
-          "testString": "assert($('h4').css('text-transform') === 'uppercase', 'The <code>h4</code> text should be uppercase.');"
+          "text": "<code>h4</code>内的英文的所有字母应该为大写。",
+          "testString": "assert($('h4').css('text-transform') === 'uppercase', '<code>h4</code>内的英文的所有字母应该为大写。');"
         },
         {
-          "text": "The original text of the h4 should not be changed.",
-          "testString": "assert(($('h4').text() !== $('h4').text().toUpperCase()), 'The original text of the h4 should not be changed.');"
+          "text": "<code>h4</code>内的原文不能被改变。",
+          "testString": "assert(($('h4').text() !== $('h4').text().toUpperCase()), '<code>h4</code>内的原文不能被改变。');"
         }
       ],
       "solutions": [],
@@ -962,11 +961,11 @@
             "    <div class=\"cardText\">",
             "      <h4>Alphabet</h4>",
             "      <hr>",
-            "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
+            "      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>",
             "    </div>",
             "    <div class=\"cardLinks\">",
-            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">拉里·佩奇</a><br><br>",
+            "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">谢尔盖·布林</a>",
             "    </div>",
             "  </div>",
             "</div>"
@@ -980,34 +979,34 @@
       "id": "587d781c367417b2b2512ac2",
       "title": "Set the font-size for Multiple Heading Elements",
       "description": [
-        "The <code>font-size</code> property is used to specify how large the text is in a given element. This rule can be used for multiple elements to create visual consistency of text on a page. In this challenge, you'll set the values for all <code>h1</code> through <code>h6</code> tags to balance the heading sizes.",
+        "<code>font-size</code>属性用来指定元素内文字的大小。这个规则可以应用到多个元素上，合理的使用，能让页面的文字显示的错落有致。在本挑战里，你将要设置<code>h1</code>到<code>h6</code>的每个标题文字的大小。",
         "<hr>",
-        "<ul><li>Set the <code>font-size</code> of the <code>h1</code> tag to 68px.</li><li>Set the <code>font-size</code> of the <code>h2</code> tag to 52px.</li><li>Set the <code>font-size</code> of the <code>h3</code> tag to 40px.</li><li>Set the <code>font-size</code> of the <code>h4</code> tag to 32px.</li><li>Set the <code>font-size</code> of the <code>h5</code> tag to 21px.</li><li>Set the <code>font-size</code> of the <code>h6</code> tag to 14px.</li></ul>"
+        "<ul><li>设置<code>h1</code>标签的<code>font-size</code>为 68px。</li><li>设置<code>h2</code>标签的<code>font-size</code>为 52px。</li><li>设置<code>h3</code>标签的<code>font-size</code>为 40px。</li><li>设置<code>h4</code>标签的<code>font-size</code>为 32px。</li><li>设置<code>h5</code>标签的<code>font-size</code>为 21px。</li><li>设置<code>h6</code>标签的<code>font-size</code>为 14px。</li></ul>"
       ],
       "tests": [
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.",
-          "testString": "assert($('h1').css('font-size') == '68px', 'Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.');"
+          "text": "你应该设置<code>h1</code>标签的<code>font-size</code>为<code>68px</code>。",
+          "testString": "assert($('h1').css('font-size') == '68px', '你应该设置<code>h1</code>标签的<code>font-size</code>为<code>68px</code>。');"
         },
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.",
-          "testString": "assert($('h2').css('font-size') == '52px', 'Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.');"
+          "text": "你应该设置<code>h2</code>标签的<code>font-size</code>为<code>52px</code>。",
+          "testString": "assert($('h2').css('font-size') == '52px', '你应该设置<code>h2</code>标签的<code>font-size</code>为<code>52px</code>。');"
         },
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.",
-          "testString": "assert($('h3').css('font-size') == '40px', 'Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.');"
+          "text": "你应该设置<code>h3</code>标签的<code>font-size</code>为<code>40px</code>。",
+          "testString": "assert($('h3').css('font-size') == '40px', '你应该设置<code>h3</code>标签的<code>font-size</code>为<code>40px</code>。');"
         },
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.",
-          "testString": "assert($('h4').css('font-size') == '32px', 'Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.');"
+          "text": "你应该设置<code>h4</code>标签的<code>font-size</code>为<code>32px</code>。",
+          "testString": "assert($('h4').css('font-size') == '32px', '你应该设置<code>h4</code>标签的<code>font-size</code>为<code>32px</code>。');"
         },
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.",
-          "testString": "assert($('h5').css('font-size') == '21px', 'Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.');"
+          "text": "你应该设置<code>h5</code>标签的<code>font-size</code>为<code>21px</code>。",
+          "testString": "assert($('h5').css('font-size') == '21px', '你应该设置<code>h6</code>标签的<code>font-size</code>为<code>21px</code>。');"
         },
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.",
-          "testString": "assert($('h6').css('font-size') == '14px', 'Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.');"
+          "text": "你应该设置<code>h6</code>标签的<code>font-size</code>为<code>14px</code>。",
+          "testString": "assert($('h6').css('font-size') == '14px', '你应该设置<code>h6</code>标签的<code>font-size</code>为<code>14px</code>。');"
         }
       ],
       "solutions": [],
@@ -1028,12 +1027,12 @@
             "  ",
             "  ",
             "</style>",
-            "<h1>This is h1 text</h1>",
-            "<h2>This is h2 text</h2>",
-            "<h3>This is h3 text</h3>",
-            "<h4>This is h4 text</h4>",
-            "<h5>This is h5 text</h5>",
-            "<h6>This is h6 text</h6>"
+            "<h1>我是 h1 文字</h1>",
+            "<h2>我是 h2 文字</h2>",
+            "<h3>我是 h3 文字</h3>",
+            "<h4>我是 h4 文字</h4>",
+            "<h5>我是 h5 文字</h5>",
+            "<h6>我是 h6 文字</h6>"
           ],
           "head": [],
           "tail": []
@@ -1044,35 +1043,35 @@
       "id": "587d781c367417b2b2512ac3",
       "title": "Set the font-weight for Multiple Heading Elements",
       "description": [
-        "You set the <code>font-size</code> of each heading tag in the last challenge, here you'll adjust the <code>font-weight</code>.",
-        "The <code>font-weight</code> property sets how thick or thin characters are in a section of text.",
+        "在上一个挑战里你已经设置了每个标题的<code>font-size</code>，接下来你将设置<code>font-weight</code>。",
+        "<code>font-weight</code>属性用于设置文本中所用的字体的粗细。",
         "<hr>",
-        "<ul><li>Set the <code>font-weight</code> of the <code>h1</code> tag to 800.</li><li>Set the <code>font-weight</code> of the <code>h2</code> tag to 600.</li><li>Set the <code>font-weight</code> of the <code>h3</code> tag to 500.</li><li>Set the <code>font-weight</code> of the <code>h4</code> tag to 400.</li><li>Set the <code>font-weight</code> of the <code>h5</code> tag to 300.</li><li>Set the <code>font-weight</code> of the <code>h6</code> tag to 200.</li></ul>"
+        "<ul><li>设置<code>h1</code>标签的<code>font-weight</code>为 800。</li><li>设置<code>h2</code>标签的<code>font-weight</code>为 600。</li><li>设置<code>h3</code>标签的<code>font-weight</code>为 500。</li><li>设置<code>h4</code>标签的<code>font-weight</code>为 400。</li><li>设置<code>h5</code>标签的<code>font-weight</code>为 300。</li><li>设置<code>h6</code>标签的<code>font-weight</code>为 200。</li></ul>"
       ],
       "tests": [
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.",
-          "testString": "assert($('h1').css('font-weight') == '800', 'Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.');"
+          "text": "你应该设置<code>h1</code>标签的<code>font-weight</code>为 800。",
+          "testString": "assert($('h1').css('font-weight') == '800', '你应该设置<code>h1</code>标签的<code>font-weight</code>为 800。');"
         },
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.",
-          "testString": "assert($('h2').css('font-weight') == '600', 'Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.');"
+          "text": "你应该设置<code>h2</code>标签的<code>font-weight</code>为 600。",
+          "testString": "assert($('h2').css('font-weight') == '600', '你应该设置<code>h2</code>标签的<code>font-weight</code>为 600。');"
         },
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.",
-          "testString": "assert($('h3').css('font-weight') == '500', 'Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.');"
+          "text": "你应该设置<code>h3</code>标签的<code>font-weight</code>为 500。",
+          "testString": "assert($('h3').css('font-weight') == '500', '你应该设置<code>h3</code>标签的<code>font-weight</code>为 500。');"
         },
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.",
-          "testString": "assert($('h4').css('font-weight') == '400', 'Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.');"
+          "text": "你应该设置<code>h4</code>标签的<code>font-weight</code>为 400。",
+          "testString": "assert($('h4').css('font-weight') == '400', '你应该设置<code>h4</code>标签的<code>font-weight</code>为 400。');"
         },
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.",
-          "testString": "assert($('h5').css('font-weight') == '300', 'Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.');"
+          "text": "你应该设置<code>h5</code>标签的<code>font-weight</code>为 300。",
+          "testString": "assert($('h5').css('font-weight') == '300', '你应该设置<code>h5</code>标签的<code>font-weight</code>为 300。');"
         },
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.",
-          "testString": "assert($('h6').css('font-weight') == '200', 'Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.');"
+          "text": "你应该设置<code>h6</code>标签的<code>font-weight</code>为 200。",
+          "testString": "assert($('h6').css('font-weight') == '200', '你应该设置<code>h6</code>标签的<code>font-weight</code>为 200。');"
         }
       ],
       "solutions": [],
@@ -1111,12 +1110,12 @@
             "    ",
             "  }",
             "</style>",
-            "<h1>This is h1 text</h1>",
-            "<h2>This is h2 text</h2>",
-            "<h3>This is h3 text</h3>",
-            "<h4>This is h4 text</h4>",
-            "<h5>This is h5 text</h5>",
-            "<h6>This is h6 text</h6>"
+            "<h1>我是 h1 文字</h1>",
+            "<h2>我是 h2 文字</h2>",
+            "<h3>我是 h3 文字</h3>",
+            "<h4>我是 h4 文字</h4>",
+            "<h5>我是 h5 文字</h5>",
+            "<h6>我是 h6 文字</h6>"
           ],
           "head": [],
           "tail": []
@@ -1127,14 +1126,14 @@
       "id": "587d781c367417b2b2512ac4",
       "title": "Set the font-size of Paragraph Text",
       "description": [
-        "The <code>font-size</code> property in CSS is not limited to headings, it can be applied to any element containing text.",
+        "CSS 里面的<code>font-size</code>属性不只限于标题，它可以应用于任何包含文字的元素内。",
         "<hr>",
-        "Change the value of the <code>font-size</code> property for the paragraph to 16px to make it more visible."
+        "把段落的<code>font-size</code>设置为 16px 让它看起来更清晰。"
       ],
       "tests": [
         {
-          "text": "Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.",
-          "testString": "assert($('p').css('font-size') == '16px', 'Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.');"
+          "text": "你的<code>p</code>标签应该包含一个<code>font-size</code>属性并且值为<code>16px</code>。",
+          "testString": "assert($('p').css('font-size') == '16px', '你的<code>p</code>标签应该包含一个<code>font-size</code>属性并且值为<code>16px</code>。');"
         }
       ],
       "solutions": [],
@@ -1153,7 +1152,7 @@
             "  }",
             "</style>",
             "<p>",
-            "  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            "  天地玄黄　宇宙洪荒　日月盈昃　辰宿列张　寒来暑往　秋收冬藏　闰余成岁　律召调阳　云腾致雨　露结为霜　金生丽水　玉出昆冈　剑号巨阙　珠称夜光　果珍李柰　菜重芥姜　海咸河淡　鳞潜羽翔　龙师火帝　鸟官人皇　始制文字　乃服衣裳　推位让国　有虞陶唐　吊民伐罪　周发殷汤　坐朝问道　垂拱平章　爱育黎首　臣伏戎羌　遐迩壹体　率宾归王　鸣凤在树　白驹食场　化被草木　赖及万方　盖此身发　四大五常　恭惟鞠养　岂敢毁伤　女慕贞絜　男效才良　知过必改　得能莫忘　罔谈彼短　靡恃己长　信使可覆　器欲难量　墨悲丝染　诗讃羔羊",
             "</p>"
           ],
           "head": [],
@@ -1165,14 +1164,14 @@
       "id": "587d781d367417b2b2512ac5",
       "title": "Set the line-height of Paragraphs",
       "description": [
-        "CSS offers the <code>line-height</code> property to change the height of each line in a block of text. As the name suggests, it changes the amount of vertical space that each line of text gets.",
+        "CSS 提供<code>line-height</code>属性来设置行间的距离。行高，顾名思义，用来设置每行文字所占据的垂直空间。",
         "<hr>",
-        "Add a <code>line-height</code> property to the <code>p</code> tag and set it to 25px."
+        "给<code>p</code>标签添加<code>line-height</code>属性并赋值 25px。"
       ],
       "tests": [
         {
-          "text": "Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.",
-          "testString": "assert($('p').css('line-height') == '25px', 'Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.');"
+          "text": "你应该给<code>p</code>标签添加<code>line-height</code>属性并赋值<code>25px</code>。",
+          "testString": "assert($('p').css('line-height') == '25px', '你应该给<code>p</code>标签添加<code>line-height</code>属性并赋值<code>25px</code>。');"
         }
       ],
       "solutions": [],
@@ -1192,7 +1191,7 @@
             "  }",
             "</style>",
             "<p>",
-            "  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            "  天地玄黄　宇宙洪荒　日月盈昃　辰宿列张　寒来暑往　秋收冬藏　闰余成岁　律召调阳　云腾致雨　露结为霜　金生丽水　玉出昆冈　剑号巨阙　珠称夜光　果珍李柰　菜重芥姜　海咸河淡　鳞潜羽翔　龙师火帝　鸟官人皇　始制文字　乃服衣裳　推位让国　有虞陶唐　吊民伐罪　周发殷汤　坐朝问道　垂拱平章　爱育黎首　臣伏戎羌　遐迩壹体　率宾归王　鸣凤在树　白驹食场　化被草木　赖及万方　盖此身发　四大五常　恭惟鞠养　岂敢毁伤　女慕贞絜　男效才良　知过必改　得能莫忘　罔谈彼短　靡恃己长　信使可覆　器欲难量　墨悲丝染　诗讃羔羊",
             "</p>"
           ],
           "head": [],
@@ -1204,20 +1203,20 @@
       "id": "587d781d367417b2b2512ac8",
       "title": "Adjust the Hover State of an Anchor Tag",
       "description": [
-        "This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.",
-        "For example, the styling of an anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector. Here's the CSS to change the <code>color</code> of the anchor tag to red during its hover state:",
+        "本挑战将要涉及到伪类。伪类是可以添加到选择器上的关键字，用来选择元素的指定状态。",
+        "比如，超链接可以使用<code>:hover</code>伪类选择器定义它的悬停状态样式。下面是悬停超链接时改变超链接颜色的 CSS：",
         "<blockquote>a:hover {<br>&nbsp;&nbsp;color: red;<br>}</blockquote>",
         "<hr>",
-        "The code editor has a CSS rule to style all <code>a</code> tags black. Add a rule so that when the user hovers over the <code>a</code> tag, the <code>color</code> is blue."
+        "代码编辑器里面已经有了一个 CSS 规则把所有的<code>a</code>标签定义成了黑色。添加一个规则，满足如下，当用户悬停<code>a</code>标签时，把<code>color</code>变成蓝色。"
       ],
       "tests": [
         {
-          "text": "The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.",
-          "testString": "assert($('a').css('color') == 'rgb(0, 0, 0)', 'The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.');"
+          "text": "超链接的<code>color</code>应该保持黑色，只添加<code>:hover</code> CSS 规则。",
+          "testString": "assert($('a').css('color') == 'rgb(0, 0, 0)', '超链接的<code>color</code>应该保持黑色，只添加<code>:hover</code> CSS 规则。');"
         },
         {
-          "text": "The anchor tag should have a <code>color</code> of blue on hover.",
-          "testString": "assert(code.match(/a:hover\\s*?{\\s*?color:\\s*?blue;\\s*?}/gi), 'The anchor tag should have a <code>color</code> of blue on hover.');"
+          "text": "悬停超链接时超链接<code>color</code>应该变成蓝色。",
+          "testString": "assert(code.match(/a:hover\\s*?{\\s*?color:\\s*?blue;\\s*?}/gi), '悬停超链接时超链接<code>color</code>应该变成蓝色。');"
         }
       ],
       "solutions": [],
@@ -1238,7 +1237,7 @@
             "  ",
             "  ",
             "</style>",
-            "<a href=\"http://freecatphotoapp.com/\" target=\"_blank\">CatPhotoApp</a>"
+            "<a href=\"http://freecatphotoapp.com/\" target=\"_blank\">猫咪相册 App</a>"
           ],
           "head": [],
           "tail": []
@@ -1249,22 +1248,22 @@
       "id": "587d781e367417b2b2512ac9",
       "title": "Change an Element's Relative Position",
       "description": [
-        "CSS treats each HTML element as its own box, which is usually referred to as the <code>CSS Box Model</code>. Block-level items automatically start on a new line (think headings, paragraphs, and divs) while inline items sit within surrounding content (like images or spans). The default layout of elements in this way is called the <code>normal flow</code> of a document, but CSS offers the position property to override it.",
-        "When the position of an element is set to <code>relative</code>, it allows you to specify how CSS should move it <i>relative</i> to its current position in the normal flow of the page. It pairs with the CSS offset properties of <code>left</code> or <code>right</code>, and <code>top</code> or <code>bottom</code>. These say how many pixels, percentages, or ems to move the item <i>away</i> from where it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:",
+        "在 CSS 里一切 HTML 元素皆为盒子，也就是通常所说的<code>盒模型</code>。块级元素自动从新的一行开始（比如标题、段落以及 div），行内元素排列在上一个元素后（比如图片以及 span）。元素默认按照这种方式布局称为文档的<code>普通流</code>，同时 CSS 提供了 position 属性来覆盖它。",
+        "当元素的 position 设置为<code>relative</code>时，它允许你通过 CSS 指定该元素在当前普通流页面下的相对偏移量。 CSS 里控制各个方向偏移量的对应的属性是<code>left</code>、<code>right</code>、<code>top</code>和<code>bottom</code>。它们代表着从原来的位置向对应的方向偏移指定的像素、百分比或者 ems。下面的例子展示了段落向上偏移 10 像素：",
         "<blockquote>p {<br>&nbsp;&nbsp;position: relative;<br>&nbsp;&nbsp;bottom: 10px;<br>}</blockquote>",
-        "Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were in its default position.",
-        "<strong>Note</strong><br>Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.",
+        "把元素的 position 设置成 relative 并不会改变该元素在普通流布局所占的位置，也不会对其它元素的位置产生影响。",
+        "<strong>注意</strong><br>定位可以让你在页面布局上更灵活、高效。注意不管元素的定位是怎样，内部的 HTML 代码阅读起来应该是整洁、有意义的。这样也可以让视障人员（他们重度依赖辅助设备比如屏幕阅读软件）能够浏览你的网页。",
         "<hr>",
-        "Change the <code>position</code> of the <code>h2</code> to <code>relative</code>, and use a CSS offset to move it 15 pixels away from the <code>top</code> of where it sits in the normal flow. Notice there is no impact on the positions of the surrounding h1 and p elements."
+        "把<code>h2</code>的<code>position</code>设置成<code>relative</code>，使用相应的 CSS 属性调整<code>h2</code>的位置，使其向上偏移 15 像素，同时还在普通流中占据原来的位置。注意不要对 h1 和 p 元素的位置产生影响。"
       ],
       "tests": [
         {
-          "text": "The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.",
-          "testString": "assert($('h2').css('position') == 'relative', 'The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.');"
+          "text": "<code>h2</code>元素应该添加<code>position</code>属性并赋值<code>relative</code>。",
+          "testString": "assert($('h2').css('position') == 'relative', '<code>h2</code>元素应该添加<code>position</code>属性并赋值<code>relative</code>。');"
         },
         {
-          "text": "Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.",
-          "testString": "assert($('h2').css('top') == '15px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.');"
+          "text": "你应该使用 CSS 属性调整<code>h2</code>的位置使其从原来的位置向上偏移<code>15px</code>。",
+          "testString": "assert($('h2').css('top') == '15px', '你应该使用 CSS 属性调整<code>h2</code>的位置使其从原来的位置向上偏移<code>15px</code>。');"
         }
       ],
       "solutions": [],
@@ -1284,9 +1283,9 @@
             "  }",
             "</style>",
             "<body>",
-            "  <h1>On Being Well-Positioned</h1>",
-            "  <h2>Move me!</h2>",
-            "  <p>I still think the h2 is where it normally sits.</p>",
+            "  <h1>论如何优雅定位</h1>",
+            "  <h2>我要离 h1 近一点！</h2>",
+            "  <p>我觉得 h2 没变，还是在它原来的位置，相离莫相忘，且行且珍惜。</p>",
             "</body>"
           ],
           "head": [],
@@ -1298,19 +1297,19 @@
       "id": "587d781e367417b2b2512aca",
       "title": "Move a Relatively Positioned Element with CSS Offsets",
       "description": [
-        "The CSS offsets of <code>top</code> or <code>bottom</code>, and <code>left</code> or <code>right</code> tell the browser how far to offset an item relative to where it would sit in the normal flow of the document. You're offsetting an element away from a given spot, which moves the element away from the referenced side (effectively, the opposite direction). As you saw in the last challenge, using the top offset moved the <code>h2</code> downwards. Likewise, using a left offset moves an item to the right.",
+        "CSS 里面的<code>top</code>、<code>bottom</code>、<code>left</code>和<code>right</code>定义了元素在相应方位的偏移距离。元素将从当前位置，向属性相反的方向偏移。就像你在上一个挑战看到的，<code>top</code>属性使<code>h2</code>向下移动。<code>left</code>属性使元素向右移动。",
         "<img src='https://i.imgur.com/eWWi3gZ.gif' alt='' />",
         "<hr>",
-        "Use CSS offsets to move the <code>h2</code> 15 pixels to the right and 10 pixels up."
+        "通过 CSS 属性把<code>h2</code>向上移动 10 像素，向右移动 15 像素。"
       ],
       "tests": [
         {
-          "text": "Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.",
-          "testString": "assert($('h2').css('bottom') == '10px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.');"
+          "text": "你应该使用 CSS 属性使<code>h2</code>相对当前位置向上移动<code>10px</code>。也就是说，从<code>h2</code>当前位置远离<code>bottom</code><code>10px</code>。",
+          "testString": "assert($('h2').css('bottom') == '10px', '你应该使用 CSS 属性使<code>h2</code>相对当前位置向上移动<code>10px</code>。也就是说，从<code>h2</code>当前位置远离<code>bottom</code><code>10px</code>。');"
         },
         {
-          "text": "Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.",
-          "testString": "assert($('h2').css('left') == '15px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.');"
+          "text": "你应该使用 CSS 属性使<code>h2</code>相对当前位置向右移动<code>15px</code>。也就是说，从<code>h2</code>当前位置远离<code>left</code><code>15px</code>。",
+          "testString": "assert($('h2').css('left') == '15px', '你应该使用 CSS 属性使<code>h2</code>相对当前位置向右移动<code>15px</code>。也就是说，从<code>h2</code>当前位置远离<code>left</code><code>15px</code>。');"
         }
       ],
       "solutions": [],
@@ -1333,9 +1332,9 @@
             "</style>",
             "</head>",
             "<body>",
-            "  <h1>On Being Well-Positioned</h1>",
-            "  <h2>Move me!</h2>",
-            "  <p>I still think the h2 is where it normally sits.</p>",
+            "  <h1>论如何优雅定位</h1>",
+            "  <h2>我要离 h1 近一点！</h2>",
+            "  <p>我觉得 h2 没变，还是在它原来的位置，相离莫相忘，且行且珍惜。</p>",
             "</body>"
           ],
           "head": [],
@@ -1347,23 +1346,23 @@
       "id": "587d781e367417b2b2512acb",
       "title": "Lock an Element to its Parent with Absolute Positioning",
       "description": [
-        "The next option for the CSS <code>position</code> property is <code>absolute</code>, which locks the element in place relative to its parent container. Unlike the <code>relative</code> position, this removes the element from the normal flow of the document, so surrounding items ignore it. The CSS offset properties (top or bottom and left or right) are used to adjust the position.",
-        "One nuance with absolute positioning is that it will be locked relative to its closest <em>positioned</em> ancestor. If you forget to add a position rule to the parent item, (this is typically done using <code>position: relative;</code>), the browser will keep looking up the chain and ultimately default to the body tag.",
+        "接下来要介绍 CSS<code>position</code>属性的取值选项<code>absolute</code>，<code>absolute</code>相对于其包含块定位。和<code>relative</code>定位不一样，<code>absolute</code>定位会将元素从当前的文档流里面移除，周围的元素会忽略它。可以用 CSS 的 top、bottom、left 和 right 属性来调整元素的位置。",
+        "<code>absolute</code>定位比较特殊的一点是元素的定位参照于最近的已定位祖先元素。如果它的父元素没有添加定位规则（默认是<code>position:relative;</code>）,浏览器会继续寻找直到默认的 body 标签。",
         "<hr>",
-        "Lock the <code>#searchbar</code> element to the top-right of its <code>section</code> parent by declaring its <code>position</code> as <code>absolute</code>. Give it <code>top</code> and <code>right</code> offsets of 50 pixels each."
+        "通过声明<code>position</code>为<code>absolute</code>，固定<code>#searchbar</code>元素到到它父元素<code>section</code>的右上角。即设定其<code>top</code>和<code>right</code>为 50 像素。"
       ],
       "tests": [
         {
-          "text": "The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.",
-          "testString": "assert($('#searchbar').css('position') == 'absolute', 'The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.');"
+          "text": "<code>#searchbar</code>元素应当有一个值为<code>absolute</code>的<code>position</code>CSS 属性。",
+          "testString": "assert($('#searchbar').css('position') == 'absolute', '<code>#searchbar</code> 元素应当有一个值为<code>absolute</code>的<code>position</code>CSS 属性。');"
         },
         {
-          "text": "Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.",
-          "testString": "assert($('#searchbar').css('top') == '50px', 'Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');"
+          "text": "你的<code>#searchbar</code>元素应当有值为<code>50px</code>的<code>top</code>CSS 属性。",
+          "testString": "assert($('#searchbar').css('top') == '50px', '你的<code>#searchbar</code>元素应当有值为<code>50px</code>的<code>top</code>CSS 属性。');"
         },
         {
-          "text": "Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.",
-          "testString": "assert($('#searchbar').css('right') == '50px', 'Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');"
+          "text": "你的<code>#searchbar</code>元素应当有值为<code>50px</code>的<code>right</code>CSS 属性。",
+          "testString": "assert($('#searchbar').css('right') == '50px', '你的<code>#searchbar</code>元素应当有值为<code>50px</code>的<code>right</code>CSS 属性。');"
         }
       ],
       "solutions": [],
@@ -1387,10 +1386,10 @@
             "  }",
             "</style>",
             "<body>",
-            "  <h1>Welcome!</h1>",
+            "  <h1>欢迎！</h1>",
             "  <section>",
             "    <form id=\"searchbar\">",
-            "      <label for=\"search\">Search:</label>",
+            "      <label for=\"search\">搜索：</label>",
             "      <input type=\"search\" id=\"search\" name=\"search\">",
             "      <input type=\"submit\" name=\"submit\" value=\"Go!\">",
             "    </form>",
@@ -1406,23 +1405,23 @@
       "id": "587d781e367417b2b2512acc",
       "title": "Lock an Element to the Browser Window with Fixed Positioning",
       "description": [
-        "The next layout scheme that CSS offers is the <code>fixed</code> position, which is a type of absolute positioning that locks an element relative to the browser window. Similar to absolute positioning, it's used with the CSS offset properties and also removes the element from the normal flow of the document. Other items no longer \"realize\" where it is positioned, which may require some layout adjustments elsewhere.",
-        "One key difference from the <code>absolute</code> position is that the element won't move when the user scrolls.",
+        "接下来要介绍的是<code>fixed</code>定位，它是一种特殊的绝对（absolute）定位，区别是其包含块是浏览器窗口。和绝对定位类似，<code>fixed</code>定位使用 top、bottom、left 和 right 属性来调整元素的位置，并且会将元素从当前的文档流里面移除，其它元素会忽略它的存在。",
+        "<code>fixed</code>定位和<code>absolute</code>定位的最明显的区别是<code>fixed</code>定位元素不会随着屏幕滚动而移动。",
         "<hr>",
-        "The navigation bar in the code is labeled with an id of <code>navbar</code>. Change its <code>position</code> to <code>fixed</code>, and offset it 0 pixels from the <code>top</code> and 0 pixels from the <code>left</code>. Notice the (lack of) impact to the <code>h1</code> position, it hasn't been pushed down to accommodate the navigation bar and would need to be adjusted separately."
+        "代码里的导航栏已经添加了值为<code>navbar</code>的 id。把它的<code>position</code>设置成<code>fixed</code>，设定其<code>top</code>和<code>left</code>为 0 像素。注意观察对<code>h1</code>的影响，<code>h1</code>并没有被导航栏挤下来，而是遮盖住了，为了显示完全需要单独调整<code>h1</code>的位置。"
       ],
       "tests": [
         {
-          "text": "The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.",
-          "testString": "assert($('#navbar').css('position') == 'fixed', 'The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.');"
+          "text": "<code>>#navbar</code>元素应当有一个值为<code>fixed</code>的<code>position</code>CSS 属性",
+          "testString": "assert($('#navbar').css('position') == 'fixed', '<code>#navbar</code>元素应当有一个值为<code>fixed</code>的<code>position</code>CSS 属性');"
         },
         {
-          "text": "Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.",
-          "testString": "assert($('#navbar').css('top') == '0px', 'Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.');"
+          "text": "你的<code>#navbar</code>元素应当有值为<code>0px</code>的<code>top</code>CSS 属性。",
+          "testString": "assert($('#navbar').css('top') == '0px', '你的<code>#navbar</code>元素应当有值为<code>0px</code>的<code>top</code>CSS 属性。');"
         },
         {
-          "text": "Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.",
-          "testString": "assert($('#navbar').css('left') == '0px', 'Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.');"
+          "text": "你的<code>#navbar</code>元素应当有值为<code>0px</code>的<code>left</code>CSS 属性。",
+          "testString": "assert($('#navbar').css('left') == '0px', '你的<code>#navbar</code>元素应当有值为<code>0px</code>的<code>left</code>CSS 属性。');"
         }
       ],
       "solutions": [],
@@ -1457,15 +1456,15 @@
             "</style>",
             "<body>",
             "  <header>",
-            "    <h1>Welcome!</h1>",
+            "    <h1>欢迎!</h1>",
             "    <nav id=\"navbar\">",
             "      <ul>",
-            "        <li><a href=\"\">Home</a></li>",
-            "        <li><a href=\"\">Contact</a></li>",
+            "        <li><a href=\"\">网站首页</a></li>",
+            "        <li><a href=\"\">联系我们</a></li>",
             "      </ul>",
             "    </nav>",
             "  </header>",
-            "  <p>I shift up when the #navbar is fixed to the browser window.</p>",
+            "  <p>当导航条固定在浏览器窗口上时，我会上移。</p>",
             "</body>"
           ],
           "head": [],
@@ -1477,18 +1476,18 @@
       "id": "587d78a3367417b2b2512ace",
       "title": "Push Elements Left or Right with the float Property",
       "description": [
-        "The next positioning tool does not actually use <code>position</code>, but sets the <code>float</code> property of an element. Floating elements are removed from the normal flow of a document and pushed to either the <code>left</code> or <code>right</code> of their containing parent element. It's commonly used with the <code>width</code> property to specify how much horizontal space the floated element requires.",
+        "接下来要介绍的定位机制并不是<code>position</code>属性的选项，它通过元素的<code>float</code>属性来设置。浮动元素不在文档流中，它向左或向右浮动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。通常需要用<code>width</code>属性来指定浮动元素占据的水平空间。",
         "<hr>",
-        "The given markup would work well as a two-column layout, with the <code>section</code> and <code>aside</code> elements next to each other. Give the <code>#left</code> item a <code>float</code> of <code>left</code> and the <code>#right</code> item a <code>float</code> of <code>right</code>."
+        "设置<code>#left</code>元素的<code>float</code>为<code>left</code>，设置<code>#right</code>元素的<code>float</code>为<code>right</code>。使这两个元素按两列布局，<code>section</code>和<code>aside</code>左右排列。"
       ],
       "tests": [
         {
-          "text": "The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.",
-          "testString": "assert($('#left').css('float') == 'left', 'The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.');"
+          "text": "id 为<code>left</code>的元素应该有一个值为<code>left</code>的<code>float</code>CSS 属性。",
+          "testString": "assert($('#left').css('float') == 'left', 'id 为<code>left</code>的元素应该有一个值为<code>left</code>的<code>float</code>CSS 属性。');"
         },
         {
-          "text": "The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.",
-          "testString": "assert($('#right').css('float') == 'right', 'The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.');"
+          "text": "id 为<code>right</code>的元素应该有一个值为<code>right</code>的<code>float</code>CSS 属性。",
+          "testString": "assert($('#right').css('float') == 'right', 'id 为<code>right</code>的元素应该有一个值为<code>right</code>的<code>float</code>CSS 属性。');"
         }
       ],
       "solutions": [],
@@ -1519,15 +1518,15 @@
             "</head>",
             "<body>",
             "  <header>",
-            "    <h1>Welcome!</h1>",
+            "    <h1>欢迎！</h1>",
             "  </header>",
             "  <section id=\"left\">",
-            "    <h2>Content</h2>",
-            "    <p>Good stuff</p>",
+            "    <h2>内容</h2>",
+            "    <p>好样的</p>",
             "  </section>",
             "  <aside id=\"right\">",
-            "    <h2>Sidebar</h2>",
-            "    <p>Links</p>",
+            "    <h2>侧边栏</h2>",
+            "    <p>一些链接</p>",
             "  </aside>",
             "</body>"
           ],
@@ -1540,14 +1539,14 @@
       "id": "587d78a3367417b2b2512acf",
       "title": "Change the Position of Overlapping Elements with the z-index Property",
       "description": [
-        "When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the <code>z-index</code> property can specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the <code>z-index</code> property of an element move it higher in the stack than those with lower values.",
+        "当一些元素重叠时，在 HTML 里后出现的元素会默认显示在更早出现的元素的上面。你可以使用<code>z-index</code>属性指定元素的堆叠次序。<code>z-index</code>的取值是整数，数值大的元素优先于数值小的元素显示。",
         "<hr>",
-        "Add a <code>z-index</code> property to the element with the class name of <code>first</code> (the red rectangle) and set it to a value of 2 so it covers the other element (blue rectangle)."
+        "给 class 为<code>first</code>的元素（红色的方块）添加<code>z-index</code>属性并赋值为 2，使它显示在蓝色方块的上方。"
       ],
       "tests": [
         {
-          "text": "The element with class <code>first</code> should have a <code>z-index</code> value of 2.",
-          "testString": "assert($('.first').css('z-index') == '2', 'The element with class <code>first</code> should have a <code>z-index</code> value of 2.');"
+          "text": "class 为<code>first</code>的元素的<code>z-index</code>值应该为 2。",
+          "testString": "assert($('.first').css('z-index') == '2', 'class 为<code>first</code>的元素的<code>z-index</code>值应该为 2。');"
         }
       ],
       "solutions": [],
@@ -1593,15 +1592,15 @@
       "id": "587d78a3367417b2b2512ad0",
       "title": "Center an Element Horizontally Using the margin Property",
       "description": [
-        "Another positioning technique is to center a block element horizontally. One way to do this is to set its <code>margin</code> to a value of auto.",
-        "This method works for images, too. Images are inline elements by default, but can be changed to block elements when you set the <code>display</code> property to block.",
+        "在应用设计中经常需要把一个块级元素水平居中显示。一种常见的实现方式是把块级元素的<code>margin</code>值设置为<code>auto</code>。",
+        "同样的，这个方法也对图片奏效。图片默认是级联元素，但是可以通过设置其<code>display</code>属性为<code>block</code>来把它变成块级元素。",
         "<hr>",
-        "Center the <code>div</code> on the page by adding a <code>margin</code> property with a value of auto."
+        "通过给页面中的<code>div</code>添加值为<code>atuo</code>的<code>margin</code>属性将其居中显示。"
       ],
       "tests": [
         {
-          "text": "The <code>div</code> should have a <code>margin</code> set to auto.",
-          "testString": "assert(code.match(/margin:\\s*?auto;/g), 'The <code>div</code> should have a <code>margin</code> set to auto.');"
+          "text": "<code>div</code>的<code>margin</code>应该为<code>auto</code>。",
+          "testString": "assert(code.match(/margin:\\s*?auto;/g), '<code>div</code>的<code>margin</code>应该为<code>auto</code>。');"
         }
       ],
       "solutions": [],
@@ -1633,23 +1632,23 @@
       "id": "587d78a3367417b2b2512ad1",
       "title": "Learn about Complementary Colors",
       "description": [
-        "Color theory and its impact on design is a deep topic and only the basics are covered in the following challenges. On a website, color can draw attention to content, evoke emotions, or create visual harmony. Using different combinations of colors can really change the look of a website, and a lot of thought can go into picking a color palette that works with your content.",
-        "The color wheel is a useful tool to visualize how colors relate to each other - it's a circle where similar hues are neighbors and different hues are farther apart. When two colors are opposite each other on the wheel, they are called complementary colors. They have the characteristic that if they are combined, they \"cancel\" each other out and create a gray color. However, when placed side-by-side, these colors appear more vibrant and produce a strong visual contrast.",
-        "Some examples of complementary colors with their hex codes are:",
-        "<blockquote>red (#FF0000) and cyan (#00FFFF)<br>green (#00FF00) and magenta (#FF00FF)<br>blue (#0000FF) and yellow (#FFFF00)</blockquote>",
-        "There are many color picking tools available online that have an option to find the complement of a color.",
-        "<strong>Note</strong><br>For all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.",
+        "色彩理论以及设计色彩学很复杂，这里将只涉及很基础的部分。在网站设计里，颜色能让内容更醒目，能调动情绪，从而创造舒适的视觉体验。不同的颜色组合对网站的视觉效果影响很大，精妙的设计都需要适宜的颜色来美化页面内容。",
+        " 一半是科学，一半是艺术，色环是我们认识颜色关系的好工具 - 它是一个近色相邻异色相离的圆环。当两个颜色恰好在色环的两端时，这两个颜色叫做补色。绘画中两只补色在混合后会变成灰色。补色搭配能形成强列的对比效果，传达出活力、能量、兴奋等意义。",
+        "下面是一些十六进制码（hex code）补色的例子：",
+        "<blockquote>红色（#FF0000）和蓝绿色 (#00FFFF)<br>绿色（#00FF00）和品红色（#FF00FF）<br>蓝色（#0000FF）和黄色（#FFFF00）</blockquote>",
+        "现在很多的在线选色工具都有寻找补色的功能。",
+        "<strong>注意</strong><br>对于所有的颜色关卡： 颜色能吸引用户的注意，但不是唯一的方式，切勿喧宾夺主，过度使用会适得其反。详细会在 Applied Accessibility 章节介绍。",
         "<hr>",
-        "Change the <code>background-color</code> property of the <code>blue</code> and <code>yellow</code> classes to their respective colors. Notice how the colors look different next to each other than they do compared against the white background."
+        "把<code>blue</code>和<code>yellow</code>class 的<code>background-color</code>属性改成相应的颜色。注意观察它们之间的编码区别以及和它们和白色的编码区别。"
       ],
       "tests": [
         {
-          "text": "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.",
-          "testString": "assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');"
+          "text": "class 为<code>blue</code>的<code>div</code>元素应该有值为蓝色的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'class 为<code>blue</code>的<code>div</code>元素应该有值为蓝色的<code>background-color</code>CSS 属性。');"
         },
         {
-          "text": "The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.",
-          "testString": "assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)', 'The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.');"
+          "text": "class 为<code>yellow</code>的<code>div</code>元素应该有值为黄色的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)', 'class 为<code>yellow</code>的<code>div</code>元素应该有值为黄色的<code>background-color</code>CSS 属性。');"
         }
       ],
       "solutions": [],
@@ -1690,26 +1689,26 @@
       "id": "587d78a4367417b2b2512ad2",
       "title": "Learn about Tertiary Colors",
       "description": [
-        "Computer monitors and device screens create different colors by combining amounts of red, green, and blue light. This is known as the RGB additive color model in modern color theory. Red (R), green (G), and blue (B) are called primary colors. Mixing two primary colors creates the secondary colors cyan (G + B), magenta (R + B) and yellow (R + G). You saw these colors in the Complementary Colors challenge. These secondary colors happen to be the complement to the primary color not used in their creation, and are opposite to that primary color on the color wheel. For example, magenta is made with red and blue, and is the complement to green.",
-        "Tertiary colors are the result of combining a primary color with one of its secondary color neighbors. For example, red (primary) and yellow (secondary) make orange. This adds six more colors to a simple color wheel for a total of twelve.",
-        "There are various methods of selecting different colors that result in a harmonious combination in design. One example that can use tertiary colors is called the split-complementary color scheme. This scheme starts with a base color, then pairs it with the two colors that are adjacent to its complement. The three colors provide strong visual contrast in a design, but are more subtle than using two complementary colors.",
-        "Here are three colors created using the split-complement scheme:",
-        "<table class=\"table table-striped\"><thead><tr><th>Color</th><th>Hex Code</th></tr><thead><tbody><tr><td>orange</td><td>#FF7D00</td></tr><tr><td>cyan</td><td>#00FFFF</td></tr><tr><td>raspberry</td><td>#FF007D</td></tr></tbody></table>",
+        "电脑显示器和手机屏幕是一种加色模型，将红（R）、绿（G）、蓝（B）三原色的色光以不同的比例相加，以产生多种多样的色光。两种原色相加产生二次色：蓝绿（G+B）、品红（R+B）和黄色（R+G）。你在上一个挑战里已经见过这些颜色了。这些二次色恰好是在合成它们时未使用的原色的补色，即在色环中位于两端。例如，品红色是红色和蓝色相加产生，它是绿色的补色。",
+        "三次色是由原色和二次色相加产生的颜色，例如红色（原色）和黄色（二次色）相加产生橙色。将这六种颜色中相邻的颜色相加，便产生了十二色色环。",
+        "设计里面有很多种颜色搭配方法。涉及到三次色的一种配色方法是分裂补色搭配法。选定主色之后，在色环上选择与它的补色相邻的两种颜色与之搭配。此种搭配既有对比，又不失和谐。",
+        "下面是使用分裂补色搭配法创建的三个颜色：",
+        "<table class=\"table table-striped\"><thead><tr><th>颜色</th><th>HEX 颜色码</th></tr><thead><tbody><tr><td>橙色</td><td>#FF7D00</td></tr><tr><td>蓝绿色</td><td>#00FFFF</td></tr><tr><td>树莓红</td><td>#FF007D</td></tr></tbody></table>",
         "<hr>",
-        "Change the <code>background-color</code> property of the <code>orange</code>, <code>cyan</code>, and <code>raspberry</code> classes to their respective colors. Make sure to use the hex codes as orange and raspberry are not browser-recognized color names."
+        "把 class 为<code>orange</code>、<code>cyan</code>和<code>rasberry</code>的<code>background-color</code>改成其对应的颜色。由于 rasberry 不在浏览器 17 种标准色之内，不能直接用作颜色名，所以要使用 HEX 颜色码。"
       ],
       "tests": [
         {
-          "text": "The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.",
-          "testString": "assert($('.orange').css('background-color') == 'rgb(255, 125, 0)', 'The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.');"
+          "text": "class 为<code>orange</code>的<code>div</code>应该有值为橙色的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('.orange').css('background-color') == 'rgb(255, 125, 0)', 'class 为<code>orange</code>的<code>div</code>应该有值为橙色的<code>background-color</code>CSS 属性。');"
         },
         {
-          "text": "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.",
-          "testString": "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');"
+          "text": "class 为<code>cyan</code>的<code>div</code>应该有值为蓝绿色的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'class 为<code>cyan</code>的<code>div</code>应该有值为蓝绿色的<code>background-color</code>CSS 属性。');"
         },
         {
-          "text": "The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.",
-          "testString": "assert($('.raspberry').css('background-color') == 'rgb(255, 0, 125)', 'The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');"
+          "text": "class 为<code>raspberry</code>的<code>div</code>应该有值为树莓红色的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('.raspberry').css('background-color') == 'rgb(255, 0, 125)', 'class 为<code>raspberry</code>的<code>div</code>应该有值为树莓红色的<code>background-color</code>CSS 属性。');"
         }
       ],
       "solutions": [],
@@ -1759,26 +1758,26 @@
       "id": "587d78a4367417b2b2512ad3",
       "title": "Adjust the Color of Various Elements to Complementary Colors",
       "description": [
-        "The Complementary Colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary-colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.",
+        "通过前面关卡的学习，我们知道了补色搭配能形成强列的对比效果，让内容更富生机。但是如果使用不当效果会适得其反，比如如果文字背景色和文字颜色互为补色，文字会很难看清。通常的做法是，一种颜色做为主要颜色，其补色用来装点页面。",
         "<hr>",
-        "This page will use a shade of teal (<code>#09A7A1</code>) as the dominant color, and its orange (<code>#FF790E</code>) complement to visually highlight the sign-up buttons. Change the <code>background-color</code> of both the <code>header</code> and <code>footer</code> from black to the teal color. Then change the <code>h2</code> text <code>color</code> to teal as well. Finally, change the <code>background-color</code> of the <code>button</code> to the orange color."
+        "使用深青色（<code>#09A7A1</code>）做为页面主色，用其补色橙色（<code>#FF790E</code>）来装饰登录按钮。把<code>header</code>和<code>footer</code>的<code>background-color</code>从黑色改成深青色。然后把<code>h2</code>的文字<code>corlor</code>也改成深青色。最后，把<code>button</code>的<code>background-color</code>改成橙色。"
       ],
       "tests": [
         {
-          "text": "The <code>header</code> element should have a <code>background-color</code> of #09A7A1.",
-          "testString": "assert($('header').css('background-color') == 'rgb(9, 167, 161)', 'The <code>header</code> element should have a <code>background-color</code> of #09A7A1.');"
+          "text": "<code>header</code>元素应该有一个值为<code>#09A7A1</code>的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('header').css('background-color') == 'rgb(9, 167, 161)', '<code>header</code>元素应该有一个值为<code>#09A7A1</code>的<code>background-color</code>CSS 属性。');"
         },
         {
-          "text": "The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.",
-          "testString": "assert($('footer').css('background-color') == 'rgb(9, 167, 161)', 'The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.');"
+          "text": "<code>footer</code>元素应该有一个值为<code>#09A7A1</code>的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('footer').css('background-color') == 'rgb(9, 167, 161)', '<code>footer</code>元素应该有一个值为<code>#09A7A1</code>的<code>background-color</code>CSS 属性。');"
         },
         {
-          "text": "The <code>h2</code> element should have a <code>color</code> of #09A7A1.",
-          "testString": "assert($('h2').css('color') == 'rgb(9, 167, 161)', 'The <code>h2</code> element should have a <code>color</code> of #09A7A1.');"
+          "text": "<code>h2</code>元素应该有一个值为<code>#09A7A1</code>的<code>color</code>CSS 属性。",
+          "testString": "assert($('h2').css('color') == 'rgb(9, 167, 161)', '<code>h2</code>元素应该有一个值为<code>#09A7A1</code>的<code>color</code>CSS 属性。');"
         },
         {
-          "text": "The <code>button</code> element should have a <code>background-color</code> of #FF790E.",
-          "testString": "assert($('button').css('background-color') == 'rgb(255, 121, 14)', 'The <code>button</code> element should have a <code>background-color</code> of #FF790E.');"
+          "text": "<code>button</code>元素应该有一个值为<code>#FF790E</code>的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('button').css('background-color') == 'rgb(255, 121, 14)', '<code>button</code>元素应该有一个值为<code>#FF790E</code>的<code>background-color</code>CSS 属性。');"
         }
       ],
       "solutions": [],
@@ -1813,22 +1812,22 @@
             "  }",
             "</style>",
             "<header>",
-            "  <h1>Cooking with FCC!</h1>",
+            "  <h1>FCC 中国</h1>",
             "</header>",
             "<main>",
             "  <article>",
-            "    <h2>Machine Learning in the Kitchen</h2>",
-            "    <p>Join this two day workshop that walks through how to implement cutting-edge snack-getting algorithms with a command line interface. Coding usually involves writing exact instructions, but sometimes you need your computer to execute flexible commands, like <code>fetch Pringles</code>.</p>",
-            "    <button>Sign Up</button>",
+            "    <h2>FCC 成都社区</h2>",
+            "    <p>【FCC成都社区】是一个非营利性的公益性技术社区，由一群编程技术爱好者，利用业余时间搭建的一个友好的交流、学习、互助的平台，帮助开发者、技术爱好者提升个人技术能力，同时帮助企业解决人才问题。</p>",
+            "    <button><a href=\"https://freecodecamp-chengdu.github.io/\" target=\"_blank\">更多</a></button>",
             "  </article>",
             "  <article>",
-            "    <h2>Bisection Vegetable Chopping</h2>",
-            "    <p>This week-long retreat will level-up your coding ninja skills to actual ninja skills. No longer is the humble bisection search limited to sorted arrays or coding interview questions, applying its concepts in the kitchen will have you chopping carrots in O(log n) time before you know it.</p>",
-            "    <button>Sign Up</button>",
+            "    <h2>FCC 深圳社区</h2>",
+            "    <p>【FCC 深圳社区】全称 freeCodeCamp 深圳社区，面向深圳所有有意学习编程、热爱编程、甚至想要通过编程找到一份好工作的学生和社会群众，传承 freeCodeCamp 中文社区的主旨思想，倡导人人皆可编程。</p>",
+            "    <button><a href=\"https://freecodecamp-shenzhen.github.io/\" target=\"_blank\">更多</a></button>",
             "  </article>",
             "</main>",
             "<br>",
-            "<footer>&copy;2016 FCC Kitchen</footer>"
+            "<footer>&copy;2018 FCC 中国</footer>"
           ],
           "head": [],
           "tail": []
@@ -1839,39 +1838,39 @@
       "id": "587d78a4367417b2b2512ad4",
       "title": "Adjust the Hue of a Color",
       "description": [
-        "Colors have several characteristics including hue, saturation, and lightness. CSS3 introduced the <code>hsl()</code> property as an alternative way to pick a color by directly stating these characteristics.",
-        "<b>Hue</b> is what people generally think of as 'color'. If you picture a spectrum of colors starting with red on the left, moving through green in the middle, and blue on right, the hue is where a color fits along this line. In <code>hsl()</code>, hue uses a color wheel concept instead of the spectrum, where the angle of the color on the circle is given as a value between 0 and 360.",
-        "<b>Saturation</b> is the amount of gray in a color. A fully saturated color has no gray in it, and a minimally saturated color is almost completely gray. This is given as a percentage with 100% being fully saturated.",
-        "<b>Lightness</b> is the amount of white or black in a color. A percentage is given ranging from 0% (black) to 100% (white), where 50% is the normal color.",
-        "Here are a few examples of using <code>hsl()</code> with fully-saturated, normal lightness colors:",
-        "<table class=\"table table-striped\"><thead><tr><th>Color</th><th>HSL</th></tr></thead><tbody><tr><td>red</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>yellow</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>green</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>cyan</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>blue</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>magenta</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>",
+        "HSL 色彩空间模型是一种将 RGB 色彩模型中的点放在圆柱坐标系中的表示法，描述了色相（hue）、饱和度（saturation）、亮度（lightness）。CSS3 引入了对应的<code>hsl()</code>属性做为对应的颜色描述方式。",
+        "<b>色相</b>是色彩的基本属性，就是平常所说的颜色名称，如红色、黄色等。以颜色光谱为例，光谱左边从红色开始，移动到中间的绿色，一直到右边的蓝色，色相值就是沿着这条线的取值。在<code>hsl()</code>里面，色相用色环来代替光谱，色相值就是色环里面的颜色对应的从 0 到 360 度的角度值。",
+        "<b>饱和度</b>是指色彩的纯度，也就是颜色里灰色的占比，越高色彩越纯，低则逐渐变灰，取0-100%的数值。",
+        "<b>亮度</b>决定颜色的明暗程度，也就是颜色里白色或者黑色的占比，100% 亮度是白色， 0% 亮度是黑色，而 50% 亮度是“一般的”。 ",
+        "下面是一些使用<code>hsl()</code>描述颜色的例子，颜色都为满饱和度，中等亮度:",
+        "<table class=\"table table-striped\"><thead><tr><th>颜色</th><th>HSL</th></tr></thead><tbody><tr><td>红</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>黄</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>绿</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>蓝绿</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>blue</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>品红</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>",
         "<hr>",
-        "Change the <code>background-color</code> of each <code>div</code> element based on the class names (<code>green</code>, <code>cyan</code>, or <code>blue</code>) using <code>hsl()</code>. All three should have full saturation and normal lightness."
+        "把 class 为<code>green</code>、<code>cyan</code>和<code>blue</code><code>div</code>的<code>background-color</code>使用<code>hsl()</code>表示法描述相应的颜色。颜色都为满饱和度，亮度中等。"
       ],
       "tests": [
         {
-          "text": "Your code should use the <code>hsl()</code> property to declare the color green.",
-          "testString": "assert(code.match(/\\.green\\s*?{\\s*?background-color:\\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color green.');"
+          "text": "你应该使用<code>hsl()</code>属性来表示绿色。",
+          "testString": "assert(code.match(/\\.green\\s*?{\\s*?background-color:\\s*?hsl/gi), '你应该使用<code>hsl()</code>属性来表示绿色。');"
         },
         {
-          "text": "Your code should use the <code>hsl()</code> property to declare the color cyan.",
-          "testString": "assert(code.match(/\\.cyan\\s*?{\\s*?background-color:\\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color cyan.');"
+          "text": "你应该使用<code>hsl()</code>属性来表示蓝绿色。",
+          "testString": "assert(code.match(/\\.cyan\\s*?{\\s*?background-color:\\s*?hsl/gi), '你应该使用<code>hsl()</code>属性来表示蓝绿色。');"
         },
         {
-          "text": "Your code should use the <code>hsl()</code> property to declare the color blue.",
-          "testString": "assert(code.match(/\\.blue\\s*?{\\s*?background-color:\\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color blue.');"
+          "text": "你应该使用<code>hsl()</code>属性来表示蓝色。",
+          "testString": "assert(code.match(/\\.blue\\s*?{\\s*?background-color:\\s*?hsl/gi), '你应该使用<code>hsl()</code>属性来表示蓝色。');"
         },
         {
-          "text": "The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.",
-          "testString": "assert($('.green').css('background-color') == 'rgb(0, 255, 0)', 'The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.');"
+          "text": "class 为<code>green</code>的<code>div</code>应该有绿色的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('.green').css('background-color') == 'rgb(0, 255, 0)', 'class 为<code>green</code>的<code>div</code>应该有绿色的<code>background-color</code>CSS 属性。');"
         },
         {
-          "text": "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.",
-          "testString": "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');"
+          "text": "class 为<code>cyan</code>的<code>div</code>应该有蓝绿色的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'class 为<code>cyan</code>的<code>div</code>应该有蓝绿色的<code>background-color</code>CSS 属性。');"
         },
         {
-          "text": "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.",
-          "testString": "assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');"
+          "text": "class 为<code>blue</code>的<code>div</code>应该有蓝色的<code>background-color</code>CSS 属性。",
+          "testString": "assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'class 为<code>cyan</code>的<code>div</code>应该有蓝色的<code>background-color</code>CSS 属性。');"
         }
       ],
       "solutions": [],
@@ -1921,14 +1920,14 @@
       "id": "587d78a4367417b2b2512ad5",
       "title": "Adjust the Tone of a Color",
       "description": [
-        "The <code>hsl()</code> option in CSS also makes it easy to adjust the tone of a color. Mixing white with a pure hue creates a tint of that color, and adding black will make a shade. Alternatively, a tone is produced by adding gray or by both tinting and shading. Recall that the 's' and 'l' of <code>hsl()</code> stand for saturation and lightness, respectively. The saturation percent changes the amount of gray and the lightness percent determines how much white or black is in the color. This is useful when you have a base hue you like, but need different variations of it.",
+        "<code>hsl()</code>使 CSS 更改色调更方便。给纯色添加白色可以创造更浅的色调，添加黑色可以创造更深的色调。另外，还可以通过给纯色添加灰色来同时改变颜色的深浅和明暗。回忆下<code>hsl()</code>里面的‘s’和‘l’分辨代表饱和度和亮度。饱和度代表灰色的占比，亮度代表白色和黑色的占比。这在当你有了一个基色调却需要微调时非常有用。",
         "<hr>",
-        "The navigation bar on this site currently inherits its <code>background-color</code> from the <code>header</code> element. Starting with that color as a base, add a <code>background-color</code> to the <code>nav</code> element so it uses the same cyan hue, but has 80% saturation and 25% lightness values to change its tone and shade."
+        "页面的导航栏目前继承了<code>header</code>的<code>background-color</code>。改变<code>nav</code>元素的<code>background-color</code>，保留基色蓝绿色，调整它的色调和明暗使它具有 80% 的饱和度以及 25% 的亮度。"
       ],
       "tests": [
         {
-          "text": "The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.",
-          "testString": "assert(code.match(/nav\\s*?{\\s*?background-color:\\s*?hsl\\(180,\\s*?80%,\\s*?25%\\)/gi), 'The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.');"
+          "text": "<code>nav</code>元素应该有一个使用<code>hsl()</code>属性调节蓝绿色调的<code>background-color</code>CSS 属性。",
+          "testString": "assert(code.match(/nav\\s*?{\\s*?background-color:\\s*?hsl\\(180,\\s*?80%,\\s*?25%\\)/gi), '<code>nav</code>元素应该有一个使用<code>hsl()</code>调节蓝绿色调的<code>background-color</code>CSS 属性。');"
         }
       ],
       "solutions": [],
@@ -1973,12 +1972,14 @@
             "</style>",
             "  ",
             "<header>",
-            "  <h1>Cooking with FCC!</h1>",
+            "  <h1>FCC 中国</h1>",
             "  <nav>",
             "    <ul>",
-            "      <li><a href=\"\">Home</a></li>",
-            "      <li><a href=\"\">Classes</a></li>",
-            "      <li><a href=\"\">Contact</a></li>",
+            "      <li><a href=\"\">首页</a></li>",
+            "      <li><a href=\"\">课程</a></li>",
+            "      <li><a href=\"\">论坛</a></li>",
+            "      <li><a href=\"\">新闻</a></li>",
+            "      <li><a href=\"\">设置</a></li>",
             "    </ul>",
             "  </nav>",
             "</header>"
@@ -1992,19 +1993,19 @@
       "id": "587d78a5367417b2b2512ad6",
       "title": "Create a Gradual CSS Linear Gradient",
       "description": [
-        "Applying a color on HTML elements is not limited to one flat hue. CSS provides the ability to use color transitions, otherwise known as gradients, on elements. This is accessed through the <code>background</code> property's <code>linear-gradient()</code> function. Here is the general syntax:",
-        "<code>background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);</code>",
-        "The first argument specifies the direction from which color transition starts - it can be stated as a degree, where 90deg makes a vertical gradient and 45deg is angled like a backslash. The following arguments specify the order of colors used in the gradient.",
-        "Example:",
+        "HTML 元素的背景色并不局限于单色。CSS 还提供了颜色过渡，也就是渐变。可以通过<code>background</code>里面的<code>linear-gradient()</code>来实现线性渐变，下面是它的语法：",
+        "<code>background: linear-gradient(gradient_direction, 颜色 1, 颜色 2, 颜色 3, ...);</code>",
+        "第一个参数指定了颜色过渡的方向 - 它的值是角度，90deg 代表垂直渐变，45deg 的渐变角度和反斜杠方向差不多。剩下的参数指定了渐变颜色的顺序：",
+        "例子：",
         "<code>background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));</code>",
         "<hr>",
-        "Use a <code>linear-gradient()</code> for the <code>div</code> element's <code>background</code>, and set it from a direction of 35 degrees to change the color from <code>#CCFFFF</code> to <code>#FFCCCC</code>.",
-        "<strong>Note</strong><br>While there are other ways to specify a color value, like <code>rgb()</code> or <code>hsl()</code>, use hex values for this challenge."
+        "使用<code>linear-gradient()</code>给<code>div</code>添加<code>background</code>渐变色，渐变角度 35deg，从<code>#CCFFFF</code>过渡到<code>#FFCCCC</code>。",
+        "<strong>注意</strong><br>有很多种方式指定颜色值，如<code>rgb()</code>或者<code>hsl()</code>。在本关里请使用 hex 颜色码。"
       ],
       "tests": [
         {
-          "text": "The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.",
-          "testString": "assert(code.match(/background:\\s*?linear-gradient\\(35deg,\\s*?(#CCFFFF|#CFF),\\s*?(#FFCCCC|#FCC)\\);/gi), 'The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.');"
+          "text": "<code>div</code>元素应该有一个指定方向和颜色的<code>linear-gradient</code><code>background</code>渐变色。",
+          "testString": "assert(code.match(/background:\\s*?linear-gradient\\(35deg,\\s*?(#CCFFFF|#CFF),\\s*?(#FFCCCC|#FCC)\\);/gi), '<code>div</code>元素应该有一个指定方向和颜色的<code>linear-gradient</code><code>background</code>渐变色。');"
         }
       ],
       "solutions": [],
@@ -2040,39 +2041,39 @@
       "id": "587d78a5367417b2b2512ad7",
       "title": "Use a CSS Linear Gradient to Create a Striped Element",
       "description": [
-        "The <code>repeating-linear-gradient()</code> function is very similar to <code>linear-gradient()</code> with the major difference that it repeats the specified gradient pattern. <code>repeating-linear-gradient()</code> accepts a variety of values, but for simplicity, you'll work with an angle value and color stop values in this challenge.",
-        "The angle value is the direction of the gradient. Color stops are like width values that mark where a transition takes place, and are given with a percentage or a number of pixels.",
-        "In the example demonstrated in the code editor, the gradient starts with the color <code>yellow</code> at 0 pixels which blends into the second color <code>blue</code> at 40 pixels away from the start. Since the next color stop is also at 40 pixels, the gradient immediately changes to the third color <code>green</code>, which itself blends into the fourth color value <code>red</code> as that is 80 pixels away from the beginning of the gradient.",
-        "For this example, it helps to think about the color stops as pairs where every two colors blend together.",
-        "<code>0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px</code>",
-        "If every two color stop values are the same color, the blending isn't noticeable because it's between the same color, followed by a hard transition to the next color, so you end up with stripes.",
+        "<code>repeating-linear-gradient()</code>函数和<code>linear-gradient()</code>很像，主要区别是<code>repeating-linear-gradient()</code>重复指定的渐变。 <code>repeating-linear-gradient()</code>有很多参数，为了便于理解，本关只用到角度值和起止渐变颜色值。",
+        "角度就是渐变的方向。起止渐变颜色值代表渐变颜色及其宽度值，由颜色值和起止位置组成，起止位置用百分比或者像素值表示。",
+        "在代码编辑器的例子里，渐变开始于 0 像素位置的<code>yellow</code>，然后过渡到距离开始位置 40 像素的<code>blue</code>。由于下一个起止渐变颜色值的起止位置也是 40 像素，所以颜色直接渐变成第三个颜色值<code>green</code>，然后过渡到距离开始位置 80 像素的<code>red</code>。",
+        "下面的代码可以帮助理解成对的起止渐变颜色值是如何过渡的。",
+        "<code>0px [黄色 -- 过渡 -- 蓝色] 40px [绿色 -- 过渡 -- 红色] 80px</code>",
+        "如果每对起止渐变颜色值的颜色都是相同的，由于是在两个相同的颜色间过渡，那么中间的过渡色也为同色，接着就是同色的过渡色和下一个起止颜色，最终产生的效果就是条纹。",
         "<hr>",
-        "Make stripes by changing the <code>repeating-linear-gradient()</code> to use a gradient angle of <code>45deg</code>, then set the first two color stops to <code>yellow</code>, and finally the second two color stops to <code>black</code>."
+        "使用<code>repeating-linear-gradient()</code>函数创建一个渐变角度为 <code>45deg</code> 的条纹，然后设置第一对渐变颜色为<code>yellow</code>, 第二对渐变颜色为<code>black</code>。"
       ],
       "tests": [
         {
-          "text": "The angle of the <code>repeating-linear-gradient()</code> should be 45deg.",
-          "testString": "assert(code.match(/background:\\s*?repeating-linear-gradient\\(\\s*?45deg/gi), 'The angle of the <code>repeating-linear-gradient()</code> should be 45deg.');"
+          "text": "<code>repeating-linear-gradient()</code>的渐变角度应该为<code>45deg</code>。",
+          "testString": "assert(code.match(/background:\\s*?repeating-linear-gradient\\(\\s*?45deg/gi), '<code>repeating-linear-gradient()</code>的渐变角度应该为<code>45deg</code>。');"
         },
         {
-          "text": "The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg",
-          "testString": "assert(!code.match(/90deg/gi), 'The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg');"
+          "text": "<code>repeating-linear-gradient()</code>的渐变角度应该不在是<code>90deg</code>。",
+          "testString": "assert(!code.match(/90deg/gi), '<code>repeating-linear-gradient()</code>的渐变角度不应该是<code>90deg</code>。');"
         },
         {
-          "text": "The color stop at 0 pixels should be <code>yellow</code>.",
-          "testString": "assert(code.match(/yellow\\s+?0px/gi), 'The color stop at 0 pixels should be <code>yellow</code>.');"
+          "text": "<code>0px</code>处的渐变颜色应该为<code>yellow</code>。",
+          "testString": "assert(code.match(/yellow\\s+?0px/gi), '<code>0px</code>处的渐变颜色应该为<code>yellow</code>。');"
         },
         {
-          "text": "One color stop at 40 pixels should be <code>yellow</code>.",
-          "testString": "assert(code.match(/yellow\\s+?40px/gi), 'One color stop at 40 pixels should be <code>yellow</code>.');"
+          "text": "<code>40px</code>处的第一个渐变颜色应该为<code>yellow</code>。",
+          "testString": "assert(code.match(/yellow\\s+?40px/gi), '<code>40px</code>处的第一个渐变颜色应该为<code>yellow</code>。');"
         },
         {
-          "text": "The second color stop at 40 pixels should be <code>black</code>.",
-          "testString": "assert(code.match(/yellow\\s+?40px,\\s*?black\\s+?40px/gi), 'The second color stop at 40 pixels should be <code>black</code>.');"
+          "text": "<code>40px</code>处的第二个渐变颜色应该为<code>black</code>。",
+          "testString": "assert(code.match(/yellow\\s+?40px,\\s*?black\\s+?40px/gi), '<code>40px</code>处的第二个渐变颜色应该为<code>black</code>。');"
         },
         {
-          "text": "The last color stop at 80 pixels should be <code>black</code>.",
-          "testString": "assert(code.match(/black\\s+?80px/gi), 'The last color stop at 80 pixels should be <code>black</code>.');"
+          "text": "<code>80px</code>处最后一个渐变颜色应该为<code>black</code>。",
+          "testString": "assert(code.match(/black\\s+?80px/gi), '<code>80px</code>处最后一个渐变颜色应该为<code>black</code>。');"
         }
       ],
       "solutions": [],
@@ -2114,19 +2115,19 @@
       "id": "587d78a5367417b2b2512ad8",
       "title": "Create Texture by Adding a Subtle Pattern as a Background Image",
       "description": [
-        "One way to add texture and interest to a background and have it stand out more is to add a subtle pattern. The key is balance, as you don't want the background to stand out too much, and take away from the foreground. The <code>background</code> property supports the <code>url()</code> function in order to link to an image of the chosen texture or pattern. The link address is wrapped in quotes inside the parentheses.",
+        "添加一个精致的背景图，可以增加页面的质感，让页面更美观。关键是要找到一个平衡点，抢了内容的风头，喧宾夺主可就不妙了。<code>background</code>属性支持使用<code>url()</code>函数通过链接的方式引入一个指定纹理或样式的图片。图片链接地址在括号内，一般会用引号包起来。",
         "<hr>",
-        "Using the url of <code>https://i.imgur.com/MJAkxbh.png</code>, set the <code>background</code> of the whole page with the <code>body</code> selector."
+        "用<code>body</code>选择器设置整个页面的<code>background</code>为 url<code>https://i.imgur.com/MJAkxbh.png</code>指定的图片。"
       ],
       "tests": [
         {
-          "text": "Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.",
-          "testString": "assert(code.match(/background:\\s*?url\\((\"|')https:\\/\\/i\\.imgur\\.com\\/MJAkxbh\\.png(\"|')\\)/gi), 'Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.');"
+          "text": "你的<code>body</code>元素应该有一个值为指定<code>url</code>的<code>background</code>CSS 属性。",
+          "testString": "assert(code.match(/background:\\s*?url\\((\"|')https:\\/\\/i\\.imgur\\.com\\/MJAkxbh\\.png(\"|')\\)/gi), '你的<code>body</code>元素应该有一个值为指定<code>url</code>的<code>background</code>CSS 属性。');"
         }
       ],
       "solutions": [],
       "hints": [
-        "Remember to wrap the address in quotes within the url() function."
+        "记得把 url() 函数内的地址用引号括起来。"
       ],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2151,15 +2152,15 @@
       "id": "587d78a5367417b2b2512ad9",
       "title": "Use the CSS Transform scale Property to Change the Size of an Element",
       "description": [
-        "To change the scale of an element, CSS has the <code>transform</code> property, along with its <code>scale()</code> function. The following code example doubles the size of all the paragraph elements on the page:",
+        "CSS 属性<code>transform</code>里面的<code>scale()</code>函数，可以用来改变元素的显示比例。下面的例子把页面的段落元素放大了 2 倍：",
         "<blockquote>p {<br>&nbsp;&nbsp;transform:scale(2);<br>}</blockquote>",
         "<hr>",
-        "Increase the size of the element with the id of <code>ball2</code> to 1.5 times its original size."
+        "把 id 为<code>ball2</code>的元素放大到原始大小的 1.5 倍。"
       ],
       "tests": [
         {
-          "text": "Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.",
-          "testString": "assert(code.match(/#ball2\\s*?{\\s*?left:\\s*?65%;\\s*?transform:\\s*?scale\\(1\\.5\\);\\s*?}|#ball2\\s*?{\\s*?transform:\\s*?scale\\(1\\.5\\);\\s*?left:\\s*?65%;\\s*?}/gi), 'Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.');"
+          "text": "<code>#ball2</code>的<code>transform</code>属性应该为原始大小的 1.5 倍。",
+          "testString": "assert(code.match(/#ball2\\s*?{\\s*?left:\\s*?65%;\\s*?transform:\\s*?scale\\(1\\.5\\);\\s*?}|#ball2\\s*?{\\s*?transform:\\s*?scale\\(1\\.5\\);\\s*?left:\\s*?65%;\\s*?}/gi), '<code>#ball2</code>的<code>transform</code>属性应该为原始大小的 1.5 倍。');"
         }
       ],
       "solutions": [],
@@ -2208,21 +2209,21 @@
       "id": "587d78a5367417b2b2512ada",
       "title": "Use the CSS Transform scale Property to Scale an Element on Hover",
       "description": [
-        "The <code>transform</code> property has a variety of functions that lets you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.",
-        "Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:",
+        "<code>transform</code>属性有很多函数，可以对元素进行调整大小、移动、旋转、翻转等操作。当使用伪类描述元素的指定状态如<code>:hover</code>时，<code>transform</code>属性可以方便的给元素添加交互。",
+        "下面是当用户悬停段落元素时，段落大小缩放到原始大小 2.1 倍的例子：",
         "<blockquote>p:hover {<br>&nbsp;&nbsp;transform: scale(2.1);<br>}</blockquote>",
         "<hr>",
-        "Add a CSS rule for the <code>hover</code> state of the <code>div</code> and use the <code>transform</code> property to scale the <code>div</code> element to 1.1 times its original size when a user hovers over it."
+        "给<code>div</code>伪类<code>hover</code>添加<code>transform</code>属性，使其当鼠标悬停时大小缩放到原始大小的 1.1 倍。"
       ],
       "tests": [
         {
-          "text": "The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.",
-          "testString": "assert(code.match(/div:hover\\s*?{\\s*?transform:\\s*?scale\\(1\\.1\\);/gi), 'The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.');"
+          "text": "<code>div</code>元素在悬停时大小应该缩放到原始大小的 1.1 倍。",
+          "testString": "assert(code.match(/div:hover\\s*?{\\s*?transform:\\s*?scale\\(1\\.1\\);/gi), '<code>div</code>元素在悬停时大小应该缩放到原始大小的 1.1 倍。');"
         }
       ],
       "solutions": [],
       "hints": [
-        "Make sure to apply the CSS rule to the hover state of the div, using div:hover"
+        "确保使用 div:hover 添加悬停规则。"
       ],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2259,21 +2260,21 @@
       "id": "587d78a6367417b2b2512adb",
       "title": "Use the CSS Transform Property skewX to Skew an Element Along the X-Axis",
       "description": [
-        "The next function of the <code>transform</code> property is <code>skewX()</code>, which skews the selected element along its X (horizontal) axis by a given degree.",
-        "The following code skews the paragraph element by -32 degrees along the X-axis.",
+        "接下来要介绍的<code>transform</code>属性是<code>skewX</code>，<code>skewX</code>使选择的元素沿着 X 轴（横向）翻转指定的角度。",
+        "下面的代码沿着 X 轴翻转段落元素 -32 度。",
         "<blockquote>p {<br>&nbsp;&nbsp;transform: skewX(-32deg);<br>}</blockquote>",
         "<hr>",
-        "Skew the element with the id of <code>bottom</code> by 24 degrees along the X-axis by using the <code>transform</code> property."
+        "使用<code>transform</code>属性沿 X 轴翻转 id 为<code>bottom</code>的元素 24 度。"
       ],
       "tests": [
         {
-          "text": "The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.",
-          "testString": "assert(code.match(/#bottom\\s*?{\\s*?.*?\\s*?transform:\\s*?skewX\\(24deg\\);/g), 'The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.');"
+          "text": "id 为<code>bottom</code>的元素应该沿着 X 轴翻转 24 度。",
+          "testString": "assert(code.match(/#bottom\\s*?{\\s*?.*?\\s*?transform:\\s*?skewX\\(24deg\\);/g), 'id 为<code>bottom</code>的元素应该沿着 X 轴翻转 24 度。');"
         }
       ],
       "solutions": [],
       "hints": [
-        "Notice that there is no space between the number and \"deg\" (-32deg) when declaring the degrees value."
+        "注意声明角度值时数字和 \"deg\" 之间没有空格（-32deg）。"
       ],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2310,14 +2311,14 @@
       "id": "587d78a6367417b2b2512adc",
       "title": "Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis",
       "description": [
-        "Given that the <code>skewX()</code> function skews the selected element along the X-axis by a given degree, it is no surprise that the <code>skewY()</code> property skews an element along the Y (vertical) axis.",
+        "<code>skewX</code>函数使指定元素沿 X 轴翻转指定的角度，想必你已经猜到了，<code>skewY</code>属性使指定元素沿 Y 轴（垂直方向）翻转指定角度。",
         "<hr>",
-        "Skew the element with the id of <code>top</code> -10 degrees along the Y-axis by using the <code>transform</code> property."
+        "使用<code>transform</code>属性沿 Y 轴翻转 id 为<code>top</code>的元素 -10 度。"
       ],
       "tests": [
         {
-          "text": "The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.",
-          "testString": "assert(code.match(/#top\\s*?{\\s*?.*?\\s*?transform:\\s*?skewY\\(-10deg\\);/g), 'The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.');"
+          "text": "id 为<code>top</code>的元素应该沿着 Y 轴翻转 -10 度。",
+          "testString": "assert(code.match(/#top\\s*?{\\s*?.*?\\s*?transform:\\s*?skewY\\(-10deg\\);/g), 'id 为<code>top</code>的元素应该沿着 Y 轴翻转 -10 度。');"
         }
       ],
       "solutions": [],
@@ -2358,25 +2359,25 @@
       "id": "587d78a6367417b2b2512add",
       "title": "Create a Graphic Using CSS",
       "description": [
-        "By manipulating different selectors and properties, you can make interesting shapes. One of the easier ones to try is a crescent moon shape. For this challenge you need to work with the <code>box-shadow</code> property that sets the shadow of an element, along with the <code>border-radius</code> property that controls the roundness of the element's corners.",
-        "You will create a round, transparent object with a crisp shadow that is slightly offset to the side - the shadow is actually going to be the moon shape you see.",
-        "In order to create a round object, the <code>border-radius</code> property should be set to a value of 50%.",
-        "You may recall from an earlier challenge that the <code>box-shadow</code> property takes values for <code>offset-x</code>, <code>offset-y</code>, <code>blur-radius</code>, <code>spread-radius</code> and a color value in that order. The <code>blur-radius</code> and <code>spread-radius</code> values are optional.",
+        "通过使用选择器选择不同的元素并改变其属性，你可以创造一些有趣的形状。比如新月。在本关你会使用<code>box-shadow</code>属性来设置元素的阴影，<code>border-radius</code>属性控制元素的外边框圆角。",
+        "首先你将会创建一个圆的、透明的对象，它具有模糊阴影并略微向两边递减。如你所见，这个阴影其实就是新月形狀。",
+        "为了创建一个圆形的对象，<code>border-radius</code>应该被设置成 50%。",
+        "你应该还记得之前关卡的<code>box-shadow</code>属性以及它的依次取值<code>offset-x</code>、<code>offset-y</code>、<code>blur-radius</code>、<code>spread-radius</code>和颜色值。其中<code>blur-radius</code>和<code>spread-radius</code>是可选的。",
         "<hr>",
-        "Manipulate the square element in the editor to create the moon shape. First, change the <code>background-color</code> to transparent, then set the <code>border-radius</code> property to 50% to make the circular shape. Finally, change the <code>box-shadow</code> property to set the <code>offset-x</code> to 25px, the <code>offset-y</code> to 10px, <code>blur-radius</code> to 0, <code>spread-radius</code> to 0, and color to blue."
+        "把编辑器里的正方形元素变成新月形状。首先，把<code>background-color</code>改为透明，接着把<code>border-radius</code>属性设置成 50%，以创建一个圆形。最后，更改<code>box-shadow</code>属性，使其<code>offset-x</code>为 25px，<code>offset-y</code>为 10px，<code>blur-radius</code>为 0，<code>spread-radius</code>为 0，颜色为蓝色。"
       ],
       "tests": [
         {
-          "text": "The value of the <code>background-color</code> property should be set to <code>transparent</code>.",
-          "testString": "assert(code.match(/background-color:\\s*?transparent;/gi), 'The value of the <code>background-color</code> property should be set to <code>transparent</code>.');"
+          "text": "<code>background-color</code>属性应该取值<code>transparent</code>。",
+          "testString": "assert(code.match(/background-color:\\s*?transparent;/gi), '<code>background-color</code>属性应该取值<code>transparent</code>。');"
         },
         {
-          "text": "The value of the <code>border-radius</code> property should be set to <code>50%</code>.",
-          "testString": "assert(code.match(/border-radius:\\s*?50%;/gi), 'The value of the <code>border-radius</code> property should be set to <code>50%</code>.');"
+          "text": "<code>border-radius</code>属性应该取值<code>50%</code>。",
+          "testString": "assert(code.match(/border-radius:\\s*?50%;/gi), '<code>border-radius</code>属性应该取值<code>50%</code>。');"
         },
         {
-          "text": "The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.",
-          "testString": "assert(code.match(/box-shadow:\\s*?25px\\s+?10px\\s+?0(px)?\\s+?0(px)?\\s+?blue\\s*?;/gi), 'The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.');"
+          "text": "<code>box-shadow</code>属性的<code>offset-x</code>、<code>offset-y</code>、<code>blur-radius</code>、<code>spread-radius</code>和<code>color</code>应该依次取值<code>25px</code>、<code>10px</code>、<code>0</code>、<code>0</code>和<code>blue</code>。",
+          "testString": "assert(code.match(/box-shadow:\\s*?25px\\s+?10px\\s+?0(px)?\\s+?0(px)?\\s+?blue\\s*?;/gi), '<code>box-shadow</code>属性的<code>offset-x</code>、<code>offset-y</code>、<code>blur-radius</code>、<code>spread-radius</code>和<code>color</code>应该依次取值<code>25px</code>、<code>10px</code>、<code>0</code>、<code>0</code>和<code>blue</code>。');"
         }
       ],
       "solutions": [],
@@ -2418,31 +2419,31 @@
       "id": "587d78a6367417b2b2512ade",
       "title": "Create a More Complex Shape Using CSS and HTML",
       "description": [
-        "One of the most popular shapes in the world is the heart shape, and in this challenge you'll create one using pure CSS. But first, you need to understand the <code>::before</code> and <code>::after</code> pseudo-elements. These pseudo-elements are used to add something before or after a selected element. In the following example, a <code>::before</code> pseudo-element is used to add a rectangle to an element with the class <code>heart</code>:",
-        "<blockquote>.heart::before {<br>&nbsp;&nbsp;content: \"\";<br>&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;border-radius: 25%;<br>&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;height: 50px;<br>&nbsp;&nbsp;width: 70px;<br>&nbsp;&nbsp;top: -50px;<br>&nbsp;&nbsp;left: 5px;<br>}</blockquote>",
-        "For the <code>::before</code> and <code>::after</code> pseudo-elements to function properly, they must have a defined <code>content</code> property. This property is usually used to add things like a photo or text to the selected element. When the <code>::before</code> and <code>::after</code> pseudo-elements are used to make shapes, the <code>content</code> property is still required, but it's set to an empty string.",
-        "In the above example, the element with the class of <code>heart</code> has a <code>::before</code> pseudo-element that produces a yellow rectangle with <code>height</code> and <code>width</code> of 50px and 70px, respectively. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the <code>left</code> and 50px above the <code>top</code> of the element.",
+        "世界上最流行的形状非心形莫属了，在本关里你将用纯 CSS 创建一个心形。但是首先你需要了解<code>:before</code>和<code>:after</code>伪类。这些伪类用来在选择元素之前和之后添加一些内容。在下面的例子里，<code>:before</code>伪类元素用来给 class 为<code>heart</code>的元素添加一个正方形。",
+        "<blockquote>.heart:before {<br>&nbsp;&nbsp;content: \"\";<br>&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;border-radius: 25%;<br>&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;height: 50px;<br>&nbsp;&nbsp;width: 70px;<br>&nbsp;&nbsp;top: -50px;<br>&nbsp;&nbsp;left: 5px;<br>}</blockquote>",
+        "<code>:before</code>和<code>:after</code>必须配合<code>content</code>来使用。这个属性通常用来给元素添加内容诸如图片或者文字。当<code>:before</code>和<code>:after</code>伪类用来添加某些形状而不是图片或文字时，<code>content</code>属性仍然是必需的，但是它的值可以是空字符串。",
+        "在上面的例子里，class 为<code>heart</code>元素的<code>:before</code>伪类添加了一个黄色的长方形，长方形的<code>height</code>和<code>width</code>分别为 50px 和 70px。由于设置了其边框半径为 25%，所以长方形为圆角长方形，同时其相对位置为距离<code>left</code>5px，以及向<code>top</code>偏移 50px。",
         "<hr>",
-        "Transform the element on the screen to a heart. In the <code>heart::after</code> selector, change the <code>background-color</code> to pink and the <code>border-radius</code> to 50%.",
-        "Next, target the element with the class <code>heart</code> (just <code>heart</code>) and fill in the <code>transform</code> property. Use the <code>rotate()</code> function with -45 degrees. (<code>rotate()</code> works the same way that <code>skewX()</code> and <code>skewY()</code> do).",
-        "Finally, in the <code>heart::before</code> selector, set its <code>content</code> property to an empty string."
+        "把屏幕里的元素变成心形。在<code>heart:after</code>选择器里面，把<code>background-color</code>改成粉色（pink），把<code>border-radius</code>改成 50%。",
+        "接下来，在<code>heart</code>class 选择器（单纯的<code>heart</code>元素）里面，完善<code>transform</code>属性。使用<code>rotate()</code>函数并赋参 -45 度。（<code>rotate()</code>用法和<code>skewX</code>以及<code>skewY</code>类似）。",
+        "最后，在<code>heart:before</code>选择器里面，设置<code>content</code>属性为空字符串。"
       ],
       "tests": [
         {
-          "text": "The <code>background-color</code> property of the <code>heart::after</code> selector should be pink.",
-          "testString": "assert(code.match(/\\.heart::after\\s*?{\\s*?background-color\\s*?:\\s*?pink\\s*?;/gi), 'The <code>background-color</code> property of the <code>heart::after</code> selector should be pink.');"
+          "text": "<code>heart:after</code>选择器的<code>background-color</code>属性值应该为粉色。",
+          "testString": "assert(code.match(/\\.heart:after\\s*?{\\s*?background-color\\s*?:\\s*?pink\\s*?;/gi), '<code>heart:after</code>选择器的<code>background-color</code>属性值应该为粉色。');"
         },
         {
-          "text": "The <code>border-radius</code> of the <code>heart::after</code> selector should be 50%.",
-          "testString": "assert(code.match(/border-radius\\s*?:\\s*?50%/gi).length == 2, 'The <code>border-radius</code> of the <code>heart::after</code> selector should be 50%.');"
+          "text": "<code>heart:after</code>选择器的<code>border-radius</code>属性值应该为 50%。",
+          "testString": "assert(code.match(/border-radius\\s*?:\\s*?50%/gi).length == 2, '<code>heart:after</code>选择器的<code>border-radius</code>属性值应该为 50%。');"
         },
         {
-          "text": "The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.",
-          "testString": "assert(code.match(/transform\\s*?:\\s*?rotate\\(\\s*?-45deg\\s*?\\)/gi), 'The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.');"
+          "text": "<code>heart</code>class 的<code>transform</code>属性应该使用<code>rotate()</code>函数并赋参为<code>-45deg</code>。",
+          "testString": "assert(code.match(/transform\\s*?:\\s*?rotate\\(\\s*?-45deg\\s*?\\)/gi), '<code>heart</code>class 的<code>transform</code>属性应该使用<code>rotate()</code>函数并赋参为<code>-45deg</code>。');"
         },
         {
-          "text": "The <code>content</code> of the <code>heart::before</code> selector should be an empty string.",
-          "testString": "assert(code.match(/\\.heart::before\\s*?{\\s*?content\\s*?:\\s*?(\"|')\\1\\s*?;/gi), 'The <code>content</code> of the <code>heart::before</code> selector should be an empty string.');"
+          "text": "<code>heart:before</code>选择器的<code>content</code>应该为空字符串。",
+          "testString": "assert(code.match(/\\.heart:before\\s*?{\\s*?content\\s*?:\\s*?(\"|')\\1\\s*?;/gi), '<code>heart:before</code>选择器的<code>content</code>应该为空字符串。');"
         }
       ],
       "solutions": [],
@@ -2468,7 +2469,7 @@
             "  width: 50px;",
             "  transform: ;",
             "}",
-            ".heart::after {",
+            ".heart:after {",
             "  background-color: blue;",
             "  content: \"\";",
             "  border-radius: 25%;",
@@ -2478,7 +2479,7 @@
             "  top: 0px;",
             "  left: 25px;",
             "}",
-            ".heart::before {",
+            ".heart:before {",
             "  content: ;",
             "  background-color: pink;",
             "  border-radius: 50%;",
@@ -2500,39 +2501,39 @@
       "id": "587d78a7367417b2b2512adf",
       "title": "Learn How the CSS @keyframes and animation Properties Work",
       "description": [
-        "To animate an element, you need to know about the animation properties and the <code>@keyframes</code> rule. The animation properties control how the animation should behave and the <code>@keyframes</code> rule controls what happens during that animation. There are eight animation properties in total. This challenge will keep it simple and cover the two most important ones first:",
-        "<code>animation-name</code> sets the name of the animation, which is later used by <code>@keyframes</code> to tell CSS which rules go with which animations.",
-        "<code>animation-duration</code> sets the length of time for the animation.",
-        "<code>@keyframes</code> is how to specify exactly what happens within the animation over the duration. This is done by giving CSS properties for specific \"frames\" during the animation, with percentages ranging from 0% to 100%. If you compare this to a movie, the CSS properties for 0% is how the element displays in the opening scene. The CSS properties for 100% is how the element appears at the end, right before the credits roll. Then CSS applies the magic to transition the element over the given duration to act out the scene. Here's an example to illustrate the usage of <code>@keyframes</code> and the animation properties:",
+        "如果要给元素添加动画，你需要了解<code>animation</code>属性以及<code>@keyframes</code>规则。<code>animation</code>属性控制动画的外观，<code>@keyframes</code>规则控制动画中各阶段的变化。总共有 8 个<code>animation</code>属性。为了便于理解，本关暂时只涉及到两个最常用的属性。",
+        "<code>animation-name</code>设置动画的名称， 也就是要绑定的选择器的<code>@keyframes</code>的名称。",
+        "<code>animation-duration</code>设置动画所花费的时间。",
+        "<code>@keyframes</code>能够创建动画。 创建动画的原理是将一套 CSS 样式逐渐变化为另一套样式。具体是通过设置动画期间对应的“frames”的 CSS 的属性，以百分比来规定改变的时间，或者通过关键词“from”和“to”，等价于 0% 和 100%。打个比方，CSS 里面的 0% 属性就像是电影里面的开场镜头。CSS 里面的 100% 属性就是元素最后的样子，相当于电影里的演职员表或者鸣谢镜头。CSS 在对应的时间内给元素过渡添加效果。下面举例说明<code>@keyframes</code>和动画属性的用法：",
         "<blockquote>#anim {<br>&nbsp;&nbsp;animation-name: colorful;<br>&nbsp;&nbsp;animation-duration: 3s;<br>}<br>@keyframes colorful {<br>&nbsp;&nbsp;0% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: blue;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;100% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;}<br>}</blockquote>",
-        "For the element with the <code>anim</code> id, the code snippet above sets the <code>animation-name</code> to <code>colorful</code> and sets the <code>animation-duration</code> to 3 seconds. Then the <code>@keyframes</code> rule links to the animation properties with the name <code>colorful</code>. It sets the color to blue at the beginning of the animation (0%) which will transition to yellow by the end of the animation (100%). You aren't limited to only beginning-end transitions, you can set properties for the element for any percentage between 0% and 100%.",
+        "id 为<code>anim</code>的元素，代码设置<code>animation-name</code>为<code>colorful</code>，设置<code>animation-duration</code>为 3 秒。然后把<code>@keyframes</code>引用到名为<code>colorful</code>的动画属性上。<code>colorful</code>在动画开始时（0%）设置颜色为蓝色，在动画结束时（100%）设置颜色为黄色。注意不是只有开始和结束的过渡可以设置，0% 到 100% 间的任意百分比你都可以设置。",
         "<hr>",
-        "Create an animation for the element with the id <code>rect</code>, by setting the <code>animation-name</code> to rainbow and the <code>animation-duration</code> to 4 seconds. Next, declare a <code>@keyframes</code> rule, and set the <code>background-color</code> at the beginning of the animation (<code>0%</code>) to blue, the middle of the animation (<code>50%</code>) to green, and the end of the animation (<code>100%</code>) to yellow."
+        "给 id 为<code>rect</code> 的元素添加动画，设置其<code>animation-name</code>为 rainbow，设置其<code>animation-duration</code>为 4 秒。然后声明<code>@keyframes</code>规则，设置动画开始时（0%）的<code>background-color</code>为蓝色，动画中间时（50%）为绿色，动画结束时（100%）为为黄色。"
       ],
       "tests": [
         {
-          "text": "The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.",
-          "testString": "assert($('#rect').css('animation-name') == 'rainbow', 'The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.');"
+          "text": "id 为<code>rect</code>的元素应该有一个值为 rainbow 的<code>animation-name</code>属性。",
+          "testString": "assert($('#rect').css('animation-name') == 'rainbow', 'id 为<code>rect</code>的元素应该有一个值为 rainbow 的<code>animation-name</code>属性。');"
         },
         {
-          "text": "The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.",
-          "testString": "assert($('#rect').css('animation-duration') == '4s', 'The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.');"
+          "text": "id 为<code>rect</code>的元素应该有一个值为 4s 的<code>animation-duration</code>属性。",
+          "testString": "assert($('#rect').css('animation-duration') == '4s', 'id 为<code>rect</code>的元素应该有一个值为 4s 的<code>animation-duration</code>属性。');"
         },
         {
-          "text": "The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.",
-          "testString": "assert(code.match(/@keyframes\\s+?rainbow\\s*?{/g), 'The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.');"
+          "text": "<code>@keyframes</code>规则的<code>animation-name</code>应该为 rainbow。",
+          "testString": "assert(code.match(/@keyframes\\s+?rainbow\\s*?{/g), '<code>@keyframes</code>规则的<code>animation-name</code>应该为 rainbow。');"
         },
         {
-          "text": "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.",
-          "testString": "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.');"
+          "text": "<code>@keyframes</code>规则的 rainbow 在 0% 时的<code>background-color</code>应该为蓝色。",
+          "testString": "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?}/gi), '<code>@keyframes</code>规则的 rainbow 在 0% 时的<code>background-color</code>应该为蓝色。');"
         },
         {
-          "text": "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.",
-          "testString": "assert(code.match(/50%\\s*?{\\s*?background-color:\\s*?green;\\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.');"
+          "text": "<code>@keyframes</code>规则的 rainbow 在 50% 时的<code>background-color</code>应该为绿色。",
+          "testString": "assert(code.match(/50%\\s*?{\\s*?background-color:\\s*?green;\\s*?}/gi), '<code>@keyframes</code>规则的 rainbow 在 50% 时的<code>background-color</code>应该为绿色。');"
         },
         {
-          "text": "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.",
-          "testString": "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.');"
+          "text": "<code>@keyframes</code>规则的 rainbow 在 100% 时的<code>background-color</code>应该为黄色。",
+          "testString": "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?}/gi), '<code>@keyframes</code>规则的 rainbow 在 100% 时的<code>background-color</code>应该为黄色。');"
         }
       ],
       "solutions": [],
@@ -2576,21 +2577,21 @@
       "id": "587d78a7367417b2b2512ae0",
       "title": "Use CSS Animation to Change the Hover State of a Button",
       "description": [
-        "You can use CSS <code>@keyframes</code> to change the color of a button in its hover state.",
-        "Here's an example of changing the width of an image on hover:",
+        "你可以在按钮悬停时使用<code>@keyframes</code>改变按钮的颜色。",
+        "下面是在图片悬停时改变图片宽度的例子：",
         "<blockquote>&lt;style&gt;<br>&nbsp;&nbsp;img:hover {<br>&nbsp;&nbsp;&nbsp;&nbsp;animation-name: width;<br>&nbsp;&nbsp;&nbsp;&nbsp;animation-duration: 500ms;<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;@keyframes width {<br>&nbsp;&nbsp;&nbsp;&nbsp;100% {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 40px;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>&lt;/style&gt;<br><br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</blockquote>",
         "<hr>",
-        "Note that <code>ms</code> stands for milliseconds, where 1000ms is equal to 1s.",
-        "Use CSS <code>@keyframes</code> to change the <code>background-color</code> of the <code>button</code> element so it becomes <code>#4791d0</code> when a user hovers over it. The <code>@keyframes</code> rule should only have an entry for <code>100%</code>."
+        "注意<code>ms</code>代表毫秒，1000ms 等于 1s。",
+        "使用<code>@keyframes</code>来改变<code>button</code>元素的<code>background-color</code>，使其当悬停时变成<code>#4791d0</code>。<code>@keyframes</code>规则应该只有一个<code>100%</code>条目。"
       ],
       "tests": [
         {
-          "text": "The @keyframes rule should use the <code>animation-name</code> background-color.",
-          "testString": "assert(code.match(/@keyframes\\s+?background-color\\s*?{/g), 'The @keyframes rule should use the <code>animation-name</code> background-color.');"
+          "text": "<code>@keyframes</code>规则的<code>animation-name</code>应该是 background-color。",
+          "testString": "assert(code.match(/@keyframes\\s+?background-color\\s*?{/g), '<code>@keyframes</code>规则的<code>animation-name</code>应该是 background-color。');"
         },
         {
-          "text": "There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.",
-          "testString": "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?#4791d0;\\s*?}/gi), 'There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.');"
+          "text": "在<code>@keyframes</code>的<code>100%</code>条目里应该把<code>background-color</code>改成<code>#4791d0</code>。",
+          "testString": "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?#4791d0;\\s*?}/gi), '在<code>@keyframes</code>的<code>100%</code>条目里应该把<code>background-color</code>改成<code>#4791d0</code>。');"
         }
       ],
       "solutions": [],
@@ -2619,7 +2620,7 @@
             "  ",
             "</style>",
             "  ",
-            "<button>Register</button>"
+            "<button>注册</button>"
           ],
           "head": [],
           "tail": []
@@ -2630,16 +2631,16 @@
       "id": "58a7a6ebf9a6318348e2d5aa",
       "title": "Modify Fill Mode of an Animation",
       "description": [
-        "That's great, but it doesn't work right yet. Notice how the animation resets after <code>500ms</code> has passed, causing the button to revert back to the original color. You want the button to stay highlighted.",
-        "This can be done by setting the <code>animation-fill-mode</code> property to <code>forwards</code>. The <code>animation-fill-mode</code> specifies the style applied to an element when the animation has finished. You can set it like so:",
+        "太棒了，但是现在还不完美。注意动画在<code>500ms</code>之后重置了，所以按钮又变成了之前的颜色。而我们想要的效果是按钮在悬停时始终高亮。",
+        "这可以通过把<code>animation-fill-mode</code>设置成<code>forwards</code>来实现。<code>animation-fill-mode</code>指定了在动画结束时元素的样式。你可以向这样设置它：",
         "<code>animation-fill-mode: forwards;</code>",
         "<hr>",
-        "Set the <code>animation-fill-mode</code> property of <code>button:hover</code> to <code>forwards</code> so the button stays highlighted when a user hovers over it."
+        "设置<code>button:hover</code>的<code>animation-fill-mode</code>，使按钮悬停时保持高亮。"
       ],
       "tests": [
         {
-          "text": "<code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.",
-          "testString": "assert(code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-fill-mode\\s*?:\\s*?forwards\\s*?;[\\s\\S]*}/gi) && code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-name\\s*?:\\s*?background-color\\s*?;[\\s\\S]*}/gi) && code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-duration\\s*?:\\s*?500ms\\s*?;[\\s\\S]*}/gi), '<code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.');"
+          "text": "<code>button:hover</code>应该有一个值为<code>forwards</code>的<code>animation-fill-mode</code>的属性。",
+          "testString": "assert(code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-fill-mode\\s*?:\\s*?forwards\\s*?;[\\s\\S]*}/gi) && code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-name\\s*?:\\s*?background-color\\s*?;[\\s\\S]*}/gi) && code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-duration\\s*?:\\s*?500ms\\s*?;[\\s\\S]*}/gi), '<code>button:hover</code>应该有一个值为<code>forwards</code>的<code>animation-fill-mode</code>的属性。');"
         }
       ],
       "solutions": [],
@@ -2671,7 +2672,7 @@
             "    }",
             "  }",
             "</style>",
-            "<button>Register</button>"
+            "<button>注册</button>"
           ],
           "head": [],
           "tail": []
@@ -2682,24 +2683,24 @@
       "id": "587d78a7367417b2b2512ae1",
       "title": "Create Movement Using CSS Animation",
       "description": [
-        "When elements have a specified <code>position</code>, such as <code>fixed</code> or <code>relative</code>, the CSS offset properties <code>right</code>, <code>left</code>, <code>top</code>, and <code>bottom</code> can be used in animation rules to create movement.",
-        "As shown in the example below, you can push the item downwards then upwards by setting the <code>top</code> property of the <code>50%</code> keyframe to 50px, but having it set to 0px for the first (<code>0%</code>) and the last (<code>100%</code>) keyframe.",
+        "当元素的<code>position</code>被指定，如<code>fixed</code>或者<code>relative</code>时，CSS 偏移属性<code>right</code>、<code>left</code>、<code>top</code>和<code>bottom</code>可以用在动画规则里创建动作。",
+        "就像下面的例子展示的那样，你可以在<code>50%</code>keyframe 处设置<code>top</code>属性为 50px， 在开始（0%）和最后（100%）keframe 处设置为 0px，以产生项目向下运动，然后返回的动作效果。",
         "<blockquote>@keyframes rainbow {<br>&nbsp;&nbsp;0% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: blue;<br>&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;50% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: green;<br>&nbsp;&nbsp;&nbsp;&nbsp;top: 50px;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;100% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "<hr>",
-        "Add a horizontal motion to the <code>div</code> animation. Using the <code>left</code> offset property, add to the <code>@keyframes</code> rule so rainbow starts at 0 pixels at <code>0%</code>, moves to 25 pixels at <code>50%</code>, and ends at -25 pixels at <code>100%</code>. Don't replace the <code>top</code> property in the editor - the animation should have both vertical and horizontal motion."
+        "让<code>div</code>水平运动。使用<code>left</code>偏移属性，添加<code>@keyframes</code>规则，让 rainbow 在<code>0%</code>的 0 像素开始，在<code>50%</code>时移动到 25 像素，在<code>100%</code>时时移动到 -25 像素。不要替换编辑器里的<code>top</code>属性，动画应该同时向水平和竖直方向运动。"
       ],
       "tests": [
         {
-          "text": "The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.",
-          "testString": "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?top:\\s*?0px;\\s*?left:\\s*?0px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.');"
+          "text": "<code>0%</code>的<code>@keyframes</code>规则应该为向<code>left</code>偏移<code>0px</code>。",
+          "testString": "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?top:\\s*?0px;\\s*?left:\\s*?0px;\\s*?}/gi), '<code>0%</code>的<code>@keyframes</code>规则应该为向<code>left</code>偏移<code>0px</code>。');"
         },
         {
-          "text": "The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.",
-          "testString": "assert(code.match(/50%\\s*?{\\s*?background-color:\\s*?green;\\s*?top:\\s*?50px;\\s*?left:\\s*?25px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.');"
+          "text": "<code>50%</code>的<code>@keyframes</code>规则应该为向<code>left</code>偏移<code>25px</code>。",
+          "testString": "assert(code.match(/50%\\s*?{\\s*?background-color:\\s*?green;\\s*?top:\\s*?50px;\\s*?left:\\s*?25px;\\s*?}/gi), '<code>50%</code>的<code>@keyframes</code>规则应该为向<code>left</code>偏移<code>25px</code>。');"
         },
         {
-          "text": "The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.",
-          "testString": "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?top:\\s*?0px;\\s*?left:\\s*?-25px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.');"
+          "text": "<code>100%</code>的<code>@keyframes</code>规则应该为向<code>left</code>偏移<code>-25px</code>。",
+          "testString": "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?top:\\s*?0px;\\s*?left:\\s*?-25px;\\s*?}/gi), '<code>100%</code>的<code>@keyframes</code>规则应该为向<code>left</code>偏移<code>-25px</code>。');"
         }
       ],
       "solutions": [],
@@ -2757,15 +2758,15 @@
       "id": "587d78a7367417b2b2512ae2",
       "title": "Create Visual Direction by Fading an Element from Left to Right",
       "description": [
-        "For this challenge, you'll change the <code>opacity</code> of an animated element so it gradually fades as it reaches the right side of the screen.",
-        "In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the <code>@keyframes</code> rule.",
+        "在本关里，你将要改变动画元素的<code>opacity</code>，使其在到达屏幕右侧时渐隐。",
+        "在展示的动画里，具有渐变背景的圆形元素在 50% 标记的<code>@keyframes</code>规则处向右移动。",
         "<hr>",
-        "Target the element with the id of <code>ball</code> and add the <code>opacity</code> property set to 0.1 at <code>50%</code>, so the element fades as it moves to the right."
+        "使用 id 选择器选择 id 为<code>ball</code>的元素，在<code>50%</code>里添加<code>opacity</code>属性并赋值 0.1，使其在向右移动时渐隐。"
       ],
       "tests": [
         {
-          "text": "The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.",
-          "testString": "assert(code.match(/@keyframes fade\\s*?{\\s*?50%\\s*?{\\s*?(?:left:\\s*?60%;\\s*?opacity:\\s*?0?\\.1;|opacity:\\s*?0?\\.1;\\s*?left:\\s*?60%;)/gi), 'The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.');"
+          "text": "50% 处<code>keyframes</code>规则应该设置<code>opacity</code>属性值为 0.1 以使其渐隐。",
+          "testString": "assert(code.match(/@keyframes fade\\s*?{\\s*?50%\\s*?{\\s*?(?:left:\\s*?60%;\\s*?opacity:\\s*?0?\\.1;|opacity:\\s*?0?\\.1;\\s*?left:\\s*?60%;)/gi), '50% 处<code>keyframes</code>规则应该设置<code>opacity</code>属性值为 0.1 以使其渐隐。');"
         }
       ],
       "solutions": [],
@@ -2816,16 +2817,16 @@
       "id": "587d78a8367417b2b2512ae3",
       "title": "Animate Elements Continually Using an Infinite Animation Count",
       "description": [
-        "The previous challenges covered how to use some of the animation properties and the <code>@keyframes</code> rule. Another animation property is the <code>animation-iteration-count</code>, which allows you to control how many times you would like to loop through the animation. Here's an example:",
+        "之前的关卡里介绍了一些动画属性以及<code>@keyframes</code>规则的用法。还有一个常用的动画属性是<code>animation-iteration-count</code>，这个属性允许你控制动画循环的次数。下面是一个例子：",
         "<code>animation-iteration-count: 3;</code>",
-        "In this case the animation will stop after running 3 times, but it's possible to make the animation run continuously by setting that value to infinite.",
+        "在这里动画会在运行 3 次后停止，如果想让动画一直运行，可以把值设置成 infinite。",
         "<hr>",
-        "To keep the ball bouncing on the right on a continuous loop, change the <code>animation-iteration-count</code> property to infinite."
+        "把<code>animation-iteration-count</code>属性改成 infinite，以使右边的球持续跳跃。"
       ],
       "tests": [
         {
-          "text": "The <code>animation-iteration-count</code> property should have a value of infinite.",
-          "testString": "assert($('#ball').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property should have a value of infinite.');"
+          "text": "<code>animation-iteration-count</code>属性值应该为 infinite。",
+          "testString": "assert($('#ball').css('animation-iteration-count') == 'infinite', '<code>animation-iteration-count</code>属性值应该为 infinite。');"
         }
       ],
       "solutions": [],
@@ -2881,19 +2882,19 @@
       "id": "587d78a8367417b2b2512ae4",
       "title": "Make a CSS Heartbeat using an Infinite Animation Count",
       "description": [
-        "Here's one more continuous animation example with the <code>animation-iteration-count</code> property that uses the heart you designed in a previous challenge.",
-        "The one-second long heartbeat animation consists of two animated pieces. The <code>heart</code> elements (including the <code>:before</code> and <code>:after</code> pieces) are animated to change size using the <code>transform</code> property, and the background <code>div</code> is animated to change its color using the <code>background</code> property.",
+        "这也是一个用<code>animation-iteration-count</code>属性创造持续动画的例子，它基于前面关卡创建的心形。",
+        "心跳动画的每一秒包含两个部分。<code>heart</code>元素（包括<code>:before</code>和<code>:after</code>）使用<code>transform</code>属性改变其大小，背景<code>div</code>使用<code>background</code>属性改变其颜色。",
         "<hr>",
-        "Keep the heart beating by adding the <code>animation-iteration-count</code> property for both the <code>back</code> class and the <code>heart</code> class and setting the value to infinite. The <code>heart:before</code> and <code>heart:after</code> selectors do not need any animation properties."
+        "给<code>back</code>class和<code>heart</code>class添加值为 infinite 的<code>animation-iteration-count</code>属性，使心脏持续跳动。<code>heart:before</code>和<code>heart:after</code>选择器不需要添加动画属性。"
       ],
       "tests": [
         {
-          "text": "The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.",
-          "testString": "assert($('.heart').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.');"
+          "text": "<code>heart</code>class 的<code>animation-iteration-count</code>属性应该赋值 infinte。",
+          "testString": "assert($('.heart').css('animation-iteration-count') == 'infinite', '<code>heart</code>class 的<code>animation-iteration-count</code>属性应该赋值 infinite。');"
         },
         {
-          "text": "The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.",
-          "testString": "assert($('.back').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.');"
+          "text": "<code>back</code>class 的<code>animation-iteration-count</code>属性应该赋值 infinite。",
+          "testString": "assert($('.back').css('animation-iteration-count') == 'infinite', '<code>back</code>class 的<code>animation-iteration-count</code>属性应该赋值 infinite。');"
         }
       ],
       "solutions": [],
@@ -2985,20 +2986,20 @@
       "id": "587d78a8367417b2b2512ae5",
       "title": "Animate Elements at Variable Rates",
       "description": [
-        "There are a variety of ways to alter the animation rates of similarly animated elements. So far, this has been achieved by applying an <code>animation-iteration-count</code> property and setting <code>@keyframes</code> rules.",
-        "To illustrate, the animation on the right consists of two \"stars\" that each decrease in size and opacity at the 20% mark in the <code>@keyframes</code> rule, which creates the twinkle animation. You can change the <code>@keyframes</code> rule for one of the elements so the stars twinkle at different rates.",
+        "改变相似元素的动画频率的方法有很多。目前接触到的就有<code>animation-iteration-count</code>和<code>@keyframes</code>。",
+        "举例说明，右边的动画包含了两个小星星，每个小星星都在 20%<code>@keyframes</code>处变小并且 opacity 变为 20%，也就是一闪一闪的动画效果。你可以通过改变其中一个星星的<code>@keyframes</code>规则以使两个小星星以不同的频率闪烁。",
         "<hr>",
-        "Alter the animation rate for the element with the class name of <code>star-1</code> by changing its <code>@keyframes</code> rule to 50%."
+        "通过改变 class 为<code>star-1</code>的元素的<code>@keyframes</code>为 50% 以改变其动画频率。"
       ],
       "tests": [
         {
-          "text": "The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.",
-          "testString": "assert(code.match(/twinkle-1\\s*?{\\s*?50%/g), 'The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.');"
+          "text": "<code>star-1</code>class 的<code>@keyframes</code>规则应该为50%。",
+          "testString": "assert(code.match(/twinkle-1\\s*?{\\s*?50%/g), '<code>star-1</code>class 的<code>@keyframes</code>规则应该为50%。');"
         }
       ],
       "solutions": [],
       "hints": [
-        "Check the animation-name declared in the star-1 class to find the right @keyframes rule to change."
+        "检查 start-1 class 的 animation-name 声明以找到需要改变的 @keyframes 规则。"
       ],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -3070,23 +3071,23 @@
       "id": "587d78a8367417b2b2512ae6",
       "title": "Animate Multiple Elements at Variable Rates",
       "description": [
-        "In the previous challenge, you changed the animation rates for two similarly animated elements by altering their <code>@keyframes</code> rules. You can achieve the same goal by manipulating the <code>animation-duration</code> of multiple elements.",
-        "In the animation running in the code editor, there are three \"stars\" in the sky that twinkle at the same rate on a continuous loop. To make them twinkle at different rates, you can set the <code>animation-duration</code> property to different values for each element.",
+        "在前面的关卡里，你通过改变<code>@keyframes</code>改变了两个相似动画元素的频率。你也可以通过改变多个元素的<code>animation-duration</code>来达到同样的效果。",
+        "在编辑器代码运行的动画里，天空中有三个以同样频率不停的闪烁的星星。你可以设置每一个星星的<code>animation-duration</code>属性为不同的值来使其具有不同的闪烁频率。",
         "<hr>",
-        "Set the <code>animation-duration</code> of the elements with the classes <code>star-1</code>, <code>star-2</code>, and <code>star-3</code> to 1s, 0.9s, and 1.1s, respectively."
+        "依次设置 class 为<code>star-1</code>、<code>star-2</code>、<code>star-3</code>的<code>animation-duration</code>为 1s、0.9s、1.1s。"
       ],
       "tests": [
         {
-          "text": "The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.",
-          "testString": "assert($('.star-1').css('animation-duration') == '1s', 'The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.');"
+          "text": "class 为<code>star-1</code>的<code>animation-duration</code>属性值应该 1s。",
+          "testString": "assert($('.star-1').css('animation-duration') == '1s', 'class 为<code>star-1</code>的<code>animation-duration</code>属性值应该 1s。');"
         },
         {
-          "text": "The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.",
-          "testString": "assert($('.star-2').css('animation-duration') == '0.9s', 'The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.');"
+          "text": "class 为<code>star-2</code>的<code>animation-duration</code>属性值应该 0.9s。",
+          "testString": "assert($('.star-2').css('animation-duration') == '0.9s', 'class 为<code>star-2</code>的<code>animation-duration</code>属性值应该 0.9s。');"
         },
         {
-          "text": "The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.",
-          "testString": "assert($('.star-3').css('animation-duration') == '1.1s', 'The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.');"
+          "text": "class 为<code>star-3</code>的<code>animation-duration</code>属性值应该 1.1s。",
+          "testString": "assert($('.star-3').css('animation-duration') == '1.1s', 'class 为<code>star-3</code>的<code>animation-duration</code>属性值应该 1.1s。');"
         }
       ],
       "solutions": [],
@@ -3162,19 +3163,19 @@
       "id": "587d78a8367417b2b2512ae7",
       "title": "Change Animation Timing with Keywords",
       "description": [
-        "In CSS animations, the <code>animation-timing-function</code> property controls how quickly an animated element changes over the duration of the animation. If the animation is a car moving from point A to point B in a given time (your <code>animation-duration</code>), the <code>animation-timing-function</code> says how the car accelerates and decelerates over the course of the drive.",
-        "There are a number of predefined keywords available for popular options. For example, the default value is <code>ease</code>, which starts slow, speeds up in the middle, and then slows down again in the end. Other options include <code>ease-out</code>, which is quick in the beginning then slows down, <code>ease-in</code>, which is slow in the beginning, then speeds up at the end, or <code>linear</code>, which applies a constant animation speed throughout.",
+        "在 CSS 动画里，<code>animation-timing-function</code>规定动画的速度曲线。速度曲线定义动画从一套 CSS 样式变为另一套所用的时间。如果要描述的动画是一辆车在指定时间内（<code>animation-duration</code>）从 A 运动到 B，那么<code>animation-timing-function</code>表述的就是车在运动中的加速和减速等过程。",
+        "已经有了很多预定义的值可以直接使用于大部分场景。比如，默认的值是<code>ease</code>，动画以低速开始，然后加快，在结束前变慢。其它常用的值包括<code>ease-out</code>，动画以高速开始，以低速结束;<code>ease-in</code>，动画以低速开始，以高速结束；<code>linear</code>，动画从头到尾的速度是相同的。",
         "<hr>",
-        "For the elements with id of <code>ball1</code> and <code>ball2</code>, add an <code>animation-timing-function</code> property to each, and set <code>#ball1</code> to <code>linear</code>, and <code>#ball2</code> to <code>ease-out</code>. Notice the difference between how the elements move during the animation but end together, since they share the same <code>animation-duration</code> of 2 seconds."
+        "给 id 为<code>ball1</code>和<code>ball2</code>的元素添加<code>animation-timing-function</code>，<code>ball1</code>赋值为<code>linear</code>，<code>ball2</code>赋值为<code>ease-out</code>。它们的<code>animation-duration</code>都为 2 秒，注意观察它们在开始和结束时的不同。"
       ],
       "tests": [
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.",
-          "testString": "assert($('#ball1').css('animation-timing-function') == 'linear', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.');"
+          "text": "id 为<code>ball1</code>的元素的<code>animation-timing-function</code>属性值应该为 linear。",
+          "testString": "assert($('#ball1').css('animation-timing-function') == 'linear', 'id 为<code>ball1</code>的元素的<code>animation-timing-function</code>属性值应该为 linear。');"
         },
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.",
-          "testString": "assert($('#ball2').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.');"
+          "text": "id 为<code>ball2</code>的元素的<code>animation-timing-function</code>属性值应该为 ease-out。",
+          "testString": "assert($('#ball2').css('animation-timing-function') == 'ease-out', 'id 为<code>ball2</code>的元素的<code>animation-timing-function</code>属性值应该为 ease-out。');"
         }
       ],
       "solutions": [],
@@ -3236,22 +3237,22 @@
       "id": "587d78a9367417b2b2512ae8",
       "title": "Learn How Bezier Curves Work",
       "description": [
-        "The last challenge introduced the <code>animation-timing-function</code> property and a few keywords that change the speed of an animation over its duration. CSS offers an option other than keywords that provides even finer control over how the animation plays out, through the use of Bezier curves.",
-        "In CSS animations, Bezier curves are used with the <code>cubic-bezier</code> function. The shape of the curve represents how the animation plays out. The curve lives on a 1 by 1 coordinate system. The X-axis of this coordinate system is the duration of the animation (think of it as a time scale), and the Y-axis is the change in the animation.",
-        "The <code>cubic-bezier</code> function consists of four main points that sit on this 1 by 1 grid: <code>p0</code>, <code>p1</code>, <code>p2</code>, and <code>p3</code>. <code>p0</code> and <code>p3</code> are set for you - they are the beginning and end points which are always located respectively at the origin (0, 0) and (1, 1). You set the x and y values for the other two points, and where you place them in the grid dictates the shape of the curve for the animation to follow. This is done in CSS by declaring the x and y values of the <code>p1</code> and <code>p2</code> \"anchor\" points in the form: <code>(x1, y1, x2, y2)</code>. Pulling it all together, here's an example of a Bezier curve in CSS code:",
+        "上一关卡介绍了<code>animation-timing-function</code>以及它的一些预定义的值。这些值定义了不同时间内的动画速度。除了预定义值之外，CSS 还提供了贝塞尔曲线（Bezier curves）来更出色的控制动画的速度曲线。",
+        "在 CSS 动画里，用<code>cubic-bezier</code>来定义贝塞尔曲线。曲线的形状代表了动画的速度。曲线在 1*1 的坐标系统内，曲线的 X 轴代表动画的时间间隔（类似于时间比例尺），Y 轴代表动画的改变。",
+        "<code>cubic-bezier</code>函数包含了 1*1 网格里的4个点：<code>p0</code>，<code>p1</code>，<code>p2</code>，和<code>p3</code>。其中<code>p0</code>和<code>p3</code>是固定值，代表曲线的起始点和结束点，坐标值依次为 (0, 0) 和 (1, 1)。你只需设置另外两点的 x 值和 y 值，设置的这两点确定了曲线的形状从而确定了动画的速度曲线。在 CSS 里面通过<code>(x1, y1, x2, y2)</code>来确定<code>p1</code>和<code>p2</code>。综上，下面就是 CSS 贝塞尔曲线的例子：",
         "<code>animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);</code>",
-        "In the example above, the x and y values are equivalent for each point (x1 = 0.25 = y1 and x2 = 0.75 = y2), which if you remember from geometry class, results in a line that extends from the origin to point (1, 1). This animation is a linear change of an element during the length of an animation, and is the same as using the <code>linear</code> keyword. In other words, it changes at a constant speed.",
+        "在上面的例子里，两个点的 x 和 y 值相等（x1 = 0.25 = y1 和 x2 = 0.75 = y2），如果你还记得初中几何，结果是从原点到点 (1, 1) 的一条直线。动画速度呈线性，效果和<code>linear</code>一致。换言之，元素匀速运动。",
         "<hr>",
-        "For the element with the id of <code>ball1</code>, change the value of the <code>animation-timing-function</code> property from <code>linear</code> to its equivalent <code>cubic-bezier</code> function value. Use the point values given in the example above."
+        "对于 id 为<code>ball1</code>的元素，把<code>animation-timing-function</code>属性值从<code>linear</code>变成等价的<code>cubic-bezier</code>函数值。也就是说使用上面例子给的值。"
       ],
       "tests": [
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.",
-          "testString": "assert($('#ball1').css('animation-timing-function') == 'cubic-bezier(0.25, 0.25, 0.75, 0.75)', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.');"
+          "text": "id 为<code>ball1</code>的元素的<code>animation-timing-function</code>属性值应该为和 linear 预定值等价的贝塞尔函数值。",
+          "testString": "assert($('#ball1').css('animation-timing-function') == 'cubic-bezier(0.25, 0.25, 0.75, 0.75)', 'id 为<code>ball1</code>的元素的<code>animation-timing-function</code>属性应该为和 linear 预定值等价的贝塞尔函数值。');"
         },
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.",
-          "testString": "assert($('#ball2').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.');"
+          "text": "id 为<code>ball2</code>元素的<code>animation-timing-function</code>属性值应该保持不变。",
+          "testString": "assert($('#ball2').css('animation-timing-function') == 'ease-out', 'id 为<code>ball2</code>元素的<code>animation-timing-function</code>属性值应该保持不变。');"
         }
       ],
       "solutions": [],
@@ -3313,25 +3314,25 @@
       "id": "587d78a9367417b2b2512ae9",
       "title": "Use a Bezier Curve to Move a Graphic",
       "description": [
-        "A previous challenge discussed the <code>ease-out</code> keyword that describes an animation change that speeds up first and then slows down at the end of the animation. On the right, the difference between the <code>ease-out</code> keyword (for the blue element) and <code>linear</code> keyword (for the red element) is demonstrated. Similar animation progressions to the <code>ease-out</code> keyword can be achieved by using a custom cubic Bezier curve function.",
-        "In general, changing the <code>p1</code> and <code>p2</code> anchor points drives the creation of different Bezier curves, which controls how the animation progresses through time. Here's an example of a Bezier curve using values to mimic the ease-out style:",
+        "前面的关卡涉及的<code>ease-out</code>预定义值描述了动画以高速开始低速结束。右边的动画展示了<code>ease-out</code>预定义值（蓝色的元素）和<code>linear</code>预定义值（红色的元素）的区别。同样的，<code>ease-out</code>预定义值也可以用贝塞尔曲线函数实现。",
+        "通俗的讲，将一条直线放在范围只有 1 的坐标轴中，并从中间拿<code>p1</code>和<code>p2</code>两个点来拉扯（X 轴的取值区间是 [0, 1]，Y 轴任意），最后形成的曲线就是动画的贝塞尔速度曲线。下面是贝塞尔曲线模仿 ease-out 预定义值的例子：",
         "<code>animation-timing-function: cubic-bezier(0, 0, 0.58, 1);</code>",
-        "Remember that all <code>cubic-bezier</code> functions start with <code>p0</code> at (0, 0) and end with <code>p3</code> at (1, 1). In this example, the curve moves faster through the Y-axis (starts at 0, goes to <code>p1</code> y value of 0, then goes to <code>p2</code> y value of 1) than it moves through the X-axis (0 to start, then 0 for <code>p1</code>, up to 0.58 for <code>p2</code>). As a result, the change in the animated element progresses faster than the time of the animation for that segment. Towards the end of the curve, the relationship between the change in x and y values reverses - the y value moves from 1 to 1 (no change), and the x values move from 0.58 to 1, making the animation changes progress slower compared to the animation duration.",
+        "记住所有的<code>cubic-bezier</code>函数都是从坐标为 (0, 0) 的<code>p0</code>开始，在坐标为 (1, 1) 的<code>p3</code>结束。在这个例子里，曲线在 y 轴（从 0 开始，运动到<code>p1</code>的 0，然后运动到<code>p2</code>的 1）上移动的比在 x 轴（从 0 开始，运动到<code>p1</code>的 0，到<code>p2</code>的 0.58）上移动的快。结果是，在这一段动画内元素运动的快。到曲线的结尾，x 和 y 之间的关系反过来了，y 值保持为1，没有变化，x 值从 0.58 变为 1，元素运动的慢。",
         "<hr>",
-        "To see the effect of this Bezier curve in action, change the <code>animation-timing-function</code> of the element with id of <code>red</code> to a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1. This will make both elements progress through the animation similarly."
+        "为了看贝塞尔曲线的运动效果，把 id 为<code>red</code>的元素的<code>animation-timing-function</code>属性赋为<code>cubic-bezier</code>函数，其中 x1，y1，x2，y2 值分别为 0，0，0.58，1。这会使两个元素运动过程类似。"
       ],
       "tests": [
         {
-          "text": "The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .",
-          "testString": "assert($('#red').css('animation-timing-function') == 'cubic-bezier(0, 0, 0.58, 1)', 'The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .');"
+          "text": "id 为<code>red</code>的元素的<code>animation-timing-function</code>属性应当赋为<code>cubic-bezier</code>函数，其中 x1，y1，x2，y2 值分别为 0，0，0.58，1。",
+          "testString": "assert($('#red').css('animation-timing-function') == 'cubic-bezier(0, 0, 0.58, 1)', 'id 为<code>red</code>的元素的<code>animation-timing-function</code>属性应当赋为<code>cubic-bezier</code>函数，其中 x1，y1，x2，y2 值分别为 0，0，0.58，1。');"
         },
         {
-          "text": "The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.",
-          "testString": "assert($('#red').css('animation-timing-function') !== 'linear', 'The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.');"
+          "text": "id 为<code>red</code>的元素的<code>animation-timing-function</code>属性不应该取值 linear。",
+          "testString": "assert($('#red').css('animation-timing-function') !== 'linear', 'id 为<code>red</code>的元素的<code>animation-timing-function</code>属性不应该取值 linear。');"
         },
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.",
-          "testString": "assert($('#blue').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.');"
+          "text": "id 为<code>blue</code>的元素的<code>animation-timing-function</code>属性不应该被改变。",
+          "testString": "assert($('#blue').css('animation-timing-function') == 'ease-out', 'id 为<code>blue</code>的元素的<code>animation-timing-function</code>属性不应该被改变。');"
         }
       ],
       "solutions": [],
@@ -3386,18 +3387,18 @@
       "id": "587d78a9367417b2b2512aea",
       "title": "Make Motion More Natural Using a Bezier Curve",
       "description": [
-        "This challenge animates an element to replicate the movement of a ball being juggled. Prior challenges covered the <code>linear</code> and <code>ease-out</code> cubic Bezier curves, however neither depicts the juggling movement accurately. You need to customize a Bezier curve for this.",
-        "The <code>animation-timing-function</code> automatically loops at every keyframe when the <code>animation-iteration-count</code> is set to infinite. Since there is a keyframe rule set in the middle of the animation duration (at <code>50%</code>), it results in two identical animation progressions at the upward and downward movement of the ball.",
-        "The following cubic Bezier curve simulates a juggling movement:",
+        "本关的元素模拟的是杂技抛接球。之前的关卡涉及了<code>linear</code>和<code>ease-out</code>的贝塞尔曲线描述，如你所见，这两个都无法完美的描述杂耍球的运动。在本关里你需要定制贝塞尔曲线。",
+        "当<code>animation-iteration-count</code>值为 infinite 时<code>animation-timing-function</code>会自动循环 keyframe。由于是在动画周期中间（50%处）设置的 keyframe 规则，最终的结果是球向上和球向下是两个同样的动画过程。",
+        "下面的例子模拟了杂耍球运动：",
         "<code>cubic-bezier(0.3, 0.4, 0.5, 1.6); </code>",
-        "Notice that the value of y2 is larger than 1. Although the cubic Bezier curve is mapped on an 1 by 1 coordinate system, and it can only accept x values from 0 to 1, the y value can be set to numbers larger than one. This results in a bouncing movement that is ideal for simulating the juggling ball.",
+        "注意 y2 的值是大于 1 的。虽然贝塞尔曲线是在 1*1 的坐标系统内 x 值只能在 0 到 1，但是 y 值是可以大于 1 的。这样才能模拟杂耍球运动。",
         "<hr>",
-        "Change value of the <code>animation-timing-function</code> of the element with the id of <code>green</code> to a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0.311, 0.441, 0.444, 1.649."
+        "把 id 为<code>green</code>的元素的<code>animation-timing-function</code>值改成<code>cubic-bezier</code>函数，函数的参数 x1，y1，x2，y2 值依次为 0.311、0.441、0.444、1.649。"
       ],
       "tests": [
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.",
-          "testString": "assert($('#green').css('animation-timing-function') == 'cubic-bezier(0.311, 0.441, 0.444, 1.649)', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.');"
+          "text": "id 为<code>green</code>的元素的<code>animation-timing-function</code>值应该为<code>cubic-bezier</code>函数，函数的参数 x1，y1，x2，y2 值依次为 0.311、0.441、0.444、1.649。",
+          "testString": "assert($('#green').css('animation-timing-function') == 'cubic-bezier(0.311, 0.441, 0.444, 1.649)', 'id 为<code>green</code>的元素的<code>animation-timing-function</code>值应该为<code>cubic-bezier</code>函数，函数的参数 x1，y1，x2，y2 值依次为 0.311、0.441、0.444、1.649。');"
         }
       ],
       "solutions": [],
