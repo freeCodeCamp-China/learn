@@ -1690,19 +1690,19 @@
       "tests": [
         {
           "text": "<code>blue-box</code>class 的上外边距应为<code>40px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", '<code>blue-box</code>class 的上外边距应为<code>40px</code>。');"
+          "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", '<code>blue-box</code> class 的上外边距应为<code>40px</code>。');"
         },
         {
-          "text": "<code>blue-box</code>class 的右外边距应为<code>40px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", 'Y<code>blue-box</code>class 的右外边距应为<code>40px</code>。');"
+          "text": "<code>blue-box</code>class 的右外边距应为<code>20px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", '<code>blue-box</code> class 的右外边距应为<code>20px</code>。');"
         },
         {
-          "text": "<code>blue-box</code>class 的下外边距应为<code>40px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", '<code>blue-box</code>class 的下外边距应为<code>40px</code>。');"
+          "text": "<code>blue-box</code>class 的下外边距应为<code>20px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", '<code>blue-box</code> class 的下外边距应为<code>20px</code>。');"
         },
         {
           "text": "<code>blue-box</code>class 的左外边距应为<code>40px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", '<code>blue-box</code>class 的左外边距应为<code>40px</code>。');"
+          "testString": "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", '<code>blue-box</code> class 的左外边距应为<code>40px</code>。');"
         }
       ],
       "challengeType": 0,
@@ -1864,16 +1864,16 @@
         "相对单位长度，就像<code>em</code>和<code>rem</code>，它们会依赖其他长度的值。就好像<code>em</code>的大小基于元素的字体的<code>font-size</code>值，如果你使用<code>em</code>单位来设置<code>font-size</code>值，它的值会跟随父元素的<code>font-size</code>值来改变。",
         "<strong>注意：</strong><br>有些单位长度选项是相对视窗大小来改变值的，符合了响应式 web 的设计原则。",
         "<hr>",
-        "给<code>red-box</code>class 添加<code>padding</code>属性，并设置为<code>1.5em</code>。"
+        "给<code>red-box</code> class 添加<code>padding</code>属性，并设置为<code>1.5em</code>。"
       ],
       "tests": [
         {
-          "text": "<code>red-box</code>class应该含有<code>padding</code>属性。",
-          "testString": "assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px', '<code>red-box</code>class应该含有<code>padding</code>属性。');"
+          "text": "<code>red-box</code> class 应该含有<code>padding</code>属性。",
+          "testString": "assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px', '<code>red-box</code> class 应该含有<code>padding</code>属性。');"
         },
         {
-          "text": "<code>red-box</code>class 的<code>padding</code>值应为 1.5em。",
-          "testString": "assert(code.match(/\\.red-box\\s*?{\\s*?.*?\\s*?.*?\\s*?padding:\\s*?1\\.5em/gi), '<code>red-box</code>class 的<code>padding</code>值应为 1.5em。');"
+          "text": "<code>red-box</code> class 的<code>padding</code>值应为 1.5em。",
+          "testString": "assert(code.match(/\\.red-box\\s*?{\\s*?.*?\\s*?.*?\\s*?padding:\\s*?1\\.5em/gi), '<code>red-box</code> class 的<code>padding</code>值应为 1.5em。');"
         }
       ],
       "challengeType": 0,
@@ -2038,12 +2038,12 @@
       ],
       "tests": [
         {
-          "text": "<code>h1</code>元素应该含有<code>pink-text</code>class。",
-          "testString": "assert($(\"h1\").hasClass(\"pink-text\"), '<code>h1</code>元素应该含有<code>pink-text</code>class。');"
+          "text": "<code>h1</code>元素应该含有<code>pink-text</code> class。",
+          "testString": "assert($(\"h1\").hasClass(\"pink-text\"), '<code>h1</code>元素应该含有<code>pink-text</code> class。');"
         },
         {
-          "text": "<code>&#60;style&#62;</code>标签应该含有一个可以改变字体颜色的<code>pink-text</code>CSS class。",
-          "testString": "assert(code.match(/\\.pink-text\\s*\\{\\s*color\\s*:\\s*.+\\s*;\\s*\\}/g), '<code>&#60;style&#62;</code>标签应该含有一个可以改变字体颜色的<code>pink-text</code>CSS class。');"
+          "text": "<code>&#60;style&#62;</code>标签应该含有一个可以改变字体颜色的<code>pink-text</code> class。",
+          "testString": "assert(code.match(/\\.pink-text\\s*\\{\\s*color\\s*:\\s*.+\\s*;\\s*\\}/g), '<code>&#60;style&#62;</code>标签应该含有一个可以改变字体颜色的<code>pink-text</code> class。');"
         },
         {
           "text": "<code>h1</code>元素的字体颜色应该为<code>pink（粉色）</code>。",
@@ -2087,12 +2087,12 @@
       ],
       "tests": [
         {
-          "text": "<code>h1</code>元素应该包含<code>pink-text</code>class。",
-          "testString": "assert($(\"h1\").hasClass(\"pink-text\"), '<code>h1</code>元素应该包含<code>pink-text</code>class。');"
+          "text": "<code>h1</code>元素应该包含<code>pink-text</code> class。",
+          "testString": "assert($(\"h1\").hasClass(\"pink-text\"), '<code>h1</code>元素应该包含<code>pink-text</code> class。');"
         },
         {
-          "text": "<code>h1</code>元素应该包含<code>blue-text</code>class。",
-          "testString": "assert($(\"h1\").hasClass(\"blue-text\"), '<code>h1</code>元素应该包含<code>blue-text</code>class。');"
+          "text": "<code>h1</code>元素应该包含<code>blue-text</code> class。",
+          "testString": "assert($(\"h1\").hasClass(\"blue-text\"), '<code>h1</code>元素应该包含<code>blue-text</code> class。');"
         },
         {
           "text": "<code>blue-text</code>和<code>pink-text</code>需同时应用于<code>h1</code>元素上。",
@@ -2161,7 +2161,7 @@
         },
         {
           "text": "创建名为<code>orange-text</code>的 id 选择器。",
-          "testString": "assert(code.match(/#orange-text\\s*{/gi), '创建名为<code>orange-text</code>的 id 选择器。"
+          "testString": "assert(code.match(/#orange-text\\s*{/gi), '创建名为<code>orange-text</code>的 id 选择器。');"
         },
         {
           "text": "不要在<code>h1</code>元素里面使用<code>style（行内样式）</code>。",
