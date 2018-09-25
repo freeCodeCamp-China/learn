@@ -1451,12 +1451,12 @@
           "testString": "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", '你的<code>blue-box</code> class 的顶部<code>padding</code>（上内边距）值应为<code>40px</code>。');"
         },
         {
-          "text": "你的<code>blue-box</code> class 的右侧<code>padding</code>（右内边距）值应为<code>40px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", '你的<code>blue-box</code> class 的右侧<code>padding</code>（右内边距）值应为<code>40px</code>。');"
+          "text": "你的<code>blue-box</code> class 的右侧<code>padding</code>（右内边距）值应为<code>20px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", '你的<code>blue-box</code> class 的右侧<code>padding</code>（右内边距）值应为<code>20px</code>。');"
         },
         {
-          "text": "你的<code>blue-box</code> class 的底部<code>padding</code>（下内边距）值应为<code>40px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", '你的<code>blue-box</code> class 的底部<code>padding</code>（下内边距）值应为<code>40px</code>。');"
+          "text": "你的<code>blue-box</code> class 的底部<code>padding</code>（下内边距）值应为<code>20px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", '你的<code>blue-box</code> class 的底部<code>padding</code>（下内边距）值应为<code>20px</code>。');"
         },
         {
           "text": "你的<code>blue-box</code> class 的左侧<code>padding</code>（左内边距）值应为<code>40px</code>。",
@@ -1526,16 +1526,16 @@
       ],
       "tests": [
         {
-          "text": "你的<code>blue-box</code> class 的右侧<code>margin</code>（右外边距）值应为<code>40px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", '你的<code>blue-box</code> class 的右侧<code>margin</code>（右外边距）值应为<code>40px</code>。');"
+          "text": "你的<code>blue-box</code> class 的右侧<code>margin</code>（上外边距）值应为<code>40px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", '你的<code>blue-box</code> class 的顶部<code>margin</code>（上外边距）值应为<code>40px</code>。');"
         },
         {
-          "text": "你的<code>blue-box</code> class 的右侧<code>margin</code>（右外边距）值应为<code>40px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", '你的<code>blue-box</code> class 的右侧<code>margin</code>（右外边距）值应为<code>40px</code>。');"
+          "text": "你的<code>blue-box</code> class 的右侧<code>margin</code>（右外边距）值应为<code>20px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", '你的<code>blue-box</code> class 的右侧<code>margin</code>（右外边距）值应为<code>20px</code>。');"
         },
         {
-          "text": "你的<code>blue-box</code> class 的底部<code>margin</code>（下外边距）值应为<code>40px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", '你的<code>blue-box</code> class 的底部<code>margin</code>（下外边距）值应为<code>40px</code>。');"
+          "text": "你的<code>blue-box</code> class 的底部<code>margin</code>（下外边距）值应为<code>20px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", '你的<code>blue-box</code> class 的底部<code>margin</code>（下外边距）值应为<code>20px</code>。');"
         },
         {
           "text": "你的<code>blue-box</code> class 的左侧<code>margin</code>（左外边距）值应为<code>40px</code>。",
@@ -2130,7 +2130,7 @@
       "description": [
         "我们刚刚证明了浏览器读取 CSS 是由上到下的。这就意味着，如果发生冲突，浏览器将会应用最后声明的样式。",
         "不过我们还没结束，还有其他方法来覆盖 CSS 样式。你还记得 id 属性吗？",
-        "通过给<code>h1</code>元素添加 id 属性，属性值为<code>orange</code>，来覆盖<code>pink-text</code>和<code>blue-text</code>class 的样式。",
+        "通过给<code>h1</code>元素添加 id 属性，来覆盖 class 属性定义的同名样式。",
         "<hr>",
         "给<code>h1</code>元素添加 id 属性，属性值为<code>orange-text</code>。设置方式如下：",
         "<code>&#60;h1 id=\"orange-text\"&#62;</code>",
