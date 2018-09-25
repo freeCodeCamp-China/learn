@@ -1620,8 +1620,8 @@
           "testString": "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", '<code>blue-box</code> class 的下内边距应为<code>20px</code>。');"
         },
         {
-          "text": "<code>blue-box</code> class 的左内边距应为<code>20px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", '<code>blue-box</code> class 的左内边距应为<code>20px</code>。');"
+          "text": "<code>blue-box</code> class 的左内边距应为<code>40px</code>。",
+          "testString": "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", '<code>blue-box</code> class 的左内边距应为<code>40px</code>。');"
         },
         {
           "text": "你应该按照顺时针排序，汇总声明的方式来设置<code>blue-box</code>的<code>padding</code>值。",
