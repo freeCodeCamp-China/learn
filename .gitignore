@@ -16,5 +16,3 @@ seed/tmp
 seed/transformed
 seed/ready
 
-package-lock.json
-yarn.lock
