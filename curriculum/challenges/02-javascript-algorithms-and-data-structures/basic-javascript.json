@@ -210,8 +210,8 @@
           "testString": "assert(typeof a === 'number' && a === 6, '<code>a</code>应该被定义，并且值为<code>6</code>');"
         },
         {
-          "text": "<code>a</code>应该被定义，并且值为<code>15</code>",
-          "testString": "assert(typeof b === 'number' && b === 15, '<code>a</code>应该被定义，并且值为<code>15</code>');"
+          "text": "<code>b</code>应该被定义，并且值为<code>15</code>",
+          "testString": "assert(typeof b === 'number' && b === 15, '<code>b</code>应该被定义，并且值为<code>15</code>');"
         },
         {
           "text": "<code>c</code>的值不能包含<code>undefined</code>，应该为 \"I am a String!\"",

@@ -1349,7 +1349,7 @@
         "接下来要介绍 CSS<code>position</code>属性的取值选项<code>absolute</code>，<code>absolute</code>相对于其包含块定位。和<code>relative</code>定位不一样，<code>absolute</code>定位会将元素从当前的文档流里面移除，周围的元素会忽略它。可以用 CSS 的 top、bottom、left 和 right 属性来调整元素的位置。",
         "<code>absolute</code>定位比较特殊的一点是元素的定位参照于最近的已定位祖先元素。如果它的父元素没有添加定位规则（默认是<code>position:relative;</code>）,浏览器会继续寻找直到默认的 body 标签。",
         "<hr>",
-        "通过声明<code>position</code>为<code>absolute</code>，固定<code>#searchbar</code>元素到到它父元素<code>section</code>的右上角。即设定其<code>top</code>和<code>right</code>为 50 像素。"
+        "通过声明<code>position</code>为<code>absolute</code>，固定<code>#searchbar</code>元素到它父元素<code>section</code>的右上角。即设定其<code>top</code>和<code>right</code>为 50 像素。"
       ],
       "tests": [
         {
@@ -1595,7 +1595,7 @@
         "在应用设计中经常需要把一个块级元素水平居中显示。一种常见的实现方式是把块级元素的<code>margin</code>值设置为<code>auto</code>。",
         "同样的，这个方法也对图片奏效。图片默认是级联元素，但是可以通过设置其<code>display</code>属性为<code>block</code>来把它变成块级元素。",
         "<hr>",
-        "通过给页面中的<code>div</code>添加值为<code>atuo</code>的<code>margin</code>属性将其居中显示。"
+        "通过给页面中的<code>div</code>添加值为<code>auto</code>的<code>margin</code>属性将其居中显示。"
       ],
       "tests": [
         {
