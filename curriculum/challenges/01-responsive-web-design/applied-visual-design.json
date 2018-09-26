@@ -2122,7 +2122,7 @@
       "tests": [
         {
           "text": "你的<code>body</code>元素应该有一个值为指定<code>url</code>的<code>background</code>CSS 属性。",
-          "testString": "assert(code.match(/background:\\s*?url\\((\"|')https:\\/\\/i\\.imgur\\.com\\/MJAkxbh\\.png(\"|')\\)/gi), '你的<code>body</code>元素应该有一个值为指定<code>url</code>的<code>background</code>CSS 属性。');"
+          "testString": "assert(code.match(/background:\\s*?url\\(\\s*(\"|'|)https:\\/\\/i\\.imgur\\.com\\/MJAkxbh\\.png\\1\\s*\\)/gi), '你的<code>body</code>选择器应包含<code>background</code>属性，且值为给定的<code>url</code>。');"
         }
       ],
       "solutions": [],
