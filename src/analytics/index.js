@@ -1,5 +1,5 @@
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('UA-55446531-10');
+ReactGA.initialize('UA-124741864-2');
 
 export default ReactGA;

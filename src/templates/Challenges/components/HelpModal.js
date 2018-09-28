@@ -21,8 +21,7 @@ const propTypes = {
 };
 
 const RSA =
-  'https://forum.freecodecamp.org/t/the-read-search-ask-methodology-for-' +
-  'getting-unstuck/137307';
+  'https://forum.freecodecamp.one/t/topic/157';
 
 export class HelpModal extends PureComponent {
   render() {

@@ -15,7 +15,7 @@
         "<strong>需求：</strong> 根据天气情况，我可以看到不同的图标或背景图片（例如：雪山，炎热的沙漠）。",
         "<strong>需求：</strong>我可以通过点击按钮在华氏温度和摄氏温度之间切换。",
         "<strong>注意：</strong>现在许多网络浏览器要求安全 HTTP 连接 (<code>https://</code>) 才能通过 HTML5 地理定位获得用户的位置。因此，我们建议使用 HTML5 地理定位来获取用户位置,然后使用 freeCodeCamp Weather API <a href='https://fcc-weather-api.glitch.me' target='_blank'>https://fcc-weather-api.glitch.me</a>，该 API 使用安全 HTTP 连接进行天气预报。此外，请务必通过 <code>https://</code> 访问 <a href='https://codepen.io' target='_blank'>CodePen.io</a> 。",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -34,7 +34,7 @@
         "<span class='text-info'>提示 1：</span>你可以通过右边的链接获取维基百科的随机文章：<code>https://en.wikipedia.org/wiki/Special:Random</code>.",
         "<span class='text-info'>提示 2：</span>你可以通过右边的链接来使用维基百科的 API： <code>https://www.mediawiki.org/wiki/API:Main_page</code>.",
         "<span class='text-info'>提示 3：</span>使用这个<a href='https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm' target='_blank'>链接</a>来测试维基百科的 API。",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -55,7 +55,7 @@
         "<strong>提示：</strong>这个文档有更多关于如何调用这个 API 的细节: <a href='https://dev.twitch.tv/docs/v5/reference/streams/#get-stream-by-user' target='_blank'>https://dev.twitch.tv/docs/v5/reference/streams/#get-stream-by-user</a>.",
         "<strong>提示：</strong>这有一个 Twitch.tv 用户名数组，里面包含经常直播的人：: <code>[\"ESL_SC2\", \"OgamingSC2\", \"cretetion\", \"freecodecamp\", \"storbeck\", \"habathcx\", \"RobotCaleb\", \"noobs2ninjas\"]</code>",
         "<strong>更新：</strong>由于上方 API 使用条件的 <a href='https://blog.twitch.tv/client-id-required-for-kraken-api-calls-afbb8e95f843#.f8hipkht1' target='_blank'>变化</a> ，Twitch.tv 现在要求注册一个 API 键来获取账户信息, 但我们想出一个变通方法。用 <a href='https://wind-bow.glitch.me' target='_blank'>https://wind-bow.glitch.me/twitch-api</a> 而不是 twitch 的 API 的基础 URL (即：https://api.twitch.tv/kraken ) 这样你依旧可以在不注册 API 键的情况下获取账户信息。",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -90,7 +90,7 @@
         "<strong>需求：</strong> 可以和计算机对手进行井字游戏。",
         "<strong>需求：</strong>  游戏会在结束时重置并立即开始新的一局。",
         "<strong>需求：</strong> 可以自己选择自己的角色是 X 还是 O。",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -113,7 +113,7 @@
         "<strong>需求：</strong> 我可以在严格模式下进行游戏, 在严格模式下一旦输错任意一个序列都必须从头开始。",
         "<strong>需求：</strong>在输入正确的 20 个序列时，系统将会提示胜利, 并结束游戏。",
         "<strong>提示：</strong>这里有一些可能会用到的按键音的 mp3 文件地址: <code>https://s3.amazonaws.com/freecodecamp/simonSound1.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound2.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound3.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound4.mp3</code>.",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -132,7 +132,7 @@
         "<strong>需求：</strong> 我能够分别对“过去30天完成的任务量”和“总共完成的任务量”两列表格进行排序。",
         "<strong>提示：</strong>可以从这个 API 中获取最近30天内的前100名学员：<a href='https://fcctop100.herokuapp.com/api/fccusers/top/recent' target='_blank'>https://fcctop100.herokuapp.com/api/fccusers/top/recent</a>.",
         "<strong>提示：</strong>可以从这个 API 中获取全部时间段的前100名学员：<a href='https://fcctop100.herokuapp.com/api/fccusers/top/alltime' target='_blank'>https://fcctop100.herokuapp.com/api/fccusers/top/alltime</a>.",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -201,7 +201,7 @@
         "<strong>需求：</strong>交战时，大家轮流攻击对方，直到我们中的一个死掉。我的攻击力取决于我的等级和武器。敌人的攻击力以其等级为基准在一定范围内随机。",
         "<strong>需求：</strong>当我打败大 boss 后，我就胜利了。",
         "<strong>需求：</strong>游戏应当具备挑战性，但理论上是可以获得胜利的。",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。 ",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -225,7 +225,7 @@
         "<strong>需求：</strong>我可以选择不允许网站访问我的麦克风和网络摄像头。如果我选择这样做，当发生驱动问题时，系统会提示:访问麦克风和网络摄像头是必需的。",
         "<strong>需求：</strong>当我选择跳过输入房间名称这一步骤，或者我没有输入名字，或者只输入空格时，系统会要求我输入有效的房间名称。",
         "<strong>需求：</strong>如果房间里的两个人中有一个断开了连接，他们可以重新连接到同一个房间并继续聊天。",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "When you are finished, click the \"我已经完成了这个挑战\" button and include a link to your Glitch App.",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -244,7 +244,7 @@
         "<strong>需求：</strong>我可以在节点上看到每个国家的国旗。",
         "<strong>提示：</strong>这有一个数据集可供你使用：<a href='https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json' target='_blank'>https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json</a>",
         "<strong>提示：</strong>你可以通过 <a href='https://www.flag-sprites.com' target='_blank'>https://www.flag-sprites.com</a> 创建一个关于国旗的精灵表单。",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。 ",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -263,7 +263,7 @@
         "<strong>需求：</strong>在地图上显示陨石的相对大小。",
         "<strong>需求：</strong>移动鼠标经过图上某点时，提示当前位置的详细信息。",
         "<strong>提示:</strong>本项目数据可以参考这里：<a href='https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json' target='_blank'>https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json</a>",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。 ",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -377,7 +377,7 @@
         "<strong>需求：</strong>计算机控制另一只球拍。",
         "<strong>需求：</strong>计算机是无懈可击的，它不会错过球。",
         "<strong>需求：</strong>游戏会自动记录玩家和计算机的得分。",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],
@@ -398,7 +398,7 @@
         "<strong>需求：</strong>在每次点击时我会得到一个不同颜色的圆圈。",
         "<strong>需求：</strong>我可以点击“重置”按钮删除最近的颜色。",
         "<strong>需求：</strong>我可以点击“全部重置”按钮来移除圆圈中的所有颜色。",
-        "如果你遇到了问题，请点击 <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "当你完成时，请点击下方的 \"我已经完成了这个挑战\" 按钮并输入你的 CodePen 链接。",
         "你可以通过将你的项目分享到社交网络来获得反馈。"
       ],

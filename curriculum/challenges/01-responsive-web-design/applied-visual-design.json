@@ -211,7 +211,8 @@
       "id": "587d781a367417b2b2512ab7",
       "title": "Use the strong Tag to Make Text Bold",
       "description": [
-        "你可以使用<code>strong</code>标签来加粗文字。这通常用来强调文字，表示它很重要。添加了<code>strong</code>标签后，浏览器会给元素应用<code>font-weight:bold;</code>的 CSS 属性。",
+        "术语：Strong => s => 加粗。",
+        "你可以使用<code>strong</code>标签来加粗文字。添加了<code>strong</code>标签后，浏览器会自动给元素应用<code>font-weight:bold;</code>。",
         "<hr>",
         "在<code>p</code>标签里的 “斯坦福大学” 外面添加<code>strong</code>标签。"
       ],
@@ -287,10 +288,11 @@
       "id": "587d781a367417b2b2512ab8",
       "title": "Use the u Tag to Underline Text",
       "description": [
-        "你可以使用<code>u</code>标签来给文字添加下划线。这通常用来表示这部分文字很重要，或者是一些值得注意的内容。添加了<code>u</code>标签后，浏览器会给元素应用<code>text-decoration: underline;</code>的 CSS 属性。",
+        "术语：Underline => u => 下划线。",
+        "你可以使用<code>u</code>标签来给文字添加下划线。添加了<code>u</code>标签后，浏览器会自动给元素应用<code>text-decoration: underline;</code>。",
         "<hr>",
-        "在 “理工博士” 外面添加<code>u</code>标签。不要给整个 class 为<code>cardText</code>的父<code>div</code>添加。",
-        "<strong>注意</strong>超链接标签默认给文本添加下划线，如果<code>u</code>标签的下滑线和页面的链接混淆，请避免使用它。"
+        "给 “理工博士” 添加<code>u</code>标签，不要给整个 class 为<code>cardText</code>的父<code>div</code>添加。",
+        "<strong>注意：</strong>锚点默认给文本添加下划线，如果<code>u</code>标签的下划线和页面的锚点混淆，请避免使用它。"
       ],
       "tests": [
         {
@@ -364,9 +366,10 @@
       "id": "587d781a367417b2b2512ab9",
       "title": "Use the em Tag to Italicize Text",
       "description": [
-        "你可以使用 <code>em</code> 标签来强调文字。由于浏览器会给元素应用<code>font-style: italic;</code>CSS，这时文字会显示为斜体。",
+        "术语：emphasis => em => 强调。",
+        "你可以使用<code>em</code>标签来强调文本。由于浏览器会自动给元素应用<code>font-style: italic;</code>，所以文本会显示为斜体。",
         "<hr>",
-        "在段落标签里的文字外面添加<code>em</code>标签来强调段落。"
+        "在<code>p</code>标签里面嵌套<code>em</code>标签来强调文本。"
       ],
       "tests": [
         {
@@ -374,8 +377,8 @@
           "testString": "assert($('em').length == 1, '你应该添加一个<code>em</code>标签。');"
         },
         {
-          "text": "<code>em</code>标签应该包围<code>p</code>标签里的文本，而不是包围整个<code>p</code>标签。",
-          "testString": "assert($('p').children().length == 1 && $('em').children().length == 2, '<code>em</code>标签应该包围<code>p</code>标签里的文本，而不是包围整个<code>p</code>标签。');"
+          "text": "<code>em</code>标签应该嵌套在<code>p</code>标签里面。",
+          "testString": "assert($('p').children().length == 1 && $('em').children().length == 2, '<code>em</code>标签应该嵌套在<code>p</code>标签里面。');"
         }
       ],
       "solutions": [],
@@ -436,7 +439,8 @@
       "id": "587d781b367417b2b2512aba",
       "title": "Use the s Tag to Strikethrough Text",
       "description": [
-        "你可以用<code>s</code>标签来给文字添加删除线，<s>他的效果是在文字正中间有一条细线</s>。它代表着这段文字不再有效。添加了<code>s</code>标签后，浏览器会给元素应用<code>text-decoration: line-through;</code>CSS 属性。",
+        "术语：Strikethrough => s => 删除线。",
+        "你可以用<code>s</code>标签来给文字添加删除线，<s>我是明晃晃的删除线</s>，它代表着这段文字不再有效。添加了<code>s</code>标签后，浏览器会自动给元素应用<code>text-decoration: line-through;</code>。",
         "<hr>",
         "在<code>h4</code>标签里的 “Google” 外添加<code>s</code>标签，然后在<code>s</code>标签外面添加单词 Alphabet，Alphabet 不要有删除线格式。"
       ],
@@ -450,8 +454,8 @@
           "testString": "assert($('s').text().match(/Google/gi) && !$('s').text().match(/Alphabet/gi), '<code>s</code>标签应该在<code>h4</code>标签内的 Google 文字外面，它不应该包含单词 Alphabet。');"
         },
         {
-          "text": "<code>h4</code>标签内应该有单词 Alphabet，Alphabet 应该没有删除线格式。",
-          "testString": "assert($('h4').html().match(/Alphabet/gi), '<code>h4</code>标签内应该有单词 Alphabet，Alphabet 应该没有删除线格式。');"
+          "text": "<code>h4</code>标签内应该有单词 Alphabet，Alphabet 应该没有删除线样式。",
+          "testString": "assert($('h4').html().match(/Alphabet/gi), '<code>h4</code>标签内应该有单词 Alphabet，Alphabet 应该没有删除线样式。');"
         }
       ],
       "solutions": [],
@@ -512,7 +516,8 @@
       "id": "587d781b367417b2b2512abb",
       "title": "Create a Horizontal Line Using the hr Element",
       "description": [
-        "你可以用<code>hr</code>标签来添加一条宽度撑满父元素的横线。它可以用来表示文档主题的改变，或者用来在视觉上将文档分隔成几个部分。",
+        "术语：Horizontal Rule => hr => 水平线。",
+        "你可以用<code>hr</code>标签来创建一条宽度撑满父元素的水平线。它一般用来表示文档主题的改变，在视觉上将文档分隔成几个部分。",
         "<hr>",
         "在包含卡片标题的<code>h4</code>下面添加一个<code>hr</code>标签。",
         "<strong>注意</strong><br>在 HTML 里，<code>hr</code>是自关闭标签，所以不需要一个单独的关闭标签。"

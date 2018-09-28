@@ -69,7 +69,7 @@
         "反转给出的字符串。",
         "你在反转字符串前可能需要将其切分成字符的数组。",
         "你的结果必须是一个字符串。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -126,7 +126,7 @@
         "n 的阶乘通常用符号 <code>n!</code> 来表示。",
         "例如： <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
         "只有非负整数会被作为函数的输入参数。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -181,7 +181,7 @@
       "description": [
         "返回给出的句子中最长的单词的长度。",
         "你的返回应该是一个数字。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -241,7 +241,7 @@
       "description": [
         "返回一个数组，它要由给出的所有子数组中的最大值组成。简单起见，给出的数组总会包含4个子数组。",
         "记得你可以在一个简单的 for 循环中遍历一个数组，并用 <code>arr[i]</code> 这样的语法来访问数组中的元素。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -293,7 +293,7 @@
       "description": [
         "检查一个字符串（第一个参数， <code>str</code> ）是否以给定的字符串（第二个参数 <code>target</code> ）结束。",
         "本题目<em>可以</em>用 ES2015 引入的 <code>.endsWith()</code> 方法来解决。但本挑战的目的是让你使用 JavaScript 的一个 substring 方法。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -374,7 +374,7 @@
       "title": "Repeat a String Repeat a String",
       "description": [
         "将一个给定的字符串（第一个参数， <code>str</code> )重复 <code>num</code> （第二个参数）次。如果 <code>num</code> 不是一个正数，返回一个空字符串。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -437,7 +437,7 @@
       "title": "Truncate a String",
       "description": [
         "如果一个字符串（第一个参数）的长度大于给出的值（第二个参数），则截断它并在其后加上 <code>...</code> 。返回被截断的字符串。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -496,7 +496,7 @@
       "title": "Finders Keepers",
       "description": [
         "请写一个函数来检查一个数组（第一个参数）中的元素，并返回数组中第一个通过校验测试（第二个参数，一个接受一个参数并返回一个布尔值的函数）的元素。如果没有元素通过测试，则返回 undefined。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。你可以与他人结对编程。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。你可以与他人结对编程。请你独立解决挑战中的问题。"
       ],
       "solutions": [
         "function findElement(arr, func) {\n  let num;\n\n  arr.some(e => {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n\n  return num;\n}\n\nfindElement([1, 2, 3, 4], num => num % 2 === 0);\n"
@@ -540,7 +540,7 @@
       "description": [
         "检查一个值是否是原始的布尔值（boolean）类型。返回 true 或者 false。",
         "布尔值原始类型为 true 或者 false。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。你可以与他人结对编程。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。你可以与他人结对编程。请你独立解决挑战中的问题。"
       ],
       "solutions": [
         "function booWho(bool) {\n  return typeof bool === \"boolean\";\n}\n\nbooWho(null);"
@@ -616,7 +616,7 @@
       "description": [
         "将给出的字符串中所有单词的第一个字母变成大写，并返回得到的字符串。请确保其余的字母是小写的。",
         "出于练习的目的，“ the ”“ of ”等虚词的首字母也要大写。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -669,7 +669,7 @@
         "请利用数组的 <code>slice</code> 和 <code>splice</code> 方法，将第一个数组中的所有元素依次复制到第二个数组中。",
         "请从第二个数组中索引值为 <code>n</code> 的地方开始插入。",
         "返回插入元素后的数组。输入的两个数组在函数执行前后要保持不变。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -735,7 +735,7 @@
         "从一个数组中移除所有假值（falsy values）。",
         "JavaScript 中的假值有 <code>false</code>、<code>null</code>、<code>0</code>、<code>\"\"</code>、<code>undefined</code> 和 <code>NaN</code>。",
         "提示：请尝试将每一个值转换为一个布尔值（boolean）。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -789,7 +789,7 @@
         "返回数组（第一个参数）被排序后，将一个值（第二个参数）插入到该数组中而使数组保持有序的最小的索引。返回的值应该是一个数字。",
         "例如，<code>getIndexToIns([1,2,3,4], 1.5)</code> 应该返回 <code>1</code> 因为 1.5 大于 <code>1</code> （索引为 0），但小于 <code>2</code>（索引为 1）。",
         "同样地，<code>getIndexToIns([20,3,5], 19)</code> 应该返回 <code>2</code> 因为数组被排序后会变成 <code>[3,5,20]</code>，而 <code>19</code> 小于 <code>20</code>（索引为 2）且大于 <code>5</code>（索引为 1）。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -891,7 +891,7 @@
         "例如，<code>[\"hello\", \"Hello\"]</code> 应该返回 true 因为第一个字符串中包含了第二个字符串中出现的所有字母（忽略大小写）。",
         "而 <code>[\"hello\", \"hey\"]</code> 应该返回 false 因为第一个字符串 \"hello\" 没有包含字母 \"y\"。",
         "最后，<code>[\"Alien\", \"line\"]</code>, 应该返回 true，因为 \"line\" 中的所有字母都被包含在 \"Alien\" 中。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {
@@ -961,7 +961,7 @@
       "title": "Chunky Monkey",
       "description": [
         "请写一个函数，将一个数组（第一个参数）分割成一组长度为 <code>size</code>（第二个参数）的数组，然后在一个二维数组中返回这些结果。",
-        "如果你有任何疑问，可以访问 <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
+        "如果你有任何疑问，可以访问 <a href=\"https://forum.freecodecamp.one/t/topic/157\" target=\"_blank\">Read-Search-Ask</a> 。请你独立解决挑战中的问题。"
       ],
       "tests": [
         {

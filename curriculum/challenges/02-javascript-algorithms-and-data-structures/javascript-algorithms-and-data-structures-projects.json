@@ -13,7 +13,7 @@
         "<strong>注意：</strong><br>检查回文时，你需要先除去<strong>所有非字母数字的字符</strong>（标点、空格和符号）并且将所有字符转换成字母大写或字母小写。",
         "我们将会传入不同格式的字符串，例如：<code>\"racecar\"</code>、<code>\"RaceCar\"</code>、<code>\"race CAR\"</code>等等。",
         "我们也会传入一些包含特殊符号的字符串，例如<code>\"2A3*3a2\"</code>，<code>\"2A3  3a2\"</code>和<code>\"2_A3*3#A2\"</code>。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "tests": [
         {
@@ -104,7 +104,7 @@
       "description": [
         "把传入的数字转变为罗马数字。",
         "转换后的<a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">罗马数字</a>字母必须都是大写。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function convertToRoman(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}"
@@ -248,7 +248,7 @@
         "<a href=\"http://www.baike.com/wiki/ROT13\" target='_blank'>ROT13</a> 是一个被广泛使用的编码技术，明文中的所有字母都被移动 13 位。因此，'A' &harr; 'N', 'B' &harr;  'O' 等等。",
         "请编写一个函数，用于解码一个被 <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> 编码的字符串，然后返回解码后的结果。",
         "所有解码后的字母都必须为字母大写。请不要解码非字母的字符（例如，空格、标点符号），但你需要在结果中保留它们。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "var lookup = {\n  'A': 'N','B': 'O','C': 'P','D': 'Q',\n  'E': 'R','F': 'S','G': 'T','H': 'U',\n  'I': 'V','J': 'W','K': 'X','L': 'Y',\n  'M': 'Z','N': 'A','O': 'B','P': 'C',\n  'Q': 'D','R': 'E','S': 'F','T': 'G',\n  'U': 'H','V': 'I','W': 'J','X': 'K',\n  'Y': 'L','Z': 'M' \n};\n\nfunction rot13(encodedStr) {\n  var codeArr = encodedStr.split(\"\");  // String to Array\n  var decodedArr = []; // Your Result goes here\n  // Only change code below this line\n  \n  decodedArr = codeArr.map(function(letter) {\n    if(lookup.hasOwnProperty(letter)) {\n      letter = lookup[letter];\n    }\n    return letter;\n  });\n\n  // Only change code above this line\n  return decodedArr.join(\"\"); // Array to String\n}"
@@ -305,7 +305,7 @@
         "只要是有效的美国电话号码的格式，用户可以按照他们的方式填写表单中的电话号码。以下是一些正确的例子（其他格式变形请参考以下例子）：",
         "<blockquote>555-555-5555<br>(555)555-5555<br>(555) 555-5555<br>555 555 5555<br>5555555555<br>1 555 555 5555</blockquote>",
         "在这个挑战中，你将会看到例如<code>800-692-7753</code>或者<code>8oo-six427676;laskdjf</code>的号码。你的任务是根据上面不同的格式组合，判断它是否美国号码。区号是必须的。如果提供国家代码，则必须确认国家代码为<code>1</code>。如果这是有效的美国电话就返回<code>true</code>，否则返回<code>false</code>。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "var re = /^([+]?1[\\s]?)?((?:[(](?:[2-9]1[02-9]|[2-9][02-8][0-9])[)][\\s]?)|(?:(?:[2-9]1[02-9]|[2-9][02-8][0-9])[\\s.-]?)){1}([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2}[\\s.-]?){1}([0-9]{4}){1}$/;\n\nfunction telephoneCheck(str) {\n  return re.test(str);\n}\n\ntelephoneCheck(\"555-555-5555\");"
@@ -453,7 +453,7 @@
         "如果收银机內的金额少于应找回的零钱数，或者你无法返回确切的数目时，返回<code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>。",
         "如果收银机內的金额等于应找回的零钱数，返回<code>{status: \"CLOSED\", change: [...]}</code>，其中<code>change</code>键值是收银机內的金额。",
         "否则，返回<code>{status: \"OPEN\", change: [...]}</code>，其中<code>change</code>键值是应找回的零钱数，并且它的面值由高到低排序。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "<table class='table table-striped'><tr><th>货币单位</th><th>面值</th></tr><tr><td>Penny</td><td>$0.01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0.05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0.1 (DIME)</td></tr><tr><td>Quarter</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dollar</td><td>$1 (DOLLAR)</td></tr><tr><td>Five Dollars</td><td>$5 (FIVE)</td></tr><tr><td>Ten Dollars</td><td>$10 (TEN)</td></tr><tr><td>Twenty Dollars</td><td>$20 (TWENTY)</td></tr><tr><td>One-hundred Dollars</td><td>$100 (ONE HUNDRED)</td></tr></table>"
       ],
       "solutions": [

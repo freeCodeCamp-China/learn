@@ -10,7 +10,7 @@
       "description": [
         "给出一个含有两个数字的数组，我们需要写一个函数，让它返回这两个数字间所有数字（包含这两个数字）的总和。",
         "注意，较小数不一定总是出现在数组的第一个元素。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "hints": [
         "使用<code>Math.max()</code>来获取两数中较大的数。",
@@ -71,7 +71,7 @@
       "title": "Diff Two Arrays",
       "description": [
         "在这道题目中，我们需要写一个函数，比较两个数组，返回一个新的数组。这个新数组需要包含传入的两个数组所有元素中，仅在其中一个数组里出现的元素。如果某个元素同时出现在两个数组中，则不应包含在返回的数组里。换言之，我们需要返回这两个数组的对称差。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。",
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。",
         "<strong>注意：</strong><br>返回数组中的元素顺序不会影响测试结果。"
       ],
       "solutions": [
@@ -173,7 +173,7 @@
       "description": [
         "在这道题目中，我们要写一个叫<code>destroyer</code>的函数。传给它的第一个参数是数组，我们称他为初始数组。后续的参数数量是不确定的，可能有一个或多个。你需要做的是，从初始数组中移除所有与后续参数相等的元素，并返回移除元素后的数组。",
         "<strong>注意：</strong><br> 你可以使用<code>arguments</code>对象，也可以使用<code>...</code>，即“剩余参数”（Rest Parameters）语法。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "tests": [
         {
@@ -234,7 +234,7 @@
       "description": [
         "在这道题目中，我们要写一个函数，它接收两个参数：第一个参数是对象数组，第二个参数是一个对象。我们需要从对象数组中找出与第二个参数相等或包含第二个参数的所有对象，并以对象数组的形式返回。其中，相等的意思是原数组中的对象与第二个参数中对象的所有键值对完全相等；包含的意思是只要第二个参数中对象的所有键存在于原数组对象中，且它们对应的值相同即可。",
         "比如，如果第一个参数是<code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>，第二个参数是<code>{ last: \"Capulet\" }</code>。那么你需要以对象数组的形式返回第一个参数中的第三个元素，因为它包含第二个参数中定义的键<code>last</code>，且对应的值<code>\"Capulet\"</code>相同",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function whatIsInAName(collection, source) {\n  var arr = [];\n  var keys = Object.keys(source);\n  collection.forEach(function(e) {\n    if(keys.every(function(key) {return e[key] === source[key];})) {\n      arr.push(e);  \n    }\n  });\n  return arr;\n}"
@@ -300,7 +300,7 @@
       "title": "Spinal Tap Case",
       "description": [
         "在这道题目中，我们需要写一个函数，把一个字符串转换为“短线连接格式”。短线连接格式的意思是，所有字母都是小写，且用<code>-</code>连接。比如，对于<code>Hello World</code>，应该转换为<code>hello-world</code>；对于<code>I love_Javascript-VeryMuch</code>，应该转换为<code>i-love-javascript-very-much</code>。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\n  // --David St. Hubbins\n  str = str.replace(/([a-z](?=[A-Z]))/g, '$1 ');\n  return str.toLowerCase().replace(/\\ |\\_/g, '-');\n}"
@@ -359,7 +359,7 @@
         "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">儿童黑话</a>的基本转换规则很简单，只需要把一个英文单词的第一个辅音字母或第一组辅音从移到单词的结尾，并在后面加上<code>ay</code>即可。在英语中，字母 a、e、i、o、u 为元音，其余的字母均为辅音。辅音从的意思是连续的多个辅音字母。",
         "额外地，如果单词本身是以元音开头的，那只需要在结尾加上<code>way</code>。",
         "在本题中，传入的单词一定会是英文单词，且所有字母均为小写。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function translatePigLatin(str) {\n  if (isVowel(str.charAt(0))) return str + \"way\";\n  var front = [];\n  str = str.split('');\n  while (str.length && !isVowel(str[0])) {\n    front.push(str.shift());\n  }\n  return [].concat(str, front).join('') + 'ay';\n}\n\nfunction isVowel(c) {\n  return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;\n}"
@@ -429,7 +429,7 @@
         "第二个参数为句中需要被替换的单词。",
         "第三个参数为替换后的单词。",
         "<strong>注意：</strong><br> 你需要保留被替换单词首字母的大小写格式。即如果传入的第二个参数为 \"Book\"，第三个参数为 \"dog\"，那么替换后的结果应为 \"Dog\"",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function myReplace(str, before, after) {\n  if (before.charAt(0) === before.charAt(0).toUpperCase()) {\n    after = after.charAt(0).toUpperCase() + after.substring(1);\n  } else {\n    after = after.charAt(0).toLowerCase() + after.substring(1);\n  }\n  return str.replace(before, after);\n}"
@@ -488,7 +488,7 @@
         "<a href=\"http://en.wikipedia.org/wiki/Base_pair\" target=\"_blank\">碱基对</a> 由一对碱基组成。碱基有四种，分别为 A（腺嘌呤）、T（胸腺嘧啶）、G（鸟嘌呤）和 C（胞嘧啶）。配对原则是：A 与 T 配对，C 与 G 配对。我们需要根据这个原则对传入的所有碱基进行配对。",
         "对于每个传入的碱基，我们应采用数组的形式展示配对结果。其中，传入的碱基需要作为数组的第一个元素出现。最终返回的数组中应当包含参数中每一个碱基的配对结果。",
         "比如，传入的参数是 GCG，那么函数的返回值应为 [[\"G\", \"C\"], [\"C\",\"G\"],[\"G\", \"C\"]]",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "var lookup = Object.create(null);\nlookup.A = 'T';\nlookup.T = 'A';\nlookup.C = 'G';\nlookup.G = 'C';\n\nfunction pairElement(str) {\n return str.split('').map(function(p) {return [p, lookup[p]];});\n}"
@@ -536,7 +536,7 @@
       "description": [
         "在这道题目中，我们需要写一个函数，找到传入的字符串里缺失的字母并返回它。",
         "判断缺失的依据是字母顺序，比如 abcdfg 中缺失了 e。而 abcdef 中就没有字母缺失，此时我们需要返回<code>undefined</code>。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function fearNotLetter (str) {\n  for (var i = str.charCodeAt(0); i <= str.charCodeAt(str.length - 1); i++) {\n    var letter = String.fromCharCode(i);\n    if (str.indexOf(letter) === -1) {\n      return letter;\n    }\n  }\n  \n  return undefined;\n}"
@@ -593,7 +593,7 @@
         "在这道题目中，我们需要写一个函数，它接收两个或多个数组为参数。我们需要对这些数组中所有元素进行去除重复元素的处理，并以数组的形式返回去重结果。",
         "需要注意的是，结果数组中的元素顺序必须与其传入的顺序保持一致。",
         "如有疑问，请先浏览下方的测试用例。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function uniteUnique(arr) {\n  return [].slice.call(arguments).reduce(function(a, b) {\n    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));\n  }, []);\n}"
@@ -644,7 +644,7 @@
       "title": "Convert HTML Entities",
       "description": [
         "在这道题目中，我们需要写一个转换 HTML entity 的函数。需要转换的 HTML entity 有<code>&</code>、<code><</code>、<code>></code>、<code>\"</code>（双引号）和<code>'</code>（单引号）。转换的规则你可以在 <a href='https://dev.w3.org/html5/html-author/charref' target='_blank'>W3C</a> 官网找到。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "var MAP = { '&': '&amp;',\n            '<': '&lt;',\n            '>': '&gt;',\n            '\"': '&quot;',\n            \"'\": '&apos;'};\n\nfunction convertHTML(str) {\n  return str.replace(/[&<>\"']/g, function(c) {\n    return MAP[c];\n  });\n}"
@@ -711,7 +711,7 @@
         "在这道题目中，我们需要写一个函数，参数为一个正整数<code>num</code>。它的作用是计算斐波那契数列中，小于或等于<code>num</code>的奇数之和。",
         "斐波那契数列中，第一和第二个数字都是 1，后面的每个数字由之前两数相加得出。斐波那契数列的前六个数字分别为：1、1、2、3、5、8。",
         "比如，<code>sumFibs(10)</code>应该返回<code>10</code>。因为斐波那契数列中，比<code>10</code>小的数字只有 1、1、3、5。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function sumFibs(num) {\n  var a = 1; \n  var b = 1;\n  var s = 0;\n  while (a <= num) {\n    if (a % 2 !== 0) {   \n      s += a; \n    }\n    a = [b, b=b+a][0];\n  }\n  return s;\n}"
@@ -771,7 +771,7 @@
         "在这道题目中，我们需要写一个函数，它接收一个数字参数<code>num</code>，返回值为不大于这个数字的所有质数之和。",
         "质数是大于 1 且仅可以被 1 和自己整除的数。比如，2 就是一个质数，因为它只可以被 1 和 2（它本身）整除。",
         "注意，传入函数的<code>num</code>不一定是质数。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function eratosthenesArray(n) {\n    var primes = [];\n    if (n > 2) {\n        var half = n>>1;\n        var sieve = Array(half);\n        for (var i = 1, limit = Math.sqrt(n)>>1; i <= limit; i++) {\n            if (!sieve[i]) {\n                for (var step = 2*i+1, j = (step*step)>>1; j < half; j+=step) {\n                    sieve[j] = true;\n                }\n            }\n        }\n        primes.push(2);\n        for (var p = 1; p < half; p++) {\n            if (!sieve[p]) primes.push(2*p+1);\n        }\n    }\n    return primes;\n}\n\nfunction sumPrimes(num) {\n  return eratosthenesArray(num+1).reduce(function(a,b) {return a+b;}, 0);\n}\n\nsumPrimes(10);"
@@ -820,7 +820,7 @@
         "在这道题目中，我们需要写一个函数，它接收一个包含两个数字的数组参数<code>arr</code>，它的返回值为这两个数字范围内所有数字（包含这两个数字）的最小公倍数。",
         "注意，较小数不一定总是出现在数组的第一个元素。",
         "比如，传入<code>[1, 3]</code>，那么函数的返回结果应为 1、2、3 的最小公倍数，即为 6。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function gcd(a, b) {\n    while (b !== 0) {\n        a = [b, b = a % b][0];\n    }\n    return a;\n}\n\nfunction lcm(a, b) {\n    return (a * b) / gcd(a, b);\n}\n\nfunction smallestCommons(arr) {\n  arr.sort(function(a,b) {return a-b;});\n  var rng = [];\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    rng.push(i);\n  }\n  return rng.reduce(lcm);\n}"
@@ -880,7 +880,7 @@
       "description": [
         "在这道题目中，我们需要写一个函数，它接收两个参数，分别为一个数组<code>arr</code>以及一个函数<code>func</code>。我们需要从数组的第一个元素开始，用<code>func</code>来检查数组的每项。函数最终的返回值也是一个数组，它由原数组中第一个使得<code>func</code>为<code>true</code>的元素及其之后的所有元素组成。",
         "如果数组中的所有元素都不能让<code>func</code>为<code>true</code>，则返回空数组<code>[]</code>。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function dropElements(arr, func) {\n  // Drop them elements.\n  while (arr.length && !func(arr[0])) {\n    arr.shift();\n  }\n  return arr;\n}"
@@ -942,7 +942,7 @@
       "description": [
         "在这道题目中，我们需要写一个数组扁平化的函数。",
         "注意，你写的函数应该能够处理数组多级嵌套的情况。比如，<code>[1, [2], [3, [4]]]</code>在扁平化处理后的结果应为<code>[1, 2, 3, 4]</code>。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function steamrollArray(arr) {\n  if (!Array.isArray(arr)) {\n    return [arr];\n  }\n  var out = [];\n  arr.forEach(function(e) {\n    steamrollArray(e).forEach(function(v) {\n      out.push(v);\n    });\n  });\n  return out;\n}"
@@ -994,7 +994,7 @@
       "description": [
         "在这道题目中，我们需要写一个把二进制输入转换成英文句子的函数。",
         "传入函数的二进制字符串会用空格作为分隔符。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function binaryAgent(str) {\n  return str.split(' ').map(function(s) { return parseInt(s, 2); }).map(function(b) { return String.fromCharCode(b);}).join('');\n}"
@@ -1039,7 +1039,7 @@
         "在这道题目中，我们需要写一个函数，它接收两个参数。第一个参数为对象数组<code>collection</code>，第二个参数为一个字符串<code>pre</code>，代表对象的一个键（key）。我们需要检查对象数组中每个对象的<code>pre</code>属性对应的值是否都为 “真”（truthy）。如果是，则返回<code>true</code>，否则返回<code>false</code>。",
         "JavaScript 中，如果一个值在 Boolean 的上下文中（比如<code>if</code>语句）可以被执行为<code>true</code>，那么这个值就被认为是<code>truthy</code>的。",
         "注意，你可以选择使用<code>.</code>或<code>[]</code>来访问对象属性对应的值。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function truthCheck(collection, pre) {\n  // Does everyone have one of these?\n  return collection.every(function(e) { return e[pre]; });\n}"
@@ -1116,7 +1116,7 @@
         "<code>var sumTwoAnd = addTogether(2);</code>",
         "<code>sumTwoAnd(3)</code>此时应返回<code>5</code>。",
         "只要其中任何一个参数不是数字，那我们就应返回<code>undefined</code>。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function addTogether() {\n  var a = arguments[0];\n  if (toString.call(a) !== '[object Number]') return;  \n  if (arguments.length === 1) {\n    return function(b) {\n      if (toString.call(b) !== '[object Number]') return;\n      return a + b;\n    };\n  }\n  var b = arguments[1];\n  if (toString.call(b) !== '[object Number]') return;  \n  return a + arguments[1];\n}"
@@ -1175,7 +1175,7 @@
         "<blockquote>getFirstName()\ngetLastName()\ngetFullName()\nsetFirstName(first)\nsetLastName(last)\nsetFullName(firstAndLast)</blockquote>",
         "这些方法应当可以通过构造函数创建出的实例调用。",
         "你可以点击 “运行测试”，然后就可以在底下的控制台中看到每个测试用例执行的情况。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "var Person = function(firstAndLast) {\n\n  var firstName, lastName;\n\n  function updateName(str) {    \n    firstName = str.split(\" \")[0];\n    lastName = str.split(\" \")[1];    \n  }\n\n  updateName(firstAndLast);\n\n  this.getFirstName = function(){\n    return firstName;\n  };\n  \n  this.getLastName = function(){\n    return lastName;\n  };\n  \n  this.getFullName = function(){\n    return firstName + \" \" + lastName;\n  };\n  \n  this.setFirstName = function(str){\n    firstName = str;\n  };\n  \n\n  this.setLastName = function(str){\n    lastName = str;\n  };\n  \n  this.setFullName = function(str){\n    updateName(str);\n  };\n};\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();"
@@ -1266,7 +1266,7 @@
         "你可以在这条<a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>维基百科</a>的链接中找到轨道周期的计算公式。",
         "轨道周期的计算以地球为基准（即环绕地球的轨道周期），计算结果应取整到最接近的整数。",
         "地球的半径是 6367.4447 千米，地球的 GM 值为 398600.4418 km<sup>3</sup>s<sup>-2</sup>。",
-        "如果你遇到了问题，请点击<a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>帮助</a>。"
+        "如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。"
       ],
       "solutions": [
         "function orbitalPeriod(arr) {\n  var GM = 398600.4418;\n  var earthRadius = 6367.4447;\n  var TAU = 2 * Math.PI; \n  return arr.map(function(obj) {\n    return {\n      name: obj.name,\n      orbitalPeriod: Math.round(TAU * Math.sqrt(Math.pow(obj.avgAlt+earthRadius, 3)/GM))\n    };\n  });\n}\n\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);\n"
