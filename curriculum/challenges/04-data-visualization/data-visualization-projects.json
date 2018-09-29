@@ -27,7 +27,7 @@
         "以下是完成此项目所需的数据：<code>https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json</code>",
         "你可以 fork <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a>来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>.",
         "一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。",
-        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>。"
+        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。"
       ],
       "tests": [],
       "isRequired": true,
@@ -59,7 +59,7 @@
         "以下是完成此项目所需的数据：<code>https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json</code>",
         "你可以 fork <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a>来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>.",
         "一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。",
-        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>。"
+        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。"
       ],
       "tests": [],
       "isRequired": true,
@@ -93,7 +93,7 @@
         "以下是完成此项目所需的数据：<code>https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json</code>",
         "你可以 fork <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a>来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>.",
         "一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。",
-        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>。"
+        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。"
       ],
       "tests": [],
       "isRequired": true,
@@ -121,7 +121,7 @@
         "以下是完成此项目所需的数据集：<br><ul><li><strong>US Education Data: </strong><code>https://raw.githubusercontent.com/no-stack-dub-sack/testable-projects-fcc/master/src/data/choropleth_map/for_user_education.json</code></li><li><strong>US County Data: </strong><code>https://raw.githubusercontent.com/no-stack-dub-sack/testable-projects-fcc/master/src/data/choropleth_map/counties.json</code></li></ul>",
         "你可以 fork <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a>来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>.",
         "一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。",
-        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>。"
+        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。"
       ],
       "tests": [],
       "isRequired": true,
@@ -149,7 +149,7 @@
         "对于此项目，您可以使用以下任何数据集：<br><ul><li><strong>Kickstarter Pledges：</strong> <code>https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/kickstarter-funding-data.json</code></li><li><strong>Movie Sales：</strong> <code>https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/movie-data.json</code></li><li><strong>Video Game Sales：</strong> <code>https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/video-game-sales-data.json</code></li></ul>",
         "你可以 fork <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a>来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>.",
         "一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。",
-        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>。"
+        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。"
       ],
       "tests": [],
       "isRequired": true,

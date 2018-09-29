@@ -2126,13 +2126,13 @@
       ],
       "tests": [
         {
-          "text": "你的<code>body</code>元素应该有一个值为指定<code>url</code>的<code>background</code>CSS 属性。",
-          "testString": "assert(code.match(/background:\\s*?url\\((\"|')https:\\/\\/i\\.imgur\\.com\\/MJAkxbh\\.png(\"|')\\)/gi), '你的<code>body</code>元素应该有一个值为指定<code>url</code>的<code>background</code>CSS 属性。');"
+          "text": "<code>body</code>元素选择器应包含<code>background</code>属性，且值为给定的<code>url</code>。",
+          "testString": "assert(code.match(/background:\\s*?url\\(\\s*(\"|'|)https:\\/\\/i\\.imgur\\.com\\/MJAkxbh\\.png\\1\\s*\\)/gi), '<code>body</code>元素选择器应包含<code>background</code>属性，且值为给定的<code>url</code>。');"
         }
       ],
       "solutions": [],
       "hints": [
-        "记得把 url() 函数内的地址用引号括起来。"
+        "记得把 url() 内的地址用引号括起来。"
       ],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2364,12 +2364,13 @@
       "id": "587d78a6367417b2b2512add",
       "title": "Create a Graphic Using CSS",
       "description": [
-        "通过使用选择器选择不同的元素并改变其属性，你可以创造一些有趣的形状。比如新月。在本关你会使用<code>box-shadow</code>属性来设置元素的阴影，<code>border-radius</code>属性控制元素的外边框圆角。",
+        "术语表：blur-radius => 模糊半径，spread-radius => 辐射半径，transparent => 透明的，border-radius => 圆角边框。",
+        "通过使用选择器选择不同的元素并改变其属性，你可以创造一些有趣的形状。比如新月。你可以使用<code>box-shadow</code>属性来设置元素的阴影，<code>border-radius</code>属性控制元素的圆角边框。",
         "首先你将会创建一个圆的、透明的对象，它具有模糊阴影并略微向两边递减。如你所见，这个阴影其实就是新月形狀。",
         "为了创建一个圆形的对象，<code>border-radius</code>应该被设置成 50%。",
         "你应该还记得之前关卡的<code>box-shadow</code>属性以及它的依次取值<code>offset-x</code>、<code>offset-y</code>、<code>blur-radius</code>、<code>spread-radius</code>和颜色值。其中<code>blur-radius</code>和<code>spread-radius</code>是可选的。",
         "<hr>",
-        "把编辑器里的正方形元素变成新月形状。首先，把<code>background-color</code>改为透明，接着把<code>border-radius</code>属性设置成 50%，以创建一个圆形。最后，更改<code>box-shadow</code>属性，使其<code>offset-x</code>为 25px，<code>offset-y</code>为 10px，<code>blur-radius</code>为 0，<code>spread-radius</code>为 0，颜色为蓝色。"
+        "把编辑器里的正方形元素变成新月形状。首先，把<code>background-color</code>改为 transparent，接着把<code>border-radius</code>属性设置成 50%，以创建一个圆形。最后，更改<code>box-shadow</code>属性，使其<code>offset-x</code>为 25px，<code>offset-y</code>为 10px，<code>blur-radius</code>为 0，<code>spread-radius</code>为 0，<code>color</code>为 blue。"
       ],
       "tests": [
         {

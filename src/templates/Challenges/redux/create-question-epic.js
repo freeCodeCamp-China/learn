@@ -55,7 +55,7 @@ function createQuestionEpic(action$, { getState }, { window }) {
       ].join('');
       const categories = ['HTML-CSS', 'JavaScript'];
       window.open(
-        'https://forum.freecodecamp.org/new-topic' +
+        'https://forum.freecodecamp.one/new-topic' +
           '?category=' +
           window.encodeURIComponent(categories[challengeType] || 'Help') +
           '&title=' +

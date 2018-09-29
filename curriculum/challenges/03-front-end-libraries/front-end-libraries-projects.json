@@ -24,7 +24,7 @@
         "<strong>需求 11：</strong>具有<code>#quote-box</code>属性的包裹元素应该水平居中。请在浏览器缩放尺寸为 100% 且页面窗口最大化时运行测试。",
         "你可以 fork <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a>来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>。",
         "一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。",
-        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>。"
+        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。"
       ],
       "tests": [],
       "isRequired": true,
@@ -47,7 +47,7 @@
         "<strong>可选需求（你无需通过这项测试）：</strong>我的 Markdown 预览器能够解析回车符并且将他们以<code>br</code>（换行）元素的形式渲染出来。",
         "你可以 fork <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a> 来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>。",
         "一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。",
-        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>。"
+        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。"
       ],
       "releasedOn": "January 10, 2017",
       "tests": [],
@@ -70,7 +70,7 @@
         "<strong>需求 7：</strong>当触发一个具有<code>.drum-pad</code>属性的元素时，<code>#display</code>元素内应该展示这个触发元素关联音频片段的描述字符串（每一个字符串都应该是独一无二的）。",
         "你可以 fork <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a> 来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>。",
         "一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。",
-        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>。"
+        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。"
       ],
       "releasedOn": "February 17, 2017",
       "tests": [],
@@ -102,7 +102,7 @@
         "<strong>示例：</strong><code>3 + 5 x 6 - 2 / 4 =</code><br><ul><li><strong>立即执行逻辑：</strong><code>11.5</code></li><li><strong>公式／表达式逻辑：</strong> <code>32.5</code></li></ul>",
         "你可以 fork <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a> 来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>。",
         "一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。",
-        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>。"
+        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。"
       ],
       "tests": [],
       "challengeType": 3,
@@ -145,7 +145,7 @@
         "<strong>需求 28：</strong>当点击 id 属性为<code>reset</code>的元素时，id 属性为<code>beep</code>的音频元素必须停止播放并回到开头。",
         "你可以 fork <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a> 来构建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试： <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>",
         "一旦你完成了本项目并且该项目所有测试运行通过， 请提交项目的 URL。",
-        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>。"
+        "如果你遇到了困难，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。"
       ],
       "tests": [],
       "isRequired": true,
