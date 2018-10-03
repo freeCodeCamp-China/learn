@@ -4506,7 +4506,7 @@
         },
         {
           "text": "<code>chainToSwitch(\"bob\")</code>应该为 \"Marley\"');",
-          "testString": "assert(chainToSwitch(\"bob\") === \"Marley\", '<code>chainToSwitch(\"bob\")</code>应该为 \"Marley\"');');"
+          "testString": "assert(chainToSwitch(\"bob\") === \"Marley\", '<code>chainToSwitch(\"bob\")</code>应该为 \"Marley\"');"
         },
         {
           "text": "<code>chainToSwitch(42)</code>应该为 \"The Answer\"",
