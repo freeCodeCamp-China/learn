@@ -5605,31 +5605,31 @@
       ],
       "tests": [
         {
-          "text": "执行<code>updateRecords(5439, \"artist\", \"ABBA\")</code>，后<code>artist</code>属性值应该是<code>\"ABBA\"</code>",
+          "text": "执行<code>updateRecords(5439, \"artist\", \"ABBA\")</code>后，<code>artist</code>属性值应该是<code>\"ABBA\"</code>",
           "testString": "collection = collectionCopy; assert(updateRecords(5439, \"artist\", \"ABBA\")[5439][\"artist\"] === \"ABBA\", '执行<code>updateRecords(5439, \"artist\", \"ABBA\")</code>，后<code>artist</code>属性值应该是<code>\"ABBA\"</code>');"
         },
         {
-          "text": "执行<code>updateRecords(5439, \"tracks\", \"Take a Chance on Me\")</code>，后<code>tracks</code>最后的元素应该是<code>\"Take a Chance on Me\"</code>",
+          "text": "执行<code>updateRecords(5439, \"tracks\", \"Take a Chance on Me\")</code>后，<code>tracks</code>最后的元素应该是<code>\"Take a Chance on Me\"</code>",
           "testString": "assert(updateRecords(5439, \"tracks\", \"Take a Chance on Me\")[5439][\"tracks\"].pop() === \"Take a Chance on Me\", '执行<code>updateRecords(5439, \"tracks\", \"Take a Chance on Me\")</code>，后<code>tracks</code>最后的元素应该是<code>\"Take a Chance on Me\"</code>');"
         },
         {
-          "text": "执行<code>updateRecords(2548, \"artist\", \"\")</code>，后<code>artist</code> should not be set",
+          "text": "执行<code>updateRecords(2548, \"artist\", \"\")</code>后，<code>artist</code>不应被创建",
           "testString": "updateRecords(2548, \"artist\", \"\"); assert(!collection[2548].hasOwnProperty(\"artist\"), '执行<code>updateRecords(2548, \"artist\", \"\")</code>，后<code>artist</code> should not be set');"
         },
         {
-          "text": "执行<code>updateRecords(1245, \"tracks\", \"Addicted to Love\")</code>，后<code>tracks</code>最后的元素应该是<code>\"Addicted to Love\"</code>",
+          "text": "执行<code>updateRecords(1245, \"tracks\", \"Addicted to Love\")</code>后，<code>tracks</code>最后的元素应该是<code>\"Addicted to Love\"</code>",
           "testString": "assert(updateRecords(1245, \"tracks\", \"Addicted to Love\")[1245][\"tracks\"].pop() === \"Addicted to Love\", '执行<code>updateRecords(1245, \"tracks\", \"Addicted to Love\")</code>，后<code>tracks</code>最后的元素应该是<code>\"Addicted to Love\"</code>');"
         },
         {
-          "text": "执行<code>updateRecords(2468, \"tracks\", \"Free\")</code>，后<code>tracks</code>第一个元素应该是<code>\"1999\"</code>",
+          "text": "执行<code>updateRecords(2468, \"tracks\", \"Free\")</code>后，<code>tracks</code>第一个元素应该是<code>\"1999\"</code>",
           "testString": "assert(updateRecords(2468, \"tracks\", \"Free\")[2468][\"tracks\"][0] === \"1999\", '执行<code>updateRecords(2468, \"tracks\", \"Free\")</code>，后<code>tracks</code>第一个元素应该是<code>\"1999\"</code>');"
         },
         {
-          "text": "执行<code>updateRecords(2548, \"tracks\", \"\")</code>，后<code>tracks</code>应该被创建",
+          "text": "执行<code>updateRecords(2548, \"tracks\", \"\")</code>后，<code>tracks</code>不应被创建",
           "testString": "updateRecords(2548, \"tracks\", \"\"); assert(!collection[2548].hasOwnProperty(\"tracks\"), '执行<code>updateRecords(2548, \"tracks\", \"\")</code>，后<code>tracks</code>应该被创建');"
         },
         {
-          "text": "执行<code>updateRecords(1245, \"album\", \"Riptide\")</code>，后<code>album</code>应该是<code>\"Riptide\"</code>",
+          "text": "执行<code>updateRecords(1245, \"album\", \"Riptide\")</code>后，<code>album</code>应该是<code>\"Riptide\"</code>",
           "testString": "assert(updateRecords(1245, \"album\", \"Riptide\")[1245][\"album\"] === \"Riptide\", 'After <code>updateRecords(1245, \"album\", \"Riptide\")</code>，后<code>album</code>应该是<code>\"Riptide\"</code>');"
         }
       ],
