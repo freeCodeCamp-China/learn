@@ -1916,7 +1916,7 @@
         "我们可以像操作字符串一样通过数组索引<code>[index]</code>来访问数组中的数据。",
         "数组索引的使用与字符串索引一样，不同的是，通过字符串的索引得到的是一个字符，通过数组索引得到的是一个元素。与字符串类似，数组也是<dfn>基于零</dfn>的索引，因此数组的第一个元素的索引是<code>0</code>。",
         "<strong>示例</strong>",
-        "<blockquote>var array = [50,60,70];<br>array[0]; // equals 50<br>var data = array[1];  // equals 60</blockquote>",
+        "<blockquote>var array = [50,60,70];<br>array[0]; // 值为 50<br>var data = array[1];  // 值为 60</blockquote>",
         "<strong>提示</strong><br>数组名称和方括号之间不应有任何空格，如<code>array [0]</code>尽管 JavaScript 能够正确处理，但可能会让看你代码的其他程序员感到困惑",
         "<hr>",
         "创建一个名为<code>myData</code>的变量，并把<code>myArray</code>的第一个索引上的值赋给它。"
@@ -1944,7 +1944,7 @@
           "contents": [
             "// 示例",
             "var ourArray = [50,60,70];",
-            "var ourData = ourArray[0]; // equals 50",
+            "var ourData = ourArray[0]; // 值为 50",
             "",
             "// 初始化变量",
             "var myArray = [50,60,70];",
@@ -2015,7 +2015,7 @@
         "可以把 <dfn>多维</dfn> 数组看作成是一个 <em>数组中的数组</em>。当使用方括号去访问数组的时候，第一个<code>[index]</code>访问的是第 N 个子数组，第二个<code>[index]</code>访问的是第 N 个子数组的第N个元素。",
         "<strong>示例</strong>",
         "<blockquote>var arr = [<br>&nbsp;&nbsp;[1,2,3],<br>&nbsp;&nbsp;[4,5,6],<br>&nbsp;&nbsp;[7,8,9],<br>&nbsp;&nbsp;[[10,11,12], 13, 14]<br>];<br>arr[3]; // 等于 [[10,11,12], 13, 14]<br>arr[3][0]; // 等于 [10,11,12]<br>arr[3][0][1]; // 等于 11</blockquote>",
-        "<strong>提示</strong><br>T数组名称和方括号之间不应该有任何空格，如<code>array [0][0]</code>甚至是这样<code>array [0] [0]</code>尽管 JavaScript 能够正确处理，但可能会让看你代码的其他程序员感到困惑。",
+        "<strong>提示</strong><br>数组名称和方括号之间不应该有任何空格，如<code>array [0][0]</code>甚至是这样<code>array [0] [0]</code>尽管 JavaScript 能够正确处理，但可能会让看你代码的其他程序员感到困惑。",
         "<hr>",
         "使用恰当的<code>[index]</code>访问<code>myArray</code>，使得<code>myData</code>的值为<code>8</code>"
       ],
@@ -2107,7 +2107,7 @@
         "改变数组中数据的另一种方法是用<code>.pop()</code>函数。",
         "<code>.pop()</code>函数用来“抛出”一个数组末尾的值。我们可以把这个“抛出”的值赋给一个变量存储起来。换句话说就是<code>.pop()</code>函数移除数组末尾的元素并返回这个元素。",
         "数组中任何类型的元素（数值，字符串，甚至是数组）可以被“抛出来” 。",
-        "<code>var oneDown = [1, 4, 6].pop();</code><br> console.log(oneDown); // 返回 6<br> console.log(threeArr); // 返回的值为<code>6</code>，数组变成了<code>[1, 4]</code>。",
+        "<blockquote><code>var threeArr = [1, 4, 6];<br> var oneDown = threeArr.pop();<br> console.log(oneDown); // 输出 6<br> console.log(threeArr); // 输出 [1, 4]</code></blockquote>",
         "<hr>",
         "使用<code>.pop()</code>函数移除<code>myArray</code>中的最后一个元素，并且把“抛出”的值赋给<code>removedFromMyArray</code>。"
       ],
@@ -2328,10 +2328,9 @@
       "id": "56bbb991ad1ed5201cd392cf",
       "title": "Write Reusable JavaScript with Functions",
       "description": [
-        "术语：function => 函数。",
         "在 JavaScript 中，我们可以把代码的重复部分抽取出来，放到一个<dfn>函数</dfn>中。",
         "举个例子：",
-        "<blockquote>function functionName() {<br>  console.log(\"Hello World\");<br>}</blockquote>",
+        "<blockquote>function functionName() {<br>&nbsp;&nbsp;console.log(\"Hello World\");<br>}</blockquote>",
         "你可以通过函数名<code>functionName</code>加上后面的小括号来调用这个函数，就像这样：",
         "<code>functionName();</code>",
         "每次调用函数时，它都会在控制台上打印消息<code>\"Hello World\"</code>。每次调用函数时，大括号之间的所有代码都将被执行。",
@@ -2412,12 +2411,12 @@
       "description": [
         "函数的参数<code>parameters</code>在函数中充当占位符(也叫形参)的作用，参数可以为一个或多个。调用一个函数时所传入的参数为实参，实参决定着形参真正的值。简单理解：形参即形式、实参即内容。",
         "这是带有两个参数的函数，<code>param1</code>和<code>param2</code>：",
-        "<blockquote>function testFun(param1, param2) {<br>  console.log(param1, param2);<br>}</blockquote>",
+        "<blockquote>function testFun(param1, param2) {<br>&nbsp;&nbsp;console.log(param1, param2);<br>}</blockquote>",
         "接着我们调用<code>testFun</code>：",
         "<code>testFun(\"Hello\", \"World\");</code>",
         "我们传递了两个参数，<code>\"Hello\"</code>和<code>\"World\"</code>。在函数内部，<code>param1</code>等于“Hello”，<code>param2</code>等于“World”。请注意，<code>testFun</code>函数可以多次调用，每次调用时传递的参数会决定形参的实际值。",
         "<hr>",
-        "<ol><li>创建一个名为<code>myFunction</code>的函数，它可以接收两个参数，计算参数的和，将结果输出到控制台。</li><li>调用这个函数。</li></ol>"
+        "<ol><li>创建一个名为<code>functionWithArgs</code>的函数，它可以接收两个参数，计算参数的和，将结果输出到控制台。</li><li>调用这个函数。</li></ol>"
       ],
       "releasedOn": "January 1, 2016",
       "solutions": [
@@ -2508,20 +2507,20 @@
       ],
       "tests": [
         {
-          "text": "<code>myGlobal</code> should be defined",
-          "testString": "assert(typeof myGlobal != \"undefined\", '<code>myGlobal</code> should be defined');"
+          "text": "应定义<code>myGlobal</code>。",
+          "testString": "assert(typeof myGlobal != \"undefined\", '应定义<code>myGlobal</code>。');"
         },
         {
-          "text": "<code>myGlobal</code> should have a value of <code>10</code>",
-          "testString": "assert(myGlobal === 10, '<code>myGlobal</code> should have a value of <code>10</code>');"
+          "text": "<code>myGlobal</code>的值应为<code>10</code>。",
+          "testString": "assert(myGlobal === 10, '<code>myGlobal</code>的值应为<code>10</code>。');"
         },
         {
-          "text": "<code>myGlobal</code> should be declared using the <code>var</code> keyword",
-          "testString": "assert(/var\\s+myGlobal/.test(code), '<code>myGlobal</code> should be declared using the <code>var</code> keyword');"
+          "text": "应使用<code>var</code>关键字定义<code>myGlobal</code>。",
+          "testString": "assert(/var\\s+myGlobal/.test(code), '应使用<code>var</code>关键字定义<code>myGlobal</code>。');"
         },
         {
-          "text": "<code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>",
-          "testString": "assert(typeof oopsGlobal != \"undefined\" && oopsGlobal === 5, '<code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>');"
+          "text": "<code>oopsGlobal</code>应为全局变量且值为<code>5</code>。",
+          "testString": "assert(typeof oopsGlobal != \"undefined\" && oopsGlobal === 5, '<code>oopsGlobal</code>应为全局变量且值为<code>5</code>。');"
         }
       ],
       "challengeType": 1,
@@ -2591,7 +2590,9 @@
         "<blockquote>function myTest() {<br>  var loc = \"foo\";<br>  console.log(loc);<br>}<br>myTest(); // 打印出 \"foo\"<br>console.log(loc); // loc 没有定义</blockquote>",
         "在函数外，<code>loc</code>是未定义的。",
         "<hr>",
-        "在函数<code>myFunction</code>内部声明一个局部变量<code>myVar</code>，并删除外部的 console.log。"
+        "在函数<code>myFunction</code>内部声明一个局部变量<code>myVar</code>，并删除外部的 console.log。",
+        "<strong>提示：</strong><br>",
+        "如果你遇到了问题，可以先尝试刷新页面。"
       ],
       "releasedOn": "January 1, 2016",
       "solutions": [
@@ -2773,7 +2774,7 @@
       "description": [
         "函数一般用<code>return</code>语句来返回值，但这不是必须的。在函数没有<code>return</code>语句的情况下，当你调用它时，该函数会执行内部代码，返回的值是<code>undefined</code>。",
         "<strong>示例</strong>",
-        "<blockquote>var sum = 0;<br>function addSum(num) {<br>&nbsp;&nbsp;sum = sum + num;<br>}<br>var returnedValue = addSum(3); // sum will be modified but returned value is undefined</blockquote>",
+        "<blockquote>var sum = 0;<br>function addSum(num) {<br>&nbsp;&nbsp;sum = sum + num;<br>}<br>var returnedValue = addSum(3); // sum 会改变，但函数的返回值仍为 undefined</blockquote>",
         "<code>addSum</code>是一个没有<code>return</code>语句的函数。该函数将更改全局变量<code>sum</code>，函数的返回值为<code>undefined</code>。",
         "<hr>",
         "创建一个没有任何参数的函数<code>addFive</code>。此函数使<code>sum</code>变量加 5，但其返回值是<code>undefined</code>。"
@@ -2981,7 +2982,7 @@
       "title": "Understanding Boolean Values",
       "description": [
         "另一种数据类型是<dfn>布尔</dfn>（Boolean）。<code>布尔</code>值要么是<code>true</code>要么是<code>false</code>。它非常像电路开关，<code>true</code>是“开”，<code>false</code>是“关”。这两种状态是互斥的。",
-        "<strong>注意</strong><br><code>Boolean</code>值绝不会写被引号包裹起来的形式。<code>字符串</code>的<code>\"true\"</code>和<code>\"false\"</code>不是<code>布尔值</code>，在 JavaScript 中也没有特殊含义。",
+        "<strong>注意</strong><br><code>布尔值</code>是不带引号的，<code>\"true\"</code>和<code>\"false\"</code>是<code>字符串</code>而不是<code>布尔值</code>，在 JavaScript 中也没有特殊含义。",
         "<hr>",
         "修改<code>welcomeToBooleans</code>函数，让它返回<code>true</code>而不是<code>false</code>。"
      ],
@@ -3033,7 +3034,7 @@
         "<blockquote>function test (myCondition) {<br>  if (myCondition) {<br>     return \"It was true\";<br>  }<br>  return \"It was false\";<br>}<br>test(true);  // 返回 \"It was true\"<br>test(false); // 返回 \"It was false\"</blockquote>",
         "当<code>test</code>被调用，并且传递进来的参数值为<code>true</code>，<code>if</code>语句会计算<code>myCondition</code>的结果，看它是真还是假。如果条件为<code>true</code>，函数会返回<code>\"It was true\"</code>。当<code>test</code>被调用，并且传递进来的参数值为<code>false</code>，<code>myCondition</code><em>不</em> 为<code>true</code>，并且不执行大括号后面的语句，函数返回<code>\"It was false\"</code>。",
         "<hr>",
-        "在函数内部创建一个<code>if</code>语句，如果该参数<code>wasThatTrue</code>值为<code>true</code>，返回<code>\"That was true\"</code>，否则，并返回<code>\"That was false\"</code>。"
+        "在函数内部创建一个<code>if</code>语句，如果该参数<code>wasThatTrue</code>值为<code>true</code>，返回<code>\"Yes, that was true\"</code>，否则，并返回<code>\"No, that was false\"</code>。"
       ],
       "solutions": [
         "function trueOrFalse(wasThatTrue) {\n  if (wasThatTrue) {\n    return \"Yes, that was true\";\n  }\n  return \"No, that was false\";\n}"
@@ -3548,7 +3549,7 @@
       "id": "56533eb9ac21ba0edf2244d6",
       "title": "Comparison with the Less Than Operator",
       "description": [
-        "使用<dfn>小于</dfn>运算符（<code>&lt;</code>）比较两个数字的大小。如果小于运算符左边的数字比右边的数字小，它会返回<code>true</code>。否则，他会返回<code>false</code>。与相等运算符类似，<dfn>小于</dfn> 运算符在做比较的时候会转换值的数据类型。",
+        "使用<dfn>小于</dfn>运算符（<code>&lt;</code>）比较两个数字的大小。如果小于运算符左边的数字比右边的数字小，它会返回<code>true</code>。否则会返回<code>false</code>。与相等运算符类似，<dfn>小于</dfn> 运算符在做比较的时候会转换值的数据类型。",
         "<strong>例如</strong>",
         "<blockquote>  2 &lt; 5  // true<br>'3' &lt; 7  // true<br>  5 &lt; 5  // false<br>  3 &lt; 2  // false<br>'8' &lt; 4  // false</blockquote>",
         "<hr>",
@@ -3619,7 +3620,7 @@
       "id": "56533eb9ac21ba0edf2244d7",
       "title": "Comparison with the Less Than Or Equal To Operator",
       "description": [
-        "使用<code>小于等于</code>运算符（<code>&lt;=</code>）比较两个数字的大小。如果在小于等于运算符，左边的数字小于或者等于右边的数字，它会返回<code>true</code>。如果在小于等于运算符，左边的数字大于或者等于右边的数字，它会返回<code>false</code>。与相等运算符类型，<code>小于等于</code>运算符会转换数据类型。",
+        "使用<code>小于等于</code>运算符（<code>&lt;=</code>）比较两个数字的大小。如果在小于等于运算符，左边的数字小于或者等于右边的数字，它会返回<code>true</code>。如果在小于等于运算符，左边的数字大于或者等于右边的数字，它会返回<code>false</code>。与相等运算符类似，<code>小于等于</code>运算符会转换数据类型。",
         "<strong>例如</strong>",
         "<blockquote>  4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>  5 &lt;= 5  // true<br>  3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>",
         "<hr>",
@@ -3701,7 +3702,7 @@
         "只有当<code>num</code>的值在 6 和 9 之间（包括 6 和 9）才会返回 \"Yes\"。相同的逻辑可被写为：",
         "<blockquote>if (num > 5 && num < 10) {<br>  return \"Yes\";<br>}<br>return \"No\";</blockquote>",
         "<hr>",
-        "结合两个 if 语句为一个语句，如果<code>val</code>小于或等于<code>50</code>并且大于或等于<code>25</code>，返回<code>\"Yes\"</code>。否则，将返回<code>\"No\"</code>。"
+        "请使用逻辑与运算符把两个 if 语句合并为一个 if 语句，如果<code>val</code>小于或等于<code>50</code>并且大于或等于<code>25</code>，返回<code>\"Yes\"</code>。否则，将返回<code>\"No\"</code>。"
       ],
       "releasedOn": "January 1, 2016",
       "solutions": [
@@ -3781,14 +3782,14 @@
       "id": "56533eb9ac21ba0edf2244d9",
       "title": "Comparisons with the Logical Or Operator",
       "description": [
-        "如果任何一个操作数是<code>true</code>，<dfn>逻辑或</dfn> 运算符 (<code>||</code>) 返回<code>true</code>。反之，返回<code>false</code>。",
-        "<dfn>logical or</dfn>逻辑或运算符由两个管道符号（|）组成。这个按键通常可以在 Backspace 和 Enter 键之间。",
+        "只要<dfn>逻辑或</dfn>运算符<code>||</code>两边任何一个为<code>true</code>，那么它就返回<code>true</code>；否则返回<code>false</code>。",
+        "<dfn>逻辑或</dfn>运算符由两个管道符号（|）组成。这个按键位于退格键和回车键之间。",
         "下面这样的语句你应该很熟悉：",
         "<blockquote>if (num > 10) {<br>&nbsp;&nbsp;return \"No\";<br>}<br>if (num < 5) {<br>&nbsp;&nbsp;return \"No\";<br>}<br>return \"Yes\";</blockquote>",
         "只有当<code>num</code>大于等于 5 或小于等于 10 时，函数返回\"Yes\"。相同的逻辑可以简写成：",
-        "<blockquote>if (num > 10 || num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
+        "<blockquote>if (num > 10 || num < 5) {<br>&nbsp;&nbsp;return \"No\";<br>}<br>return \"Yes\";</blockquote>",
         "<hr>",
-        "结合两个 if 语句为一个语句，如果<code>val</code>不在 10 和 20 之间(包括 10 和 20)，返回<code>\"Outside\"</code>。反之，返回<code>\"Inside\"</code>。"
+        "请使用逻辑或运算符把两个 if 语句合并为一个 if 语句，如果<code>val</code>不在 10 和 20 之间(包括 10 和 20)，返回<code>\"Outside\"</code>。反之，返回<code>\"Inside\"</code>。"
       ],
       "releasedOn": "January 1, 2016",
       "solutions": [
@@ -3800,7 +3801,7 @@
           "testString": "assert(code.match(/\\|\\|/g).length === 1, '你应该使用一次<code>||</code>操作符');"
         },
         {
-          "text": "You should only have one <code>if</code> statement",
+          "text": "你应该只有一个<code>if</code>表达式",
           "testString": "assert(code.match(/if/g).length === 1, '你应该只有一个<code>if</code>表达式');"
         },
         {
@@ -3873,7 +3874,7 @@
         "当<code>if</code>语句的条件为真，大括号里的代码执行，那如果条件为假呢？正常情况下什么也不会发生。使用else语句，可以执行当条件为假时相应的代码。",
         "<blockquote>if (num > 10) {<br>&nbsp;&nbsp;return \"Bigger than 10\";<br>} else {<br>&nbsp;&nbsp;return \"10 or Less\";<br>}</blockquote>",
         "<hr>",
-        "合并多个<code>if</code>语句为一个<code>if/else</code>语句。"
+        "请把多个<code>if</code>语句合并为一个<code>if/else</code>语句。"
       ],
       "releasedOn": "January 1, 2016",
       "solutions": [
@@ -4020,9 +4021,9 @@
         "在条件判断语句中，代码的执行顺序是从上到下，所以你需要考虑清楚先执行哪一句，后执行哪一句。",
         "这有两个例子。",
         "第一个例子：",
-        "<blockquote>function foo(x) {<br>  if (x < 1) {<br>    return \"Less than one\";<br>  } else if (x < 2) {<br>    return \"Less than two\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
+        "<blockquote>function foo(x) {<br>&nbsp;&nbsp;if (x < 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Less than one\";<br>&nbsp;&nbsp;} else if (x < 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Less than two\";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Greater than or equal to two\";<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "第二个例子更改了代码的执行顺序：",
-        "<blockquote>function bar(x) {<br>  if (x < 2) {<br>    return \"Less than two\";<br>  } else if (x < 1) {<br>    return \"Less than one\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
+        "<blockquote>function bar(x) {<br>&nbsp;&nbsp;if (x < 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Less than two\";<br>&nbsp;&nbsp;} else if (x < 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Less than one\";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Greater than or equal to two\";<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "这两个函数看起来几乎一模一样，我们传一个值进去看看它们有什么区别。",
         "<blockquote>foo(0) // \"Less than one\"<br>bar(0) // \"Less than two\"</blockquote>",
         "<hr>",
@@ -4075,7 +4076,7 @@
       "title": "Chaining If Else Statements",
       "description": [
         "<code>if/else</code>语句串联在一起可以实现复杂的逻辑，这是多个<code>if/else if</code>语句串联在一起的伪代码：",
-        "<blockquote>if (<em>condition1</em>) {<br>  <em>statement1</em><br>} else if (<em>condition2</em>) {<br>  <em>statement2</em><br>} else if (<em>condition3</em>) {<br>  <em>statement3</em><br>. . .<br>} else {<br>  <em>statementN</em><br>}</blockquote>",
+        "<blockquote>if (<em>条件 1</em>) {<br>&nbsp;&nbsp;<em>语句 1</em><br>} else if (<em>条件 2</em>) {<br>&nbsp;&nbsp;<em>语句 2</em><br>} else if (<em>条件 3</em>) {<br>&nbsp;&nbsp;<em>语句 3</em><br>. . .<br>} else {<br>&nbsp;&nbsp;<em>语句 N</em><br>}</blockquote>",
         "<hr>",
         "把<code>if</code>/<code>else if</code>语句串联起来实现下面的逻辑：",
         "<code>num &lt;   5</code>- return \"Tiny\"<br><code>num &lt;  10</code>- return \"Small\"<br><code>num &lt; 15</code>- return \"Medium\"<br><code>num &lt; 20</code>- return \"Large\"<br><code>num >= 20</code> - return \"Huge\""
