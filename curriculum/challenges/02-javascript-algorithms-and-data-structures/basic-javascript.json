@@ -4394,12 +4394,12 @@
       "id": "56533eb9ac21ba0edf2244df",
       "title": "Multiple Identical Options in Switch Statements",
       "description": [
-        "If the <code>break</code> statement is omitted from a <code>switch</code> statement's <code>case</code>, the following <code>case</code> statement(s) are executed until a <code>break</code> is encountered. If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
+        "如果你忘了给<code>switch</code>的每一条<code>case</code>添加<code>break</code>，那么直到遇见<code>break</code>为止，后续的<code>case</code>会一直执行。如果你想为多个不同的输入设置相同的结果，可以这样写：",
         "<blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;case 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = \"1, 2, or 3\";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 4:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = \"4 alone\";<br>}</blockquote>",
-        "Cases for 1, 2, and 3 will all produce the same result.",
+        "这样，1、2、3 都会有相同的结果。",
         "<hr>",
-        "Write a switch statement to set <code>answer</code> for the following ranges:<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
-        "<strong>提示</strong><br>You will need to have a <code>case</code> statement for each number in the range."
+        "请写一个<code>switch</code>语句，根据输入的<code>val</code>的范围得出对应的<code>answer</code>：<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
+        "<strong>提示：</strong><br>你的<code>case</code>应基于范围中的每一个数字编写。"
       ],
       "releasedOn": "January 1, 2016",
       "solutions": [
@@ -4443,12 +4443,12 @@
           "testString": "assert(sequentialSizes(9) === \"High\", '<code>sequentialSizes(9)</code>应该返回 \"High\"');"
         },
         {
-          "text": "You should not use any <code>if</code> or <code>else</code> statements",
-          "testString": "assert(!/else/g.test(code) || !/if/g.test(code), 'You should not use any <code>if</code> or <code>else</code> statements');"
+          "text": "你不应使用<code>if</code>或<code>else</code>语句",
+          "testString": "assert(!/else/g.test(code) || !/if/g.test(code), '你不应使用<code>if</code>或<code>else</code>语句');"
         },
         {
-          "text": "You should have nine <code>case</code> statements",
-          "testString": "assert(code.match(/case/g).length === 9, 'You should have nine <code>case</code> statements');"
+          "text": "你应该编写 9 个<code>case</code>语句",
+          "testString": "assert(code.match(/case/g).length === 9, '你应该编写 9 个<code>case</code>语句');"
         }
       ],
       "challengeType": 1,
@@ -4506,7 +4506,7 @@
           "testString": "assert(code.match(/break/g).length >= 4, '你应该有至少 4 个<code>break</code>表达式');"
         },
         {
-          "text": "<code>chainToSwitch(\"bob\")</code>应该为 \"Marley\"');",
+          "text": "<code>chainToSwitch(\"bob\")</code>应该为 \"Marley\"",
           "testString": "assert(chainToSwitch(\"bob\") === \"Marley\", '<code>chainToSwitch(\"bob\")</code>应该为 \"Marley\"');"
         },
         {
@@ -4574,7 +4574,7 @@
       "id": "5679ceb97cbaa8c51670a16b",
       "title": "Returning Boolean Values from Functions",
       "description": [
-        "你可能会回想起<a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">，所有的比较操作符返回的都是一个 boolean 值，要么是<code>true</code>要么是<code>false</code>。",
+        "你应该还记得<a href=\"javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator\" target=\"_blank\">相等运算符</a>这道挑战题。在那里我们提到，所有比较操作符都会返回 boolean：要么是<code>true</code>要么是<code>false</code>。",
         "有时人们通过 if/else 语句来做比较然后返回<code>true</code>或<code>false</code>。",
         "<blockquote>function isEqual(a,b) {<br>&nbsp;&nbsp;if (a === b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return true;<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "有一个更好的方法，因为<code>===</code>总是返回<code>true</code>或<code>false</code>，所以我们可以直接返回比较的结果：",
@@ -4634,7 +4634,7 @@
         "上面的代码输出\"Hello\"到控制台、返回 \"World\"，但没有输出<code>\"byebye\"</code>，因为函数遇到 return 语句就退出了。",
         "<hr>",
         "修改函数<code>abTest</code>当<code>a</code>或<code>b</code>小于0时，函数立即返回一个<code>undefined</code>并退出。",
-        "<strong>提示</strong><br>记住<a href='http://www.freecodecamp.org/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code>，是一个关键字，而不是一个字符串。"
+        "<strong>提示</strong><br>记住<a href='http://www.freecodecamp.one/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code>，是一个关键字，而不是一个字符串。"
       ],
       "releasedOn": "January 1, 2016",
       "solutions": [
@@ -4776,7 +4776,7 @@
         "<blockquote>var anotherObject = {<br>&nbsp;&nbsp;make: \"Ford\",<br>&nbsp;&nbsp;5: \"five\",<br>&nbsp;&nbsp;\"model\": \"focus\"<br>};</blockquote>",
         "但是，如果你的对象具有任何非字符串属性，JavaScript 将自动将它们作为字符串进行类型转换。",
         "<hr>",
-        "创建一个叫做<code>myDog</code>的对象，它里面有这些属性：<code>名称\"name\"</code>、<code>腿\"legs\"</code>,<code>尾巴\"tails\"</code>、<code>朋友\"friends\"</code>。",
+        "创建一个叫做<code>myDog</code>的对象，它里面有这些属性：<code>\"name\"</code>（名称）、<code>\"legs\"</code>（腿）,<code>\"tails\"</code>（尾巴）、<code>\"friends\"</code>（朋友）。",
         "你可以设置对象属性为任何你想要的值，只要<code>\"name\"</code>是字符串、<code>\"legs\"</code>和<code>\"tails\"</code>是数字、<code>\"friends\"</code>是数组。"
       ],
       "solutions": [
@@ -4970,7 +4970,7 @@
         "这有一个使用变量来访问属性的例子：",
         "<blockquote>var dogs = {<br>&nbsp;&nbsp;Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br>};<br>var myDog = \"Hunter\";<br>var myBreed = dogs[myDog];<br>console.log(myBreed); // \"Doberman\"</blockquote>",
         "还有更多：",
-        "<blockquote>var someObj = {<br>&nbsp;&nbsp;propName: \"John\"<br>};<br>function propPrefix(str) {<br>&nbsp;&nbsp;var s = \"prop\";<br>&nbsp;&nbsp;return s + str;<br>}<br>var someProp = propPrefix(\"Name\"); // someProp now holds the value 'propName'<br>console.log(someObj[someProp]); // \"John\"</blockquote>",
+        "<blockquote>var someObj = {<br>&nbsp;&nbsp;propName: \"John\"<br>};<br>function propPrefix(str) {<br>&nbsp;&nbsp;var s = \"prop\";<br>&nbsp;&nbsp;return s + str;<br>}<br>var someProp = propPrefix(\"Name\"); // someProp 现在的值为 'propName'<br>console.log(someObj[someProp]); // 输出 \"John\"</blockquote>",
         "提示：当我们通过变量名访问属性的时候，不需要给变量名包裹引号。因为实际上我们使用的是变量的值，而不是变量的名称。",
         "<hr>",
         "使用变量<code>playerNumber</code>，通过中括号操作符找到<code>testObj</code>中<code>playerNumber</code>为<code>16</code>的值。然后把名字赋给变量<code>player</code>。"
@@ -5040,9 +5040,9 @@
         "举个例子，让我们看看<code>ourDog</code>:",
         "<blockquote>var ourDog = {<br>&nbsp;&nbsp;\"name\": \"Camper\",<br>&nbsp;&nbsp;\"legs\": 4,<br>&nbsp;&nbsp;\"tails\": 1,<br>&nbsp;&nbsp;\"friends\": [\"everything!\"]<br>};</blockquote>",
         "让我们更改它的名称为 \"Happy Camper\"，这有两种方式来更新对象的<code>name</code>属性：",
-        "<code>ourDog.name = \"Happy Camper\";</code> or",
+        "<code>ourDog.name = \"Happy Camper\";</code> 或",
         "<code>ourDog[\"name\"] = \"Happy Camper\";</code>",
-        "Now when we evaluate <code>ourDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
+        "现在，<code>ourDog.name</code>的值就不再是 \"Camper\"，而是 \"Happy Camper\"。",
         "<hr>",
         "更新<code>myDog</code>对象的<code>name</code>属性，让它的名字从 \"Coder\" 变成 \"Happy Coder\"。"
       ],
@@ -5475,8 +5475,8 @@
           "testString": "assert(gloveBoxContents === \"maps\", '<code>gloveBoxContents</code>应该等于\"maps\"');"
         },
         {
-          "text": "Use dot and bracket notation to access <code>myStorage</code>",
-          "testString": "assert(/=\\s*myStorage\\.car\\.inside\\[\\s*(\"|')glove box\\1\\s*\\]/g.test(code), 'Use dot and bracket notation to access <code>myStorage</code>');"
+          "text": "应使用点操作符和中括号操作符来访问<code>myStorage</code>",
+          "testString": "assert(/=\\s*myStorage\\.car\\.inside\\[\\s*(\"|')glove box\\1\\s*\\]/g.test(code), '应使用点操作符和中括号操作符来访问<code>myStorage</code>');"
         }
       ],
       "challengeType": 1,
@@ -5589,14 +5589,14 @@
       "title": "Record Collection",
       "description": [
         "你将获得一个 JSON 对象，用来表示你的部分音乐专辑收藏。每张专辑都有几个属性和一个唯一的 id 号作为键值。并非所有专辑都有完整的信息。",
-        "写一个功能，获取一个专辑的<code>id</code>（如<code>2548</code>），属性<code>prop</code>（如“code>\"artist\"</code>或<code>\"tracks\"</code>），以及一个值<code>value</code>（如<code>\"Addicted to Love\"</code>）来修改音乐专辑收藏的数据。",
+        "写一个函数，根据传入的<code>id</code>（如<code>2548</code>）、<code>prop</code>（属性，如<code>\"artist\"</code>或<code>\"tracks\"</code>）以及<code>value</code>（值，如<code>\"Addicted to Love\"</code>）来修改音乐专辑收藏的数据。",
         "如果属性<code>prop</code>不是<code>\"tracks\"</code>且值<code>value</code>不为空（<code>\"\"</code>），则更新或设置该专辑属性的值<code>value</code>。",
         "你的函数必须始终返回整个音乐专辑集合对象。",
         "处理不完整数据有几条规则：",
         "如果属性<code>prop</code>是<code>\"tracks\"</code>，但是专辑没有<code>\"tracks\"</code>属性，则在添加值之前先给<code>\"tracks\"</code>创建一个空数组。",
         "如果<code>prop</code>是<code>\"tracks\"</code>，并且值<code>value</code>不为空（<code>\"\"</code>）， 把值<code>value</code>添加到<code>tracks</code>数组中。",
         "如果值<code>value</code>为空（<code>\"\"</code>），则删除专辑的这一属性<code>prop</code>",
-        "<strong>提示</strong><br>使用<code>中括号</code>当<a href=\"javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables\" target=\"_blank\">通过变量访问对象的属性的时候</a>.",
+        "<strong>提示：</strong><br>当<a href=\"javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables\" target=\"_blank\">通过变量访问对象的属性</a>时，应使用<code>中括号</code>。",
         "Push 是一个数组方法，详情请查看<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push\" target=\"_blank\">Mozilla Developer Network</a>.",
         "你可以参考这一节的内容<a href=\"javascript-algorithms-and-data-structures/basic-javascript/manipulating-complex-objects\" target=\"_blank\">Manipulating Complex Objects</a>复习相关知识。"
       ],
@@ -5615,7 +5615,7 @@
         },
         {
           "text": "执行<code>updateRecords(2548, \"artist\", \"\")</code>后，<code>artist</code>不应被创建",
-          "testString": "updateRecords(2548, \"artist\", \"\"); assert(!collection[2548].hasOwnProperty(\"artist\"), '执行<code>updateRecords(2548, \"artist\", \"\")</code>，后<code>artist</code> should not be set');"
+          "testString": "updateRecords(2548, \"artist\", \"\"); assert(!collection[2548].hasOwnProperty(\"artist\"), '执行<code>updateRecords(2548, \"artist\", \"\")</code>，后<code>artist</code>不应被创建');"
         },
         {
           "text": "执行<code>updateRecords(1245, \"tracks\", \"Addicted to Love\")</code>后，<code>tracks</code>最后的元素应该是<code>\"Addicted to Love\"</code>",
@@ -6020,7 +6020,7 @@
       "id": "5a2efd662fb457916e1fe604",
       "title": "Iterate with JavaScript Do...While Loops",
       "description": [
-        "你可以使用循环来多次执行相同的代码",
+        "你可以使用循环来多次执行相同的代码。",
         "你学习的下一个循环是 \"<code>do...while</code>\" 循环，因为它首先无论如何先将 \"<code>do</code>\" 内部的代码执行一次，然后它执行 \"<code>while</code>\" 表达式，指定条件为真则继续执行，直到条件为假时停止执行。我们来看一个例子。",
         "<blockquote>var ourArray = [];<br>var i = 0;<br>do {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>} while (i < 5);</blockquote>",
         "这看起来和其他循环语句差不多，返回的结果是<code>[0, 1, 2, 3, 4]</code>，<code>do...while</code>与其他循环不同点在于，初始条件为假时的表现，让我们通过实际的例子来看看。",
@@ -6523,7 +6523,7 @@
         "上面的函数使用条件运算符写法如下：",
         "<blockquote>function findGreaterOrEqual(a, b) {<br>&nbsp;&nbsp;return (a === b) ? \"a and b are equal\" : (a > b) ? \"a is greater\" : \"b is greater\";<br>}</blockquote>",
         "<hr>",
-        "在 checkSign 函数中使用多个条件运算符来检查数字是正数，负数还是零。"
+        "在 checkSign 函数中使用多个条件运算符来检查数字是正数 ("positive")、负数 ("negative") 或零 ("zero")。"
       ],
       "solutions": [],
       "tests": [
