@@ -6523,7 +6523,7 @@
         "上面的函数使用条件运算符写法如下：",
         "<blockquote>function findGreaterOrEqual(a, b) {<br>&nbsp;&nbsp;return (a === b) ? \"a and b are equal\" : (a > b) ? \"a is greater\" : \"b is greater\";<br>}</blockquote>",
         "<hr>",
-        "在 checkSign 函数中使用多个条件运算符来检查数字是正数 ("positive")、负数 ("negative") 或零 ("zero")。"
+        "在 checkSign 函数中使用多个条件运算符来检查数字是正数 (\"positive\")、负数 (\"negative\") 或零 (\"zero\")。"
       ],
       "solutions": [],
       "tests": [
