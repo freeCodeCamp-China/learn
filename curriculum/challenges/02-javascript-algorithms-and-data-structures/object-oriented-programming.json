@@ -730,7 +730,7 @@
         "<code>duck</code>从<code>Bird</code>构造函数那里继承了它的<code>原型</code>，你可以使用<code>isPrototypeOf</code>方法来验证他们之间的关系：",
         "<blockquote>Bird.prototype.isPrototypeOf(duck);<br>// 返回 true</blockquote>",
         "<hr>",
-        "使用<code>isPrototypeOf</code>方法验证<code>beagle</code>是否继承了<code>Bird</code>构造函数的<code>原型</code>。"
+        "使用<code>isPrototypeOf</code>方法验证<code>beagle</code>是否继承了<code>Dog</code>构造函数的<code>原型</code>。"
       ],
       "tests": [
         {

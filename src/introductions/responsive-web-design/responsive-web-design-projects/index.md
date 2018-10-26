@@ -15,4 +15,4 @@ superBlock: Responsive Web Design
 * 搭建技术文档页面
 * 搭建个人作品集网页
 
-By the end of this, you would have 5 responsive websites under your belt that you can show off to friends, family, employers, etc. Have fun and remember to use the [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.
+完成这几个项目之后，你可以部署到网站上展示给周围的人。如果你在完成的过程中遇到问题，记得使用 [Read-Search-Ask](https://forum.freecodecamp.one/t/topic/157)。
