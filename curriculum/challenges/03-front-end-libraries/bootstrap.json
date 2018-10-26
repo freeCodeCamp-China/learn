@@ -486,7 +486,7 @@
       "title": "Taste the Bootstrap Button Color Rainbow",
       "description": [
         "<code>btn-primary</code> class 的颜色是你在应用中的主题色。这样 “突出显示” 是引导用户按步就班进行操作的有效办法。",
-        "将按钮的 class 从 Bootstrap 的 <code>btn-primary</code> 替换为 <code>btn-default</code>。",
+        "将按钮的 class 从 Bootstrap 的 <code>btn-default</code> 替换为 <code>btn-primary</code>。",
         "记住：你的按钮仍然需要 <code>btn</code> 和 <code>btn-block</code> class。"
       ],
       "tests": [

@@ -6,7 +6,7 @@
   "challenges": [
     {
       "id": "587d7dbd367417b2b2512bb4",
-      "title": "使用 Sass 变量储存数据",
+      "title": "Store Data with Sass Variables",
       "required": [
         {
           "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
@@ -82,7 +82,7 @@
     },
     {
       "id": "587d7dbd367417b2b2512bb5",
-      "title": "CSS 嵌套规则",
+      "title": "Nest CSS with Sass",
       "required": [
         {
           "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
@@ -139,7 +139,7 @@
     },
     {
       "id": "587d7dbd367417b2b2512bb6",
-      "title": "使用 Mixins 创建可重用的 CSS",
+      "title": "Create Reusable CSS with Mixins",
       "required": [
         {
           "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
@@ -217,7 +217,7 @@
     },
     {
       "id": "587d7dbe367417b2b2512bb8",
-      "title": "使用 @if 和 @else 将逻辑添加到你的样式.",
+      "title": "Use @if and @else to Add Logic To Your Styles",
       "required": [
         {
           "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
@@ -286,7 +286,7 @@
     },
     {
       "id": "587d7dbe367417b2b2512bb9",
-      "title": "使用 @for 创建 Sass 循环",
+      "title": "Use @for to Create a Sass Loop",
       "required": [
         {
           "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
@@ -302,7 +302,7 @@
         "<blockquote>.col-1 {<br>&nbsp;&nbsp;width: 8.33333%;<br>}<br><br>.col-2 {<br>&nbsp;&nbsp;width: 16.66667%;<br>}<br><br>......<br><br>.col-12 {<br>&nbsp;&nbsp;width: 100%;<br>}</blockquote>",
         "这是创建网格布局的有效方法。现在，你有 12 个可用作 CSS classes 的列宽选项。",
         "<hr>",
-        "编写<code>@for</code>指令，该指令采用从 <b>到</b> 6的变量<code>$j</code>。",
+        "编写<code>@for</code>指令，使<code>$j</code>的值为从 1（包含）到 6（不包含）。",
         "它应该创建 5 个名为<code>.text-1</code>的 classes 到<code>.text-5</code>，其中每个 class 的<code>font-size</code>设置为 10px 乘以索引。"
       ],
       "tests": [
@@ -360,7 +360,7 @@
     },
     {
       "id": "587d7dbf367417b2b2512bba",
-      "title": "使用 @each 映射列表中的项目",
+      "title": "Use @each to Map Over Items in a List",
       "required": [
         {
           "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
@@ -429,7 +429,7 @@
     },
     {
       "id": "587d7dbf367417b2b2512bbb",
-      "title": "应用样式直到满足 @while 的条件",
+      "title": "Apply a Style Until a Condition is Met with @while",
       "required": [
         {
           "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
@@ -534,7 +534,7 @@
     },
     {
       "id": "587d7dbf367417b2b2512bbc",
-      "title": "使用 Partials 将你的样式拆分为较小的块",
+      "title": "Split Your Styles into Smaller Chunks with Partials",
       "required": [
         {
           "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
@@ -579,7 +579,7 @@
     },
     {
       "id": "587d7fa5367417b2b2512bbd",
-      "title": "将一组 CSS 样式扩展到另一个元素",
+      "title": "Extend One Set of CSS Styles to Another Element",
       "required": [
         {
           "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
