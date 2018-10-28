@@ -403,7 +403,7 @@
         "<blockquote>function Bird(name) {<br>&nbsp;&nbsp;this.name  = name;<br>&nbsp;&nbsp;this.numLegs = 2;<br>}<br><br>let duck = new Bird(\"Donald\");<br>let canary = new Bird(\"Tweety\");</blockquote>",
         "<code>name</code>和<code>numLegs</code>被叫做<code>自身</code>属性，因为他们是直接在实例对象上定义的。这就意味着<code>duck</code>和<code>canary</code>这两个对象分别拥有这些属性的独立副本。",
         "事实上，<code>Bird</code>的这些实例都将拥有这些属性的独立副本。",
-        "以下的代码将<code>duck</code>里面所有的<code>自身</code>属性都存到一个叫 code>ownProps</code>的数组里面：",
+        "以下的代码将<code>duck</code>里面所有的<code>自身</code>属性都存到一个叫<code>ownProps</code>的数组里面：",
         "<blockquote>let ownProps = [];<br><br>for (let property in duck) {<br>&nbsp;&nbsp;if(duck.hasOwnProperty(property)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;ownProps.push(property);<br>&nbsp;&nbsp;}<br>}<br><br>console.log(ownProps); // prints [ \"name\", \"numLegs\" ]</blockquote>",
         "<hr>",
         "将<code>canary</code>对象里面的<code>自身</code>属性添加到<code>ownProps</code>数组里面。"
