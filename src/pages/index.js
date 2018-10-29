@@ -37,19 +37,24 @@ const IndexPage = ({
     <Helmet title='freeCodecamp 中文社区' />
     <Spacer />
     <Spacer />
-    <h2>欢迎体验 freeCodeCamp 2018年新版课程</h2>
-    <p>我们准备了成千上万个编程挑战来帮助提升你的编程技能。</p>
+    <h2>欢迎体验 freeCodeCamp 2018 年新版课程</h2>
+    <p>我们准备了成千上万个编程关卡来帮助提升你的编程技能。</p>
     <p>每当独立完成 5 个终极项目，你就可以获得一个免费证书。</p>
-    <p>是的，所有这些都是100%免费的。</p>
-    <p>这一切都要感谢每个月都有成千上万名学员{' '}
-      <a href='Https://donate.freecodecamp.org' target='_blank'>
-        捐赠
+    <p>是的，关卡、项目、证书、服务器 这些都是 100% 免费的。</p>
+    <p>这一切都要感谢{' '}
+      <a href='Https://github.com/freeCodeCamp' target='_blank'>
+        freeCodeCamp 
       </a>{' '}
-      给我们这个非盈利组织（NPO）。
+      和 <a href='Https://netlify.com' target='_blank'>
+        netlify 
+      </a>。
     </p>
     <p>
       如果你是编程新手，我们推荐你{' '}
       <Link to={slug}>从头开始</Link>。
+    </p>
+    <p>
+      如果你是编程老手，我们推荐你 自由跳跃。
     </p>
     <Spacer />
     <Map

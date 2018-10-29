@@ -4767,40 +4767,40 @@
       "title": "Build JavaScript Objects",
       "description": [
         "你之前可能听说过对象<code>object</code>。",
-        "对象和数组很相似，数组是通过索引来访问和修改数据，对象是通过属性来访问和修改数据的。",
+        "对象和数组很相似，数组是通过索引来访问和修改数据，而对象是通过属性来访问和修改数据。",
         "对象适合用来存储结构化数据，就和真实世界的对象一模一样，比如一只猫。",
         "这是一个对象的示例：",
         "<blockquote>var cat = {<br>&nbsp;&nbsp;\"name\": \"Whiskers\",<br>&nbsp;&nbsp;\"legs\": 4,<br>&nbsp;&nbsp;\"tails\": 1,<br>&nbsp;&nbsp;\"enemies\": [\"Water\", \"Dogs\"]<br>};</blockquote>",
-        "在这个示例中所有的属性以字符串的形式储存，例如 - <code>\"name\"</code>, <code>\"legs\"</code>，和<code>\"tails\"</code>。但是，你也可以使用数字作为属性。你甚至可以省略单个字符串属性的引号，如下所示：",
+        "在这个示例中所有的属性以字符串的形式储存，例如 - <code>\"name\"</code>, <code>\"legs\"</code>，和<code>\"tails\"</code>。但是，你也可以使用数字作为属性，你甚至可以省略字符串属性的引号，如下所示：",
         "<blockquote>var anotherObject = {<br>&nbsp;&nbsp;make: \"Ford\",<br>&nbsp;&nbsp;5: \"five\",<br>&nbsp;&nbsp;\"model\": \"focus\"<br>};</blockquote>",
-        "但是，如果你的对象具有任何非字符串属性，JavaScript 将自动将它们作为字符串进行类型转换。",
+        "但是，如果你的对象具有任何非字符串属性，JavaScript 将自动将它们转换为字符串类型。",
         "<hr>",
-        "创建一个叫做<code>myDog</code>的对象，它里面有这些属性：<code>名称\"name\"</code>、<code>腿\"legs\"</code>,<code>尾巴\"tails\"</code>、<code>朋友\"friends\"</code>。",
-        "你可以设置对象属性为任何你想要的值，只要<code>\"name\"</code>是字符串、<code>\"legs\"</code>和<code>\"tails\"</code>是数字、<code>\"friends\"</code>是数组。"
+        "创建一个叫做<code>myDog</code>的对象，它里面有这些属性：<code>\"name\"</code>、<code>\"legs\"</code>,<code>\"tails\"</code>、<code>\"friends\"</code>。",
+        "你可以设置对象属性为任何值，只需要确保<code>\"name\"</code>是字符串、<code>\"legs\"</code>和<code>\"tails\"</code>是数字、<code>\"friends\"</code>是数组。"
       ],
       "solutions": [
         "var myDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"]  \n};"
       ],
       "tests": [
         {
-          "text": "<code>myDog</code>应该包含<code>name</code>属性，并且是一个字符串<code>string</code>.",
-          "testString": "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof z.name === \"string\"){return true;}else{return false;}})(myDog), '<code>myDog</code>应该包含<code>name</code>属性，并且是一个字符串<code>string</code>.');"
+          "text": "<code>myDog</code>应该包含<code>name</code>属性，并且是一个字符串<code>string</code>。",
+          "testString": "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof z.name === \"string\"){return true;}else{return false;}})(myDog), '<code>myDog</code>应该包含<code>name</code>属性，并且是一个字符串<code>string</code>。');"
         },
         {
-          "text": "<code>myDog</code>应该包含<code>legs</code>属性，并且是一个数字<code>number</code>.",
-          "testString": "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof z.legs === \"number\"){return true;}else{return false;}})(myDog), '<code>myDog</code>应该包含<code>legs</code>属性，并且是一个数字<code>number</code>.');"
+          "text": "<code>myDog</code>应该包含<code>legs</code>属性，并且是一个数字<code>number</code>。",
+          "testString": "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof z.legs === \"number\"){return true;}else{return false;}})(myDog), '<code>myDog</code>应该包含<code>legs</code>属性，并且是一个数字<code>number</code>。');"
         },
         {
-          "text": "<code>myDog</code>应该包含<code>tails</code>属性，并且是一个数字<code>number</code>.",
-          "testString": "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof z.tails === \"number\"){return true;}else{return false;}})(myDog), '<code>myDog</code>应该包含<code>tails</code>属性，并且是一个数字<code>number</code>.');"
+          "text": "<code>myDog</code>应该包含<code>tails</code>属性，并且是一个数字<code>number</code>。",
+          "testString": "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof z.tails === \"number\"){return true;}else{return false;}})(myDog), '<code>myDog</code>应该包含<code>tails</code>属性，并且是一个数字<code>number</code>。');"
         },
         {
-          "text": "<code>myDog</code>应该包含<code>friends</code>属性，并且是一个数组<code>array</code>.",
-          "testString": "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), '<code>myDog</code>应该包含<code>friends</code>属性，并且是一个数组<code>array</code>.');"
+          "text": "<code>myDog</code>应该包含<code>friends</code>属性，并且是一个数组<code>array</code>。",
+          "testString": "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), '<code>myDog</code>应该包含<code>friends</code>属性，并且是一个数组<code>array</code>。');"
         },
         {
-          "text": "<code>myDog</code>应该只包含给出的属性",
-          "testString": "assert((function(z){return Object.keys(z).length === 4;})(myDog), '<code>myDog</code>应该只包含给出的属性');"
+          "text": "<code>myDog</code>应该只包含给出的属性。",
+          "testString": "assert((function(z){return Object.keys(z).length === 4;})(myDog), '<code>myDog</code>应该只包含给出的属性。');"
         }
       ],
       "challengeType": 1,
@@ -5588,7 +5588,7 @@
       "title": "Record Collection",
       "description": [
         "你将获得一个 JSON 对象，用来表示你的部分音乐专辑收藏。每张专辑都有几个属性和一个唯一的 id 号作为键值。并非所有专辑都有完整的信息。",
-        "写一个功能，获取一个专辑的<code>id</code>（如<code>2548</code>），属性<code>prop</code>（如“code>\"artist\"</code>或<code>\"tracks\"</code>），以及一个值<code>value</code>（如<code>\"Addicted to Love\"</code>）来修改音乐专辑收藏的数据。",
+        "写一个功能，获取一个专辑的<code>id</code>（如<code>2548</code>），属性<code>prop</code>（如code>\"artist\"</code>或<code>\"tracks\"</code>），以及一个值<code>value</code>（如<code>\"Addicted to Love\"</code>）来修改音乐专辑收藏的数据。",
         "如果属性<code>prop</code>不是<code>\"tracks\"</code>且值<code>value</code>不为空（<code>\"\"</code>），则更新或设置该专辑属性的值<code>value</code>。",
         "你的函数必须始终返回整个音乐专辑集合对象。",
         "处理不完整数据有几条规则：",
@@ -6019,8 +6019,7 @@
       "id": "5a2efd662fb457916e1fe604",
       "title": "Iterate with JavaScript Do...While Loops",
       "description": [
-        "你可以使用循环来多次执行相同的代码",
-        "你学习的下一个循环是 \"<code>do...while</code>\" 循环，因为它首先无论如何先将 \"<code>do</code>\" 内部的代码执行一次，然后它执行 \"<code>while</code>\" 表达式，指定条件为真则继续执行，直到条件为假时停止执行。我们来看一个例子。",
+        "这一节我们将要学习的是<code>do...while</code>循环，它会先执行<code>do</code>里面的代码，如果<code>while</code>表达式为真则重复执行，反之则停止执行。我们来看一个例子。",
         "<blockquote>var ourArray = [];<br>var i = 0;<br>do {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>} while (i < 5);</blockquote>",
         "这看起来和其他循环语句差不多，返回的结果是<code>[0, 1, 2, 3, 4]</code>，<code>do...while</code>与其他循环不同点在于，初始条件为假时的表现，让我们通过实际的例子来看看。",
         "这是一个普通的 while 循环，只要<code>i < 5</code>，它就会在循环中运行代码。",
@@ -6044,7 +6043,7 @@
         },
         {
           "text": "<code>myArray</code>应该等于<code>[10]</code>.",
-          "testString": "assert.deepEqual(myArray, [10], '<code>myArray</code>应该等于<code>[10]</code>.');"
+          "testString": "assert.deepEqual(myArray, [10], '<code>myArray</code>应该等于<code>[10]</code>');"
         },
         {
           "text": "<code>i</code>应该等于<code>11</code>",
