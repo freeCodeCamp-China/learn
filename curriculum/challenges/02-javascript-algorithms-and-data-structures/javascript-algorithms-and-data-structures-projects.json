@@ -447,7 +447,7 @@
       "id": "aa2e6f85cab2ab736c9a9b24",
       "title": "Cash Register",
       "description": [
-        "编写一个用于收银机的函数<code>checkCashRegister()</code>，传入售价为第一个参数（<code>price</code>）、支付金额为第二个参数（<code>price</code>）、收银机內的金额为第三个参数（<code>cid</code>）。",
+        "编写一个用于收银机的函数<code>checkCashRegister()</code>，传入售价为第一个参数（<code>price</code>）、支付金额为第二个参数（<code>cash</code>）、收银机內的金额为第三个参数（<code>cid</code>）。",
         "<code>cid</code>是包含货币面值的二维数组。",
         "函数<code>checkCashRegister()</code>必须返回含有<code>status</code>键值和<code>change</code>键值的对象。",
         "如果收银机內的金额少于应找回的零钱数，或者你无法返回确切的数目时，返回<code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>。",
