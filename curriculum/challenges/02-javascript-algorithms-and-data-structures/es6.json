@@ -1017,7 +1017,7 @@
         },
         {
           "text": "<code>setGear</code>应是一个函数。",
-          "testString": "assert(typeof bicycle.setGear === 'function' && getUserInput('index').match(/setGear\s*\(.+\)\s*\{/), '<code>setGear</code>应是一个函数。');"
+          "testString": "assert(typeof bicycle.setGear === 'function' && getUserInput('index').match(/setGear\\s*\\(.+\\)\\s*\\{/), '<code>setGear</code>应是一个函数。');"
         },
         {
           "text": "执行<code>bicycle.setGear(48)</code>应可以让<code>gear</code>的值变为 48。",
