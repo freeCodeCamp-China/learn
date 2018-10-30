@@ -235,7 +235,7 @@
       "description": [
         "通过之前的挑战可以看出,<code>const</code>声明并不会真的保护你的数据不被改变。为了确保数据不被改变，JavaScript 提供了一个函数<code>Object.freeze</code>来防止数据改变。",
         "当一个对象被冻结的时候，你不能再对它的属性再进行增、删、改的操作。任何试图改变对象的操作都会被阻止，却不会报错。",
-        "<blockquote>let obj = {<br>&nbsp;&nbsp;name:\"FreeCodeCamp\",<br>&nbsp;&nbsp;review:\"Awesome\"<br>};<br>Object.freeze(obj);<br>obj.review = \"bad\"; //obj 对象被冻结了，这个操作会被忽略<br>obj.newProp = \"Test\"; // will be ignored. Mutation not allowed<br>console.log(obj); <br>// { name: \"FreeCodeCamp\", review:\"Awesome\"}</blockquote>",
+        "<blockquote>let obj = {<br>&nbsp;&nbsp;name:\"FreeCodeCamp\",<br>&nbsp;&nbsp;review:\"Awesome\"<br>};<br>Object.freeze(obj);<br>obj.review = \"bad\"; // obj 对象被冻结了，这个操作会被忽略<br>obj.newProp = \"Test\"; // 也会被忽略，不允许数据改变<br>console.log(obj); <br>// { name: \"FreeCodeCamp\", review:\"Awesome\"}</blockquote>",
         "<hr>",
         "在这个挑战中，你将使用<code>Object.freeze</code>来防止数学常量被改变。你需要冻结<code>MATH_CONSTANTS</code>对象，使得没有人可以改变<code>PI</code>的值，抑或增加或删除属性。"
       ],
@@ -348,7 +348,7 @@
       "title": "Write Arrow Functions with Parameters",
       "description": [
         "和一般的函数一样，你也可以给箭头函数传递参数。",
-        "<blockquote>// doubles input value and returns it<br>const doubler = (item) => item * 2;</blockquote>",
+        "<blockquote>// 给传入的数值乘以 2 并返回结果<br>const doubler = (item) => item * 2;</blockquote>",
         "你同样可以给箭头函数传递多个参数。",
         "<hr>",
         "使用箭头函数的语法重写<code>myConcat</code>函数，使其可以将<code>arr2</code>的内容填充在<code>arr1</code>里。"
@@ -400,7 +400,7 @@
       "title": "Write Higher Order Arrow Functions",
       "description": [
         "我们已经见识到了箭头函数在处理数据时候的强大之处。",
-        "箭头函数在类似<code>map</code>，<code>filter</code>，<code>reduce</code>等需要其他函数作为参数来处理数据的高阶函数里会很好用。" ,
+        "箭头函数在类似<code>map()</code>，<code>filter()</code>，<code>reduce()</code>等需要其他函数作为参数来处理数据的高阶函数里会很好用。" ,
         "阅读以下代码：",
         "<blockquote>FBPosts.filter(function(post) {<br>&nbsp;&nbsp;return post.thumbnail !== null && post.shares > 100 && post.likes > 500;<br>})</blockquote>",
         "我们写下了<code>filter</code>函数，并尽量保证可读性。现在让我们用箭头函数来写同样的代码看看：",
@@ -517,7 +517,7 @@
       "description": [
         "ES6 推出了用于函数参数的<dfn> rest 操作符</dfn>帮助我们创建更加灵活的函数。在<code>rest</code>操作符的帮助下，你可以创建有一个变量来接受多个参数的函数。这些参数被储存在一个可以在函数内部读取的数组中。",
         "请看以下代码：",
-        "<blockquote>function howMany(...args) {<br>&nbsp;&nbsp;return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // 你需要输入3个参数。<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); //你需要输入4个参数。</blockquote>",
+        "<blockquote>function howMany(...args) {<br>&nbsp;&nbsp;return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // 输出：You have passed 3 arguments.<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); // 输出：You have passed 4 arguments.</blockquote>",
         "<code>rest</code>操作符可以避免查看<code>args</code>数组的需求，并且允许我们在参数数组上使用<code>map()</code>,<code>fiter()</code>，和<code>reduce()</code>。",
         "<hr>",
         "修改<code>sum</code>函数，来让它使用<code>rest</code>操作符，并且它可以在有任何数量的参数时以相同的形式工作。"
@@ -574,7 +574,7 @@
         "下面的 ES5 代码使用了<code>apply()</code>来计算数组的最大值：",
         "<blockquote>var arr = [6, 89, 3, 45];<br>var maximus = Math.max.apply(null, arr); // 返回 89</blockquote>",
         "我们必须使用<code>Math.max.apply(null,arr)</code>，是因为直接调用<code>Math.max(arr)</code>会返回<code>NaN</code>。<code>Math.max()</code>函数需要传入的是一系列由逗号分隔的参数，而不是一个数组。",
-        "The spread operator makes this syntax much better to read and maintain.",
+        "展开操作符可以提升代码的可读性，这对后续的代码维护是有积极作用的。",
         "<blockquote>const arr = [6, 89, 3, 45];<br>const maximus = Math.max(...arr); // 返回 89</blockquote>",
         "<code>...arr</code>返回了一个“打开”的数组。或者说它 <em>展开</em> 了数组。",
         "然而，展开操作符只能够在函数的参数中，或者数组之中使用。下面的代码将会报错：",
@@ -873,7 +873,7 @@
             "",
             "  // 在这行以下修改代码",
             "  return function half(stats) {",
-            "    // use function argument destructuring",
+            "    // 请在函数参数中使用解构赋值",
             "    return (stats.max + stats.min) / 2.0;",
             "  };",
             "  // 在这行以上修改代码",
@@ -895,8 +895,8 @@
         "请看以下代码：",
         "<blockquote>const person = {<br>&nbsp;&nbsp;name: \"Zodiac Hasbro\",<br>&nbsp;&nbsp;age: 56<br>};<br><br>// string interpolation<br>const greeting = `Hello, my name is ${person.name}!<br>I am ${person.age} years old.`;<br><br>console.log(greeting); // 打印出<br>// Hello, my name is Zodiac Hasbro!<br>// I am 56 years old.<br></blockquote>",
         "这段代码有许多的不同：",
-        "首先，上面使用的 <code>${variable}</cpode> 语法是一个占位符。这样一来，你将不再需要使用<code>+</code>运算符来连接字符串。当需要在字符串里增加变量的时候，你只需要在变量的外面括上<code>${</code>和<code>}</code>，并将其放在字符串里就可以了。",
-        "其次，在例子使用了反引号（<code>`</code），而不是引号（<code>'</code>或者<code>\"</code>）将字符串括了起来，并且这个字符串可以换行。",
+        "首先，上面使用的<code>${variable}</code>语法是一个占位符。这样一来，你将不再需要使用<code>+</code>运算符来连接字符串。当需要在字符串里增加变量的时候，你只需要在变量的外面括上<code>${</code>和<code>}</code>，并将其放在字符串里就可以了。",
+        "其次，在例子使用了反引号（<code>`</code>），而不是引号（<code>'</code>或者<code>\"</code>）将字符串括了起来，并且这个字符串可以换行。",
         "这个新的方式使你可以更灵活的创建复杂的字符串。",
         "<hr>",
         "使用模板字符串的反引号的语法来展示<code>result</code>对象的<code>failure</code>数组内的每个条目。每个条目应该括在带有<code>text-warning</code>类属性的<code>li</code>标签中，并赋值给<code>resultDisplayArray</code>。"
@@ -1012,12 +1012,16 @@
       ],
       "tests": [
         {
-          "text": "<code>setGear</code>是一个函数，它改变了变量<code>gear</code>的值。",
-          "testString": "assert(() => { bicycle.setGear(48); return bicycle.gear === 48 }, '<code>setGear</code>是一个函数，它改变了变量<code>gear</code>的值。');"
+          "text": "不应使用<code>function</code>关键字定义方法。",
+          "testString": "assert(!getUserInput('index').match(/function/), '不应使用<code>function</code>关键字定义方法。');"
         },
         {
-          "text": "使用了函数声明。",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/:\\s*function\\s*\\(\\)/g), '使用了函数声明。');"
+          "text": "<code>setGear</code>应是一个函数。",
+          "testString": "assert(typeof bicycle.setGear === 'function' && getUserInput('index').match(/setGear\\s*\\(.+\\)\\s*\\{/), '<code>setGear</code>应是一个函数。');"
+        },
+        {
+          "text": "执行<code>bicycle.setGear(48)</code>应可以让<code>gear</code>的值变为 48。",
+          "testString": "assert((new bicycle.setGear(48)).gear === 48, '执行<code>bicycle.setGear(48)</code>应可以让<code>gear</code>的值变为 48。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1142,9 +1146,9 @@
           "contents": [
             "function makeClass() {",
             "  \"use strict\";",
-            "  /* Alter code below this line */",
+            "  /* 请把你的代码写在这条注释以下 */",
             "",
-            "  /* Alter code above this line */",
+            "  /* 请把你的代码写在这条注释以上 */",
             "  return Thermostat;",
             "}",
             "const Thermostat = makeClass();",
@@ -1173,7 +1177,7 @@
         "<strong>注意</strong><br>本节课中进行的是一个非浏览器操作。<code>import</code>以及与其相关的在后面课程中的语句，是无法直接在浏览器上运行的。但是，我们可以通过一些工具来使它可以在浏览器中运行。",
         "<strong>注意</strong><br>在许多的例子中，在文件的路径前会加上<code>./</code>；否则， node.js 会先尝试去<code>node_modules</code>目录中寻找依赖项。",
         "<hr>",
-        "添加正确的<code>import</code>语句，语序当前的文件使用<code>capitalizeString</code>函数。这个函数是在与当前文件同一目录下的<code>\"string_functions\"</code>文件中声明的。"
+        "添加正确的<code>import</code>语句，允许当前文件使用<code>capitalizeString</code>函数。这个函数是在与当前文件同一目录下的<code>\"string_functions\"</code>文件中声明的。"
       ],
       "tests": [
         {
@@ -1331,7 +1335,7 @@
         "<blockquote>import add from \"math_functions\";<br>add(5,4); //将会返回 9</blockquote>",
         "这个语法只有一处不同的地方 —— 被导入的<code>add</code>值，并没有被花括号<code>{}</code>所包围。与导出值的方法不同，导入默认导出的写法仅仅只是简单的讲变量名写在<code>import</code>之后。",
         "<hr>",
-        "在下面的代码中，请导入在同目录下的<code>\"math_functions\"文件中</code>默认导出的<code>subtract</code>值。"
+        "在下面的代码中，请导入在同目录下的<code>\"math_functions\"</code>文件中默认导出的<code>subtract</code>值。"
       ],
       "tests": [
         {
