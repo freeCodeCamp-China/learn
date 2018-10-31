@@ -828,7 +828,7 @@
       "tests": [
         {
           "text": "<code>smallestCommons([1, 5])</code>应该返回一个数字。",
-          "testString": "assert.deepEqual(typeof smallestCommons([1, 5]), 'number', '<code>smallestCommons([1, 5])</code>应该返回一个数字。"
+          "testString": "assert.deepEqual(typeof smallestCommons([1, 5]), 'number', '<code>smallestCommons([1, 5])</code>应该返回一个数字。');"
         },
         {
           "text": "<code>smallestCommons([1, 5])</code>应该返回 60。",
