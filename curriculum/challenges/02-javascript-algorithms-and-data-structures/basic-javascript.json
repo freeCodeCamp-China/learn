@@ -3213,8 +3213,9 @@
       "id": "599a789b454f2bbd91a3ff4d",
       "title": "Practice comparing different values",
       "description": [
-        "在上两个挑战中，我们学习了相等运算符 (<code>==</code>) 和严格相等运算符 (<code>===</code>)。让我们快速回顾并实践一下。",
-        "如果要比较的值不是同一类型，则相等运算符将执行类型转换，然后计算值。严格相等运算符则直接比较数据类型和值，不会进行类型换。",
+        "在上两个挑战中，我们学习了相等运算符 (<code>==</code>) 和严格相等运算符 (<code>===</code>)。现在让我们快速回顾并实践一下。",
+        "如果要比较的值不是同一类型，相等运算符会先执行数据类型转换，然后比较值。而严格相等运算符只比较值，不会进行数据类型转换。",
+        "由此可见，相等运算符和严格相等运算符的区别是：前者会执行隐式类型转换，后者不会。",
         "<strong>示例</strong>",
         "<blockquote>3 == '3'  // 返回 true，因为 JavaScript 会执行类型转换把字符串 '3' 转化成数字<br>3 === '3' // 返回 false，因为类型不同，而这里不会进行类型转换</blockquote>",
         "<strong>提示</strong><br>在JavaScript中，你可以使用<code>typeof</code>运算符确定变量的类型或值，如下所示：",
@@ -3236,7 +3237,7 @@
           "testString": "assert(compareEquality(\"20\", 20) === \"Not Equal\", '<code>compareEquality(\"20\", 20)</code>应该返回 \"Not Equal\"');"
         },
         {
-          "text": "你应该使用 <code>===</code> 运算符",
+          "text": "你应该使用<code>===</code>运算符",
           "testString": "assert(code.match(/===/g), '你应该使用<code>===</code>运算符');"
         }
       ],
