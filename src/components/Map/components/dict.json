@@ -341,7 +341,7 @@
 {"english": "Accessing Nested Objects","chinese": "访问嵌套对象"},
 {"english": "Accessing Nested Arrays","chinese": "访问嵌套数组"},
 {"english": "Record Collection","chinese": "记录集合"},
-{"english": "Iterate with JavaScript While Loops","chinese": "white 循环"},
+{"english": "Iterate with JavaScript While Loops","chinese": "while 循环"},
 {"english": "Iterate with JavaScript For Loops","chinese": "for 循环"},
 {"english": "Iterate Odd Numbers With a For Loop","chinese": "使用 For 循环遍历数组的奇数"},
 {"english": "Count Backwards With a For Loop","chinese": "使用 For 循环反向遍历数组"},
