@@ -1216,7 +1216,7 @@
         "<code>.clear()</code>移除所有的键值对；",
         "<code>.entries()</code>以数组形式返回所有 key 值，顺序以插入时的顺序为准；",
         "<code>.values()</code>以数组形式返回所有 value 值，顺序以插入时的顺序为准。",
-        "任务：定义一个 Map 对象并将其赋值给一个名为 myMap 的变量。你还需要给 Map 对象添加键值对<code>freeCodeCamp: 'Awesome!'</code>。"
+        "任务：定义一个 Map 对象并将其赋值给一个名为 myMap 的变量。你还需要给 Map 对象添加键值对<code>freeCodeCamp</code>,<code>Awesome!</code>。"
       ],
       "tests": [
         {
@@ -1225,7 +1225,7 @@
         },
         {
           "text": "myMap 应包含键值对<code>freeCodeCamp: 'Awesome!'</code>。",
-          "testString": "assert(myMap.get('freeCodeCamp') === 'Awesome!', 'myMap 应包含键值对<code>freeCodeCamp: 'Awesome!'</code>。');"
+          "testString": "assert(myMap.get('freeCodeCamp') === 'Awesome!', 'myMap 应包含键值对<code>freeCodeCamp</code>,<code>Awesome!</code>。');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
