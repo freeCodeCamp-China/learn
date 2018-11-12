@@ -403,7 +403,7 @@
         {
           "text": "这张图片应该是一只小猫。",
           "testString":
-            "assert(new RegExp(\"\\/\\/ofa83l6ao.qnssl.com\\/relaxing-cat.jpg|\\/\\/s3.amazonaws.com\\/freecodecamp\\/relaxing-cat.jpg\", \"gi\").test($(\"img\").attr(\"src\")), '这张图片应该是一只小猫。');"
+            "assert(new RegExp(\"\\/\\/cdn.freecodecamp.cn\\/relaxing-cat.jpg|\\/\\/s3.amazonaws.com\\/freecodecamp\\/relaxing-cat.jpg\", \"gi\").test($(\"img\").attr(\"src\")), '这张图片应该是一只小猫。');"
         },
         {
           "text": "图片必须有<code>alt</code>属性。",
