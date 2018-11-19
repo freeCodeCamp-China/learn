@@ -83,7 +83,7 @@
         "你可以使用 CSS 里面的<code>width</code>属性来指定元素的宽度。属性值可以是相对单位（比如 em），绝对单位（比如 px），或者包含块（父元素）宽度的百分比。下面这个例子把图片的宽度设置为 220px：",
         "<blockquote>img {<br>&nbsp;&nbsp;width: 220px;<br>}</blockquote>",
         "<hr>",
-        "给卡片添加<code>width</code>属性，设置它的宽度为 245px。使用<code>fullCark</code> class 来选择元素。"
+        "给卡片添加<code>width</code>属性，设置它的宽度为 245px。使用<code>fullCard</code> class 来选择元素。"
       ],
       "tests": [
         {
