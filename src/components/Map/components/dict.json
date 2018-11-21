@@ -214,7 +214,7 @@
 {"english": "Use the align-items Property in the Tweet Embed","chinese": "在推文中使用 align-items 属性"},
 {"english": "Use the flex-wrap Property to Wrap a Row or Column","chinese": "使用 flex-wrap 属性包裹一行或一列"},
 {"english": "Use the flex-shrink Property to Shrink Items","chinese": "使用 flex-shrink 属性收缩项目"},
-{"english": "Use the flex-grow Property to Expand Items","chinese": "使用 flex-shrink 属性扩展项目"},
+{"english": "Use the flex-grow Property to Expand Items","chinese": "使用 flex-grow 属性扩展项目"},
 {"english": "Use the flex-basis Property to Set the Initial Size of an Item","chinese": "使用 flex-basic 属性设置项目的初始大小"},
 {"english": "Use the flex Shorthand Property","chinese": "使用 flex 短方法属性"},
 {"english": "Use the order Property to Rearrange Items","chinese": "使用 order 属性重新排列项目"},
