@@ -43,10 +43,10 @@ const IndexPage = ({
     <p>是的，关卡、项目、证书、服务器 这些都是 100% 免费的。</p>
     <p>这一切都要感谢{' '}
       <a href='Https://github.com/freeCodeCamp' target='_blank'>
-        freeCodeCamp 
+        freeCodeCamp
       </a>{' '}
       和 <a href='Https://netlify.com' target='_blank'>
-        netlify 
+        netlify
       </a>。
     </p>
     <p>
