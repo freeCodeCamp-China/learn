@@ -1,0 +1,2 @@
+webpackJsonp([0xd62696d6c5b5],{4214:function(e,s){e.exports={data:{markdownRemark:{frontmatter:{superBlock:"Responsive Web Design"},html:'<h2>Introduction to Responsive Web Design</h2>\n<p>This introduction is a stub</p>\n<p>Help us make it real on <a href="https://github.com/freeCodeCamp/learn/tree/master/src/introductions">GitHub</a>.</p>'}},pathContext:{superBlock:"responsive-web-design",slug:"/responsive-web-design"}}}});
+//# sourceMappingURL=path---responsive-web-design-d2bad98789569ccd503a.js.map

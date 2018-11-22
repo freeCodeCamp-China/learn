@@ -1,0 +1,2 @@
+webpackJsonp([47681688868592],{3497:function(a,t){a.exports={data:{markdownRemark:{frontmatter:{superBlock:"Data Visualization"},html:"<h2>Introduction to Data Visualization</h2>\n<p>This is a stub introduction for Data Visualization</p>"}},pathContext:{superBlock:"data-visualization",slug:"/data-visualization"}}}});
+//# sourceMappingURL=path---data-visualization-6807d6bd286194f678b4.js.map

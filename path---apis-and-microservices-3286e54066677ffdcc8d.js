@@ -1,0 +1,2 @@
+webpackJsonp([0xf4a12aa0e3cd],{2802:function(s,r){s.exports={data:{markdownRemark:{frontmatter:{superBlock:"APIs and Microservices"},html:"<h2>Introduction to APIs and Microservices</h2>\n<p>This is a stub introduction for APIs and Microservices</p>"}},pathContext:{superBlock:"apis-and-microservices",slug:"/apis-and-microservices"}}}});
+//# sourceMappingURL=path---apis-and-microservices-3286e54066677ffdcc8d.js.map

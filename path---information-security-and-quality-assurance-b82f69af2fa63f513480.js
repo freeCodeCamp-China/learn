@@ -1,0 +1,2 @@
+webpackJsonp([0x7867d6f0098c],{3714:function(n,t){n.exports={data:{markdownRemark:{frontmatter:{superBlock:"Information Security and Quality Assurance"},html:"<h2>Introduction to Information Security and Quality Assurance</h2>\n<p>This is a stub introduction for Information Security and Quality Assurance</p>"}},pathContext:{superBlock:"information-security-and-quality-assurance",slug:"/information-security-and-quality-assurance"}}}});
+//# sourceMappingURL=path---information-security-and-quality-assurance-b82f69af2fa63f513480.js.map
