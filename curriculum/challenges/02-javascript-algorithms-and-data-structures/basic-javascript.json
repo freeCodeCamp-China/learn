@@ -1591,7 +1591,7 @@
           "testString": "assert(myStr === \"Hello World\", 'message:<code>myStr</code>的值应该是<code>Hello World</code>');"
         },
         {
-          "text": "Do not change the code above the line",
+          "text": "不要修改注释上面的代码",
           "testString": "assert(/myStr = \"Jello World\"/.test(code), '不要修改注释上面的代码');"
         }
       ],
@@ -2436,8 +2436,8 @@
           "testString": "if(typeof functionWithArgs === \"function\") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16, '<code>functionWithArgs(7,9)</code>应该输出<code>16</code>');"
         },
         {
-          "text": "在你定义<code>myFunction</code>之后记得调用它",
-          "testString": "assert(/^\\s*functionWithArgs\\s*\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(code), '在你定义<code>myFunction</code>之后记得调用它');"
+          "text": "在你定义<code>functionWithArgs</code>之后记得调用它",
+          "testString": "assert(/^\\s*functionWithArgs\\s*\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(code), '在你定义<code>functionWithArgs</code>之后记得调用它');"
         }
       ],
       "challengeType": 1,
