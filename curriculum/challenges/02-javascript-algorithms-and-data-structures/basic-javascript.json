@@ -2437,7 +2437,7 @@
         },
         {
           "text": "在你定义<code>functionWithArgs</code>之后记得调用它",
-          "testString": "assert(/^\\s*functionWithArgs\\s*\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(code), '在你定义<code>functionWithArgs</code>之后记得调用它');"
+          "testString": "assert(/^\\s*functionWithArgs\\s*\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;?/m.test(code), '在你定义<code>functionWithArgs</code>之后记得调用它');"
         }
       ],
       "challengeType": 1,
