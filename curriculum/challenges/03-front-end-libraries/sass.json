@@ -101,7 +101,7 @@
       "tests": [
         {
           "text": "你应重新组织 CSS 规则，以便<code>h1</code>和<code>p</code>嵌套在<code>.blog-post</code>父元素中。",
-          "testString": "assert(code.match(/\\.blog-post\\s*?{\\s*?h1\\s*?{\\s*?text-align:\\s*?center;\\s*?color:\\s*?blue;\\s*?}\\s*?p\\s*?{\\s*?font-size:\\s*?20px;\\s*?}\\s*?}/gi), '你应重新组织 CSS 规则，以便<code>h1</code>和<code>p</code>嵌套在<code>.blog-post<code>父元素中。);"
+          "testString": "assert(code.match(/\\.blog-post\\s*?{\\s*?h1\\s*?{\\s*?text-align:\\s*?center;\\s*?color:\\s*?blue;\\s*?}\\s*?p\\s*?{\\s*?font-size:\\s*?20px;\\s*?}\\s*?}/gi), '你应重新组织 CSS 规则，以便<code>h1</code>和<code>p</code>嵌套在<code>.blog-post<code>父元素中。');"
         }
       ],
       "solutions": [],
