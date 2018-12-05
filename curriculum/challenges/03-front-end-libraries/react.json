@@ -2125,7 +2125,7 @@
       "description": [
         "你可以将<code>state</code>作为 props 传递给子组件，但不仅限于传递数据。你也可以将处理函数或在 React 组件中定义的任何方法传递给子组件。这就是允许子组件与父组件交互的方式。你可以把方法像普通 prop 一样传递给子组件，它会被分配一个名字，你可以在子组件中的<code>this.props</code>下访问该方法的名字。",
         "<hr>",
-        "代码编辑器中列出了三个组件。<code>MyApp</code>是父组件，<code>GetInput</code>和<code>RenderInput</code>是它的子组件。将<code>GetInput</code>组件添加到<code>MyApp</code>的 render 方法，然后将一个名为<code>input</code>的 prop 传递给<code>MyApp</code>的<code>state</code>中的<code>inputValue</code>。还要创建一个名为<code>handleChange</code>的 prop，并将输入处理程序<code>handleChange</code>传递给它。",
+        "代码编辑器中列出了三个组件。<code>MyApp</code>是父组件，<code>GetInput</code>和<code>RenderInput</code>是它的子组件。将<code>GetInput</code>组件添加到<code>MyApp</code>的 render 方法，然后将一个名为<code>input</code>的 prop 传递<code>MyApp</code>的<code>state</code>中的<code>inputValue</code>。还要创建一个名为<code>handleChange</code>的 prop，并将输入处理程序<code>handleChange</code>传递给它。",
         "接下来，将<code>RenderInput</code>添加到<code>MyApp</code>中的 render 方法中，然后创建一个名为<code>input</code>的 prop，并将<code>state</code>中的<code>inputValue</code>传递给它。完成后，你将能够在<code>GetInput</code>组件中的<code>input</code>字段中键入内容，然后该组件通过 props 调用其父组件中的处理函数方法。这将更新处于父组件<code>state</code>中的 input，该 input 将作为 props 传递给两个子组件。观察数据如何在组件之间流动，以及单一数据源如何保持父组件<code>state</code>。诚然，这个示例有点做作，但是应该能用来说明数据和回调是如何在 React 组件之间传递的。"
       ],
       "files": {
@@ -2443,7 +2443,7 @@
         "<hr>",
         "子组件<code>Dialog</code>从其父组件<code>Controller</code>接收<code>message</code>props。在<code>Dialog</code>组件中编写<code>componentWillReceiveProps()</code>方法，并将<code>this.props</code>和<code>nextProps</code>记录到控制台。你需要将<code>nextProps</code>作为参数传递给此方法，虽然可以将其命名为任何名称，但请将其命名为<code>nextProps</code>。",
         "接下来，在<code>Dialog</code>组件中添加<code>componentDidUpdate()</code>，并记录一条说明组件已更新的语句。此方法的工作方式类似于为你提供的<code>componentWillUpdate()</code>。现在单击按钮更改消息并观察浏览器控制台。控制台语句的顺序显示了调用方法的顺序。",
-        "<strong>注意：/strong>&nbsp;为了通过测试，你需要将生命周期方法编写为普通函数，而不是箭头函数（将生命周期方法编写为箭头函数也没有好处）。"
+        "<strong>注意：</strong>&nbsp;为了通过测试，你需要将生命周期方法编写为普通函数，而不是箭头函数（将生命周期方法编写为箭头函数也没有好处）。"
       ],
       "files": {
         "indexjsx": {
@@ -2678,7 +2678,7 @@
         "在上一次挑战中，你可能已经注意到，除了设置为 JavaScript 对象的<code>style</code>属性之外，与 HTML 内联样式相比，React 的内联样式还有其他几个语法差异。首先，某些 CSS 样式属性的名称使用驼峰式命名。例如，最后一个挑战用<code>fontSize</code>而不是<code>font-size</code>来设置字体的大小。对于 JavaScript 对象属性来说，像<code>font-size</code>这样的连字符命名是无效的语法，所以 React 使用驼峰式命名。通常，任何连字符的 style 属性在 JSX 中都是使用驼峰式命名的。",
         "除非另有规定，否则所有属性值是长度的（如<code>height</code>、<code>width</code>和<code>fontSize</code>）其单位都假定为<code>px</code>。例如，如果要使用<code>em</code>，可以用引号将值和单位括起来，例如<code>{fontSize: \"4em\"}</code>。除了默认为<code>px</code>的长度值之外，所有其他属性值都应该用引号括起来。",
         "<hr>",
-        "如果你有大量样式，你可以将 style<code>对象</code>分配给一个常量，以保持代码的组织有序。取消对<code>styles</code>常量的注释，并声明具有三个样式属性及对应值的<code>对象</code>。使<code>div</code>的颜色为<code>\"purple\"</code>、字号为<code>40</code>、边框为<code>\"2px solid purple\"</code>。然后设置<code>style</code>属性，使其等于<code>styles</code>常量。"
+        "如果你有大量样式，你可以将 style<code>对象</code>分配给一个常量，以保持代码的组织有序。取消对<code>styles</code>常量的注释，并声明具有三个样式属性及对应值的<code>对象</code>。使<code>div</code>的文字颜色为<code>\"purple\"</code>、字号为<code>40</code>、边框为<code>\"2px solid purple\"</code>。然后设置<code>style</code>属性，使其等于<code>styles</code>常量。"
       ],
       "files": {
         "indexjsx": {
@@ -3583,7 +3583,7 @@
         "到目前为止，你已经能够在客户端上渲染 React 组件，一般来说我们都是这么做的。然而，在一些用例中，在服务器上渲染一个 React 组件是有意义的。由于 React 是一个 JavaScript 视图库，所以使用 Node 让 JavaScript 运行在服务器上是可行的。事实上，React 提供了一个可用于此目的的<code>renderToString()</code>方法。",
         "有两个关键原因可以解释为什么服务器上的渲染可能会在真实世界的应用程序中使用。首先，如果不这样做，你的 React 应用程序将包含一个代码量很少的 HTML 文件和一大堆 JavaScript，当它最初加载到浏览器时。这对于搜索引擎来说可能不太理想，因为它们试图为你的网页内容生成索引，以便人们可以找到你。如果在服务器上渲染初始 HTML 标记并将其发送到客户端，则初始页面加载的内容包含搜索引擎可以抓取的所有页面标记。其次，这创造了更快的初始页面加载体验，因为渲染的 HTML 代码量要比整个应用程序的 JavaScript 代码小。React 仍然能够识别你的应用并在初始加载后进行管理。",
         "<hr>",
-        "The <code>renderToString()</code> method is provided on <code>ReactDOMServer</code>, which is available here as a global object. The method takes one argument which is a React元素。 Use this to render <code>App</code> to a string."
+        "<code>renderToString()</code>方法由<code>ReactDOMServer</code>提供，在这里已为你定义成全局变量。这个方法接受一个 React 元素作为参数。 用它来把<code>App</code>渲染成字符串。"
       ],
       "files": {
         "indexjsx": {

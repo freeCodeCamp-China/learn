@@ -7,8 +7,6 @@ const propTypes = {
 };
 
 function ChallengeTitle({ children, isCompleted }) {
-  console.log(children)
-  
   let icon = null;
   if (isCompleted) {
     icon = (

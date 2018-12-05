@@ -5,6 +5,6 @@ superBlock: Front End Libraries
 ---
 ## Introduction to the React Challenges
 
-React, popularized by Facebook, is a open-source JavaScript library for building user interfaces. With JSX, it is used to create components, handle state and props, utilize event listeners and certain life cycle methods to update data as it changes. 
+React，由 FaceBook 普及，是一个用于构建用户界面的开源 JavaScript 库。通过 JSX 创建组件，处理 state 和 props，利用事件监听和指定的生命周期钩子动态更新数据。
 
-React combines HTML with JavaScript functionality to create its own markup language, JSX. This section will introduce you to all of these concepts and how to implement them for use with your own projects.
+React 混合了 HTML 和 JavaScript 的函数性创建了一个新的标签语言，JSX。这章将介绍所有的这些概念以及如何在项目中使用它们。
