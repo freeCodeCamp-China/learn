@@ -172,7 +172,7 @@
       "tests": [
         {
           "text": "函数<code>actionCreator</code>应该存在。",
-          "testString": "assert(typeof actionCreator === 'function', ' 函数<code>actionCreator</code>应该存在。"
+          "testString": "assert(typeof actionCreator === 'function', ' 函数<code>actionCreator</code>应该存在。');"
         },
         {
           "text": "运行<code>actionCreator</code>函数应返回 action 对象。",
@@ -227,7 +227,7 @@
       "tests": [
         {
           "text": "调用函数<code>loginAction</code>应该返回一个对象{type:'LOGIN'}。",
-          "testString": "assert(loginAction().type === 'LOGIN', '调用函数<code>loginAction</code>应该返回一个对象{type:'LOGIN'}。');"
+          "testString": "assert(loginAction().type === 'LOGIN', '调用函数<code>loginAction</code>应该返回一个对象{type:\\'LOGIN\\'}。');"
         },
         {
           "text": "store 应该初始化一个对象{login:false}。",
@@ -250,10 +250,10 @@
       "title": "Handle an Action in the Store",
       "releasedOn": "December 25, 2017",
       "description": [
-        "在一个 action 被创建并 dispatch 之后，Redux store需要知道如何响应该操作。这是<code>reducer</ code>函数的工作。Redux 中的 Reducers 负责响应 action 然后进行状态的修改。<code>reducer</code>将<code>state</code>和<code>action</code>作为参数，并且它总是返回一个新的<code>state</code>。我们要知道这是 reducer 的<strong>唯一</strong>的作用。它没有任何其他的作用; 它永远不会调用 API 接口，它永远不会有任何潜在的副作用。reducer 只是一个接受状态和动作，然后返回新状态的纯函数。",
+        "在一个 action 被创建并 dispatch 之后，Redux store需要知道如何响应该操作。这是<code>reducer</code>函数的工作。Redux 中的 Reducers 负责响应 action 然后进行状态的修改。<code>reducer</code>将<code>state</code>和<code>action</code>作为参数，并且它总是返回一个新的<code>state</code>。我们要知道这是 reducer 的<strong>唯一</strong>的作用。它没有任何其他的作用; 它永远不会调用 API 接口，它永远不会有任何潜在的副作用。reducer 只是一个接受状态和动作，然后返回新状态的纯函数。",
         "Redux 的另一个关键原则是<code>state</code>是只读的。换句话说，<code>reducer</code>函数必须<strong>始终</strong>返回一个新的<code>state</code>，并且永远不会直接修改状态。 Redux 不强制改变状态，但是，你需要在你的reducer函数的代码中强制执行它，你将在以后的挑战中练习这一点。",
         "<hr>",
-        "代码编辑器中具有前面的示例以及一个<code>reducer</code>函数。你需要完善<code>reducer</code>函数的内容，使得它如果收到类型为<code>'LOGIN'</ code>的action，它将返回一个将<code>login</code>设置为<code>true</code>的 state 对象。 否则，它就返回当前的<code>state</code>。请注意，当前<code>state</code>和dispatch的<code>action</code>将被传递给reducer，因此你可以使用<code>action.type</code>直接获取action的类型。"
+        "代码编辑器中具有前面的示例以及一个<code>reducer</code>函数。你需要完善<code>reducer</code>函数的内容，使得它如果收到类型为<code>'LOGIN'</code>的action，它将返回一个将<code>login</code>设置为<code>true</code>的 state 对象。 否则，它就返回当前的<code>state</code>。请注意，当前<code>state</code>和dispatch的<code>action</code>将被传递给reducer，因此你可以使用<code>action.type</code>直接获取action的类型。"
       ],
       "files": {
         "indexjsx": {
@@ -286,7 +286,7 @@
       "tests": [
         {
           "text": "调用<code>loginAction</code>函数应该返回一个对象{type:'LOGIN'}。",
-          "testString": "assert(loginAction().type === 'LOGIN', '调用<code>loginAction</code>函数应该返回一个对象{type:'LOGIN'}。');"
+          "testString": "assert(loginAction().type === 'LOGIN', '调用<code>loginAction</code>函数应该返回一个对象{type:\\'LOGIN\\'}。');"
         },
         {
           "text": "store 应该初始化一个对象{login:false}。",
@@ -316,7 +316,7 @@
         "你可以告诉 Redux store 如何处理多种 action 类型。比如你正在 Redux store 中进行用户身份验证。如果你希望用户在登录和注销时具有状态的响应。你可以使用具有<code>authenticated</code>属性的单个的 state 对象。你还需要使用 action creators 创建与用户登录和用户注销相对应的 action，以及 action 对象本身。",
         "<hr>",
         "代码编辑器为你创建了 store，actions 和 action creators。通过编写<code>reducer</code>函数来处理多个身份验证操作。可以在<code>reducer</code>通过使用 JavaScript 中的<code>switch</code>响应不同的 action 事件。这是编写 Redux reducer 时的标准模式，switch 语句选择<code>action.type</code>中的一个值并返回相应的身份验证状态。",
-        "<strong>注意：</strong>＆nbsp;此时，不要担心 state 的不变性，因为在这个示例中它很小而且很简单。所以对于每个操作你都可以返回一个新对象;例如，<code>{authenticated:true}</code>。另外，不要忘记在 switch 语句中写一个<code>default</code> case，返回当前的<code>state</code>。这是很重要的因为一旦你的程序有多个 reducer，当一个 action 被 dispatch 时它们都会运行，即使 action 与该 reducer 无关。在这种情况下，你要确保返回当前的<code>state</code>"
+        "<strong>注意：</strong>&nbsp;此时，不要担心 state 的不变性，因为在这个示例中它很小而且很简单。所以对于每个操作你都可以返回一个新对象;例如，<code>{authenticated:true}</code>。另外，不要忘记在 switch 语句中写一个<code>default</code> case，返回当前的<code>state</code>。这是很重要的因为一旦你的程序有多个 reducer，当一个 action 被 dispatch 时它们都会运行，即使 action 与该 reducer 无关。在这种情况下，你要确保返回当前的<code>state</code>"
       ],
       "files": {
         "indexjsx": {
@@ -355,11 +355,11 @@
       "tests": [
         {
           "text": "调用<code>loginUser</code>函数应该返回一个{type:'LOGIN'}对象。",
-          "testString": "assert(loginUser().type === 'LOGIN', '调用<code>loginUser</code>函数应该返回一个{type:'LOGIN'}对象。');"
+          "testString": "assert(loginUser().type === 'LOGIN', '调用<code>loginUser</code>函数应该返回一个{type:\\'LOGIN\\'}对象。');"
         },
         {
           "text": "调用<code>logoutUser</code>函数应该返回一个{type:'LOGOUT'}对象。",
-          "testString": "assert(logoutUser().type === 'LOGOUT', '调用<code>logoutUser</code>函数应该返回一个{type:'LOGOUT'}对象。');"
+          "testString": "assert(logoutUser().type === 'LOGOUT', '调用<code>logoutUser</code>函数应该返回一个{type:\\'LOGOUT\\'}对象。');"
         },
         {
           "text": "store 应该设置一个初始化对象{authenticated:false}。",
@@ -451,11 +451,11 @@
       "tests": [
         {
           "text": "调用<code>loginUser</code>函数应该返回一个{type:'LOGIN'}对象。",
-          "testString": "assert(loginUser().type === 'LOGIN', '调用<code>loginUser</code>函数应该返回一个{type:'LOGIN'}对象。');"
+          "testString": "assert(loginUser().type === 'LOGIN', '调用<code>loginUser</code>函数应该返回一个{type:\\'LOGIN\\'}对象。');"
         },
         {
           "text": "调用<code>logoutUser</code>函数应该返回一个{type:'LOGOUT'}对象。",
-          "testString": "assert(logoutUser().type === 'LOGOUT', '调用<code>logoutUser</code>函数应该返回一个{type:'LOGOUT'}对象。');"
+          "testString": "assert(logoutUser().type === 'LOGOUT', '调用<code>logoutUser</code>函数应该返回一个{type:\\'LOGOUT\\'}对象。');"
         },
         {
           "text": "store 应该初始化一个对象{login：false}。",
@@ -475,7 +475,7 @@
         },
         {
           "text": "应该使用<code>const LOGIN='LOGIN'</code>和<code>const LOGOUT='LOGOUT'</code>的方式声明<code>LOGIN</code>和<code>LOGOUT</code>。",
-          "testString": "getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').toString().replace(/\\s/g,''); return (noWhiteSpace.includes('constLOGIN=\\'LOGIN\\'') || noWhiteSpace.includes('constLOGIN=\"LOGIN\"')) && (noWhiteSpace.includes('constLOGOUT=\\'LOGOUT\\'') || noWhiteSpace.includes('constLOGOUT=\"LOGOUT\"')) })(), '应该使用<code>const LOGIN='LOGIN'</code>和<code>const LOGOUT='LOGOUT'</code>的方式声明<code>LOGIN</code>和<code>LOGOUT</code>。');"
+          "testString": "getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').toString().replace(/\\s/g,''); return (noWhiteSpace.includes('constLOGIN=\\'LOGIN\\'') || noWhiteSpace.includes('constLOGIN=\"LOGIN\"')) && (noWhiteSpace.includes('constLOGOUT=\\'LOGOUT\\'') || noWhiteSpace.includes('constLOGOUT=\"LOGOUT\"')) })(), '应该使用<code>const LOGIN=\\'LOGIN\\'</code>和<code>const LOGOUT=\\'LOGOUT\\'</code>的方式声明<code>LOGIN</code>和<code>LOGOUT</code>。');"
         },
         {
           "text": "action creator 和 reducer 中应该引用<code>LOGIN</code>和<code>LOGOUT</code>常量。",
