@@ -390,7 +390,7 @@
       "title": "Use const for Action Types",
       "releasedOn": "December 25, 2017",
       "description": [
-        "在使用 Redux 时的一个常见做法是将操作类型指定为只读，然后在任何使用它们的地方引用这些常量。你可以通过将 action types 使用<code>const</代码>声明重构你正在使用的代码。",
+        "在使用 Redux 时的一个常见做法是将操作类型指定为只读，然后在任何使用它们的地方引用这些常量。你可以通过将 action types 使用<code>const</code>声明重构你正在使用的代码。",
         "<hr>",
         "将<code>LOGIN</code>和<code>LOGOUT</code>声明为<code>const</code>类型的值，并为它们分别分配字符串<code>'LOGIN'</code>和<code>'LOGOUT'</code>。然后，编辑<code>authReducer()</code>和 action creators 来引用这些常量而不是字符串值。",
         "<strong>注意：</strong>＆nbsp;通常以全部大写形式写出常量，这也是 Redux 的标准做法。"
@@ -651,7 +651,7 @@
         "到目前为止，你已经学会了如何将 action dispatch 给 Redux store，但到目前为止，这些 action 并未包含除 <code>type</code>之外的任何信息。你还可以发送特定数据和 action 一起。事实上，这是非常常见的，因为 action 通常源于一些用户交互，并且往往会携带一些数据，Redux store经常需要知道这些数据。",
         "<hr>",
         "在代码编辑器中定义了一个基础的<code>notesReducer()</code>和<code>addNoteText()</code> action creator。完成<code>addNoteText()</code>函数的主体，这样它就会返回一个<code>action</code>对象。该对象应该包含一个<code>type</code>属性，其值为<code>ADD_NOTE</code>，还有一个<code>text</code>属性通过 action creator 将值设置为<code>note</code>。当你调用 action creator 时，你需要传入可以访问该对象的特定注释信息。",
-        "接下来，完成在<code>notesReducer()</code>中编写的<code>switch</code>语句。你需要添加一个处理<code>addNoteText()</code>操作的选项。 只要存在<code>ADD_NOTE</code>类型的 action，就应该触发 case，并且它应该在传入的<code>action</code>上返回<code>tex</code>属性作为新的<code>state</code>",
+        "接下来，完成在<code>notesReducer()</code>中编写的<code>switch</code>语句。你需要添加一个处理<code>addNoteText()</code>操作的选项。 只要存在<code>ADD_NOTE</code>类型的 action，就应该触发 case，并且它应该在传入的<code>action</code>上返回<code>text</code>属性作为新的<code>state</code>",
         "这个 action 将在代码底部发送。一旦完成后，运行代码并观察控制台。这就是将特定于 action 的数据发送到 store 并在更新 store <code>state</code>时使用它所需的全部内容。"
       ],
       "files": {
@@ -808,7 +808,7 @@
       "title": "Write a Counter with Redux",
       "releasedOn": "December 25, 2017",
       "description": [
-        "现在你已经了解了 Redux 的所有核心原则！你已经了解了如何创建 action 和动 action creator，创建 Redux store，通过 store dispatch action，以及使用纯粹的 reducer 设计状态更新。你甚至已经看到过如何使用 reducer 组合管理复杂状态并处理异步操作。这些例子很简单，但这些概念是 Redux 的核心原则。如果你理解它们，你就可以开始构建自己的 Redux 应用了。接下来的挑战包括关于<code>state</code>不变性的一些细节，但是，这里是对你到目前为止学到的所有内容的回顾。",
+        "现在你已经了解了 Redux 的所有核心原则！你已经了解了如何创建 action 和 action creator，创建 Redux store，通过 store dispatch action，以及使用纯粹的 reducer 设计状态更新。你甚至已经看到过如何使用 reducer 组合管理复杂状态并处理异步操作。这些例子很简单，但这些概念是 Redux 的核心原则。如果你理解它们，你就可以开始构建自己的 Redux 应用了。接下来的挑战包括关于<code>state</code>不变性的一些细节，但是，这里是对你到目前为止学到的所有内容的回顾。",
         "<hr>",
         "在本课程中，你将从头开始使用 Redux 实现一个简单的计数器。基本知识在代码编辑器中提供，但你必须完成详细的内容！使用提供给你的名称并定义<code>incAction</code>和<code>decActio</code> action creator <code>counterReducer()</code>，<code>INCREMENT</code>和<code>DECREMENT</code> action 类型，最后是 Redux <code>store</code>。一旦完成，你应该能够 dispatch <code>INCREMENT</code>或<code>DECREMENT</code>动作来增加或减少<code>store</code>中保存的状态。开始构建你的第一个 Redux 应用程序吧，祝你好运！"
       ],
@@ -836,11 +836,11 @@
       "tests": [
         {
           "text": "action creator <code>incAction</code>应返回一个 action 对象{type:'INCREMENT'}。",
-          "testString": "assert(incAction().type ===INCREMENT, 'action creator <code>incAction</code>应返回一个 action 对象{type:'INCREMENT'}。');"
+          "testString": "assert(incAction().type ===INCREMENT, 'action creator <code>incAction</code>应返回一个 action 对象{type:\\'INCREMENT\\'}。');"
         },
         {
           "text": "action creator <code>decAction</code>应返回一个 action 对象{type:'DECREMENT'}。",
-          "testString": "assert(decAction().type === DECREMENT, 'action creator <code>decAction</code>应返回一个 action 对象{type:'DECREMENT'}。');"
+          "testString": "assert(decAction().type === DECREMENT, 'action creator <code>decAction</code>应返回一个 action 对象{type:\\'DECREMENT\\'}。');"
         },
         {
           "text": "Redux store 应该将<code>state</code>初始化为 0。",
@@ -872,7 +872,7 @@
       "releasedOn": "December 25, 2017",
       "description": [
         "这些最后的挑战描述了在 Redux 中强制执行状态不变性关键原则的几种方法。不可变状态意味着你永远不会直接修改状态，而是返回一个新的状态副本。",
-        "如果你拍摄 Redux 应用程序状态的快照，你会看到类似<code>state 1</ code>，<code>state 2</code>，<code>state 3</code>，<code>state 4</code>，<code>...</code>等等，每个状态可能与最后一个状态相似，但每个状态都是一个独特的数据。事实上，这种不变性是什么提供了你可能听说过的时间旅行调试等功能。",
+        "如果你拍摄 Redux 应用程序状态的快照，你会看到类似<code>state 1</code>，<code>state 2</code>，<code>state 3</code>，<code>state 4</code>，<code>...</code>等等，每个状态可能与最后一个状态相似，但每个状态都是一个独特的数据。事实上，这种不变性是什么提供了你可能听说过的时间旅行调试等功能。",
         "Redux 并没有积极地在其 store 或者 reducer 中强制执行状态不变性，责任落在程序员身上。幸运的是，JavaScript （尤其是ES6） 提供了一些有用的工具，可以用来强制执行状态的不变性，无论是<code>string</code>，<code>number</code>，<code>array</code>或<code>object</code>。请注意，字符串和数字是原始值，并且本质上是不可变的。换句话说，3 总是 3，你不能改变数字 3 的值。然而，<code>array</code>或<code>object</code>是可变的。实际上，你的状态可能包括<code>array</code>或<code>object</code>，因为它们在表示许多类型信息的数据结构时非常有用。",
         "<hr>",
         "代码编辑器中有一个<code>store</code>和<code>reducer</code>，用于管理待办事项。完成在 reducer 中编写<code>ADD_TO_DO</code>的情况，使用标准 JavaScript 或 ES6 可以通过几种方法来实现这一目标。看看是否可以找到一种方法来返回一个新数组，其中来自<code>action.todo</code>的项目添加到数组的末尾。"
@@ -945,7 +945,7 @@
       "description": [
         "ES6 中有助于在 Redux 中强制执行状态不变性的一个解决方案是扩展运算符：<code>...</code>。扩展运算符具有很多的应用，其中一种非常适合通过一个已有的数组生成一个新数组。这是相对较新的，但常用的语法。例如，如果你有一个数组<code>myArray</code>并写：",
         "<code>let newArray = [...myArray];</code>",
-        "<code>newArray</code>现在是<code>myArray</code>的克隆。两个数组仍然在内存中单独存在。如果你执行像<code>newArray.push(5)</code>这样的突变，<code>myArray</code>不会改变。<code>...</code>有效<i>将<code>myArray</code>中的值<i>传播到新数组中。要克隆数组但在新数组中添加其他值，可以编写<code>[... myArray，'new value']</code>。这将返回一个由<code>中的值组成的新数组。</code>myArray</code>和字符串<code>'new value'</code>作为最后一个值。扩展语法可以像这样在数组组合中多次使用，但重要的是要注意它只做一个浅拷贝这就是说，它只为一维数组提供了不可变的数组操作。",
+        "<code>newArray</code>现在是<code>myArray</code>的克隆。两个数组仍然在内存中单独存在。如果你执行像<code>newArray.push(5)</code>这样的突变，<code>myArray</code>不会改变。<code>...</code>有效<i>将<code>myArray</code>中的值<i>传播到新数组中。要克隆数组但在新数组中添加其他值，可以编写<code>[...myArray，'new value']</code>。这将返回一个由<code>myArray</code>中的值组成的新数组。</code>myArray</code>和字符串<code>'new value'</code>作为最后一个值。扩展语法可以像这样在数组组合中多次使用，但重要的是要注意它只做一个浅拷贝这就是说，它只为一维数组提供了不可变的数组操作。",
         "<hr>",
         "添加待办事项时，使用 spread 运算符返回新的状态副本。"
       ],
