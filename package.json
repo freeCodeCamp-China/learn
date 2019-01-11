@@ -39,7 +39,7 @@
     "prismjs": "^1.14.0",
     "react": "16",
     "react-bootstrap": "^0.32.1",
-    "react-dom": "16",
+    "react-dom": ">=16.0.1",
     "react-freecodecamp-search": "^2.0.2",
     "react-ga": "^2.5.2",
     "react-helmet": "^5.2.0",
