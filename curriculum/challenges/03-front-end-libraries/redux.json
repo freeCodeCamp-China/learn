@@ -715,7 +715,7 @@
         "在此示例中，使用<code>setTimeout()</code>调用模拟异步请求。通常在执行异步行为之前 dispatch action，以便应用程序状态知道正在请求某些数据（例如，这个状态可以显示加载图标）。然后，一旦收到数据，就会发送另一个 action，这个 action 完成的时间将作为数据的一个有效值。",
         "请记住，你正在通过将<code>dispatch</code>作为参数传递给这个特殊的 action creator。你用于 dispatch 你的 action 时只需将 action 直接传递给 dispatch，中间件就可以处理其余的部分。",
         "<hr>",
-        "在<code>handleAsync()</code>的 action creator 中编写两个 dispatch 事件。在<code>setTimeout()</code>（模拟 API 调用）之前 dispatch<code>requesData()</code>。然后在收到（模拟）数据后，dispatch<code>receivedData()</code>action，传入这些数据。现在你知道如何处理 Redux 中的异步操作，其他所有操作都继续像以前一样。"
+        "在<code>handleAsync()</code>的 action creator 中编写两个 dispatch 事件。在<code>setTimeout()</code>（模拟 API 调用）之前 dispatch<code>requestingData()</code>。然后在收到（模拟）数据后，dispatch<code>receivedData()</code>action，传入这些数据。现在你知道如何处理 Redux 中的异步操作，其他所有操作都继续像以前一样。"
       ],
       "files": {
         "indexjsx": {
@@ -945,7 +945,7 @@
       "description": [
         "ES6 中有助于在 Redux 中强制执行状态不变性的一个解决方案是扩展运算符：<code>...</code>。扩展运算符具有很多的应用，其中一种非常适合通过一个已有的数组生成一个新数组。这是相对较新的，但常用的语法。例如，如果你有一个数组<code>myArray</code>并写：",
         "<code>let newArray = [...myArray];</code>",
-        "<code>newArray</code>现在是<code>myArray</code>的克隆。两个数组仍然在内存中单独存在。如果你执行像<code>newArray.push(5)</code>这样的突变，<code>myArray</code>不会改变。<code>...</code>有效<i>将<code>myArray</code>中的值<i>传播到新数组中。要克隆数组但在新数组中添加其他值，可以编写<code>[... myArray，'new value']</code>。这将返回一个由<code>中的值组成的新数组。</code>myArray</code>和字符串<code>'new value'</code>作为最后一个值。扩展语法可以像这样在数组组合中多次使用，但重要的是要注意它只做一个浅拷贝这就是说，它只为一维数组提供了不可变的数组操作。",
+        "<code>newArray</code>现在是<code>myArray</code>的克隆。两个数组仍然在内存中单独存在。如果你执行像<code>newArray.push(5)</code>这样的突变，<code>myArray</code>不会改变。<code>...</code>有效<i>将<code>myArray</code>中的值</i>传播到新数组中。要克隆数组但在新数组中添加其他值，可以编写<code>[... myArray，'new value']</code>。这将返回一个由<code>中的值组成的新数组。</code>myArray</code>和字符串<code>'new value'</code>作为最后一个值。扩展语法可以像这样在数组组合中多次使用，但重要的是要注意它只做一个浅拷贝这就是说，它只为一维数组提供了不可变的数组操作。",
         "<hr>",
         "添加待办事项时，使用 spread 运算符返回新的状态副本。"
       ],
