@@ -3,10 +3,10 @@ title: Introduction to the React and Redux Challenges
 block: React and Redux
 superBlock: Front End Libraries
 ---
-## Introduction to the React and Redux Challenges
+## React 和 Redux 挑战的介绍
 
-This series of challenges introduces how to use Redux with React.
+这个系列的挑战介绍怎样在 React 里使用 Redux。
 
-In a React Redux app, you create a single Redux store that manages the state of your entire app. Your React components subscribe to only the pieces of data in the store that are relevant to their role. Then, you dispatch actions directly from React components, which then trigger store updates.
+在一个 React Redux 应用里，创建一个 Redux store 管理 app 的所有状态。React 组件仅订阅 store 中与其角色相关的数据。接着，直接从 React 组件分发 action，触发 store 更新。
 
-Improve this intro on [GitHub](https://github.com/freeCodeCamp/learn/tree/master/src/introductions/front-end-libraries/react-and-redux/index.md).
+在 [GitHub](https://github.com/freeCodeCamp/learn/tree/master/src/introductions/front-end-libraries/react-and-redux/index.md) 改进此翻译。
