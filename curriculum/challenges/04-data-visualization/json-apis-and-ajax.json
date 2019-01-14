@@ -172,8 +172,8 @@
       "title": "Get JSON with the JavaScript XMLHttpRequest Method",
       "description": [
         "你还可以从外部链接请求数据，这就是 API 发挥作用的地方。",
-        "请记住，API（或叫应用程序编程接口）是计算机用来互相通信的工具。你将学习如何通过 AJAX技术 从 API 获得的数据来跟新 HTML。",
-        "JSON 语法与 JavaScript 对象字面符号非常相似，JSON 具有对象属性以及其当前值，夹在<code>{</code> and a <code>}</code>之间。",
+        "请记住，API（或叫应用程序编程接口）是计算机用来互相通信的工具。你将学习如何通过 AJAX技术 从 API 获得的数据来更新 HTML。",
+        "JSON 语法与 JavaScript 对象字面符号非常相似，JSON 具有对象属性以及其当前值，夹在<code>{</code> 和 <code>}</code>之间。",
         "这些属性及其值通常称为 \"键值对\"。",
         "但是，JSON 是由 API 以<code>bytes</code> 形式传输的，你的程序以<code>string</code>接受它。它们能转换成为 JavaScript 对象，但默认情况下它们不是 JavaScript 对象。 <code>JSON.parse</code>方法解析字符串并构造它描述的 JavaScript 对象。",
         "你可以从 freeCodeCamp 的 Cat Photo API 请求 JSON，以下是你可以在点击事件中添加的代码：",
@@ -182,7 +182,7 @@
         "接着, <code>open</code> 方法初始化请求 - 此示例从 API 请求数据，因此是个 \"GET\" 请求。第二个参数 <code>open</code> 是你要从中请求数据的 API 的 URL。第三个参数是一个布尔值， <code>true</code>使其成为异步请求。",
         "该<code>send</code>方法发送请求，最后，<code>onload</code>事件处理程序解析返回的数据并应用该<code>JSON.stringify</code>方法将JavaScript对象转换为字符串，然后将此字符串作为消息文本插入。",
         "<hr>",
-        "更新代码以创建并向 freeCodeCamp Cat Photo API 发送 \"GET\" 请求。然后点击 \"Get Message\" 按钮，你的 AJAX 函数将使用 API 的原生 JSON 替换 \"消息在此处\" 的文本。"
+        "更新代码以创建并向 freeCodeCamp Cat Photo API 发送 \"GET\" 请求。然后点击 \"Get Message\" 按钮，你的 AJAX 函数将使用 API 的原生 JSON 替换 \"The message will go here\" 的文本。"
       ],
       "tests": [
         {
@@ -281,7 +281,7 @@
         "理解 API 返回数据的结构是必需的，它将影响你如何获取你所需的值。",
         "在右侧，点击 \"Get Message\" 按钮，将 freeCodeCamp Cat Photo API JSON 加载到页面中。",
         "你看到在 JSON 数据中的第一个和最后一个字符是中括号<code>[ ]</code>，这意味着返回的数据是一个数组。JSON 数据中的第二个符号是一个大括号<code>{</code>，这意味着是一个对象。再仔细看，你会发现有三个独立的对象，这个 JSON 数据是一个包含三个对象的数组，它们各自都包含了 cat photo 的信息。",
-        "你之前了解了对象包含了用逗号分隔的 \"键值对\"。在 Cat Photo 示例中，第一个对象的<code>\"id\":0</code>\"id\" 是键，0 是其对应的值，类似的，\"imageLink\", \"altText\", and \"codeNames\" 都有对应的键。每个 cat photo 对象具有相同的键，但具有不同的值 ",
+        "你之前了解了对象包含了用逗号分隔的 \"键值对\"。在 Cat Photo 示例中，第一个对象的<code>\"id\":0</code>\"id\" 是键，0 是其对应的值，类似的，\"imageLink\", \"altText\", 和 \"codeNames\" 都是对应的键。每个 cat photo 对象具有相同的键，但具有不同的值 ",
         "在第一个对象中有一个有趣的 \"键值对\" 它是<code>\"codeNames\":[\"Juggernaut\",\"Mrs. Wallace\",\"ButterCup\"]</code>。 \"codeNames\" 是键，它的值是包含三个字符串的数组。对象数组以及数组作为键可以作为值 ",
         "记住如何访问数组和对象中的数据，数组使用括号表示法来访问项目的特定索引，对象使用括号或点表示法来访问给定属性的值。这是打印第一张 cat photo 的“altText”的示例 - 请注意，编辑器中解析的 JSON 数据保存在名为<code>json</code>的变量中：",
         "<blockquote>console.log(json[0].altText);<br>// 打印 \"头上戴着绿色瓜状头盔的白猫。\"</blockquote>",
@@ -656,7 +656,7 @@
         "<blockquote>if (navigator.geolocation){<br>&nbsp;&nbsp;navigator.geolocation.getCurrentPosition(function(position) {<br>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('data').innerHTML=\"latitude: \"+ position.coords.latitude +  \"&lt;br&gt;longitude: \" +  position.coords.longitude;<br>&nbsp;&nbsp;});<br>}</blockquote>",
         "首先，它检查<code>navigator.geolocation</code>对象是否存在。如果是，<code>getCurrentPosition</code>则调用该对象上的方法，该方法启动对用户位置的异步请求。如果请求成功，则运行方法中的回调函数。此函数<code>position</code>使用点表示法访问对象的纬度和经度值，并更新页面。",
         "<hr>",
-        "在<code>script</code>标记内添加示例代码以检查用户的当前位置并将其插入HTM"
+        "在<code>script</code>标记内添加示例代码以检查用户的当前位置并将其插入 HTML"
       ],
       "tests": [
         {
@@ -715,7 +715,7 @@
         "接下来，<code>onreadystatechange</code>事件侦听器处理请求状态的更改。<code>readyState</code>为 4 表示操作完成，<code>status</code>200表示操作成功。文档的HTML可以更新。",
         "最后，该<code>send</code>方法发送带有<code>userName</code>值的请求，该值由用户在<code>input</code>字段中给出。",
         "<hr>",
-        "更新代码以创建并发送 \"POST\" 请求。然后在输入框中输入你的姓名，你的 AJAX 函数会用服务器返回的数据替换 \"来自服务器的回复将在这里\"。在这种情况下，你的名字附加 \"爱猫\"。"
+        "更新代码以创建并发送 \"POST\" 请求。然后在输入框中输入你的姓名，你的 AJAX 函数会用服务器返回的数据替换 \"Reply from Server will be here\"。在这种情况下，你的名字附加 \"爱猫\"。"
       ],
       "tests": [
         {
