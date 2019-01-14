@@ -18,12 +18,12 @@
       "releasedOn": "December 25, 2017",
       "description": [
         "Redux 是一个状态管理框架，可以与包括 React 在内的许多不同的 Web 技术一起使用。",
-        "在 Redux 中，有一个状态对象负责应用程序的整个状态， 这意味着如果你有一个包含十个组件且每个组件都有自己的本地状态的 React 项目，那么这个项目的整个状态将通过 Redux <code>store</code>被定义为单个状态对象， 这是学习 Redux 时要理解的第一个重要原则：Redux store 是应用程序状态的唯一真实来源。",
+        "在 Redux 中，有一个状态对象负责应用程序的整个状态，这意味着如果你有一个包含十个组件且每个组件都有自己的本地状态的 React 项目，那么这个项目的整个状态将通过 Redux<code>store</code>被定义为单个状态对象，这是学习 Redux 时要理解的第一个重要原则：Redux store 是应用程序状态的唯一真实来源。",
         "这也意味着，如果你的应用程序想要更新状态，只能通过 Redux store 执行，单向数据流可以更轻松地对应用程序中的状态进行监测管理。",
         "<hr>",
-        "Redux <code>store</code>是一个保存和管理应用程序状态的<code>state</code>，你可以使用 Redux 对象中的<code>createStore()</code>来创建一个 redux <code>store</code>，此方法将<code>reducer</code>函数作为必需参数，<code>reducer</code>函数将在后面的挑战中介绍,该函数已在代码编辑器中为你定义，它只需将<code>state</code>作为参数并返回一个<code>state</code>即可。",
+        "Redux <code>store</code>是一个保存和管理应用程序状态的<code>state</code>，你可以使用 Redux 对象中的<code>createStore()</code>来创建一个 redux<code>store</code>，此方法将<code>reducer</code>函数作为必需参数，<code>reducer</code>函数将在后面的挑战中介绍。该函数已在代码编辑器中为你定义，它只需将<code>state</code>作为参数并返回一个<code>state</code>即可。",
         "声明一个<code>store</code>变量并把它分配给<code>createStore()</code>方法，然后把<code>reducer</code>作为一个参数传入即可。",
-        "注意: 编辑器中的代码使用ES6默认参数语法将 state 的值初始化为<code>5</code>， 如果你不熟悉默认参数，你可以参考<a target=\"_blank\" href=\"http://beta.freecodecamp.com/en/challenges/es6/set-default-parameters-for-your-functions\">ES6全部课程</a>，它里面涵盖了这个内容。"
+        "注意: 编辑器中的代码使用 ES6 默认参数语法将 state 的值初始化为<code>5</code>， 如果你不熟悉默认参数，你可以参考<a target=\"_blank\" href=\"http://beta.freecodecamp.com/en/challenges/es6/set-default-parameters-for-your-functions\"> ES6 全部课程</a>，它里面涵盖了这个内容。"
       ],
       "files": {
         "indexjsx": {
@@ -35,9 +35,9 @@
             "  return state;",
             "}",
             "",
-            "//Redux 方法可以从 Redux 对象获得",
-            "//例如: Redux.createStore()",
-            "//在这里定义一个 store",
+            "// Redux 方法可以从 Redux 对象获得",
+            "// 例如: Redux.createStore()",
+            "// 在这里定义一个 store",
             "",
             ""
           ],
@@ -47,12 +47,12 @@
       },
       "tests": [
         {
-          "text": "redux store 应当存在",
-          "testString": "assert(typeof store.getState === 'function', 'redux store 应当存在');"
+          "text": "redux store 应当存在。",
+          "testString": "assert(typeof store.getState === 'function', 'redux store 应当存在。');"
         },
         {
-          "text": "redux store 的 state 的值为 5",
-          "testString": "assert(store.getState()=== 5, 'redux store 的 state 的值为 5');"
+          "text": "redux store 的 state 的值为 5。",
+          "testString": "assert(store.getState()=== 5, 'redux store 的 state 的值为 5。');"
         }
       ],
       "solutions": [
@@ -80,7 +80,7 @@
             "  (state = 5) => state",
             ");",
             "",
-            "//更改此行下方的代码",
+            "// 更改此行下方的代码",
             ""
           ],
           "head": [],
@@ -109,7 +109,7 @@
       "title": "Define a Redux Action",
       "releasedOn": "December 25, 2017",
       "description": [
-        "由于 Redux 是一个状态管理框架，因此更新状态是其核心任务之一。在 Redux 中，所有状态更新都由 dispatch action 触发，action 只是一个 JavaScript 对象，其中包含有关已发生的 action 事件的信息， Redux store 接收这些 action 对象，然后更新相应的状态。有时，Redux action 也会携带一些数据。例如，在用户登录后携带用户名，虽然数据是可选的，但 action 必须带有<code>type</code>属性，该属性指定发生 action 的类型。",
+        "由于 Redux 是一个状态管理框架，因此更新状态是其核心任务之一。在 Redux 中，所有状态更新都由 dispatch action 触发，action 只是一个 JavaScript 对象，其中包含有关已发生的 action 事件的信息。Redux store 接收这些 action 对象，然后更新相应的状态。有时，Redux action 也会携带一些数据。例如，在用户登录后携带用户名，虽然数据是可选的，但 action 必须带有<code>type</code>属性，该属性表示此 action 的类型。",
         "我们可以将 Redux action 视为信使，将有关应用程序中发生的事件信息提供给 Redux store，然后 store 根据发生的 action 进行状态的更新。",
         "<hr>",
         "编写 Redux action 就像声明具有 type 属性的对象一样简单，声明一个对象<code>action</code>并为它设置一个属性<code>type</code>，并将他的值设置成字符串<code>'LOGIN'</code>。"
@@ -120,7 +120,7 @@
           "ext": "jsx",
           "name": "index",
           "contents": [
-            "//在此处定义 action",
+            "// 在此处定义 action",
             ""
           ],
           "head": [],
@@ -129,8 +129,8 @@
       },
       "tests": [
         {
-          "text": "应该有一个 action 对象",
-          "testString": "assert((function() { return typeof action === 'object' })(), '应该有一个 action 对象');"
+          "text": "应该有一个 action 对象。",
+          "testString": "assert((function() { return typeof action === 'object' })(), '应该有一个 action 对象。');"
         },
         {
           "text": "该 action 的值应该为<code>LOGIN</code>。",
@@ -162,7 +162,7 @@
             "const action = {",
             "  type: 'LOGIN'",
             "}",
-            "//在此处定义 action creator",
+            "// 在此处定义 action creator",
             ""
           ],
           "head": [],
@@ -172,7 +172,7 @@
       "tests": [
         {
           "text": "函数<code>actionCreator</code>应该存在。",
-          "testString": "assert(typeof actionCreator === 'function', ' 函数<code>actionCreator</code>应该存在。"
+          "testString": "assert(typeof actionCreator === 'function', ' 函数<code>actionCreator</code>应该存在。');"
         },
         {
           "text": "运行<code>actionCreator</code>函数应返回 action 对象。",
@@ -217,7 +217,7 @@
             "  }",
             "};",
             "",
-            "//在这里 dispatch action",
+            "// 在这里 dispatch action",
             ""
           ],
           "head": [],
@@ -227,11 +227,11 @@
       "tests": [
         {
           "text": "调用函数<code>loginAction</code>应该返回一个对象{type:'LOGIN'}。",
-          "testString": "assert(loginAction().type === 'LOGIN', '调用函数<code>loginAction</code>应该返回一个对象{type:'LOGIN'}。');"
+          "testString": "assert(loginAction().type === 'LOGIN', '调用函数<code>loginAction</code>应该返回一个对象 {type:\\'LOGIN\\'}。');"
         },
         {
-          "text": "store 应该初始化一个对象{login:false}。",
-          "testString": "assert(store.getState().login === false, 'store 应该初始化一个对象{login:false}。');"
+          "text": "store 应该初始化一个对象 {login:false}。",
+          "testString": "assert(store.getState().login === false, 'store 应该初始化一个对象 {login:false}。');"
         },
         {
           "text": "<code>store.dispatch()</code>方法应该被用于 dispatch 一个类型为<code>LOGIN</code>的 action。",
@@ -250,10 +250,10 @@
       "title": "Handle an Action in the Store",
       "releasedOn": "December 25, 2017",
       "description": [
-        "在一个 action 被创建并 dispatch 之后，Redux store需要知道如何响应该操作。这是<code>reducer</ code>函数的工作。Redux 中的 Reducers 负责响应 action 然后进行状态的修改。<code>reducer</code>将<code>state</code>和<code>action</code>作为参数，并且它总是返回一个新的<code>state</code>。我们要知道这是 reducer 的<strong>唯一</strong>的作用。它没有任何其他的作用; 它永远不会调用 API 接口，它永远不会有任何潜在的副作用。reducer 只是一个接受状态和动作，然后返回新状态的纯函数。",
-        "Redux 的另一个关键原则是<code>state</code>是只读的。换句话说，<code>reducer</code>函数必须<strong>始终</strong>返回一个新的<code>state</code>，并且永远不会直接修改状态。 Redux 不强制改变状态，但是，你需要在你的reducer函数的代码中强制执行它，你将在以后的挑战中练习这一点。",
+        "在一个 action 被创建并 dispatch 之后，Redux store 需要知道如何响应该操作。这就是<code>reducer</code>函数存在的意义。Redux 中的 Reducers 负责响应 action 然后进行状态的修改。<code>reducer</code>将<code>state</code>和<code>action</code>作为参数，并且它总是返回一个新的<code>state</code>。我们要知道这是 reducer 的<strong>唯一</strong>的作用。它不应有任何其他的作用：比如它不应调用 API 接口，也不应存在任何潜在的副作用。reducer 只是一个接受状态和动作，然后返回新状态的纯函数。",
+        "Redux 的另一个关键原则是<code>state</code>是只读的。换句话说，<code>reducer</code>函数必须<strong>始终</strong>返回一个新的<code>state</code>，并且永远不会直接修改状态。Redux 不强制改变状态，但是你需要在你的 reducer 函数的代码中强制执行它，你将在以后的挑战中练习这一点。",
         "<hr>",
-        "代码编辑器中具有前面的示例以及一个<code>reducer</code>函数。你需要完善<code>reducer</code>函数的内容，使得它如果收到类型为<code>'LOGIN'</ code>的action，它将返回一个将<code>login</code>设置为<code>true</code>的 state 对象。 否则，它就返回当前的<code>state</code>。请注意，当前<code>state</code>和dispatch的<code>action</code>将被传递给reducer，因此你可以使用<code>action.type</code>直接获取action的类型。"
+        "代码编辑器中具有前面的示例以及一个<code>reducer</code>函数。你需要完善<code>reducer</code>函数的内容，使得它如果收到类型为<code>'LOGIN'</code>的action，它将返回一个将<code>login</code>设置为<code>true</code>的 state 对象。否则，它就返回当前的<code>state</code>。请注意，当前<code>state</code>和dispatch的<code>action</code>将被传递给reducer，因此你可以使用<code>action.type</code>直接获取 action 的类型。"
       ],
       "files": {
         "indexjsx": {
@@ -266,9 +266,9 @@
             "};",
             "",
             "const reducer = (state = defaultState, action) => {",
-            "  //修改此行下方的代码",
+            "  // 修改此行下方的代码",
             "",
-            "  //修改此行上方的代码",
+            "  // 修改此行上方的代码",
             "};",
             "",
             "const store = Redux.createStore(reducer);",
@@ -285,12 +285,12 @@
       },
       "tests": [
         {
-          "text": "调用<code>loginAction</code>函数应该返回一个对象{type:'LOGIN'}。",
-          "testString": "assert(loginAction().type === 'LOGIN', '调用<code>loginAction</code>函数应该返回一个对象{type:'LOGIN'}。');"
+          "text": "调用<code>loginAction</code>函数应该返回一个对象 {type:'LOGIN'}。",
+          "testString": "assert(loginAction().type === 'LOGIN', '调用<code>loginAction</code>函数应该返回一个对象 {type:\\'LOGIN\\'}。');"
         },
         {
-          "text": "store 应该初始化一个对象{login:false}。",
-          "testString": "assert(store.getState().login === false, 'store 应该初始化一个对象{login:false}。');"
+          "text": "store 应该初始化一个对象 {login:false}。",
+          "testString": "assert(store.getState().login === false, 'store 应该初始化一个对象 {login:false}。');"
         },
         {
           "text": "dispatch <code>loginAction</code>后应将 store 中 state 的<code>login</code>值更新为<code>true</code>。",
@@ -313,10 +313,10 @@
       "title": "Use a Switch Statement to Handle Multiple Actions",
       "releasedOn": "December 25, 2017",
       "description": [
-        "你可以告诉 Redux store 如何处理多种 action 类型。比如你正在 Redux store 中进行用户身份验证。如果你希望用户在登录和注销时具有状态的响应。你可以使用具有<code>authenticated</code>属性的单个的 state 对象。你还需要使用 action creators 创建与用户登录和用户注销相对应的 action，以及 action 对象本身。",
+        "你可以定义 Redux store 如何处理多种 action 类型。比如你正在 Redux store 中进行用户身份验证，如果你希望用户在登录和注销时具有状态的响应，你可以使用具有<code>authenticated</code>属性的单个的 state 对象。你还需要使用 action creators 创建与用户登录和用户注销相对应的 action，以及 action 对象本身。",
         "<hr>",
-        "代码编辑器为你创建了 store，actions 和 action creators。通过编写<code>reducer</code>函数来处理多个身份验证操作。可以在<code>reducer</code>通过使用 JavaScript 中的<code>switch</code>响应不同的 action 事件。这是编写 Redux reducer 时的标准模式，switch 语句选择<code>action.type</code>中的一个值并返回相应的身份验证状态。",
-        "<strong>注意：</strong>＆nbsp;此时，不要担心 state 的不变性，因为在这个示例中它很小而且很简单。所以对于每个操作你都可以返回一个新对象;例如，<code>{authenticated:true}</code>。另外，不要忘记在 switch 语句中写一个<code>default</code> case，返回当前的<code>state</code>。这是很重要的因为一旦你的程序有多个 reducer，当一个 action 被 dispatch 时它们都会运行，即使 action 与该 reducer 无关。在这种情况下，你要确保返回当前的<code>state</code>"
+        "代码编辑器为你创建了 store、actions、action creators。通过编写<code>reducer</code>函数来处理多个身份验证操作。可以在<code>reducer</code>通过使用 JavaScript 的<code>switch</code>来响应不同的 action 事件。这是编写 Redux reducer 时的标准模式，switch 语句选择<code>action.type</code>中的一个值并返回相应的身份验证状态。",
+        "<strong>注意：</strong>&nbsp;此时，不要担心 state 的不变性，因为在这个示例中它很小而且很简单。所以对于每个操作你都可以返回一个新对象，比如<code>{authenticated:true}</code>。另外，不要忘记在 switch 语句中写一个<code>default</code> case，返回当前的<code>state</code>。这是很重要的，因为一旦你的程序有多个 reducer，当一个 action 被 dispatch 时它们都会运行，即使 action 与该 reducer 无关。在这种情况下，你要确保返回当前的<code>state</code>"
       ],
       "files": {
         "indexjsx": {
@@ -329,9 +329,9 @@
             "};",
             "",
             "const authReducer = (state = defaultState, action) => {",
-            "//修改此行下方的代码",
+            "// 修改此行下方的代码",
             "",
-            "//修改此行上方的代码",
+            "// 修改此行上方的代码",
             "};",
             "",
             "const store = Redux.createStore(authReducer);",
@@ -354,16 +354,16 @@
       },
       "tests": [
         {
-          "text": "调用<code>loginUser</code>函数应该返回一个{type:'LOGIN'}对象。",
-          "testString": "assert(loginUser().type === 'LOGIN', '调用<code>loginUser</code>函数应该返回一个{type:'LOGIN'}对象。');"
+          "text": "调用<code>loginUser</code>函数应该返回一个 {type:'LOGIN'} 对象。",
+          "testString": "assert(loginUser().type === 'LOGIN', '调用<code>loginUser</code>函数应该返回一个 {type:\\'LOGIN\\'} 对象。');"
         },
         {
-          "text": "调用<code>logoutUser</code>函数应该返回一个{type:'LOGOUT'}对象。",
-          "testString": "assert(logoutUser().type === 'LOGOUT', '调用<code>logoutUser</code>函数应该返回一个{type:'LOGOUT'}对象。');"
+          "text": "调用<code>logoutUser</code>函数应该返回一个 {type:'LOGOUT'} 对象。",
+          "testString": "assert(logoutUser().type === 'LOGOUT', '调用<code>logoutUser</code>函数应该返回一个 {type:\\'LOGOUT\\'} 对象。');"
         },
         {
-          "text": "store 应该设置一个初始化对象{authenticated:false}。",
-          "testString": "assert(store.getState().authenticated === false, 'store 应该设置一个初始化对象{authenticated:false}。');"
+          "text": "store 应该设置一个初始化对象 {authenticated:false}。",
+          "testString": "assert(store.getState().authenticated === false, 'store 应该设置一个初始化对象 {authenticated:false}。');"
         },
         {
           "text": "dispatch <code>loginUser</code>应该将 store 中的 state 的<code>authenticated</code>值更新为<code>true</code>。",
@@ -390,10 +390,10 @@
       "title": "Use const for Action Types",
       "releasedOn": "December 25, 2017",
       "description": [
-        "在使用 Redux 时的一个常见做法是将操作类型指定为只读，然后在任何使用它们的地方引用这些常量。你可以通过将 action types 使用<code>const</代码>声明重构你正在使用的代码。",
+        "在使用 Redux 时的一个常见做法是将操作类型指定为只读，然后在任何使用它们的地方引用这些常量。你可以通过将 action types 使用<code>const</code>声明重构你正在使用的代码。",
         "<hr>",
         "将<code>LOGIN</code>和<code>LOGOUT</code>声明为<code>const</code>类型的值，并为它们分别分配字符串<code>'LOGIN'</code>和<code>'LOGOUT'</code>。然后，编辑<code>authReducer()</code>和 action creators 来引用这些常量而不是字符串值。",
-        "<strong>注意：</strong>＆nbsp;通常以全部大写形式写出常量，这也是 Redux 的标准做法。"
+        "<strong>注意：</strong>&nbsp;通常以全部大写形式写出常量，这也是 Redux 的标准做法。"
       ],
       "files": {
         "indexjsx": {
@@ -401,9 +401,9 @@
           "ext": "jsx",
           "name": "index",
           "contents": [
-            "//修改此行下方的代码",
+            "// 修改此行下方的代码",
             "",
-            "//修改此行上方的代码",
+            "// 修改此行上方的代码",
             "",
             "const defaultState = {",
             "  authenticated: false",
@@ -450,16 +450,16 @@
       },
       "tests": [
         {
-          "text": "调用<code>loginUser</code>函数应该返回一个{type:'LOGIN'}对象。",
-          "testString": "assert(loginUser().type === 'LOGIN', '调用<code>loginUser</code>函数应该返回一个{type:'LOGIN'}对象。');"
+          "text": "调用<code>loginUser</code>函数应该返回一个 {type:'LOGIN'} 对象。",
+          "testString": "assert(loginUser().type === 'LOGIN', '调用<code>loginUser</code>函数应该返回一个 {type:\\'LOGIN\\'} 对象。');"
         },
         {
-          "text": "调用<code>logoutUser</code>函数应该返回一个{type:'LOGOUT'}对象。",
-          "testString": "assert(logoutUser().type === 'LOGOUT', '调用<code>logoutUser</code>函数应该返回一个{type:'LOGOUT'}对象。');"
+          "text": "调用<code>logoutUser</code>函数应该返回一个 {type:\\'LOGOUT\\'} 对象。",
+          "testString": "assert(logoutUser().type === 'LOGOUT', '调用<code>logoutUser</code>函数应该返回一个 {type:\\'LOGOUT\\'} 对象。');"
         },
         {
-          "text": "store 应该初始化一个对象{login：false}。",
-          "testString": "assert(store.getState().authenticated === false, 'store 应该初始化一个对象{login：false}。');"
+          "text": "store 应该初始化一个对象 {login：false}。",
+          "testString": "assert(store.getState().authenticated === false, 'store 应该初始化一个对象 {login：false}。');"
         },
         {
           "text": "dispatch <code>loginUser</code>以后应将 store 中的 state 的<code>login</code>值更新为<code>true</code>。",
@@ -475,7 +475,7 @@
         },
         {
           "text": "应该使用<code>const LOGIN='LOGIN'</code>和<code>const LOGOUT='LOGOUT'</code>的方式声明<code>LOGIN</code>和<code>LOGOUT</code>。",
-          "testString": "getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').toString().replace(/\\s/g,''); return (noWhiteSpace.includes('constLOGIN=\\'LOGIN\\'') || noWhiteSpace.includes('constLOGIN=\"LOGIN\"')) && (noWhiteSpace.includes('constLOGOUT=\\'LOGOUT\\'') || noWhiteSpace.includes('constLOGOUT=\"LOGOUT\"')) })(), '应该使用<code>const LOGIN='LOGIN'</code>和<code>const LOGOUT='LOGOUT'</code>的方式声明<code>LOGIN</code>和<code>LOGOUT</code>。');"
+          "testString": "getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').toString().replace(/\\s/g,''); return (noWhiteSpace.includes('constLOGIN=\\'LOGIN\\'') || noWhiteSpace.includes('constLOGIN=\"LOGIN\"')) && (noWhiteSpace.includes('constLOGOUT=\\'LOGOUT\\'') || noWhiteSpace.includes('constLOGOUT=\"LOGOUT\"')) })(), '应该使用<code>const LOGIN=\\'LOGIN\\'</code>和<code>const LOGOUT=\\'LOGOUT\\'</code>的方式声明<code>LOGIN</code>和<code>LOGOUT</code>。');"
         },
         {
           "text": "action creator 和 reducer 中应该引用<code>LOGIN</code>和<code>LOGOUT</code>常量。",
@@ -520,12 +520,12 @@
             "",
             "const store = Redux.createStore(reducer);",
             "",
-            "//用于计数的全局变量：",
+            "// 用于计数的全局变量：",
             "let count = 0;",
             "",
-            "//修改此行下方的代码",
+            "// 修改此行下方的代码",
             "",
-            "//修改此行上方的代码",
+            "// 修改此行上方的代码",
             "",
             "store.dispatch({type: ADD});",
             "console.log(count);",
@@ -564,7 +564,7 @@
       "releasedOn": "December 25, 2017",
       "description": [
         "当你应用程序的状态开始变得越来越复杂时，将状态划分为多个部分可能是个更好的选择。相反，请记住 Redux 的第一个原则：所有应用程序状态都保存在 store 中的一个简单的 state 对象中。因此，Redux 提供 reducer 组合作为复杂状态模型的解决方案。定义多个 reducer 来处理应用程序状态的不同部分，然后将这些 reducer 组合成一个 root reducer。然后将 root reducer 传递给 Redux <code>createStore()</code>方法。",
-        "为了让我们将可以将多个 reducer 组合在一起，Redux 提供了<code>combineReducers()</code>方法。该方法接受一个对象作为参数，在该参数中定义一个将键与特定reducer函数关联的属性。 Redux将使用你给的键值作为关联状态的名称。",
+        "为了让我们将可以将多个 reducer 组合在一起，Redux 提供了<code>combineReducers()</code>方法。该方法接受一个对象作为参数，在该参数中定义一个将键与特定 reducer 函数关联的属性。Redux 将使用你给的键值作为关联状态的名称。",
         "通常情况下，当它们在某种程度上是独一无二的，为每个应用程序的 state 创建一个减少器是一个很好的做法。例如，在一个带有用户身份验证的记笔记应用程序中，一个 reducer 可以处理身份验证而另一个处理用户提交的文本和注释。对于这样的应用程序，我们可能会编写<code>combineReducers()</code>方法，如下所示：",
         "<blockquote>const rootReducer = Redux.combineReducers({<br>&nbsp;&nbsp;auth: authenticationReducer,<br>&nbsp;&nbsp;notes: notesReducer<br>});</blockquote>",
         "现在，<code>notes</code>键将包含与我们的注释相关联的所有状态，并由我们的<code>notesReducer</code>处理。这就是如何组合多个 reducer 来管理更复杂的应用程序状态，在此示例中，Redux store 中保存的状态将是一个包含<code>auth</code>和<code>notes</code>属性的简单对象。",
@@ -609,7 +609,7 @@
             "  }",
             "};",
             "",
-            "const rootReducer = //在这里定义 root reducer",
+            "const rootReducer = // 在这里定义 root reducer",
             "",
             "const store = Redux.createStore(rootReducer);",
             ""
@@ -648,10 +648,10 @@
       "title": "Send Action Data to the Store",
       "releasedOn": "December 25, 2017",
       "description": [
-        "到目前为止，你已经学会了如何将 action dispatch 给 Redux store，但到目前为止，这些 action 并未包含除 <code>type</code>之外的任何信息。你还可以发送特定数据和 action 一起。事实上，这是非常常见的，因为 action 通常源于一些用户交互，并且往往会携带一些数据，Redux store经常需要知道这些数据。",
+        "到目前为止，你已经学会了如何将 action dispatch 给 Redux store，但到目前为止，这些 action 并未包含除 <code>type</code>之外的任何信息。你还可以发送特定数据和 action 一起。事实上，这是非常常见的，因为 action 通常源于一些用户交互，并且往往会携带一些数据，Redux store 经常需要知道这些数据。",
         "<hr>",
         "在代码编辑器中定义了一个基础的<code>notesReducer()</code>和<code>addNoteText()</code> action creator。完成<code>addNoteText()</code>函数的主体，这样它就会返回一个<code>action</code>对象。该对象应该包含一个<code>type</code>属性，其值为<code>ADD_NOTE</code>，还有一个<code>text</code>属性通过 action creator 将值设置为<code>note</code>。当你调用 action creator 时，你需要传入可以访问该对象的特定注释信息。",
-        "接下来，完成在<code>notesReducer()</code>中编写的<code>switch</code>语句。你需要添加一个处理<code>addNoteText()</code>操作的选项。 只要存在<code>ADD_NOTE</code>类型的 action，就应该触发 case，并且它应该在传入的<code>action</code>上返回<code>tex</code>属性作为新的<code>state</code>",
+        "接下来，完成在<code>notesReducer()</code>中编写的<code>switch</code>语句。你需要添加一个处理<code>addNoteText()</code>操作的选项。只要存在<code>ADD_NOTE</code>类型的 action，就应该触发 case，并且它应该在传入的<code>action</code>上返回<code>text</code>属性作为新的<code>state</code>",
         "这个 action 将在代码底部发送。一旦完成后，运行代码并观察控制台。这就是将特定于 action 的数据发送到 store 并在更新 store <code>state</code>时使用它所需的全部内容。"
       ],
       "files": {
@@ -664,18 +664,18 @@
             "",
             "const notesReducer = (state = 'Initial State', action) => {",
             "  switch(action.type) {",
-            "    //修改此行下方的代码",
+            "    // 修改此行下方的代码",
             "",
-            "    //修改此行上方的代码",
+            "    // 修改此行上方的代码",
             "    default:",
             "      return state;",
             "  }",
             "};",
             "",
             "const addNoteText = (note) => {",
-            "  //修改此行下方的代码",
+            "  // 修改此行下方的代码",
             "",
-            "  //修改此行上方的代码",
+            "  // 修改此行上方的代码",
             "};",
             "",
             "const store = Redux.createStore(notesReducer);",
@@ -710,7 +710,7 @@
       "title": "Use Middleware to Handle Asynchronous Actions",
       "releasedOn": "December 25, 2017",
       "description": [
-        "到目前为止，这些挑战已经避免讨论异步操作，但它们是 Web 开发中不可避免的一部分。在某些时候，你需要在 Redux 应用程序中调用异步端点，那么如何处理这些类型的请求？Redux 中间件专为此目的而设计，称为 Redux Thunk 中间件。这里简要介绍如何在 Redux 中使用它。",
+        "目前为止的挑战都在避免讨论异步操作，但它们是 Web 开发中不可避免的一部分。在某些时候，你需要在 Redux 应用程序中使用异步请求，那么如何处理这些类型的请求？Redux 中间件专为此目的而设计，称为 Redux Thunk 中间件。这里简要介绍如何在 Redux 中使用它。",
         "如果要使用 Redux Thunk 中间件，请将其作为参数传递给<code>Redux.applyMiddleware()</code>。然后将此函数作为第二个可选参数提供给<code>createStore()</code>函数，看一下编辑器底部的代码，然后，要创建一个异步的 action，你需要在 action creator 中返回一个以<code>dispatch</code>为参数的函数。在这个函数中，你可以 dispatch  action 并执行异步请求。",
         "在此示例中，使用<code>setTimeout()</code>调用模拟异步请求。通常在执行异步行为之前 dispatch action，以便应用程序状态知道正在请求某些数据（例如，这个状态可以显示加载图标）。然后，一旦收到数据，就会发送另一个 action，这个 action 完成的时间将作为数据的一个有效值。",
         "请记住，你正在通过将<code>dispatch</code>作为参数传递给这个特殊的 action creator。你用于 dispatch 你的 action 时只需将 action 直接传递给 dispatch，中间件就可以处理其余的部分。",
@@ -731,13 +731,13 @@
             "",
             "const handleAsync = () => {",
             "  return function(dispatch) {",
-            "    //在这里 dispatch 请求的 action",
+            "    // 在这里 dispatch 请求的 action",
             "",
             "    setTimeout(function() {",
             "      let data = {",
             "        users: ['Jeff', 'William', 'Alice']",
             "      }",
-            "      //在这里 dispatch 接收到的数据 action",
+            "      // 在这里 dispatch 接收到的数据 action",
             "",
             "    }, 2500);",
             "  }",
@@ -808,7 +808,7 @@
       "title": "Write a Counter with Redux",
       "releasedOn": "December 25, 2017",
       "description": [
-        "现在你已经了解了 Redux 的所有核心原则！你已经了解了如何创建 action 和动 action creator，创建 Redux store，通过 store dispatch action，以及使用纯粹的 reducer 设计状态更新。你甚至已经看到过如何使用 reducer 组合管理复杂状态并处理异步操作。这些例子很简单，但这些概念是 Redux 的核心原则。如果你理解它们，你就可以开始构建自己的 Redux 应用了。接下来的挑战包括关于<code>state</code>不变性的一些细节，但是，这里是对你到目前为止学到的所有内容的回顾。",
+        "现在你已经了解了 Redux 的所有核心原则！你已经了解了如何创建 action 和 action creator，创建 Redux store，通过 store dispatch action，以及使用纯粹的 reducer 设计状态更新。你甚至已经看到过如何使用 reducer 组合管理复杂状态并处理异步操作。这些例子很简单，但这些概念是 Redux 的核心原则。如果你理解它们，你就可以开始构建自己的 Redux 应用了。接下来的挑战包括关于<code>state</code>不变性的一些细节，但是，这里是对你到目前为止学到的所有内容的回顾。",
         "<hr>",
         "在本课程中，你将从头开始使用 Redux 实现一个简单的计数器。基本知识在代码编辑器中提供，但你必须完成详细的内容！使用提供给你的名称并定义<code>incAction</code>和<code>decActio</code> action creator <code>counterReducer()</code>，<code>INCREMENT</code>和<code>DECREMENT</code> action 类型，最后是 Redux <code>store</code>。一旦完成，你应该能够 dispatch <code>INCREMENT</code>或<code>DECREMENT</code>动作来增加或减少<code>store</code>中保存的状态。开始构建你的第一个 Redux 应用程序吧，祝你好运！"
       ],
@@ -818,16 +818,16 @@
           "ext": "jsx",
           "name": "index",
           "contents": [
-            "const INCREMENT = null; //为增量 action 类型定义一个常量",
-            "const DECREMENT = null; //为减量 action 类型定义一个常量",
+            "const INCREMENT = null; // 为增量 action 类型定义一个常量",
+            "const DECREMENT = null; // 为减量 action 类型定义一个常量",
             "",
-            "const counterReducer = null; //定义计数器，它将根据收到的action增加或减少状态",
+            "const counterReducer = null; // 定义计数器，它将根据收到的action增加或减少状态",
             "",
-            "const incAction = null; //定义一个用于递增的 action creator",
+            "const incAction = null; // 定义一个用于递增的 action creator",
             "",
-            "const decAction = null; //定义一个用于递减的 action creator",
+            "const decAction = null; // 定义一个用于递减的 action creator",
             "",
-            "const store = null; //在这里定义一个 Redux store，传递你的 reducer"
+            "const store = null; // 在这里定义一个 Redux store，传递你的 reducer"
           ],
           "head": [],
           "tail": []
@@ -835,12 +835,12 @@
       },
       "tests": [
         {
-          "text": "action creator <code>incAction</code>应返回一个 action 对象{type:'INCREMENT'}。",
-          "testString": "assert(incAction().type ===INCREMENT, 'action creator <code>incAction</code>应返回一个 action 对象{type:'INCREMENT'}。');"
+          "text": "action creator <code>incAction</code>应返回一个 action 对象 {type:'INCREMENT'}。",
+          "testString": "assert(incAction().type ===INCREMENT, 'action creator <code>incAction</code>应返回一个 action 对象 {type:\\'INCREMENT\\'}。');"
         },
         {
-          "text": "action creator <code>decAction</code>应返回一个 action 对象{type:'DECREMENT'}。",
-          "testString": "assert(decAction().type === DECREMENT, 'action creator <code>decAction</code>应返回一个 action 对象{type:'DECREMENT'}。');"
+          "text": "action creator <code>decAction</code>应返回一个 action 对象 {type:'DECREMENT'}。",
+          "testString": "assert(decAction().type === DECREMENT, 'action creator <code>decAction</code>应返回一个 action 对象 {type:\\'DECREMENT\\'}。');"
         },
         {
           "text": "Redux store 应该将<code>state</code>初始化为 0。",
@@ -872,8 +872,8 @@
       "releasedOn": "December 25, 2017",
       "description": [
         "这些最后的挑战描述了在 Redux 中强制执行状态不变性关键原则的几种方法。不可变状态意味着你永远不会直接修改状态，而是返回一个新的状态副本。",
-        "如果你拍摄 Redux 应用程序状态的快照，你会看到类似<code>state 1</ code>，<code>state 2</code>，<code>state 3</code>，<code>state 4</code>，<code>...</code>等等，每个状态可能与最后一个状态相似，但每个状态都是一个独特的数据。事实上，这种不变性是什么提供了你可能听说过的时间旅行调试等功能。",
-        "Redux 并没有积极地在其 store 或者 reducer 中强制执行状态不变性，责任落在程序员身上。幸运的是，JavaScript （尤其是ES6） 提供了一些有用的工具，可以用来强制执行状态的不变性，无论是<code>string</code>，<code>number</code>，<code>array</code>或<code>object</code>。请注意，字符串和数字是原始值，并且本质上是不可变的。换句话说，3 总是 3，你不能改变数字 3 的值。然而，<code>array</code>或<code>object</code>是可变的。实际上，你的状态可能包括<code>array</code>或<code>object</code>，因为它们在表示许多类型信息的数据结构时非常有用。",
+        "如果你拍摄 Redux 应用程序状态的快照，你会看到类似<code>state 1</code>，<code>state 2</code>，<code>state 3</code>，<code>state 4</code>，<code>...</code>等等，每个状态可能与最后一个状态相似，但每个状态都是一个独特的数据。事实上，这种不变性是什么提供了你可能听说过的时间旅行调试等功能。",
+        "Redux 并没有积极地在其 store 或者 reducer 中强制执行状态不变性，责任落在程序员身上。幸运的是，JavaScript（尤其是 ES6）提供了一些有用的工具，可以用来强制执行状态的不变性，无论是<code>string</code>，<code>number</code>，<code>array</code>或<code>object</code>。请注意，字符串和数字是原始值，并且本质上是不可变的。换句话说，3 总是 3，你不能改变数字 3 的值。然而，<code>array</code>或<code>object</code>是可变的。实际上，你的状态可能包括<code>array</code>或<code>object</code>，因为它们在表示许多类型信息的数据结构时非常有用。",
         "<hr>",
         "代码编辑器中有一个<code>store</code>和<code>reducer</code>，用于管理待办事项。完成在 reducer 中编写<code>ADD_TO_DO</code>的情况，使用标准 JavaScript 或 ES6 可以通过几种方法来实现这一目标。看看是否可以找到一种方法来返回一个新数组，其中来自<code>action.todo</code>的项目添加到数组的末尾。"
       ],
@@ -885,7 +885,7 @@
           "contents": [
             "const ADD_TO_DO = 'ADD_TO_DO';",
             "",
-            "//一个字符串列表表示要做的任务",
+            "// 一个字符串列表表示要做的任务",
             "const todos = [",
             "  'Go to the store',",
             "  'Clean the house',",
@@ -896,14 +896,14 @@
             "const immutableReducer = (state = todos, action) => {",
             "  switch(action.type) {",
             "    case ADD_TO_DO:",
-            "      //不要在这里改变 state，否则测试将失败",
+            "      // 不要在这里改变 state，否则测试将失败",
             "      return",
             "    default:",
             "      return state;",
             "  }",
             "};",
             "",
-            "//一个 todo 的例子是 'Learn React'，",
+            "// 一个 todo 的例子是 'Learn React'，",
             "const addToDo = (todo) => {",
             "  return {",
             "    type: ADD_TO_DO,",
@@ -958,7 +958,7 @@
             "const immutableReducer = (state = ['Do not mutate state!'], action) => {",
             "  switch(action.type) {",
             "    case 'ADD_TO_DO':",
-            "      //不要在这里改变 state 否则测试会失败。",
+            "      // 不要在这里改变 state 否则测试会失败。",
             "      return",
             "    default:",
             "      return state;",
@@ -1021,7 +1021,7 @@
             "const immutableReducer = (state = [0,1,2,3,4,5], action) => {",
             "  switch(action.type) {",
             "    case 'REMOVE_ITEM':",
-            "      //不要在这里改变 state 否则测试会失败。",
+            "      // 不要在这里改变 state 否则测试会失败。",
             "      return",
             "    default:",
             "      return state;",
@@ -1089,7 +1089,7 @@
             "const immutableReducer = (state = defaultState, action) => {",
             "  switch(action.type) {",
             "    case 'ONLINE':",
-            "      //不要在这里改变 state 否则测试会失败。",
+            "      // 不要在这里改变 state 否则测试会失败。",
             "      return",
             "    default:",
             "      return state;",
