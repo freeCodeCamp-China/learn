@@ -120,7 +120,7 @@
       "id": "587d7fb7367417b2b2512c0c",
       "title": "Use model.findOne() to Return a Single Matching Document from Your Database",
       "description": [
-        "<code>Model.findOne()</code>表现像<code>Model.find()</code>，但是它仅仅返回一个 document（而不是一个数组），即使数据库里有很多条 item（项目）。当你按声明成<code>unique</code>的属性进行搜索时，<code>Model.findOne()</code>尤其有用。把食物作为<code>Model.findOne() -> Person</code>的参数，来找到一个在她的爱好中有某一食物的人。"
+        "<code>Model.findOne()</code>表现像<code>Model.find()</code>，但是它仅仅返回一个 document（而不是一个数组），即使数据库里有很多条 item（项目）。当你按声明成<code>unique</code>的属性进行搜索时，<code>Model.findOne()</code>尤其有用。把 food 作为<code>Model.findOne() -> Person</code>的参数，来找到一个在她的爱好中有某一食物的人。"
       ],
       "tests": [
         {
@@ -152,9 +152,9 @@
       "id": "587d7fb8367417b2b2512c0e",
       "title": "Perform Classic Updates by Running Find, Edit, then Save",
       "description": [
-        "在过去，如果你想要编辑 document，并且使用它。例如：将其发送回服务器响应中。那么你就需要这样做：Mongoose 有一个专用的更新方法：<code>Model.update() </code>, 它绑定到低级 mongo 驱动程序，它可以批量编辑符合特定条件的多个 document，但它不会发送更新后的 document，只返回'状态'消息。此外，它使模型验证变得困难，因为它只是直接调用 mongo 驱动程序。",
-        "使用参数 personId 作为搜索关键字，通过 _id 找到一个人（使用上述任何一种方法）. 将 “hamburger” 添加到她的 favoriteFoods 列中去 (你可以使用 <code>Array.push()</code>)。然后在 <code>.find()</code> 的回调里使用 <code>.save()</code> 方法已更新的人物信息。",
-        "[*] 提示: 如果你在 Schema 中将 favoriteFoods 声明为一个 Array(数组), 没有指定它的类型(如：[String])，这可能很棘手。 在这种情况下， favoriteFoods 默认为 #Mixed 类型， 允许任意类型的值，你就必须手动执行 <code>document.markModified（'edited-field'）</code> 将其设为已编辑。(http://mongoosejs.com/docs/schematypes.html - #Mixed)"
+        "传统应用里，如果你想要编辑 document，然后在某处使用它。你就必须在服务器响应中将其返回。Mongoose 有一个专用的更新方法：<code>Model.update() </code>, 它与低级的 mongo 驱动绑定，可以批量编辑符合特定条件的多个 document，而不用返回更新后的 document，取而代之返回'状态'消息。此外，它使模型校验变得更棘手，因为它是直接调用了 mongo 的驱动程序。",
+        "使用参数 personId 作为搜索关键字，然后通过 _id 找到一个 person（使用上述任何一种方法）. 将 “hamburger” 添加到她的 favoriteFoods 列中去 (可以使用 <code>Array.push()</code>)。然后在 <code>.find()</code> 的回调里通过 <code>.save()</code> 方法更新。",
+        "[*] 提示: 如果你在 Schema 中将 favoriteFoods 声明为一个 Array(数组), 而没有指定数组的类型(如：[String])，结果会让人很```````   2`  ~意外。 在这种情况下，favoriteFoods 默认为 Mixed 类型。如果想要编辑它，就必须执行 <code>document.markModified（'edited-field'）</code>。(http://mongoosejs.com/docs/schematypes.html - #Mixed)"
       ],
       "tests": [
         {
@@ -170,9 +170,9 @@
       "id": "587d7fb8367417b2b2512c0f",
       "title": "Perform New Updates on a Document Using model.findOneAndUpdate()",
       "description": [
-        "mongoose 的最新版本有简化 documents 更新的方法。 一些更高级的用法 (即 pre/post 钩子, 验证) 与这种方法的行为不同, 所以 Classic 方法在大多数的情况下仍然有用。当通过 Id 进行搜索时可以使用 <code>findByIdAndUpdate()</code>。",
-        "使用 personName 作为搜索的关键词查找人员，并将查到的人员的年龄设为 20 岁。",
-        "提示: 我们想要你返更新后的 document， 你可以把 <code>findOneAndUpdate()</code> 的第三个参数设置为 <code>{new: true}</code>。 默认情况下，这些方法返回未被修改的数据。"
+        "mongoose 的最新版本简化了 documents 的更新。 但是一些高级的用法 (比如 pre/post 钩子, 验证) 更复杂, 所以老方法更常用。当通过 Id 进行搜索时还可以使用 <code>findByIdAndUpdate()</code>。",
+        "使用 personName 作为搜索的关键词查找 person，并将查到的 person 的年龄设为 20 岁。",
+        "提示: 我们想要你返更新后的 document，你可以把 <code>findOneAndUpdate()</code> 的第三个参数设置为 <code>{new: true}</code>。 默认情况下，这些方法返回未被修改的数据。"
       ],
       "tests": [
         {
@@ -204,7 +204,7 @@
       "id": "587d7fb8367417b2b2512c11",
       "title": "Delete Many Documents with model.remove()",
       "description": [
-        "<code>Model.remove()</code> 可用于删除与给定条件匹配的所有 document。 删除所有叫 “Mary” 的人的时候 , 使用 <code>Model.remove()</code>。 通过一个设置了 “name” 字段的 ducument 作为查询条件，当然还需要一个回调函数。",
+        "<code>Model.remove()</code> 可用于删除与给定条件匹配的所有 document。 如果想要删除所有叫 “Mary” 的人, 可以使用 <code>Model.remove()</code>。 传入一个设置了 “name” 字段的 document 作为查询条件，当然还需要一个回调函数。",
         "注意: <code>Model.remove()</code> 不会返回被删除的 document, 但是会返回一个包含操作结果和受影响的 item 数量的 JSON 对象。 不要忘记将它传递给 <code>done()</code> 回调，因为我们在测试中使用它。"
       ],
       "tests": [
@@ -221,8 +221,8 @@
       "id": "587d7fb9367417b2b2512c12",
       "title": "Chain Search Query Helpers to Narrow Search Results",
       "description": [
-        "如果不传递回调函数作为 <code>Model.find()</code> (或者别的搜索方法)的最后一个参数, 则不执行查询。你可以将查询存储在变量中供以后使用，这类对象可以使用链接语法构建查询。 当你最终链接 <code>.exec()</code> 方法时，将执行实际的数据库操作。最后将回调传递给 <code>exec()</code> 方法。 有很多的查询助手, 这里我们使用最 '著名' 的一种。 ",
-        "发现喜欢 \"burrito\" 的人， 按照名字排序, 限制结果为两个 document, 并且隐藏他们的年龄。 使用链路 <code>.find()</code>, <code>.sort()</code>, <code>.limit()</code>, <code>.select()</code>,  然后 <code>.exec()</code>。将 <code>done(err, data)</code> 回调传给 <code>exec()</code> 方法。"
+        "如果不给 <code>Model.find()</code> (或者别的搜索方法)传递回调函数，作为的最后一个参数, 则不执行查询。你可以将查询存储在变量中供以后使用，这类对象可以使用链接语法构建查询。 当你最终链接 <code>.exec()</code> 方法时，将执行实际的数据库操作。最后将回调传递给 <code>exec()</code> 方法。 有很多的查询助手, 这里我们使用最 '著名' 的一种。 ",
+        "找到喜欢 \"burrito\" 的人，按照名字排序, 限制结果为两个 document, 并且隐藏他们的年龄。 使用链路 <code>.find()</code>, <code>.sort()</code>, <code>.limit()</code>, <code>.select()</code>,  然后 <code>.exec()</code>。将 <code>done(err, data)</code> 回调传给 <code>exec()</code> 方法。"
       ],
       "tests": [
         {
