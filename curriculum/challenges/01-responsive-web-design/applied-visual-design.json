@@ -1642,7 +1642,7 @@
         "下面是一些十六进制码（hex code）补色的例子：",
         "<blockquote>红色（#FF0000）和蓝绿色 (#00FFFF)<br>绿色（#00FF00）和品红色（#FF00FF）<br>蓝色（#0000FF）和黄色（#FFFF00）</blockquote>",
         "现在很多的在线选色工具都有寻找补色的功能。",
-        "<strong>注意</strong><br>对于所有的颜色关卡： 颜色能吸引用户的注意，但不是唯一的方式，切勿喧宾夺主，过度使用会适得其反。详细会在 Applied Accessibility 章节介绍。",
+        "<strong>注意</strong><br>对于所有的颜色关卡： 颜色能吸引用户的注意，但不是唯一的方式，切勿喧宾夺主，过度使用会适得其反。详细会在应用无障碍章节介绍。",
         "<hr>",
         "把<code>blue</code>和<code>yellow</code>class 的<code>background-color</code>属性改成相应的颜色。注意观察它们之间的编码区别以及和它们和白色的编码区别。"
       ],
