@@ -1642,7 +1642,7 @@
         "下面是一些十六进制码（hex code）补色的例子：",
         "<blockquote>红色（#FF0000）和蓝绿色 (#00FFFF)<br>绿色（#00FF00）和品红色（#FF00FF）<br>蓝色（#0000FF）和黄色（#FFFF00）</blockquote>",
         "现在很多的在线选色工具都有寻找补色的功能。",
-        "<strong>注意</strong><br>对于所有的颜色关卡： 颜色能吸引用户的注意，但不是唯一的方式，切勿喧宾夺主，过度使用会适得其反。详细会在 Applied Accessibility 章节介绍。",
+        "<strong>注意</strong><br>对于所有的颜色关卡： 颜色能吸引用户的注意，但不是唯一的方式，切勿喧宾夺主，过度使用会适得其反。详细会在应用无障碍章节介绍。",
         "<hr>",
         "把<code>blue</code>和<code>yellow</code>class 的<code>background-color</code>属性改成相应的颜色。注意观察它们之间的编码区别以及和它们和白色的编码区别。"
       ],
@@ -1848,7 +1848,7 @@
         "<b>饱和度</b>是指色彩的纯度，也就是颜色里灰色的占比，越高色彩越纯，低则逐渐变灰，取0-100%的数值。",
         "<b>亮度</b>决定颜色的明暗程度，也就是颜色里白色或者黑色的占比，100% 亮度是白色， 0% 亮度是黑色，而 50% 亮度是“一般的”。 ",
         "下面是一些使用<code>hsl()</code>描述颜色的例子，颜色都为满饱和度，中等亮度:",
-        "<table class=\"table table-striped\"><thead><tr><th>颜色</th><th>HSL</th></tr></thead><tbody><tr><td>红</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>黄</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>绿</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>蓝绿</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>blue</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>品红</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>",
+        "<table class=\"table table-striped\"><thead><tr><th>颜色</th><th>HSL</th></tr></thead><tbody><tr><td>红</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>黄</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>绿</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>蓝绿</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>蓝</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>品红</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>",
         "<hr>",
         "把 class 为<code>green</code>、<code>cyan</code>和<code>blue</code><code>div</code>的<code>background-color</code>使用<code>hsl()</code>表示法描述相应的颜色。颜色都为满饱和度，亮度中等。"
       ],
