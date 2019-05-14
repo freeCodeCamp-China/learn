@@ -1765,7 +1765,7 @@
       "description": [
         "通过前面关卡的学习，我们知道了补色搭配能形成强列的对比效果，让内容更富生机。但是如果使用不当效果会适得其反，比如如果文字背景色和文字颜色互为补色，文字会很难看清。通常的做法是，一种颜色做为主要颜色，其补色用来装点页面。",
         "<hr>",
-        "使用深青色（<code>#09A7A1</code>）做为页面主色，用其补色橙色（<code>#FF790E</code>）来装饰登录按钮。把<code>header</code>和<code>footer</code>的<code>background-color</code>从黑色改成深青色。然后把<code>h2</code>的文字<code>corlor</code>也改成深青色。最后，把<code>button</code>的<code>background-color</code>改成橙色。"
+        "使用深青色（<code>#09A7A1</code>）做为页面主色，用其补色橙色（<code>#FF790E</code>）来装饰登录按钮。把<code>header</code>和<code>footer</code>的<code>background-color</code>从黑色改成深青色。然后把<code>h2</code>的文字<code>color</code>也改成深青色。最后，把<code>button</code>的<code>background-color</code>改成橙色。"
       ],
       "tests": [
         {
