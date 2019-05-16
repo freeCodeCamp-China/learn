@@ -87,6 +87,7 @@
         "<strong>需求 1：</strong>我的计算器应该包含一个具有<code>id=\"equals\"</code>属性的可以点击的元素，元素的文本内容为<code>=</code>（等于符号）。",
         "<strong>需求 2：</strong>我的计算器应该包含 10 个具有如下 id 属性的可以点击的元素，每个元素的文本内容对应 0-9 的数字：<code>id=\"zero\"</code>、<code>id=\"one\"</code>、<code>id=\"two\"</code>、<code>id=\"three\"</code>、<code>id=\"four\"</code>、<code>id=\"five\"</code>、<code>id=\"six\"</code>、<code>id=\"seven\"</code>、<code>id=\"eight\"</code>、<code>id=\"nine\"</code>。",
         "<strong>需求 3：</strong>我的计算器应该包含四个可以点击的元素，文本内容对应4个主要数学运算符，且应具有如下 id 属性： <code>id=\"add\"</code>, <code>id=\"subtract\"</code>, <code>id=\"multiply\"</code>, <code>id=\"divide\"</code>。",
+        "<strong>需求 4：</strong>计算器应该包含一个可点击的`.`（小数点）符号，对应的<code>id=\"decimal\"</code>。",
         "<strong>需求 5：</strong>我的计算器应该包含一个具有<code>id=\"clear\"</code>属性的可以点击的元素。",
         "<strong>需求 6：</strong>我的计算器应该包含一个用于展示数值的元素，这个元素具有<code>id=\"display\"</code>属性。",
         "<strong>需求 7：</strong>在任何时候按下清除键，都会清空输入和输出的数值并且使计算器回到初始状态；此时在 id 为<code>display</code>的元素中应该显示数字 0。",
