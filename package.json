@@ -6,6 +6,7 @@
   "dependencies": {
     "@freecodecamp/curriculum": "3.2.0",
     "adler32": "^0.1.7",
+    "aliyun-oss-webpack-plugin": "^2.0.1",
     "auth0-js": "^9.5.1",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.3",
@@ -26,6 +27,7 @@
     "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.8",
     "gatsby-plugin-react-next": "^1.0.11",
+    "gatsby-plugin-s3": "^0.2.5",
     "gatsby-plugin-sitemap": "^1.2.21",
     "gatsby-remark-prismjs": "^2.0.2",
     "gatsby-source-filesystem": "^1.5.29",

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const AliyunOSSPlugin = require('aliyun-oss-webpack-plugin');
 
 const { dasherize } = require('./utils');
 const { blockNameify } = require('./utils/blockNameify');
@@ -113,6 +114,12 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     browserslist: ['> 1%', 'last 2 versions', 'IE >= 9']
   };
 
+  config.merge({
+    output: {
+      publicPath: 'http://cdn.chenzhicheng.com/'
+    }
+  });
+
   return generateBabelConfig(program, stage).then(babelConfig => {
     config.removeLoader('js').loader('js', {
       test: /\.jsx?$/,
@@ -148,8 +155,20 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     config.plugin('RemoveServiceWorkerPlugin', RmServiceWorkerPlugin, [
       { filename: 'sw.js' }
     ]);
+    config.plugin('AliOSSPlugin', AliyunOSSPlugin, [
+      {
+        accessKeyId: process.env.ALIKEY,
+        accessKeySecret: process.env.ALISECRET,
+        region: 'oss-cn-beijing',
+        bucket: 'freecodecampone',
+        headers: {
+          'Cache-Control': 'max-age=3600'
+        }
+      }
+    ]);
   });
 };
+
 /* eslint-disable prefer-object-spread/prefer-object-spread */
 exports.modifyBabelrc = ({ babelrc }) =>
   Object.assign({}, babelrc, {
