@@ -155,17 +155,17 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     config.plugin('RemoveServiceWorkerPlugin', RmServiceWorkerPlugin, [
       { filename: 'sw.js' }
     ]);
-    config.plugin('AliOSSPlugin', AliyunOSSPlugin, [
-      {
-        accessKeyId: process.env.ALIKEY,
-        accessKeySecret: process.env.ALISECRET,
-        region: 'oss-cn-beijing',
-        bucket: 'freecodecampone',
-        headers: {
-          'Cache-Control': 'max-age=3600'
-        }
-      }
-    ]);
+    // config.plugin('AliOSSPlugin', AliyunOSSPlugin, [
+    //   {
+    //     accessKeyId: process.env.ALIKEY,
+    //     accessKeySecret: process.env.ALISECRET,
+    //     region: 'oss-cn-beijing',
+    //     bucket: 'freecodecampone',
+    //     headers: {
+    //       'Cache-Control': 'max-age=3600'
+    //     }
+    //   }
+    // ]);
   });
 };
 
