@@ -114,12 +114,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     browserslist: ['> 1%', 'last 2 versions', 'IE >= 9']
   };
 
-  config.merge({
-    output: {
-      publicPath: 'http://cdn.chenzhicheng.com/'
-    }
-  });
-
   return generateBabelConfig(program, stage).then(babelConfig => {
     config.removeLoader('js').loader('js', {
       test: /\.jsx?$/,
