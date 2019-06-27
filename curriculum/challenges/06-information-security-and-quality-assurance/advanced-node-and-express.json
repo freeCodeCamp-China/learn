@@ -497,7 +497,7 @@
         },
         {
           "text": "客户端应监听 'user count' 事件。",
-          "testString": "getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|\")user count('|\")/gi, '客户端应通过 socket 连接到服务端，并监听 'user count' 事件。'); }, xhr => { throw new Error(xhr.statusText); })"
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|\")user count('|\")/gi, '客户端应通过 socket 连接到服务端，并监听 \"user count\" 事件。'); }, xhr => { throw new Error(xhr.statusText); })"
         }
       ],
       "solutions": [],
