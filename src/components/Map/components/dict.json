@@ -123,7 +123,7 @@
 {"english": "Introduction to the Applied Visual Design Challenges","chinese":"应用视觉设计介绍"},
 {"english": "Create Visual Balance Using the text-align Property","chinese":"使用 text-align 属性创建视觉平衡"},
 {"english": "Adjust the Width of an Element Using the width Property","chinese":"使用 width 属性调整元素的宽度"},
-{"english": "Adjust the Height of an Element Using the height Property","chinese":"使用 height 属性调整元素的宽度"},
+{"english": "Adjust the Height of an Element Using the height Property","chinese":"使用 height 属性调整元素的高度"},
 {"english": "Use the strong Tag to Make Text Bold","chinese":"使用 strong 标签加粗文本"},
 {"english": "Use the u Tag to Underline Text","chinese":"使用 u 标签给文本添加下划线"},
 {"english": "Use the em Tag to Italicize Text","chinese":"使用 em 标签强调文本"},
