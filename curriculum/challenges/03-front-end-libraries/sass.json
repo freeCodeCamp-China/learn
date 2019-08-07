@@ -20,7 +20,7 @@
         "<blockquote>$main-fonts: Arial, sans-serif;<br>$headings-color: green;<br><br>//To use variables:<br>h1 {<br>&nbsp;&nbsp;font-family: $main-fonts;<br>&nbsp;&nbsp;color: $headings-color;<br>}</blockquote>",
         "当需要把多个元素设置成相同颜色时，变量就会很有用。一旦我们需要更改颜色，只需要改变这个变量的值就好。",
         "<hr>",
-        "创建一个变量<code>$text-color</code>并将其设置为红色。然后更改<code>.blog-post</code>的<code>color</code>属性的值，<code>h2</code>到<code>$text-color</code>变量。"
+        "创建一个变量<code>$text-color</code>并将其设置为红色。然后更改<code>.blog-post</code>和<code>h2</code>的<code>color</code>属性的值为<code>$text-color</code>变量。"
       ],
       "tests": [
         {

@@ -811,7 +811,7 @@
       "description": [
         "现在我们学习把标签从一个<code>div</code>移动到另一个<code>div</code>。",
         "jQuery 有一个<code>appendTo()</code>方法，可以选取 HTML 标签并将其添加到另一个标签里面。",
-        "例如，如果要把<code>target4</code>从左框移到右框，可以设置如下：",
+        "例如，如果要把<code>target4</code>从右框移到左框，可以设置如下：",
         "<code>$(\"#target4\").appendTo(\"#left-well\");</code>",
         "请把<code>target2</code>标签从<code>left-well</code>移动到<code>right-well</code>。"
       ],
