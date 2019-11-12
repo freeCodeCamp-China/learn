@@ -1610,7 +1610,7 @@
         },
         {
           "text": "<code>blue-box</code> class 的右内边距应为<code>20px</code>。",
-          "testString": "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", '<code>blue-box</code> class 的右内边距应为<code>40px</code>。');"
+          "testString": "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", '<code>blue-box</code> class 的右内边距应为<code>20px</code>。');"
         },
         {
           "text": "<code>blue-box</code> class 的下内边距应为<code>20px</code>。",
