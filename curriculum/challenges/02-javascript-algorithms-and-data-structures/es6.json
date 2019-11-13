@@ -662,7 +662,7 @@
             "  const length = 0; // change this",
             "  // 在这行以上修改代码",
             "",
-            "  return len; // 你必须在这行将<code>length</code>赋值给<code>len</code>",
+            "  return len; // 你必须在这行将 length 赋值给 len",
             "",
             "}",
             "",
@@ -1333,7 +1333,7 @@
         "在上一个挑战里，你学会了<code>export default</code>的用法。还有一个重要的点，你可能需要另外一种<code>import</code>的语法来导入默认导出。",
         "在下面的例子里有一个<code>add</code>函数, 它在<code>\"math_functions\"</code>文件里默认被导出。让我们看看来如何导入它：",
         "<blockquote>import add from \"math_functions\";<br>add(5,4); //将会返回 9</blockquote>",
-        "这个语法只有一处不同的地方 —— 被导入的<code>add</code>值，并没有被花括号<code>{}</code>所包围。与导出值的方法不同，导入默认导出的写法仅仅只是简单的讲变量名写在<code>import</code>之后。",
+        "这个语法只有一处不同的地方 —— 被导入的<code>add</code>值，并没有被花括号<code>{}</code>所包围。与导出值的方法不同，导入默认导出的写法仅仅只是简单的将变量名写在<code>import</code>之后。",
         "<hr>",
         "在下面的代码中，请导入在同目录下的<code>\"math_functions\"</code>文件中默认导出的<code>subtract</code>值。"
       ],
