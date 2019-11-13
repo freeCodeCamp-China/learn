@@ -63,7 +63,7 @@
     },
     {
       "id": "587d7b87367417b2b2512b40",
-      "title": "Compare Scopes of the var and let Keywords",
+      "title": "Compare Scopes of the var and let Keywords",F
       "description": [
         "当你使用<code>var</code>关键字来声明一个变量的时候，这个变量会被声明成全局变量，或是函数内的局部变量。",
         "<code>let</code>关键字的作用类似，但会有一些额外的特性。如果你在代码块、语句或表达式中使用关键字<code>let</code>声明变量，这个变量的作用域就被限制在当前的代码块，语句或表达式之中。",
@@ -518,7 +518,7 @@
         "ES6 推出了用于函数参数的<dfn> rest 操作符</dfn>帮助我们创建更加灵活的函数。在<code>rest</code>操作符的帮助下，你可以创建有一个变量来接受多个参数的函数。这些参数被储存在一个可以在函数内部读取的数组中。",
         "请看以下代码：",
         "<blockquote>function howMany(...args) {<br>&nbsp;&nbsp;return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // 输出：You have passed 3 arguments.<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); // 输出：You have passed 4 arguments.</blockquote>",
-        "<code>rest</code>操作符可以避免查看<code>args</code>数组的需求，并且允许我们在参数数组上使用<code>map()</code>,<code>fiter()</code>，和<code>reduce()</code>。",
+        "<code>rest</code>操作符可以避免查看<code>args</code>数组的需求，并且允许我们在参数数组上使用<code>map()</code>,<code>filter()</code>，和<code>reduce()</code>。",
         "<hr>",
         "修改<code>sum</code>函数，来让它使用<code>rest</code>操作符，并且它可以在有任何数量的参数时以相同的形式工作。"
       ],
