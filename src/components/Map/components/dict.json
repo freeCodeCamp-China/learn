@@ -448,7 +448,7 @@
 {"english":"Use the delete Keyword to Remove Object Properties","chinese":"使用 delete 关键字删除对象属性"},
 {"english":"Check if an Object has a Property","chinese":"检查对象是否具有某个属性"},
 {"english":" Iterate Through the Keys of an Object with a for...in Statement","chinese":"使用 for...in 语句迭代对象"},
-{"english":"Generate an Array of All Object Keys with Object.keys()","chinese":"使用 Object.Keys() 生成对象所有键组成的数组"},
+{"english":"Generate an Array of All Object Keys with Object.keys()","chinese":"使用 Object.keys() 生成对象所有键组成的数组"},
 {"english":"Modify an Array Stored in an Object","chinese":"修改存储在对象中的数组"},
 {"english":"Introduction to Basic Algorithm Scripting","chinese":"算法基础介绍"},
 {"english":"Convert Celsius to Fahrenheit","chinese":"将摄氏温度转换成华氏温度"},
