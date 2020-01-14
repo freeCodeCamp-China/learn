@@ -50,7 +50,3 @@
 可在此观看https://www.contributor-covenant.org/zh-cn/version/1/4/code-of-conduct.html
 
 [主页]: https://www.contributor-covenant.org
-
-# 特别感谢
-
-衷心感谢 [Netlify](https://www.netlify.com/) 对本项目提供的技术支持
