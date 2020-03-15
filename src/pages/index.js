@@ -63,6 +63,12 @@ const IndexPage = ({
         .map(({ node }) => node)
         .filter(({ isPrivate }) => !isPrivate)}
     />
+    <Spacer />
+    <p>This site is powered by{' '}
+      <a href='Https://netlify.com' target='_blank'>
+        Netlify
+      </a>.
+    </p>
   </div>
 );
 
