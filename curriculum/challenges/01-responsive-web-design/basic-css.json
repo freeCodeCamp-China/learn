@@ -1526,7 +1526,7 @@
       ],
       "tests": [
         {
-          "text": "你的<code>blue-box</code> class 的右侧<code>margin</code>（上外边距）值应为<code>40px</code>。",
+          "text": "你的<code>blue-box</code> class 的顶部<code>margin</code>（上外边距）值应为<code>40px</code>。",
           "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", '你的<code>blue-box</code> class 的顶部<code>margin</code>（上外边距）值应为<code>40px</code>。');"
         },
         {
