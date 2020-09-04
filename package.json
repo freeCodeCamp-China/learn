@@ -37,7 +37,7 @@
     "jest": "^22.4.3",
     "lodash": "^4.17.5",
     "loop-protect": "^2.1.6",
-    "mongodb": "^3.0.5",
+    "mongodb": "^3.1.13",
     "prismjs": "^1.14.0",
     "react": "16",
     "react-bootstrap": "^0.32.1",
