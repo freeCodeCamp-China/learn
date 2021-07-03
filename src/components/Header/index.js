@@ -26,6 +26,11 @@ function Header() {
           </li>
         </ul>
       </nav>
+      <a class="banner" id="banner" rel="noopener noreferrer" target="_blank" href="https://chinese.freecodecamp.org/">
+        <p>
+          <span>freeCodeCamp.org 官方中文站</span>已于 2021 年春节正式上线，点击<span>此处</span>前往学习，Happy coding!
+        </p>
+      </a>
     </header>
   );
 }
