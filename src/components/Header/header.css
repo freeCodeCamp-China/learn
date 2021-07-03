@@ -95,3 +95,32 @@ header {
 .ais-Hits {
   background-color: #fff;
 }
+
+a.banner {
+  position: fixed;
+  top: 38px;
+  background-color: #002ead;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  padding: 8px;
+  width: 100vw;
+  font-weight: 700;
+  z-index: 999;
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+  font: inherit;
+  font-size: 18px;
+  vertical-align: baseline;
+  font-family: Lato, sans-serif;
+}
+
+a.banner p {
+  margin: 1rem 0;
+}
+
+a.banner span {
+  text-decoration: underline;
+}
