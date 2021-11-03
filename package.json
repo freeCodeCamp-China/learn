@@ -61,7 +61,7 @@
     "rxjs": "^5.5.7",
     "store": "^2.0.12",
     "uglifyjs-webpack-plugin": "^1.2.4",
-    "validator": "^10.3.0",
+    "validator": "^13.7.0",
     "webpack-remove-serviceworker-plugin": "^1.0.0"
   },
   "keywords": [
