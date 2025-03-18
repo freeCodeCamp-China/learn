@@ -7,7 +7,7 @@
     "@freecodecamp/curriculum": "3.2.0",
     "adler32": "^0.1.7",
     "aliyun-oss-webpack-plugin": "^2.0.1",
-    "auth0-js": "^9.5.1",
+    "auth0-js": "^9.13.2",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.3",
     "babel-plugin-transform-imports": "^1.5.0",
